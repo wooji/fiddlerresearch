@@ -330,7 +330,7 @@
         <div id="db-variants-panel" style="display:none;padding:0;background:rgba(255,100,180,.04);border-left:2px solid #ff64b4;border-radius:0 8px 8px 0;display:none;flex-direction:column;height:calc(100vh - 280px)">
           <!-- header -->
           <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 10px;flex-shrink:0;border-bottom:1px solid var(--border)">
-            <h3 style="font-size:15px;font-weight:700;margin:0;color:#ff64b4" id="variants-title"></h3>
+            <span style="font-size:13px;font-weight:600;color:#ff64b4" id="variants-title"></span>
             <button style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;margin-left:auto" onclick="closeVariants()">✕</button>
           </div>
           <!-- products window -->
@@ -723,7 +723,7 @@ async function loadDbPage() {
 
   document.getElementById('db-thead').innerHTML = `<tr>${cols.map(c => `<th>${c}</th>`).join('')}</tr>`;
   document.getElementById('db-tbody').innerHTML = entries.length
-    ? entries.map(e => `<tr onclick="loadVariants('${currentDb}','${escHtml(e.id)}','${escHtml(e.name ?? e.setName ?? e.id)}')" style="cursor:pointer" title="Click to view product variants">${rowFn(e)}</tr>`).join('')
+    ? entries.map(e => `<tr onclick="loadVariants('${currentDb}','${escHtml(e.id)}','${escHtml(e.set_name ?? e.name ?? e.setName ?? e.id)}')" style="cursor:pointer" title="Click to view product variants">${rowFn(e)}</tr>`).join('')
     : `<tr><td colspan="${cols.length}" class="empty">No results</td></tr>`;
 
   // Pagination
