@@ -199,12 +199,19 @@ const server = http.createServer(async (req, res) => {
     const set = sets[setId];
     if (!set) { json(res, { error: 'Set not found' }, 404); return; }
     const products = set.products ?? {};
-    const variants = Object.entries(products).map(([key, data]) => ({
-      key,
-      name: key.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-      ...data
-    }));
-    json(res, { setId, setName: set.name ?? set.setName, variants });
+    const variants = Object.entries(products).map(([key, data]) => {
+      const hist = data.priceHistory ?? [];
+      const prices = hist.map(h => h.price).filter(p => p > 0);
+      const current = data.market ?? data.current ?? null;
+      const ath = prices.length ? Math.max(...prices) : (data.ath ?? null);
+      const first = hist.length ? hist[0].price : (data.first ?? null);
+      const months = (hist.length > 1)
+        ? +((new Date(hist.at(-1).date) - new Date(hist[0].date)) / (1000*60*60*24*30.5)).toFixed(1)
+        : (data.months ?? null);
+      const label = data.name ?? key.split('-').map(w => w.charAt(0).toUpperCase()+w.slice(1)).join(' ');
+      return { key, name: label, current, ath, first, months, msrp: data.msrp ?? data.retail ?? null, low: data.low ?? null, high: data.high ?? null };
+    }).filter(v => v.name && !/(^code-card|^dratini$)/i.test(v.key));
+    json(res, { setId, setName: set.name ?? set.set_name ?? set.setName, variants });
     return;
   }
 

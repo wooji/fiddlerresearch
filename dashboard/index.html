@@ -312,42 +312,49 @@
           <span class="ingest-result" id="ingest-result"></span>
         </div>
       </div>
-      <div class="table-wrap">
-        <table>
-          <thead id="db-thead"></thead>
-          <tbody id="db-tbody"></tbody>
-        </table>
-      </div>
-      <div class="pagination" id="db-pagination"></div>
-
-      <!-- Product variants panel -->
-      <div id="db-variants-panel" style="display:none;margin-top:24px;padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:8px">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
-          <h3 style="font-size:16px;font-weight:700;margin:0" id="variants-title"></h3>
-          <button style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px" onclick="closeVariants()">✕</button>
+      <!-- left/right split -->
+      <div style="display:grid;grid-template-columns:1fr 0fr;gap:0;transition:grid-template-columns .2s" id="db-split">
+        <!-- LEFT: set list -->
+        <div style="overflow:hidden">
+          <div class="table-wrap">
+            <table>
+              <thead id="db-thead"></thead>
+              <tbody id="db-tbody"></tbody>
+            </table>
+          </div>
+          <div class="pagination" id="db-pagination"></div>
         </div>
-        <div class="table-wrap">
-          <table style="font-size:13px">
-            <thead>
-              <tr>
-                <th>Product Type</th>
-                <th>Current Price</th>
-                <th>ATH</th>
-                <th>First Price</th>
-                <th>Months Tracked</th>
-              </tr>
-            </thead>
-            <tbody id="variants-tbody"></tbody>
-          </table>
-        </div>
-        <h3 style="font-size:15px;font-weight:700;margin:20px 0 10px" id="cards-title">Individual Cards</h3>
-        <div class="table-wrap">
-          <table style="font-size:13px">
-            <thead>
-              <tr><th>Card</th><th>Market</th><th>Rarity</th><th>#</th><th>History</th></tr>
-            </thead>
-            <tbody id="cards-tbody"></tbody>
-          </table>
+        <!-- RIGHT: variants+cards panel -->
+        <div id="db-variants-panel" style="display:none;overflow-y:auto;max-height:calc(100vh - 280px);padding:20px 24px;background:rgba(255,100,180,.04);border-left:2px solid #ff64b4;border-radius:0 8px 8px 0">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+            <h3 style="font-size:15px;font-weight:700;margin:0;color:#ff64b4" id="variants-title"></h3>
+            <button style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;margin-left:auto" onclick="closeVariants()">✕</button>
+          </div>
+          <div class="table-wrap">
+            <table style="font-size:12px">
+              <thead>
+                <tr>
+                  <th>Product Type</th>
+                  <th>Market</th>
+                  <th>Low</th>
+                  <th>High</th>
+                  <th>ATH</th>
+                  <th>First Price</th>
+                  <th>Tracked</th>
+                </tr>
+              </thead>
+              <tbody id="variants-tbody"></tbody>
+            </table>
+          </div>
+          <h3 style="font-size:13px;font-weight:700;margin:18px 0 8px;color:#ff64b4" id="cards-title">Individual Cards</h3>
+          <div class="table-wrap">
+            <table style="font-size:12px">
+              <thead>
+                <tr><th>Card</th><th>Market</th><th>Rarity</th><th>#</th><th>History</th></tr>
+              </thead>
+              <tbody id="cards-tbody"></tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -570,9 +577,17 @@ async function loadVariants(dbKey, setId, setName) {
   const tbody = document.getElementById('variants-tbody');
   if (!panel || !title || !tbody) return;
 
-  title.textContent = `Variants: ${setName}`;
-  tbody.innerHTML = '<tr><td colspan="5" class="empty" style="padding:40px"><span class="spinner"></span> Loading…</td></tr>';
+  // pink selected row
+  document.querySelectorAll('#db-tbody tr').forEach(r => r.style.outline = '');
+  const activeRow = [...document.querySelectorAll('#db-tbody tr')].find(r => r.onclick?.toString().includes(`'${setId}'`));
+  if (activeRow) activeRow.style.outline = '2px solid #ff64b4';
+
+  // expand right panel
   panel.style.display = 'block';
+  document.getElementById('db-split').style.gridTemplateColumns = '1fr 520px';
+
+  title.textContent = setName;
+  tbody.innerHTML = '<tr><td colspan="7" class="empty" style="padding:40px"><span class="spinner"></span> Loading…</td></tr>';
 
   try {
     const url = `${API}/api/db/${dbKey}/${encodeURIComponent(setId)}/variants`;
@@ -583,17 +598,20 @@ async function loadVariants(dbKey, setId, setName) {
       tbody.innerHTML = '<tr><td colspan="5" class="empty">No product variants found</td></tr>';
       return;
     }
+    const fmt = v => v != null ? '$' + Number(v).toFixed(2) : '—';
     tbody.innerHTML = data.variants.map(v => `
       <tr>
         <td><strong>${escHtml(v.name)}</strong></td>
-        <td>${v.current != null ? '$' + v.current.toFixed(2) : '—'}</td>
-        <td>${v.ath != null ? '$' + v.ath.toFixed(2) : '—'}</td>
-        <td>${v.first != null ? '$' + v.first.toFixed(2) : '—'}</td>
+        <td>${fmt(v.current)}</td>
+        <td>${fmt(v.low)}</td>
+        <td>${fmt(v.high)}</td>
+        <td>${fmt(v.ath)}</td>
+        <td>${fmt(v.first)}</td>
         <td>${v.months != null ? v.months.toFixed(1) + ' mo' : '—'}</td>
       </tr>
     `).join('');
   } catch (e) {
-    tbody.innerHTML = `<tr><td colspan="5" class="empty" style="color:var(--red)">Error: ${escHtml(e.message)}</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="7" class="empty" style="color:var(--red)">Error: ${escHtml(e.message)}</td></tr>`;
   }
 
   // individual cards (fullCardList)
@@ -624,6 +642,8 @@ async function loadVariants(dbKey, setId, setName) {
 
 function closeVariants() {
   document.getElementById('db-variants-panel').style.display = 'none';
+  document.getElementById('db-split').style.gridTemplateColumns = '1fr 0fr';
+  document.querySelectorAll('#db-tbody tr').forEach(r => r.style.outline = '');
 }
 
 function dbSearch(q) { currentSearch = q; currentPage = 1; loadDbPage(); }
@@ -655,23 +675,14 @@ async function loadDbPage() {
       <td>${e.retiredOn ?? e.projRetire ?? '—'}</td>
     `;
   } else if (isTcg || isSports) {
-    cols = ['Code','Set','Best Type','MSRP','Source','Market','ATH','ROI vs MSRP'];
+    cols = ['Set','Products','Cards'];
     rowFn = e => {
-      const types = Object.keys(e.products ?? {});
-      const best  = types.reduce((b, t) => { const p = e.products[t]; return (!b || (p?.current ?? 0) > (e.products[b]?.current ?? 0)) ? t : b; }, null);
-      const cur   = best && e.products[best]?.current ? e.products[best].current : null;
-      const msrp  = e.retail ?? null;
-      const roi   = (msrp && cur) ? Math.round(((cur - msrp) / msrp) * 100) : null;
-      const ver   = e.retailVerified === true || /stockx|msrp|verified|sam'?s|target|best ?buy|walmart|bulbapedia/i.test(e.retailSource ?? '');
+      const prodCount = Object.keys(e.products ?? {}).length;
+      const cardCount = (e.cards?.fullCardList?.length) ?? 0;
       return `
-        <td>${e.code ?? e.setCode ?? '—'}</td>
-        <td>${e.name ?? e.id ?? '—'}</td>
-        <td>${best ?? '—'}</td>
-        <td>${msrp != null ? '$' + msrp + (ver ? ' ✅' : ' ⚠️') : '—'}</td>
-        <td>${e.retailSource ? String(e.retailSource).split(' (')[0] : (ver ? 'verified' : '—')}</td>
-        <td>${cur != null ? '$' + cur : '—'}</td>
-        <td>${best && e.products[best]?.ath ? '$' + e.products[best].ath : '—'}</td>
-        <td>${roi != null ? `<span class="tag ${roi >= 50 ? 'active' : roi >= 0 ? 'ar' : 'retired'}">${roi >= 0 ? '+' : ''}${roi}%</span>` : '—'}</td>
+        <td><strong>${e.set_name ?? e.name ?? e.id ?? '—'}</strong></td>
+        <td>${prodCount > 0 ? prodCount + ' types' : '—'}</td>
+        <td>${cardCount > 0 ? cardCount.toLocaleString() : '—'}</td>
       `;
     };
   } else if (currentDb === 'mattel') {
