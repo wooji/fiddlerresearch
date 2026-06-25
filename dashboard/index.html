@@ -608,6 +608,7 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
       tbody.innerHTML = '<tr><td colspan="5" class="empty">No product variants found</td></tr>';
       return;
     }
+    data.variants.sort((a, b) => (b.current ?? 0) - (a.current ?? 0));
     const fmt = v => v != null ? '$' + Number(v).toFixed(2) : '—';
     tbody.innerHTML = data.variants.map(v => `
       <tr>
