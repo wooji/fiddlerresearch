@@ -1,0 +1,17 @@
+# DATA — never online (HARD RULE: local only)
+set-history*.json
+set-history*.csv
+set-scores.json
+dynamic-products.json
+pipeline-results.json
+_db_backup_*/
+*.log
+# secrets
+.env
+hook-reader/.env
+**/.env
+# memory / local
+memory/
+node_modules/
+*.tmp
+_smoke.mjs
