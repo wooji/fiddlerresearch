@@ -20,7 +20,7 @@ const CATS = {
 };
 
 // process order: Pokemon first, then Magic, then the rest (user directive)
-const ORDER = [3, 1, 68, 71, 79, 86];
+const ORDER = (process.env.TCG_CATS ? process.env.TCG_CATS.split(',').map(Number) : [3, 1, 68, 71, 79, 86]);
 
 const SEALED_RE = /(booster\s*box|booster\s*pack|elite\s*trainer|\betb\b|\bbox\b|\bpack\b|collection|bundle|display|\bcase\b|\bdeck\b|starter|tin|blister|premium\s*collection|build\s*&\s*battle|sleeved|fat\s*pack|gift\s*set|precon|commander\s*deck)/i;
 
