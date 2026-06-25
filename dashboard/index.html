@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiddler Dashboard</title>
+<style>
+  :root {
+    --bg: #0f1117; --surface: #1a1d27; --border: #2a2d3a;
+    --text: #e2e8f0; --muted: #6b7280; --accent: #6366f1;
+    --green: #22c55e; --yellow: #eab308; --red: #ef4444; --blue: #3b82f6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; min-height: 100vh; }
+
+  /* Nav */
+  nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; align-items: center; gap: 0; height: 52px; }
+  nav .logo { font-weight: 700; font-size: 16px; color: var(--accent); margin-right: 32px; letter-spacing: -0.5px; }
+  nav button { background: none; border: none; color: var(--muted); padding: 0 16px; height: 52px; cursor: pointer; font-size: 13px; font-weight: 500; border-bottom: 2px solid transparent; transition: all .15s; }
+  nav button.active, nav button:hover { color: var(--text); border-bottom-color: var(--accent); }
+
+  /* Layout */
+  .container { max-width: 1800px; margin: 0 auto; padding: 24px; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* Cards grid */
+  .db-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .db-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; cursor: pointer; transition: border-color .15s; }
+  .db-card:hover { border-color: var(--accent); }
+  .db-card .icon { font-size: 28px; margin-bottom: 8px; }
+  .db-card .label { font-weight: 600; margin-bottom: 4px; }
+  .db-card .meta { color: var(--muted); font-size: 12px; }
+  .db-card .count { font-size: 22px; font-weight: 700; color: var(--accent); margin-bottom: 2px; }
+
+  /* DB table view */
+  .db-view { display: none; }
+  .db-view.active { display: block; }
+  .db-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .db-header h2 { font-size: 18px; font-weight: 700; }
+  .back-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+  .search-bar { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; color: var(--text); padding: 8px 12px; font-size: 13px; outline: none; }
+  .search-bar:focus { border-color: var(--accent); }
+
+  /* Ingest box */
+  .ingest-box { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  .ingest-box h3 { font-size: 13px; font-weight: 600; color: var(--muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: .5px; }
+  .ingest-box textarea { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); padding: 8px 12px; font-size: 13px; resize: vertical; min-height: 80px; outline: none; font-family: inherit; }
+  .ingest-box textarea:focus { border-color: var(--accent); }
+  .ingest-box .row { display: flex; gap: 8px; margin-top: 8px; align-items: center; }
+  .btn { background: var(--accent); border: none; color: #fff; padding: 7px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 500; }
+  .btn:hover { opacity: .9; }
+  .btn.secondary { background: var(--surface); border: 1px solid var(--border); color: var(--text); }
+  .ingest-result { font-size: 12px; color: var(--muted); }
+
+  /* Table */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; padding: 8px 12px; color: var(--muted); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; border-bottom: 1px solid var(--border); }
+  td { padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,.04); font-size: 13px; }
+  tr:hover td { background: var(--surface); }
+  .tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .tag.retired  { background: #1a3a2a; color: var(--green); }
+  .tag.active   { background: #1a2a3a; color: var(--blue); }
+  .tag.ar       { background: #3a2a1a; color: var(--yellow); }
+  .pagination { display: flex; align-items: center; gap: 8px; margin-top: 16px; }
+  .pagination button { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 12px; }
+  .pagination button:disabled { opacity: .4; cursor: default; }
+  .pagination .info { color: var(--muted); font-size: 12px; }
+
+  /* Pipeline checklist */
+  .cl-section { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 12px; overflow: hidden; }
+  .cl-section-head { padding: 10px 14px; background: rgba(255,255,255,.03); border-bottom: 1px solid var(--border); font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; display: flex; align-items: center; gap: 8px; }
+  .cl-section-head .cl-badge { font-size: 10px; padding: 1px 6px; border-radius: 8px; background: rgba(255,255,255,.06); }
+  .check-item { display: grid; grid-template-columns: 10px 110px 180px 1fr; align-items: start; gap: 10px; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,.03); }
+  .check-item:last-child { border-bottom: none; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+  .dot.ok       { background: var(--green); box-shadow: 0 0 5px rgba(34,197,94,.5); }
+  .dot.na       { background: var(--yellow); }
+  .dot.err      { background: var(--red); box-shadow: 0 0 5px rgba(239,68,68,.5); }
+  .dot.skip     { background: #374151; }
+  .dot.pending  { background: #374151; }
+  .dot.fetching { background: #f59e0b; animation: blink-yellow 0.7s ease-in-out infinite; }
+  @keyframes blink-yellow { 0%,100%{opacity:.2; box-shadow:none} 50%{opacity:1; box-shadow:0 0 6px rgba(245,158,11,.8)} }
+  @keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+  .check-label { font-weight: 600; font-size: 12px; color: var(--text); padding-top: 1px; }
+  .check-data  { color: var(--muted); font-size: 12px; line-height: 1.5; word-break: break-word; }
+  .check-data.live { color: var(--text); }
+  .run-meta { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-bottom: 12px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .run-meta .field { font-size: 11px; color: var(--muted); }
+  .run-meta .value { font-weight: 600; font-size: 12px; }
+  .evidence-box { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--muted); font-size: 12px; line-height: 1.7; padding: 10px 12px; font-family: 'Consolas', monospace; resize: vertical; min-height: 120px; margin-top: 8px; }
+  .rating-badge { padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+  .rating-badge.DBLGREEN { background: #14532d; color: #4ade80; }
+  .rating-badge.GREEN    { background: #14532d; color: #22c55e; }
+  .rating-badge.ORANGE   { background: #431407; color: #fb923c; }
+  .rating-badge.RED      { background: #450a0a; color: #f87171; }
+
+  /* New Research */
+  .research-form { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px; max-width: 640px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); padding: 8px 12px; font-size: 13px; outline: none; font-family: inherit; }
+  .form-group input:focus, .form-group select:focus { border-color: var(--accent); }
+  .form-group select option { background: var(--bg); }
+
+  /* Live stream output */
+  .stream-log { background: #050507; border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-family: 'Consolas', 'Courier New', monospace; font-size: 12px; line-height: 1.6; max-height: 400px; overflow-y: auto; margin-top: 16px; display: none; }
+  .stream-log.active { display: block; }
+  .stream-log .log-line { color: #94a3b8; }
+  .stream-log .err-line { color: #f87171; }
+  .stream-log .ok-line  { color: var(--green); }
+
+  /* Misc */
+  .section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+  .empty { color: var(--muted); text-align: center; padding: 40px; }
+  .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .7s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .refresh-btn { background: none; border: 1px solid var(--border); color: var(--muted); padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 12px; }
+  .refresh-btn:hover { color: var(--text); }
+  .evidence-section { margin-top: 12px; grid-column: 1 / -1; }
+
+  /* Discord embed preview */
+  .embed-preview-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+  .embed-preview-wrap h3 { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 14px; }
+  .discord-embed { background: #2b2d31; border-radius: 4px; overflow: hidden; max-width: 100%; }
+  .discord-embed-inner { display: flex; border-left: 4px solid #5865f2; padding: 12px 16px 12px 12px; gap: 12px; }
+  .discord-embed-body { flex: 1; min-width: 0; }
+  .discord-embed-thumb { width: 72px; height: 72px; border-radius: 4px; object-fit: contain; flex-shrink: 0; background: #1e1f22; }
+  .discord-embed-title { font-size: 14px; font-weight: 700; color: #00b0f4; margin-bottom: 6px; word-break: break-word; }
+  .discord-embed-title a { color: inherit; text-decoration: none; }
+  .discord-embed-title a:hover { text-decoration: underline; }
+  .discord-embed-desc { font-size: 13px; color: #dbdee1; margin-bottom: 10px; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+  .discord-embed-fields { display: grid; gap: 8px; }
+  .discord-embed-field { min-width: 0; }
+  .discord-embed-field .fname { font-size: 12px; font-weight: 700; color: #dbdee1; margin-bottom: 2px; }
+  .discord-embed-field .fval  { font-size: 13px; color: #b5bac1; line-height: 1.4; white-space: pre-wrap; word-break: break-word; }
+  .discord-embed-footer { font-size: 11px; color: #82858b; padding: 4px 16px 10px 16px; border-top: 1px solid rgba(255,255,255,.05); margin-top: 4px; }
+  .embed-edit-title { width:100%; background:transparent; border:1px solid transparent; border-radius:3px; color:#fff; font-size:15px; font-weight:700; font-family:inherit; resize:none; overflow:hidden; padding:2px 4px; box-sizing:border-box; }
+  .embed-edit-desc  { width:100%; background:transparent; border:1px solid transparent; border-radius:3px; color:#dbdee1; font-size:13px; font-family:inherit; resize:none; overflow:hidden; padding:2px 4px; box-sizing:border-box; line-height:1.5; min-height:60px; }
+  .embed-edit-field { width:100%; background:transparent; border:1px solid transparent; border-radius:3px; color:#b5bac1; font-size:13px; font-family:inherit; resize:none; overflow:hidden; padding:2px 4px; box-sizing:border-box; line-height:1.4; }
+  .embed-edit-title:hover,.embed-edit-desc:hover,.embed-edit-field:hover { border-color:rgba(255,255,255,.15); }
+  .embed-edit-title:focus,.embed-edit-desc:focus,.embed-edit-field:focus  { border-color:#5865f2; outline:none; background:rgba(255,255,255,.04); }
+  .send-confirm-btn { margin-top: 14px; width: auto; padding: 9px 24px; background: #5865f2; border: none; color: #fff; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; transition: background .15s; display:block; }
+  .send-confirm-btn:hover { background: #4752c4; }
+  .send-confirm-btn:disabled { background: #374151; cursor: default; }
+  .send-status { margin-top: 8px; font-size: 12px; text-align: center; }
+  .webhook-send-row { display:flex; align-items:center; gap:8px; margin-top:8px; padding:8px 10px; background:var(--bg); border:1px solid var(--border); border-radius:6px; }
+  .webhook-send-row .wh-name { font-size:12px; font-weight:600; color:var(--muted); min-width:90px; flex-shrink:0; }
+  .webhook-send-row .wh-btn { background:#5865f2; border:none; color:#fff; border-radius:5px; padding:5px 12px; font-size:12px; font-weight:600; cursor:pointer; white-space:nowrap; }
+  .webhook-send-row .wh-btn:hover { background:#4752c4; }
+  .webhook-send-row .wh-btn:disabled { background:#374151; cursor:default; }
+  .webhook-send-row .wh-status { font-size:11px; color:var(--muted); flex:1; }
+  .check-label a { color:inherit; text-decoration:none; }
+  .check-label a:hover { text-decoration:underline; color:var(--blue); }
+
+  /* Channel Feed */
+  .feed-msg { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; display: flex; gap: 12px; align-items: flex-start; transition: border-color .15s; }
+  .feed-msg:hover { border-color: var(--accent); }
+  .feed-msg.has-embed { border-left: 3px solid #5865f2; }
+  .feed-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--border); flex-shrink: 0; object-fit: cover; }
+  .feed-body { flex: 1; min-width: 0; }
+  .feed-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+  .feed-author { font-weight: 700; font-size: 13px; color: #00b0f4; }
+  .feed-ts { font-size: 11px; color: var(--muted); }
+  .feed-content { font-size: 13px; color: #dbdee1; line-height: 1.5; white-space: pre-wrap; word-break: break-word; margin-bottom: 6px; }
+  .feed-embed { background: #1e1f22; border-left: 4px solid #5865f2; border-radius: 4px; padding: 10px 12px; margin-top: 6px; }
+  .feed-embed-title { font-size: 13px; font-weight: 700; color: #00b0f4; margin-bottom: 4px; }
+  .feed-embed-desc { font-size: 12px; color: #b5bac1; white-space: pre-wrap; line-height: 1.5; }
+  .feed-embed-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+  .feed-embed-field .fn { font-size: 11px; font-weight: 700; color: #dbdee1; margin-bottom: 2px; }
+  .feed-embed-field .fv { font-size: 12px; color: #b5bac1; }
+  .feed-attachments { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+  .feed-attachment-img { max-width: 200px; max-height: 140px; border-radius: 6px; object-fit: cover; cursor: pointer; }
+  .feed-msg.hidden { display: none; }
+  .feedback-box { margin-top:0; }
+  .feedback-box label { font-size:11px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.05em; display:block; margin-bottom:6px; }
+  .feedback-box textarea { width:100%; box-sizing:border-box; background:var(--surface2); border:1px solid var(--border); border-radius:6px; color:var(--text); font-size:12px; font-family:inherit; padding:8px 10px; resize:vertical; min-height:72px; }
+  .feedback-box textarea:focus { outline:none; border-color:#5865f2; }
+  .rerun-btn { margin-top:8px; padding:7px 18px; background:#2d3748; border:1px solid var(--border); color:var(--text); border-radius:6px; font-size:12px; font-weight:600; cursor:pointer; transition:background .15s; }
+  .rerun-btn:hover { background:#374151; border-color:#5865f2; }
+  .rerun-btn:disabled { opacity:.4; cursor:default; }
+
+  /* History panel */
+  .hist-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+  .hist-card-head { padding: 10px 14px; display: flex; align-items: center; gap: 10px; cursor: pointer; flex-wrap: wrap; }
+  .hist-card-head:hover { background: rgba(255,255,255,.02); }
+  .hist-card-body { display: none; padding: 12px 14px; border-top: 1px solid var(--border); }
+  .hist-card-body.open { display: block; }
+  .hist-meta { display: flex; gap: 12px; align-items: center; flex: 1; flex-wrap: wrap; font-size: 12px; }
+  .hist-meta-item { color: var(--muted); }
+  .hist-meta-item strong { color: var(--text); }
+  .hist-badge { padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+  .hist-badge.DBLGREEN { background: #14532d; color: #4ade80; }
+  .hist-badge.GREEN { background: #14532d; color: #22c55e; }
+  .hist-badge.ORANGE { background: #431407; color: #fb923c; }
+  .hist-badge.RED { background: #450a0a; color: #f87171; }
+  .hist-rating { padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+  .rate-btn { border: none; border-radius: 5px; padding: 5px 14px; font-size: 12px; font-weight: 600; cursor: pointer; margin-right: 6px; }
+  .rate-btn.green { background: #14532d; color: #4ade80; border: 1px solid #22c55e; }
+  .rate-btn.yellow { background: #431407; color: #fb923c; border: 1px solid #fb923c; }
+  .rate-btn.red { background: #450a0a; color: #f87171; border: 1px solid #f87171; }
+  .rate-btn:hover { opacity: .8; }
+  .rate-commentary { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; color: var(--text); padding: 7px 10px; font-size: 12px; font-family: inherit; resize: vertical; min-height: 60px; margin-top: 6px; outline: none; box-sizing: border-box; }
+  .rate-commentary:focus { border-color: #5865f2; }
+  .rate-submit { margin-top: 6px; padding: 6px 14px; background: #5865f2; border: none; color: #fff; border-radius: 5px; font-size: 12px; font-weight: 600; cursor: pointer; }
+  .rate-submit:hover { background: #4752c4; }
+  .hist-detail { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+  .hist-detail strong { color: var(--text); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">🎪 Fiddler</div>
+  <button class="active" data-tab="research">Research</button>
+  <button data-tab="databases">Databases</button>
+  <button data-tab="history">History</button>
+  <button data-tab="feed">Feed</button>
+  <button data-tab="docs">Docs</button>
+  <span id="code-status" title="Live code status — green = running process serves latest source"
+        style="margin-left:auto;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;background:#333;color:#bbb">code: …</span>
+</nav>
+<script>
+  // Failsafe #2 (UI): prove the running server serves live code. Polls /api/version.
+  async function refreshCodeStatus() {
+    const el = document.getElementById('code-status');
+    try {
+      const v = await (await fetch('/api/version', { cache: 'no-store' })).json();
+      if (v.stale) {
+        el.textContent = 'code: STALE — restart server';
+        el.style.background = '#5a1a1a'; el.style.color = '#ff6b6b';
+      } else {
+        el.textContent = `code: LIVE · pid ${v.pid}`;
+        el.style.background = '#143a14'; el.style.color = '#5fd35f';
+      }
+      el.title = `started ${v.startedAt} · newest source ${v.newestSourceMtime} · stale=${v.stale}`;
+    } catch {
+      el.textContent = 'code: server down';
+      el.style.background = '#5a1a1a'; el.style.color = '#ff6b6b';
+    }
+  }
+  refreshCodeStatus();
+  setInterval(refreshCodeStatus, 10000);
+</script>
+
+<!-- DOCS TAB -->
+<div id="tab-docs" class="panel">
+  <div style="display:grid;grid-template-columns:220px 1fr;height:calc(100vh - 52px)">
+    <div style="background:var(--surface);border-right:1px solid var(--border);padding:16px;overflow-y:auto">
+      <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px">Knowledge Base</div>
+      <div id="docs-sidebar" style="display:flex;flex-direction:column;gap:4px"></div>
+      <div style="margin-top:16px;font-size:11px;color:var(--muted)">Live from filesystem — always current.</div>
+    </div>
+    <div style="padding:24px 32px;overflow-y:auto">
+      <div id="docs-content" style="max-width:860px;line-height:1.7;font-size:14px"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FEED TAB -->
+<div id="tab-feed" class="panel">
+  <div class="container" style="max-width:900px">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap">
+      <div class="section-title" style="margin:0">Channel Feed</div>
+      <div style="display:flex;gap:8px;align-items:center;flex:1;min-width:260px">
+        <input id="feed-channel" value="1516473375143235746" style="width:200px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:6px 10px;font-size:13px;outline:none;font-family:inherit" placeholder="Channel ID">
+        <button class="btn secondary" id="feed-save-btn" onclick="saveFeedChannel()" style="padding:6px 10px;font-size:12px">Save</button>
+        <span id="feed-channel-name" style="font-size:12px;color:var(--green)"></span>
+        <input id="feed-filter" placeholder="Filter messages…" style="flex:1;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);padding:6px 10px;font-size:13px;outline:none;font-family:inherit" oninput="feedFilter(this.value)">
+        <button class="btn" onclick="loadFeed(true)">↻ Refresh</button>
+      </div>
+      <label style="font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px;cursor:pointer">
+        <input type="checkbox" id="feed-auto" onchange="toggleFeedAuto(this.checked)"> Auto-refresh 30s
+      </label>
+    </div>
+    <div id="feed-list" style="display:flex;flex-direction:column;gap:8px"></div>
+    <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+      <button class="btn secondary" id="feed-more-btn" onclick="loadFeedMore()" style="display:none">Load More</button>
+      <span id="feed-status" style="font-size:12px;color:var(--muted)"></span>
+    </div>
+  </div>
+</div>
+
+<!-- HISTORY TAB -->
+<div id="tab-history" class="panel">
+  <div class="container" style="max-width:1000px">
+    <div class="section-title">Webhook History</div>
+    <div id="history-list" style="margin-top:16px"></div>
+  </div>
+</div>
+
+<!-- DATABASES TAB -->
+<div id="tab-databases" class="panel">
+  <div class="container">
+    <div class="section-title">Databases</div>
+    <div class="db-grid" id="db-grid">
+      <div class="empty"><span class="spinner"></span> Loading…</div>
+    </div>
+    <!-- DB detail view (hidden until card clicked) -->
+    <div class="db-view" id="db-view">
+      <div class="db-header">
+        <button class="back-btn" onclick="closeDb()">← Back</button>
+        <h2 id="db-view-title"></h2>
+        <input class="search-bar" id="db-search" placeholder="Search by name or set number…" oninput="dbSearch(this.value)">
+      </div>
+      <div class="ingest-box">
+        <h3>Add / Append Data</h3>
+        <textarea id="ingest-text" placeholder="Paste text, a URL, or drop data here — I'll match it to the right entry and append it to the database…"></textarea>
+        <div class="row">
+          <button class="btn" onclick="runIngest()">Match &amp; Append</button>
+          <span class="ingest-result" id="ingest-result"></span>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead id="db-thead"></thead>
+          <tbody id="db-tbody"></tbody>
+        </table>
+      </div>
+      <div class="pagination" id="db-pagination"></div>
+
+      <!-- Product variants panel -->
+      <div id="db-variants-panel" style="display:none;margin-top:24px;padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:8px">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+          <h3 style="font-size:16px;font-weight:700;margin:0" id="variants-title"></h3>
+          <button style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px" onclick="closeVariants()">✕</button>
+        </div>
+        <div class="table-wrap">
+          <table style="font-size:13px">
+            <thead>
+              <tr>
+                <th>Product Type</th>
+                <th>Current Price</th>
+                <th>ATH</th>
+                <th>First Price</th>
+                <th>Months Tracked</th>
+              </tr>
+            </thead>
+            <tbody id="variants-tbody"></tbody>
+          </table>
+        </div>
+        <h3 style="font-size:15px;font-weight:700;margin:20px 0 10px" id="cards-title">Individual Cards</h3>
+        <div class="table-wrap">
+          <table style="font-size:13px">
+            <thead>
+              <tr><th>Card</th><th>Market</th><th>Rarity</th><th>#</th><th>History</th></tr>
+            </thead>
+            <tbody id="cards-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMBINED RESEARCH + PIPELINE TAB -->
+<div id="tab-research" class="panel active">
+  <div class="container" style="max-width:100%">
+    <div style="display:grid;grid-template-columns:280px 460px 1fr;gap:20px;align-items:start;">
+
+      <!-- LEFT: form -->
+      <div>
+        <div class="section-title">New Research</div>
+        <div class="research-form" style="max-width:none">
+          <div class="form-group">
+            <label>Product Name <span style="color:var(--red)">*</span></label>
+            <input id="rk-name" placeholder="Loose name or keywords — Fiddler finds the official name" oninput="liveMatch(this.value)" autocomplete="off">
+            <div id="rk-match" style="margin-top:5px;font-size:11px;color:var(--muted)"></div>
+          </div>
+          <div class="form-group">
+            <label>Category <span style="color:var(--muted);font-weight:400;text-transform:none">(you pick — Fiddler maps product into it)</span></label>
+            <select id="rk-cat" onchange="onCatChange(this.value)">
+              <option value="">— auto-detect —</option>
+              <option value="pokemon">Pokemon TCG</option>
+              <option value="mtg">MTG</option>
+              <option value="lorcana">Lorcana</option>
+              <option value="one_piece">One Piece</option>
+              <option value="lego">LEGO</option>
+              <option value="sports">Sports Cards</option>
+              <option value="other_tcg">Other TCG</option>
+              <option value="noncard">Non-card / Toy</option>
+              <option value="__new__">＋ NEW — create custom category</option>
+            </select>
+            <input id="rk-cat-custom" placeholder="e.g. vinyl, gaming-hardware, streetwear…" autocomplete="off" style="display:none;margin-top:6px;width:100%;background:var(--bg);border:1px solid var(--accent);border-radius:6px;color:var(--text);padding:8px 12px;font-size:13px;outline:none;font-family:inherit;">
+          </div>
+          <div class="form-group">
+            <label>Retail Price <span style="color:var(--muted);font-weight:400;text-transform:none">(optional — Fiddler finds it)</span></label>
+            <input id="rk-retail" type="number" placeholder="Leave blank — pipeline will find it" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label>Link / URL <span style="color:var(--muted);font-weight:400;text-transform:none">(optional hint — Fiddler scrapes all)</span></label>
+            <input id="rk-url" placeholder="Starting URL hint, or leave blank" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label>Notes / Intel <span style="color:var(--muted);font-weight:400;text-transform:none">(your hints — Fiddler does the rest)</span></label>
+            <textarea id="rk-notes" rows="3" placeholder="Any intel you have — Fiddler researches everything else" autocomplete="off"></textarea>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <button class="btn" id="run-btn" onclick="runResearch()">▶ Run Pipeline</button>
+          </div>
+        </div>
+        <div class="stream-log" id="stream-log" style="margin-top:16px;max-height:260px;"></div>
+      </div>
+
+      <!-- MIDDLE: pipeline checklist -->
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <div class="section-title" style="margin:0">Pipeline Checklist</div>
+        </div>
+        <div id="pipeline-content"><div class="empty" style="padding:60px 0">Enter a product name and click ▶ Run Pipeline.</div></div>
+      </div>
+
+      <!-- RIGHT: webhook preview + feedback side by side -->
+      <div style="display:grid;grid-template-columns:1fr 280px;gap:16px;align-items:start;">
+
+        <!-- embed -->
+        <div>
+          <div class="section-title">Webhook Preview</div>
+          <div class="embed-preview-wrap">
+            <h3>Discord Embed</h3>
+            <div id="embed-preview-body"><div class="empty" style="padding:40px 0;font-size:12px">Preview appears after pipeline run</div></div>
+            <div id="webhook-send-list" style="margin-top:12px"></div>
+          </div>
+        </div>
+
+        <!-- feedback -->
+        <div>
+          <div class="section-title">Corrections</div>
+          <div class="embed-preview-wrap" style="height:calc(100% - 36px);box-sizing:border-box;">
+            <div class="feedback-box" style="margin-top:0;border-top:none;padding-top:0;">
+              <label style="margin-bottom:8px;">💬 Tell Claude what's wrong — re-runs full pipeline with your correction injected as intel</label>
+              <textarea id="feedback-notes" style="min-height:180px;width:100%;box-sizing:border-box;" placeholder="e.g. Retail is $59.99 not $79.99. Rookie class is weak. The eBay comp you found is a different SKU — ignore it."></textarea>
+              <button class="rerun-btn" id="rerun-btn" style="margin-top:10px;width:100%;" onclick="rerunWithFeedback()">🔄 Re-run with Feedback</button>
+              <div id="rerun-status" style="margin-top:6px;font-size:11px;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+const API = 'http://localhost:3434';
+let currentDb = null, currentPage = 1, currentSearch = '', dbTotal = 0;
+
+// ── Tab navigation ─────────────────────────────────────────────────────────
+document.querySelectorAll('nav button[data-tab]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    if (btn.dataset.tab === 'research') loadPipeline();
+    if (btn.dataset.tab === 'history') loadHistory();
+    if (btn.dataset.tab === 'feed') loadFeed(true);
+    if (btn.dataset.tab === 'docs') loadDocs();
+  });
+});
+
+// ── DOCS ───────────────────────────────────────────────────────────────────
+let _docsCache = null;
+function mdToHtml(md) {
+  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const lines = md.split('\n');
+  let html = '', inCode = false, inTable = false, inList = false;
+  for (let raw of lines) {
+    const line = raw;
+    if (line.startsWith('```')) {
+      if (!inCode) { if (inList){html+='</ul>';inList=false;} html += '<pre style="background:#0f1117;border:1px solid #2a2d3a;border-radius:6px;padding:12px;overflow-x:auto;font-size:12px;margin:8px 0"><code>'; inCode = true; }
+      else { html += '</code></pre>'; inCode = false; }
+      continue;
+    }
+    if (inCode) { html += esc(line) + '\n'; continue; }
+    if (line.startsWith('|')) {
+      if (!inTable) { if(inList){html+='</ul>';inList=false;} html += '<table style="width:100%;border-collapse:collapse;margin:8px 0;font-size:13px">'; inTable = true; }
+      const cells = line.split('|').filter((_,i,a)=>i>0&&i<a.length-1);
+      const isDiv = cells.every(c => /^[-: ]+$/.test(c));
+      if (!isDiv) {
+        const tag = inTable && !html.includes('<tbody') ? 'th style="text-align:left;padding:6px 10px;border-bottom:1px solid #2a2d3a;color:#6b7280;font-size:11px;text-transform:uppercase"' : 'td style="padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.04)"';
+        html += '<tr>' + cells.map(c=>`<${tag}>${inline(c.trim())}</${tag.split(' ')[0]}>`).join('') + '</tr>';
+        if (!html.includes('<tbody') && tag.startsWith('td')) html = html.replace('<table','<table');
+      }
+      continue;
+    } else if (inTable) { html += '</table>'; inTable = false; }
+    if (/^#{1,3} /.test(line)) {
+      if(inList){html+='</ul>';inList=false;}
+      const lvl = line.match(/^(#+)/)[1].length;
+      const sz = lvl===1?'20px':lvl===2?'17px':'15px';
+      const mt = lvl===1?'24px':'16px';
+      html += `<h${lvl} style="font-size:${sz};font-weight:700;margin:${mt} 0 8px;color:#e2e8f0;border-bottom:${lvl<=2?'1px solid #2a2d3a':''};padding-bottom:${lvl<=2?'6px':'0'}">${inline(line.replace(/^#+\s*/,''))}</h${lvl}>`;
+      continue;
+    }
+    if (/^[-*] /.test(line)) {
+      if (!inList) { html += '<ul style="margin:6px 0 6px 20px">'; inList = true; }
+      html += `<li style="margin:3px 0">${inline(line.replace(/^[-*] /,''))}</li>`;
+      continue;
+    }
+    if (inList) { html += '</ul>'; inList = false; }
+    if (line.trim() === '---') { html += '<hr style="border:none;border-top:1px solid #2a2d3a;margin:16px 0">'; continue; }
+    if (line.trim() === '') { html += '<div style="height:6px"></div>'; continue; }
+    html += `<p style="margin:4px 0">${inline(line)}</p>`;
+  }
+  if (inCode) html += '</code></pre>';
+  if (inTable) html += '</table>';
+  if (inList) html += '</ul>';
+  return html;
+}
+function inline(s) {
+  const esc = t => t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return esc(s)
+    .replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')
+    .replace(/`([^`]+)`/g,'<code style="background:#1a1d27;border:1px solid #2a2d3a;border-radius:3px;padding:1px 5px;font-size:12px">$1</code>')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g,'<span style="color:#6366f1">$1</span>');
+}
+async function loadDocs(selectFile) {
+  if (!_docsCache) {
+    const res = await fetch(`${API}/api/docs`);
+    _docsCache = await res.json();
+  }
+  const sidebar = document.getElementById('docs-sidebar');
+  const content = document.getElementById('docs-content');
+  const active = selectFile ?? (_docsCache[0]?.name);
+  sidebar.innerHTML = _docsCache.map(d => `
+    <button onclick="loadDocs('${d.name}')" style="background:${d.name===active?'rgba(99,102,241,.15)':'none'};border:${d.name===active?'1px solid rgba(99,102,241,.4)':'1px solid transparent'};color:${d.name===active?'#e2e8f0':'#6b7280'};padding:7px 10px;border-radius:6px;cursor:pointer;font-size:12px;text-align:left;width:100%;transition:all .15s">
+      ${d.name.replace('.md','')}
+    </button>`).join('');
+  const doc = _docsCache.find(d => d.name === active);
+  if (doc) content.innerHTML = mdToHtml(doc.content);
+}
+
+// ── DATABASES ─────────────────────────────────────────────────────────────
+async function loadDatabases() {
+  const res = await fetch(`${API}/api/databases`);
+  const data = await res.json();
+  const grid = document.getElementById('db-grid');
+  grid.innerHTML = Object.entries(data).map(([key, db]) => `
+    <div class="db-card" onclick="openDb('${key}','${db.label}','${db.icon}')">
+      <div class="icon">${db.icon}</div>
+      <div class="count">${db.count.toLocaleString()}</div>
+      <div class="label">${db.label}</div>
+      <div class="meta">${db.updated ? 'Updated ' + db.updated : ''}</div>
+    </div>
+  `).join('');
+}
+
+function openDb(key, label, icon) {
+  currentDb = key; currentPage = 1; currentSearch = '';
+  document.getElementById('db-view-title').textContent = icon + ' ' + label;
+  document.getElementById('db-search').value = '';
+  document.getElementById('db-grid').style.display = 'none';
+  document.querySelector('.section-title').style.display = 'none';
+  document.getElementById('db-view').classList.add('active');
+  loadDbPage();
+}
+
+function closeDb() {
+  document.getElementById('db-view').classList.remove('active');
+  document.getElementById('db-grid').style.display = '';
+  document.querySelector('.section-title').style.display = '';
+  document.getElementById('db-tbody').innerHTML = '';
+}
+
+async function loadVariants(dbKey, setId, setName) {
+  const panel = document.getElementById('db-variants-panel');
+  const title = document.getElementById('variants-title');
+  const tbody = document.getElementById('variants-tbody');
+  if (!panel || !title || !tbody) return;
+
+  title.textContent = `Variants: ${setName}`;
+  tbody.innerHTML = '<tr><td colspan="5" class="empty" style="padding:40px"><span class="spinner"></span> Loading…</td></tr>';
+  panel.style.display = 'block';
+
+  try {
+    const url = `${API}/api/db/${dbKey}/${encodeURIComponent(setId)}/variants`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    if (!data.variants || !data.variants.length) {
+      tbody.innerHTML = '<tr><td colspan="5" class="empty">No product variants found</td></tr>';
+      return;
+    }
+    tbody.innerHTML = data.variants.map(v => `
+      <tr>
+        <td><strong>${escHtml(v.name)}</strong></td>
+        <td>${v.current != null ? '$' + v.current.toFixed(2) : '—'}</td>
+        <td>${v.ath != null ? '$' + v.ath.toFixed(2) : '—'}</td>
+        <td>${v.first != null ? '$' + v.first.toFixed(2) : '—'}</td>
+        <td>${v.months != null ? v.months.toFixed(1) + ' mo' : '—'}</td>
+      </tr>
+    `).join('');
+  } catch (e) {
+    tbody.innerHTML = `<tr><td colspan="5" class="empty" style="color:var(--red)">Error: ${escHtml(e.message)}</td></tr>`;
+  }
+
+  // individual cards (fullCardList)
+  const ctbody = document.getElementById('cards-tbody');
+  const ctitle = document.getElementById('cards-title');
+  if (ctbody) {
+    ctbody.innerHTML = '<tr><td colspan="5" class="empty"><span class="spinner"></span> Loading cards…</td></tr>';
+    try {
+      const cr = await fetch(`${API}/api/db/${dbKey}/${encodeURIComponent(setId)}/cards?limit=100`);
+      if (!cr.ok) throw new Error(`HTTP ${cr.status}`);
+      const cd = await cr.json();
+      if (ctitle) ctitle.textContent = `Individual Cards (${cd.total ?? 0}${cd.fetchedAt ? ' · ' + cd.fetchedAt.slice(0,10) : ''})`;
+      ctbody.innerHTML = (cd.cards && cd.cards.length)
+        ? cd.cards.map(c => `
+          <tr>
+            <td><strong>${escHtml(c.name)}</strong></td>
+            <td>${c.market != null ? '$' + c.market.toFixed(2) : '—'}</td>
+            <td>${escHtml(c.rarity ?? '—')}</td>
+            <td>${escHtml(c.number ?? '—')}</td>
+            <td>${c.points ?? 0} pt${c.lastDate ? ' · ' + c.lastDate : ''}</td>
+          </tr>`).join('')
+        : '<tr><td colspan="5" class="empty">No individual cards tracked</td></tr>';
+    } catch (e) {
+      ctbody.innerHTML = `<tr><td colspan="5" class="empty" style="color:var(--red)">Error: ${escHtml(e.message)}</td></tr>`;
+    }
+  }
+}
+
+function closeVariants() {
+  document.getElementById('db-variants-panel').style.display = 'none';
+}
+
+function dbSearch(q) { currentSearch = q; currentPage = 1; loadDbPage(); }
+
+async function loadDbPage() {
+  const url = `${API}/api/db/${currentDb}?q=${encodeURIComponent(currentSearch)}&page=${currentPage}&limit=50`;
+  const res = await fetch(url);
+  const { total, entries } = await res.json();
+  dbTotal = total;
+
+  // Build columns based on available fields
+  const sample = entries[0] ?? {};
+  const isLego = currentDb === 'lego';
+  const isSports = currentDb === 'sports';
+  const isTcg = ['pokemon','mtg','lorcana','other_tcg','one_piece'].includes(currentDb);
+
+  let cols, rowFn;
+  if (isLego) {
+    cols = ['Set #','Name','Theme','Retail','Market (New)','ROI','CAGR','Status','EOL / Retired'];
+    rowFn = e => `
+      <td>${e.setNum ?? e.id ?? '—'}</td>
+      <td>${e.name ?? '—'}</td>
+      <td>${e.theme ?? '—'}</td>
+      <td>${e.retail ? '$' + e.retail : '—'}</td>
+      <td>${e.valueNew ? '$' + e.valueNew : '—'}</td>
+      <td>${e.roiPct != null ? e.roiPct + '%' : '—'}</td>
+      <td>${e.cagr != null ? e.cagr + '%' : '—'}</td>
+      <td><span class="tag ${e.status === 'retired' ? 'retired' : e.status === 'active-retiring' ? 'ar' : 'active'}">${e.status ?? '—'}</span></td>
+      <td>${e.retiredOn ?? e.projRetire ?? '—'}</td>
+    `;
+  } else if (isTcg || isSports) {
+    cols = ['Code','Set','Best Type','MSRP','Source','Market','ATH','ROI vs MSRP'];
+    rowFn = e => {
+      const types = Object.keys(e.products ?? {});
+      const best  = types.reduce((b, t) => { const p = e.products[t]; return (!b || (p?.current ?? 0) > (e.products[b]?.current ?? 0)) ? t : b; }, null);
+      const cur   = best && e.products[best]?.current ? e.products[best].current : null;
+      const msrp  = e.retail ?? null;
+      const roi   = (msrp && cur) ? Math.round(((cur - msrp) / msrp) * 100) : null;
+      const ver   = e.retailVerified === true || /stockx|msrp|verified|sam'?s|target|best ?buy|walmart|bulbapedia/i.test(e.retailSource ?? '');
+      return `
+        <td>${e.code ?? e.setCode ?? '—'}</td>
+        <td>${e.name ?? e.id ?? '—'}</td>
+        <td>${best ?? '—'}</td>
+        <td>${msrp != null ? '$' + msrp + (ver ? ' ✅' : ' ⚠️') : '—'}</td>
+        <td>${e.retailSource ? String(e.retailSource).split(' (')[0] : (ver ? 'verified' : '—')}</td>
+        <td>${cur != null ? '$' + cur : '—'}</td>
+        <td>${best && e.products[best]?.ath ? '$' + e.products[best].ath : '—'}</td>
+        <td>${roi != null ? `<span class="tag ${roi >= 50 ? 'active' : roi >= 0 ? 'ar' : 'retired'}">${roi >= 0 ? '+' : ''}${roi}%</span>` : '—'}</td>
+      `;
+    };
+  } else if (currentDb === 'mattel') {
+    cols = ['Sub-Cat','Name','Retail','Release','Status','Market','ROI'];
+    rowFn = e => `
+      <td>${e.subCategory ?? '—'}</td>
+      <td>${e.name ?? '—'}</td>
+      <td>${e.retail != null ? '$' + e.retail : '—'}</td>
+      <td>${e.releaseDate ?? '—'}</td>
+      <td><span class="tag ${e.status === 'released' ? 'active' : 'ar'}">${e.status ?? '—'}</span></td>
+      <td>${e.marketAtResearch != null ? '$' + e.marketAtResearch : '—'}</td>
+      <td>${e.roiPct != null ? (e.roiPct >= 0 ? '+' : '') + e.roiPct + '%' : '—'}</td>
+    `;
+  } else if (currentDb === 'noncard') {
+    cols = ['Name','Category','Retail','Market','Rating','Logged'];
+    rowFn = e => `
+      <td>${e.name ?? '—'}</td>
+      <td>${e.category ?? '—'}</td>
+      <td>${e.retail != null ? '$' + e.retail : '—'}</td>
+      <td>${e.marketAtResearch != null ? '$' + e.marketAtResearch : '—'}</td>
+      <td><span class="tag ${/DBLGREEN|GREEN/.test(e.rating) ? 'active' : /RED/.test(e.rating) ? 'retired' : 'ar'}">${e.rating ?? '—'}</span></td>
+      <td>${e.dateLogged ?? '—'}</td>
+    `;
+  } else {
+    cols = Object.keys(sample).filter(k => !['products','months','series'].includes(k)).slice(0, 6);
+    rowFn = e => cols.map(c => `<td>${typeof e[c] === 'object' ? '…' : (e[c] ?? '—')}</td>`).join('');
+  }
+
+  document.getElementById('db-thead').innerHTML = `<tr>${cols.map(c => `<th>${c}</th>`).join('')}</tr>`;
+  document.getElementById('db-tbody').innerHTML = entries.length
+    ? entries.map(e => `<tr onclick="loadVariants('${currentDb}','${escHtml(e.id)}','${escHtml(e.name ?? e.setName ?? e.id)}')" style="cursor:pointer" title="Click to view product variants">${rowFn(e)}</tr>`).join('')
+    : `<tr><td colspan="${cols.length}" class="empty">No results</td></tr>`;
+
+  // Pagination
+  const totalPages = Math.ceil(total / 50);
+  document.getElementById('db-pagination').innerHTML = `
+    <button onclick="goPage(${currentPage-1})" ${currentPage<=1?'disabled':''}>← Prev</button>
+    <span class="info">Page ${currentPage} of ${totalPages} (${total.toLocaleString()} entries)</span>
+    <button onclick="goPage(${currentPage+1})" ${currentPage>=totalPages?'disabled':''}>Next →</button>
+  `;
+}
+
+function goPage(p) { currentPage = p; loadDbPage(); }
+
+// Ingest
+async function runIngest() {
+  const text = document.getElementById('ingest-text').value;
+  const el   = document.getElementById('ingest-result');
+  if (!text.trim()) { el.textContent = 'Paste some text first.'; return; }
+  el.innerHTML = '<span class="spinner"></span>';
+  const res  = await fetch(`${API}/api/ingest`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ text, targetDb: currentDb }) });
+  const data = await res.json();
+  el.textContent = data.hint ?? data.error ?? 'Done';
+}
+
+// ── PIPELINE STATUS ───────────────────────────────────────────────────────
+const PRICING_KEYS = [
+  ['ebay',       'eBay Sold', 'Last 30d real transaction volume; 12+ units = floor; <5 = illiquid'],
+  ['target',     'Target', 'Retail price + in-stock status; markup vs MSRP flags demand'],
+  ['amazon',     'Amazon', '3P prices only; >retail×1.1 = scalp; ≤retail×0.8 = wrong SKU match'],
+  ['walmart',    'Walmart', '3P clearance pricing; in-stock = retail availability signal'],
+  ['stockx',     'StockX', 'Real bid/bid spread; MSRP from productAttributes.retailPrice; spread >50% = illiquid'],
+  ['tcgplayer',  'TCGPlayer', 'TCG market price; guard against wrong-product match (TCG >eBay×2 = red flag)'],
+  ['pricecharting', 'PriceCharting', 'Historical sealed DB; chart_data.used = secondary market floor'],
+  ['dealernetx', 'DealernetX', 'B2B wholesale prices; 30% discount typical; volume-gated access'],
+  ['internalDb', 'Internal DB', 'set-history-*.json; per-product retail + first/ath/current prices'],
+  ['market',     'Market (Wtd)', 'Weighted blend: eBay 40% + DX 30% + TCG 35% + 3P 7-8%; eBay anchors floor'],
+];
+const SENTIMENT_KEYS = [
+  ['reddit',   'Reddit', '9+ mentions = baseline convo; sentiment >0 = bullish; <3 = noise'],
+  ['x',        'X / Twitter', '3-pass scroll max 50 tweets; retweet ratio shows echo vs organic; >10% neg = concern'],
+  ['instagram','Instagram', '5 smart hashtags × 3-pass; post count mirrors trend velocity; captions = real demand drivers'],
+  ['facebook', 'Facebook', '4-pass scroll max 25 posts; group chatter + marketplace listings; engagement = intent'],
+  ['discord',  'Discord', '10 channels × 500 msgs max; keyword filter (product name, identifier); 0 msgs = no community hype'],
+  ['whatnot',  'Whatnot', 'Live listing count + bid velocity; auctions running = real buyer demand; stale = low interest'],
+  ['google',   'Google / Bing', '4 search URLs max 30 deduped snippets; recent articles > old; "sold out" mentions = scarcity signal'],
+  ['blowout',  'Blowout Forums', 'Fuzzy + exact match search; min 10 commentary notes; collector sentiment + early product intel'],
+  ['youtube',  'YouTube Breaks', 'Top videos by view count (past 30 days); min 3 results; contents reveal hit quality + pre-release intel'],
+];
+
+// Live state updated as stdout lines come in
+let liveState = {};
+
+function initLiveChecklist(label) {
+  liveState = {};
+  const meta = `<div class="run-meta">
+    <div><div class="field">Product</div><div class="value" id="lm-label">${escHtml(label)}</div></div>
+    <div><div class="field">Rating</div><div class="value" id="lm-rating">—</div></div>
+    <div><div class="field">Evidence</div><div class="value" id="lm-evidence">—</div></div>
+    <div><div class="field">Embed</div><div class="value" id="lm-embed">—</div></div>
+  </div>`;
+
+  const makeRows = keys => keys.map(([k, lbl, logic]) =>
+    `<div class="check-item" id="ci-${k}">
+      <div class="dot pending" id="dot-${k}"></div>
+      <div class="check-label">${lbl}</div>
+      <div style="font-size:10px;color:var(--muted);line-height:1.3;border:1px solid var(--border);padding:4px 6px;border-radius:4px;background:rgba(255,255,255,.02);overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${logic || '—'}">${logic || '—'}</div>
+      <div class="check-data" id="cd-${k}">waiting…</div>
+    </div>`
+  ).join('');
+
+  document.getElementById('pipeline-content').innerHTML = meta +
+    `<div class="cl-section">
+      <div class="cl-section-head">💰 Pricing <span class="cl-badge" id="badge-pricing">0/${PRICING_KEYS.length}</span></div>
+      ${makeRows(PRICING_KEYS)}
+    </div>
+    <div class="cl-section">
+      <div class="cl-section-head">📡 Sentiment <span class="cl-badge" id="badge-sentiment">0/${SENTIMENT_KEYS.length}</span></div>
+      ${makeRows(SENTIMENT_KEYS)}
+    </div>
+    <div id="evidence-section"></div>`;
+}
+
+// Line patterns → [regex, key, dataFn, status]
+// status: 'fetching' = blinking yellow; 'ok'/'na'/'err' = terminal
+// omit status → auto-detect: N/A→na, failed→err, else ok
+const LINE_PATTERNS = [
+  // ── [source] fetching… → blinking yellow dot
+  [/\[(ebay-sold|ebay-active|target|amazon|walmart|stockx|reddit|x|instagram|facebook|google|discord|whatnot|dealernetx[^\]]*|bestbuy)\]\s*fetching/i, null, (m, line) => {
+    const srcMap = { 'ebay-sold':'ebay','ebay-active':'ebay','dealernetx-hist':'dealernetx','bestbuy':'target' };
+    const raw = m[1].toLowerCase();
+    const key = srcMap[raw] ?? raw;
+    updateLiveItem(key, 'fetching…', 'fetching');
+  }],
+  // ── [deep-research] Running → set ALL to fetching at once
+  [/\[deep-research\]\s*Running/i, null, () => {
+    [...PRICING_KEYS, ...SENTIMENT_KEYS].forEach(([k]) => updateLiveItem(k, 'fetching…', 'fetching'));
+  }],
+  // ── eBay sold result
+  [/\[ebay-sold\]\s*sold30\s*(\d+)[^|]*\|\s*sold90\s*(\d+)[^|]*\|\s*median\s*\$?([\d,.]+)/i, 'ebay', m => `sold30 ${m[1]} / sold90 ${m[2]} | median $${m[3]}`],
+  [/\[ebay-sold\]\s*(.+)/i,   'ebay',       m => m[1]],
+  // ── eBay active result (only if ebay not terminal yet — updateLiveItem handles guard)
+  [/\[ebay-active\]\s*active\s*(\d+)[^,]*,?\s*median\s*\$?([\d,.]+)/i, null, m => { updateLiveItem('ebay', `active ${m[1]} listings, median $${m[2]}`, 'ok'); }],
+  [/\[ebay-active\]\s*(.+)/i, null,          m => { updateLiveItem('ebay', m[1], /n\/a|0 list/i.test(m[1]) ? 'na' : 'ok'); }],
+  // ── Pricing terminals
+  [/\[target\]\s*\$?([\d.]+)\s*\((.+?)\)/i,    'target',    m => `$${m[1]} (${m[2]})`],
+  [/\[target\]\s*(N\/A|failed.{0,40})/i,        'target',    m => m[1], 'na'],
+  [/\[amazon\]\s*\$?([\d.]+)\s*\((.+?)\)/i,     'amazon',    m => `$${m[1]} (${m[2]})`],
+  [/\[amazon\]\s*(N\/A|failed.{0,40})/i,         'amazon',    m => m[1], 'na'],
+  [/\[walmart\]\s*\$?([\d.]+)\s*\((.+?)\)/i,    'walmart',   m => `$${m[1]} (${m[2]})`],
+  [/\[walmart\]\s*(N\/A|failed.{0,40})/i,        'walmart',   m => m[1], 'na'],
+  [/\[stockx\]\s*\$?([\d.]+)\s*\(ask/i,          'stockx',    m => m[0].replace(/^\s*\[stockx\]\s*/i,'').trim()],
+  [/\[stockx\]\s*(N\/A|failed.{0,40})/i,         'stockx',    m => m[1], 'na'],
+  [/\[dealernetx[^\]]*\]\s*(\d+)\s*wholesale/i,  'dealernetx',m => `${m[1]} wholesale results`, 'ok'],
+  [/\[dealernetx[^\]]*\]\s*(0 .+|N\/A|failed)/i, 'dealernetx',m => m[1], 'na'],
+  [/TCGPlayer market:\s*\$?([\d,.]+)/i,           'tcgplayer', m => `market $${m[1]}`],
+  [/\[tcgplayer\]|tcg price/i,                    'tcgplayer', () => 'fetched', 'ok'],
+  [/\[pricecharting\][^$]*\$([\d,.]+)/i,          'pricecharting', m => `$${m[1]} (DB)`, 'ok'],
+  [/\[form\]\s*retail override[:\s]*\$?([\d,.]+)/i,'internalDb',m => `retail override $${m[1]}`],
+  [/products map loaded.*retail\s*\$?([\d.]+)/i,  'internalDb',m => `retail $${m[1]}`],
+  [/Market\s*\(weighted avg\):\s*\$?([\d,.]+)/i,  'market',    m => `$${m[1]} weighted avg`],
+  [/market\s*\(weighted[^)]*\)[:\s]*\$?([\d,.]+)/i,'market',   m => `$${m[1]} weighted avg`],
+  // ── Sentiment terminals
+  [/\[reddit\]\s*(\d+)\s*mentions/i,              'reddit',    m => `${m[1]} mentions`],
+  [/\[reddit\]\s*(N\/A|0 mentions|failed.{0,40})/i,'reddit',   m => m[1], 'na'],
+  [/\[x\]\s*(\d+)\s*tweets/i,                     'x',         m => `${m[1]} tweets`],
+  [/\[x\]\s*(N\/A|0 tweets|failed.{0,40})/i,      'x',         m => m[1], 'na'],
+  [/\[instagram\]\s*(\d+)\s*posts$/i,              'instagram', m => `${m[1]} posts`],
+  [/\[facebook\]\s*(\d+)\s*posts/i,               'facebook',  m => `${m[1]} posts`],
+  [/\[facebook\]\s*(N\/A|0 posts|failed.{0,40})/i,'facebook',  m => m[1], 'na'],
+  [/\[discord\]\s*(\d+)\s*mentions/i,              'discord',   m => `${m[1]} mentions`],
+  [/\[discord\]\s*(0 mentions|N\/A)/i,             'discord',   m => m[1], 'na'],
+  [/\[whatnot\]\s*(\d+)\s*listings/i,             'whatnot',   m => `${m[1]} listings`],
+  [/\[whatnot\]\s*(N\/A|0 listings|failed.{0,40})/i,'whatnot', m => m[1], 'na'],
+  [/\[google\]\s*(\d+)\s*results/i,               'google',    m => `${m[1]} results`],
+  [/\[google\]\s*(0 results|N\/A|failed.{0,40})/i,'google',    m => m[1], 'na'],
+  [/Bing\/DDG search snippets fetched/i,           'google',    () => 'snippets fetched'],
+  [/\[blowout\]|blowoutforums/i,                  'blowout',   () => 'fetched'],
+  [/youtube|yt-dlp/i,                             'youtube',   () => 'processing…'],
+  // ── Meta
+  [/SENT\s+(\d+)/, null, m => { const el=document.getElementById('lm-embed'); if(el) el.textContent=`SENT ${m[1]}`; }],
+  [/evidence gate:\s*(\d+)/i, null, m => { const el=document.getElementById('lm-evidence'); if(el) el.textContent=`${m[1]}/3 passed`; }],
+  [/Rating:\s*(DBLGREEN|GREEN|ORANGE|RED)/i, null, m => { const el=document.getElementById('lm-rating'); if(el) el.textContent=m[1]; }],
+];
+
+const TERMINAL = new Set(['ok','na','err','skip']);
+function updateLiveItem(key, data, status = 'ok') {
+  const dot = document.getElementById(`dot-${key}`);
+  const cd  = document.getElementById(`cd-${key}`);
+  if (!dot || !cd) return;
+  // allow upgrade: pending→fetching→terminal; never downgrade a terminal status
+  const prev = liveState[key]?.status;
+  if (prev && TERMINAL.has(prev)) return;
+  liveState[key] = { status, data };
+  dot.className = `dot ${status}`;
+  cd.textContent = data;
+  if (TERMINAL.has(status)) cd.classList.add('live');
+  // update badge counts (only terminal states count as "done")
+  const pDone = PRICING_KEYS.filter(([k]) => TERMINAL.has(liveState[k]?.status)).length;
+  const sDone = SENTIMENT_KEYS.filter(([k]) => TERMINAL.has(liveState[k]?.status)).length;
+  const bp = document.getElementById('badge-pricing');
+  const bs = document.getElementById('badge-sentiment');
+  if (bp) bp.textContent = `${pDone}/${PRICING_KEYS.length}`;
+  if (bs) bs.textContent = `${sDone}/${SENTIMENT_KEYS.length}`;
+}
+
+function parseLiveLine(line) {
+  for (const [re, key, fn, statusOverride] of LINE_PATTERNS) {
+    const m = line.match(re);
+    if (m) {
+      if (key) {
+        const data = fn(m, line);
+        const s = statusOverride ?? (/n\/a|\b0 (listing|mention|result|tweet|post)\b/i.test(data) ? 'na' : /fail|error/i.test(data) ? 'err' : 'ok');
+        updateLiveItem(key, typeof data === 'string' ? data : '', s);
+      } else {
+        fn(m, line);
+      }
+      break;
+    }
+  }
+}
+
+async function loadPipeline() {
+  document.getElementById('pipeline-content').innerHTML = '<div class="empty"><span class="spinner"></span> Loading…</div>';
+  const res  = await fetch(`${API}/api/pipeline-status`);
+  const data = await res.json();
+  if (data.error) { document.getElementById('pipeline-content').innerHTML = `<div class="empty">${data.error}</div>`; return; }
+  // Restore resolvedKey from last run so Re-run with Feedback works without re-typing product name
+  if (data.key && !resolvedKey) resolvedKey = data.key;
+  renderPipeline(data);
+}
+
+function renderPipeline(d) {
+  lastPipelineResult = d;
+  const ratingClass = d.rating ?? 'ORANGE';
+  const P = d.pricing ?? {};
+  const S = d.sentiment ?? {};
+
+  const makeRows = (keys, src) => keys.map(([k, lbl, logic]) => {
+    const s = src[k];
+    const status = s?.status ?? 'skip';
+    const data   = s?.data   ?? (status === 'skip' ? 'N/A for category' : 'not run');
+    const labelHtml = s?.url
+      ? `<a href="${escHtml(s.url)}" target="_blank" rel="noopener">${lbl}</a>`
+      : lbl;
+    return `<div class="check-item">
+      <div class="dot ${status}"></div>
+      <div class="check-label">${labelHtml}</div>
+      <div style="font-size:10px;color:var(--muted);line-height:1.3;border:1px solid var(--border);padding:4px 6px;border-radius:4px;background:rgba(255,255,255,.02);overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${logic || '—'}">${logic || '—'}</div>
+      <div class="check-data ${status === 'ok' ? 'live' : ''}">${escHtml(data)}</div>
+    </div>`;
+  }).join('');
+
+  const evLines = (d.evidence?.items ?? []).map(ev =>
+    `[${ev.source}] (${ev.date})\n${ev.point}`
+  ).join('\n\n');
+
+  const ep = d.embedPayload ? { ...d.embedPayload, _webhooks: d.webhooks ?? [] } : null;
+  renderEmbedPreview(ep);
+  document.getElementById('pipeline-content').innerHTML = `
+    <div class="run-meta">
+      <div><div class="field">Product</div><div class="value">${escHtml(d.label ?? d.key ?? '—')}</div></div>
+      <div><div class="field">Category</div><div class="value">${d.category ?? '—'}</div></div>
+      <div><div class="field">Run At</div><div class="value">${d.runAt ? new Date(d.runAt).toLocaleString() : '—'}</div></div>
+      <div><div class="field">Rating</div><div class="value"><span class="rating-badge ${ratingClass}">${d.rating ?? '—'}</span></div></div>
+      <div><div class="field">Embed</div><div class="value">${d.embed?.status ?? '—'}</div></div>
+      <div><div class="field">Evidence</div><div class="value" style="color:${d.evidence?.gate==='passed'?'var(--green)':'var(--red)'}">${d.evidence?.gate ?? '—'} (${d.evidence?.count ?? 0}/3)</div></div>
+    </div>
+    <div class="cl-section">
+      <div class="cl-section-head">💰 Pricing</div>
+      ${makeRows(PRICING_KEYS, P)}
+    </div>
+    <div class="cl-section">
+      <div class="cl-section-head">📡 Sentiment</div>
+      ${makeRows(SENTIMENT_KEYS, S)}
+    </div>
+    ${evLines ? `<div class="cl-section"><div class="cl-section-head">📌 Evidence Points (${d.evidence?.count ?? 0}/3 — ${d.evidence?.gate ?? '?'})</div><div style="padding:12px 14px"><textarea class="evidence-box" readonly>${escHtml(evLines)}</textarea></div></div>` : ''}`;
+}
+
+// ── NEW RESEARCH ──────────────────────────────────────────────────────────
+let resolvedKey = null;
+let productKeys = [];
+
+async function loadProductKeys() {
+  const res = await fetch(`${API}/api/products`);
+  productKeys = await res.json();
+  // re-match if user already typed a name before keys loaded
+  const name = document.getElementById('rk-name')?.value?.trim();
+  if (name) liveMatch(name);
+}
+
+function scoreKeys(name) {
+  const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const needle = norm(name);
+  const ngrams = s => { const r = new Set(); for (let i=0;i<s.length-2;i++) r.add(s.slice(i,i+3)); return r; };
+  const na = ngrams(needle);
+  const TYPE_WORDS = ['blister', 'boosterbox', 'booster', 'hobby', 'jumbo', 'etb', 'tin', 'bundle', 'starter', 'display', 'mega', 'hanger', 'collector'];
+  const needleTypes = TYPE_WORDS.filter(t => needle.includes(t));
+
+  return productKeys.map(k => {
+    const kn = norm(k);
+    let score = 0;
+    if (kn === needle) score = 100;
+    else if (kn.includes(needle) || needle.includes(kn)) score = 70;
+    else {
+      const nb = ngrams(kn);
+      let c = 0; na.forEach(g => { if (nb.has(g)) c++; });
+      score = Math.round((c / Math.max(na.size, nb.size, 1)) * 60);
+    }
+
+    // Type word discrimination: if needle has a type word, key must have that SAME type word
+    if (needleTypes.length > 0) {
+      const keyTypes = TYPE_WORDS.filter(t => kn.includes(t));
+      const hasMatchingType = needleTypes.some(t => keyTypes.includes(t));
+      // If key has no type word at all, allow through (generic key)
+      // If key has type words but none match needle's, score = 0
+      if (keyTypes.length > 0 && !hasMatchingType) {
+        score = 0;
+      }
+    }
+
+    return { k, score };
+  }).filter(s => s.score >= 8).sort((a, b) => b.score - a.score);
+}
+
+function pickKey(k) {
+  resolvedKey = k;
+  document.getElementById('rk-match').innerHTML =
+    `<div style="margin-top:4px"><span style="cursor:pointer;display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;background:#1e3a2a;border:1px solid var(--green);color:var(--green)">${k}</span> <span style="font-size:11px;color:var(--muted)">✓ selected</span></div>`;
+  document.getElementById('run-btn').textContent = `▶ Run: ${k}`;
+}
+
+function liveMatch(name) {
+  const el = document.getElementById('rk-match');
+  if (!name.trim() || !productKeys.length) { el.innerHTML = ''; resolvedKey = null; document.getElementById('run-btn').textContent = '▶ Run Pipeline'; return; }
+  const scored = scoreKeys(name);
+  if (!scored.length) {
+    resolvedKey = null;
+    el.innerHTML = `<span style="color:var(--yellow)">⚠ No close match — will attempt with typed name</span>`;
+    return;
+  }
+  // Never auto-select — user must explicitly click a suggestion
+  resolvedKey = null;
+  document.getElementById('run-btn').textContent = '▶ Run Pipeline';
+  const pills = scored.slice(0, 4).map((s, i) =>
+    `<span onclick="pickKey('${s.k}')" style="cursor:pointer;display:inline-block;margin:2px 4px 2px 0;padding:2px 8px;border-radius:10px;font-size:11px;background:#1a1d27;border:1px solid var(--border);color:var(--muted)">${s.k}</span>`
+  ).join('');
+  el.innerHTML = `<div style="margin-top:4px"><span style="font-size:11px;color:var(--muted)">Suggestions (click to select):</span> ${pills}</div>`;
+}
+
+async function runResearch() {
+  const name = document.getElementById('rk-name').value.trim();
+  if (!name) { alert('Enter a product name'); return; }
+  if (!resolvedKey && productKeys.length) liveMatch(name);
+  const log = document.getElementById('stream-log');
+  log.innerHTML = ''; log.classList.add('active');
+  // No existing key → auto-create product entry, then run pipeline
+  if (!resolvedKey) {
+    log.innerHTML += `<div class="ok-line">⚙ No existing product found — auto-creating "${escHtml(name)}"…</div>`;
+    const cat    = getCategory();
+    const url    = document.getElementById('rk-url').value.trim();
+    const notes  = document.getElementById('rk-notes').value.trim();
+    const retail = parseFloat(document.getElementById('rk-retail').value) || null;
+    const r = await fetch(`${API}/api/create-product`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, category: cat, url, notes, retail }),
+    });
+    const d = await r.json();
+    if (!r.ok || d.error) { log.innerHTML += `<div class="err-line">✗ ${d.error}</div>`; return; }
+    log.innerHTML += `<div class="ok-line">✓ Created: ${d.key} — running deep research…</div>`;
+    resolvedKey = d.key;
+    document.getElementById('rk-match').innerHTML = `<span style="color:var(--green)">✓ auto-created → ${d.key}</span>`;
+    productKeys.push(d.key);
+  }
+  await _streamPipeline(resolvedKey, log);
+}
+
+async function _streamPipeline(key, log) {
+  const label    = document.getElementById('rk-name')?.value?.trim() || key;
+  const retail   = document.getElementById('rk-retail')?.value?.trim() || null;
+  const url      = document.getElementById('rk-url')?.value?.trim()    || null;
+  const notes    = document.getElementById('rk-notes')?.value?.trim()  || null;
+  const catSel   = document.getElementById('rk-cat')?.value;
+  const catCustom= document.getElementById('rk-cat-custom')?.value?.trim();
+  const category = (catSel === '__new__' ? catCustom : catSel) || null;
+  initLiveChecklist(label);
+  // Blank webhook preview — populate only when pipeline completes
+  document.getElementById('embed-preview-body').innerHTML = '<div class="empty" style="padding:40px 0;font-size:12px">⏳ Pipeline running — preview will appear when complete</div>';
+  document.querySelectorAll('[id^="wh-btn-"]').forEach(b => b.disabled = true);
+  document.querySelectorAll('[id^="wh-status-"]').forEach(el => el.textContent = '');
+  log.innerHTML += `<div class="ok-line">▶ Launching pipeline for: ${key}</div>`;
+  if (retail) log.innerHTML += `<div class="log-line">  ↳ retail override: $${retail}</div>`;
+  if (url)    log.innerHTML += `<div class="log-line">  ↳ URL: ${escHtml(url)}</div>`;
+  if (notes)  log.innerHTML += `<div class="log-line">  ↳ notes injected (${notes.length} chars)</div>`;
+  const res = await fetch(`${API}/api/research`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ key, retail: retail ? parseFloat(retail) : null, url, notes, category }),
+  });
+  if (!res.ok) {
+    log.innerHTML += `<div class="err-line">✗ Server error ${res.status} — check key exists in products map</div>`;
+    return;
+  }
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let buf = '';
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buf += decoder.decode(value, { stream: true });
+    const events = buf.split('\n\n');
+    buf = events.pop();
+    for (const raw of events) {
+      const lines = raw.trim().split('\n');
+      const eventType = lines.find(l => l.startsWith('event:'))?.slice(6).trim();
+      const dataLine  = lines.find(l => l.startsWith('data:'))?.slice(5).trim();
+      if (!dataLine) continue;
+      try {
+        const d = JSON.parse(dataLine);
+        if (eventType === 'log') {
+          parseLiveLine(d.line);
+          const cls = d.line.includes('SENT') ? 'ok-line' : d.line.startsWith('  [') ? 'ok-line' : 'log-line';
+          log.innerHTML += `<div class="${cls}">${escHtml(d.line)}</div>`;
+        } else if (eventType === 'err') {
+          log.innerHTML += `<div class="err-line">${escHtml(d.line)}</div>`;
+        } else if (eventType === 'done') {
+          log.innerHTML += `<div class="ok-line">✓ Pipeline complete (exit ${d.code})</div>`;
+          // Resolve any still-fetching dots (sources with no streaming log lines)
+          [...PRICING_KEYS, ...SENTIMENT_KEYS].forEach(([k]) => {
+            if (liveState[k]?.status === 'fetching') updateLiveItem(k, 'N/A', 'na');
+          });
+          if (d.code === 0 && d.result) renderPipeline(d.result);
+          else if (d.code !== 0) {
+            // mark any still-pending items as err
+            [...PRICING_KEYS, ...SENTIMENT_KEYS].forEach(([k]) => {
+              if (!liveState[k]) updateLiveItem(k, 'pipeline exited', 'err');
+            });
+          }
+        }
+        log.scrollTop = log.scrollHeight;
+      } catch {}
+    }
+  }
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── Embed Preview ─────────────────────────────────────────────────────────
+let storedEmbedPayload = null;
+let lastPipelineResult = null;
+
+function autoResize(el) { el.style.height = 'auto'; el.style.height = el.scrollHeight + 'px'; }
+
+function embedEdit(type, idx, el) {
+  if (!storedEmbedPayload) return;
+  const val = el.value;
+  if (type === 'title')       storedEmbedPayload.title = val;
+  if (type === 'description') storedEmbedPayload.description = val;
+  if (type === 'field' && storedEmbedPayload.fields?.[idx]) storedEmbedPayload.fields[idx].value = val;
+}
+
+function renderEmbedPreview(payload) {
+  if (!payload) return;
+  storedEmbedPayload = JSON.parse(JSON.stringify(payload)); // deep copy — edits mutate this copy only
+
+  const color = payload.color ? '#' + payload.color.toString(16).padStart(6, '0') : '#5865f2';
+  const thumbUrl = payload.thumbnail?.url ?? '';
+  const thumbHtml = thumbUrl ? `<img class="discord-embed-thumb" src="${escHtml(thumbUrl)}" onerror="this.style.display='none'">` : '';
+
+  const titleHtml = payload.title ? `
+    <div class="discord-embed-title">
+      <textarea class="embed-edit-title" rows="1" oninput="embedEdit('title',-1,this);autoResize(this)">${escHtml(payload.title)}</textarea>
+    </div>` : '';
+
+  const descHtml = payload.description ? `
+    <div style="margin-bottom:10px">
+      <textarea class="embed-edit-desc" oninput="embedEdit('description',-1,this);autoResize(this)">${escHtml(payload.description)}</textarea>
+    </div>` : '';
+
+  const fields = payload.fields ?? [];
+  const fhtml = (f, idx) => `
+    <div class="discord-embed-field">
+      <div class="fname">${escHtml(f.name)}</div>
+      <textarea class="embed-edit-field" oninput="embedEdit('field',${idx},this);autoResize(this)">${escHtml(f.value)}</textarea>
+    </div>`;
+  let fieldRows = '';
+  let i = 0;
+  while (i < fields.length) {
+    if (fields[i].inline && fields[i+1]?.inline) {
+      fieldRows += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">${fhtml(fields[i],i)}${fhtml(fields[i+1],i+1)}</div>`;
+      i += 2;
+    } else {
+      fieldRows += fhtml(fields[i], i);
+      i++;
+    }
+  }
+  const fieldsHtml = fields.length ? `<div class="discord-embed-fields">${fieldRows}</div>` : '';
+  const footerHtml = payload.footer?.text ? `<div class="discord-embed-footer">${escHtml(payload.footer.text)}</div>` : '';
+
+  document.getElementById('embed-preview-body').innerHTML = `
+    <div style="font-size:10px;color:var(--muted);margin-bottom:6px">✏ Click any field to edit before sending</div>
+    <div class="discord-embed">
+      <div class="discord-embed-inner" style="border-left-color:${color}">
+        <div class="discord-embed-body">
+          ${titleHtml}${descHtml}${fieldsHtml}
+        </div>
+        ${thumbHtml}
+      </div>
+      ${footerHtml}
+    </div>`;
+
+  document.querySelectorAll('.embed-edit-title,.embed-edit-desc,.embed-edit-field').forEach(autoResize);
+  renderWebhookSendList(payload._webhooks ?? null);
+}
+
+let configuredWebhooks = [];
+async function loadWebhooks() {
+  try {
+    const r = await fetch(`${API}/api/webhooks`);
+    configuredWebhooks = await r.json();
+  } catch { configuredWebhooks = []; }
+}
+
+function renderWebhookSendList(payloadWh) {
+  const whs = (payloadWh && payloadWh.length) ? payloadWh : configuredWebhooks;
+  const list = document.getElementById('webhook-send-list');
+  if (!list) return;
+  if (!whs.length) {
+    list.innerHTML = `<div style="font-size:11px;color:var(--muted);padding:8px 0">No webhooks configured — add EXTERNAL_WEBHOOK_URL / WEBHOOK_2–5 in .env</div>`;
+    return;
+  }
+  list.innerHTML = whs.map((w, i) => `
+    <div class="webhook-send-row">
+      <div class="wh-name">${escHtml(w.name)}</div>
+      <button class="wh-btn" id="wh-btn-${i}" onclick="sendEmbedTo(${i},'${escHtml(w.url)}')">✉ Send</button>
+      <div class="wh-status" id="wh-status-${i}"></div>
+    </div>`).join('')
+    + `<div class="webhook-send-row" style="margin-top:8px;border-top:1px solid var(--border);padding-top:8px">
+      <div class="wh-name">💾 Save to DB</div>
+      <button class="wh-btn" id="db-save-btn" style="background:#3a2d5a" onclick="confirmDbSave()">💾 Confirm Save to Database</button>
+      <div class="wh-status" id="db-save-status"></div>
+    </div>`;
+}
+
+// User-gated DB append — only writes the researched record into its category set-history DB on click.
+async function confirmDbSave() {
+  const btn = document.getElementById('db-save-btn');
+  const status = document.getElementById('db-save-status');
+  const dbAppend = lastPipelineResult?.dbAppend;
+  if (!dbAppend) { if (status) status.innerHTML = '<span style="color:var(--red)">no staged data — run pipeline first</span>'; return; }
+  if (!confirm(`Save to ${dbAppend.dbFile} as "${dbAppend.key}"?\nMarket $${dbAppend.record?.market ?? '—'} · ${dbAppend.record?.rating} · tier ${dbAppend.record?.tier ?? '—'}\nConfirm the writeup is good before appending.`)) return;
+  btn.disabled = true; btn.textContent = '⏳';
+  try {
+    const res = await fetch(`${API}/api/confirm-db-save`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ dbAppend }),
+    });
+    const d = await res.json();
+    if (d.saved) { status.innerHTML = `<span style="color:var(--green)">✓ saved → ${escHtml(d.dbFile)}</span>`; btn.textContent = '✓ Saved'; }
+    else { status.innerHTML = `<span style="color:var(--red)">✗ ${escHtml(d.error ?? 'failed')}</span>`; btn.disabled = false; btn.textContent = '💾 Confirm Save to Database'; }
+  } catch (e) {
+    status.innerHTML = `<span style="color:var(--red)">✗ ${escHtml(e.message)}</span>`; btn.disabled = false; btn.textContent = '💾 Confirm Save to Database';
+  }
+}
+
+async function sendEmbedTo(idx, webhookUrl) {
+  if (!storedEmbedPayload) return;
+  const btn    = document.getElementById(`wh-btn-${idx}`);
+  const status = document.getElementById(`wh-status-${idx}`);
+  if (!btn) return;
+  btn.disabled = true;
+  btn.textContent = '⏳';
+  if (status) status.textContent = '';
+  try {
+    const res = await fetch(`${API}/api/send-embed`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ embedPayload: storedEmbedPayload, webhookUrl }),
+    });
+    const d = await res.json();
+    if (d.ok) {
+      if (status) status.innerHTML = `<span style="color:var(--green)">✓ Sent (${d.status})</span>`;
+      btn.textContent = '✓ Sent';
+      // Log to webhook history
+      await fetch(`${API}/api/webhook-history`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          productKey: resolvedKey,
+          productLabel: storedEmbedPayload?.title?.replace(/^[🟢🔴🟠]+\s*/,'') ?? resolvedKey,
+          category: document.getElementById('rk-cat')?.value || 'unknown',
+          webhookName: configuredWebhooks[idx]?.name ?? `Channel ${idx+1}`,
+          webhookUrl,
+          pricingSnapshot: lastPipelineResult?.pricing ?? {},
+          sentimentSnapshot: lastPipelineResult?.sentiment ?? {},
+          embedTitle: storedEmbedPayload?.title ?? '',
+          embedDescription: storedEmbedPayload?.description ?? '',
+          computedRating: lastPipelineResult?.rating ?? 'ORANGE',
+        }),
+      });
+    } else {
+      if (status) status.innerHTML = `<span style="color:var(--red)">✗ ${d.status}: ${escHtml(d.body ?? d.error ?? '')}</span>`;
+      btn.disabled = false;
+      btn.textContent = '✉ Send';
+    }
+  } catch (e) {
+    if (status) status.innerHTML = `<span style="color:var(--red)">✗ ${escHtml(e.message)}</span>`;
+    btn.disabled = false;
+    btn.textContent = '✉ Send';
+  }
+}
+
+// ── Re-run with Feedback ──────────────────────────────────────────────────
+async function rerunWithFeedback() {
+  const notes = document.getElementById('feedback-notes').value.trim();
+  const fbStatus = document.getElementById('rerun-status');
+  if (!notes) { if (fbStatus) fbStatus.innerHTML = '<span style="color:var(--yellow)">⚠ Enter feedback first.</span>'; return; }
+  // Resolve key from last pipeline run if not set
+  if (!resolvedKey) {
+    try {
+      const r = await fetch(`${API}/api/pipeline-status`);
+      const d = await r.json();
+      if (d.key) resolvedKey = d.key;
+    } catch {}
+  }
+  if (!resolvedKey) { if (fbStatus) fbStatus.innerHTML = '<span style="color:var(--red)">✗ No product key — run a pipeline first.</span>'; return; }
+  const btn = document.getElementById('rerun-btn');
+  btn.disabled = true;
+  btn.textContent = '⏳ Re-running…';
+  // Inject feedback into rk-notes so _streamPipeline picks it up as USER_NOTES
+  const notesEl = document.getElementById('rk-notes');
+  const prevNotes = notesEl ? notesEl.value : '';
+  if (notesEl) notesEl.value = notes;
+  // Clear previous preview
+  document.getElementById('embed-preview-body').innerHTML = '<div class="empty" style="padding:40px 0;font-size:12px">Re-running pipeline with your feedback…</div>';
+  document.querySelectorAll('[id^="wh-btn-"]').forEach(b => b.disabled = true);
+  const log = document.getElementById('stream-log');
+  await _streamPipeline(resolvedKey, log);
+  // Restore previous notes field
+  if (notesEl) notesEl.value = prevNotes;
+  btn.disabled = false;
+  btn.textContent = '🔄 Re-run with Feedback';
+}
+
+// ── Category / new product ────────────────────────────────────────────────
+function onCatChange(val) {
+  const custom = document.getElementById('rk-cat-custom');
+  custom.style.display = val === '__new__' ? 'block' : 'none';
+  if (val === '__new__') custom.focus();
+}
+
+function getCategory() {
+  const sel = document.getElementById('rk-cat').value;
+  if (sel === '__new__') return document.getElementById('rk-cat-custom').value.trim().toLowerCase().replace(/\s+/g,'-') || 'custom';
+  return sel;
+}
+
+async function createAndResearch() {
+  const name  = document.getElementById('rk-name').value.trim();
+  if (!name) { alert('Enter a product name'); return; }
+  const cat    = getCategory();
+  const url    = document.getElementById('rk-url').value.trim();
+  const notes  = document.getElementById('rk-notes').value.trim();
+  const retail = parseFloat(document.getElementById('rk-retail').value) || null;
+  const log    = document.getElementById('stream-log');
+  log.innerHTML = ''; log.classList.add('active');
+  log.innerHTML = `<div class="ok-line">＋ Creating product entry: ${name} [${cat}]</div>`;
+  const r = await fetch(`${API}/api/create-product`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, category: cat, url, notes, retail }),
+  });
+  const d = await r.json();
+  if (!r.ok || d.error) { log.innerHTML += `<div class="err-line">✗ ${d.error}</div>`; return; }
+  log.innerHTML += `<div class="ok-line">✓ Created key: ${d.key}</div><div class="log-line">Launching pipeline…</div>`;
+  resolvedKey = d.key;
+  document.getElementById('rk-match').innerHTML = `✓ created → <strong style="color:var(--green)">${d.key}</strong>`;
+  await productKeys.push(d.key);
+  await _streamPipeline(d.key, log);
+}
+
+// ── History ───────────────────────────────────────────────────────────────
+async function loadHistory() {
+  const list = document.getElementById('history-list');
+  list.innerHTML = '<div class="empty"><span class="spinner"></span> Loading…</div>';
+  try {
+    const res = await fetch(`${API}/api/webhook-history`);
+    const entries = await res.json();
+    if (!entries.length) {
+      list.innerHTML = '<div class="empty">No history yet. Send an embed to start tracking.</div>';
+      return;
+    }
+    list.innerHTML = entries.map(e => renderHistoryCard(e)).join('');
+    document.querySelectorAll('.hist-card-head').forEach(head => {
+      head.addEventListener('click', function() {
+        const body = this.nextElementSibling;
+        if (body && body.classList.contains('hist-card-body')) {
+          body.classList.toggle('open');
+        }
+      });
+    });
+  } catch (err) {
+    list.innerHTML = `<div class="empty" style="color:var(--red)">Error loading history: ${escHtml(err.message)}</div>`;
+  }
+}
+
+function renderHistoryCard(e) {
+  const ts = new Date(e.ts).toLocaleString();
+  const isUnrated = !e.rating;
+  let ratingHtml = '';
+  if (isUnrated) {
+    ratingHtml = `
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
+        <div style="font-size:11px;font-weight:600;color:var(--muted);margin-bottom:8px">Rate this send:</div>
+        <div>
+          <button class="rate-btn green" onclick="startRating('${e.id}','GREEN',this)">✓ Correct</button>
+          <button class="rate-btn yellow" onclick="startRating('${e.id}','YELLOW',this)">~ Partial</button>
+          <button class="rate-btn red" onclick="startRating('${e.id}','RED',this)">✗ Wrong</button>
+        </div>
+        <div id="rate-form-${e.id}" style="display:none;margin-top:8px" data-rating="">
+          <textarea class="rate-commentary" id="rate-text-${e.id}" placeholder="Tell us what went wrong or what was off about this analysis…"></textarea>
+          <button class="rate-submit" onclick="submitRatingFromForm('${e.id}')">Submit Feedback</button>
+        </div>
+      </div>`;
+  } else {
+    ratingHtml = `
+      <div style="margin-top:10px">
+        <div style="font-size:11px;color:var(--muted)">Rating:</div>
+        <span class="hist-rating ${e.rating}">${e.rating}</span>
+        ${e.commentary ? `<div style="margin-top:6px;font-size:12px;color:var(--muted)">${escHtml(e.commentary)}</div>` : ''}
+      </div>`;
+  }
+  const pricingKeys = Object.keys(e.pricingSnapshot ?? {});
+  const sentimentKeys = Object.keys(e.sentimentSnapshot ?? {});
+  return `
+    <div class="hist-card">
+      <div class="hist-card-head">
+        <div class="hist-meta">
+          <div class="hist-meta-item"><strong>${escHtml(e.productLabel)}</strong></div>
+          <div class="hist-meta-item">${escHtml(e.category)}</div>
+          <div class="hist-meta-item">${escHtml(e.webhookName)}</div>
+          <span class="hist-badge ${e.computedRating}">${e.computedRating}</span>
+          ${e.rating ? `<span class="hist-rating ${e.rating}">${e.rating}</span>` : '<span style="font-size:11px;color:var(--muted)">Unrated</span>'}
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-left:auto">${ts}</div>
+      </div>
+      <div class="hist-card-body">
+        <div class="hist-detail">
+          <strong>Embed Title:</strong><br>${escHtml(e.embedTitle)}<br><br>
+          <strong>Embed Description:</strong><br>${escHtml(e.embedDescription)}<br><br>
+          <strong>Pricing Sources:</strong> ${pricingKeys.length ? pricingKeys.join(', ') : 'none'}<br>
+          <strong>Sentiment Sources:</strong> ${sentimentKeys.length ? sentimentKeys.join(', ') : 'none'}
+        </div>
+        ${ratingHtml}
+      </div>
+    </div>`;
+}
+
+function startRating(entryId, ratingType, btn) {
+  if (ratingType === 'GREEN') {
+    submitRating(entryId, 'GREEN', '');
+    return;
+  }
+  const form = document.getElementById(`rate-form-${entryId}`);
+  if (!form) return;
+  const isOpen = form.style.display !== 'none' && form.dataset.rating === ratingType;
+  // Toggle off if same rating clicked again
+  form.style.display = isOpen ? 'none' : 'block';
+  form.dataset.rating = isOpen ? '' : ratingType;
+  const btns = form.closest('[style]')?.querySelectorAll('.rate-btn') ?? form.parentElement.querySelectorAll('.rate-btn');
+  btns.forEach(b => b.style.outline = '');
+  if (!isOpen && btn) btn.style.outline = `2px solid ${ratingType === 'YELLOW' ? '#fb923c' : '#f87171'}`;
+  const textarea = document.getElementById(`rate-text-${entryId}`);
+  if (!isOpen && textarea) textarea.focus();
+}
+
+async function submitRatingFromForm(entryId) {
+  const form = document.getElementById(`rate-form-${entryId}`);
+  const textarea = document.getElementById(`rate-text-${entryId}`);
+  const rating = form?.dataset.rating || 'YELLOW';
+  const text = textarea ? textarea.value.trim() : '';
+  await submitRating(entryId, rating, text);
+}
+
+async function submitRating(entryId, ratingType, commentary) {
+  try {
+    const res = await fetch(`${API}/api/webhook-history/${entryId}/rate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ rating: ratingType, commentary: commentary ?? '' }),
+    });
+    if (res.ok) {
+      await loadHistory();
+    } else {
+      alert('Failed to submit rating');
+    }
+  } catch (err) {
+    alert(`Error: ${err.message}`);
+  }
+}
+
+// ── Channel Feed ─────────────────────────────────────────────────────────
+let feedMessages = [];
+let feedOldestId = null;
+let feedAutoTimer = null;
+let feedCurrentFilter = '';
+
+async function saveFeedChannel() {
+  const channelId = document.getElementById('feed-channel')?.value?.trim();
+  const nameEl = document.getElementById('feed-channel-name');
+  const btn = document.getElementById('feed-save-btn');
+  if (!channelId) return;
+  if (btn) { btn.disabled = true; btn.textContent = '…'; }
+  try {
+    const r = await fetch(`${API}/api/channel-feed/${channelId}?limit=1`);
+    const msgs = await r.json();
+    // Also fetch channel metadata to show name
+    const metaRes = await fetch(`${API}/api/channel-meta/${channelId}`);
+    const meta = metaRes.ok ? await metaRes.json() : null;
+    if (Array.isArray(msgs)) {
+      if (nameEl) nameEl.textContent = meta?.name ? `✓ #${meta.name}` : '✓ Channel verified';
+      if (btn) { btn.textContent = '✓ Saved'; btn.disabled = false; }
+      loadFeed(true);
+    } else {
+      if (nameEl) nameEl.innerHTML = `<span style="color:var(--red)">✗ ${msgs.error ?? 'Error'}</span>`;
+      if (btn) { btn.textContent = 'Save'; btn.disabled = false; }
+    }
+  } catch(e) {
+    if (nameEl) nameEl.innerHTML = `<span style="color:var(--red)">✗ ${e.message}</span>`;
+    if (btn) { btn.textContent = 'Save'; btn.disabled = false; }
+  }
+}
+
+async function loadFeed(reset = false) {
+  const channelId = document.getElementById('feed-channel')?.value?.trim();
+  if (!channelId) return;
+  const statusEl = document.getElementById('feed-status');
+  if (statusEl) statusEl.textContent = 'Loading…';
+  if (reset) { feedMessages = []; feedOldestId = null; }
+  try {
+    const qs = feedOldestId && !reset ? `&before=${feedOldestId}` : '';
+    const r = await fetch(`${API}/api/channel-feed/${channelId}?limit=50${qs}`);
+    const msgs = await r.json();
+    if (!Array.isArray(msgs)) {
+      if (statusEl) statusEl.textContent = `Error: ${msgs.error ?? JSON.stringify(msgs)}`;
+      return;
+    }
+    if (reset) feedMessages = msgs;
+    else feedMessages = [...feedMessages, ...msgs];
+    if (msgs.length) feedOldestId = msgs[msgs.length - 1].id;
+    renderFeed();
+    if (statusEl) statusEl.textContent = `${feedMessages.length} messages loaded`;
+    const moreBtn = document.getElementById('feed-more-btn');
+    if (moreBtn) moreBtn.style.display = msgs.length >= 50 ? 'inline-block' : 'none';
+  } catch (e) {
+    if (statusEl) statusEl.textContent = `Error: ${e.message}`;
+  }
+}
+
+function loadFeedMore() { loadFeed(false); }
+
+function feedFilter(q) {
+  feedCurrentFilter = q.toLowerCase();
+  document.querySelectorAll('.feed-msg').forEach(el => {
+    const text = el.dataset.text ?? '';
+    el.classList.toggle('hidden', !!feedCurrentFilter && !text.includes(feedCurrentFilter));
+  });
+}
+
+function toggleFeedAuto(on) {
+  clearInterval(feedAutoTimer);
+  if (on) feedAutoTimer = setInterval(() => loadFeed(true), 30000);
+}
+
+function renderFeed() {
+  const list = document.getElementById('feed-list');
+  if (!list) return;
+  list.innerHTML = feedMessages.map(m => renderFeedMsg(m)).join('');
+  feedFilter(feedCurrentFilter);
+}
+
+function renderFeedMsg(m) {
+  const avatarUrl = m.author?.avatar
+    ? `https://cdn.discordapp.com/avatars/${m.author.id}/${m.author.avatar}.webp?size=64`
+    : `https://cdn.discordapp.com/embed/avatars/0.png`;
+  const ts = new Date(m.timestamp).toLocaleString();
+  const content = m.content ? `<div class="feed-content">${escHtml(m.content)}</div>` : '';
+
+  const embedsHtml = (m.embeds ?? []).map(e => {
+    const title = e.title ? `<div class="feed-embed-title">${escHtml(e.title)}</div>` : '';
+    const desc  = e.description ? `<div class="feed-embed-desc">${escHtml(e.description.slice(0, 400))}${e.description.length > 400 ? '…' : ''}</div>` : '';
+    const fields = (e.fields ?? []).slice(0, 6).map(f =>
+      `<div class="feed-embed-field"><div class="fn">${escHtml(f.name)}</div><div class="fv">${escHtml(f.value)}</div></div>`
+    ).join('');
+    const color = e.color ? `border-left-color:#${e.color.toString(16).padStart(6,'0')}` : '';
+    return `<div class="feed-embed" style="${color}">${title}${desc}${fields ? `<div class="feed-embed-fields">${fields}</div>` : ''}</div>`;
+  }).join('');
+
+  const attachHtml = (m.attachments ?? []).filter(a => /\.(png|jpg|jpeg|gif|webp)/i.test(a.filename ?? '')).map(a =>
+    `<img class="feed-attachment-img" src="${escHtml(a.url)}" alt="${escHtml(a.filename)}" onclick="window.open(this.src)">`
+  ).join('');
+
+  const hasEmbed = (m.embeds?.length ?? 0) > 0;
+  const searchText = [m.content, ...(m.embeds ?? []).map(e => `${e.title} ${e.description}`)].join(' ').toLowerCase();
+
+  return `<div class="feed-msg${hasEmbed ? ' has-embed' : ''}" data-id="${m.id}" data-text="${escHtml(searchText)}">
+    <img class="feed-avatar" src="${avatarUrl}" onerror="this.src='https://cdn.discordapp.com/embed/avatars/0.png'">
+    <div class="feed-body">
+      <div class="feed-header">
+        <span class="feed-author">${escHtml(m.author?.username ?? 'Unknown')}</span>
+        <span class="feed-ts">${ts}</span>
+      </div>
+      ${content}${embedsHtml}${attachHtml ? `<div class="feed-attachments">${attachHtml}</div>` : ''}
+    </div>
+  </div>`;
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────
+// Clear all form fields on load — prevent browser autocomplete pre-fill
+['rk-name','rk-retail','rk-url','rk-notes','rk-cat-custom'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.value = '';
+});
+document.getElementById('rk-cat').selectedIndex = 0;
+document.getElementById('run-btn').textContent = '▶ Run Pipeline';
+
+loadDatabases();
+loadProductKeys();
+loadWebhooks();
+loadPipeline();
+loadHistory();
+</script>
+</body>
+</html>
