@@ -581,7 +581,7 @@ function closeDb() {
   document.getElementById('db-tbody').innerHTML = '';
 }
 
-async function loadVariants(dbKey, setId, setName) {
+async function loadVariants(dbKey, setId, setName, chaseName) {
   const panel = document.getElementById('db-variants-panel');
   const title = document.getElementById('variants-title');
   const tbody = document.getElementById('variants-tbody');
@@ -635,14 +635,16 @@ async function loadVariants(dbKey, setId, setName) {
       const cd = await cr.json();
       if (ctitle) ctitle.textContent = `Individual Cards (${cd.total ?? 0}${cd.fetchedAt ? ' · ' + cd.fetchedAt.slice(0,10) : ''})`;
       ctbody.innerHTML = (cd.cards && cd.cards.length)
-        ? cd.cards.map(c => `
-          <tr>
-            <td><strong>${escHtml(c.name)}</strong></td>
-            <td>${c.market != null ? '$' + c.market.toFixed(2) : '—'}</td>
-            <td>${escHtml(c.rarity ?? '—')}</td>
-            <td>${escHtml(c.number ?? '—')}</td>
-            <td>${c.points ?? 0} pt${c.lastDate ? ' · ' + c.lastDate : ''}</td>
-          </tr>`).join('')
+        ? cd.cards.map(c => {
+            const isChase = chaseName && c.name === chaseName;
+            return `<tr${isChase ? ' style="background:rgba(255,100,180,.15)"' : ''}>
+              <td><strong>${isChase ? '⭐ ' : ''}${escHtml(c.name)}</strong></td>
+              <td>${c.market != null ? '$' + c.market.toFixed(2) : '—'}</td>
+              <td>${escHtml(c.rarity ?? '—')}</td>
+              <td>${escHtml(c.number ?? '—')}</td>
+              <td>${c.points ?? 0} pt${c.lastDate ? ' · ' + c.lastDate : ''}</td>
+            </tr>`;
+          }).join('')
         : '<tr><td colspan="5" class="empty">No individual cards tracked</td></tr>';
     } catch (e) {
       ctbody.innerHTML = `<tr><td colspan="5" class="empty" style="color:var(--red)">Error: ${escHtml(e.message)}</td></tr>`;
@@ -685,13 +687,14 @@ async function loadDbPage() {
       <td>${e.retiredOn ?? e.projRetire ?? '—'}</td>
     `;
   } else if (isTcg || isSports) {
-    cols = ['Set','Products','Cards'];
+    cols = ['Set','Chase Card','Cards'];
     rowFn = e => {
-      const prodCount = Object.keys(e.products ?? {}).length;
       const cardCount = (e.cards?.fullCardList?.length) ?? 0;
+      const chase = e.chaseCard;
+      const chaseStr = chase ? `${chase.name}${chase.market ? ' · $' + chase.market.toFixed(2) : ''}` : '—';
       return `
         <td><strong>${e.set_name ?? e.name ?? e.id ?? '—'}</strong></td>
-        <td>${prodCount > 0 ? prodCount + ' types' : '—'}</td>
+        <td style="color:#ff64b4;font-size:12px">${chaseStr}</td>
         <td>${cardCount > 0 ? cardCount.toLocaleString() : '—'}</td>
       `;
     };
@@ -723,7 +726,7 @@ async function loadDbPage() {
 
   document.getElementById('db-thead').innerHTML = `<tr>${cols.map(c => `<th>${c}</th>`).join('')}</tr>`;
   document.getElementById('db-tbody').innerHTML = entries.length
-    ? entries.map(e => `<tr onclick="loadVariants('${currentDb}','${escHtml(e.id)}','${escHtml(e.set_name ?? e.name ?? e.setName ?? e.id)}')" style="cursor:pointer" title="Click to view product variants">${rowFn(e)}</tr>`).join('')
+    ? entries.map(e => `<tr onclick="loadVariants('${currentDb}','${escHtml(e.id)}','${escHtml(e.set_name ?? e.name ?? e.setName ?? e.id)}','${escHtml(e.chaseCard?.name ?? '')}')" style="cursor:pointer" title="Click to view product variants">${rowFn(e)}</tr>`).join('')
     : `<tr><td colspan="${cols.length}" class="empty">No results</td></tr>`;
 
   // Pagination
