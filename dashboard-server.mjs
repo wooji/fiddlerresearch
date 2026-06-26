@@ -42,6 +42,7 @@ const DBS = {
   lego:      { file: 'set-history-lego.json',       label: 'LEGO',         icon: '🧱', keyField: 'sets' },
   noncard:   { file: 'set-history-noncard.json',    label: 'Toys / Vinyl', icon: '🎁', keyField: 'sets' },
   mattel:    { file: 'set-history-mattel.json',      label: 'Mattel',       icon: '🚗', keyField: 'sets' },
+  disney_cards: { file: 'set-history-disney-cards.json', label: 'Disney Cards', icon: '🏰', keyField: 'sets' },
 };
 
 function readJson(file) {
@@ -384,6 +385,7 @@ const server = http.createServer(async (req, res) => {
       || (/\bpokemon|pok[eé]mon|ptcg\b/i.test(nameLc)                                   ? 'pokemon'   : null)
       || (/\bone[\s-]?piece\b|\bop-?\d{2}\b|\beb-?\d{2}\b|\bprb-?\d{2}\b|\bst-?\d{2}\b/i.test(nameLc) ? 'one_piece' : null)
       || (/\blorcana|disney lorcana\b/i.test(nameLc)                                    ? 'other_tcg' : null)
+      || (/\b(topps|kakawow).*(disney|disneyland|pixar)|(disney).*(topps|chrome|kakawow)/i.test(nameLc) ? 'disney_cards' : null)
       || (/\bmtg\b|magic.*gathering|secret lair/i.test(nameLc)                          ? 'mtg'       : null)
       || (/\btopps|panini|bowman|sports card|baseball|basketball|football|soccer|ufc|nba|nfl|mlb\b/i.test(nameLc) ? 'topps' : null)
       || (/\blego\b/i.test(nameLc)                                                      ? 'lego'      : null)
