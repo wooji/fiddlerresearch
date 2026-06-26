@@ -46,25 +46,10 @@ const save  = db => { db._meta.updated = new Date().toISOString().slice(0,10); w
 const db = JSON.parse(readFileSync(OUT, 'utf8'));
 const sets = db.sets;
 
-// ── Phase 0: MSRP via SP-API + Topps Shopify ────────────────────────────────
-log('\n── Phase 0: MSRP enrichment ──');
-
-// Try Topps Shopify first (fastest, most accurate)
-let toppsProducts = null;
-for (const handle of TOPPS_DISNEY_COLLECTIONS) {
-  log(`[topps] trying collection: ${handle}`);
-  const prods = await toppsShopifyProducts(handle, { log });
-  if (prods?.length) { toppsProducts = prods; log(`  ✓ got ${prods.length} Topps products from ${handle}`); break; }
-}
-
-// Build a map of product title → price from Topps Shopify
-const toppsMap = new Map();
-if (toppsProducts) {
-  for (const p of toppsProducts) {
-    toppsMap.set(p.title.toLowerCase(), p.price);
-    toppsMap.set(p.handle.toLowerCase(), p.price);
-  }
-}
+// ── Phase 0: MSRP via table + SP-API ────────────────────────────────────────
+// Topps.com blocks ALL proxies (CF Bot Management) — skip Shopify, go straight to table+SP-API
+log('\n── Phase 0: MSRP enrichment (table + SP-API) ──');
+const toppsMap = new Map(); // empty — Topps always blocks
 
 // For each set with products, fill MSRP
 const withProducts = Object.entries(sets).filter(([,s]) => s.products && Object.keys(s.products).length);
