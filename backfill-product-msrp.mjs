@@ -19,7 +19,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const MSRP_TABLE = {
   pokemon: {
     'elite trainer box': 49.99, 'etb': 49.99,
-    'booster box': 143.64, 'booster display': 143.64, 'booster bundle': 29.99,
+    'booster box': 161.00, 'booster display': 161.00, 'booster bundle': 29.99,
     'blister': 14.99, 'blister pack': 14.99, '3-pack blister': 14.99,
     'tin': 19.99, 'collection box': 29.99, 'premium collection': 49.99,
     'build and battle': 14.99, 'build & battle': 14.99,
