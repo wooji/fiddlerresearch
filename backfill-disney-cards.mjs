@@ -89,8 +89,26 @@ log('\n── Phase 2: eBay chase cards ──');
 
 const CHAR_SKIP = /^(lot|bundle|case|box|pack|sealed|repack|break|relic|auto|patch|\d+\s+card)/i;
 
-async function scrapeEbayDisney(setName, page) {
-  const query = encodeURIComponent(`"${setName}" card`);
+function buildEbayQuery(slug, setName) {
+  // Insert sets within Chrome Disney → search the parent product + subset keyword
+  // e.g. "2024-topps-chrome-disney-super-strength" → "2024 Topps Chrome Disney Super Strength"
+  // Kakawow → "Kakawow Cosmos Disney [subset]"
+  const isKakawow = /kakawow/i.test(slug);
+  const year = slug.match(/^(\d{4})/)?.[1] ?? '';
+  // Extract subset name (everything after main brand)
+  let subset = setName
+    .replace(/^\d{4}\s*/,'')
+    .replace(/^(topps|kakawow)\s*/i,'')
+    .replace(/^(chrome|cosmos|phantom)\s*/i,'')
+    .replace(/^disney\s*/i,'').trim();
+  if (!subset) subset = setName;
+  if (isKakawow) return `Kakawow ${year} Disney ${subset}`.trim();
+  return `${year} Topps Chrome Disney ${subset}`.trim();
+}
+
+async function scrapeEbayDisney(setName, slug, page) {
+  const q = buildEbayQuery(slug, setName);
+  const query = encodeURIComponent(q);
   await page.goto(
     `https://www.ebay.com/sch/i.html?_nkw=${query}&_sacat=0&LH_Sold=1&LH_Complete=1&_sop=13&_ipg=60`,
     { waitUntil: 'domcontentloaded', timeout: 25000 }
@@ -164,7 +182,7 @@ for (const [slug, setRec] of TODO_CHASE) {
     await page.goto('https://www.ebay.com', { waitUntil: 'domcontentloaded', timeout: 20000 }).catch(() => {});
     await new Promise(r => setTimeout(r, 800));
 
-    const chaseCards = await scrapeEbayDisney(setName, page);
+    const chaseCards = await scrapeEbayDisney(setName, slug, page);
     if (chaseCards.length) {
       if (!setRec.cards) setRec.cards = {};
       setRec.cards.chaseCards = chaseCards;
