@@ -757,15 +757,20 @@ async function loadDbPage() {
       <td>${e.retiredOn ?? e.projRetire ?? '—'}</td>
     `;
   } else if (isTcg || isSports) {
-    cols = ['Set','Chase Card','Cards'];
+    cols = ['Set','Chase Card','Cards','MSRP'];
     rowFn = e => {
       const cardCount = (e.cards?.fullCardList?.length) ?? 0;
       const chase = e.chaseCard;
       const chaseStr = chase ? `${chase.name}${chase.market ? ' · $' + chase.market.toFixed(2) : ''}` : '—';
+      // find msrp from products: prefer booster-box, then first product with msrp
+      const prods = e.products ?? {};
+      const msrpEntry = prods['booster-box'] ?? prods['collector-box'] ?? prods['hobby-box'] ?? Object.values(prods).find(p => p.msrp);
+      const msrp = msrpEntry?.msrp ?? null;
       return `
         <td><strong>${e.set_name ?? e.name ?? e.id ?? '—'}</strong></td>
         <td style="color:#ff64b4;font-size:12px">${chaseStr}</td>
         <td>${cardCount > 0 ? cardCount.toLocaleString() : '—'}</td>
+        <td style="color:#a78bfa">${msrp ? '$' + Number(msrp).toFixed(2) : '—'}</td>
       `;
     };
   } else if (currentDb === 'mattel') {
