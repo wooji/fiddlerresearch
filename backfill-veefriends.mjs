@@ -41,10 +41,14 @@ async function scrapeEbayCards(queries, page) {
     const url = `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(q)}&_sacat=0&LH_Sold=1&LH_Complete=1&_sop=13&_ipg=60`;
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
     await sleep(1500);
-    const items = await page.$$eval('li.s-item', els => els.map(el => ({
-      title: el.querySelector('.s-item__title')?.textContent?.trim() ?? '',
-      price: parseFloat((el.querySelector('.s-item__price')?.textContent?.trim() ?? '0').replace(/[^0-9.]/g,'')),
-    }))).catch(() => []);
+    await page.waitForSelector('.s-card, li.s-item', { timeout: 8000 }).catch(() => {});
+    const items = await page.$$eval('.s-card, li.s-item', els => els.map(el => {
+      const titleEl = el.querySelector('[class*="title"], h3, .s-item__title') ?? el.querySelector('a');
+      const title = (titleEl?.textContent?.trim() ?? '').replace(/Opens in a new window or tab\.?/gi,'').replace(/View similar.*|Sell one.*/gi,'').trim();
+      const priceEl = el.querySelector('[class*="s-card__price"], .s-item__price, [class*="price"]');
+      const price = parseFloat(((priceEl?.textContent?.trim() ?? '0').match(/[\d,]+\.?\d*/)?.[0] ?? '0').replace(/,/g,''));
+      return { title, price };
+    }).filter(i => i.title && i.title !== 'Shop on eBay' && !i.title.startsWith('ADVERTISEMENT'))).catch(() => []);
     singles = items.filter(i => i.price >= 3 && i.price <= 2000 && !SKIP.test(i.title) && i.title.length > 5);
     if (singles.length >= 5) break;
   }
@@ -65,9 +69,11 @@ async function scrapeEbaySealed(query, page) {
   const url = `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(query)}&_sacat=0&LH_Sold=1&LH_Complete=1&_sop=13&_ipg=20`;
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
   await sleep(1500);
-  const items = await page.$$eval('li.s-item', els => els.map(el => ({
-    price: parseFloat((el.querySelector('.s-item__price')?.textContent?.trim() ?? '0').replace(/[^0-9.]/g,'')),
-  }))).catch(() => []);
+  await page.waitForSelector('.s-card, li.s-item', { timeout: 8000 }).catch(() => {});
+  const items = await page.$$eval('.s-card, li.s-item', els => els.map(el => ({
+    title: (el.querySelector('h3, .s-item__title')?.textContent?.trim() ?? ''),
+    price: parseFloat(((el.querySelector('[class*="s-card__price"], .s-item__price, [class*="price"]')?.textContent?.trim() ?? '0').match(/[\d,]+\.?\d*/)?.[0] ?? '0').replace(/,/g,'')),
+  })).filter(i => i.title !== 'Shop on eBay')).catch(() => []);
   const prices = items.map(i=>i.price).filter(p=>p>20&&p<5000);
   if (!prices.length) return null;
   const sorted = prices.slice().sort((a,b)=>a-b);

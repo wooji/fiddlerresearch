@@ -224,15 +224,15 @@ async function scrapeChaseCards(setName, page) {
         const head = document.querySelector('.srp-controls__count-heading')?.textContent ?? '';
         const m = head.match(/([\d,]+)\s+results?/i);
         const N = m ? parseInt(m[1].replace(/,/g, ''), 10) : null;
-        let items = Array.from(document.querySelectorAll('ul.srp-results li.s-item, li.s-card'));
+        let items = Array.from(document.querySelectorAll('.srp-results .s-card, ul.srp-results li.s-item'));
+        if (!items.length) items = Array.from(document.querySelectorAll('.s-card, li.s-item, li.s-card'));
         if (N && N > 0 && N < items.length) items = items.slice(0, N);
         return items.map(el => {
-          // Get raw text and strip eBay-injected suffixes
-          let title = el.querySelector('.s-item__title, .s-card__title')?.textContent?.trim() ?? '';
+          let title = el.querySelector('h3, .s-item__title, [class*="s-card__title"]')?.textContent?.trim() ?? '';
           title = title.replace(/Opens in a new window or tab\.?/gi, '').replace(/Opens in a new window/gi, '').trim();
-          const priceTxt = el.querySelector('.s-item__price, .s-card__price')?.textContent ?? '';
+          const priceTxt = el.querySelector('[class*="s-card__price"], .s-item__price, [class*="price"]')?.textContent ?? '';
           return { title, priceTxt };
-        }).filter(r => r.title && !r.title.toLowerCase().includes('shop on ebay'));
+        }).filter(r => r.title && !r.title.toLowerCase().includes('shop on ebay') && !r.title.startsWith('ADVERTISEMENT'));
       });
 
       for (const row of rows) {
