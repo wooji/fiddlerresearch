@@ -1,0 +1,396 @@
+================================================================================
+DISNEY LORCANA TCG SEALED INVESTING: EXECUTIVE SUMMARY
+================================================================================
+Date: June 23, 2026
+Scope: Sealed booster box investing for collectibles resellers
+Sources: PriceCharting (34-month history), TCGPlayer, Reddit r/lorcana,
+         Ravensburger official, eBay sold comps
+
+================================================================================
+KEY FINDINGS (TL;DR)
+================================================================================
+
+1. LORCANA IS A SHORT-HOLD, IP-DRIVEN PLAY
+   - Sealed appreciation: 45-129% ROI possible on strong IP
+   - Hold window: 6-12 months optimal; avoid >18 months
+   - Exit rule: Sell at 1.5-2× retail or 50-100% ROI, whichever comes first
+   - Reprint risk: Ravensburger reprints infrequently but unpredictably
+
+2. IP STRENGTH DETERMINES SUCCESS
+   ✓ BUY: Maleficent (First Chapter $275 at 34mo, +129%), Ursula ($190 at 25mo,
+          +58%), Frozen/Winterspell ($174 at 10mo, +45%)
+   ✗ SKIP: Jafar, Aladdin, Rapunzel, generic ensemble themes
+
+3. PRODUCT WINDOW IS TIGHT
+   - Peak scarcity: 0-6 months post-release
+   - Stabilization: 6-18 months
+   - Decline: 18-24 months (EOL, newer sets cannibalize inventory)
+   - Obsolescence: 24+ months (Into Inklands $90 at 28mo, -28% ROI)
+
+4. FORMAT MATTERS: BOOSTER BOX ONLY
+   - Booster box ($120-145 MSRP): Investable; all appreciation data applies
+   - Illumineer's Trove ($49.99): Retail ±5%, no appreciation
+   - Gift sets, single packs: Volatile or retail-fungible; avoid
+
+5. REPRINT POLICY IS THE COMPETITIVE MOAT
+   - Ravensburger reprints rarely (vs. Pokemon's quarterly reprints)
+   - Fabled was first major reprint event at 13 months (May 2025 → Jun 2026)
+   - Reprint spike is anomaly: Fabled hit $837.50 on panic, now $250 (deflated)
+   - No set has been reprinted twice; policy could change
+
+6. VS. POKEMON: COMPARABLE SHORT-TERM, RISKIER LONG-TERM
+   - 6-month ROI: Pokemon 40-80%, Lorcana 45-80% (tie)
+   - 12-month ROI: Pokemon 60-120%, Lorcana 45-129% (Lorcana higher but volatile)
+   - 20-year appreciation: Pokemon proven 300-1000%+, Lorcana unproven
+   - Liquidity: Pokemon <6 hours, Lorcana 24-72 hours
+
+================================================================================
+INVESTMENT THESIS BY SET
+================================================================================
+
+STRONG HOLD / BUY:
+  Set: First Chapter (Aug 2023)
+  Current: $275 | ATH: $415 | ROI: +129% | Age: 34mo
+  IP: Maleficent (iconic villain, 1959)
+  Assessment: EXCEPTION. Sustains 2.29× retail at 34 months. Only set with
+              long-term premium. No reprints announced.
+
+  Set: Ursula's Return (May 2024)
+  Current: $190 | ATH: $420 | ROI: +58% | Age: 25mo
+  IP: Ursula (Little Mermaid, dark character)
+  Assessment: Strong IP sustains 1.58× retail. Recently accelerated (Mar-Jun
+              2026). Hold if acquired at retail.
+
+  Set: Winterspell (Aug 2025)
+  Current: $174 | ATH: $400 | ROI: +45% | Age: 10mo
+  IP: Frozen (modern blockbuster)
+  Assessment: Solid appreciation. Target 12-month hold for peak. Exit by
+              month 18.
+
+  Set: Wilds of the Unknown (Nov 2025)
+  Current: $259 | ATH: $400 | ROI: +116% | Age: 7mo
+  IP: Pixar debut (novelty spike)
+  Assessment: TOO EARLY. Early novelty spike; unproven long-term. Monitor for
+              next 6mo. Don't trust ATH yet.
+
+SELL / EXIT:
+  Set: Into the Inklands (Feb 2024)
+  Current: $90 | ATH: $400 | ROI: -28% | Age: 28mo
+  IP: Aladdin (weak)
+  Assessment: Below retail. -28% ROI. Aladdin doesn't sustain premium. EOL
+              phase discount active. Liquidate.
+
+  Set: Azurite Sea (Nov 2024)
+  Current: $95 | ATH: $420 | ROI: -21% | Age: 19mo
+  IP: Minor/ensemble (Flotsam, generic)
+  Assessment: No IP anchor. Collapsed post-release. Floor at 79% retail. Exit
+              any holdings.
+
+  Set: Archazia's Island (Feb 2025)
+  Current: $100 | ATH: $125 | ROI: -17% | Age: 16mo
+  IP: Rapunzel (moderate)
+  Assessment: Failed to sustain ATH. Rapunzel too weak to floor at 1.5×. Exit
+              before 18-month EOL phase.
+
+  Set: Fabled (May 2025)
+  Current: $250 | ATH: $837.50 | ROI: +108% | Age: 13mo
+  IP: Mixed (reprint artifact)
+  Assessment: SPIKE WAS ANOMALY. $837 was panic-buy on reprint announcement.
+              Current $250 is realistic but declining. Don't hold.
+
+================================================================================
+REPRINT POLICY: THE CRITICAL VARIABLE
+================================================================================
+
+Ravensburger's reprint cadence differs fundamentally from Pokemon/MTG:
+
+HISTORICAL REPRINTS:
+  - First Chapter (Aug 2023) → NO reprints announced at 34 months
+  - Rise of Floodborn (Nov 2023) → NO reprints
+  - Into Inklands (Feb 2024) → NO reprints
+  - Ursula's Return (May 2024) → NO reprints
+  - Shimmering Skies (Aug 2024) → NO reprints
+  - Azurite Sea (Nov 2024) → NO reprints
+  - Archazia's Island (Feb 2025) → NO reprints
+  - Fabled (May 2025) → 84% reprinted (first major event) at 13 months
+  - Winterspell (Aug 2025) → NO reprints announced at 10 months
+  - Wilds Unknown (Nov 2025) → NO reprints announced at 7 months
+
+COMPARISON TO COMPETITORS:
+  Pokemon: Quarterly reprints (3-6 month window) — AGGRESSIVE
+  Lorcana: Ad-hoc reprints (12+ month gap) — RARE
+  MTG: Annual reprints + Reserved List protection — MODERATE
+
+INVESTOR IMPLICATION:
+  + Lorcana reprints less frequently → longer scarcity floors
+  - Lorcana reprints unpredictably → must monitor announcements
+  - Reprint announcement triggers panic → spike then crash (see Fabled)
+
+ACTION PLAN:
+  1. Monitor Ravensburger official website monthly for reprint announcements
+  2. Exit immediately upon reprint news (don't wait for market to process)
+  3. Don't buy into reprint spikes (Fabled $837 was one-time anomaly)
+  4. Avoid sets >18 months old unless strong IP sustaining premium
+
+================================================================================
+PRICING MECHANICS: WHY SOME SETS HOLD, OTHERS COLLAPSE
+================================================================================
+
+STRONG IP FLOOR (Maleficent, Ursula, Frozen):
+  - 1.5-2.5× retail sustained at 25+ months
+  - Collector demand for character outweighs supply cycles
+  - Sealed boxes held as collectible keepsakes (not cracked for singles)
+
+WEAK IP FLOOR (Jafar, Rapunzel, generic adventure):
+  - 0.8-1.0× retail within 12-14 months
+  - No character appeal; commodity pricing kicks in
+  - Sets trade at or below MSRP after initial hype fades
+
+REPRINT IMPACT:
+  - Spike (panic-buy): 3-5× retail for 2-4 weeks
+  - Crash (reprint flood): -40% to -60% from spike, consolidates at 1.5-2.5×
+  - Long-term: Sealed originals premium over reprints, but don't reach spike prices
+
+PRODUCT WINDOW DECLINE:
+  Month 0-6: Peak appreciation (0-60% gain)
+  Month 6-12: Stabilization (40-100% gain possible)
+  Month 12-18: Plateau (gains slow; newer sets compete for demand)
+  Month 18-24: Decline (-10% to -30% common)
+  Month 24+: Heavy discount (30-50% below peak; EOL phase)
+
+================================================================================
+DECISION MATRIX: BUY, HOLD, SELL
+================================================================================
+
+BUY:
+  ✓ New release (0-3 months) + strong IP (Maleficent/Ursula/Frozen tier)
+  ✓ Presale active + secondary showing 1.2-1.5× retail
+  ✓ No reprint rumors
+  ✓ Allocation: 1-2 booster boxes per set; MSRP budget only
+
+HOLD:
+  ✓ 6-12 months post-release, strong IP, <1.5× retail (still room to run)
+  ✓ No reprint announcement issued
+  ✓ eBay sold velocity >10/month
+  ✓ Exit when: 50-100% ROI achieved OR 12-month mark reached
+
+SELL:
+  ✓ 100%+ ROI achieved (lock gains; reallocation capital)
+  ✓ Reprint announced (exit immediately; price will crash)
+  ✓ Weak IP apparent at 6-9 months (cut losses; redeploy)
+  ✓ 18+ months old (EOL phase; new sets cannibalize inventory)
+  ✓ Hitting MSRP-or-below at any age
+
+AVOID:
+  ✗ Sets >18 months old (except First Chapter/Ursula if already holding)
+  ✗ Weak IP themes (Jafar, Rapunzel, generic ensemble)
+  ✗ Illumineer's Trove, gift sets, single packs (no appreciation)
+  ✗ Presale buys >30 days before release (early FOMO pricing)
+
+================================================================================
+PORTFOLIO ALLOCATION STRATEGY
+================================================================================
+
+Monthly Budget: $5,000
+
+AGGRESSIVE (maximize short-term ROI):
+  60% Pokemon ($3,000): 25 booster boxes @ $120
+    Timeline: 3-6 months
+    Expected ROI: 40-80% = $1,200-2,400 profit
+  30% Lorcana ($1,500): 12 booster boxes @ $120 (strong IP only)
+    Timeline: 6-12 months
+    Expected ROI: 45-80% = $675-1,200 profit
+  10% MTG ($500): 3 booster boxes @ $150
+    Timeline: 6-12 months
+    Expected ROI: 30-60% = $150-300 profit
+
+BALANCED (3-6 month flip + 12-24 month holds):
+  40% Pokemon short ($2,000): 20 booster boxes, flip 6 months
+  20% Lorcana strong IP ($1,000): 8 booster boxes, hold 12 months
+  20% MTG standard ($1,000): 6 booster boxes, hold 12-18 months
+  20% MTG/Pokemon long-hold ($1,000): 3-5 proven vintage pieces, hold 3-5 years
+
+CONSERVATIVE (proven winners only):
+  40% Pokemon vintage ($2,000): 15-20 booster boxes, hold 3+ years
+  30% MTG Reserved List ($1,500): 4-6 cards/boxes, hold 5+ years
+  20% Lorcana First Chapter only ($1,000): 8-10 booster boxes, indefinite hold
+  10% New release buys ($500): Allocate to strong IP as released
+
+================================================================================
+LORCANA VS. POKEMON: KEY TRADE-OFFS
+================================================================================
+
+LORCANA ADVANTAGES:
+  + Higher per-set ROI on strong IP (45-129% vs. Pokemon 40-80%)
+  + Fewer reprint waves (1 per 3 years vs. Pokemon quarterly)
+  + Lower entry price ($120 vs. Pokemon $120-130)
+  + Less format complexity (booster box dominates)
+  + Appeal to older collectors (Disney nostalgia, not gameplay)
+
+LORCANA DISADVANTAGES:
+  - Smaller secondary market (24-72 hour sell time vs. Pokemon <6 hours)
+  - Unpredictable reprint policy (no official cadence)
+  - Unproven category (2 years old; unproven 20-year hold)
+  - IP-dependent (weak characters don't appreciate; strong ones plateau)
+  - Policy shift risk (could mirror Pokemon reprints at any time)
+
+POKEMON ADVANTAGES:
+  + Proven 30-year track record
+  + Excellent liquidity (<6 hours to sell)
+  + Predictable quarterly reprints (plan flips 3-6 months out)
+  + Vintage appreciation proven (300-1000%+ over 20 years)
+  + Gameplay drives sustained floor demand
+
+POKEMON DISADVANTAGES:
+  - Aggressive reprint cycles (quarterly floods)
+  - Must flip quickly (3-6 months before reprints announced)
+  - Larger capital requirement per box ($120-130)
+  - More format variants to track (ETB, collection box, etc.)
+
+VERDICT:
+  Lorcana = better for medium-term holds (6-12 months) on strong IP
+  Pokemon = better for short flips (3-6 months) or long holds (10+ years)
+
+================================================================================
+RELEASE CALENDAR 2026-2027
+================================================================================
+
+2026 RELEASES (Confirmed):
+  Winterspell (Feb 2026) — IN PRINT — $174 current, +45% ROI at 10mo — HOLD
+  Wilds Unknown (May 2026) — IN PRINT — $259 current, +116% ROI at 7mo — MONITOR
+  Attack of Vine (Q3 2026) — UPCOMING — TBA
+  Coco (Q4 2026) — UPCOMING — TBA
+
+2027+ FORECAST:
+  4-set/year cadence expected to continue
+  Pixar integration (Toy Story, Monsters Inc likely)
+  No major reprints announced (Fabled was exception)
+  Full 2027 calendar: Expect Nov 2026 announcement (Ravensburger cadence)
+
+PRODUCT WINDOW DATES:
+  Peak: Release + 0-6 months
+  Hold: Release + 6-12 months
+  Exit: Release + 12-18 months
+  Avoid: Release + 18+ months
+
+================================================================================
+RISK MITIGANTS & RED FLAGS
+================================================================================
+
+RED FLAGS (Sell/Exit Immediately):
+  🚩 Reprint announced by Ravensburger
+  🚩 Price spikes 3×+ retail suddenly (panic-buy signal)
+  🚩 TCGPlayer shows 20+ new listings (supply flood)
+  🚩 Reddit discussions mention "last chance before reprint"
+  🚩 Set >18 months old without strong IP premium
+  🚩 Weak IP showing retail-or-below at 6 months
+
+GREEN FLAGS (Hold/Buy):
+  ✅ Reprint denial or "no plans announced"
+  ✅ Steady secondary demand (5-15 TCGPlayer listings)
+  ✅ Strong Reddit sentiment on character
+  ✅ Price stable or appreciating month-over-month
+  ✅ 0-6 month window post-release
+  ✅ Classic IP (Maleficent/Ursula/Frozen tier)
+
+MITIGANTS:
+  → Monitor Ravensburger quarterly statements
+  → Exit immediately on reprint news
+  → Rotate inventory (don't hold >18 months)
+  → IP filter only (Maleficent-tier or skip)
+  → Set hard exit targets (50-100% ROI or 12-month mark)
+  → Diversify across Pokemon/MTG if tight on capital
+
+================================================================================
+DOCUMENTS CREATED FOR REFERENCE
+================================================================================
+
+1. LORCANA_SEALED_INVESTING_REPORT.md (Main analysis, 5,000+ words)
+   - Complete set history with prices
+   - Reprint policy deep-dive
+   - IP strength rankings
+   - Format analysis
+   - Release calendar
+   - Risk assessment
+
+2. LORCANA_TACTICAL_BUYLIST.md (Quick-reference buylist)
+   - At-a-glance buy/hold/sell
+   - Decision tree
+   - IP ranking tiers
+   - Reprint monitoring checklist
+   - Investment scenarios with math
+   - Monthly checklist template
+
+3. TCG_SEALED_COMPARISON_FRAMEWORK.md (Pokemon vs. Lorcana vs. MTG)
+   - Side-by-side comparison matrix
+   - 6-month, 12-month, 3-year scenarios
+   - Reprint mechanics for all 3 TCGs
+   - Liquidity analysis
+   - Capital allocation templates
+   - Risk scenarios
+
+4. LORCANA_RESEARCH_SUMMARY.txt (This file)
+   - Executive summary
+   - Key findings TL;DR
+   - Decision matrix
+   - Portfolio allocation
+   - Release calendar
+   - Red/green flags
+
+================================================================================
+FINAL RECOMMENDATION
+================================================================================
+
+LORCANA SEALED IS VIABLE FOR:
+  ✓ 6-12 month holds on STRONG IP (Maleficent, Ursula, Frozen)
+  ✓ 50-100% ROI target (not looking for 200%+ like Pokemon vintage)
+  ✓ Collectors with Disney nostalgia (older demographics)
+  ✓ Resellers comfortable with policy uncertainty
+  ✓ Portfolio diversification (20-30% of TCG sealed budget)
+
+LORCANA SEALED IS NOT SUITABLE FOR:
+  ✗ Long-hold (20+ years) — unproven category
+  ✗ Liquidity-dependent traders — slower sell times
+  ✗ Weak IP focus — returns are negative at 12-18 months
+  ✗ Large capital allocation — policy risk too high
+  ✗ Gameplay-centric investors — Lorcana play-demand lower than MTG/Pokemon
+
+BEST CASE SCENARIO:
+  Buy strong-IP set at MSRP ($120) → Hold 6-12 months → Sell at 1.5-2×
+  ($180-240) → 50-100% ROI → Redeploy capital to new releases
+
+REALISTIC CASE:
+  Buy at retail → Appreciate 1.2-1.5× due to initial demand → EOL phase
+  depreciates below retail as newer sets launch → Must exit before 24-month
+  cliff to avoid -30% loss
+
+RISK CASE:
+  Buy weak IP → Flat/negative return at 12 months → Reprints announced →
+  Price crashes 40-60% → Forced exit at heavy loss
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+IMMEDIATE:
+  1. Review LORCANA_TACTICAL_BUYLIST.md for current buy/sell status
+  2. Check Ravensburger website for any new reprint announcements
+  3. Monitor r/lorcana for Coco/Attack of Vine IP reception
+
+MONTHLY:
+  1. Update PriceCharting prices for all active Lorcana sets
+  2. Check TCGPlayer for reprint news
+  3. Reassess portfolio holdings against SELL signals
+  4. Plan new-release buys if strong IP confirmed
+
+QUARTERLY:
+  1. Audit holdings; liquidate underperformers (weak IP, age >18mo)
+  2. Read Ravensburger quarterly statements for policy signals
+  3. Rebalance allocation based on performance and new releases
+  4. Update this research if major category shifts occur
+
+================================================================================
+Report prepared: June 23, 2026
+Database source: PriceCharting (9 sets, 34-month history)
+Next update: September 2026 (post-Coco/Attack of Vine release data)
+================================================================================

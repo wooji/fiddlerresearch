@@ -1,0 +1,34 @@
+{
+ "updated": "2026-06-23T19:47:44.066Z",
+ "dbs": {
+  "mtg": {
+   "state": "done",
+   "scanned": 307,
+   "restarts": 0,
+   "lastProgress": 1782243909317,
+   "note": "DONE — 0/303 mtg sets with sealed history → set-history-mtg.json"
+  },
+  "lorcana": {
+   "state": "done",
+   "scanned": 16,
+   "restarts": 0,
+   "lastProgress": 1782243910030,
+   "note": "DONE — 0/14 lorcana sets with sealed history → set-history-lorcana.json"
+  },
+  "other-tcg": {
+   "state": "done",
+   "scanned": 225,
+   "restarts": 0,
+   "lastProgress": 1782243912692,
+   "note": "DONE — 0/224 other-tcg sets with sealed history → set-history-other-tcg.json"
+  },
+  "sports": {
+   "state": "done",
+   "scanned": 0,
+   "restarts": 0,
+   "lastProgress": 1782244063752,
+   "note": "DONE — 2/275 sports sets with sealed history → set-history-sports.json"
+  },
+  "_allDone": true
+ }
+}

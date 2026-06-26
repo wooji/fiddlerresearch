@@ -1,0 +1,91 @@
+<PRODUCT RANGES>
+
+Pokemon TCG:
+- Display Booster Box (36 count)
+- Display Tin Set - 10 Count
+- Display Tin Set - 8 Count
+- Collection Boxes (Vary in size and pack count)
+- Elite Trainer Box
+- Booster Bundle
+- 3 Pack Blisters
+- 2 Pack Blisters
+- Single Blister Pack
+
+One Piece:
+- Booster Box
+- Double Box (2-pack)
+- Collection Sets
+
+Magic the Gathering
+- Collector Booster Box
+- Gift Bundles (Generally include 1 Collector Booster Bundle + other packs)
+- Play Boxes
+- Single Collector Packs
+- Single Packs
+
+Lorcana
+- Booster Display Boxes (Booster Boxes)
+- Booster Packs
+- Sleeved Boosters
+- Collectors Illumineer's Trove
+- Collection Starter Sets
+- Gift Sets & Gift Boxes
+- Disney Collector Sets
+
+Mattel
+- Barbie
+- Monster High
+- RLC / Hot Wheels
+
+Topps
+- Retail products - Mega Box, Blaster/Value Box, Hanger Box, Fat Packs Sealed Mega Box, Sealed Blaster / Value Box, Sealed Hanger Box, Retail Box
+- Topps Exclusive - Jumbo, Jumbo Hobby, Hobby, Sealed Jumbo Case, Sealed Jumbo Hobby Case, Sealed Hobby Case, other specific Special High-End release boxes.
+
+Lego
+- Price appreciation is based soley off retirement date. This is found in Brick Economy and all the other data you already have access to.
+
+Toys / Vinyl
+- You're already doing phenomenal here, so keep doing what you're doing.
+
+<Research Strategy>
+- Every product research will have at least 1-5 data points of reseller activity. 
+Presale Activity can be seen on eBay Sold, StockX (presale). 
+- Look at recent releases of SIMILAR products - either by same product, prior years, or other product ranges in the same category.
+- Always look at volume first, then price movements to gauge what other resellers are currently doing. This is the best gauge for emprical sentiment.
+- All products must be Teired in our established S,A,B,C,PASS Tiering Methodolody.
+- NEVER duplicate analysis across sections of the embed. Say it once, put it in the right spot on the webhook.
+- Grab all information you can from the database first, then research the entire pipeline thoroughly on new requests and append the database for future reference.
+
+<Pricing Analysis>
+- S-Tier = 94.99%+ ROI (Net Profit / Cost of Investment)*100 (double green)
+- A-Tier = 50-94.99% (Green)
+- B-Tier = 30-49.99% (Orange)
+- C-Tier = 10-29.99% (Yellow)
+- Pass = <9.99% (Red)
+
+Consideration: If Volume is MASSIVE and the ROI 9% or higher, move the product into a B-Tier with the volume (need figures) caveat called out (Make this PURPLE).
+
+<Market Analysis>
+Pokemon: Analyze the overall SET (pitch black, ascended hero, prismatic evolution, etc.) and call out what chase cards and special aspects drive the set. (Cards in each set are dynamic, so scraping new data helps when the query is re-run)
+MTG: Analyze the overall SET and call out which chase cards and special aspects drive the set. Serialization drives hype. Some sets are more PLAYABLE than others. Sometimes its design. Find out what people like about the set and elaborate. (I.E. Edge of Eternities did not have any serialization, but the Collector Booster Box is doing $500-600 after release.)
+Lorcana: Analyze the overall SET and call out which chase cards and special aspects drive the set.
+Sports Cards: MessageId: 1519000369256988693 is a perfect example of how you should write Market Analysis.
+Other TCG: Follow a similar research methodologoy as all the other TCG products.
+One Piece: Analyze the overall SET and call out which chase cards and special aspects drive the set Manga Rares, Special Rares, Donn cards, popular charcters, 
+LEGO:
+Toys / Vinyl: You're doing phenomenal here already. continue your workflow.
+
+<Sentiment Analysis>
+Pokemon:
+- Boils down to if people like the set or not. Are people excited about it, or do they hate the cards that have been announced in the set?
+- Market Analysis should analyze the overall SET (pitch black, ascended hero, prismatic evolution, etc.) and call out what chase cards and special aspects drive the set. (Cards in each set are dynamic, so scraping new data helps when the query is re-run)
+MTG: 
+- Gift Bundles, Collector Booster boxes, and single collector packs will have premiums and vastly different cards than what's in a regular play box or REGULAR single pack.
+Lorcana - Understand which product you are looking at (booster box, gift box, gift set, booster pack etc.) and confirm if there is anything specific that is in each product vs. others. Gift Sets and troves will have potentailyl different chase cards than a display box or a blister.
+Topps:
+- For a product like 2026 Topps Chrome Football/NFL, you can look for potential 2026 Prizm Football/NFL, or 2026 Cosmic Football/NFL, or some other variation of 2026 Topps football products that released. If nothing comes up, look at 2025 products.
+- Traditional Sports cards require an analysis of 1) Product checklist to determine print run estimates, 2) Players for that year's class - Is the class generally comprised of good players, or bad players? Are they exciting players that people want, or is it lukewarm reception?
+- Volume / Price analytics must be done > 1519000369256988693 has good product analysis, but needs to also loop in the top.
+One Piece: There are only a few retail products that retailers current put out (Booster Boxes and Double Pack Boxes). Need your help in figuring out how to best analyzy sentiment on this.
+
+Continue with all other sections as you have it.

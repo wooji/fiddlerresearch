@@ -1,0 +1,448 @@
+{
+  "working": [
+    {
+      "name": "Target — Pokemon sealed",
+      "url": "https://www.target.com/s?searchTerm=pokemon+booster+box&category=0%7CAll%7Cmatchallpartial%7Call+categories",
+      "category": "pokemon",
+      "works": true,
+      "method": "playwright-proxy(40.27.103.16)",
+      "hasContent": true,
+      "prices": [
+        "$219.99",
+        "$53.99",
+        "$599.00",
+        "$29.99",
+        "$749.00",
+        "$259.99",
+        "$16.99",
+        "$27.98",
+        "$27.99",
+        "$19.99"
+      ],
+      "snippet": "window.__FLAGS__ = JSON.parse(\"{\\\"GLOBAL_ADD_TO_CART_NOTIFY_ME_ENABLED\\\":true,\\\"GLOBAL_ADOBE_TAG_MANAGER_ENABLED\\\":true,\\\"GLOBAL_AUTH_ID_TOKEN_COOKIE_CACHE_ENABLED\\\":true,\\\"GLOBAL_AXIOM_RETURN_PATH_ENABLED\\\":true,\\\"GLOBAL_BACKUP_ITEMS_IN_BULK_ADD_TO_CART_ENABLED\\\":true,\\\"GLOBAL_BUY_NOW_FROM_PDP_ENAB"
+    },
+    {
+      "name": "One Piece — official products page",
+      "url": "https://en.onepiece-cardgame.com/products/?subcategory=boosters",
+      "category": "one_piece",
+      "works": true,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [
+        "$4.99",
+        "$5.49",
+        "$4.49"
+      ],
+      "snippet": "function OptanonWrapper() { } (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.ins"
+    },
+    {
+      "name": "TrollAndToad — Pokemon booster boxes",
+      "url": "https://www.trollandtoad.com/pokemon/pokemon-booster-boxes/1?sort-by=name&sort-order=asc&min-price=50&max-price=300",
+      "category": "pokemon",
+      "works": true,
+      "method": "proxy-curl(40.27.103.4)",
+      "hasContent": true,
+      "prices": [
+        "$0.00"
+      ],
+      "snippet": "404 Not Found &ndash; Troll and Toad window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start'); {\"shopId\":94632313128,\"countryCode\":\"US\",\"currencyCode\":\"USD\",\"merchantCapabilities\":[\"supports3DS\"],\"merchantId\":\"gid:\\/\\/shopify\\/Shop\\/94632313128\",\"m"
+    },
+    {
+      "name": "TrollAndToad — MTG booster boxes",
+      "url": "https://www.trollandtoad.com/magic-the-gathering/booster-boxes/1?sort-by=name&sort-order=asc",
+      "category": "mtg",
+      "works": true,
+      "method": "proxy-curl(40.27.103.5)",
+      "hasContent": true,
+      "prices": [
+        "$0.00"
+      ],
+      "snippet": "404 Not Found &ndash; Troll and Toad window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start'); {\"shopId\":94632313128,\"countryCode\":\"US\",\"currencyCode\":\"USD\",\"merchantCapabilities\":[\"supports3DS\"],\"merchantId\":\"gid:\\/\\/shopify\\/Shop\\/94632313128\",\"m"
+    },
+    {
+      "name": "Rosewater/WotC — product page",
+      "url": "https://magic.wizards.com/en/products/secrets-of-strixhaven",
+      "category": "mtg",
+      "works": true,
+      "method": "proxy-curl(40.27.103.9)",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "window.dataLayer=window.dataLayer||[],window.dataLayer.push({userProperties:{user_id:\"\",user_type:\"\",newsletter_opt_in:\"\",targeted_analytics_opt_in:\"\"}}) Secrets of Strixhaven | Magic: The Gathering !function(){ window.semaphore=window.semaphore||[],window.ketch=function(){ window.semaphore.push(arg"
+    }
+  ],
+  "partial": [
+    {
+      "name": "Topps.com — baseball boxes",
+      "url": "https://www.topps.com/products/cards/baseball",
+      "category": "topps",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "You have been blocked *,:after,:before{font-family:Roboto,Verdana,Arial;font-weight:400;color:#000}.captcha__contact__submit{background-color:#eb2e2c!important;color:#fff!important}body{margin:0}*,:after,:before{box-sizing:border-box}:focus{outline:0}.captcha{width:100%;padding-top:20px}a{text-decor"
+    },
+    {
+      "name": "Topps.com — product list",
+      "url": "https://www.topps.com/collections/trading-cards",
+      "category": "topps",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "You have been blocked *,:after,:before{font-family:Roboto,Verdana,Arial;font-weight:400;color:#000}.captcha__contact__submit{background-color:#eb2e2c!important;color:#fff!important}body{margin:0}*,:after,:before{box-sizing:border-box}:focus{outline:0}.captcha{width:100%;padding-top:20px}a{text-decor"
+    },
+    {
+      "name": "ICv2.com — TCG news",
+      "url": "https://icv2.com/articles/tags/id/7/collectible-card-games",
+      "category": "all",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LQYJYX2TZN'); ICv2: Page not found :( #preview-mode .menu-more.proart-menu span.dropout{background:#221f20;}#top-nav #preview-mode .menu-more.proart-menu span.dropout a,#t"
+    },
+    {
+      "name": "ICv2.com — Pokemon",
+      "url": "https://icv2.com/articles/tags/id/38/pokemon",
+      "category": "pokemon",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LQYJYX2TZN'); ICv2: Page not found :( #preview-mode .menu-more.proart-menu span.dropout{background:#221f20;}#top-nav #preview-mode .menu-more.proart-menu span.dropout a,#t"
+    },
+    {
+      "name": "Coolstuffinc — Pokemon sealed",
+      "url": "https://www.coolstuffinc.com/sc/Pokemon-TCG?subcategory=Booster+Boxes&instock=1",
+      "category": "pokemon",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "404 - Not found | coolstuffinc.com var readyFunctions = []; window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-582294-1'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', "
+    },
+    {
+      "name": "Coolstuffinc — MTG sealed",
+      "url": "https://www.coolstuffinc.com/sc/Magic-the-Gathering?subcategory=Booster+Boxes&instock=1",
+      "category": "mtg",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "404 - Not found | coolstuffinc.com var readyFunctions = []; window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-582294-1'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', "
+    },
+    {
+      "name": "TCGPlayer — One Piece booster boxes",
+      "url": "https://www.tcgplayer.com/search/disney-lorcana/product?productLineName=disney-lorcana&view=grid&productTypeName=Booster+Box",
+      "category": "lorcana",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "Your Trusted Marketplace for Collectible Trading Card Games - TCGplayer const __mfCacheGlobalKey = \"__mf_module_cache__\"; globalThis[__mfCacheGlobalKey] ||= { share: {}, remote: {} }; globalThis[__mfCacheGlobalKey].share ||= {}; globalThis[__mfCacheGlobalKey].remote ||= {}; const __mfModuleCache = g"
+    },
+    {
+      "name": "Southern Hobby — Pokemon",
+      "url": "https://www.southernhobby.com/search?q=pokemon+booster+box&type=product",
+      "category": "pokemon",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "function OptanonWrapper() { OneTrust.InsertScript('https://www.googletagmanager.com/gtag/js?id=G-7LQB2GCRVW', 'head', null, null, 'C0002'); (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src=\"https://www.clarity.ms/tag/\"+i; y=l."
+    },
+    {
+      "name": "MTGGoldfish — sets prices",
+      "url": "https://www.mtggoldfish.com/sets/sealed#online",
+      "category": "mtg",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "Oops! Page not found! (404) body{text-align:center;position:absolute;top:50%;margin:0;margin-top:-275px;width:100%;} h2,h3{color:#555;font:bold 200% sans-serif; padding: 10px;} p{color:#777;font:normal 150% sans-serif; padding: 10px;} img{max-width: 100%; display:block; margin: 0 auto; height: auto;"
+    },
+    {
+      "name": "CardKingdom — MTG sealed",
+      "url": "https://www.cardkingdom.com/catalog/magic_sealed_product/by/alpha_desc",
+      "category": "mtg",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "Card Kingdom - Magic: the Gathering, MTG, Magic Cards, Singles, EDH, Decks and Supplies Oh no! It looks like this page has gone missing. Please pardon the Sudden Disappearance. Take me to the Card Kingdom homepage . (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var"
+    },
+    {
+      "name": "Pokemon Center — booster box",
+      "url": "https://www.pokemoncenter.com/en-us/category/elite-trainer-boxes",
+      "category": "pokemon",
+      "works": false,
+      "method": "playwright-proxy(40.27.103.16)",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "Pardon Our Interruption .container { max-width: 800px; margin: auto; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; color: #7a838c; } h1 { color: #2a2d30; font-weight: 500; } li { margin: 0 0 10px; } a { color: #428bca; } a:hover, a:focus { color: #2a6496; } window.reeseSkipExpirationChec"
+    }
+  ],
+  "blocked": [
+    {
+      "name": "Bulbapedia — ETB prices",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/Prismatic_Evolutions_(TCG)",
+      "category": "pokemon",
+      "works": false,
+      "method": "",
+      "hasContent": false,
+      "prices": [],
+      "snippet": "(no content)"
+    },
+    {
+      "name": "ACD Distribution — sealed games",
+      "url": "https://www.acddistribution.com/index.php?pg=search&t=Pokemon&c=CCG+Sealed+Product&s=Price",
+      "category": "pokemon",
+      "works": false,
+      "method": "",
+      "hasContent": false,
+      "prices": [],
+      "snippet": "(no content)"
+    },
+    {
+      "name": "Ravensburger US — Lorcana",
+      "url": "https://www.ravensburger.us/en-US/search?search=lorcana+booster+box",
+      "category": "lorcana",
+      "works": false,
+      "method": "",
+      "hasContent": false,
+      "prices": [],
+      "snippet": "(no content)"
+    },
+    {
+      "name": "Amazon — MTG Secrets of Strixhaven MSRP",
+      "url": "https://www.amazon.com/dp/B0GFDD1RLS",
+      "category": "mtg",
+      "works": false,
+      "method": "",
+      "hasContent": false,
+      "prices": [],
+      "snippet": "(no content)"
+    }
+  ],
+  "all": [
+    {
+      "name": "Topps.com — baseball boxes",
+      "url": "https://www.topps.com/products/cards/baseball",
+      "category": "topps",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "You have been blocked *,:after,:before{font-family:Roboto,Verdana,Arial;font-weight:400;color:#000}.captcha__contact__submit{background-color:#eb2e2c!important;color:#fff!important}body{margin:0}*,:after,:before{box-sizing:border-box}:focus{outline:0}.captcha{width:100%;padding-top:20px}a{text-decor"
+    },
+    {
+      "name": "Topps.com — product list",
+      "url": "https://www.topps.com/collections/trading-cards",
+      "category": "topps",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "You have been blocked *,:after,:before{font-family:Roboto,Verdana,Arial;font-weight:400;color:#000}.captcha__contact__submit{background-color:#eb2e2c!important;color:#fff!important}body{margin:0}*,:after,:before{box-sizing:border-box}:focus{outline:0}.captcha{width:100%;padding-top:20px}a{text-decor"
+    },
+    {
+      "name": "Bulbapedia — ETB prices",
+      "url": "https://bulbapedia.bulbagarden.net/wiki/Prismatic_Evolutions_(TCG)",
+      "category": "pokemon",
+      "works": false,
+      "method": "",
+      "hasContent": false,
+      "prices": [],
+      "snippet": "(no content)"
+    },
+    {
+      "name": "ICv2.com — TCG news",
+      "url": "https://icv2.com/articles/tags/id/7/collectible-card-games",
+      "category": "all",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LQYJYX2TZN'); ICv2: Page not found :( #preview-mode .menu-more.proart-menu span.dropout{background:#221f20;}#top-nav #preview-mode .menu-more.proart-menu span.dropout a,#t"
+    },
+    {
+      "name": "ICv2.com — Pokemon",
+      "url": "https://icv2.com/articles/tags/id/38/pokemon",
+      "category": "pokemon",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LQYJYX2TZN'); ICv2: Page not found :( #preview-mode .menu-more.proart-menu span.dropout{background:#221f20;}#top-nav #preview-mode .menu-more.proart-menu span.dropout a,#t"
+    },
+    {
+      "name": "Coolstuffinc — Pokemon sealed",
+      "url": "https://www.coolstuffinc.com/sc/Pokemon-TCG?subcategory=Booster+Boxes&instock=1",
+      "category": "pokemon",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "404 - Not found | coolstuffinc.com var readyFunctions = []; window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-582294-1'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', "
+    },
+    {
+      "name": "Coolstuffinc — MTG sealed",
+      "url": "https://www.coolstuffinc.com/sc/Magic-the-Gathering?subcategory=Booster+Boxes&instock=1",
+      "category": "mtg",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "404 - Not found | coolstuffinc.com var readyFunctions = []; window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-582294-1'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', "
+    },
+    {
+      "name": "TrollAndToad — Pokemon booster boxes",
+      "url": "https://www.trollandtoad.com/pokemon/pokemon-booster-boxes/1?sort-by=name&sort-order=asc&min-price=50&max-price=300",
+      "category": "pokemon",
+      "works": true,
+      "method": "proxy-curl(40.27.103.4)",
+      "hasContent": true,
+      "prices": [
+        "$0.00"
+      ],
+      "snippet": "404 Not Found &ndash; Troll and Toad window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start'); {\"shopId\":94632313128,\"countryCode\":\"US\",\"currencyCode\":\"USD\",\"merchantCapabilities\":[\"supports3DS\"],\"merchantId\":\"gid:\\/\\/shopify\\/Shop\\/94632313128\",\"m"
+    },
+    {
+      "name": "TrollAndToad — MTG booster boxes",
+      "url": "https://www.trollandtoad.com/magic-the-gathering/booster-boxes/1?sort-by=name&sort-order=asc",
+      "category": "mtg",
+      "works": true,
+      "method": "proxy-curl(40.27.103.5)",
+      "hasContent": true,
+      "prices": [
+        "$0.00"
+      ],
+      "snippet": "404 Not Found &ndash; Troll and Toad window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start'); {\"shopId\":94632313128,\"countryCode\":\"US\",\"currencyCode\":\"USD\",\"merchantCapabilities\":[\"supports3DS\"],\"merchantId\":\"gid:\\/\\/shopify\\/Shop\\/94632313128\",\"m"
+    },
+    {
+      "name": "TCGPlayer — One Piece booster boxes",
+      "url": "https://www.tcgplayer.com/search/disney-lorcana/product?productLineName=disney-lorcana&view=grid&productTypeName=Booster+Box",
+      "category": "lorcana",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "Your Trusted Marketplace for Collectible Trading Card Games - TCGplayer const __mfCacheGlobalKey = \"__mf_module_cache__\"; globalThis[__mfCacheGlobalKey] ||= { share: {}, remote: {} }; globalThis[__mfCacheGlobalKey].share ||= {}; globalThis[__mfCacheGlobalKey].remote ||= {}; const __mfModuleCache = g"
+    },
+    {
+      "name": "ACD Distribution — sealed games",
+      "url": "https://www.acddistribution.com/index.php?pg=search&t=Pokemon&c=CCG+Sealed+Product&s=Price",
+      "category": "pokemon",
+      "works": false,
+      "method": "",
+      "hasContent": false,
+      "prices": [],
+      "snippet": "(no content)"
+    },
+    {
+      "name": "Southern Hobby — Pokemon",
+      "url": "https://www.southernhobby.com/search?q=pokemon+booster+box&type=product",
+      "category": "pokemon",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "function OptanonWrapper() { OneTrust.InsertScript('https://www.googletagmanager.com/gtag/js?id=G-7LQB2GCRVW', 'head', null, null, 'C0002'); (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)}; t=l.createElement(r);t.async=1;t.src=\"https://www.clarity.ms/tag/\"+i; y=l."
+    },
+    {
+      "name": "MTGGoldfish — sets prices",
+      "url": "https://www.mtggoldfish.com/sets/sealed#online",
+      "category": "mtg",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "Oops! Page not found! (404) body{text-align:center;position:absolute;top:50%;margin:0;margin-top:-275px;width:100%;} h2,h3{color:#555;font:bold 200% sans-serif; padding: 10px;} p{color:#777;font:normal 150% sans-serif; padding: 10px;} img{max-width: 100%; display:block; margin: 0 auto; height: auto;"
+    },
+    {
+      "name": "CardKingdom — MTG sealed",
+      "url": "https://www.cardkingdom.com/catalog/magic_sealed_product/by/alpha_desc",
+      "category": "mtg",
+      "works": false,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "Card Kingdom - Magic: the Gathering, MTG, Magic Cards, Singles, EDH, Decks and Supplies Oh no! It looks like this page has gone missing. Please pardon the Sudden Disappearance. Take me to the Card Kingdom homepage . (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var"
+    },
+    {
+      "name": "Rosewater/WotC — product page",
+      "url": "https://magic.wizards.com/en/products/secrets-of-strixhaven",
+      "category": "mtg",
+      "works": true,
+      "method": "proxy-curl(40.27.103.9)",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "window.dataLayer=window.dataLayer||[],window.dataLayer.push({userProperties:{user_id:\"\",user_type:\"\",newsletter_opt_in:\"\",targeted_analytics_opt_in:\"\"}}) Secrets of Strixhaven | Magic: The Gathering !function(){ window.semaphore=window.semaphore||[],window.ketch=function(){ window.semaphore.push(arg"
+    },
+    {
+      "name": "Pokemon Center — booster box",
+      "url": "https://www.pokemoncenter.com/en-us/category/elite-trainer-boxes",
+      "category": "pokemon",
+      "works": false,
+      "method": "playwright-proxy(40.27.103.16)",
+      "hasContent": true,
+      "prices": [],
+      "snippet": "Pardon Our Interruption .container { max-width: 800px; margin: auto; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; color: #7a838c; } h1 { color: #2a2d30; font-weight: 500; } li { margin: 0 0 10px; } a { color: #428bca; } a:hover, a:focus { color: #2a6496; } window.reeseSkipExpirationChec"
+    },
+    {
+      "name": "Ravensburger US — Lorcana",
+      "url": "https://www.ravensburger.us/en-US/search?search=lorcana+booster+box",
+      "category": "lorcana",
+      "works": false,
+      "method": "",
+      "hasContent": false,
+      "prices": [],
+      "snippet": "(no content)"
+    },
+    {
+      "name": "One Piece — official products page",
+      "url": "https://en.onepiece-cardgame.com/products/?subcategory=boosters",
+      "category": "one_piece",
+      "works": true,
+      "method": "direct-curl",
+      "hasContent": true,
+      "prices": [
+        "$4.99",
+        "$5.49",
+        "$4.49"
+      ],
+      "snippet": "function OptanonWrapper() { } (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.ins"
+    },
+    {
+      "name": "Target — Pokemon sealed",
+      "url": "https://www.target.com/s?searchTerm=pokemon+booster+box&category=0%7CAll%7Cmatchallpartial%7Call+categories",
+      "category": "pokemon",
+      "works": true,
+      "method": "playwright-proxy(40.27.103.16)",
+      "hasContent": true,
+      "prices": [
+        "$219.99",
+        "$53.99",
+        "$599.00",
+        "$29.99",
+        "$749.00",
+        "$259.99",
+        "$16.99",
+        "$27.98",
+        "$27.99",
+        "$19.99"
+      ],
+      "snippet": "window.__FLAGS__ = JSON.parse(\"{\\\"GLOBAL_ADD_TO_CART_NOTIFY_ME_ENABLED\\\":true,\\\"GLOBAL_ADOBE_TAG_MANAGER_ENABLED\\\":true,\\\"GLOBAL_AUTH_ID_TOKEN_COOKIE_CACHE_ENABLED\\\":true,\\\"GLOBAL_AXIOM_RETURN_PATH_ENABLED\\\":true,\\\"GLOBAL_BACKUP_ITEMS_IN_BULK_ADD_TO_CART_ENABLED\\\":true,\\\"GLOBAL_BUY_NOW_FROM_PDP_ENAB"
+    },
+    {
+      "name": "Amazon — MTG Secrets of Strixhaven MSRP",
+      "url": "https://www.amazon.com/dp/B0GFDD1RLS",
+      "category": "mtg",
+      "works": false,
+      "method": "",
+      "hasContent": false,
+      "prices": [],
+      "snippet": "(no content)"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+ "startedAt": null,
+ "dbs": {
+  "set-history.json": {
+   "total": 305,
+   "todo": 301,
+   "filled": 224,
+   "done": true
+  },
+  "set-history-one-piece.json": {
+   "total": 13,
+   "todo": 0,
+   "filled": 0,
+   "done": true
+  },
+  "set-history-mtg.json": {
+   "total": 308,
+   "todo": 302,
+   "filled": 217,
+   "done": true
+  },
+  "set-history-lorcana.json": {
+   "total": 16,
+   "todo": 7,
+   "filled": 2,
+   "done": true
+  },
+  "set-history-sports.json": {
+   "total": 291,
+   "todo": 281,
+   "filled": 181,
+   "done": true
+  },
+  "set-history-other-tcg.json": {
+   "total": 225,
+   "todo": 224,
+   "filled": 144,
+   "done": true
+  },
+  "set-history-noncard.json": {
+   "total": 14,
+   "todo": 10,
+   "filled": 8,
+   "done": true
+  }
+ }
+}

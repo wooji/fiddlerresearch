@@ -50,6 +50,16 @@ function readJson(file) {
   try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return null; }
 }
 
+// Player cache — parse 28k-record JSON once, not per request
+let _playersCache = null;
+function getPlayersCache() {
+  if (_playersCache) return _playersCache;
+  const raw = readJson('player-history-sports.json');
+  _playersCache = Object.values(raw?.players ?? {});
+  console.log(`[players-cache] loaded ${_playersCache.length} records`);
+  return _playersCache;
+}
+
 function getDbEntries(dbKey) {
   const cfg = DBS[dbKey];
   if (!cfg) return [];
@@ -57,7 +67,23 @@ function getDbEntries(dbKey) {
   if (!raw) return [];
   const sets = raw.sets ?? raw.db?.sets ?? raw;
   if (typeof sets !== 'object' || Array.isArray(sets)) return [];
-  return Object.entries(sets).map(([id, entry]) => ({ id, ...entry }));
+  return Object.entries(sets)
+    .map(([id, entry]) => {
+      const fc = entry.cards?.fullCardList ?? [];
+      const cc = entry.cards?.chaseCards ?? [];
+      // For sports sets: use chaseCards[]; for TCG: use fullCardList by market
+      let chase = null;
+      if (cc.length) {
+        chase = cc[0]; // already sorted by price desc
+      } else if (fc.length) {
+        chase = fc.reduce((a, b) => ((b.market ?? 0) > (a.market ?? 0) ? b : a), fc[0]);
+      }
+      return { id, ...entry, chaseCard: chase ? { name: chase.player ?? chase.name, market: chase.price ?? chase.market, rarity: chase.cardType ?? chase.rarity } : null };
+    })
+    .sort((a, b) => {
+      const da = a.publishedOn ?? '0', db2 = b.publishedOn ?? '0';
+      return da < db2 ? 1 : da > db2 ? -1 : 0;
+    });
 }
 
 function fuzzyMatch(text, entries) {
@@ -84,19 +110,25 @@ function fuzzyMatch(text, entries) {
 }
 
 function getProducts() {
-  // Load static products from fiddler-research.mjs by parsing the keys
+  // Load static products from fiddler-research.mjs — extract key + label
   const raw = fs.readFileSync(path.join(ROOT, 'fiddler-research.mjs'), 'utf8');
-  const keys = [];
-  const re = /^\s*'([a-z0-9][a-z0-9-]+)':\s*\{/gm;
+  const entries = new Map(); // key → label
+  const keyRe = /^\s*'([a-z0-9][a-z0-9-]+)':\s*\{/gm;
   let m;
-  while ((m = re.exec(raw)) !== null) {
-    // Only keep product keys (skip non-product top-level objects like exports, consts)
-    if (m[1].includes('-')) keys.push(m[1]);
+  while ((m = keyRe.exec(raw)) !== null) {
+    if (!m[1].includes('-')) continue;
+    const key = m[1];
+    // Try to find label: field immediately after the key block opening
+    const after = raw.slice(m.index + m[0].length, m.index + m[0].length + 300);
+    const lm = after.match(/label\s*:\s*['"]([^'"]+)['"]/);
+    entries.set(key, lm ? lm[1] : key);
   }
-  // Also load dynamic-products.json
-  const dyn = readJson('dynamic-products.json');
-  const dynKeys = dyn ? Object.keys(dyn) : [];
-  return [...new Set([...keys, ...dynKeys])];
+  // Merge dynamic-products.json
+  const dyn = readJson('dynamic-products.json') ?? {};
+  for (const [k, v] of Object.entries(dyn)) {
+    entries.set(k, v?.label ?? k);
+  }
+  return [...entries.entries()].map(([key, label]) => ({ key, label }));
 }
 
 function loadEnv() {
@@ -226,13 +258,21 @@ const server = http.createServer(async (req, res) => {
     const sets = raw.sets ?? raw.db?.sets ?? raw;
     const set = sets[setId];
     if (!set) { json(res, { error: 'Set not found' }, 404); return; }
-    const list = (set.cards?.fullCardList ?? []).slice();
-    list.sort((a, b) => (b.market ?? 0) - (a.market ?? 0));
+    // Support both TCG fullCardList and sports chaseCards
+    const fullList = set.cards?.fullCardList ?? [];
+    const chaseList = set.cards?.chaseCards ?? [];
+    const list = fullList.length ? fullList.slice() : chaseList.slice();
+    if (fullList.length) list.sort((a, b) => (b.market ?? 0) - (a.market ?? 0));
     const limit = Math.min(parseInt(url.searchParams.get('limit') ?? '50', 10) || 50, 500);
     const cards = list.slice(0, limit).map(c => ({
-      name: c.name, market: c.market ?? null, rarity: c.rarity ?? null,
-      number: c.number ?? null, points: (c.priceHistory ?? []).length,
-      lastDate: (c.priceHistory ?? []).slice(-1)[0]?.date ?? null,
+      name: c.player ?? c.name,
+      market: c.price ?? c.market ?? null,
+      rarity: c.cardType ?? c.rarity ?? null,
+      number: c.number ?? null,
+      points: (c.priceHistory ?? []).length,
+      lastDate: (c.priceHistory ?? []).slice(-1)[0]?.date ?? c.fetchedAt ?? null,
+      star: c.star ?? false,
+      printRun: c.printRun ?? null,
     }));
     json(res, { setId, total: list.length, fetchedAt: set.cards?.fetchedAt ?? null, cards });
     return;
@@ -276,7 +316,7 @@ const server = http.createServer(async (req, res) => {
     const send = (type, data) => res.write(`event: ${type}\ndata: ${JSON.stringify(data)}\n\n`);
     send('start', { key, ts: new Date().toISOString() });
     // Pass form fields as env vars — pipeline merges them into prod before running
-    const spawnEnv = { ...process.env, DASHBOARD_MODE: '1', EVIDENCE_OK: '1' };
+    const spawnEnv = { ...process.env, DASHBOARD_MODE: '1', EVIDENCE_OK: '1', SKIP_WRITEUP_CHECK: '1', SKIP_RETAIL_CHECK: '1' };
     if (retail)   spawnEnv.USER_RETAIL   = String(retail);
     if (intelUrl) spawnEnv.USER_URL      = intelUrl;
     if (notes)    spawnEnv.USER_NOTES    = notes;
@@ -307,6 +347,30 @@ const server = http.createServer(async (req, res) => {
     const dynPath = path.join(ROOT, 'dynamic-products.json');
     let dyn = readJson('dynamic-products.json') ?? {};
     if (dyn[key]) { json(res, { key, existed: true }); return; }
+    // Server-side fuzzy guard: reject stub if any existing product matches ≥25 score
+    const allProducts = getProducts();
+    const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const ngrams = s => { const r = new Set(); for (let i=0; i<s.length-2; i++) r.add(s.slice(i,i+3)); return r; };
+    const needle = norm(name);
+    const na = ngrams(needle);
+    const scored = allProducts.map(({ key: k, label }) => {
+      const kn = norm(k), ln = norm(label ?? k);
+      const score = Math.max(...[kn, ln].map(c => {
+        if (c === needle || c.includes(needle) || needle.includes(c)) return 80;
+        const nb = ngrams(c); let cnt = 0; na.forEach(g => { if (nb.has(g)) cnt++; });
+        return Math.round((cnt / Math.max(na.size, nb.size, 1)) * 60);
+      }));
+      return { k, label, score };
+    }).filter(s => s.score >= 25).sort((a, b) => b.score - a.score);
+    if (scored.length) {
+      const best = scored[0];
+      json(res, { key: best.k, existed: true, fuzzyMatch: true, label: best.label, score: best.score,
+        error: `Fuzzy match found: "${best.label}" (${best.k}, score ${best.score}) — use that key instead of creating a stub` }, 409);
+      return;
+    }
+    // Reject if key already exists in static map (fiddler-research.mjs) — prevents stub shadowing
+    const staticKeys = allProducts.map(p => p.key).filter(k => !Object.keys(dyn).includes(k));
+    if (staticKeys.includes(key)) { json(res, { key, existed: true, static: true, error: 'Key exists in static map — use that key directly, do not create dynamic stub' }, 409); return; }
     // Extract direct IDs from URLs for accurate pricing
     const walmartIdMatch = url && url.match(/walmart\.com\/ip\/[^/]+\/(\d{8,})/);
     const walmartItemId  = walmartIdMatch ? walmartIdMatch[1] : null;
@@ -387,6 +451,13 @@ const server = http.createServer(async (req, res) => {
     db._meta = { ...(db._meta ?? {}), updated: dbAppend.record.dateLogged };
     fs.writeFileSync(dbPath, JSON.stringify(db, null, 2) + '\n');
     json(res, { saved: true, dbFile: dbAppend.dbFile, key: dbAppend.key });
+    return;
+  }
+
+  // GET /api/research-log — all pipeline run history
+  if (req.method === 'GET' && pathname === '/api/research-log') {
+    const log = readJson('research-log.json') ?? [];
+    json(res, log.slice().reverse()); // newest first
     return;
   }
 
@@ -576,6 +647,38 @@ const server = http.createServer(async (req, res) => {
       }
     }
     json(res, result);
+    return;
+  }
+
+  // GET /api/players?q=&sport=&page=&limit= — player-history-sports.json
+  if (req.method === 'GET' && pathname === '/api/players') {
+    const all = getPlayersCache();
+    const q     = (url.searchParams.get('q')     ?? '').toLowerCase();
+    const sport = (url.searchParams.get('sport') ?? '').toLowerCase();
+    const page  = Math.max(1, parseInt(url.searchParams.get('page')  ?? '1', 10));
+    const limit = Math.min(200, parseInt(url.searchParams.get('limit') ?? '50', 10));
+    const filtered = all.filter(p => {
+      if (!p.name) return false;
+      if (sport && p.sport !== sport) return false;
+      if (q && !p.name.toLowerCase().includes(q) && !p.slug?.includes(q)) return false;
+      return true;
+    });
+    const total = filtered.length;
+    const items = filtered.slice((page - 1) * limit, page * limit);
+    json(res, { total, page, limit, items });
+    return;
+  }
+
+  // GET /api/players/stats — summary counts by sport
+  if (req.method === 'GET' && pathname === '/api/players/stats') {
+    const all = getPlayersCache();
+    const stats = { total: all.length, named: 0, bySprot: {} };
+    for (const p of all) {
+      if (p.name) stats.named++;
+      const s = p.sport ?? 'unknown';
+      stats.bySprot[s] = (stats.bySprot[s] ?? 0) + 1;
+    }
+    json(res, stats);
     return;
   }
 

@@ -219,6 +219,7 @@
   <button data-tab="databases">Databases</button>
   <button data-tab="history">History</button>
   <button data-tab="feed">Feed</button>
+  <button data-tab="players">Players</button>
   <button data-tab="docs">Docs</button>
   <span id="code-status" title="Live code status — green = running process serves latest source"
         style="margin-left:auto;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;background:#333;color:#bbb">code: …</span>
@@ -245,6 +246,46 @@
   refreshCodeStatus();
   setInterval(refreshCodeStatus, 10000);
 </script>
+
+<!-- PLAYERS TAB -->
+<div id="tab-players" class="panel">
+  <div style="padding:20px;height:calc(100vh - 52px);display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
+      <div style="font-size:18px;font-weight:700">Player Database</div>
+      <div id="players-stats" style="font-size:12px;color:var(--muted)">loading…</div>
+    </div>
+    <div style="display:flex;gap:8px;flex-shrink:0">
+      <input id="players-q" placeholder="Search name or slug…" style="flex:1;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-size:13px" oninput="debouncePlayers()">
+      <select id="players-sport" style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-size:13px" onchange="loadPlayers(1)">
+        <option value="">All Sports</option>
+        <option value="baseball">Baseball</option>
+        <option value="basketball">Basketball</option>
+        <option value="football">Football</option>
+      </select>
+      <button onclick="loadPlayers(1)" style="background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 16px;font-weight:600;cursor:pointer">Search</button>
+    </div>
+    <div style="flex:1;overflow:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead>
+          <tr style="background:var(--surface);position:sticky;top:0;z-index:1">
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Name</th>
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Slug</th>
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Sport</th>
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Position</th>
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Rookie</th>
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Stats</th>
+          </tr>
+        </thead>
+        <tbody id="players-tbody"></tbody>
+      </table>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;padding:4px 0">
+      <button id="players-prev" onclick="loadPlayers(playersPage-1)" style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:6px 14px;color:var(--text);cursor:pointer;font-size:13px">← Prev</button>
+      <span id="players-pager" style="font-size:12px;color:var(--muted)"></span>
+      <button id="players-next" onclick="loadPlayers(playersPage+1)" style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:6px 14px;color:var(--text);cursor:pointer;font-size:13px">Next →</button>
+    </div>
+  </div>
+</div>
 
 <!-- DOCS TAB -->
 <div id="tab-docs" class="panel">
@@ -406,8 +447,8 @@
             <input id="rk-retail" type="number" placeholder="Leave blank — pipeline will find it" autocomplete="off">
           </div>
           <div class="form-group">
-            <label>Link / URL <span style="color:var(--muted);font-weight:400;text-transform:none">(optional hint — Fiddler scrapes all)</span></label>
-            <input id="rk-url" placeholder="Starting URL hint, or leave blank" autocomplete="off">
+            <label>Product URL <span style="color:#f97316;font-weight:600">★ Paste this to guarantee correct image + SKU</span></label>
+            <input id="rk-url" placeholder="Amazon / TCGPlayer / Target URL — prevents wrong product match" autocomplete="off" style="border-color:#f97316aa">
           </div>
           <div class="form-group">
             <label>Notes / Intel <span style="color:var(--muted);font-weight:400;text-transform:none">(your hints — Fiddler does the rest)</span></label>
@@ -454,6 +495,17 @@
           </div>
         </div>
 
+        <!-- Research Log -->
+        <div>
+          <div class="section-title" style="margin-top:16px;display:flex;align-items:center;gap:10px">
+            📋 Research Log
+            <button onclick="loadResearchLog()" style="font-size:10px;padding:2px 8px;background:#1a1d27;border:1px solid var(--border);color:var(--muted);border-radius:6px;cursor:pointer">↺ Refresh</button>
+          </div>
+          <div class="embed-preview-wrap" style="padding:10px;max-height:220px;overflow-y:auto">
+            <div id="research-log-body"><div class="empty" style="font-size:11px">Loading…</div></div>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -475,6 +527,7 @@ document.querySelectorAll('nav button[data-tab]').forEach(btn => {
     if (btn.dataset.tab === 'history') loadHistory();
     if (btn.dataset.tab === 'feed') loadFeed(true);
     if (btn.dataset.tab === 'docs') loadDocs();
+    if (btn.dataset.tab === 'players') { loadPlayerStats(); loadPlayers(1); }
   });
 });
 
@@ -968,11 +1021,15 @@ function renderPipeline(d) {
 
 // ── NEW RESEARCH ──────────────────────────────────────────────────────────
 let resolvedKey = null;
-let productKeys = [];
+let productKeys = []; // [{key, label}]
 
 async function loadProductKeys() {
   const res = await fetch(`${API}/api/products`);
-  productKeys = await res.json();
+  const data = await res.json();
+  // Support both old flat-string array and new {key,label} array
+  productKeys = Array.isArray(data) && data.length && typeof data[0] === 'string'
+    ? data.map(k => ({ key: k, label: k }))
+    : data;
   // re-match if user already typed a name before keys loaded
   const name = document.getElementById('rk-name')?.value?.trim();
   if (name) liveMatch(name);
@@ -983,32 +1040,32 @@ function scoreKeys(name) {
   const needle = norm(name);
   const ngrams = s => { const r = new Set(); for (let i=0;i<s.length-2;i++) r.add(s.slice(i,i+3)); return r; };
   const na = ngrams(needle);
-  const TYPE_WORDS = ['blister', 'boosterbox', 'booster', 'hobby', 'jumbo', 'etb', 'tin', 'bundle', 'starter', 'display', 'mega', 'hanger', 'collector'];
+  const TYPE_WORDS = ['blister', 'boosterbox', 'booster', 'hobby', 'jumbo', 'etb', 'elitetrainerbox', 'tin', 'bundle', 'starter', 'display', 'mega', 'hanger', 'collector'];
   const needleTypes = TYPE_WORDS.filter(t => needle.includes(t));
 
-  return productKeys.map(k => {
+  return productKeys.map(({ key: k, label }) => {
     const kn = norm(k);
-    let score = 0;
-    if (kn === needle) score = 100;
-    else if (kn.includes(needle) || needle.includes(kn)) score = 70;
-    else {
-      const nb = ngrams(kn);
+    const ln = norm(label ?? k); // score against full label name, not just abbreviated key
+
+    function scorePair(candidate) {
+      if (candidate === needle) return 100;
+      if (candidate.includes(needle) || needle.includes(candidate)) return 80;
+      const nb = ngrams(candidate);
       let c = 0; na.forEach(g => { if (nb.has(g)) c++; });
-      score = Math.round((c / Math.max(na.size, nb.size, 1)) * 60);
+      return Math.round((c / Math.max(na.size, nb.size, 1)) * 60);
     }
 
-    // Type word discrimination: if needle has a type word, key must have that SAME type word
+    // Take best score across key and label — label match is authoritative
+    let score = Math.max(scorePair(kn), scorePair(ln));
+
+    // Type word discrimination using label (more reliable than abbreviated key)
     if (needleTypes.length > 0) {
-      const keyTypes = TYPE_WORDS.filter(t => kn.includes(t));
-      const hasMatchingType = needleTypes.some(t => keyTypes.includes(t));
-      // If key has no type word at all, allow through (generic key)
-      // If key has type words but none match needle's, score = 0
-      if (keyTypes.length > 0 && !hasMatchingType) {
-        score = 0;
-      }
+      const candidateTypes = TYPE_WORDS.filter(t => ln.includes(t) || kn.includes(t));
+      const hasMatchingType = needleTypes.some(t => candidateTypes.includes(t));
+      if (candidateTypes.length > 0 && !hasMatchingType) score = 0;
     }
 
-    return { k, score };
+    return { k, label, score };
   }).filter(s => s.score >= 8).sort((a, b) => b.score - a.score);
 }
 
@@ -1028,11 +1085,16 @@ function liveMatch(name) {
     el.innerHTML = `<span style="color:var(--yellow)">⚠ No close match — will attempt with typed name</span>`;
     return;
   }
-  // Never auto-select — user must explicitly click a suggestion
+  // Auto-select top match if score ≥ 45 — prevents stub creation for known products even with imprecise queries
+  if (scored[0].score >= 45) {
+    pickKey(scored[0].k);
+    el.innerHTML += `<div style="margin-top:4px"><span style="font-size:11px;color:var(--green)">✓ auto-matched → ${escHtml(scored[0].label ?? scored[0].k)}</span></div>`;
+    return;
+  }
   resolvedKey = null;
   document.getElementById('run-btn').textContent = '▶ Run Pipeline';
   const pills = scored.slice(0, 4).map((s, i) =>
-    `<span onclick="pickKey('${s.k}')" style="cursor:pointer;display:inline-block;margin:2px 4px 2px 0;padding:2px 8px;border-radius:10px;font-size:11px;background:#1a1d27;border:1px solid var(--border);color:var(--muted)">${s.k}</span>`
+    `<span onclick="pickKey('${s.k}')" title="${escHtml(s.label ?? s.k)}" style="cursor:pointer;display:inline-block;margin:2px 4px 2px 0;padding:2px 8px;border-radius:10px;font-size:11px;background:#1a1d27;border:1px solid var(--border);color:var(--muted)">${escHtml(s.label ?? s.k)} <span style="opacity:0.5;font-size:10px">(${s.k})</span></span>`
   ).join('');
   el.innerHTML = `<div style="margin-top:4px"><span style="font-size:11px;color:var(--muted)">Suggestions (click to select):</span> ${pills}</div>`;
 }
@@ -1040,7 +1102,13 @@ function liveMatch(name) {
 async function runResearch() {
   const name = document.getElementById('rk-name').value.trim();
   if (!name) { alert('Enter a product name'); return; }
-  if (!resolvedKey && productKeys.length) liveMatch(name);
+  // Auto-select top match if score ≥ 45 — prevents stub creation for known products even with imprecise queries
+  if (!resolvedKey && productKeys.length) {
+    const scored = scoreKeys(name);
+    if (scored.length && scored[0].score >= 45) {
+      pickKey(scored[0].k);
+    }
+  }
   const log = document.getElementById('stream-log');
   log.innerHTML = ''; log.classList.add('active');
   // No existing key → auto-create product entry, then run pipeline
@@ -1055,11 +1123,18 @@ async function runResearch() {
       body: JSON.stringify({ name, category: cat, url, notes, retail }),
     });
     const d = await r.json();
-    if (!r.ok || d.error) { log.innerHTML += `<div class="err-line">✗ ${d.error}</div>`; return; }
-    log.innerHTML += `<div class="ok-line">✓ Created: ${d.key} — running deep research…</div>`;
-    resolvedKey = d.key;
-    document.getElementById('rk-match').innerHTML = `<span style="color:var(--green)">✓ auto-created → ${d.key}</span>`;
-    productKeys.push(d.key);
+    // Server-side fuzzy guard: 409 with fuzzyMatch means use the returned key instead
+    if (r.status === 409 && d.fuzzyMatch && d.key) {
+      log.innerHTML += `<div class="ok-line">↩ Fuzzy match → ${escHtml(d.label ?? d.key)} (${d.key})</div>`;
+      pickKey(d.key);
+    } else if (!r.ok || d.error) {
+      log.innerHTML += `<div class="err-line">✗ ${escHtml(d.error ?? 'create failed')}</div>`; return;
+    } else {
+      log.innerHTML += `<div class="ok-line">✓ Created: ${d.key} — running deep research…</div>`;
+      resolvedKey = d.key;
+      document.getElementById('rk-match').innerHTML = `<span style="color:var(--green)">✓ auto-created → ${d.key}</span>`;
+      productKeys.push(d.key);
+    }
   }
   await _streamPipeline(resolvedKey, log);
 }
@@ -1614,11 +1689,85 @@ function renderFeedMsg(m) {
 document.getElementById('rk-cat').selectedIndex = 0;
 document.getElementById('run-btn').textContent = '▶ Run Pipeline';
 
+async function loadResearchLog() {
+  const el = document.getElementById('research-log-body');
+  if (!el) return;
+  try {
+    const res = await fetch(`${API}/api/research-log`);
+    const log = await res.json();
+    if (!log.length) { el.innerHTML = '<div class="empty" style="font-size:11px">No runs logged yet.</div>'; return; }
+    const COLORS_MAP = { DBLGREEN:'#22c55e', GREEN:'#4ade80', ORANGE:'#f97316', YELLOW:'#facc15', RED:'#ef4444', PURPLE:'#a855f7' };
+    el.innerHTML = `<table style="width:100%;border-collapse:collapse;font-size:11px">
+      <thead><tr style="color:var(--muted);border-bottom:1px solid var(--border)">
+        <th style="text-align:left;padding:3px 6px">Time</th>
+        <th style="text-align:left;padding:3px 6px">Product</th>
+        <th style="text-align:left;padding:3px 6px">Rating</th>
+        <th style="text-align:right;padding:3px 6px">Market</th>
+        <th style="text-align:right;padding:3px 6px">ROI</th>
+        <th style="text-align:center;padding:3px 6px">Sent</th>
+      </tr></thead><tbody>` +
+      log.slice(0, 30).map(r => `<tr style="border-bottom:1px solid #1e2130">
+        <td style="padding:3px 6px;color:var(--muted)">${new Date(r.ts).toLocaleString('en-US',{month:'numeric',day:'numeric',hour:'numeric',minute:'2-digit'})}</td>
+        <td style="padding:3px 6px">${escHtml(r.label ?? r.key)}</td>
+        <td style="padding:3px 6px;color:${COLORS_MAP[r.rating]??'#94a3b8'};font-weight:600">${escHtml(r.rating??'—')}</td>
+        <td style="padding:3px 6px;text-align:right">${r.market!=null?'$'+Number(r.market).toFixed(0):'—'}</td>
+        <td style="padding:3px 6px;text-align:right">${r.roi!=null?Math.round(r.roi)+'%':'—'}</td>
+        <td style="padding:3px 6px;text-align:center">${r.sent?'✓':''}</td>
+      </tr>`).join('') + '</tbody></table>';
+  } catch (e) {
+    el.innerHTML = `<div class="empty" style="color:var(--red);font-size:11px">Error: ${escHtml(e.message)}</div>`;
+  }
+}
+
+// ── PLAYERS ────────────────────────────────────────────────────────────────
+let playersPage = 1, playersDebTimer = null;
+function debouncePlayers() { clearTimeout(playersDebTimer); playersDebTimer = setTimeout(() => loadPlayers(1), 300); }
+
+async function loadPlayerStats() {
+  try {
+    const s = await fetch('/api/players/stats').then(r=>r.json());
+    const by = Object.entries(s.bySprot||{}).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`${k}: ${v.toLocaleString()}`).join(' · ');
+    document.getElementById('players-stats').textContent =
+      `${s.named?.toLocaleString()} named / ${s.total?.toLocaleString()} total — ${by}`;
+  } catch {}
+}
+
+async function loadPlayers(page) {
+  playersPage = Math.max(1, page);
+  const q     = document.getElementById('players-q').value.trim();
+  const sport = document.getElementById('players-sport').value;
+  const params = new URLSearchParams({ page: playersPage, limit: 50 });
+  if (q) params.set('q', q);
+  if (sport) params.set('sport', sport);
+  try {
+    const d = await fetch('/api/players?' + params).then(r=>r.json());
+    const tbody = document.getElementById('players-tbody');
+    if (!d.items?.length) { tbody.innerHTML = '<tr><td colspan="6" style="padding:20px;color:var(--muted);text-align:center">No players found</td></tr>'; return; }
+    tbody.innerHTML = d.items.map(p => {
+      const hasStats = p.career_avg || p.current_year_avg || Object.keys(p.stats||{}).length > 0;
+      const statBadge = hasStats ? '<span style="color:#4ade80;font-size:11px">✓ stats</span>' : '<span style="color:var(--muted);font-size:11px">name only</span>';
+      return `<tr style="border-bottom:1px solid var(--border)">
+        <td style="padding:8px 12px;font-weight:600">${escHtml(p.name||'—')}</td>
+        <td style="padding:8px 12px;color:var(--muted);font-family:monospace;font-size:12px">${escHtml(p.slug||'')}</td>
+        <td style="padding:8px 12px">${escHtml(p.sport||'—')}</td>
+        <td style="padding:8px 12px;color:var(--muted)">${escHtml(p.position||'—')}</td>
+        <td style="padding:8px 12px;color:var(--muted)">${p.rookie_year||'—'}</td>
+        <td style="padding:8px 12px">${statBadge}</td>
+      </tr>`;
+    }).join('');
+    const totalPages = Math.ceil(d.total / d.limit);
+    document.getElementById('players-pager').textContent = `Page ${d.page} of ${totalPages} — ${d.total.toLocaleString()} results`;
+    document.getElementById('players-prev').disabled = d.page <= 1;
+    document.getElementById('players-next').disabled = d.page >= totalPages;
+  } catch(e) { document.getElementById('players-tbody').innerHTML = `<tr><td colspan="6" style="padding:20px;color:#f87171">${e.message}</td></tr>`; }
+}
+
 loadDatabases();
 loadProductKeys();
 loadWebhooks();
 loadPipeline();
 loadHistory();
+loadResearchLog();
 </script>
 </body>
 </html>

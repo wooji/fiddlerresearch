@@ -1,0 +1,44 @@
+{
+  "pokemon": {
+    "151": 303,
+    "SV8a Surging Sparks": 310,
+    "SV7.5 Shiny Treasures": 301,
+    "ME04 Mask of Change": 283,
+    "ME05": 284,
+    "SV7 Stellar Crown": 299,
+    "SV6.5 Scarlet & Violet 6.5": 297,
+    "SV6": 295,
+    "SV5.5": 293,
+    "SV5": 291,
+    "SV4.5": 289,
+    "SV4": 287,
+    "SV3.5": 285,
+    "SV3": 281,
+    "SV2.5": 279,
+    "SV2": 277,
+    "SV1": 275
+  },
+  "one_piece": {
+    "OP01": 275,
+    "OP02": 277,
+    "OP03": 279,
+    "OP04": 281,
+    "OP05": 283,
+    "OP10 Royal Blood": 325,
+    "OP11": 327,
+    "OP12": 329,
+    "OP13": 331
+  },
+  "mtg": {
+    "The Hobbit": 340,
+    "Ravnica Remastered": 336,
+    "Murders at Karlov Manor": 334
+  },
+  "lorcana": {
+    "Lorcana TCG": 320,
+    "The First Chapter": 321,
+    "Rise of the Floodborn": 322,
+    "Ursula's Return": 323,
+    "Into the Inklands": 324
+  }
+}

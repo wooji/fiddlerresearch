@@ -1,0 +1,211 @@
+[
+  {
+    "id": "wh-1782187425603-orp7",
+    "ts": "2026-06-23T04:03:45.603Z",
+    "productKey": "one-piece-card-game-english-version-3rd-anniversary-set",
+    "productLabel": "ONE PIECE CARD GAME English Version 3rd Anniversary Set (ONE PIECE CARD GAME English Version 3rd Anniversary Set)",
+    "category": "unknown",
+    "rating": null,
+    "commentary": "",
+    "webhookName": "Fiddler",
+    "webhookUrl": "https://discord.com/api/webhooks/1516299027161944155/DbCEygRpwa0qrs38Otw4_UqeM7Zs5LE8waMQtO-KggcAhU1HeeSQhbBuxBWlcGhdkp31",
+    "pricingSnapshot": {
+      "ebay": {
+        "status": "ok",
+        "data": "median $899.99 (sold30 27 / sold90 119 / active 50)",
+        "url": "https://www.ebay.com/sch/i.html?_nkw=ONE%20PIECE%20CARD%20GAME%20English%20Version%203rd%20Anniversary%20Set&LH_Sold=1&LH_Complete=1&_sacat=0&rt=nc"
+      },
+      "target": {
+        "status": "na",
+        "data": "N/A",
+        "url": "https://www.target.com/s?searchTerm=ONE%20PIECE%20CARD%20GAME%20English%20Version%203rd%20Anniversary%20Set"
+      },
+      "amazon": {
+        "status": "ok",
+        "data": "$79.96 (in stock)",
+        "url": "https://www.amazon.com/s?k=ONE%20PIECE%20CARD%20GAME%20English%20Version%203rd%20Anniversary%20Set"
+      },
+      "walmart": {
+        "status": "ok",
+        "data": "$82.88 (in stock)",
+        "url": "https://www.walmart.com/search?q=ONE%20PIECE%20CARD%20GAME%20English%20Version%203rd%20Anniversary%20Set"
+      },
+      "stockx": {
+        "status": "na",
+        "data": "N/A",
+        "url": "https://stockx.com/search?s=ONE%20PIECE%20CARD%20GAME%20English%20Version%203rd%20Anniversary%20Set"
+      },
+      "tcgplayer": {
+        "status": "na",
+        "data": "N/A",
+        "url": "https://p-bandai.com/us/item/N2856354006"
+      },
+      "dealernetx": {
+        "status": "na",
+        "data": "N/A"
+      },
+      "internalDb": {
+        "status": "ok",
+        "data": "products map loaded — retail $null"
+      },
+      "market": {
+        "status": "ok",
+        "data": "weighted avg $899.99 from: eBay median $899.99 (w40)"
+      }
+    },
+    "sentimentSnapshot": {
+      "reddit": {
+        "status": "ok",
+        "data": "13 mentions, sentiment 6",
+        "url": "https://www.reddit.com/search/?q=ONE%20PIECE%20CARD%20GAME%20English%20Version%203rd%20Anniversary%20Set"
+      },
+      "x": {
+        "status": "ok",
+        "data": "7 tweets, sentiment 5",
+        "url": "https://x.com/search?q=ONE%20PIECE%20CARD%20GAME%20English%20Version%203rd%20Anniversary%20Set"
+      },
+      "instagram": {
+        "status": "ok",
+        "data": "40 posts",
+        "url": "https://www.instagram.com/explore/tags/ONEPIECECARDGAMEEnglishVersion3rdAnniversarySet"
+      },
+      "facebook": {
+        "status": "ok",
+        "data": "5 posts, sentiment 8",
+        "url": "https://www.facebook.com/search/top?q=ONE%20PIECE%20CARD%20GAME%20English%20Version%203rd%20Anniversary%20Set"
+      },
+      "discord": {
+        "status": "ok",
+        "data": "9 mentions"
+      },
+      "whatnot": {
+        "status": "ok",
+        "data": "28 listings, sentiment 0",
+        "url": "https://www.whatnot.com/live/search?query=ONE%20PIECE%20CARD%20GAME%20English%20Version%203rd%20Anniversary%20Set"
+      },
+      "google": {
+        "status": "ok",
+        "data": "Bing/DDG search snippets fetched",
+        "url": "https://www.google.com/search?q=ONE%20PIECE%20CARD%20GAME%20English%20Version%203rd%20Anniversary%20Set"
+      },
+      "blowout": {
+        "status": "skip",
+        "data": "N/A"
+      },
+      "youtube": {
+        "status": "skip",
+        "data": "N/A"
+      }
+    },
+    "embedTitle": "🟠 ONE PIECE CARD GAME English Version 3rd Anniversary Set (ONE PIECE CARD GAME English Version 3rd Anniversary Set)",
+    "embedDescription": "### TL:DR\n> **🟠 LIGHT SEND** | `$79.96` | `$899.99`",
+    "computedRating": "ORANGE"
+  },
+  {
+    "id": "wh-1782315150445-shvl",
+    "ts": "2026-06-24T15:32:30.445Z",
+    "productKey": "2026-topps-tier-one-baseball",
+    "productLabel": "2026 Topps Tier One Baseball (Topps)",
+    "category": "unknown",
+    "rating": "RED",
+    "commentary": "Where is the scenarios, closest comps, demand drivers, and catalysts for this embed?",
+    "webhookName": "Fiddler",
+    "webhookUrl": "https://discord.com/api/webhooks/1516299027161944155/DbCEygRpwa0qrs38Otw4_UqeM7Zs5LE8waMQtO-KggcAhU1HeeSQhbBuxBWlcGhdkp31",
+    "pricingSnapshot": {
+      "ebay": {
+        "status": "ok",
+        "data": "median $435 (sold30 53 / sold90 53 / active 34)",
+        "url": "https://www.ebay.com/sch/i.html?_nkw=2026%20Topps%20Tier%20One%20Baseball&LH_Sold=1&LH_Complete=1&_sacat=0&rt=nc"
+      },
+      "target": {
+        "status": "na",
+        "data": "N/A",
+        "url": "https://www.target.com/s?searchTerm=2026%20Topps%20Tier%20One%20Baseball"
+      },
+      "amazon": {
+        "status": "ok",
+        "data": "$799 (in stock)",
+        "url": "https://www.amazon.com/s?k=2026%20Topps%20Tier%20One%20Baseball"
+      },
+      "walmart": {
+        "status": "ok",
+        "data": "$999.99 (in stock)",
+        "url": "https://www.walmart.com/search?q=2026%20Topps%20Tier%20One%20Baseball"
+      },
+      "stockx": {
+        "status": "ok",
+        "data": "$8000 (ask $8000 / bid $n/a)",
+        "url": "https://stockx.com/search?s=2026%20Topps%20Tier%20One%20Baseball"
+      },
+      "tcgplayer": {
+        "status": "na",
+        "data": "N/A",
+        "url": "https://www.topps.com/release-calendar"
+      },
+      "pricecharting": {
+        "status": "ok",
+        "data": "booster-box $532 (indexed DB)",
+        "url": "https://www.pricecharting.com/"
+      },
+      "dealernetx": {
+        "status": "ok",
+        "data": "10 results (prior year avg)"
+      },
+      "internalDb": {
+        "status": "ok",
+        "data": "products map loaded — retail $349.99"
+      },
+      "market": {
+        "status": "ok",
+        "data": "weighted avg $476.57 from: eBay median $435 (w40), PriceCharting $532 (w30)"
+      }
+    },
+    "sentimentSnapshot": {
+      "reddit": {
+        "status": "ok",
+        "data": "11 mentions, sentiment 3",
+        "url": "https://www.reddit.com/search/?q=2026%20Topps%20Tier%20One%20Baseball"
+      },
+      "x": {
+        "status": "ok",
+        "data": "10 tweets, sentiment 11",
+        "url": "https://x.com/search?q=2026%20Topps%20Tier%20One%20Baseball"
+      },
+      "instagram": {
+        "status": "ok",
+        "data": "40 posts",
+        "url": "https://www.instagram.com/explore/tags/2026ToppsTierOneBaseball"
+      },
+      "facebook": {
+        "status": "ok",
+        "data": "3 posts, sentiment 1",
+        "url": "https://www.facebook.com/search/top?q=2026%20Topps%20Tier%20One%20Baseball"
+      },
+      "discord": {
+        "status": "na",
+        "data": "N/A"
+      },
+      "whatnot": {
+        "status": "ok",
+        "data": "33 listings, sentiment 0",
+        "url": "https://www.whatnot.com/live/search?query=2026%20Topps%20Tier%20One%20Baseball"
+      },
+      "google": {
+        "status": "ok",
+        "data": "Bing/DDG search snippets fetched",
+        "url": "https://www.google.com/search?q=2026%20Topps%20Tier%20One%20Baseball"
+      },
+      "blowout": {
+        "status": "skip",
+        "data": "N/A"
+      },
+      "youtube": {
+        "status": "skip",
+        "data": "N/A"
+      }
+    },
+    "embedTitle": "🟢 2026 Topps Tier One Baseball (Topps)",
+    "embedDescription": "### TL:DR\n> **🟢 FULL SEND | B Tier** | `$349.99` | `$476.57`",
+    "computedRating": "GREEN"
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "me05-etb": {
+    "msrp": 120,
+    "market": 211,
+    "urlKey": "2025-pokemon-mega-evolution-charizard-x-ex-ultra-premium-collection",
+    "via": "stockx"
+  },
+  "aotv-bb": {
+    "msrp": 144,
+    "market": 140,
+    "urlKey": "disney-lorcana-tcg-the-first-chapter-rise-of-the-floodborn-booster-box",
+    "via": "stockx"
+  },
+  "itr-bb": {
+    "msrp": 50,
+    "market": 58,
+    "urlKey": "disney-lorcana-tcg-into-the-inklands-illumineers-trove-box",
+    "via": "stockx"
+  },
+  "op10-bb": {
+    "msrp": 100,
+    "market": 87,
+    "urlKey": "bandai-one-piece-royal-blood-op10-booster-box",
+    "via": "stockx"
+  },
+  "op12-bb": {
+    "msrp": null,
+    "market": null,
+    "urlKey": null,
+    "via": "stockx"
+  },
+  "eb05": {
+    "msrp": null,
+    "market": null,
+    "urlKey": null,
+    "via": "stockx"
+  },
+  "op13-bb": {
+    "msrp": null,
+    "market": null,
+    "urlKey": null,
+    "via": "stockx"
+  },
+  "topps-chrome-26": {
+    "msrp": 150,
+    "market": 348,
+    "urlKey": "2026-topps-chrome-black-baseball-hobby-box",
+    "via": "stockx"
+  },
+  "topps-tier1-26": {
+    "msrp": null,
+    "market": null,
+    "urlKey": null,
+    "via": "stockx"
+  },
+  "topps-nba-26": {
+    "msrp": 700,
+    "market": 1545,
+    "urlKey": "2025-26-topps-chrome-basketball-hobby-jumbo-box",
+    "via": "stockx"
+  },
+  "stx-cbb-wotc": {
+    "prices": [],
+    "msrps": []
+  }
+}

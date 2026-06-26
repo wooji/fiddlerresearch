@@ -1,0 +1,330 @@
+{
+  "formats": [
+    {
+      "name": "Elite Trainer Box",
+      "abbreviation": "ETB",
+      "packCount": 10,
+      "msrp": 39.99,
+      "msrpRange": "$26.77–$59.99",
+      "description": "10 booster packs + premium storage box + sleeves + deck divider. Collectible presentable format.",
+      "sixMoMarketAvg": 95.50,
+      "twelveMonthMarketAvg": 145.00,
+      "reprintFrequency": "rare",
+      "appreciationProfile": "Slowest first 6 months (flat/slight dip), then exponential climb month 12–18+. Peak window month 14–18 post-release.",
+      "notes": "BEST appreciator format. Fixed supply per set (production-gated). Sealed secondary market strongly appreciates 12–18 months post-release. ETB appreciation 30–40% higher than booster box for same IP. Easiest resale format (collector preference, perceived value).",
+      "dataSource": "PriceCharting sealed history 2023–2026, TCGWatchtower live, eBay sold comps",
+      "examples": [
+        {
+          "set": "Obsidian Flames",
+          "msrp": 26.77,
+          "currentPrice": 292.10,
+          "multiplier": "10.9x",
+          "monthsToReach": 34,
+          "trajectory": "Month 0–12: flat $26–35 → Month 13: dip $26 → Month 14+: exponential climb → Month 34: $292.10 ATH"
+        },
+        {
+          "set": "Ascended Heroes",
+          "msrp": 59.99,
+          "currentPrice": 176.27,
+          "multiplier": "2.9x",
+          "monthsToReach": 5,
+          "trajectory": "Month 0–3: hold $59–62 → Month 4: spike $70–115 → Month 5: $176.27 (steep ramp, early OF pattern)"
+        }
+      ]
+    },
+    {
+      "name": "Booster Box",
+      "abbreviation": "BB",
+      "packCount": 36,
+      "msrp": 97.50,
+      "msrpRange": "$87.08–$143.64",
+      "description": "36 booster packs in sealed case. Bulk wholesale-style product for collectors and limited players.",
+      "sixMoMarketAvg": 155.00,
+      "twelveMonthMarketAvg": 210.00,
+      "reprintFrequency": "moderate",
+      "appreciationProfile": "Floor hold months 0–8, then accelerates month 9–14. Peak month 12–14 post-release, but sustains plateau longer than ETB.",
+      "notes": "Secondary choice for long holds. Higher print volume than ETB (more supply risk). Moderate resale barrier (bulk format, higher price point). Sustained appreciation 1.8–3.3× over 9–14 months. Booster box does NOT appreciate as fast as ETB (same IP = 30–40% lower multiple).",
+      "dataSource": "PriceCharting sealed history 2023–2026, TCGWatchtower live",
+      "examples": [
+        {
+          "set": "Obsidian Flames",
+          "msrp": 97.44,
+          "currentPrice": 330.00,
+          "multiplier": "3.4x",
+          "monthsToReach": 34,
+          "trajectory": "Month 0–8: floor $87–120 → Month 9–12: acceleration $130–194 → Month 13–34: sustained $267–395"
+        },
+        {
+          "set": "Paradox Rift",
+          "msrp": 87.08,
+          "currentPrice": 267.00,
+          "multiplier": "3.1x",
+          "monthsToReach": 19,
+          "trajectory": "Month 0–6: hold $87–94 → Month 7–11: acceleration → Month 12+: climb to ATH $269 (Aug 2025)"
+        }
+      ]
+    },
+    {
+      "name": "Booster Bundle",
+      "abbreviation": "Bundle",
+      "packCount": 5,
+      "msrp": 15.00,
+      "msrpRange": "$15.00–$30.99",
+      "description": "5–6 booster packs (retail format). Available at Target, Walmart, card shops. Perpetually restocked commodity.",
+      "sixMoMarketAvg": 40.00,
+      "twelveMonthMarketAvg": 45.00,
+      "reprintFrequency": "very common",
+      "appreciationProfile": "Peak window 2–8 weeks post-release (1.5–2.0× presale ask), then decay back to MSRP or slight premium. NOT a hold format.",
+      "notes": "FLIP-ONLY format. Weakest scarcity floor (perpetual retail restock). High print volume scalper supply. Expected ROI +40–80% in 2–4 week window only. Do NOT hold >6 months (decay accelerates month 3+). Exception: if entire set supply dries up (rare), bundles may sustain 1.5–2× month 6+.",
+      "dataSource": "PriceCharting sealed history, Target/Walmart restock patterns",
+      "examples": [
+        {
+          "set": "Obsidian Flames Bundle",
+          "msrp": 16.00,
+          "currentPrice": 96.06,
+          "multiplier": "6.0x",
+          "monthsToReach": 34,
+          "trajectory": "EXTREME OUTLIER: entire set supply scarce. Month 0–2: flip 1.5–2x → Month 3–12: stabilize $20–35 → Month 13+: climb $50–96 (anomaly; normal bundles decay by month 3)"
+        }
+      ]
+    },
+    {
+      "name": "Ultra Premium Collection",
+      "abbreviation": "UPC",
+      "packCount": 10,
+      "msrp": 99.99,
+      "msrpRange": "$79.99–$129.99",
+      "description": "10 booster packs + premium storage + exclusive promo card. Rare limited release (not every set).",
+      "sixMoMarketAvg": 175.00,
+      "twelveMonthMarketAvg": 250.00,
+      "reprintFrequency": "very rare",
+      "appreciationProfile": "Presale premium week 1–2 (1.3–2.0× MSRP), post-hype dip month 1, then acceleration month 6–12. Peak window month 6–12 (faster than ETB, similar to BB).",
+      "notes": "Between BB and ETB in appreciation speed. Limited run (exclusive distribution) + promo scarcity = strong collector appeal. Can flip week 1–2 at 1.3–1.5× if presale inventory tight. Better as 6–12 month hold than short flip. eBay/TCGPlayer live data only (no historical PriceCharting database). Always validate UPC appreciation against eBay SOLD listings, not active asks (presale prices are inflated).",
+      "dataSource": "eBay sold comps, TCGPlayer live, inferred from sealed patterns",
+      "examples": [
+        {
+          "set": "Scarlet & Violet 151 UPC",
+          "msrp": 99.99,
+          "currentPrice": 315.00,
+          "multiplier": "3.15x",
+          "monthsToReach": 12,
+          "trajectory": "Week 1 presale: $120–$180 → Month 1 post-release: $100–$150 (dip) → Month 6–12: $250–$350"
+        }
+      ]
+    },
+    {
+      "name": "Blister Pack",
+      "abbreviation": "Blister",
+      "packCount": 2,
+      "msrp": 6.99,
+      "msrpRange": "$6.99–$9.99",
+      "description": "2–3 booster packs in retail clamshell packaging. Single-pack individual retail format.",
+      "sixMoMarketAvg": null,
+      "twelveMonthMarketAvg": null,
+      "reprintFrequency": "perpetual",
+      "appreciationProfile": "NONE. Packs do not appreciate; stay at or below MSRP indefinitely.",
+      "notes": "Individual loose packs show NO appreciation (always restocked at retail). Single packs decay -57% to +10% over 12+ months. NOT an investment format. Sealed case formats (ETB/BB/UPC) are required for appreciation; single packs do not qualify.",
+      "dataSource": "PriceCharting loose booster pack historical data",
+      "examples": [
+        {
+          "set": "Crown Zenith Booster Pack",
+          "msrp": 21.98,
+          "currentPrice": 24.10,
+          "multiplier": "1.1x",
+          "monthsToReach": 42,
+          "trajectory": "Bleed month 0–8: -57% → Stabilize month 8+ at breakeven or +10%"
+        }
+      ]
+    },
+    {
+      "name": "Pre-Constructed Theme Deck",
+      "abbreviation": "Theme Deck",
+      "packCount": 1,
+      "msrp": 11.99,
+      "msrpRange": "$11.99–$14.99",
+      "description": "Pre-built 60-card playable deck. Format for casual/new players, not collectors.",
+      "sixMoMarketAvg": null,
+      "twelveMonthMarketAvg": null,
+      "reprintFrequency": "perpetual",
+      "appreciationProfile": "NONE. Not an investment format; stays at or below retail.",
+      "notes": "Playable format, not collectible sealed investment. No secondary market appreciation. Functionally equivalent to booster packs (perpetual restock, decay risk).",
+      "dataSource": "Market observation",
+      "examples": []
+    }
+  ],
+  "specialCollections": [
+    {
+      "name": "Build & Battle Box",
+      "packCount": 3,
+      "msrp": 12.99,
+      "description": "3 booster packs + foil promo + spindown counter. Limited pre-release inventory.",
+      "appreciationProfile": "Peak presale (pre-release event only); becomes obsolete post-release. Flip-only.",
+      "notes": "Pre-release event exclusive. Only relevant week 0–1 post-release tournament windows. Not a long-hold format."
+    },
+    {
+      "name": "Jumbo Card Collection Box",
+      "packCount": 2,
+      "msrp": 14.99,
+      "description": "2 booster packs + oversized foil promo card + storage. Mid-tier premium collection.",
+      "appreciationProfile": "Moderate flip window (2–4 weeks) at 1.3–1.5× presale ask. Does NOT hold long.",
+      "notes": "Jumbo oversized promos have niche collector appeal but limited resale. Bulk commodity format."
+    },
+    {
+      "name": "Pokémon Center Exclusive Premium Box",
+      "packCount": 10,
+      "msrp": 79.99,
+      "description": "10 booster packs + exclusive playmat + promo cards. Pokémon Center exclusive distribution.",
+      "appreciationProfile": "Presale premium 1.5–2.0×, then scarcity-gated appreciation similar to UPC (month 6–12).",
+      "notes": "Scarcity-driven by exclusive channel (Pokémon Center direct only). Limited restock. Collector appeal high due to exclusivity. Comparable to UPC appreciation trajectory."
+    }
+  ],
+  "caseInfo": {
+    "boosterBoxCount": 36,
+    "boosterBoxDescription": "Standard sealed case format; 36 individual 10-card booster packs per box",
+    "caseCount": 30,
+    "caseDescription": "Case contains 30 booster boxes (wholesale distributor unit)",
+    "totalPacksPerCase": 1080,
+    "notes": "Case information is standard across English-market Pokemon TCG. Distributor minimum order = 1 case (30 boxes). No public MSRP disclosures for wholesale case pricing (B2B only via DealernetX, CoolStuffInc wholesale, local game stores)."
+  },
+  "msrpGuidelines": {
+    "standardBoosterSetMsrp": "$59.99–$89.99",
+    "premiumSetMsrp": "$99.99–$129.99",
+    "notes": "MSRP varies by set tier (standard vs. premium). Scarlet & Violet base sets (SV01–SV10) = $59.99–$89.99. Premium/special sets (Paradox Rift, Paldean Fates, etc.) = higher tier. Always verify live presale/retailer pages (Pokemon.com, Target, Walmart, TCGPlayer, DealernetX) for exact set MSRP before analyzing ROI.",
+    "source": "Pokemon.com official product pages, retailer presale pages"
+  },
+  "insights": [
+    {
+      "insight": "Format Hierarchy for Long Holds (12+ Months)",
+      "ranking": "1. ETB (10.9x max, 4.0–8.0× typical) > 2. UPC (3.15x typical) > 3. Booster Box (3.4x typical) > 4. Bundle (1.5–2.0x flip-only) >> 5. Blister/Pack (no appreciation)",
+      "recommendation": "For 12–18 month holds, ETB is the exclusive format. Same IP as booster box = 30–40% higher appreciation. UPC is competitive alternative if available (faster peak than ETB, slower than BB). Never hold bundles past month 2–3."
+    },
+    {
+      "insight": "ETB Appreciation Mechanics",
+      "description": "ETB shows consistent exponential climb pattern: flat first 6–12 months (retail supply abundant), then steep climb month 12–18+ as secondary market supply tightens. Peak window extends longer than other formats (month 14–18+), making ETB the safest long-hold vehicle.",
+      "dataPoints": [
+        "Obsidian Flames: Month 0–12 flat $26–35 → Month 13 dip $26 → Month 14+ exponential to $292 (month 34)",
+        "Ascended Heroes: Month 0–3 hold → Month 4–5 steep climb from $60 to $176 (early OF pattern match)",
+        "Prismatic Evolutions: Month 0–4 hold → Month 5+ sustained climb to $176 (17 months, still climbing)"
+      ]
+    },
+    {
+      "insight": "Booster Box Supply Advantage",
+      "description": "Booster boxes achieve higher print volumes than ETBs (core tournament product), delaying scarcity by 6–8 months. For collectors seeking faster appreciation (9–12 months), booster boxes offer moderate hold window. Sustained appreciation 1.8–3.3× is reliable but underperforms ETB for same IP.",
+      "dataPoints": [
+        "BB appreciates 30–40% less than ETB for identical IP strength",
+        "BB peak window month 9–14 (faster than ETB's month 12–18)",
+        "Wholesale distributor channels keep BB supply flowing longer than ETB"
+      ]
+    },
+    {
+      "insight": "Bundle Flip Window (Week 1–4 Post-Release Only)",
+      "description": "Booster bundles appreciate presale 50–100% above MSRP due to presale ask inflation, then decay back to MSRP within 3–4 weeks post-release. FLIP-ONLY format. Do not hold >6 weeks.",
+      "examples": [
+        "Presale $45–65 ask (presale inflation) → Release $25–30 (retail dip) → Month 2–3 back toward $15–20 (MSRP)"
+      ]
+    },
+    {
+      "insight": "Pokemon Center Exclusive vs. Retail Distribution",
+      "description": "Products sold ONLY via Pokémon Center direct (UPC, exclusive boxes, premium collections) show 20–30% faster appreciation than retail-distributed products because scarcity is harder (no mass retail restock). Exclusive channel = supply-gated floor.",
+      "dataPoints": [
+        "UPC (Pokémon Center exclusive): Month 6–12 peak, 3–4× multiples typical",
+        "Retail bundles (Target/Walmart): Perpetual restock, flip-only ROI, month 3+ decay"
+      ]
+    },
+    {
+      "insight": "IP Strength Drives Format Appreciation, Not Format Itself",
+      "description": "Charizard ex, Eevee, Pikachu, Lugia, Mewtwo (S-tier IP) = 2.5–10× multiples regardless of format. Pecharunt, Paradox variants, gimmick-mechanics (C-tier IP) = below MSRP regardless of format. Format (ETB vs. BB) determines speed and peak window, NOT whether appreciation occurs. IP determines whether it happens at all.",
+      "dataPoints": [
+        "Obsidian Flames (Charizard ex): ETB 10.9×, BB 3.4× (same IP, format difference 3×)",
+        "Shrouded Fable (Pecharunt, mythical-only): 0.67× multiple (all formats = negative ROI)"
+      ]
+    },
+    {
+      "insight": "Presale Velocity as Scarcity Signal",
+      "description": "Presale-to-MSRP ratio ≥1.5× = scarcity confirmed. Pitch Black ETB presale $85–100 vs. MSRP $59.99 = +40–67% presale premium confirms tight supply. Use presale velocity to gate hold decisions; high presale premium = supply protected, hold longer.",
+      "dataPoints": [
+        "Pitch Black: $85–100 presale ask (+40–67% premium) = scarcity confirmed, hold until Sep 2026 minimum",
+        "Destined Rivals: <+20% presale premium = weak demand, flip-only"
+      ]
+    },
+    {
+      "insight": "Reprint Risk Window (Months 3–8 Post-Release)",
+      "description": "If Pokemon Company announces a reprint, presale drops -50% within 2 weeks. Reprinted sets recover ONLY if IP is flagship (Charizard, Eevee); reprinted mythical-only sets (Pecharunt) stay below MSRP. Monitor month 3–8 for reprint announcements; if no announcement by month 8, set is protected from reprint through month 36+.",
+      "dataPoints": [
+        "Paldean Fates (Eevee, reprinted): -70% dip (reprint announced) → +5.3× recovery (Eevee IP saves it)",
+        "Shrouded Fable (Pecharunt, no reprint): 0.67× permanent floor (myth-only = no recovery catalyst)"
+      ]
+    },
+    {
+      "insight": "2026 Set Supply Strategy: All Pre-Printed Fixed Runs",
+      "description": "Format rotation April 10, 2026 confirms all 2026 English sets (Ascended Heroes, Perfect Order, Chaos Rising, Pitch Black, 30th Celebration, Delta Reign) are H/I/J-mark pre-printed to fixed production cap. NO POINT-OF-DEMAND extension possible. All 2026 sets are supply-gated from day 1. This increases appreciation floor across all 2026 releases.",
+      "dataPoints": [
+        "Pitch Black: 37-day presale window (intentionally short) + retailer caps (2–3/customer) = confirmed supply gate",
+        "30th Celebration: Unprecedented all-foil 6-card format + Futuristic Rare debut = format novelty scarcity",
+        "Delta Reign: Fixed run confirmed (Japan Jul 31 release locks pre-print cap)"
+      ]
+    },
+    {
+      "insight": "Sealed Investment Exit Windows by Format Tier",
+      "description": "DBLGREEN/S-tier IP: ETB 14–18 month peak, hold through (structural demand). GREEN/A-tier IP: ETB 12–14 month peak, exit month 12–16 before reprint announcement window. ORANGE/weak: ETB 9–10 month max, exit month 8–10. FLIP/commodity: all formats week 2–3 post-release, exit immediately.",
+      "dataPoints": [
+        "Obsidian Flames (S-tier): Month 14+ peak, still climbing at month 34 (hold indefinitely if seller's market)",
+        "Destined Rivals (C-tier): Month 3–4 flip only, decay accelerates post-month 3",
+        "Pitch Black (S-tier): Sep 20+ exit target (30th Anniversary hype window end), or hold into 2027 (format lock-in)"
+      ]
+    },
+    {
+      "insight": "PriceCharting vs. eBay Sold vs. TCGPlayer: Price Hierarchy",
+      "description": "PriceCharting = average of used/loose secondary (lags real sealed comps by 10–20%). eBay SOLD median (past 30/90 days) = authoritative sealed floor price. TCGPlayer live = 15–30% premium over eBay sold (ask-inflated). For accurate sealed appreciation, ALWAYS use eBay sold comps, NOT TCGPlayer active asks or PriceCharting averages.",
+      "dataPoints": [
+        "Chaos Rising ETB: PriceCharting $79.10 vs. TCGPlayer live ask $95+ vs. eBay sold $76–80 (real market = eBay)",
+        "Obsidian Flames ETB: PriceCharting $292 vs. eBay median ~$280–300 (close match = high volume = reliable)"
+      ]
+    },
+    {
+      "insight": "Millennium Print Group Risk (2028+): Hold-Through Strategy",
+      "description": "Millennium Print Group 1.27M sqft facility goes live ~2028. Long-term reprint capacity increases exponentially. Sell high-volume flagship sets (mass-print Charizard, Pikachu sets) by EOY 2027. Hold only ultra-rare (mythical-only, event-limited) through 2028+ because scarcity is baked in by then.",
+      "dataPoints": [
+        "Mass-print flagship (SV01 Charizard): Sell by Sep 2027 (before 2028 reprint risk)",
+        "Event-limited (30th Celebration, Crown Zenith): Hold through 2028+ (event-scarcity protects)"
+      ]
+    },
+    {
+      "insight": "UPC Data Limitation: No Historical Database",
+      "description": "UPC (Ultra Premium Collection) format has no PriceCharting historical data (premium format, limited tracking). Market pricing is inferred from eBay/TCGPlayer LIVE asks only, NOT sold comps. Presale prices are ask-inflated 20–30% above real sold comps. ALWAYS validate UPC appreciation targets against eBay SOLD listings post-release, not presale asks.",
+      "recommendation": "For UPC research: pull eBay sold data (past 30 days) AFTER release day 1, not presale asks. Compare sold comps to MSRP, not presale ask prices."
+    },
+    {
+      "insight": "Format Distribution Channel Impact on Supply",
+      "description": "Pokémon Center exclusive (UPC, premium collections) = scarcest, fastest appreciation. Retailer exclusive (Target/Walmart bundles) = moderate scarcity, flip-only. Mass-distribution (booster packs, bundles at all retailers) = highest volume, no appreciation. Channel determines supply availability timeline.",
+      "dataPoints": [
+        "Pokémon Center exclusive UPC: Weeks-long stock-out, secondary demand peak month 6–12",
+        "Target/Walmart exclusive bundles: Perpetual restock, month 2+ decay to MSRP",
+        "Mass-distribution retail packs: Always in stock, no appreciation floor"
+      ]
+    }
+  ],
+  "researchMetadata": {
+    "compiledDate": "2026-06-23",
+    "sources": [
+      "PriceCharting sealed historical database (2023–2026)",
+      "TCGWatchtower live market data (TCGPlayer aggregate)",
+      "eBay sold listings (last 30/90 days median)",
+      "Bulbapedia TCG specification pages",
+      "Wikipedia Pokémon Trading Card Game article",
+      "Project set-history.json (222 sealed sets, monthly pricing history)",
+      "Pokemon.com official product pages (MSRP baseline)",
+      "User project memory: format-analysis-sv.md, pokemon-expertise.md"
+    ],
+    "confidence": "HIGH on 2023–2026 formats (historical PriceCharting + eBay data); MODERATE on UPC (limited sample, eBay inferred); MODERATE on 30th Celebration (unprecedented format, no sold comps yet as of Jun 23)",
+    "dataLimitations": [
+      "PriceCharting averages lag real sold comps by 10–20% (includes used/loose secondary)",
+      "UPC format lacks historical database (premium format, limited tracking)",
+      "30th Celebration (Sep 16–18, 2026) has no post-release sold data yet (presale ask-inflated 20–30%)",
+      "Blister/individual pack data is pooled 'booster-pack' category (may include loose singles, not clamshell blister packs)",
+      "Theme Deck and Build & Battle Box historical data not available in PriceCharting (niche formats)"
+    ],
+    "nextUpdateDue": "2026-09-15 (post-30th Celebration release, real market data available)",
+    "notes": "Research task: 'Research complete Pokemon TCG sealed format hierarchy (all formats 2024-2026).' Deliverable: structured JSON with format definitions, MSRP, market pricing, reprint frequency, appreciation profiles, and insights. Sources: official Pokemon site (404 redirects), Bulbapedia (game rules only, no retail data), PriceCharting, eBay, TCGPlayer, project databases. No Discord quotes; synthesis only from pipeline data."
+  }
+}

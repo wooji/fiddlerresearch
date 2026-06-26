@@ -1,0 +1,3570 @@
+{
+  "_meta": {
+    "db": "card-products-special",
+    "description": "Sports card products: parallels, autos, inserts, pricing from DealernetX + PriceCharting",
+    "lastUpdated": "2026-06-24T19:17:12.334Z",
+    "version": 1,
+    "sources": [
+      "dealernetx",
+      "pricecharting"
+    ],
+    "updated": "2026-06-24T20:12:20.636Z"
+  },
+  "sets": {
+    "2004-topps-1-first-edition-baseball-hobby": {
+      "set_name": "2004 Topps 1 First Edition Baseball  Hobby",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=7092&boxtypeid=2&listingtypeid=1&year=2004",
+      "market": {
+        "highest_bid": 22,
+        "lowest_ask": null,
+        "last_trade": null
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:46:34.730Z"
+    },
+    "2005-topps-1-first-edition-baseball-hobby": {
+      "set_name": "2005 Topps 1 First Edition Baseball  Hobby",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=7092&boxtypeid=2&listingtypeid=1&year=2005",
+      "market": {
+        "highest_bid": 22,
+        "lowest_ask": null,
+        "last_trade": null
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:46:34.731Z"
+    },
+    "2022-topps-1-first-edition-baseball-hobby": {
+      "set_name": "2022 Topps 1 First Edition Baseball  Hobby",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": 625,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=7092&boxtypeid=2&listingtypeid=1&year=2022",
+      "market": {
+        "highest_bid": null,
+        "lowest_ask": 625,
+        "last_trade": 95
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:46:34.731Z"
+    },
+    "2023-topps-1-first-edition-baseball-hobby": {
+      "set_name": "2023 Topps 1 First Edition Baseball  Hobby",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=7092&boxtypeid=2&listingtypeid=1&year=2023",
+      "market": {
+        "highest_bid": 110,
+        "lowest_ask": null,
+        "last_trade": 120
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:46:34.731Z"
+    },
+    "2003-topps-205-series-1-baseball-hobby": {
+      "set_name": "2003 Topps 205 series 1 Baseball  Hobby",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=6289&boxtypeid=2&listingtypeid=1&year=2003",
+      "market": {
+        "highest_bid": null,
+        "lowest_ask": null,
+        "last_trade": null
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:46:34.731Z"
+    },
+    "2021-panini-absolute-baseball-blaster-v1": {
+      "set_name": "2021 Panini Absolute Baseball Blaster V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=37415&boxtypeid=3&listingtypeid=1&year=2021",
+      "market": {
+        "highest_bid": 12,
+        "lowest_ask": null,
+        "last_trade": null
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:46:52.083Z"
+    },
+    "2022-panini-absolute-baseball-blaster-v1": {
+      "set_name": "2022 Panini Absolute Baseball Blaster V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "613297998273",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=37415&boxtypeid=3&listingtypeid=1&year=2022",
+      "market": {
+        "highest_bid": 15,
+        "lowest_ask": null,
+        "last_trade": 16
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:46:52.083Z"
+    },
+    "2020-panini-absolute-baseball-hobby": {
+      "set_name": "2020 Panini Absolute Baseball  Hobby",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "613297951582",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=37415&boxtypeid=2&listingtypeid=1&year=2020",
+      "market": {
+        "highest_bid": 137,
+        "lowest_ask": null,
+        "last_trade": 165
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:46:52.083Z"
+    },
+    "2021-panini-absolute-baseball-hobby": {
+      "set_name": "2021 Panini Absolute Baseball  Hobby",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "613297970293",
+      "source": "dealernetx",
+      "dealernetx_price": 189,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=37415&boxtypeid=2&listingtypeid=1&year=2021",
+      "market": {
+        "highest_bid": 200,
+        "lowest_ask": 189,
+        "last_trade": 170
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:46:52.083Z"
+    },
+    "2022-panini-absolute-baseball-hobby": {
+      "set_name": "2022 Panini Absolute Baseball  Hobby",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "613297998242",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=37415&boxtypeid=2&listingtypeid=1&year=2022",
+      "market": {
+        "highest_bid": 210,
+        "lowest_ask": null,
+        "last_trade": 205
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:46:52.083Z"
+    },
+    "2024-bowman-baseball-blaster-v1": {
+      "set_name": "2024 Bowman Baseball Blaster V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "887521125913",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=3&listingtypeid=1&year=2024",
+      "market": {
+        "highest_bid": 42,
+        "lowest_ask": null,
+        "last_trade": 42
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:08.081Z"
+    },
+    "2024-bowman-baseball-choice": {
+      "set_name": "2024 Bowman Baseball Choice",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "887521125852",
+      "source": "dealernetx",
+      "dealernetx_price": 529,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=7&listingtypeid=1&year=2024",
+      "market": {
+        "highest_bid": 416.67,
+        "lowest_ask": 529,
+        "last_trade": 405
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:08.081Z"
+    },
+    "2024-bowman-baseball-hobby": {
+      "set_name": "2024 Bowman Baseball  Hobby",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "887521125807",
+      "source": "dealernetx",
+      "dealernetx_price": 325,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=2&listingtypeid=1&year=2024",
+      "market": {
+        "highest_bid": 270.83,
+        "lowest_ask": 325,
+        "last_trade": 270.83
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:08.081Z"
+    },
+    "2024-bowman-baseball-hobby-jumbo-v1": {
+      "set_name": "2024 Bowman Baseball Hobby Jumbo V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "887521125838",
+      "source": "dealernetx",
+      "dealernetx_price": 589,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=4&listingtypeid=1&year=2024",
+      "market": {
+        "highest_bid": 512.5,
+        "lowest_ask": 589,
+        "last_trade": 579
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:08.081Z"
+    },
+    "2024-bowman-baseball-mega-v1": {
+      "set_name": "2024 Bowman Baseball Mega V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "887521125586",
+      "source": "dealernetx",
+      "dealernetx_price": 77,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=6&listingtypeid=1&year=2024",
+      "market": {
+        "highest_bid": 68,
+        "lowest_ask": 77,
+        "last_trade": 72
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:08.081Z"
+    },
+    "2025-bo-jackson-battle-arena-alpha-update-baseball-blaster-v1": {
+      "set_name": "2025 Bo Jackson Battle Arena Alpha Update Baseball Blaster V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=47019&boxtypeid=3&listingtypeid=1&year=2025",
+      "market": {
+        "highest_bid": 60,
+        "lowest_ask": null,
+        "last_trade": 95
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:25.660Z"
+    },
+    "2025-bowman-baseball-blaster-v1": {
+      "set_name": "2025 Bowman Baseball Blaster V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "887521139385887521139392887521139408887521139378",
+      "source": "dealernetx",
+      "dealernetx_price": 50,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=3&listingtypeid=1&year=2025",
+      "market": {
+        "highest_bid": 46,
+        "lowest_ask": 50,
+        "last_trade": 46
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:25.660Z"
+    },
+    "2025-bowman-baseball-breakers-delight": {
+      "set_name": "2025 Bowman Baseball Breakers Delight",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "887521139316",
+      "source": "dealernetx",
+      "dealernetx_price": 875,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=247&listingtypeid=1&year=2025",
+      "market": {
+        "highest_bid": 775,
+        "lowest_ask": 875,
+        "last_trade": 766.67
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:25.660Z"
+    },
+    "2025-bowman-baseball-hobby": {
+      "set_name": "2025 Bowman Baseball  Hobby",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "887521139262",
+      "source": "dealernetx",
+      "dealernetx_price": 375,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=2&listingtypeid=1&year=2025",
+      "market": {
+        "highest_bid": 358.33,
+        "lowest_ask": 375,
+        "last_trade": 385
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:25.660Z"
+    },
+    "2025-bowman-baseball-hobby-jumbo-v1": {
+      "set_name": "2025 Bowman Baseball Hobby Jumbo V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "887521139293",
+      "source": "dealernetx",
+      "dealernetx_price": 815,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=4&listingtypeid=1&year=2025",
+      "market": {
+        "highest_bid": 787.5,
+        "lowest_ask": 815,
+        "last_trade": 760
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:25.660Z"
+    },
+    "2011-bowman-chrome-baseball-blaster-v1": {
+      "set_name": "2011 Bowman Chrome Baseball Blaster V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=243&boxtypeid=3&listingtypeid=1&year=2011",
+      "market": {
+        "highest_bid": 40,
+        "lowest_ask": null,
+        "last_trade": null
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:42.412Z"
+    },
+    "2025-bowman-chrome-baseball-breakers-delight": {
+      "set_name": "2025 Bowman Chrome Baseball Breakers Delight",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "887521145997",
+      "source": "dealernetx",
+      "dealernetx_price": 600,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=243&boxtypeid=247&listingtypeid=1&year=2025",
+      "market": {
+        "highest_bid": 542,
+        "lowest_ask": 600,
+        "last_trade": 552.5
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:42.412Z"
+    },
+    "2023-bowman-chrome-baseball-choice": {
+      "set_name": "2023 Bowman Chrome Baseball Choice",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=243&boxtypeid=7&listingtypeid=1&year=2023",
+      "market": {
+        "highest_bid": 225,
+        "lowest_ask": null,
+        "last_trade": 208.33
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:42.412Z"
+    },
+    "2024-bowman-chrome-baseball-choice": {
+      "set_name": "2024 Bowman Chrome Baseball Choice",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "887521130603",
+      "source": "dealernetx",
+      "dealernetx_price": 350,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=243&boxtypeid=7&listingtypeid=1&year=2024",
+      "market": {
+        "highest_bid": 293,
+        "lowest_ask": 350,
+        "last_trade": 292.5
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:42.412Z"
+    },
+    "1997-bowman-chrome-baseball-hobby": {
+      "set_name": "1997 Bowman Chrome Baseball  Hobby",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=243&boxtypeid=2&listingtypeid=1&year=1997",
+      "market": {
+        "highest_bid": 280,
+        "lowest_ask": null,
+        "last_trade": 200
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:42.412Z"
+    },
+    "2010-bowman-baseball-blaster-v1": {
+      "set_name": "2010 Bowman Baseball Blaster V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=3&listingtypeid=1&year=2010",
+      "market": {
+        "highest_bid": 15,
+        "lowest_ask": null,
+        "last_trade": null
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:59.842Z"
+    },
+    "2013-bowman-baseball-blaster-v1": {
+      "set_name": "2013 Bowman Baseball Blaster V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=3&listingtypeid=1&year=2013",
+      "market": {
+        "highest_bid": 16,
+        "lowest_ask": null,
+        "last_trade": null
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:59.843Z"
+    },
+    "2015-bowman-baseball-blaster-v1": {
+      "set_name": "2015 Bowman Baseball Blaster V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=3&listingtypeid=1&year=2015",
+      "market": {
+        "highest_bid": 17,
+        "lowest_ask": null,
+        "last_trade": null
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:59.843Z"
+    },
+    "2016-bowman-baseball-blaster-v1": {
+      "set_name": "2016 Bowman Baseball Blaster V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=3&listingtypeid=1&year=2016",
+      "market": {
+        "highest_bid": 20,
+        "lowest_ask": null,
+        "last_trade": null
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:59.843Z"
+    },
+    "2017-bowman-baseball-blaster-v1": {
+      "set_name": "2017 Bowman Baseball Blaster V1",
+      "sport": "baseball",
+      "category": "baseball",
+      "upc": "-",
+      "source": "dealernetx",
+      "dealernetx_price": null,
+      "dealernetx_url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=241&boxtypeid=3&listingtypeid=1&year=2017",
+      "market": {
+        "highest_bid": 50,
+        "lowest_ask": null,
+        "last_trade": null
+      },
+      "parallels": [],
+      "special_cards": [],
+      "fetched_date": "2026-06-24T17:47:59.843Z"
+    },
+    "1990-topps-factory-set-baseball-hobby": {
+      "set_name": "1990 Topps Factory set Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 32
+    },
+    "1990-topps-series-1-baseball-cellofat-pack": {
+      "set_name": "1990 Topps Series 1 Baseball Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": null
+    },
+    "1990-topps-series-1-baseball-hobby": {
+      "set_name": "1990 Topps Series 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 40.83
+    },
+    "1990-topps-series-1-baseball-retail-v1": {
+      "set_name": "1990 Topps Series 1 Baseball Retail V1",
+      "source": "dealernetx",
+      "price": 51.04
+    },
+    "1990-topps-update-baseball-hobby": {
+      "set_name": "1990 Topps Update Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null
+    },
+    "1991-topps-archives-1-baseball-hobby": {
+      "set_name": "1991 Topps Archives 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null
+    },
+    "1991-topps-factory-set-baseball-hobby": {
+      "set_name": "1991 Topps Factory set Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null
+    },
+    "1991-topps-series-1-baseball-cellofat-pack": {
+      "set_name": "1991 Topps Series 1 Baseball Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": null
+    },
+    "1991-topps-series-1-baseball-hobby": {
+      "set_name": "1991 Topps Series 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 39
+    },
+    "1991-topps-stadium-baseball-hobby": {
+      "set_name": "1991 Topps Stadium Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null
+    },
+    "1992-topps-factory-set-baseball-hobby": {
+      "set_name": "1992 Topps Factory set Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 20
+    },
+    "1992-topps-factory-set-baseball-retail-v1": {
+      "set_name": "1992 Topps Factory set Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null
+    },
+    "1992-topps-gold-fs-set-baseball-hobby": {
+      "set_name": "1992 Topps Gold fs set Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null
+    },
+    "1992-topps-series-1-baseball-cellofat-pack": {
+      "set_name": "1992 Topps Series 1 Baseball Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": 42
+    },
+    "1992-topps-series-1-baseball-hobby": {
+      "set_name": "1992 Topps Series 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 49
+    },
+    "1993-topps-factory-set-baseball-cellofat-pack": {
+      "set_name": "1993 Topps Factory set Baseball Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=8&listingtypeid=1&year=1993",
+      "fetched_date": "2026-06-24T18:09:04.211Z"
+    },
+    "1993-topps-factory-set-baseball-hobby": {
+      "set_name": "1993 Topps Factory set Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 125,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=2&listingtypeid=1&year=1993",
+      "fetched_date": "2026-06-24T18:09:04.211Z"
+    },
+    "1993-topps-factory-set-baseball-retail-v1": {
+      "set_name": "1993 Topps Factory set Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=1&listingtypeid=1&year=1993",
+      "fetched_date": "2026-06-24T18:09:04.211Z"
+    },
+    "1993-topps-finest-baseball-hobby": {
+      "set_name": "1993 Topps Finest Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=44&boxtypeid=2&listingtypeid=1&year=1993",
+      "fetched_date": "2026-06-24T18:09:04.211Z"
+    },
+    "1993-toppsopc-baseball-hobby": {
+      "set_name": "1993 Topps/OPC Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=11155&boxtypeid=2&listingtypeid=1&year=1993",
+      "fetched_date": "2026-06-24T18:09:04.211Z"
+    },
+    "1994-topps-archives-1-baseball-hobby": {
+      "set_name": "1994 Topps Archives 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=2&listingtypeid=1&year=1994",
+      "fetched_date": "2026-06-24T18:09:16.051Z"
+    },
+    "1994-topps-factory-set-baseball-hobby": {
+      "set_name": "1994 Topps Factory set Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=2&listingtypeid=1&year=1994",
+      "fetched_date": "2026-06-24T18:09:16.051Z"
+    },
+    "1994-topps-factory-set-baseball-retail-v1": {
+      "set_name": "1994 Topps Factory set Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=1&listingtypeid=1&year=1994",
+      "fetched_date": "2026-06-24T18:09:16.051Z"
+    },
+    "1994-topps-finest-baseball-hobby": {
+      "set_name": "1994 Topps Finest Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=44&boxtypeid=2&listingtypeid=1&year=1994",
+      "fetched_date": "2026-06-24T18:09:16.051Z"
+    },
+    "1994-topps-finest-2-baseball-hobby": {
+      "set_name": "1994 Topps Finest 2 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=10294&boxtypeid=2&listingtypeid=1&year=1994",
+      "fetched_date": "2026-06-24T18:09:16.051Z"
+    },
+    "1995-topps-archives-by-baseball-hobby": {
+      "set_name": "1995 Topps Archives BY Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=2702&boxtypeid=2&listingtypeid=1&year=1995",
+      "fetched_date": "2026-06-24T18:09:27.581Z"
+    },
+    "1995-topps-bazooka-baseball-hobby": {
+      "set_name": "1995 Topps Bazooka Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5609&boxtypeid=2&listingtypeid=1&year=1995",
+      "fetched_date": "2026-06-24T18:09:27.581Z"
+    },
+    "1995-topps-factory-set-baseball-retail-v1": {
+      "set_name": "1995 Topps Factory set Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=1&listingtypeid=1&year=1995",
+      "fetched_date": "2026-06-24T18:09:27.581Z"
+    },
+    "1995-topps-finest-baseball-hobby": {
+      "set_name": "1995 Topps Finest Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=44&boxtypeid=2&listingtypeid=1&year=1995",
+      "fetched_date": "2026-06-24T18:09:27.581Z"
+    },
+    "1995-topps-series-1-baseball-hobby": {
+      "set_name": "1995 Topps Series 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 50,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1441&boxtypeid=2&listingtypeid=1&year=1995",
+      "fetched_date": "2026-06-24T18:09:27.581Z"
+    },
+    "1996-topps-bazooka-baseball-hobby": {
+      "set_name": "1996 Topps Bazooka Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5609&boxtypeid=2&listingtypeid=1&year=1996",
+      "fetched_date": "2026-06-24T18:09:39.225Z"
+    },
+    "1996-topps-chrome-baseball-hobby": {
+      "set_name": "1996 Topps Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=2&listingtypeid=1&year=1996",
+      "fetched_date": "2026-06-24T18:09:39.225Z"
+    },
+    "1996-topps-finest-baseball-hobby": {
+      "set_name": "1996 Topps Finest Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=44&boxtypeid=2&listingtypeid=1&year=1996",
+      "fetched_date": "2026-06-24T18:09:39.225Z"
+    },
+    "1996-topps-finest-2-baseball-hobby": {
+      "set_name": "1996 Topps Finest 2 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=10294&boxtypeid=2&listingtypeid=1&year=1996",
+      "fetched_date": "2026-06-24T18:09:39.225Z"
+    },
+    "1996-topps-finest-2-baseball-retail-v1": {
+      "set_name": "1996 Topps Finest 2 Baseball Retail V1",
+      "source": "dealernetx",
+      "price": 150,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=10294&boxtypeid=1&listingtypeid=1&year=1996",
+      "fetched_date": "2026-06-24T18:09:39.225Z"
+    },
+    "1997-topps-chrome-baseball-hobby": {
+      "set_name": "1997 Topps Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=2&listingtypeid=1&year=1997",
+      "fetched_date": "2026-06-24T18:09:50.804Z"
+    },
+    "1997-topps-factory-set-baseball-hobby": {
+      "set_name": "1997 Topps Factory set Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=2&listingtypeid=1&year=1997",
+      "fetched_date": "2026-06-24T18:09:50.804Z"
+    },
+    "1997-topps-finest-baseball-hobby": {
+      "set_name": "1997 Topps Finest Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=44&boxtypeid=2&listingtypeid=1&year=1997",
+      "fetched_date": "2026-06-24T18:09:50.804Z"
+    },
+    "1997-topps-finest-baseball-hobby-jumbo-v1": {
+      "set_name": "1997 Topps Finest Baseball Hobby Jumbo V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=44&boxtypeid=4&listingtypeid=1&year=1997",
+      "fetched_date": "2026-06-24T18:09:50.804Z"
+    },
+    "1997-topps-finest-2-baseball-hobby": {
+      "set_name": "1997 Topps Finest 2 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=10294&boxtypeid=2&listingtypeid=1&year=1997",
+      "fetched_date": "2026-06-24T18:09:50.804Z"
+    },
+    "1998-topps-chrome-baseball-hobby": {
+      "set_name": "1998 Topps Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=2&listingtypeid=1&year=1998",
+      "fetched_date": "2026-06-24T18:10:02.661Z"
+    },
+    "1998-topps-chrome-2-baseball-hobby": {
+      "set_name": "1998 Topps Chrome 2 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1446&boxtypeid=2&listingtypeid=1&year=1998",
+      "fetched_date": "2026-06-24T18:10:02.661Z"
+    },
+    "1998-topps-factory-set-baseball-cellofat-pack": {
+      "set_name": "1998 Topps Factory set Baseball Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=8&listingtypeid=1&year=1998",
+      "fetched_date": "2026-06-24T18:10:02.661Z"
+    },
+    "1998-topps-factory-set-baseball-hobby": {
+      "set_name": "1998 Topps Factory set Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=2&listingtypeid=1&year=1998",
+      "fetched_date": "2026-06-24T18:10:02.661Z"
+    },
+    "1998-topps-factory-set-baseball-retail-v1": {
+      "set_name": "1998 Topps Factory set Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=1&listingtypeid=1&year=1998",
+      "fetched_date": "2026-06-24T18:10:02.661Z"
+    },
+    "1999-topps-chrome-baseball-hobby": {
+      "set_name": "1999 Topps Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=2&listingtypeid=1&year=1999",
+      "fetched_date": "2026-06-24T18:10:14.428Z"
+    },
+    "1999-topps-chrome-2-baseball-hobby": {
+      "set_name": "1999 Topps Chrome 2 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1446&boxtypeid=2&listingtypeid=1&year=1999",
+      "fetched_date": "2026-06-24T18:10:14.428Z"
+    },
+    "1999-topps-chrome-2-baseball-retail-v1": {
+      "set_name": "1999 Topps Chrome 2 Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1446&boxtypeid=1&listingtypeid=1&year=1999",
+      "fetched_date": "2026-06-24T18:10:14.428Z"
+    },
+    "1999-topps-chrome-update-baseball-hobby": {
+      "set_name": "1999 Topps Chrome Update Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1050&boxtypeid=2&listingtypeid=1&year=1999",
+      "fetched_date": "2026-06-24T18:10:14.428Z"
+    },
+    "1999-topps-factory-set-baseball-hobby": {
+      "set_name": "1999 Topps Factory set Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 34,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=2&listingtypeid=1&year=1999",
+      "fetched_date": "2026-06-24T18:10:14.428Z"
+    },
+    "2000-topps-chrome-baseball-hobby": {
+      "set_name": "2000 Topps Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=2&listingtypeid=1&year=2000",
+      "fetched_date": "2026-06-24T18:10:27.755Z"
+    },
+    "2000-topps-chrome-2-baseball-hobby": {
+      "set_name": "2000 Topps Chrome 2 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1446&boxtypeid=2&listingtypeid=1&year=2000",
+      "fetched_date": "2026-06-24T18:10:27.755Z"
+    },
+    "2000-topps-chrome-2-baseball-retail-v1": {
+      "set_name": "2000 Topps Chrome 2 Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1446&boxtypeid=1&listingtypeid=1&year=2000",
+      "fetched_date": "2026-06-24T18:10:27.755Z"
+    },
+    "2000-topps-chrome-update-baseball-hobby": {
+      "set_name": "2000 Topps Chrome Update Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1050&boxtypeid=2&listingtypeid=1&year=2000",
+      "fetched_date": "2026-06-24T18:10:27.755Z"
+    },
+    "2000-topps-factory-set-baseball-hobby": {
+      "set_name": "2000 Topps Factory set Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=2&listingtypeid=1&year=2000",
+      "fetched_date": "2026-06-24T18:10:27.755Z"
+    },
+    "2001-topps-american-pie-baseball-hobby": {
+      "set_name": "2001 Topps American Pie Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=2001&boxtypeid=2&listingtypeid=1&year=2001",
+      "fetched_date": "2026-06-24T18:10:39.572Z"
+    },
+    "2001-topps-american-pie-baseball-retail-v1": {
+      "set_name": "2001 Topps American Pie Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=2001&boxtypeid=1&listingtypeid=1&year=2001",
+      "fetched_date": "2026-06-24T18:10:39.572Z"
+    },
+    "2001-topps-archives-1-baseball-hobby": {
+      "set_name": "2001 Topps Archives 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=2&listingtypeid=1&year=2001",
+      "fetched_date": "2026-06-24T18:10:39.572Z"
+    },
+    "2001-topps-archives-2-baseball-hobby": {
+      "set_name": "2001 Topps Archives 2 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1444&boxtypeid=2&listingtypeid=1&year=2001",
+      "fetched_date": "2026-06-24T18:10:39.572Z"
+    },
+    "2001-topps-archives-reserve-baseball-hobby": {
+      "set_name": "2001 Topps Archives Reserve Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1761&boxtypeid=2&listingtypeid=1&year=2001",
+      "fetched_date": "2026-06-24T18:10:39.572Z"
+    },
+    "2002-topps-206-series-1-baseball-hobby": {
+      "set_name": "2002 Topps 206 series 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=2621&boxtypeid=2&listingtypeid=1&year=2002",
+      "fetched_date": "2026-06-24T18:10:51.418Z"
+    },
+    "2002-topps-206-series-2-baseball-hobby": {
+      "set_name": "2002 Topps 206 series 2 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=3869&boxtypeid=2&listingtypeid=1&year=2002",
+      "fetched_date": "2026-06-24T18:10:51.418Z"
+    },
+    "2002-topps-206-series-3-baseball-hobby": {
+      "set_name": "2002 Topps 206 series 3 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5469&boxtypeid=2&listingtypeid=1&year=2002",
+      "fetched_date": "2026-06-24T18:10:51.418Z"
+    },
+    "2002-topps-american-pie-spirit-baseball-hobby": {
+      "set_name": "2002 Topps American Pie Spirit Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=2743&boxtypeid=2&listingtypeid=1&year=2002",
+      "fetched_date": "2026-06-24T18:10:51.418Z"
+    },
+    "2002-topps-american-pie-spirit-baseball-retail-v1": {
+      "set_name": "2002 Topps American Pie Spirit Baseball Retail V1",
+      "source": "dealernetx",
+      "price": 96,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=2743&boxtypeid=1&listingtypeid=1&year=2002",
+      "fetched_date": "2026-06-24T18:10:51.418Z"
+    },
+    "2003-topps-205-series-2-baseball-hobby": {
+      "set_name": "2003 Topps 205 series 2 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=7449&boxtypeid=2&listingtypeid=1&year=2003",
+      "fetched_date": "2026-06-24T18:11:02.809Z"
+    },
+    "2003-topps-all-time-fan-favorites-baseball-hobby": {
+      "set_name": "2003 Topps All time fan favorites Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5969&boxtypeid=2&listingtypeid=1&year=2003",
+      "fetched_date": "2026-06-24T18:11:02.809Z"
+    },
+    "2003-topps-all-time-fan-favorites-baseball-retail-v1": {
+      "set_name": "2003 Topps All time fan favorites Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5969&boxtypeid=1&listingtypeid=1&year=2003",
+      "fetched_date": "2026-06-24T18:11:02.809Z"
+    },
+    "2003-topps-bazooka-baseball-hobby": {
+      "set_name": "2003 Topps Bazooka Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5609&boxtypeid=2&listingtypeid=1&year=2003",
+      "fetched_date": "2026-06-24T18:11:02.809Z"
+    },
+    "2004-topps-2-first-edition-baseball-hobby": {
+      "set_name": "2004 Topps 2 First edition Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 90,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=8110&boxtypeid=2&listingtypeid=1&year=2004",
+      "fetched_date": "2026-06-24T18:11:39.511Z"
+    },
+    "2004-topps-all-time-fan-favorites-baseball-hobby": {
+      "set_name": "2004 Topps All time fan favorites Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5969&boxtypeid=2&listingtypeid=1&year=2004",
+      "fetched_date": "2026-06-24T18:11:39.511Z"
+    },
+    "2004-topps-all-time-fan-favorites-baseball-retail-v1": {
+      "set_name": "2004 Topps All time fan favorites Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5969&boxtypeid=1&listingtypeid=1&year=2004",
+      "fetched_date": "2026-06-24T18:11:39.511Z"
+    },
+    "2004-topps-bazooka-baseball-hobby": {
+      "set_name": "2004 Topps Bazooka Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5609&boxtypeid=2&listingtypeid=1&year=2004",
+      "fetched_date": "2026-06-24T18:11:39.511Z"
+    },
+    "2005-topps-2-first-edition-baseball-hobby": {
+      "set_name": "2005 Topps 2 First edition Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=8110&boxtypeid=2&listingtypeid=1&year=2005",
+      "fetched_date": "2026-06-24T18:11:50.671Z"
+    },
+    "2005-topps-all-time-fan-favorites-baseball-hobby": {
+      "set_name": "2005 Topps All time fan favorites Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5969&boxtypeid=2&listingtypeid=1&year=2005",
+      "fetched_date": "2026-06-24T18:11:50.671Z"
+    },
+    "2005-topps-all-time-fan-favorites-baseball-retail-v1": {
+      "set_name": "2005 Topps All time fan favorites Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5969&boxtypeid=1&listingtypeid=1&year=2005",
+      "fetched_date": "2026-06-24T18:11:50.671Z"
+    },
+    "2005-topps-bazooka-baseball-hobby": {
+      "set_name": "2005 Topps Bazooka Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5609&boxtypeid=2&listingtypeid=1&year=2005",
+      "fetched_date": "2026-06-24T18:11:50.671Z"
+    },
+    "2006-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2006 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2006",
+      "fetched_date": "2026-06-24T18:12:02.401Z"
+    },
+    "2006-topps-autographed-hof-baseball-hobby": {
+      "set_name": "2006 Topps Autographed HOF Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12275&boxtypeid=2&listingtypeid=1&year=2006",
+      "fetched_date": "2026-06-24T18:12:02.401Z"
+    },
+    "2006-topps-bazooka-baseball-hobby": {
+      "set_name": "2006 Topps Bazooka Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5609&boxtypeid=2&listingtypeid=1&year=2006",
+      "fetched_date": "2026-06-24T18:12:02.401Z"
+    },
+    "2006-topps-chrome-baseball-hobby": {
+      "set_name": "2006 Topps Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=2&listingtypeid=1&year=2006",
+      "fetched_date": "2026-06-24T18:12:02.401Z"
+    },
+    "2006-topps-co-signers-baseball-hobby": {
+      "set_name": "2006 Topps Co Signers Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12300&boxtypeid=2&listingtypeid=1&year=2006",
+      "fetched_date": "2026-06-24T18:12:02.401Z"
+    },
+    "2007-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2007 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2007",
+      "fetched_date": "2026-06-24T18:12:38.796Z"
+    },
+    "2007-topps-allen-and-ginter-baseball-retail-v1": {
+      "set_name": "2007 Topps Allen and Ginter Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=1&listingtypeid=1&year=2007",
+      "fetched_date": "2026-06-24T18:12:38.796Z"
+    },
+    "2007-topps-chrome-baseball-hobby": {
+      "set_name": "2007 Topps Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=2&listingtypeid=1&year=2007",
+      "fetched_date": "2026-06-24T18:12:38.796Z"
+    },
+    "2007-topps-co-signers-baseball-hobby": {
+      "set_name": "2007 Topps Co Signers Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12300&boxtypeid=2&listingtypeid=1&year=2007",
+      "fetched_date": "2026-06-24T18:12:38.796Z"
+    },
+    "2007-topps-factory-set-baseball-hobby": {
+      "set_name": "2007 Topps Factory set Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=2&listingtypeid=1&year=2007",
+      "fetched_date": "2026-06-24T18:12:38.796Z"
+    },
+    "2008-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2008 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2008",
+      "fetched_date": "2026-06-24T18:12:50.845Z"
+    },
+    "2008-topps-american-heritage-baseball-hobby": {
+      "set_name": "2008 Topps American Heritage Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=16035&boxtypeid=2&listingtypeid=1&year=2008",
+      "fetched_date": "2026-06-24T18:12:50.845Z"
+    },
+    "2008-topps-american-heritage-baseball-retail-v1": {
+      "set_name": "2008 Topps American Heritage Baseball Retail V1",
+      "source": "dealernetx",
+      "price": 200,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=16035&boxtypeid=1&listingtypeid=1&year=2008",
+      "fetched_date": "2026-06-24T18:12:50.845Z"
+    },
+    "2008-topps-chrome-baseball-hobby": {
+      "set_name": "2008 Topps Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=2&listingtypeid=1&year=2008",
+      "fetched_date": "2026-06-24T18:12:50.845Z"
+    },
+    "2008-topps-co-signers-baseball-hobby": {
+      "set_name": "2008 Topps Co Signers Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12300&boxtypeid=2&listingtypeid=1&year=2008",
+      "fetched_date": "2026-06-24T18:12:50.845Z"
+    },
+    "2009-topps-206-series-1-baseball-hobby": {
+      "set_name": "2009 Topps 206 series 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=2621&boxtypeid=2&listingtypeid=1&year=2009",
+      "fetched_date": "2026-06-24T18:13:02.757Z"
+    },
+    "2009-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2009 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2009",
+      "fetched_date": "2026-06-24T18:13:02.757Z"
+    },
+    "2009-topps-allen-and-ginter-baseball-retail-v1": {
+      "set_name": "2009 Topps Allen and Ginter Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=1&listingtypeid=1&year=2009",
+      "fetched_date": "2026-06-24T18:13:02.757Z"
+    },
+    "2009-topps-american-heritage-baseball-hobby": {
+      "set_name": "2009 Topps American Heritage Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=16035&boxtypeid=2&listingtypeid=1&year=2009",
+      "fetched_date": "2026-06-24T18:13:02.757Z"
+    },
+    "2009-topps-american-heritage-heroes-ed-baseball-hobby": {
+      "set_name": "2009 Topps American Heritage Heroes ed Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=17378&boxtypeid=2&listingtypeid=1&year=2009",
+      "fetched_date": "2026-06-24T18:13:02.757Z"
+    },
+    "2010-topps-206-series-1-baseball-hobby": {
+      "set_name": "2010 Topps 206 series 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=2621&boxtypeid=2&listingtypeid=1&year=2010",
+      "fetched_date": "2026-06-24T18:13:38.706Z"
+    },
+    "2010-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2010 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2010",
+      "fetched_date": "2026-06-24T18:13:38.706Z"
+    },
+    "2010-topps-allen-and-ginter-baseball-retail-v1": {
+      "set_name": "2010 Topps Allen and Ginter Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=1&listingtypeid=1&year=2010",
+      "fetched_date": "2026-06-24T18:13:38.706Z"
+    },
+    "2010-topps-attax-booster-baseball-hobby": {
+      "set_name": "2010 Topps Attax booster Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=16176&boxtypeid=2&listingtypeid=1&year=2010",
+      "fetched_date": "2026-06-24T18:13:38.706Z"
+    },
+    "2010-topps-attax-starter-baseball-hobby": {
+      "set_name": "2010 Topps Attax starter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=16177&boxtypeid=2&listingtypeid=1&year=2010",
+      "fetched_date": "2026-06-24T18:13:38.706Z"
+    },
+    "2011-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2011 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T18:13:50.185Z"
+    },
+    "2011-topps-american-pie-baseball-hobby": {
+      "set_name": "2011 Topps American Pie Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 800,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=2001&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T18:13:50.185Z"
+    },
+    "2011-topps-attax-booster-baseball-hobby": {
+      "set_name": "2011 Topps Attax booster Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=16176&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T18:13:50.185Z"
+    },
+    "2011-topps-attax-starter-baseball-hobby": {
+      "set_name": "2011 Topps Attax starter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=16177&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T18:13:50.185Z"
+    },
+    "2011-topps-chrome-baseball-hobby": {
+      "set_name": "2011 Topps Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T18:13:50.185Z"
+    },
+    "2012-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2012 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T18:14:01.781Z"
+    },
+    "2012-topps-archives-1-baseball-hobby": {
+      "set_name": "2012 Topps Archives 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=2&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T18:14:01.781Z"
+    },
+    "2012-topps-chrome-baseball-hobby": {
+      "set_name": "2012 Topps Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=2&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T18:14:01.781Z"
+    },
+    "2012-topps-chrome-baseball-retail-v1": {
+      "set_name": "2012 Topps Chrome Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=1&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T18:14:01.781Z"
+    },
+    "2012-topps-factory-set-baseball-hobby": {
+      "set_name": "2012 Topps Factory set Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1043&boxtypeid=2&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T18:14:01.781Z"
+    },
+    "2013-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2013 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T18:14:39.059Z"
+    },
+    "2013-topps-archives-1-baseball-blaster-v1": {
+      "set_name": "2013 Topps Archives 1 Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=3&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T18:14:39.059Z"
+    },
+    "2013-topps-archives-1-baseball-hobby": {
+      "set_name": "2013 Topps Archives 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=2&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T18:14:39.059Z"
+    },
+    "2021-topps-archives-1-baseball-hobby": {
+      "set_name": "2021 Topps Archives 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=2&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T18:14:39.059Z"
+    },
+    "2013-topps-chipz-baseball-hobby": {
+      "set_name": "2013 Topps Chipz Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=24475&boxtypeid=2&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T18:14:39.059Z"
+    },
+    "2014-topps-allen-and-ginter-baseball-blaster-v1": {
+      "set_name": "2014 Topps Allen and Ginter Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=3&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T18:14:52.212Z"
+    },
+    "2014-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2014 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T18:14:52.212Z"
+    },
+    "2014-topps-archives-1-baseball-hobby": {
+      "set_name": "2014 Topps Archives 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=2&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T18:14:52.212Z"
+    },
+    "2014-topps-chipz-baseball-hobby": {
+      "set_name": "2014 Topps Chipz Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=24475&boxtypeid=2&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T18:14:52.212Z"
+    },
+    "2014-topps-chipz-baseball-retail-v1": {
+      "set_name": "2014 Topps Chipz Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=24475&boxtypeid=1&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T18:14:52.212Z"
+    },
+    "2015-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2015 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T18:15:06.314Z"
+    },
+    "2015-topps-archives-1-baseball-hobby": {
+      "set_name": "2015 Topps Archives 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=2&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T18:15:06.314Z"
+    },
+    "2015-topps-archives-signatures-baseball-hobby": {
+      "set_name": "2015 Topps Archives Signatures Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=28916&boxtypeid=2&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T18:15:06.314Z"
+    },
+    "2015-topps-chrome-baseball-blaster-v1": {
+      "set_name": "2015 Topps Chrome Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=3&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T18:15:06.314Z"
+    },
+    "2015-topps-chrome-baseball-hobby": {
+      "set_name": "2015 Topps Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 309,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=2&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T18:15:06.314Z"
+    },
+    "2016-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2016 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T18:15:19.326Z"
+    },
+    "2016-topps-archives-1-baseball-hobby": {
+      "set_name": "2016 Topps Archives 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 350,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=2&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T18:15:19.326Z"
+    },
+    "2016-topps-archives-65th-anniversary-baseball-hobby": {
+      "set_name": "2016 Topps Archives 65th Anniversary Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=31499&boxtypeid=2&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T18:15:19.326Z"
+    },
+    "2016-topps-archives-signatures-baseball-hobby": {
+      "set_name": "2016 Topps Archives Signatures Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=28916&boxtypeid=2&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T18:15:19.326Z"
+    },
+    "2016-topps-bunt-baseball-hobby": {
+      "set_name": "2016 Topps Bunt Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=30155&boxtypeid=2&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T18:15:19.326Z"
+    },
+    "2017-topps-allen-and-ginter-baseball-blaster-v1": {
+      "set_name": "2017 Topps Allen and Ginter Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=3&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T18:15:42.461Z"
+    },
+    "2017-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2017 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T18:15:42.461Z"
+    },
+    "2017-topps-archives-1-baseball-blaster-v1": {
+      "set_name": "2017 Topps Archives 1 Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": 218.75,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=3&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T18:15:42.461Z"
+    },
+    "2017-topps-archives-1-baseball-hobby": {
+      "set_name": "2017 Topps Archives 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 690,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=2&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T18:15:42.461Z"
+    },
+    "2017-topps-archives-signatures-baseball-hobby": {
+      "set_name": "2017 Topps Archives Signatures Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=28916&boxtypeid=2&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T18:15:42.461Z"
+    },
+    "2018-topps-2-plus-silver-pack-baseball-hobby": {
+      "set_name": "2018 Topps 2 plus Silver Pack Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=33475&boxtypeid=2&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T18:15:54.590Z"
+    },
+    "2018-topps-allen-and-ginter-baseball-blaster-v1": {
+      "set_name": "2018 Topps Allen and Ginter Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": 650,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=3&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T18:15:54.590Z"
+    },
+    "2018-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2018 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 1750,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T18:15:54.590Z"
+    },
+    "2018-topps-allen-and-ginter-baseball-retail-v1": {
+      "set_name": "2018 Topps Allen and Ginter Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=1&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T18:15:54.590Z"
+    },
+    "2018-topps-archives-1-baseball-blaster-v1": {
+      "set_name": "2018 Topps Archives 1 Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=3&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T18:15:54.590Z"
+    },
+    "2019-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2019 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 280,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T18:16:07.024Z"
+    },
+    "2019-topps-allen-and-ginter-x-baseball-hobby": {
+      "set_name": "2019 Topps Allen and Ginter X Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32915&boxtypeid=2&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T18:16:07.024Z"
+    },
+    "2019-topps-archives-1-baseball-hobby": {
+      "set_name": "2019 Topps Archives 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=2&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T18:16:07.024Z"
+    },
+    "2019-topps-archives-signatures-ape-baseball-hobby": {
+      "set_name": "2019 Topps Archives Signatures APE Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=33655&boxtypeid=2&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T18:16:07.024Z"
+    },
+    "2019-topps-archives-signatures-rpe-baseball-hobby": {
+      "set_name": "2019 Topps Archives Signatures RPE Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=33695&boxtypeid=2&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T18:16:07.024Z"
+    },
+    "2020-topps-206-series-1-baseball-hobby": {
+      "set_name": "2020 Topps 206 series 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=2621&boxtypeid=2&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T18:16:19.454Z"
+    },
+    "2020-topps-206-series-2-baseball-hobby": {
+      "set_name": "2020 Topps 206 series 2 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=3869&boxtypeid=2&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T18:16:19.454Z"
+    },
+    "2020-topps-206-series-3-baseball-hobby": {
+      "set_name": "2020 Topps 206 series 3 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=5469&boxtypeid=2&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T18:16:19.454Z"
+    },
+    "2020-topps-allen-and-ginter-baseball-blaster-v1": {
+      "set_name": "2020 Topps Allen and Ginter Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=3&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T18:16:19.454Z"
+    },
+    "2020-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2020 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T18:16:19.454Z"
+    },
+    "2021-topps-allen-and-ginter-baseball-blaster-v1": {
+      "set_name": "2021 Topps Allen and Ginter Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": 28,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=3&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T18:16:43.164Z"
+    },
+    "2021-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2021 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 240,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T18:16:43.164Z"
+    },
+    "2021-topps-allen-and-ginter-chrome-baseball-hobby": {
+      "set_name": "2021 Topps Allen and Ginter Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 215,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=38415&boxtypeid=2&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T18:16:43.164Z"
+    },
+    "2021-topps-allen-and-ginter-x-baseball-hobby": {
+      "set_name": "2021 Topps Allen and Ginter X Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32915&boxtypeid=2&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T18:16:43.164Z"
+    },
+    "2021-topps-archives-1-baseball-blaster-v1": {
+      "set_name": "2021 Topps Archives 1 Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": 30,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1443&boxtypeid=3&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T18:16:43.164Z"
+    },
+    "2022-topps-allen-and-ginter-baseball-blaster-v1": {
+      "set_name": "2022 Topps Allen and Ginter Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=3&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T18:16:56.109Z"
+    },
+    "2022-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2022 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 230,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T18:16:56.109Z"
+    },
+    "2022-topps-allen-and-ginter-baseball-retail-v1": {
+      "set_name": "2022 Topps Allen and Ginter Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=1&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T18:16:56.109Z"
+    },
+    "2022-topps-allen-and-ginter-chrome-baseball-hobby": {
+      "set_name": "2022 Topps Allen and Ginter Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=38415&boxtypeid=2&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T18:16:56.109Z"
+    },
+    "2023-topps-allen-and-ginter-baseball-blaster-v1": {
+      "set_name": "2023 Topps Allen and Ginter Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=3&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T18:17:09.359Z"
+    },
+    "2023-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2023 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 235,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T18:17:09.359Z"
+    },
+    "2023-topps-allen-and-ginter-baseball-retail-v1": {
+      "set_name": "2023 Topps Allen and Ginter Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=1&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T18:17:09.359Z"
+    },
+    "2023-topps-allen-and-ginter-x-baseball-hobby": {
+      "set_name": "2023 Topps Allen and Ginter X Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32915&boxtypeid=2&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T18:17:09.359Z"
+    },
+    "2024-topps-206-series-1-baseball-retail-v1": {
+      "set_name": "2024 Topps 206 series 1 Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=2621&boxtypeid=1&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:17:47.773Z"
+    },
+    "2024-topps-5050-shohei-ohtani-baseball-hobby": {
+      "set_name": "2024 Topps 50/50: Shohei Ohtani Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=46678&boxtypeid=2&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:17:47.773Z"
+    },
+    "2024-topps-allen-and-ginter-baseball-blaster-v1": {
+      "set_name": "2024 Topps Allen and Ginter Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=3&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:17:47.773Z"
+    },
+    "2024-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2024 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:17:47.773Z"
+    },
+    "2024-topps-allen-and-ginter-baseball-retail-v1": {
+      "set_name": "2024 Topps Allen and Ginter Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=1&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:17:47.773Z"
+    },
+    "2025-topps-allen-and-ginter-baseball-blaster-v1": {
+      "set_name": "2025 Topps Allen and Ginter Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": 27.5,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=3&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:18:01.004Z"
+    },
+    "2025-topps-allen-and-ginter-baseball-cellofat-pack": {
+      "set_name": "2025 Topps Allen and Ginter Baseball Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": 5,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=8&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:18:01.004Z"
+    },
+    "2025-topps-allen-and-ginter-baseball-hobby": {
+      "set_name": "2025 Topps Allen and Ginter Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 240.67,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=12456&boxtypeid=2&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:18:01.004Z"
+    },
+    "2025-topps-allen-and-ginter-x-baseball-hobby": {
+      "set_name": "2025 Topps Allen and Ginter X Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 300,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32915&boxtypeid=2&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:18:01.004Z"
+    },
+    "2025-topps-allen--ginter-mitchell--ness-baseball-hobby": {
+      "set_name": "2025 Topps Allen & Ginter Mitchell & Ness Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=47067&boxtypeid=2&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:18:01.004Z"
+    },
+    "2025-panini-impeccable-baseball-hobby": {
+      "set_name": "2025 Panini Impeccable Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 700,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=31936&boxtypeid=2&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:20:01.602Z"
+    },
+    "2011-panini-contenders-baseball-hobby": {
+      "set_name": "2011 Panini Contenders Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=21004&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T18:25:05.551Z"
+    },
+    "2011-panini-limited-baseball-hobby": {
+      "set_name": "2011 Panini Limited Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=21195&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T18:25:05.551Z"
+    },
+    "2011-panini-limited-cuts-baseball-hobby": {
+      "set_name": "2011 Panini Limited Cuts Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=20756&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T18:25:05.551Z"
+    },
+    "2011-panini-prime-cuts-baseball-hobby": {
+      "set_name": "2011 Panini Prime Cuts Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=21335&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T18:25:05.551Z"
+    },
+    "2012-panini-cooperstown-baseball-hobby": {
+      "set_name": "2012 Panini Cooperstown Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=21618&boxtypeid=2&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T18:25:17.561Z"
+    },
+    "2012-panini-elite-extra-edition-baseball-hobby": {
+      "set_name": "2012 Panini Elite Extra Edition Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=22856&boxtypeid=2&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T18:25:17.561Z"
+    },
+    "2012-panini-golden-age-baseball-hobby": {
+      "set_name": "2012 Panini Golden Age Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 65,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=22376&boxtypeid=2&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T18:25:17.561Z"
+    },
+    "2012-panini-national-treasures-mlb-baseball-hobby": {
+      "set_name": "2012 Panini National Treasures MLB Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=23095&boxtypeid=2&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T18:25:17.561Z"
+    },
+    "2012-panini-prime-cuts-baseball-hobby": {
+      "set_name": "2012 Panini Prime Cuts Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=21335&boxtypeid=2&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T18:25:17.561Z"
+    },
+    "2013-panini-america-pastime-baseball-hobby": {
+      "set_name": "2013 Panini America Pastime Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=25415&boxtypeid=2&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T18:25:55.456Z"
+    },
+    "2013-panini-cooperstown-baseball-blaster-v1": {
+      "set_name": "2013 Panini Cooperstown Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=21618&boxtypeid=3&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T18:25:55.456Z"
+    },
+    "2013-panini-cooperstown-baseball-hobby": {
+      "set_name": "2013 Panini Cooperstown Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 120,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=21618&boxtypeid=2&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T18:25:55.456Z"
+    },
+    "2013-panini-elite-extra-edition-baseball-hobby": {
+      "set_name": "2013 Panini Elite Extra Edition Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 125,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=22856&boxtypeid=2&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T18:25:55.456Z"
+    },
+    "2013-panini-golden-age-baseball-hobby": {
+      "set_name": "2013 Panini Golden Age Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 57.5,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=22376&boxtypeid=2&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T18:25:55.456Z"
+    },
+    "2014-panini-classics-baseball-hobby": {
+      "set_name": "2014 Panini Classics Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=27175&boxtypeid=2&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T18:26:07.689Z"
+    },
+    "2014-panini-elite-extra-edition-baseball-hobby": {
+      "set_name": "2014 Panini Elite Extra Edition Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=22856&boxtypeid=2&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T18:26:07.689Z"
+    },
+    "2014-panini-flawless-baseball-hobby": {
+      "set_name": "2014 Panini Flawless Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=26915&boxtypeid=2&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T18:26:07.689Z"
+    },
+    "2014-panini-golden-age-baseball-hobby": {
+      "set_name": "2014 Panini Golden Age Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 57.5,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=22376&boxtypeid=2&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T18:26:07.689Z"
+    },
+    "2014-panini-hof-75th-anniversary-baseball-hobby": {
+      "set_name": "2014 Panini HOF 75th Anniversary Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=26955&boxtypeid=2&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T18:26:07.689Z"
+    },
+    "2015-panini-contenders-baseball-hobby": {
+      "set_name": "2015 Panini Contenders Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=21004&boxtypeid=2&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T18:27:11.033Z"
+    },
+    "2015-panini-cooperstown-baseball-hobby": {
+      "set_name": "2015 Panini Cooperstown Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=21618&boxtypeid=2&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T18:27:11.033Z"
+    },
+    "2015-panini-diamond-kings-baseball-hobby": {
+      "set_name": "2015 Panini Diamond Kings Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=27835&boxtypeid=2&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T18:27:11.033Z"
+    },
+    "2015-panini-elite-extra-edition-baseball-hobby": {
+      "set_name": "2015 Panini Elite Extra Edition Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=22856&boxtypeid=2&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T18:27:11.033Z"
+    },
+    "2015-panini-immaculate-mlb-baseball-hobby": {
+      "set_name": "2015 Panini Immaculate MLB Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=26875&boxtypeid=2&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T18:27:11.033Z"
+    },
+    "2016-panini-diamond-kings-baseball-hobby": {
+      "set_name": "2016 Panini Diamond Kings Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=27835&boxtypeid=2&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T18:27:22.764Z"
+    },
+    "2016-panini-donruss-optic-baseball-blaster-v1": {
+      "set_name": "2016 Panini Donruss Optic Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=29955&boxtypeid=3&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T18:27:22.765Z"
+    },
+    "2016-panini-donruss-optic-baseball-hobby": {
+      "set_name": "2016 Panini Donruss Optic Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=29955&boxtypeid=2&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T18:27:22.765Z"
+    },
+    "2016-panini-elite-extra-edition-baseball-retail-v1": {
+      "set_name": "2016 Panini Elite Extra Edition Baseball Retail V1",
+      "source": "dealernetx",
+      "price": 100,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=22856&boxtypeid=1&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T18:27:22.765Z"
+    },
+    "2016-panini-flawless-baseball-hobby": {
+      "set_name": "2016 Panini Flawless Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=26915&boxtypeid=2&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T18:27:22.765Z"
+    },
+    "2017-panini-chronicles-mlb-baseball-blaster-v1": {
+      "set_name": "2017 Panini Chronicles MLB Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": 54,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=3&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T18:27:59.743Z"
+    },
+    "2017-panini-chronicles-mlb-baseball-hobby": {
+      "set_name": "2017 Panini Chronicles MLB Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=2&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T18:27:59.743Z"
+    },
+    "2017-panini-contenders-baseball-hobby": {
+      "set_name": "2017 Panini Contenders Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=21004&boxtypeid=2&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T18:27:59.743Z"
+    },
+    "2017-panini-diamond-kings-baseball-blaster-v1": {
+      "set_name": "2017 Panini Diamond Kings Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": 35,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=27835&boxtypeid=3&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T18:27:59.743Z"
+    },
+    "2017-panini-diamond-kings-baseball-hobby": {
+      "set_name": "2017 Panini Diamond Kings Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=27835&boxtypeid=2&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T18:27:59.743Z"
+    },
+    "2018-panini-chronicles-mlb-baseball-hobby": {
+      "set_name": "2018 Panini Chronicles MLB Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=2&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T18:28:13.025Z"
+    },
+    "2018-panini-contenders-draft-baseball-hobby": {
+      "set_name": "2018 Panini Contenders Draft Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 110,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=34135&boxtypeid=2&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T18:28:13.025Z"
+    },
+    "2018-panini-diamond-kings-baseball-blaster-v1": {
+      "set_name": "2018 Panini Diamond Kings Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=27835&boxtypeid=3&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T18:28:13.025Z"
+    },
+    "2018-panini-diamond-kings-baseball-hobby": {
+      "set_name": "2018 Panini Diamond Kings Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=27835&boxtypeid=2&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T18:28:13.025Z"
+    },
+    "2018-panini-donruss-optic-baseball-blaster-v1": {
+      "set_name": "2018 Panini Donruss Optic Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": 400,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=29955&boxtypeid=3&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T18:28:13.025Z"
+    },
+    "2019-panini-chronicles-mlb-baseball-blaster-v1": {
+      "set_name": "2019 Panini Chronicles MLB Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=3&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T18:29:15.850Z"
+    },
+    "2019-panini-chronicles-mlb-baseball-fotl": {
+      "set_name": "2019 Panini Chronicles MLB Baseball FOTL",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=5&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T18:29:15.850Z"
+    },
+    "2019-panini-chronicles-mlb-baseball-hobby": {
+      "set_name": "2019 Panini Chronicles MLB Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=2&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T18:29:15.850Z"
+    },
+    "2019-panini-contenders-draft-baseball-hobby": {
+      "set_name": "2019 Panini Contenders Draft Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=34135&boxtypeid=2&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T18:29:15.850Z"
+    },
+    "2019-panini-diamond-kings-baseball-blaster-v1": {
+      "set_name": "2019 Panini Diamond Kings Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=27835&boxtypeid=3&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T18:29:15.850Z"
+    },
+    "2020-panini-chronicles-mlb-baseball-hobby": {
+      "set_name": "2020 Panini Chronicles MLB Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 187.5,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=2&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T18:29:27.919Z"
+    },
+    "2020-panini-contenders-baseball-blaster-v1": {
+      "set_name": "2020 Panini Contenders Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=21004&boxtypeid=3&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T18:29:27.919Z"
+    },
+    "2020-panini-contenders-baseball-hobby": {
+      "set_name": "2020 Panini Contenders Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 98.33,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=21004&boxtypeid=2&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T18:29:27.919Z"
+    },
+    "2020-panini-diamond-kings-baseball-hobby": {
+      "set_name": "2020 Panini Diamond Kings Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=27835&boxtypeid=2&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T18:29:27.919Z"
+    },
+    "2021-panini-chronicles-mlb-baseball-blaster-v1": {
+      "set_name": "2021 Panini Chronicles MLB Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": 15,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=3&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T18:29:51.203Z"
+    },
+    "2021-panini-chronicles-mlb-baseball-fotl": {
+      "set_name": "2021 Panini Chronicles MLB Baseball FOTL",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=5&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T18:29:51.203Z"
+    },
+    "2021-panini-chronicles-mlb-baseball-hobby": {
+      "set_name": "2021 Panini Chronicles MLB Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=2&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T18:29:51.203Z"
+    },
+    "2022-panini-capstone-baseball-blaster-v1": {
+      "set_name": "2022 Panini Capstone Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=42715&boxtypeid=3&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T18:30:04.415Z"
+    },
+    "2022-panini-capstone-baseball-fotl": {
+      "set_name": "2022 Panini Capstone Baseball FOTL",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=42715&boxtypeid=5&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T18:30:04.415Z"
+    },
+    "2022-panini-capstone-baseball-hobby": {
+      "set_name": "2022 Panini Capstone Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 225,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=42715&boxtypeid=2&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T18:30:04.415Z"
+    },
+    "2023-panini-chronicles-mlb-baseball-blaster-v1": {
+      "set_name": "2023 Panini Chronicles MLB Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=3&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T18:30:17.274Z"
+    },
+    "2023-panini-chronicles-mlb-baseball-fotl": {
+      "set_name": "2023 Panini Chronicles MLB Baseball FOTL",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=5&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T18:30:17.274Z"
+    },
+    "2023-panini-chronicles-mlb-baseball-hobby": {
+      "set_name": "2023 Panini Chronicles MLB Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=2&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T18:30:17.274Z"
+    },
+    "2023-panini-chronicles-mlb-baseball-mega-v1": {
+      "set_name": "2023 Panini Chronicles MLB Baseball Mega V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=32356&boxtypeid=6&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T18:30:17.274Z"
+    },
+    "2023-panini-elite-extra-edition-baseball-blaster-v1": {
+      "set_name": "2023 Panini Elite Extra Edition Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": 1,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=22856&boxtypeid=3&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T18:30:17.274Z"
+    },
+    "2024-panini-boys-of-summer-baseball-hobby": {
+      "set_name": "2024 Panini Boys of Summer Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 275,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=46577&boxtypeid=2&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:30:54.830Z"
+    },
+    "2024-panini-boys-of-summer-baseball-mega-v1": {
+      "set_name": "2024 Panini Boys of Summer Baseball Mega V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=46577&boxtypeid=6&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:30:54.830Z"
+    },
+    "2024-panini-crusade-baseball-mega-v1": {
+      "set_name": "2024 Panini Crusade Baseball Mega V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=46607&boxtypeid=6&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:30:54.830Z"
+    },
+    "2024-panini-crusade-baseball-premium-set": {
+      "set_name": "2024 Panini Crusade Baseball Premium Set",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=46607&boxtypeid=249&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:30:54.830Z"
+    },
+    "2024-panini-flawless-baseball-fotl": {
+      "set_name": "2024 Panini Flawless Baseball FOTL",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=26915&boxtypeid=5&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:30:54.830Z"
+    },
+    "2025-panini-boys-of-summer-baseball-hobby": {
+      "set_name": "2025 Panini Boys of Summer Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 240,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=46577&boxtypeid=2&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:31:07.223Z"
+    },
+    "2025-panini-crusade-baseball-hobby": {
+      "set_name": "2025 Panini Crusade Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=46607&boxtypeid=2&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:31:07.223Z"
+    },
+    "2025-panini-crusade-baseball-mega-v1": {
+      "set_name": "2025 Panini Crusade Baseball Mega V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=46607&boxtypeid=6&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:31:07.223Z"
+    },
+    "2025-panini-flawless-baseball-fotl": {
+      "set_name": "2025 Panini Flawless Baseball FOTL",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=26915&boxtypeid=5&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:31:07.223Z"
+    },
+    "2025-panini-flawless-baseball-hobby": {
+      "set_name": "2025 Panini Flawless Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 2650,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=26915&boxtypeid=2&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:31:07.223Z"
+    },
+    "2022-sportscardscom-jersey-fusion-baseball-hobby": {
+      "set_name": "2022 Sportscards.com Jersey Fusion Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=41975&boxtypeid=2&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T18:37:06.575Z"
+    },
+    "2020-topps-allen-and-ginter-chrome-baseball-hobby": {
+      "set_name": "2020 Topps Allen and Ginter Chrome Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=38415&boxtypeid=2&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T18:38:23.462Z"
+    },
+    "2009-topps-chrome-baseball-blaster-v1": {
+      "set_name": "2009 Topps Chrome Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=3&listingtypeid=1&year=2009",
+      "fetched_date": "2026-06-24T18:38:23.462Z"
+    },
+    "2013-topps-chrome-baseball-blaster-v1": {
+      "set_name": "2013 Topps Chrome Baseball Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1445&boxtypeid=3&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T18:38:23.462Z"
+    },
+    "2009-topps-american-heritage-heroes-ed-baseball-retail-v1": {
+      "set_name": "2009 Topps American Heritage Heroes ed Baseball Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=17378&boxtypeid=1&listingtypeid=1&year=2009",
+      "fetched_date": "2026-06-24T18:38:35.814Z"
+    },
+    "1989-ud-upper-deck-1-baseball-hobby": {
+      "set_name": "1989 UD (Upper Deck) 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1447&boxtypeid=2&listingtypeid=1&year=1989",
+      "fetched_date": "2026-06-24T18:39:24.205Z"
+    },
+    "1990-ud-upper-deck-1-baseball-hobby": {
+      "set_name": "1990 UD (Upper Deck) 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 30,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1447&boxtypeid=2&listingtypeid=1&year=1990",
+      "fetched_date": "2026-06-24T18:39:24.205Z"
+    },
+    "1991-ud-upper-deck-1-baseball-hobby": {
+      "set_name": "1991 UD (Upper Deck) 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1447&boxtypeid=2&listingtypeid=1&year=1991",
+      "fetched_date": "2026-06-24T18:39:24.205Z"
+    },
+    "1992-ud-upper-deck-1-baseball-hobby": {
+      "set_name": "1992 UD (Upper Deck) 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1447&boxtypeid=2&listingtypeid=1&year=1992",
+      "fetched_date": "2026-06-24T18:39:24.205Z"
+    },
+    "1993-ud-upper-deck-1-baseball-hobby": {
+      "set_name": "1993 UD (Upper Deck) 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 43,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1447&boxtypeid=2&listingtypeid=1&year=1993",
+      "fetched_date": "2026-06-24T18:39:24.205Z"
+    },
+    "1990-donruss-leaf-series-1-baseball-hobby": {
+      "set_name": "1990 Donruss Leaf  series 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=253&boxtypeid=2&listingtypeid=1&year=1990",
+      "fetched_date": "2026-06-24T18:40:27.454Z"
+    },
+    "1991-donruss-leaf-series-1-baseball-hobby": {
+      "set_name": "1991 Donruss Leaf  series 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": 35,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=253&boxtypeid=2&listingtypeid=1&year=1991",
+      "fetched_date": "2026-06-24T18:40:27.454Z"
+    },
+    "1992-donruss-leaf-series-1-baseball-hobby": {
+      "set_name": "1992 Donruss Leaf  series 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=253&boxtypeid=2&listingtypeid=1&year=1992",
+      "fetched_date": "2026-06-24T18:40:27.454Z"
+    },
+    "1993-donruss-leaf-series-1-baseball-hobby": {
+      "set_name": "1993 Donruss Leaf  series 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=253&boxtypeid=2&listingtypeid=1&year=1993",
+      "fetched_date": "2026-06-24T18:40:27.454Z"
+    },
+    "1994-donruss-leaf-series-1-baseball-hobby": {
+      "set_name": "1994 Donruss Leaf  series 1 Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=253&boxtypeid=2&listingtypeid=1&year=1994",
+      "fetched_date": "2026-06-24T18:40:27.454Z"
+    },
+    "2002-fleer-box-score-baseball-hobby": {
+      "set_name": "2002 Fleer Box Score Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=4050&boxtypeid=2&listingtypeid=1&year=2002",
+      "fetched_date": "2026-06-24T18:40:39.020Z"
+    },
+    "2003-fleer-box-score-baseball-hobby": {
+      "set_name": "2003 Fleer Box Score Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=4050&boxtypeid=2&listingtypeid=1&year=2003",
+      "fetched_date": "2026-06-24T18:40:39.020Z"
+    },
+    "1988-score-baseball-hobby": {
+      "set_name": "1988 Score Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1961&boxtypeid=2&listingtypeid=1&year=1988",
+      "fetched_date": "2026-06-24T18:40:39.020Z"
+    },
+    "1989-score-baseball-hobby": {
+      "set_name": "1989 Score Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1961&boxtypeid=2&listingtypeid=1&year=1989",
+      "fetched_date": "2026-06-24T18:40:39.020Z"
+    },
+    "1990-score-baseball-hobby": {
+      "set_name": "1990 Score Baseball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=21&subcategoryid=1961&boxtypeid=2&listingtypeid=1&year=1990",
+      "fetched_date": "2026-06-24T18:40:39.020Z"
+    },
+    "234-panini-mosaic-basketball-blaster-v2": {
+      "set_name": "23/4 Panini Mosaic Basketball Blaster V2",
+      "source": "dealernetx",
+      "price": 55,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=31155&boxtypeid=253&listingtypeid=1&year=23/4",
+      "fetched_date": "2026-06-24T18:47:04.034Z"
+    },
+    "2018-panini-donruss-basketball-wnba-hobby": {
+      "set_name": "2018 Panini Donruss Basketball WNBA  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44857&boxtypeid=2&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T18:47:23.281Z"
+    },
+    "2019-panini-donruss-basketball-wnba-hobby": {
+      "set_name": "2019 Panini Donruss Basketball WNBA  Hobby",
+      "source": "dealernetx",
+      "price": 475,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44857&boxtypeid=2&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T18:47:29.648Z"
+    },
+    "2020-panini-prizm-basketball-wnba-blaster-v1": {
+      "set_name": "2020 Panini Prizm Basketball WNBA Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44856&boxtypeid=3&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T18:48:28.659Z"
+    },
+    "2020-panini-prizm-basketball-wnba-hobby": {
+      "set_name": "2020 Panini Prizm Basketball WNBA  Hobby",
+      "source": "dealernetx",
+      "price": 525,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44856&boxtypeid=2&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T18:48:28.659Z"
+    },
+    "2021-panini-prizm-basketball-wnba-blaster-v1": {
+      "set_name": "2021 Panini Prizm Basketball WNBA Blaster V1",
+      "source": "dealernetx",
+      "price": 28,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44856&boxtypeid=3&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T18:48:39.540Z"
+    },
+    "2021-panini-prizm-basketball-wnba-hobby": {
+      "set_name": "2021 Panini Prizm Basketball WNBA  Hobby",
+      "source": "dealernetx",
+      "price": 385,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44856&boxtypeid=2&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T18:48:39.540Z"
+    },
+    "2021-panini-revolution-basketball-wnba-hobby": {
+      "set_name": "2021 Panini Revolution Basketball WNBA  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44855&boxtypeid=2&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T18:48:39.540Z"
+    },
+    "2022-panini-prizm-basketball-wnba-blaster-v1": {
+      "set_name": "2022 Panini Prizm Basketball WNBA Blaster V1",
+      "source": "dealernetx",
+      "price": 20,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44856&boxtypeid=3&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T18:49:15.903Z"
+    },
+    "2022-panini-prizm-basketball-wnba-hobby": {
+      "set_name": "2022 Panini Prizm Basketball WNBA  Hobby",
+      "source": "dealernetx",
+      "price": 260,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44856&boxtypeid=2&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T18:49:15.903Z"
+    },
+    "2022-panini-revolution-basketball-wnba-hobby": {
+      "set_name": "2022 Panini Revolution Basketball WNBA  Hobby",
+      "source": "dealernetx",
+      "price": 160,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44855&boxtypeid=2&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T18:49:15.903Z"
+    },
+    "2023-panini-origins-basketball-wnba-hobby": {
+      "set_name": "2023 Panini Origins Basketball WNBA  Hobby",
+      "source": "dealernetx",
+      "price": 240,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44995&boxtypeid=2&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T18:49:26.689Z"
+    },
+    "2023-panini-prizm-basketball-wnba-blaster-v1": {
+      "set_name": "2023 Panini Prizm Basketball WNBA Blaster V1",
+      "source": "dealernetx",
+      "price": 31,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44856&boxtypeid=3&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T18:49:26.689Z"
+    },
+    "2023-panini-prizm-basketball-wnba-hobby": {
+      "set_name": "2023 Panini Prizm Basketball WNBA  Hobby",
+      "source": "dealernetx",
+      "price": 350,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44856&boxtypeid=2&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T18:49:26.689Z"
+    },
+    "2024-panini-caitlin-clark-basketball-wnba-blaster-v1": {
+      "set_name": "2024 Panini Caitlin Clark Basketball WNBA Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=46534&boxtypeid=3&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:49:40.395Z"
+    },
+    "2024-panini-caitlin-clark-basketball-wnba-blaster-v2": {
+      "set_name": "2024 Panini Caitlin Clark Basketball WNBA Blaster V2",
+      "source": "dealernetx",
+      "price": 85,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=46534&boxtypeid=253&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:49:40.395Z"
+    },
+    "2024-panini-caitlin-clark-basketball-wnba-blaster-v3": {
+      "set_name": "2024 Panini Caitlin Clark Basketball WNBA Blaster V3",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=46534&boxtypeid=254&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:49:40.395Z"
+    },
+    "2024-panini-caitlin-clark-basketball-wnba-blaster-v5": {
+      "set_name": "2024 Panini Caitlin Clark Basketball WNBA Blaster V5",
+      "source": "dealernetx",
+      "price": 275,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=46534&boxtypeid=255&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:49:40.395Z"
+    },
+    "2024-panini-origins-basketball-wnba-hobby": {
+      "set_name": "2024 Panini Origins Basketball WNBA  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44995&boxtypeid=2&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T18:49:40.395Z"
+    },
+    "2025-panini-caitlin-clark-chronicled-basketball-wnba-retail-v1": {
+      "set_name": "2025 Panini Caitlin Clark Chronicled Basketball WNBA Retail V1",
+      "source": "dealernetx",
+      "price": 54,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=47071&boxtypeid=1&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:50:19.037Z"
+    },
+    "2025-panini-caitlin-clark-chronicled-basketball-wnba-retail-v2": {
+      "set_name": "2025 Panini Caitlin Clark Chronicled Basketball WNBA Retail V2",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=47071&boxtypeid=257&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:50:19.037Z"
+    },
+    "2025-panini-donruss-basketball-wnba-blaster-v1": {
+      "set_name": "2025 Panini Donruss Basketball WNBA Blaster V1",
+      "source": "dealernetx",
+      "price": 17,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44857&boxtypeid=3&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:50:19.037Z"
+    },
+    "2025-panini-donruss-basketball-wnba-hobby": {
+      "set_name": "2025 Panini Donruss Basketball WNBA  Hobby",
+      "source": "dealernetx",
+      "price": 405,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44857&boxtypeid=2&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:50:19.037Z"
+    },
+    "2025-panini-donruss-basketball-wnba-mega-v1": {
+      "set_name": "2025 Panini Donruss Basketball WNBA Mega V1",
+      "source": "dealernetx",
+      "price": 30,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=1501&subcategoryid=44857&boxtypeid=6&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T18:50:19.037Z"
+    },
+    "178-panini-flawless-collegiate-basketball-hobby": {
+      "set_name": "17/8 Panini Flawless Collegiate Basketball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=32275&boxtypeid=2&listingtypeid=1&year=17/8",
+      "fetched_date": "2026-06-24T18:59:44.180Z"
+    },
+    "189-panini-flawless-collegiate-basketball-hobby": {
+      "set_name": "18/9 Panini Flawless Collegiate Basketball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=32275&boxtypeid=2&listingtypeid=1&year=18/9",
+      "fetched_date": "2026-06-24T18:59:44.180Z"
+    },
+    "190-panini-flawless-collegiate-basketball-hobby": {
+      "set_name": "19/0 Panini Flawless Collegiate Basketball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=32275&boxtypeid=2&listingtypeid=1&year=19/0",
+      "fetched_date": "2026-06-24T18:59:44.180Z"
+    },
+    "201-panini-flawless-collegiate-basketball-hobby": {
+      "set_name": "20/1 Panini Flawless Collegiate Basketball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=32275&boxtypeid=2&listingtypeid=1&year=20/1",
+      "fetched_date": "2026-06-24T18:59:44.180Z"
+    },
+    "212-panini-flawless-collegiate-basketball-hobby": {
+      "set_name": "21/2 Panini Flawless Collegiate Basketball  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=32275&boxtypeid=2&listingtypeid=1&year=21/2",
+      "fetched_date": "2026-06-24T18:59:44.180Z"
+    },
+    "245-panini-prizm-black-basketball-fotl": {
+      "set_name": "24/5 Panini Prizm Black Basketball FOTL",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=46999&boxtypeid=5&listingtypeid=1&year=24/5",
+      "fetched_date": "2026-06-24T19:00:47.341Z"
+    },
+    "245-panini-prizm-black-basketball-hobby": {
+      "set_name": "24/5 Panini Prizm Black Basketball  Hobby",
+      "source": "dealernetx",
+      "price": 1625,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=46999&boxtypeid=2&listingtypeid=1&year=24/5",
+      "fetched_date": "2026-06-24T19:00:47.341Z"
+    },
+    "234-panini-prizm-deca-basketball-fotl": {
+      "set_name": "23/4 Panini Prizm Deca Basketball FOTL",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=46592&boxtypeid=5&listingtypeid=1&year=23/4",
+      "fetched_date": "2026-06-24T19:00:47.341Z"
+    },
+    "245-panini-prizm-deca-basketball-fotl": {
+      "set_name": "24/5 Panini Prizm Deca Basketball FOTL",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=46592&boxtypeid=5&listingtypeid=1&year=24/5",
+      "fetched_date": "2026-06-24T19:00:47.341Z"
+    },
+    "234-panini-prizm-deca-basketball-hobby": {
+      "set_name": "23/4 Panini Prizm Deca Basketball  Hobby",
+      "source": "dealernetx",
+      "price": 1600,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=46592&boxtypeid=2&listingtypeid=1&year=23/4",
+      "fetched_date": "2026-06-24T19:00:47.341Z"
+    },
+    "256-bowman-nba-basketball-blaster-v1": {
+      "set_name": "25/6 Bowman NBA Basketball Blaster V1",
+      "source": "dealernetx",
+      "price": 31,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=47241&boxtypeid=3&listingtypeid=1&year=25/6",
+      "fetched_date": "2026-06-24T19:01:39.449Z"
+    },
+    "256-bowman-nba-basketball-breakers-delight": {
+      "set_name": "25/6 Bowman NBA Basketball Breakers Delight",
+      "source": "dealernetx",
+      "price": 1065,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=47241&boxtypeid=247&listingtypeid=1&year=25/6",
+      "fetched_date": "2026-06-24T19:01:39.449Z"
+    },
+    "256-bowman-nba-basketball-hanger": {
+      "set_name": "25/6 Bowman NBA Basketball Hanger",
+      "source": "dealernetx",
+      "price": 26,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=47241&boxtypeid=11&listingtypeid=1&year=25/6",
+      "fetched_date": "2026-06-24T19:01:39.449Z"
+    },
+    "256-bowman-nba-basketball-hobby": {
+      "set_name": "25/6 Bowman NBA Basketball  Hobby",
+      "source": "dealernetx",
+      "price": 367.5,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=47241&boxtypeid=2&listingtypeid=1&year=25/6",
+      "fetched_date": "2026-06-24T19:01:39.449Z"
+    },
+    "256-bowman-nba-basketball-hobby-jumbo-v1": {
+      "set_name": "25/6 Bowman NBA Basketball Hobby Jumbo V1",
+      "source": "dealernetx",
+      "price": 632,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=23&subcategoryid=47241&boxtypeid=4&listingtypeid=1&year=25/6",
+      "fetched_date": "2026-06-24T19:01:39.449Z"
+    },
+    "1990-panini-stickers-football-hobby": {
+      "set_name": "1990 Panini Stickers Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18795&boxtypeid=2&listingtypeid=1&year=1990",
+      "fetched_date": "2026-06-24T19:01:46.825Z"
+    },
+    "2006-panini-prestige-football-hobby": {
+      "set_name": "2006 Panini Prestige Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=17895&boxtypeid=2&listingtypeid=1&year=2006",
+      "fetched_date": "2026-06-24T19:05:02.858Z"
+    },
+    "2010-panini-absolute-football-hobby": {
+      "set_name": "2010 Panini Absolute Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=2&listingtypeid=1&year=2010",
+      "fetched_date": "2026-06-24T19:05:52.527Z"
+    },
+    "2010-panini-certified-football-hobby": {
+      "set_name": "2010 Panini Certified Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18599&boxtypeid=2&listingtypeid=1&year=2010",
+      "fetched_date": "2026-06-24T19:05:52.527Z"
+    },
+    "2010-panini-classics-football-hobby": {
+      "set_name": "2010 Panini Classics Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18136&boxtypeid=2&listingtypeid=1&year=2010",
+      "fetched_date": "2026-06-24T19:05:52.527Z"
+    },
+    "2010-panini-crown-royale-football-hobby": {
+      "set_name": "2010 Panini Crown Royale Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18600&boxtypeid=2&listingtypeid=1&year=2010",
+      "fetched_date": "2026-06-24T19:05:52.527Z"
+    },
+    "2010-panini-donruss-elite-football-hobby": {
+      "set_name": "2010 Panini Donruss Elite Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18115&boxtypeid=2&listingtypeid=1&year=2010",
+      "fetched_date": "2026-06-24T19:05:52.527Z"
+    },
+    "2011-panini-absolute-football-hobby": {
+      "set_name": "2011 Panini Absolute Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T19:06:05.550Z"
+    },
+    "2011-panini-certified-football-hobby": {
+      "set_name": "2011 Panini Certified Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18599&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T19:06:05.550Z"
+    },
+    "2011-panini-contenders-nfl-football-hobby": {
+      "set_name": "2011 Panini Contenders NFL Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=21001&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T19:06:05.550Z"
+    },
+    "2011-panini-crown-royale-football-hobby": {
+      "set_name": "2011 Panini Crown Royale Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18600&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T19:06:05.550Z"
+    },
+    "2011-panini-donruss-elite-football-hobby": {
+      "set_name": "2011 Panini Donruss Elite Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18115&boxtypeid=2&listingtypeid=1&year=2011",
+      "fetched_date": "2026-06-24T19:06:05.550Z"
+    },
+    "2012-panini-absolute-football-blaster-v1": {
+      "set_name": "2012 Panini Absolute Football Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=3&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T19:06:43.338Z"
+    },
+    "2012-panini-absolute-football-hobby": {
+      "set_name": "2012 Panini Absolute Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=2&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T19:06:43.338Z"
+    },
+    "2012-panini-absolute-football-retail-v1": {
+      "set_name": "2012 Panini Absolute Football Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=1&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T19:06:43.338Z"
+    },
+    "2012-panini-black-football-hobby": {
+      "set_name": "2012 Panini Black Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=22795&boxtypeid=2&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T19:06:43.338Z"
+    },
+    "2012-panini-certified-football-hobby": {
+      "set_name": "2012 Panini Certified Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18599&boxtypeid=2&listingtypeid=1&year=2012",
+      "fetched_date": "2026-06-24T19:06:43.338Z"
+    },
+    "2013-panini-absolute-football-hobby": {
+      "set_name": "2013 Panini Absolute Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=2&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T19:06:59.343Z"
+    },
+    "2013-panini-black-football-hobby": {
+      "set_name": "2013 Panini Black Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=22795&boxtypeid=2&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T19:06:59.343Z"
+    },
+    "2013-panini-certified-football-hobby": {
+      "set_name": "2013 Panini Certified Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18599&boxtypeid=2&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T19:06:59.343Z"
+    },
+    "2013-panini-contenders-nfl-football-hobby": {
+      "set_name": "2013 Panini Contenders NFL Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=21001&boxtypeid=2&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T19:06:59.343Z"
+    },
+    "2013-panini-crown-royale-football-hobby": {
+      "set_name": "2013 Panini Crown Royale Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18600&boxtypeid=2&listingtypeid=1&year=2013",
+      "fetched_date": "2026-06-24T19:06:59.343Z"
+    },
+    "2014-panini-absolute-football-blaster-v1": {
+      "set_name": "2014 Panini Absolute Football Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=3&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T19:08:07.316Z"
+    },
+    "2014-panini-absolute-football-hobby": {
+      "set_name": "2014 Panini Absolute Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=2&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T19:08:07.316Z"
+    },
+    "2014-panini-black-gold-nfl-football-hobby": {
+      "set_name": "2014 Panini Black Gold NFL Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=27696&boxtypeid=2&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T19:08:07.316Z"
+    },
+    "2014-panini-certified-football-hobby": {
+      "set_name": "2014 Panini Certified Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18599&boxtypeid=2&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T19:08:07.316Z"
+    },
+    "2014-panini-contenders-nfl-football-blaster-v1": {
+      "set_name": "2014 Panini Contenders NFL Football Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=21001&boxtypeid=3&listingtypeid=1&year=2014",
+      "fetched_date": "2026-06-24T19:08:07.316Z"
+    },
+    "2015-panini-black-gold-nfl-football-hobby": {
+      "set_name": "2015 Panini Black Gold NFL Football  Hobby",
+      "source": "dealernetx",
+      "price": 496.88,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=27696&boxtypeid=2&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T19:08:48.290Z"
+    },
+    "2015-panini-certified-football-hobby": {
+      "set_name": "2015 Panini Certified Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18599&boxtypeid=2&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T19:08:48.290Z"
+    },
+    "2015-panini-clear-vision-football-hobby": {
+      "set_name": "2015 Panini Clear Vision Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=28196&boxtypeid=2&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T19:08:48.290Z"
+    },
+    "2015-panini-contenders-draft-football-blaster-v1": {
+      "set_name": "2015 Panini Contenders Draft Football Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=27898&boxtypeid=3&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T19:08:48.290Z"
+    },
+    "2015-panini-contenders-draft-football-hobby": {
+      "set_name": "2015 Panini Contenders Draft Football  Hobby",
+      "source": "dealernetx",
+      "price": 146,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=27898&boxtypeid=2&listingtypeid=1&year=2015",
+      "fetched_date": "2026-06-24T19:08:48.290Z"
+    },
+    "2016-panini-football-blaster-v1": {
+      "set_name": "2016 Panini Football Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=29956&boxtypeid=3&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T19:09:05.154Z"
+    },
+    "2016-panini-football-retail-v1": {
+      "set_name": "2016 Panini Football Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=29956&boxtypeid=1&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T19:09:05.154Z"
+    },
+    "2016-panini-absolute-football-blaster-v1": {
+      "set_name": "2016 Panini Absolute Football Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=3&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T19:09:05.154Z"
+    },
+    "2016-panini-absolute-football-hobby": {
+      "set_name": "2016 Panini Absolute Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=2&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T19:09:05.154Z"
+    },
+    "2016-panini-absolute-football-retail-v1": {
+      "set_name": "2016 Panini Absolute Football Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=1&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T19:09:05.154Z"
+    },
+    "2017-panini-football-retail-v1": {
+      "set_name": "2017 Panini Football Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=29956&boxtypeid=1&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T19:10:09.689Z"
+    },
+    "2017-panini-absolute-football-blaster-v1": {
+      "set_name": "2017 Panini Absolute Football Blaster V1",
+      "source": "dealernetx",
+      "price": 225,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=3&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T19:10:09.689Z"
+    },
+    "2017-panini-absolute-football-hobby": {
+      "set_name": "2017 Panini Absolute Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=2&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T19:10:09.689Z"
+    },
+    "2017-panini-absolute-football-mega-v1": {
+      "set_name": "2017 Panini Absolute Football Mega V1",
+      "source": "dealernetx",
+      "price": 520,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=6&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T19:10:09.689Z"
+    },
+    "2017-panini-certified-football-hobby": {
+      "set_name": "2017 Panini Certified Football  Hobby",
+      "source": "dealernetx",
+      "price": 1725,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18599&boxtypeid=2&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T19:10:09.689Z"
+    },
+    "2018-panini-football-blaster-v1": {
+      "set_name": "2018 Panini Football Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=29956&boxtypeid=3&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T19:10:46.461Z"
+    },
+    "2018-panini-football-cellofat-pack": {
+      "set_name": "2018 Panini Football Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": 270,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=29956&boxtypeid=8&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T19:10:46.461Z"
+    },
+    "2018-panini-football-retail-v1": {
+      "set_name": "2018 Panini Football Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=29956&boxtypeid=1&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T19:10:46.461Z"
+    },
+    "2018-panini-absolute-football-blaster-v1": {
+      "set_name": "2018 Panini Absolute Football Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=3&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T19:10:46.461Z"
+    },
+    "2018-panini-absolute-football-cellofat-pack": {
+      "set_name": "2018 Panini Absolute Football Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": 345,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=8&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T19:10:46.461Z"
+    },
+    "2019-panini-absolute-football-blaster-v1": {
+      "set_name": "2019 Panini Absolute Football Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=3&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T19:10:59.020Z"
+    },
+    "2019-panini-absolute-football-cellofat-pack": {
+      "set_name": "2019 Panini Absolute Football Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": 250,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=8&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T19:10:59.020Z"
+    },
+    "2019-panini-absolute-football-hanger": {
+      "set_name": "2019 Panini Absolute Football Hanger",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=11&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T19:10:59.020Z"
+    },
+    "2019-panini-absolute-football-hobby": {
+      "set_name": "2019 Panini Absolute Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=2&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T19:10:59.020Z"
+    },
+    "2019-panini-black-football-hobby": {
+      "set_name": "2019 Panini Black Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=22795&boxtypeid=2&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T19:10:59.020Z"
+    },
+    "2020-panini-absolute-football-blaster-v1": {
+      "set_name": "2020 Panini Absolute Football Blaster V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=3&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T19:11:10.968Z"
+    },
+    "2020-panini-absolute-football-cellofat-pack": {
+      "set_name": "2020 Panini Absolute Football Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": 205,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=8&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T19:11:10.968Z"
+    },
+    "2020-panini-absolute-football-hanger": {
+      "set_name": "2020 Panini Absolute Football Hanger",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=11&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T19:11:10.968Z"
+    },
+    "2020-panini-absolute-football-hobby": {
+      "set_name": "2020 Panini Absolute Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=2&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T19:11:10.968Z"
+    },
+    "2020-panini-absolute-football-mega-v1": {
+      "set_name": "2020 Panini Absolute Football Mega V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=6&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T19:11:10.968Z"
+    },
+    "2021-panini-absolute-football-blaster-v1": {
+      "set_name": "2021 Panini Absolute Football Blaster V1",
+      "source": "dealernetx",
+      "price": 40,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=3&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T19:11:22.980Z"
+    },
+    "2021-panini-absolute-football-cellofat-pack": {
+      "set_name": "2021 Panini Absolute Football Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": 120,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=8&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T19:11:22.980Z"
+    },
+    "2021-panini-absolute-football-hobby": {
+      "set_name": "2021 Panini Absolute Football  Hobby",
+      "source": "dealernetx",
+      "price": 830,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=2&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T19:11:22.980Z"
+    },
+    "2021-panini-absolute-football-mega-v1": {
+      "set_name": "2021 Panini Absolute Football Mega V1",
+      "source": "dealernetx",
+      "price": 125,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=6&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T19:11:22.980Z"
+    },
+    "2021-panini-absolute-football-retail-v1": {
+      "set_name": "2021 Panini Absolute Football Retail V1",
+      "source": "dealernetx",
+      "price": 145,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=1&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T19:11:22.980Z"
+    },
+    "2022-panini-absolute-football-blaster-v1": {
+      "set_name": "2022 Panini Absolute Football Blaster V1",
+      "source": "dealernetx",
+      "price": 39,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=3&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T19:11:46.346Z"
+    },
+    "2022-panini-absolute-football-cellofat-pack": {
+      "set_name": "2022 Panini Absolute Football Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": 90,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=8&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T19:11:46.346Z"
+    },
+    "2022-panini-absolute-football-gravity-feed-i": {
+      "set_name": "2022 Panini Absolute Football Gravity Feed I",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=153&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T19:11:46.346Z"
+    },
+    "2022-panini-absolute-football-hanger": {
+      "set_name": "2022 Panini Absolute Football Hanger",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=11&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T19:11:46.346Z"
+    },
+    "2022-panini-absolute-football-hobby": {
+      "set_name": "2022 Panini Absolute Football  Hobby",
+      "source": "dealernetx",
+      "price": 582.92,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=2&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T19:11:46.346Z"
+    },
+    "2023-panini-absolute-football-blaster-v1": {
+      "set_name": "2023 Panini Absolute Football Blaster V1",
+      "source": "dealernetx",
+      "price": 33,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=3&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T19:11:58.867Z"
+    },
+    "2023-panini-absolute-football-cellofat-pack": {
+      "set_name": "2023 Panini Absolute Football Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": 400,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=8&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T19:11:58.867Z"
+    },
+    "2023-panini-absolute-football-gravity-feed-i": {
+      "set_name": "2023 Panini Absolute Football Gravity Feed I",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=153&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T19:11:58.867Z"
+    },
+    "2023-panini-absolute-football-hobby": {
+      "set_name": "2023 Panini Absolute Football  Hobby",
+      "source": "dealernetx",
+      "price": 708.33,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=2&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T19:11:58.867Z"
+    },
+    "2023-panini-absolute-football-mega-v1": {
+      "set_name": "2023 Panini Absolute Football Mega V1",
+      "source": "dealernetx",
+      "price": 55,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=6&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T19:11:58.867Z"
+    },
+    "2024-panini-absolute-football-blaster-v1": {
+      "set_name": "2024 Panini Absolute Football Blaster V1",
+      "source": "dealernetx",
+      "price": 45,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=3&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T19:12:10.295Z"
+    },
+    "2024-panini-absolute-football-blaster-v2": {
+      "set_name": "2024 Panini Absolute Football Blaster V2",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=253&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T19:12:10.295Z"
+    },
+    "2024-panini-absolute-football-cellofat-pack": {
+      "set_name": "2024 Panini Absolute Football Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": 119.99,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=8&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T19:12:10.295Z"
+    },
+    "2024-panini-absolute-football-gravity-feed-i": {
+      "set_name": "2024 Panini Absolute Football Gravity Feed I",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=153&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T19:12:10.295Z"
+    },
+    "2024-panini-absolute-football-gravity-feed-ii": {
+      "set_name": "2024 Panini Absolute Football Gravity Feed II",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=265&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T19:12:10.295Z"
+    },
+    "2025-panini-absolute-football-blaster-v1": {
+      "set_name": "2025 Panini Absolute Football Blaster V1",
+      "source": "dealernetx",
+      "price": 30,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=3&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T19:12:23.364Z"
+    },
+    "2025-panini-absolute-football-blaster-v2": {
+      "set_name": "2025 Panini Absolute Football Blaster V2",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=253&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T19:12:23.364Z"
+    },
+    "2025-panini-absolute-football-blaster-v3": {
+      "set_name": "2025 Panini Absolute Football Blaster V3",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=254&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T19:12:23.364Z"
+    },
+    "2025-panini-absolute-football-cellofat-pack": {
+      "set_name": "2025 Panini Absolute Football Cello/Fat Pack",
+      "source": "dealernetx",
+      "price": 87.5,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=8&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T19:12:23.364Z"
+    },
+    "2025-panini-absolute-football-fotl": {
+      "set_name": "2025 Panini Absolute Football FOTL",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=18655&boxtypeid=5&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T19:12:23.364Z"
+    },
+    "1991-wild-card-draft-picks-football-retail-v1": {
+      "set_name": "1991 Wild Card Draft Picks Football Retail V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=39776&boxtypeid=1&listingtypeid=1&year=1991",
+      "fetched_date": "2026-06-24T19:12:32.893Z"
+    },
+    "2021-wild-card-draft-picks-football-mega-v1": {
+      "set_name": "2021 Wild Card Draft Picks Football Mega V1",
+      "source": "dealernetx",
+      "price": 25,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=39776&boxtypeid=6&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T19:15:52.178Z"
+    },
+    "2021-wild-card-matte-black-draft-pick-football-hobby": {
+      "set_name": "2021 Wild Card Matte Black Draft Pick Football  Hobby",
+      "source": "dealernetx",
+      "price": 950,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=39175&boxtypeid=2&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T19:15:52.178Z"
+    },
+    "2021-wild-card-matte-white-draft-pick-football-hobby": {
+      "set_name": "2021 Wild Card Matte White Draft Pick Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=39176&boxtypeid=2&listingtypeid=1&year=2021",
+      "fetched_date": "2026-06-24T19:15:52.178Z"
+    },
+    "2022-sportscardscom-jersey-fusion-football-hobby": {
+      "set_name": "2022 Sportscards.com Jersey Fusion Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=41976&boxtypeid=2&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T19:16:02.953Z"
+    },
+    "2022-wild-card-auto-mania-football-hobby": {
+      "set_name": "2022 Wild Card Auto Mania Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=42876&boxtypeid=2&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T19:16:02.953Z"
+    },
+    "2022-wild-card-five-card-draw-football-hobby": {
+      "set_name": "2022 Wild Card Five Card Draw Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=42615&boxtypeid=2&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T19:16:02.953Z"
+    },
+    "2022-wild-card-matte-goldsilver-football-mega-v1": {
+      "set_name": "2022 Wild Card Matte Gold/Silver Football Mega V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=42296&boxtypeid=6&listingtypeid=1&year=2022",
+      "fetched_date": "2026-06-24T19:16:02.953Z"
+    },
+    "2023-wild-card-draft-picks-football-hobby": {
+      "set_name": "2023 Wild Card Draft Picks Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=39776&boxtypeid=2&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T19:16:14.119Z"
+    },
+    "2023-wild-card-five-card-draw-football-hobby": {
+      "set_name": "2023 Wild Card Five Card Draw Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=42615&boxtypeid=2&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T19:16:14.119Z"
+    },
+    "2023-wildcard-five-card-draw-stacked-deck-football-hobby": {
+      "set_name": "2023 Wildcard Five Card Draw Stacked Deck Football  Hobby",
+      "source": "dealernetx",
+      "price": 122.92,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=46499&boxtypeid=2&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T19:16:14.119Z"
+    },
+    "2023-wild-card-matte-black-draft-pick-football-hobby": {
+      "set_name": "2023 Wild Card Matte Black Draft Pick Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=39175&boxtypeid=2&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T19:16:14.119Z"
+    },
+    "2023-wild-card-wildchrome-football-hobby": {
+      "set_name": "2023 Wild Card Wildchrome Football  Hobby",
+      "source": "dealernetx",
+      "price": 125,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=46469&boxtypeid=2&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T19:16:14.119Z"
+    },
+    "2024-wild-card-7-card-studs-metal-high-stakes-edition-football-hobby": {
+      "set_name": "2024 Wild Card 7 Card Studs Metal High Stakes Edition Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=46703&boxtypeid=2&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T19:16:27.320Z"
+    },
+    "2024-wild-card-auto-mania-football-hobby": {
+      "set_name": "2024 Wild Card Auto Mania Football  Hobby",
+      "source": "dealernetx",
+      "price": 145,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=42876&boxtypeid=2&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T19:16:27.320Z"
+    },
+    "2024-wild-card-auto-mania-football-hobby-jumbo-v1": {
+      "set_name": "2024 Wild Card Auto Mania Football Hobby Jumbo V1",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=42876&boxtypeid=4&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T19:16:27.320Z"
+    },
+    "2024-wild-card-five-card-draw-football-hobby": {
+      "set_name": "2024 Wild Card Five Card Draw Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=42615&boxtypeid=2&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T19:16:27.320Z"
+    },
+    "2024-wild-card-pre-historic-football-hobby": {
+      "set_name": "2024 Wild Card Pre-Historic Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=46923&boxtypeid=2&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T19:16:27.320Z"
+    },
+    "2023-panini-flawless-football-hobby": {
+      "set_name": "2023 Panini Flawless Football  Hobby",
+      "source": "dealernetx",
+      "price": 4850,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=46658&boxtypeid=2&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T19:16:44.616Z"
+    },
+    "2025-panini-flawless-football-hobby": {
+      "set_name": "2025 Panini Flawless Football  Hobby",
+      "source": "dealernetx",
+      "price": 5660,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=46658&boxtypeid=2&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T19:16:44.616Z"
+    },
+    "2023-panini-flawless-collegiate-football-fotl": {
+      "set_name": "2023 Panini Flawless Collegiate Football FOTL",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=32416&boxtypeid=5&listingtypeid=1&year=2023",
+      "fetched_date": "2026-06-24T19:16:44.616Z"
+    },
+    "2017-panini-flawless-collegiate-football-hobby": {
+      "set_name": "2017 Panini Flawless Collegiate Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=32416&boxtypeid=2&listingtypeid=1&year=2017",
+      "fetched_date": "2026-06-24T19:16:44.616Z"
+    },
+    "2018-panini-flawless-collegiate-football-hobby": {
+      "set_name": "2018 Panini Flawless Collegiate Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=32416&boxtypeid=2&listingtypeid=1&year=2018",
+      "fetched_date": "2026-06-24T19:16:44.616Z"
+    },
+    "2025-panini-prizm-black-football-fotl": {
+      "set_name": "2025 Panini Prizm Black Football FOTL",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=47173&boxtypeid=5&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T19:16:57.868Z"
+    },
+    "2025-panini-prizm-black-football-hobby": {
+      "set_name": "2025 Panini Prizm Black Football  Hobby",
+      "source": "dealernetx",
+      "price": 533.33,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=47173&boxtypeid=2&listingtypeid=1&year=2025",
+      "fetched_date": "2026-06-24T19:16:57.868Z"
+    },
+    "2024-panini-prizm-deca-football-fotl": {
+      "set_name": "2024 Panini Prizm Deca Football FOTL",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=46756&boxtypeid=5&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T19:16:57.868Z"
+    },
+    "2024-panini-prizm-deca-football-hobby": {
+      "set_name": "2024 Panini Prizm Deca Football  Hobby",
+      "source": "dealernetx",
+      "price": 940,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=46756&boxtypeid=2&listingtypeid=1&year=2024",
+      "fetched_date": "2026-06-24T19:16:57.868Z"
+    },
+    "2019-panini-prizm-draft-football-blaster-v1": {
+      "set_name": "2019 Panini Prizm Draft Football Blaster V1",
+      "source": "dealernetx",
+      "price": 32.5,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=27899&boxtypeid=3&listingtypeid=1&year=2019",
+      "fetched_date": "2026-06-24T19:16:57.868Z"
+    },
+    "1992-action-packed-nfl-football-hobby": {
+      "set_name": "1992 Action Packed NFL Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=46829&boxtypeid=2&listingtypeid=1&year=1992",
+      "fetched_date": "2026-06-24T19:17:11.529Z"
+    },
+    "2016-panini-black-gold-nfl-football-hobby": {
+      "set_name": "2016 Panini Black Gold NFL Football  Hobby",
+      "source": "dealernetx",
+      "price": null,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=27696&boxtypeid=2&listingtypeid=1&year=2016",
+      "fetched_date": "2026-06-24T19:17:11.529Z"
+    },
+    "2020-panini-chronicles-nfl-football-blaster-v1": {
+      "set_name": "2020 Panini Chronicles NFL Football Blaster V1",
+      "source": "dealernetx",
+      "price": 45,
+      "url": "https://www.dealernetx.com/listing.php?categoryid=25&subcategoryid=37095&boxtypeid=3&listingtypeid=1&year=2020",
+      "fetched_date": "2026-06-24T19:17:11.529Z"
+    },
+    "090-panini-basketball-hobby": {
+      "set_name": "09/0 Panini Basketball  Hobby",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": null
+    },
+    "123-panini-basketball-hobby": {
+      "set_name": "12/3 Panini Basketball  Hobby",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": 416.67
+    },
+    "134-panini-basketball-hobby": {
+      "set_name": "13/4 Panini Basketball  Hobby",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": null
+    },
+    "090-panini-basketball-retail-v1": {
+      "set_name": "09/0 Panini Basketball Retail V1",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": 5200
+    },
+    "101-panini-basketball-retail-v1": {
+      "set_name": "10/1 Panini Basketball Retail V1",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": null
+    },
+    "2021-panini-prizm-draft-baseball-blaster-v1": {
+      "set_name": "2021 Panini Prizm Draft Baseball Blaster V1",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": null
+    },
+    "2021-panini-prizm-draft-baseball-fotl": {
+      "set_name": "2021 Panini Prizm Draft Baseball FOTL",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": 150
+    },
+    "2013-panini-prizm-draft-baseball-hobby": {
+      "set_name": "2013 Panini Prizm Draft Baseball  Hobby",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": null
+    },
+    "2014-panini-prizm-draft-baseball-hobby": {
+      "set_name": "2014 Panini Prizm Draft Baseball  Hobby",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": 78
+    },
+    "2019-panini-prizm-draft-baseball-hobby": {
+      "set_name": "2019 Panini Prizm Draft Baseball  Hobby",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": 199
+    },
+    "2017-panini-flawless-baseball-hobby": {
+      "set_name": "2017 Panini Flawless Baseball  Hobby",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": null
+    },
+    "2016-panini-national-treasures-draft-baseball-hobby": {
+      "set_name": "2016 Panini National Treasures Draft Baseball  Hobby",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": null
+    },
+    "2021-panini-national-treasures-mlb-baseball-fotl": {
+      "set_name": "2021 Panini National Treasures MLB Baseball FOTL",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": null
+    },
+    "2022-panini-national-treasures-mlb-baseball-fotl": {
+      "set_name": "2022 Panini National Treasures MLB Baseball FOTL",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": null
+    },
+    "2023-panini-national-treasures-mlb-baseball-fotl": {
+      "set_name": "2023 Panini National Treasures MLB Baseball FOTL",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": null
+    },
+    "2024-panini-national-treasures-mlb-baseball-fotl": {
+      "set_name": "2024 Panini National Treasures MLB Baseball FOTL",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": null
+    },
+    "2024-bowman-best-university-football-breakers-delight": {
+      "set_name": "2024 Bowman Best University Football Breakers Delight",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": null
+    },
+    "2024-bowman-best-university-football-hobby": {
+      "set_name": "2024 Bowman Best University Football  Hobby",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": 248
+    },
+    "2024-bowman-chrome-university-football-blaster-v1": {
+      "set_name": "2024 Bowman Chrome University Football Blaster V1",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": 22
+    },
+    "2024-bowman-chrome-university-football-breakers-delight": {
+      "set_name": "2024 Bowman Chrome University Football Breakers Delight",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": null
+    },
+    "2024-bowman-chrome-university-football-hobby": {
+      "set_name": "2024 Bowman Chrome University Football  Hobby",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": 179.17
+    },
+    "2025-bowman-best-university-football-hobby": {
+      "set_name": "2025 Bowman Best University Football  Hobby",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": 260
+    },
+    "2025-bowman-chrome-university-football-blaster-v1": {
+      "set_name": "2025 Bowman Chrome University Football Blaster V1",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": 27.13
+    },
+    "2025-bowman-chrome-university-football-breakers-delight": {
+      "set_name": "2025 Bowman Chrome University Football Breakers Delight",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": 270
+    },
+    "2025-bowman-chrome-university-football-hobby": {
+      "set_name": "2025 Bowman Chrome University Football  Hobby",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": 189.58
+    },
+    "2025-bowman-chrome-university-football-hobby-jumbo-v1": {
+      "set_name": "2025 Bowman Chrome University Football Hobby Jumbo V1",
+      "category": "sports",
+      "source": "dealernetx",
+      "price": 331.25
+    }
+  }
+}
