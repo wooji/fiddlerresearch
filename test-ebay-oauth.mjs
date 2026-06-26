@@ -1,5 +1,5 @@
-const APP_ID = 'CNGVentu-Research-PRD-8a92c9933-cabfbfe9';
-const SECRET = 'PRD-a92c9933da37-dab1-4343-a515-4ca6';
+const APP_ID = process.env.EBAY_APP_ID;
+const SECRET = process.env.EBAY_CLIENT_SECRET;
 
 const creds = Buffer.from(`${APP_ID}:${SECRET}`).toString('base64');
 

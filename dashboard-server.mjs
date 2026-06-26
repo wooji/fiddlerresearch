@@ -43,9 +43,17 @@ const DBS = {
   noncard:   { file: 'set-history-noncard.json',    label: 'Toys / Vinyl', icon: '🎁', keyField: 'sets' },
   mattel:    { file: 'set-history-mattel.json',      label: 'Mattel',       icon: '🚗', keyField: 'sets' },
   disney_cards:  { file: 'set-history-disney-cards.json',  label: 'Disney Cards',   icon: '🏰', keyField: 'sets' },
-  weiss:         { file: 'set-history-weiss.json',          label: 'Weiss Schwarz',  icon: '🎌', keyField: 'sets' },
-  union_arena:   { file: 'set-history-union-arena.json',    label: 'Union Arena',    icon: '⚔️', keyField: 'sets' },
-  gundam:        { file: 'set-history-gundam.json',         label: 'Gundam TCG',     icon: '🤖', keyField: 'sets' },
+  weiss:         { file: 'set-history-weiss.json',          label: 'Weiss Schwarz',      icon: '🎌', keyField: 'sets' },
+  union_arena:   { file: 'set-history-union-arena.json',    label: 'Union Arena',        icon: '⚔️', keyField: 'sets' },
+  gundam:        { file: 'set-history-gundam.json',         label: 'Gundam TCG',         icon: '🤖', keyField: 'sets' },
+  yugioh:        { file: 'set-history-yugioh.json',         label: 'Yu-Gi-Oh',           icon: '👁️', keyField: 'sets' },
+  cardfight:     { file: 'set-history-cardfight.json',      label: 'Cardfight Vanguard', icon: '⚡', keyField: 'sets' },
+  dragon_ball:   { file: 'set-history-dragon-ball.json',    label: 'Dragon Ball',        icon: '🐉', keyField: 'sets' },
+  fab:           { file: 'set-history-fab.json',            label: 'Flesh & Blood',      icon: '⚔️', keyField: 'sets' },
+  digimon:       { file: 'set-history-digimon.json',        label: 'Digimon',            icon: '🦕', keyField: 'sets' },
+  sorcery:       { file: 'set-history-sorcery.json',        label: 'Sorcery',            icon: '🔮', keyField: 'sets' },
+  star_wars:     { file: 'set-history-star-wars.json',      label: 'Star Wars Unlimited',icon: '⭐', keyField: 'sets' },
+  hololive:      { file: 'set-history-hololive.json',       label: 'hololive TCG',       icon: '🎤', keyField: 'sets' },
 };
 
 function readJson(file) {

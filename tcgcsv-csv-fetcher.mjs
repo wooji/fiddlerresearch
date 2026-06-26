@@ -11,14 +11,22 @@ const TODAY = new Date().toISOString().split('T')[0];
 
 // categoryId -> { name, db }  (DB lives LOCAL only, never committed)
 const CATS = {
-  3:  { name: 'Pokemon',   db: 'set-history.json' },
-  1:  { name: 'Magic',     db: 'set-history-mtg.json' },
-  68: { name: 'One Piece', db: 'set-history-one-piece.json' },
-  71: { name: 'Lorcana',   db: 'set-history-lorcana.json' },
-  79: { name: 'SW Unlimited', db: 'set-history-other-tcg.json' },
-  20: { name: 'Weiss Schwarz', db: 'set-history-weiss.json' },
-  81: { name: 'Union Arena',   db: 'set-history-union-arena.json' },
-  86: { name: 'Gundam',        db: 'set-history-gundam.json' },
+  3:  { name: 'Pokemon',              db: 'set-history.json' },
+  1:  { name: 'Magic',                db: 'set-history-mtg.json' },
+  68: { name: 'One Piece',            db: 'set-history-one-piece.json' },
+  71: { name: 'Lorcana',              db: 'set-history-lorcana.json' },
+  20: { name: 'Weiss Schwarz',        db: 'set-history-weiss.json' },
+  81: { name: 'Union Arena',          db: 'set-history-union-arena.json' },
+  86: { name: 'Gundam',               db: 'set-history-gundam.json' },
+  2:  { name: 'Yu-Gi-Oh',             db: 'set-history-yugioh.json' },
+  16: { name: 'Cardfight Vanguard',   db: 'set-history-cardfight.json' },
+  27: { name: 'Dragon Ball Super',    db: 'set-history-dragon-ball.json' },
+  62: { name: 'Flesh & Blood',        db: 'set-history-fab.json' },
+  63: { name: 'Digimon',              db: 'set-history-digimon.json' },
+  77: { name: 'Sorcery',              db: 'set-history-sorcery.json' },
+  79: { name: 'Star Wars Unlimited',  db: 'set-history-star-wars.json' },
+  80: { name: 'Dragon Ball FW',       db: 'set-history-dragon-ball.json' },
+  87: { name: 'hololive',             db: 'set-history-hololive.json' },
 };
 
 // process order: Pokemon first, then Magic, then the rest (user directive)

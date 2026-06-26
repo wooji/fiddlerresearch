@@ -1,4 +1,4 @@
-const TOKEN = 'MzM4NzQ1NDIwNzY5NTI1NzYw.GbJLtS.KjpJvTOEeULojBkMkeLHnKaRNgcFqLLU__SJWA';
+const TOKEN = process.env.DISCORD_USER_TOKEN;
 const CHANNELS = ['1516298588261585097'];
 const LIMIT = 50;
 
