@@ -1481,7 +1481,7 @@ const sxPrice     = (sxRaw?.price && !sxSpreadBad && !sxTooHigh) ? sxRaw.price :
 // set-history DB (no live scrape). Match product → set, take booster-box current sealed price.
 let pcDbPrice = null;
 try {
-  const DB_BY_CAT = { pokemon:'set-history.json', mtg:'set-history-mtg.json', lorcana:'set-history-lorcana.json', sports:'set-history-sports.json', topps:'set-history-sports.json', disney_cards:'set-history-disney-cards.json', other_tcg:'set-history-other-tcg.json', one_piece:'set-history-one-piece.json', 'one-piece':'set-history-one-piece.json', lego:'set-history-lego.json', noncard:'set-history-noncard.json' };
+  const DB_BY_CAT = { pokemon:'set-history.json', mtg:'set-history-mtg.json', lorcana:'set-history-lorcana.json', sports:'set-history-sports.json', topps:'set-history-sports.json', disney_cards:'set-history-disney-cards.json', other_tcg:'set-history-other-tcg.json', one_piece:'set-history-one-piece.json', 'one-piece':'set-history-one-piece.json', weiss:'set-history-weiss.json', union_arena:'set-history-union-arena.json', gundam:'set-history-gundam.json', lego:'set-history-lego.json', noncard:'set-history-noncard.json' };
   const dbFile = DB_BY_CAT[prod.category];
   if (dbFile && existsSync(join(ROOT, dbFile))) {
     const db = JSON.parse(readFileSync(join(ROOT, dbFile), 'utf8'));
@@ -3081,7 +3081,7 @@ const pipelineResult = {
   // button; only on user confirm does /api/confirm-db-save write this into the category DB.
   // (User gates it so a bad writeup never auto-pollutes the DB.) Verified data only.
   dbAppend: (() => {
-    const DB_BY_CAT2 = { pokemon:'set-history.json', mtg:'set-history-mtg.json', lorcana:'set-history-lorcana.json', sports:'set-history-sports.json', topps:'set-history-sports.json', disney_cards:'set-history-disney-cards.json', other_tcg:'set-history-other-tcg.json', one_piece:'set-history-one-piece.json', lego:'set-history-lego.json', noncard:'set-history-noncard.json' };
+    const DB_BY_CAT2 = { pokemon:'set-history.json', mtg:'set-history-mtg.json', lorcana:'set-history-lorcana.json', sports:'set-history-sports.json', topps:'set-history-sports.json', disney_cards:'set-history-disney-cards.json', other_tcg:'set-history-other-tcg.json', one_piece:'set-history-one-piece.json', weiss:'set-history-weiss.json', union_arena:'set-history-union-arena.json', gundam:'set-history-gundam.json', lego:'set-history-lego.json', noncard:'set-history-noncard.json' };
     const cat = (prod.category ?? 'noncard').toLowerCase();
     const dbFile = DB_BY_CAT2[cat] ?? 'set-history-noncard.json';
     const soldMed = signals?.ebay?.soldMedian30 ?? signals?.ebay?.median ?? null;

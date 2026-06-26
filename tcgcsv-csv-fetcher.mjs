@@ -16,7 +16,9 @@ const CATS = {
   68: { name: 'One Piece', db: 'set-history-one-piece.json' },
   71: { name: 'Lorcana',   db: 'set-history-lorcana.json' },
   79: { name: 'SW Unlimited', db: 'set-history-other-tcg.json' },
-  86: { name: 'Gundam',    db: 'set-history-other-tcg.json' },
+  20: { name: 'Weiss Schwarz', db: 'set-history-weiss.json' },
+  81: { name: 'Union Arena',   db: 'set-history-union-arena.json' },
+  86: { name: 'Gundam',        db: 'set-history-gundam.json' },
 };
 
 // process order: Pokemon first, then Magic, then the rest (user directive)
