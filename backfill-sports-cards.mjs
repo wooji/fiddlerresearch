@@ -250,6 +250,82 @@ async function scrapeChaseCards(setName, page) {
   return listings;
 }
 
+// All 30 NBA + 30 MLB team names (nicknames only — appears trailing in eBay titles)
+const TEAM_NAMES = new Set([
+  // NBA
+  'lakers','celtics','warriors','nets','knicks','bulls','heat','bucks','clippers','nuggets',
+  'suns','mavericks','mavs','spurs','rockets','thunder','blazers','jazz','timberwolves','wolves',
+  'pelicans','kings','grizzlies','hawks','hornets','wizards','pistons','pacers','cavaliers','cavs',
+  'magic','raptors','76ers','sixers',
+  // MLB
+  'yankees','redsox','cubs','mets','dodgers','giants','astros','braves','padres','cardinals',
+  'phillies','nationals','brewers','pirates','reds','rockies','marlins','rays','orioles','bluejays',
+  'rangers','angels','athletics','mariners','royals','twins','guardians','tigers','whitesox',
+]);
+
+// Card design/parallel variant names (appear trailing after player name)
+const VARIANT_NAMES = new Set([
+  'crystallized','chalktoss','chalk','pulsar','anime','penmanship','dna','lava','prizmatrix',
+  'spectra','ultraviolet','refractor','atomic','shimmer','mojo','wave','xfractor','aqua',
+  'electric','neon','galactic','cosmic','nebula','aurora','hypno','mosaic','kaleidoscope',
+  'inception','sensational','geometric','reverence','redeemed','contenders','signatures',
+  'rpa','first','firstbowman','base','logoman','superfractor','cracked','ice',
+]);
+
+// IP collab prefixes (appear BEFORE player name)
+const COLLAB_PREFIXES = ['Cactus Jack', 'Travis Scott', 'Space Jam'];
+
+// Extract all rich tokens from a raw eBay title
+function extractRichTokens(title, playerName) {
+  const result = {};
+
+  // Graded copy (PSA 10, BGS 9.5, SGC 10, CGC 9)
+  const gradedM = title.match(/\b(PSA|BGS|SGC|CGC)\s*(\d+(?:\.\d+)?)\b/i);
+  if (gradedM) result.graded = `${gradedM[1].toUpperCase()} ${gradedM[2]}`;
+
+  // Set/checklist code (#BCP-157, #RA-PS, #TC-12)
+  const codeM = title.match(/#([A-Z]{0,4}-?[A-Z0-9]{1,6})\b/);
+  if (codeM) result.setCode = codeM[0];
+
+  // Year from title (first 4-digit year = card year)
+  const yearM = title.match(/\b(20\d{2}|19\d{2})\b/);
+  if (yearM) result.teamYear = parseInt(yearM[1]);
+
+  // IP collab prefix
+  for (const prefix of COLLAB_PREFIXES) {
+    if (title.toLowerCase().includes(prefix.toLowerCase())) {
+      result.collab = prefix;
+      break;
+    }
+  }
+
+  // Team name: look for team words AFTER player name in title
+  if (playerName) {
+    const playerIdx = title.toLowerCase().indexOf(playerName.toLowerCase().split(' ')[0]);
+    const afterPlayer = playerIdx >= 0 ? title.slice(playerIdx + playerName.length) : title;
+    const words = afterPlayer.toLowerCase().replace(/[^a-z\s]/g, ' ').split(/\s+/);
+    for (const w of words) {
+      if (TEAM_NAMES.has(w)) { result.team = w[0].toUpperCase() + w.slice(1); break; }
+    }
+  }
+
+  // Variant: design/parallel name after player name, not a team/card-type word
+  if (playerName) {
+    const playerIdx = title.toLowerCase().indexOf(playerName.toLowerCase().split(' ')[0]);
+    const afterPlayer = playerIdx >= 0 ? title.slice(playerIdx + playerName.length) : title;
+    const words = afterPlayer.replace(/[^a-zA-Z\s]/g, ' ').split(/\s+/).filter(w => w.length > 3);
+    for (const w of words) {
+      const lw = w.toLowerCase();
+      if (VARIANT_NAMES.has(lw) && !CARD_STOPWORDS.has(lw)) {
+        result.variant = w[0].toUpperCase() + w.slice(1).toLowerCase();
+        break;
+      }
+    }
+  }
+
+  return result;
+}
+
 // Parse chase cards from eBay listings
 function parseChaseCards(listings, setName) {
   const playerCards = new Map(); // playerName → best card entry
@@ -259,7 +335,8 @@ function parseChaseCards(listings, setName) {
     if (!playerName || playerName.split(' ').length < 2) continue;
 
     const { type, printRun } = classifyCardType(title);
-    const key = `${playerName}::${type}`;
+    const enriched = extractRichTokens(title, playerName);
+    const key = `${playerName}::${type}::${enriched.variant||''}`;
 
     if (!playerCards.has(key) || price > playerCards.get(key).price) {
       playerCards.set(key, {
@@ -267,7 +344,13 @@ function parseChaseCards(listings, setName) {
         cardType: type,
         printRun,
         price,
-        title: title.slice(0, 120),
+        rawTitle: title,                        // FULL original title — never discard
+        variant: enriched.variant ?? null,       // Crystallized, Chalk Toss, Pulsar, etc.
+        team: enriched.team ?? null,             // Spurs, Mavericks, Warriors, etc.
+        teamYear: enriched.teamYear ?? null,     // year from set name
+        collab: enriched.collab ?? null,         // Cactus Jack, Travis Scott, etc.
+        graded: enriched.graded ?? null,         // PSA 10, BGS 9.5, etc.
+        setCode: enriched.setCode ?? null,       // #BCP-157, #RA-PS, etc.
         isChase: price > 100 || (printRun && printRun <= 99) || /auto|patch|logoman|superfractor/i.test(type),
       });
     }
@@ -412,6 +495,13 @@ async function main() {
       cardType: c.cardType,
       printRun: c.printRun,
       price: c.price,
+      variant: c.variant ?? null,
+      team: c.team ?? null,
+      teamYear: c.teamYear ?? null,
+      collab: c.collab ?? null,
+      graded: c.graded ?? null,
+      setCode: c.setCode ?? null,
+      rawTitle: c.rawTitle ?? null,
       star: true,
       source: 'ebay-sold-comps',
       fetchedAt: new Date().toISOString().slice(0, 10),
@@ -446,6 +536,13 @@ async function main() {
             cardType: card.cardType,
             printRun: card.printRun,
             estPrice: card.price,
+            variant: card.variant ?? null,
+            team: card.team ?? null,
+            teamYear: card.teamYear ?? null,
+            collab: card.collab ?? null,
+            graded: card.graded ?? null,
+            setCode: card.setCode ?? null,
+            rawTitle: card.rawTitle ?? null,
             star: card.price > 200,
             source: 'ebay-sold-comps',
             addedAt: new Date().toISOString().slice(0, 10),
@@ -502,6 +599,13 @@ function buildCardPricingDb(sets) {
         cardType: card.cardType,
         printRun: card.printRun ?? null,
         price: card.price,
+        variant: card.variant ?? null,
+        team: card.team ?? null,
+        teamYear: card.teamYear ?? null,
+        collab: card.collab ?? null,
+        graded: card.graded ?? null,
+        setCode: card.setCode ?? null,
+        rawTitle: card.rawTitle ?? null,
         star: card.star ?? (card.price > 200),
         source: 'ebay-sold-comps',
         fetchedAt: card.fetchedAt ?? new Date().toISOString().slice(0, 10),

@@ -1,95 +1,10 @@
 {
   "done": [
     {
-      "setName": "2026 Topps Chrome Baseball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2025 Bowman Chrome Baseball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2025 Topps Tier One Baseball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2026 Topps Tier One Baseball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
       "setName": "2025 Topps Chrome Baseball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2025 Panini Prizm Basketball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2024 Topps Chrome Basketball NBA",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2024 Panini Immaculate Basketball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2025 Topps Chrome Baseball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2026 Topps Chrome Baseball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2025 Bowman Chrome Baseball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2026 Topps Tier One Baseball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2025 Panini Prizm Basketball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2024 Panini Prizm Basketball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2024 Topps Chrome Basketball NBA",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2025 Topps Chrome Basketball UCC",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2025 National Treasures Basketball",
-      "chaseCount": 20,
-      "at": "2026-06-26"
-    },
-    {
-      "setName": "2024 Panini Immaculate Basketball",
       "chaseCount": 20,
       "at": "2026-06-26"
     }
   ],
-  "lastRun": "2026-06-26T17:11:38.994Z"
+  "lastRun": null
 }
