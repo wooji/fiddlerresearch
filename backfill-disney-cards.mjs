@@ -167,18 +167,36 @@ let chaseHits = 0;
 const TODO_CHASE = Object.entries(sets).filter(([, v]) => !v.cards?.chaseCards?.length);
 log(`${TODO_CHASE.length} sets need chase card scrape`);
 
+// Try CDP connect to user's local Chrome (launch Chrome with --remote-debugging-port=9222 first)
+async function tryLocalChrome() {
+  try {
+    const r = await fetch('http://localhost:9222/json/version').catch(()=>null);
+    if (!r?.ok) return null;
+    return chromium.connectOverCDP('http://localhost:9222');
+  } catch { return null; }
+}
+const localChrome = await tryLocalChrome();
+if (localChrome) log('✓ Connected to local Chrome via CDP (no proxy needed)');
+else log('⚠ No local Chrome CDP — using Playwright + proxies (launch Chrome with --remote-debugging-port=9222 to use your connection)');
+
 for (const [slug, setRec] of TODO_CHASE) {
   const setName = setRec.name || slug.replace(/-/g, ' ');
-  const proxy = randomProxy();
+  const proxy = localChrome ? null : randomProxy();
   let browser, page;
   try {
-    browser = await chromium.launch({ headless: true, proxy: proxy || undefined });
-    const ctx = await browser.newContext({
-      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
-      locale: 'en-US', viewport: { width: 1366, height: 900 },
-      proxy: proxy || undefined,
-    });
-    page = await ctx.newPage();
+    if (localChrome) {
+      browser = localChrome;
+      const ctx = await localChrome.newContext({ locale: 'en-US', viewport: { width: 1366, height: 900 } });
+      page = await ctx.newPage();
+    } else {
+      browser = await chromium.launch({ headless: true, proxy: proxy || undefined });
+      const ctx = await browser.newContext({
+        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+        locale: 'en-US', viewport: { width: 1366, height: 900 },
+        proxy: proxy || undefined,
+      });
+      page = await ctx.newPage();
+    }
     await page.goto('https://www.ebay.com', { waitUntil: 'domcontentloaded', timeout: 20000 }).catch(() => {});
     await new Promise(r => setTimeout(r, 800));
 
@@ -201,7 +219,8 @@ for (const [slug, setRec] of TODO_CHASE) {
   } catch (e) {
     log(`  ! ${slug}: ${e?.message?.slice(0,80)}`);
   } finally {
-    if (browser) await browser.close().catch(() => {});
+    if (browser && browser !== localChrome) await browser.close().catch(() => {});
+    else if (page) await page.close().catch(() => {});
   }
   save(db);
   await new Promise(r => setTimeout(r, 2000));
