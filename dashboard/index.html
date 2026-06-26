@@ -382,6 +382,7 @@
                 <thead>
                   <tr>
                     <th>Product Type</th>
+                    <th>MSRP</th>
                     <th>Market</th>
                     <th>Low</th>
                     <th>High</th>
@@ -650,7 +651,7 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
   document.getElementById('db-split').style.gridTemplateColumns = '1fr 860px';
 
   title.textContent = setName;
-  tbody.innerHTML = '<tr><td colspan="7" class="empty" style="padding:40px"><span class="spinner"></span> Loading…</td></tr>';
+  tbody.innerHTML = '<tr><td colspan="8" class="empty" style="padding:40px"><span class="spinner"></span> Loading…</td></tr>';
 
   try {
     const url = `${API}/api/db/${dbKey}/${encodeURIComponent(setId)}/variants`;
@@ -674,6 +675,7 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
     tbody.innerHTML = data.variants.map(v => `
       <tr>
         <td style="white-space:normal;min-width:200px"><strong>${escHtml(v.name)}</strong></td>
+        <td style="color:#a78bfa">${fmt(v.msrp)}</td>
         <td>${fmt(v.current)}</td>
         <td>${fmt(v.low)}</td>
         <td>${fmt(v.high)}</td>
@@ -683,7 +685,7 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
       </tr>
     `).join('');
   } catch (e) {
-    tbody.innerHTML = `<tr><td colspan="7" class="empty" style="color:var(--red)">Error: ${escHtml(e.message)}</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="8" class="empty" style="color:var(--red)">Error: ${escHtml(e.message)}</td></tr>`;
   }
 
   // individual cards (fullCardList)
