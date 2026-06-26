@@ -766,7 +766,11 @@
       "rawTitle": "CAITLIN CLARK 2024 RC PANINI PRIZM WNBA SIGNATURE PRIZM Auto PSA 10/10",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 13.52,
+      "ebayCount": 60,
+      "ebayQuery": "Caitlin Clark Numbered Auto /10 2025 Panini Prizm Basketball /10",
+      "enrichedAt": "2026-06-26T22:13:02.681Z"
     },
     "2025-panini-prizm-basketball::matas-buzelis-signatures::numbered-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -784,7 +788,8 @@
       "rawTitle": "2024-25 Panini Prizm Matas Buzelis Rookie Signatures Gold Auto /10 PSA 10 Bulls",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:13:21.326Z"
     },
     "2025-panini-prizm-basketball::luka-doncic-contenders::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -802,7 +807,8 @@
       "rawTitle": "2018-19 Luka Doncic Contenders Optic Blue Prizm RC Rookie Auto /99 PSA 9 Mint",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:13:40.258Z"
     },
     "2025-panini-prizm-basketball::luka-don-prizmatrix::numbered-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -820,7 +826,8 @@
       "rawTitle": "2024-25 Panini Prizm Black Basketball Luka Dončić Prizmatrix Auto /10 SEALED",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:14:01.147Z"
     },
     "2025-panini-prizm-basketball::spectra-grant-hill::printing-plate-1/1": {
       "setKey": "2025-panini-prizm-basketball",
@@ -838,7 +845,8 @@
       "rawTitle": "2014-15 Panini Spectra Grant Hill Superstar Patch Auto Prizm Black #1/1 PSA 7",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:14:21.986Z"
     },
     "2025-panini-prizm-basketball::paige-bueckers::numbered-auto-/25": {
       "setKey": "2025-panini-prizm-basketball",
@@ -856,7 +864,8 @@
       "rawTitle": "Paige Bueckers 2025 Panini WNBA Prizm #TB-PB Mojo Throwback RC Auto 11/25 PSA 10",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:14:42.232Z"
     },
     "2025-panini-prizm-basketball::picks-caitlin-clark::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -874,7 +883,11 @@
       "rawTitle": "2024 PANINI PRIZM DRAFT PICKS PURPLE CAITLIN CLARK RC AUTO 04/99 PSA 10",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 30,
+      "ebayCount": 60,
+      "ebayQuery": "Picks Caitlin Clark Auto RC /99 2025 Panini Prizm Basketball /99",
+      "enrichedAt": "2026-06-26T22:14:57.052Z"
     },
     "2025-panini-prizm-basketball::lamelo-ball-signatures::auto-/25": {
       "setKey": "2025-panini-prizm-basketball",
@@ -892,7 +905,8 @@
       "rawTitle": "2020 Panini Prizm LaMelo Ball Rookie Signatures Mojo Prizm /25 Auto PSA 10 POP 5",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:15:16.307Z"
     },
     "2025-panini-prizm-basketball::contenders-jalen-brunson::auto-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -910,7 +924,8 @@
       "rawTitle": "Panini 2018-19 Contenders Optic Jalen Brunson #105 Blue Prizm /99 Auto PSA 9",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:15:33.922Z"
     },
     "2025-panini-prizm-basketball::spectra-jalen-brunson::auto-/49": {
       "setKey": "2025-panini-prizm-basketball",
@@ -928,7 +943,8 @@
       "rawTitle": "2018 Spectra Blue Prizm Jalen Brunson RC /49 Psa 8 Rpa Rookie Auto Prime Patch",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:16:09.163Z"
     },
     "2025-panini-prizm-basketball::luka-doncic-few::numbered-auto-/25": {
       "setKey": "2025-panini-prizm-basketball",
@@ -946,7 +962,11 @@
       "rawTitle": "2024-25 Panini Select Luka Doncic Few Signatures Tie-Dye Prizm Auto #/25 PSA 9",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 100,
+      "ebayCount": 60,
+      "ebayQuery": "Luka Doncic Few Numbered Auto /25 2025 Panini Prizm Basketball /25",
+      "enrichedAt": "2026-06-26T22:16:22.320Z"
     },
     "2025-panini-prizm-basketball::shai-gilgeous-alexander::auto": {
       "setKey": "2025-panini-prizm-basketball",
@@ -964,7 +984,8 @@
       "rawTitle": "2018 Panini Prizm Shai Gilgeous Alexander Swatches Rookie Patch PSA 10 Auto",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:16:43.041Z"
     },
     "2025-panini-prizm-basketball::spectra-rpa-jalen::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -975,7 +996,8 @@
       "price": 799.99,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:17:04.696Z"
     },
     "2025-panini-prizm-basketball::wnba-throwback-signatures::auto-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -993,7 +1015,8 @@
       "rawTitle": "2025 Prizm WNBA Throwback Signatures Red 89/99 Paige Bueckers Rookie Auto RC",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:17:24.374Z"
     },
     "2025-panini-prizm-basketball::spectra-alperen-sengun::patch-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1011,7 +1034,8 @@
       "rawTitle": "2021 Spectra Alperen Sengun RC Rookie Patch Auto GOLD Prizm SSP /10 PSA 9 RPA 📈",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:17:43.817Z"
     },
     "2025-panini-prizm-basketball::lamelo-ball-sensational::parallel-/25": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1029,7 +1053,8 @@
       "rawTitle": "2020-21 Prizm LaMelo Ball Sensational Signatures Mojo RC #’d 2/25 Jersey Match",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:18:02.336Z"
     },
     "2025-panini-prizm-basketball::wnba-paige-bueckers::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1047,7 +1072,8 @@
       "rawTitle": "2025 Prizm WNBA Paige Bueckers RC Rookie Red Auto /99 Wings",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:18:22.978Z"
     },
     "2025-panini-prizm-basketball::ajay-mitchell-signatures::numbered-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1065,7 +1091,8 @@
       "rawTitle": "2024-25 Panini Prizm Ajay Mitchell Rookie RC Signatures GOLD Auto /10 PSA 9/10",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:18:45.774Z"
     },
     "2025-panini-prizm-basketball::spectra-jalen-brunson::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1083,7 +1110,11 @@
       "rawTitle": "2018-19 Panini Spectra Prizm Jalen Brunson Rookie Jersey Auto #57/99 No.113",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 224.99,
+      "ebayCount": 60,
+      "ebayQuery": "Spectra Jalen Brunson Auto RC /99 2025 Panini Prizm Basketball /99",
+      "enrichedAt": "2026-06-26T22:19:00.440Z"
     },
     "2025-panini-prizm-basketball::contenders-deni-avdija::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1101,7 +1132,8 @@
       "rawTitle": "2020 Contenders Optic Deni Avdija Prizm Rookie Red Auto/99 PSA 10",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:19:19.269Z"
     },
     "2024-panini-prizm-basketball::caitlin-clark::numbered-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
