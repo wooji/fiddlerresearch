@@ -215,6 +215,7 @@ const server = http.createServer(async (req, res) => {
   if (req.method === 'GET' && dbMatch) {
     const dbKey  = dbMatch[1];
     const q      = url.searchParams.get('q') ?? '';
+    const year   = url.searchParams.get('year') ?? '';
     const page   = parseInt(url.searchParams.get('page') ?? '1', 10);
     const limit  = parseInt(url.searchParams.get('limit') ?? '50', 10);
     let entries  = getDbEntries(dbKey);
@@ -222,13 +223,18 @@ const server = http.createServer(async (req, res) => {
       const norm  = s => String(s ?? '').toLowerCase();
       const needle = norm(q);
       entries = entries.filter(e =>
-        norm(e.name ?? e.setName ?? '').includes(needle) ||
+        norm(e.name ?? e.setName ?? e.set_name ?? '').includes(needle) ||
         norm(e.id ?? e.setNum ?? '').includes(needle)
       );
     }
+    // collect unique years from all entries (before year filter)
+    const yearSet = new Set();
+    entries.forEach(e => { const y = (e.publishedOn ?? e.releasedOn ?? '').slice(0,4); if (y >= '2000') yearSet.add(y); });
+    const years = [...yearSet].sort((a,b) => b.localeCompare(a));
+    if (year) entries = entries.filter(e => (e.publishedOn ?? e.releasedOn ?? '').startsWith(year));
     const total = entries.length;
     const slice = entries.slice((page - 1) * limit, page * limit);
-    json(res, { total, page, limit, entries: slice });
+    json(res, { total, page, limit, entries: slice, years });
     return;
   }
 

@@ -141,6 +141,7 @@ function main() {
       }
       const set = sets[key];
       set.tcgId = g.groupId;
+      if (g.publishedOn && !set.publishedOn) set.publishedOn = g.publishedOn;
       set.cards = set.cards || {};
 
       // merge cards: append today's priceHistory point per productId (no dup card rows)

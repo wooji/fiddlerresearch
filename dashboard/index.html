@@ -346,6 +346,7 @@
         <button class="back-btn" onclick="closeDb()">← Back</button>
         <h2 id="db-view-title"></h2>
         <input class="search-bar" id="db-search" placeholder="Search by name or set number…" oninput="dbSearch(this.value)">
+        <div id="db-year-filter" style="display:none;gap:4px;flex-wrap:wrap;align-items:center"></div>
       </div>
       <div class="ingest-box">
         <h3>Add / Append Data</h3>
@@ -515,7 +516,7 @@
 
 <script>
 const API = 'http://localhost:3434';
-let currentDb = null, currentPage = 1, currentSearch = '', dbTotal = 0;
+let currentDb = null, currentPage = 1, currentSearch = '', dbTotal = 0, currentYear = null;
 
 // ── Tab navigation ─────────────────────────────────────────────────────────
 document.querySelectorAll('nav button[data-tab]').forEach(btn => {
@@ -619,12 +620,23 @@ async function loadDatabases() {
 }
 
 function openDb(key, label, icon) {
-  currentDb = key; currentPage = 1; currentSearch = '';
+  currentDb = key; currentPage = 1; currentSearch = ''; currentYear = null;
   document.getElementById('db-view-title').textContent = icon + ' ' + label;
   document.getElementById('db-search').value = '';
   document.getElementById('db-grid').style.display = 'none';
   document.querySelector('.section-title').style.display = 'none';
   document.getElementById('db-view').classList.add('active');
+  document.getElementById('db-year-filter').style.display = 'none';
+  loadDbPage();
+}
+
+function filterYear(y) {
+  currentYear = (currentYear === y) ? null : y; // toggle
+  currentPage = 1;
+  document.querySelectorAll('#db-year-filter button').forEach(b => {
+    b.style.background = (b.dataset.year == currentYear) ? '#ff64b4' : '';
+    b.style.color = (b.dataset.year == currentYear) ? '#000' : '';
+  });
   loadDbPage();
 }
 
@@ -731,10 +743,24 @@ function closeVariants() {
 function dbSearch(q) { currentSearch = q; currentPage = 1; loadDbPage(); }
 
 async function loadDbPage() {
-  const url = `${API}/api/db/${currentDb}?q=${encodeURIComponent(currentSearch)}&page=${currentPage}&limit=50`;
+  let url = `${API}/api/db/${currentDb}?q=${encodeURIComponent(currentSearch)}&page=${currentPage}&limit=50`;
+  if (currentYear) url += `&year=${currentYear}`;
   const res = await fetch(url);
-  const { total, entries } = await res.json();
+  const { total, entries, years } = await res.json();
   dbTotal = total;
+
+  // Build year filter pill row (TCG/sports only, when years available)
+  const yf = document.getElementById('db-year-filter');
+  if (years && years.length > 1) {
+    yf.style.display = 'flex';
+    yf.innerHTML = '<span style="font-size:11px;color:var(--muted);margin-right:4px">Year:</span>' +
+      ['All',...years].map(y => {
+        const active = (y === 'All' ? !currentYear : currentYear == y);
+        return `<button data-year="${y === 'All' ? '' : y}" onclick="filterYear(${y === 'All' ? 'null' : y})" style="padding:2px 8px;border-radius:12px;border:1px solid var(--border);font-size:11px;cursor:pointer;${active ? 'background:#ff64b4;color:#000;border-color:#ff64b4' : 'background:none;color:var(--muted)'}">${y}</button>`;
+      }).join('');
+  } else {
+    yf.style.display = 'none';
+  }
 
   // Build columns based on available fields
   const sample = entries[0] ?? {};
@@ -757,16 +783,17 @@ async function loadDbPage() {
       <td>${e.retiredOn ?? e.projRetire ?? '—'}</td>
     `;
   } else if (isTcg || isSports) {
-    cols = ['Set','Chase Card','Cards','MSRP'];
+    cols = ['Release','Set','Chase Card','Cards','MSRP'];
     rowFn = e => {
       const cardCount = (e.cards?.fullCardList?.length) ?? 0;
       const chase = e.chaseCard;
       const chaseStr = chase ? `${chase.name}${chase.market ? ' · $' + chase.market.toFixed(2) : ''}` : '—';
-      // find msrp from products: prefer booster-box, then first product with msrp
       const prods = e.products ?? {};
       const msrpEntry = prods['booster-box'] ?? prods['collector-box'] ?? prods['hobby-box'] ?? Object.values(prods).find(p => p.msrp);
       const msrp = msrpEntry?.msrp ?? null;
+      const rel = e.publishedOn ? e.publishedOn.slice(0,10) : '—';
       return `
+        <td style="color:var(--muted);font-size:12px;white-space:nowrap">${rel}</td>
         <td><strong>${e.set_name ?? e.name ?? e.id ?? '—'}</strong></td>
         <td style="color:#ff64b4;font-size:12px">${chaseStr}</td>
         <td>${cardCount > 0 ? cardCount.toLocaleString() : '—'}</td>
