@@ -564,7 +564,8 @@
       "price": 777,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:10:07.127Z"
     },
     "2025-topps-chrome-baseball::konnor-griffin-ssp::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -582,7 +583,8 @@
       "rawTitle": "2026 Bowman Chrome Konnor Griffin Image Variation Mojo Auto /25 SSP",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:10:26.926Z"
     },
     "2025-topps-chrome-baseball::ben-rice::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -600,7 +602,11 @@
       "rawTitle": "Ben Rice 2025 Topps Chrome Rookie On Card Auto True Green 85/99 Bookend Yankees",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 350,
+      "ebayCount": 60,
+      "ebayQuery": "Ben Rice Auto RC /99 2025 Topps Chrome Baseball /99",
+      "enrichedAt": "2026-06-26T22:10:38.844Z"
     },
     "2025-topps-chrome-baseball::mike-sirota::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -618,7 +624,8 @@
       "rawTitle": "Mike Sirota 2024 Bowman Draft Chrome Green Lava Refractor 1st Auto PSA 10 /99 RC",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:11:01.295Z"
     },
     "2025-topps-chrome-baseball::kevin-mcgonigle::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -636,7 +643,8 @@
       "rawTitle": "2026 Bowman Chrome Prospect Orange Shimmer Refractor Kevin McGonigle AUTO 20/25",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:11:19.126Z"
     },
     "2025-topps-chrome-baseball::tatsuya-imai-redemption::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -654,7 +662,8 @@
       "rawTitle": "2026 Bowman Tatsuya Imai Astros Chrome RC Auto Orange Redemption /25 CRA-TI",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:11:40.561Z"
     },
     "2025-topps-chrome-baseball::elly-de-la::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -672,7 +681,11 @@
       "rawTitle": "2024 Topps Chrome Sapphire Elly De La Cruz Green Auto Rookie PSA 9 /99",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 229.95,
+      "ebayCount": 60,
+      "ebayQuery": "Elly De La Auto RC /99 2025 Topps Chrome Baseball /99",
+      "enrichedAt": "2026-06-26T22:12:00.809Z"
     },
     "2025-topps-chrome-baseball::payton-tolle::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -690,7 +703,11 @@
       "rawTitle": "2024 Bowman Chrome Draft 1st Auto PAYTON TOLLE Green Refractor /99 PSA 10 RC GEM",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 49.99,
+      "ebayCount": 60,
+      "ebayQuery": "Payton Tolle Auto RC /99 2025 Topps Chrome Baseball /99",
+      "enrichedAt": "2026-06-26T22:12:15.187Z"
     },
     "2025-topps-chrome-baseball::jarlin-susana-ssp::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -708,7 +725,8 @@
       "rawTitle": "2022 Bowman Chrome JARLIN SUSANA Auto ORANGE WAVE REFRACTOR RC!🔥 SSP #/25!💫",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:12:32.433Z"
     },
     "2025-topps-chrome-baseball::roman-anthony-redemption::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -726,7 +744,11 @@
       "rawTitle": "2026 Bowman Chrome Roman Anthony Rookie AUTO Green Refractor /99 Redemption 🔥📈",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 269.99,
+      "ebayCount": 60,
+      "ebayQuery": "Roman Anthony Redemption Auto RC /99 2025 Topps Chrome Baseball /99",
+      "enrichedAt": "2026-06-26T22:12:43.922Z"
     },
     "2025-panini-prizm-basketball::caitlin-clark::numbered-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
