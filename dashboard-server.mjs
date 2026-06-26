@@ -43,6 +43,7 @@ const DBS = {
   noncard:   { file: 'set-history-noncard.json',    label: 'Toys / Vinyl', icon: '🎁', keyField: 'sets' },
   mattel:    { file: 'set-history-mattel.json',      label: 'Mattel',       icon: '🚗', keyField: 'sets' },
   disney_cards:  { file: 'set-history-disney-cards.json',  label: 'Disney Cards',   icon: '🏰', keyField: 'sets' },
+  veefriends:    { file: 'set-history-veefriends.json',    label: 'VeeFriends',     icon: '🐸', keyField: 'sets' },
   weiss:         { file: 'set-history-weiss.json',          label: 'Weiss Schwarz',      icon: '🎌', keyField: 'sets' },
   union_arena:   { file: 'set-history-union-arena.json',    label: 'Union Arena',        icon: '⚔️', keyField: 'sets' },
   gundam:        { file: 'set-history-gundam.json',         label: 'Gundam TCG',         icon: '🤖', keyField: 'sets' },

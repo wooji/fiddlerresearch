@@ -1,17 +1,20 @@
 #!/usr/bin/env node
-// Backfill Disney card sets: sealed prices (PriceCharting) + chase cards (eBay Playwright).
-// Handles Topps Chrome Disney, Disney Wonder, Disneyland, Neon, Kakawow Cosmos/Phantom.
-// PriceCharting covers Topps sets; Kakawow falls back to eBay scraping.
+// Backfill Disney card sets: sealed prices (PriceCharting) + chase cards (eBay) + MSRP.
+// Uses full exhaustion scraping order from lib/exhaustive-fetch.mjs.
+// Phase 0: MSRP via SP-API Amazon + Topps Shopify
+// Phase 1: PriceCharting sealed prices (Topps sets)
+// Phase 2: eBay chase cards — CDP real browser first, then headed Playwright + all proxies
 import { writeFileSync, readFileSync, existsSync, appendFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { join, dirname } from 'path';
 import { chromium } from 'playwright';
 import { pcAllSealedTypes } from './lib/pricecharting.mjs';
+import { exhaustivePlaywright, exhaustiveFetch, getCdpBrowser, toppsShopifyProducts } from './lib/exhaustive-fetch.mjs';
+import { amazonListings } from './lib/deep-research.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT  = join(ROOT, 'set-history-disney-cards.json');
 const LOG  = join(ROOT, 'backfill-disney-cards.log');
-const PROXY_FILE = join(ROOT, 'proxies-mobilemix.txt');
 
 const SEALED_TYPES = [
   'hobby-box','blaster-box','hanger-box','mega-box','jumbo-box',
@@ -19,17 +22,20 @@ const SEALED_TYPES = [
   'hobby-pack','blaster-pack','fat-pack','cello-pack',
 ];
 
-// ── proxy ──────────────────────────────────────────────────────────────
-let proxies = [];
-if (existsSync(PROXY_FILE)) {
-  proxies = readFileSync(PROXY_FILE, 'utf8').trim().split('\n')
-    .map(l => l.trim()).filter(l => l.includes('mp.evomi.com'));
-}
-function randomProxy() {
-  if (!proxies.length) return undefined;
-  const [ip, port, user, pass] = proxies[Math.floor(Math.random() * proxies.length)].split(':');
-  return { server: `http://${ip}:${port}`, username: user, password: pass };
-}
+// Known Topps Shopify collection handles for Disney products
+const TOPPS_DISNEY_COLLECTIONS = [
+  'disney','disney-cards','topps-chrome-disney','disney-trading-cards',
+  'disney-collection','chrome-disney',
+];
+
+// Fallback MSRP table for Disney sealed products (Topps retail prices)
+const MSRP_TABLE = {
+  'hobby-box': 149.99, 'collector-box': 149.99,
+  'blaster-box': 24.99, 'mega-box': 49.99,
+  'retail-box': 24.99, 'value-box': 19.99,
+  'hobby-pack': 14.99, 'blaster-pack': 4.99,
+  'fat-pack': 19.99, 'cello-pack': 9.99,
+};
 
 // ── logging ────────────────────────────────────────────────────────────
 const log = msg => { console.log(msg); appendFileSync(LOG, msg + '\n'); };
@@ -40,42 +46,97 @@ const save  = db => { db._meta.updated = new Date().toISOString().slice(0,10); w
 const db = JSON.parse(readFileSync(OUT, 'utf8'));
 const sets = db.sets;
 
-// ── build work queue: sets missing sealed products ─────────────────────
-const TODO = Object.entries(sets).filter(([, v]) => !v.products || Object.keys(v.products).length === 0);
-log(`[disney-backfill] ${TODO.length} sets need product data (${Object.keys(sets).length} total)`);
+// ── Phase 0: MSRP via SP-API + Topps Shopify ────────────────────────────────
+log('\n── Phase 0: MSRP enrichment ──');
+
+// Try Topps Shopify first (fastest, most accurate)
+let toppsProducts = null;
+for (const handle of TOPPS_DISNEY_COLLECTIONS) {
+  log(`[topps] trying collection: ${handle}`);
+  const prods = await toppsShopifyProducts(handle, { log });
+  if (prods?.length) { toppsProducts = prods; log(`  ✓ got ${prods.length} Topps products from ${handle}`); break; }
+}
+
+// Build a map of product title → price from Topps Shopify
+const toppsMap = new Map();
+if (toppsProducts) {
+  for (const p of toppsProducts) {
+    toppsMap.set(p.title.toLowerCase(), p.price);
+    toppsMap.set(p.handle.toLowerCase(), p.price);
+  }
+}
+
+// For each set with products, fill MSRP
+const withProducts = Object.entries(sets).filter(([,s]) => s.products && Object.keys(s.products).length);
+log(`${withProducts.length} sets have product data — filling MSRP`);
+
+for (const [slug, setRec] of withProducts) {
+  if (!setRec.products) continue;
+  let changed = false;
+  for (const [type, prodRec] of Object.entries(setRec.products)) {
+    if (prodRec.msrp != null) continue;
+    // Try Topps Shopify map
+    const searchTitle = `${setRec.name || slug} ${type}`.toLowerCase();
+    for (const [key, price] of toppsMap) {
+      if (key.includes(slug.slice(0,15)) || searchTitle.includes(key.slice(0,10))) {
+        prodRec.msrp = price; prodRec.msrpSource = 'topps-shopify'; changed = true; break;
+      }
+    }
+    if (prodRec.msrp != null) continue;
+    // Try SP-API Amazon
+    const query = `${setRec.name || slug.replace(/-/g,' ')} ${type.replace(/-/g,' ')} trading cards`;
+    try {
+      const amz = await amazonListings(query, { limit: 3 });
+      if (amz?.msrp) { prodRec.msrp = amz.msrp; prodRec.msrpSource = 'amazon-sp-api'; changed = true; }
+      else if (amz?.price && amz.price > 10) { prodRec.msrp = amz.price; prodRec.msrpSource = 'amazon-sp-api:price'; changed = true; }
+    } catch (e) { /* SP-API unavailable */ }
+    if (prodRec.msrp != null) continue;
+    // Fallback: table
+    if (MSRP_TABLE[type]) { prodRec.msrp = MSRP_TABLE[type]; prodRec.msrpSource = 'table:disney'; changed = true; }
+  }
+  if (changed) { log(`  ✓ MSRP filled: ${slug}`); save(db); }
+}
 
 // ── Phase 1: PriceCharting sealed prices (Topps sets) ──────────────────
 log('\n── Phase 1: PriceCharting sealed prices ──');
+const TODO_PC = Object.entries(sets).filter(([slug, v]) =>
+  !v.products || Object.keys(v.products).length === 0
+);
+log(`${TODO_PC.length} sets need product data`);
 let pcHits = 0, pcMiss = 0;
-for (const [slug, setRec] of TODO) {
-  if (/kakawow/i.test(slug)) continue; // skip kakawow — not on PC
+
+for (const [slug, setRec] of TODO_PC) {
+  if (/kakawow/i.test(slug)) continue;
   let browser = null;
   try {
     browser = await chromium.launch({ headless: true });
     const all = await pcAllSealedTypes(slug, SEALED_TYPES, browser);
     if (all.length) {
       const products = {};
-      for (const r of all) products[r.type] = {
-        current: r.current, currentMonth: r.currentMonth,
-        ath: r.ath, athMonth: r.athMonth,
-        first: r.first, firstMonth: r.firstMonth,
-        months: r.points, url: r.url, series: r.series,
-        source: 'pricecharting',
-      };
+      for (const r of all) {
+        products[r.type] = {
+          current: r.current, currentMonth: r.currentMonth,
+          ath: r.ath, athMonth: r.athMonth,
+          first: r.first, firstMonth: r.firstMonth,
+          months: r.points, url: r.url, series: r.series,
+          source: 'pricecharting',
+          msrp: MSRP_TABLE[r.type] ?? null,
+          msrpSource: MSRP_TABLE[r.type] ? 'table:disney' : null,
+        };
+      }
       const deepest = all.reduce((a, r) => r.points > a.points ? r : a, all[0]);
-      sets[slug].products = products;
-      sets[slug].firstMonth = deepest.firstMonth;
-      const summ = all.map(r => `${r.type}=$${r.current}`).join(' | ');
-      log(`  ✓ ${slug} → ${summ}`);
+      setRec.products = products;
+      setRec.firstMonth = deepest.firstMonth;
+      log(`  ✓ ${slug} → ${all.map(r=>`${r.type}=$${r.current}`).join(' | ')}`);
       pcHits++;
     } else {
       log(`  · ${slug} (no PC sealed history)`);
-      sets[slug].products = {};
+      setRec.products = {};
       pcMiss++;
     }
   } catch (e) {
     log(`  ! ${slug}: ${e?.message?.slice(0,60)}`);
-    sets[slug].products = {};
+    setRec.products = {};
   } finally {
     if (browser) await browser.close().catch(() => {});
   }
@@ -84,18 +145,14 @@ for (const [slug, setRec] of TODO) {
 }
 log(`Phase 1 done: ${pcHits} with data, ${pcMiss} empty`);
 
-// ── Phase 2: eBay chase cards (all sets, Playwright + Evomi proxy) ──────
-log('\n── Phase 2: eBay chase cards ──');
+// ── Phase 2: eBay chase cards — full exhaustion sequence ──────────────────
+log('\n── Phase 2: eBay chase cards (full exhaustion) ──');
 
 const CHAR_SKIP = /^(lot|bundle|case|box|pack|sealed|repack|break|relic|auto|patch|\d+\s+card)/i;
 
 function buildEbayQuery(slug, setName) {
-  // Insert sets within Chrome Disney → search the parent product + subset keyword
-  // e.g. "2024-topps-chrome-disney-super-strength" → "2024 Topps Chrome Disney Super Strength"
-  // Kakawow → "Kakawow Cosmos Disney [subset]"
   const isKakawow = /kakawow/i.test(slug);
   const year = slug.match(/^(\d{4})/)?.[1] ?? '';
-  // Extract subset name (everything after main brand)
   let subset = setName
     .replace(/^\d{4}\s*/,'')
     .replace(/^(topps|kakawow)\s*/i,'')
@@ -106,42 +163,56 @@ function buildEbayQuery(slug, setName) {
   return `${year} Topps Chrome Disney ${subset}`.trim();
 }
 
+// Build multiple query variants for retry
+function buildQueryVariants(slug, setName) {
+  const base = buildEbayQuery(slug, setName);
+  const isKakawow = /kakawow/i.test(slug);
+  const year = slug.match(/^(\d{4})/)?.[1] ?? '';
+  return [
+    base,
+    isKakawow ? `Kakawow Disney ${year}` : `${year} Topps Chrome Disney`,
+    isKakawow ? `Kakawow Disney 2025 cosmos` : `Topps Chrome Disney card`,
+    `Disney trading card ${year}`,
+  ].filter((q, i, a) => a.indexOf(q) === i); // dedupe
+}
+
 async function scrapeEbayDisney(setName, slug, page) {
-  const q = buildEbayQuery(slug, setName);
-  const query = encodeURIComponent(q);
-  await page.goto(
-    `https://www.ebay.com/sch/i.html?_nkw=${query}&_sacat=0&LH_Sold=1&LH_Complete=1&_sop=13&_ipg=60`,
-    { waitUntil: 'domcontentloaded', timeout: 25000 }
-  ).catch(() => {});
-  await new Promise(r => setTimeout(r, 1800));
+  const queries = buildQueryVariants(slug, setName);
+  let singles = [];
 
-  const items = await page.$$eval('li.s-item', els => els.map(el => {
-    const title = el.querySelector('.s-item__title')?.textContent?.trim() ?? '';
-    const priceStr = el.querySelector('.s-item__price')?.textContent?.trim() ?? '';
-    const price = parseFloat(priceStr.replace(/[^0-9.]/g, ''));
-    return { title, price };
-  }));
+  for (const q of queries) {
+    const url = `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(q)}&_sacat=0&LH_Sold=1&LH_Complete=1&_sop=13&_ipg=60`;
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 25000 }).catch(() => {});
+    await sleep(1500);
 
-  // filter: plausible single card price range $5–$5000, skip sealed/lot keywords
-  const singles = items.filter(i =>
-    i.price >= 5 && i.price <= 5000 &&
-    !CHAR_SKIP.test(i.title) &&
-    i.title.length > 10
-  );
+    const items = await page.$$eval('li.s-item', els => els.map(el => ({
+      title: el.querySelector('.s-item__title')?.textContent?.trim() ?? '',
+      price: parseFloat((el.querySelector('.s-item__price')?.textContent?.trim() ?? '0').replace(/[^0-9.]/g, '')),
+    }))).catch(() => []);
+
+    singles = items.filter(i =>
+      i.price >= 5 && i.price <= 5000 &&
+      !CHAR_SKIP.test(i.title) &&
+      i.title.length > 10
+    );
+
+    if (singles.length >= 5) break; // got enough results
+    log(`    [retry] query "${q}" → ${singles.length} items, trying next variant`);
+  }
+
+  if (!singles.length) return [];
 
   // extract character names + prices, group by character
   const charMap = new Map();
   for (const { title, price } of singles) {
-    // strip year + set name prefix to isolate character
     const cleaned = title
       .replace(/\d{4}\s+(topps|kakawow|panini)/gi, '')
       .replace(/chrome|disney|cosmos|phantom|wonder|neon|disneyland/gi, '')
       .replace(/#[\w-]+/g, '')
       .replace(/\b(psa|bgs|sgc|cgc)\s*\d+/gi, '')
-      .replace(/\/(25|10|5|1|\d+)\b/g, '') // print run
+      .replace(/\/(25|10|5|1|\d+)\b/g, '')
       .replace(/\s+/g, ' ').trim();
     if (cleaned.length < 3) continue;
-    // use first 2-3 words as character key
     const charKey = cleaned.split(' ').slice(0, 3).join(' ').toLowerCase();
     if (!charMap.has(charKey)) charMap.set(charKey, { name: cleaned.split(' ').slice(0,3).join(' '), prices: [], rawTitles: [] });
     const rec = charMap.get(charKey);
@@ -149,81 +220,55 @@ async function scrapeEbayDisney(setName, slug, page) {
     rec.rawTitles.push(title);
   }
 
-  // top 10 by median price
-  const chars = [...charMap.values()]
+  return [...charMap.values()]
     .filter(c => c.prices.length >= 1)
     .map(c => {
       const sorted = c.prices.slice().sort((a,b) => a - b);
       const median = sorted[Math.floor(sorted.length / 2)];
-      return { name: c.name, market: Math.round(median * 100) / 100, count: c.prices.length, rawTitle: c.rawTitles[0] };
+      return { name: c.name, market: Math.round(median * 100) / 100, count: c.prices.length };
     })
     .sort((a, b) => b.market - a.market)
     .slice(0, 10);
-
-  return chars;
 }
 
-let chaseHits = 0;
 const TODO_CHASE = Object.entries(sets).filter(([, v]) => !v.cards?.chaseCards?.length);
 log(`${TODO_CHASE.length} sets need chase card scrape`);
 
-// Try CDP connect to user's local Chrome (launch Chrome with --remote-debugging-port=9222 first)
-async function tryLocalChrome() {
-  try {
-    const r = await fetch('http://localhost:9222/json/version').catch(()=>null);
-    if (!r?.ok) return null;
-    return chromium.connectOverCDP('http://localhost:9222');
-  } catch { return null; }
-}
-const localChrome = await tryLocalChrome();
-if (localChrome) log('✓ Connected to local Chrome via CDP (no proxy needed)');
-else log('⚠ No local Chrome CDP — using Playwright + proxies (launch Chrome with --remote-debugging-port=9222 to use your connection)');
+// Get CDP connection once (reused across all sets)
+const cdpBrowser = await getCdpBrowser();
+if (cdpBrowser) log('✓ Connected to local Chrome via CDP');
+else log('⚠ No CDP — using headed Playwright + proxy rotation');
+
+let chaseHits = 0;
 
 for (const [slug, setRec] of TODO_CHASE) {
   const setName = setRec.name || slug.replace(/-/g, ' ');
-  const proxy = localChrome ? null : randomProxy();
-  let browser, page;
-  try {
-    if (localChrome) {
-      browser = localChrome;
-      const ctx = await localChrome.newContext({ locale: 'en-US', viewport: { width: 1366, height: 900 } });
-      page = await ctx.newPage();
-    } else {
-      browser = await chromium.launch({ headless: true, proxy: proxy || undefined });
-      const ctx = await browser.newContext({
-        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
-        locale: 'en-US', viewport: { width: 1366, height: 900 },
-        proxy: proxy || undefined,
-      });
-      page = await ctx.newPage();
-    }
-    await page.goto('https://www.ebay.com', { waitUntil: 'domcontentloaded', timeout: 20000 }).catch(() => {});
-    await new Promise(r => setTimeout(r, 800));
+  log(`  [chase] ${slug}`);
 
-    const chaseCards = await scrapeEbayDisney(setName, slug, page);
-    if (chaseCards.length) {
-      if (!setRec.cards) setRec.cards = {};
-      setRec.cards.chaseCards = chaseCards;
-      setRec.cards.topChase = chaseCards[0];
-      setRec.cards.avgChasePrice = Math.round(chaseCards.reduce((a,c)=>a+c.market,0)/chaseCards.length);
-      setRec.cards.fetchedAt = new Date().toISOString().slice(0,10);
-      setRec.cards.source = 'ebay-sold-comps';
-      log(`  ✓ ${slug} → ${chaseCards.length} chase cards, top: ${chaseCards[0].name} $${chaseCards[0].market}`);
-      chaseHits++;
-    } else {
-      log(`  · ${slug} (0 eBay results)`);
-      if (!setRec.cards) setRec.cards = {};
-      setRec.cards.fetchedAt = new Date().toISOString().slice(0,10);
-      setRec.cards.chaseCards = [];
-    }
-  } catch (e) {
-    log(`  ! ${slug}: ${e?.message?.slice(0,80)}`);
-  } finally {
-    if (browser && browser !== localChrome) await browser.close().catch(() => {});
-    else if (page) await page.close().catch(() => {});
+  const chaseCards = await exhaustivePlaywright(
+    'https://www.ebay.com',
+    page => scrapeEbayDisney(setName, slug, page),
+    { log: m => log(`    ${m}`) }
+  );
+
+  if (chaseCards?.length) {
+    if (!setRec.cards) setRec.cards = {};
+    setRec.cards.chaseCards = chaseCards;
+    setRec.cards.topChase = chaseCards[0];
+    setRec.cards.avgChasePrice = Math.round(chaseCards.reduce((a,c) => a+c.market, 0) / chaseCards.length);
+    setRec.cards.fetchedAt = new Date().toISOString().slice(0,10);
+    setRec.cards.source = 'ebay-sold-comps';
+    log(`  ✓ ${slug} → ${chaseCards.length} chase, top: ${chaseCards[0].name} $${chaseCards[0].market}`);
+    chaseHits++;
+  } else {
+    if (!setRec.cards) setRec.cards = {};
+    setRec.cards.chaseCards = [];
+    setRec.cards.fetchedAt = new Date().toISOString().slice(0,10);
+    log(`  · ${slug} (0 results after all methods)`);
   }
+
   save(db);
-  await new Promise(r => setTimeout(r, 2000));
+  await sleep(2000);
 }
 
 log(`\n[disney-backfill] DONE — Phase2: ${chaseHits}/${TODO_CHASE.length} sets with chase cards`);
