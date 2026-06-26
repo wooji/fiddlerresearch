@@ -226,7 +226,17 @@ async function main() {
   const toEnrich = Object.entries(allCards).filter(([, c]) => isStale(c));
   log(`  total cards: ${Object.keys(allCards).length}  to enrich: ${toEnrich.length}`);
 
-  const browser = await chromium.launch({ headless: true });
+  // CDP real browser preferred (user's Chrome on --remote-debugging-port=9222)
+  // Fallback: headed Playwright + proxy (may be blocked by eBay bot detection)
+  let browser, usingCdp = false;
+  try {
+    browser = await chromium.connectOverCDP('http://localhost:9222');
+    usingCdp = true;
+    log('  [CDP] connected to real Chrome');
+  } catch {
+    log('  [CDP] not available — using headed Playwright (may be blocked by eBay)');
+    browser = await chromium.launch({ headless: false });
+  }
 
   let done = 0, pcHits = 0, ebayHits = 0;
 
@@ -244,13 +254,15 @@ async function main() {
     }
     await sleep(2000 + Math.random() * 2000);
 
-    // PriceCharting
+    // PriceCharting — skip if Cloudflare blocking (headless fails); log attempt
     const pc = await pcCardPrice(card, browser, proxies);
     if (pc) {
       card.pcMarket = pc.pcMarket;
       card.pcUrl    = pc.pcUrl;
       pcHits++;
       log(`    PC: $${pc.pcMarket}`);
+    } else {
+      log(`    PC: no data`);
     }
     await sleep(1500 + Math.random() * 1500);
 
@@ -267,7 +279,7 @@ async function main() {
     }
   }
 
-  await browser.close();
+  if (!usingCdp) await browser.close();
 
   // Final save of card DB
   cardDb.cards = allCards;
