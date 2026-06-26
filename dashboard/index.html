@@ -643,7 +643,7 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
 
   // pink selected row
   document.querySelectorAll('#db-tbody tr').forEach(r => r.style.outline = '');
-  const activeRow = [...document.querySelectorAll('#db-tbody tr')].find(r => r.onclick?.toString().includes(`'${setId}'`));
+  const activeRow = [...document.querySelectorAll('#db-tbody tr')].find(r => r.dataset.id === setId);
   if (activeRow) activeRow.style.outline = '2px solid #ff64b4';
 
   // expand right panel
@@ -801,7 +801,7 @@ async function loadDbPage() {
 
   document.getElementById('db-thead').innerHTML = `<tr>${cols.map(c => `<th>${c}</th>`).join('')}</tr>`;
   document.getElementById('db-tbody').innerHTML = entries.length
-    ? entries.map(e => `<tr onclick="loadVariants('${currentDb}','${escHtml(e.id)}','${escHtml(e.set_name ?? e.name ?? e.setName ?? e.id)}','${escHtml(e.chaseCard?.name ?? '')}')" style="cursor:pointer" title="Click to view product variants">${rowFn(e)}</tr>`).join('')
+    ? entries.map(e => `<tr data-db="${currentDb}" data-id="${escHtml(e.id)}" data-name="${escHtml(e.set_name ?? e.name ?? e.setName ?? e.id)}" data-chase="${escHtml(e.chaseCard?.name ?? '')}" onclick="loadVariants(this.dataset.db,this.dataset.id,this.dataset.name,this.dataset.chase)" style="cursor:pointer" title="Click to view product variants">${rowFn(e)}</tr>`).join('')
     : `<tr><td colspan="${cols.length}" class="empty">No results</td></tr>`;
 
   // Pagination
@@ -1228,7 +1228,7 @@ async function _streamPipeline(key, log) {
 }
 
 function escHtml(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 // ── Embed Preview ─────────────────────────────────────────────────────────
