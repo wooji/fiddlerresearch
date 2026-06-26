@@ -1151,7 +1151,8 @@
       "rawTitle": null,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:19:40.373Z"
     },
     "2024-panini-prizm-basketball::matas-buzelis-signatures::numbered-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1169,7 +1170,8 @@
       "rawTitle": null,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:20:00.027Z"
     },
     "2024-panini-prizm-basketball::luka-doncic-contenders::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1180,7 +1182,8 @@
       "price": 4738.89,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:20:17.146Z"
     },
     "2024-panini-prizm-basketball::luka-don-prizmatrix::numbered-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1198,7 +1201,8 @@
       "rawTitle": null,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:20:52.380Z"
     },
     "2024-panini-prizm-basketball::spectra-grant-hill::printing-plate-1/1": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1216,7 +1220,8 @@
       "rawTitle": null,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:21:12.898Z"
     },
     "2024-panini-prizm-basketball::paige-bueckers::numbered-auto-/25": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1234,7 +1239,8 @@
       "rawTitle": null,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:21:32.006Z"
     },
     "2024-panini-prizm-basketball::picks-caitlin-clark::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1245,7 +1251,11 @@
       "price": 1600,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 50,
+      "ebayCount": 60,
+      "ebayQuery": "Picks Caitlin Clark Auto RC /99 2024 Panini Prizm Basketball /99",
+      "enrichedAt": "2026-06-26T22:21:51.724Z"
     },
     "2024-panini-prizm-basketball::lamelo-ball-signatures::auto-/25": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1263,7 +1273,8 @@
       "rawTitle": null,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:22:09.105Z"
     },
     "2024-panini-prizm-basketball::contenders-jalen-brunson::auto-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1274,7 +1285,8 @@
       "price": 1095,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:22:33.148Z"
     },
     "2024-panini-prizm-basketball::spectra-jalen-brunson::auto-/49": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1292,7 +1304,11 @@
       "rawTitle": null,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 135,
+      "ebayCount": 60,
+      "ebayQuery": "Spectra Jalen Brunson Auto /49 2024 Panini Prizm Basketball /49",
+      "enrichedAt": "2026-06-26T22:22:45.312Z"
     },
     "2024-panini-prizm-basketball::luka-doncic-few::numbered-auto-/25": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1310,7 +1326,8 @@
       "rawTitle": null,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:23:04.153Z"
     },
     "2024-panini-prizm-basketball::shai-gilgeous-alexander::auto": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1328,7 +1345,8 @@
       "rawTitle": null,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:23:22.883Z"
     },
     "2024-panini-prizm-basketball::spectra-rpa-jalen::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1339,7 +1357,11 @@
       "price": 799.99,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 40,
+      "ebayCount": 60,
+      "ebayQuery": "Spectra Rpa Jalen Auto RC /99 2024 Panini Prizm Basketball /99",
+      "enrichedAt": "2026-06-26T22:23:39.889Z"
     },
     "2024-panini-prizm-basketball::wnba-throwback-signatures::auto-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1350,7 +1372,11 @@
       "price": 755,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 15,
+      "ebayCount": 73,
+      "ebayQuery": "Wnba Throwback Signatures Auto /99 2024 Panini Prizm Basketball /99",
+      "enrichedAt": "2026-06-26T22:23:52.047Z"
     },
     "2024-panini-prizm-basketball::spectra-alperen-sengun::patch-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1368,7 +1394,8 @@
       "rawTitle": null,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:24:11.090Z"
     },
     "2024-panini-prizm-basketball::lamelo-ball-sensational::parallel-/25": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1386,7 +1413,8 @@
       "rawTitle": null,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:24:34.090Z"
     },
     "2024-panini-prizm-basketball::wnba-paige-bueckers::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1397,7 +1425,11 @@
       "price": 675,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 19.99,
+      "ebayCount": 60,
+      "ebayQuery": "Wnba Paige Bueckers Auto RC /99 2024 Panini Prizm Basketball /99",
+      "enrichedAt": "2026-06-26T22:25:05.644Z"
     },
     "2024-panini-prizm-basketball::ajay-mitchell-signatures::numbered-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1415,7 +1447,11 @@
       "rawTitle": null,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 32,
+      "ebayCount": 60,
+      "ebayQuery": "Ajay Mitchell Signatures Numbered Auto /10 2024 Panini Prizm Basketball /10",
+      "enrichedAt": "2026-06-26T22:25:31.921Z"
     },
     "2024-panini-prizm-basketball::spectra-jalen-brunson::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1426,7 +1462,8 @@
       "price": 500,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:25:50.847Z"
     },
     "2024-panini-prizm-basketball::contenders-deni-avdija::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1437,7 +1474,8 @@
       "price": 500,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:26:10.090Z"
     },
     "2025-topps-bowman-chrome::pete-crow-armstrong::numbered-auto-/10": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1455,7 +1493,8 @@
       "rawTitle": "2020 Bowman Chrome Draft Pete Crow-Armstrong Auto Orange Refractor /25 SGC 10/10",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:26:33.678Z"
     },
     "2025-topps-bowman-chrome::luis-pena::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1473,7 +1512,8 @@
       "rawTitle": "2025 Bowman Luis Pena Chrome Auto Orange Refractor 1st /25 Brewers BGS 9.5 Gem",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:26:51.729Z"
     },
     "2025-topps-bowman-chrome::lazaro-montes::numbered-auto-/10": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1491,7 +1531,8 @@
       "rawTitle": "2023 Bowman Lazaro Montes 1st Chrome Orange Refractor Auto /25 PSA 10/10",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:27:17.491Z"
     },
     "2025-topps-bowman-chrome::yordan-alvarez::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1509,7 +1550,8 @@
       "rawTitle": "2018 Bowman Chrome 1st Auto Yordan Alvarez Green Refractor /99 #CPAYA BGS 9.5",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:27:36.363Z"
     },
     "2025-topps-bowman-chrome::jojo-parker-true::numbered-auto-/10": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1527,7 +1569,8 @@
       "rawTitle": "2025 Bowman Draft Chrome Jojo Parker TRUE ORANGE Refractor Auto /25 PSA 9/10",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:27:56.715Z"
     },
     "2025-topps-bowman-chrome::autos-roki-sasaki::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1545,7 +1588,11 @@
       "rawTitle": "2025 BOWMAN CHROME CHROME ROOKIE AUTOS ORANGE REFRACTOR ROKI SASAKI 18/25 PSA 9",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "ebayMedian": 249,
+      "ebayCount": 60,
+      "ebayQuery": "Autos Roki Sasaki Numbered Auto /25 2025 Bowman Chrome Baseball /25",
+      "enrichedAt": "2026-06-26T22:28:13.058Z"
     },
     "2025-topps-bowman-chrome::eli-willits::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1563,7 +1610,8 @@
       "rawTitle": "2025 Bowman Draft Eli Willits Chrome Auto Orange Wave Refractor 1st #/25",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:28:33.119Z"
     },
     "2025-topps-bowman-chrome::paul-skenes::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1581,7 +1629,8 @@
       "rawTitle": "PAUL SKENES 2023 BOWMAN DRAFT CHROME GREEN LAVA 1ST AUTO /99 PSA 9 Q6377",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:28:55.674Z"
     },
     "2025-topps-bowman-chrome::aiva-arquette-ssp::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1599,7 +1648,8 @@
       "rawTitle": "2026 Bowman Chrome Sapphire 1st Aiva Arquette Orange SSP Rookie RC Auto #'d /25",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:29:15.400Z"
     },
     "2025-topps-bowman-chrome::junior-caminero::auto": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1617,7 +1667,8 @@
       "rawTitle": "🔥📈2024 Bowman Chrome Junior Caminero Auto Patch Relic Gold Refractor RC PSA 10",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-26T22:29:34.447Z"
     },
     "2025-topps-bowman-chrome::eric-hartman::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
