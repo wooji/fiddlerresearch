@@ -738,7 +738,7 @@ async function loadDbPage() {
   const sample = entries[0] ?? {};
   const isLego = currentDb === 'lego';
   const isSports = currentDb === 'sports';
-  const isTcg = ['pokemon','mtg','lorcana','other_tcg','one_piece'].includes(currentDb);
+  const isTcg = ['pokemon','mtg','lorcana','other_tcg','one_piece','yugioh','weiss','union_arena','gundam','cardfight','dragon_ball','fab','digimon','sorcery','star_wars','hololive','disney_cards'].includes(currentDb);
 
   let cols, rowFn;
   if (isLego) {
