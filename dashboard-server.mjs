@@ -689,6 +689,35 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // GET /api/players/chase — all players with cards[], sorted by top card value
+  if (req.method === 'GET' && pathname === '/api/players/chase') {
+    const all = getPlayersCache();
+    const sport = (url.searchParams.get('sport') ?? '').toLowerCase();
+    const limit = Math.min(500, parseInt(url.searchParams.get('limit') ?? '100', 10));
+    const withCards = all
+      .filter(p => p.name && p.cards?.length > 0 && (!sport || (p.cards[0]?.setKey ?? '').includes(sport)))
+      .map(p => {
+        const topCard = [...(p.cards ?? [])].sort((a, b) => (b.pcMarket ?? 0) - (a.pcMarket ?? 0))[0];
+        return { slug: p.slug, name: p.name, sport: p.sport, cardCount: p.cards.length, topCard };
+      })
+      .sort((a, b) => (b.topCard?.pcMarket ?? 0) - (a.topCard?.pcMarket ?? 0))
+      .slice(0, limit);
+    json(res, { total: withCards.length, items: withCards });
+    return;
+  }
+
+  // GET /api/players/:slug/cards — all chase cards for a specific player
+  const cardMatch = pathname.match(/^\/api\/players\/([^/]+)\/cards$/);
+  if (req.method === 'GET' && cardMatch) {
+    const slug = cardMatch[1];
+    const all = getPlayersCache();
+    const player = all.find(p => p.slug === slug || `${p.sport}_${p.slug}` === slug);
+    if (!player) { cors(res); res.writeHead(404); res.end('Player not found'); return; }
+    const cards = [...(player.cards ?? [])].sort((a, b) => (b.pcMarket ?? 0) - (a.pcMarket ?? 0));
+    json(res, { slug: player.slug, name: player.name, sport: player.sport, cards });
+    return;
+  }
+
   // GET /api/players/stats — summary counts by sport
   if (req.method === 'GET' && pathname === '/api/players/stats') {
     const all = getPlayersCache();
