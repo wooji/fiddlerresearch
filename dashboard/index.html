@@ -223,6 +223,17 @@
   <div id="chase-modal-list"></div>
 </div>
 
+<!-- Sport reclassify context menu -->
+<div id="sport-ctx-menu" style="display:none;position:fixed;z-index:2000;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px 0;min-width:160px;box-shadow:0 4px 20px rgba(0,0,0,.4)">
+  <div style="padding:4px 14px 6px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px">Edit Sport</div>
+  <div class="ctx-sport-opt" data-sport="basketball" style="padding:7px 14px;cursor:pointer;font-size:13px" onmouseenter="this.style.background='var(--border)'" onmouseleave="this.style.background=''">🏀 Basketball</div>
+  <div class="ctx-sport-opt" data-sport="baseball"   style="padding:7px 14px;cursor:pointer;font-size:13px" onmouseenter="this.style.background='var(--border)'" onmouseleave="this.style.background=''">⚾ Baseball</div>
+  <div class="ctx-sport-opt" data-sport="football"   style="padding:7px 14px;cursor:pointer;font-size:13px" onmouseenter="this.style.background='var(--border)'" onmouseleave="this.style.background=''">🏈 Football</div>
+  <div class="ctx-sport-opt" data-sport="hockey"     style="padding:7px 14px;cursor:pointer;font-size:13px" onmouseenter="this.style.background='var(--border)'" onmouseleave="this.style.background=''">🏒 Hockey</div>
+  <div class="ctx-sport-opt" data-sport="soccer"     style="padding:7px 14px;cursor:pointer;font-size:13px" onmouseenter="this.style.background='var(--border)'" onmouseleave="this.style.background=''">⚽ Soccer</div>
+  <div class="ctx-sport-opt" data-sport="other"      style="padding:7px 14px;cursor:pointer;font-size:13px" onmouseenter="this.style.background='var(--border)'" onmouseleave="this.style.background=''">🏅 Other</div>
+</div>
+
 <nav>
   <div class="logo">🎪 Fiddler</div>
   <button class="active" data-tab="research">Research</button>
@@ -1941,6 +1952,50 @@ function closeChasePanel() {
   panel.style.width = '0';
   panel.style.overflow = 'hidden';
 }
+
+// ── Sport context menu ─────────────────────────────────────────────────────
+(function() {
+  const menu = document.getElementById('sport-ctx-menu');
+  let targetSlug = null;
+
+  document.getElementById('db-tbody').addEventListener('contextmenu', e => {
+    if (currentDb !== 'players') return;
+    const row = e.target.closest('tr[data-slug]');
+    if (!row || !row.dataset.slug) return;
+    e.preventDefault();
+    targetSlug = row.dataset.slug;
+    menu.style.display = 'block';
+    const x = Math.min(e.clientX, window.innerWidth - 170);
+    const y = Math.min(e.clientY, window.innerHeight - 220);
+    menu.style.left = x + 'px';
+    menu.style.top  = y + 'px';
+  });
+
+  document.querySelectorAll('.ctx-sport-opt').forEach(opt => {
+    opt.addEventListener('click', async () => {
+      if (!targetSlug) return;
+      menu.style.display = 'none';
+      const sport = opt.dataset.sport;
+      try {
+        const r = await fetch(`/api/players/${encodeURIComponent(targetSlug)}/sport`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sport }),
+        });
+        const d = await r.json();
+        if (d.ok) {
+          // refresh current DB view
+          loadDbPage(currentDb, currentPage);
+        } else {
+          alert('Failed: ' + (d.error ?? 'unknown'));
+        }
+      } catch(e) { alert('Error: ' + e.message); }
+    });
+  });
+
+  document.addEventListener('click', () => { menu.style.display = 'none'; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') menu.style.display = 'none'; });
+})();
 
 loadDatabases();
 loadProductKeys();

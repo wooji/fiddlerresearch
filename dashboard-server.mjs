@@ -751,6 +751,42 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // PATCH /api/players/:slug/sport — reassign sport category
+  const sportPatchMatch = pathname.match(/^\/api\/players\/([^/]+)\/sport$/);
+  if (req.method === 'PATCH' && sportPatchMatch) {
+    const slug = sportPatchMatch[1];
+    let body = '';
+    await new Promise(r => { req.on('data', c => body += c); req.on('end', r); });
+    let newSport;
+    try { newSport = JSON.parse(body).sport; } catch { }
+    const VALID = ['basketball','baseball','football','hockey','soccer','other'];
+    if (!newSport || !VALID.includes(newSport)) {
+      cors(res); res.writeHead(400); res.end(JSON.stringify({ error: 'invalid sport' })); return;
+    }
+    const file = path.join(ROOT, 'player-history-sports.json');
+    const raw = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const players = raw.players ?? {};
+    // find by compound key (sport_slug) or bare slug
+    let foundKey = Object.keys(players).find(k => k === slug);
+    if (!foundKey) foundKey = Object.keys(players).find(k => k.endsWith('_' + slug.replace(/^[^_]+_/, '')));
+    if (!foundKey) { cors(res); res.writeHead(404); res.end('Player not found'); return; }
+    const oldSport = players[foundKey].sport;
+    // move to new sport key if compound key changes
+    const bareSlug = foundKey.includes('_') ? foundKey.split('_').slice(1).join('_') : foundKey;
+    const newKey = `${newSport}_${bareSlug}`;
+    if (foundKey !== newKey) {
+      players[newKey] = { ...players[foundKey], sport: newSport };
+      delete players[foundKey];
+    } else {
+      players[foundKey].sport = newSport;
+    }
+    raw.players = players;
+    fs.writeFileSync(file, JSON.stringify(raw, null, 2));
+    _playersCache = null; // bust cache
+    json(res, { ok: true, oldKey: foundKey, newKey, oldSport, newSport });
+    return;
+  }
+
   // GET /api/players/stats — summary counts by sport
   if (req.method === 'GET' && pathname === '/api/players/stats') {
     const all = getPlayersCache();
