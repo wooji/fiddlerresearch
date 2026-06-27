@@ -264,25 +264,37 @@
       </select>
       <button onclick="loadPlayers(1)" style="background:var(--accent);color:#000;border:none;border-radius:6px;padding:8px 16px;font-weight:600;cursor:pointer">Search</button>
     </div>
-    <div style="flex:1;overflow:auto">
-      <table style="width:100%;border-collapse:collapse;font-size:13px">
-        <thead>
-          <tr style="background:var(--surface);position:sticky;top:0;z-index:1">
-            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Name</th>
-            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Slug</th>
-            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Sport</th>
-            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Position</th>
-            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Rookie</th>
-            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Stats</th>
-          </tr>
-        </thead>
-        <tbody id="players-tbody"></tbody>
-      </table>
+    <div style="flex:1;display:flex;gap:0;min-height:0">
+      <div style="flex:1;overflow:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+          <thead>
+            <tr style="background:var(--surface);position:sticky;top:0;z-index:1">
+              <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Name</th>
+              <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Sport</th>
+              <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Position</th>
+              <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Chase Cards</th>
+              <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Top Card $</th>
+            </tr>
+          </thead>
+          <tbody id="players-tbody"></tbody>
+        </table>
+      </div>
+      <!-- Chase card panel -->
+      <div id="chase-panel" style="width:0;overflow:hidden;transition:width .2s;border-left:1px solid var(--border);background:var(--surface);flex-shrink:0">
+        <div style="width:420px;padding:16px;overflow-y:auto;height:100%;box-sizing:border-box">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+            <div id="chase-player-name" style="font-weight:700;font-size:15px"></div>
+            <button onclick="closeChasePanel()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:0 4px">✕</button>
+          </div>
+          <div id="chase-cards-list"></div>
+        </div>
+      </div>
     </div>
     <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;padding:4px 0">
       <button id="players-prev" onclick="loadPlayers(playersPage-1)" style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:6px 14px;color:var(--text);cursor:pointer;font-size:13px">← Prev</button>
       <span id="players-pager" style="font-size:12px;color:var(--muted)"></span>
       <button id="players-next" onclick="loadPlayers(playersPage+1)" style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:6px 14px;color:var(--text);cursor:pointer;font-size:13px">Next →</button>
+      <span style="font-size:12px;color:var(--muted);margin-left:auto">⭐ = cards with chase data</span>
     </div>
   </div>
 </div>
@@ -1790,24 +1802,65 @@ async function loadPlayers(page) {
   try {
     const d = await fetch('/api/players?' + params).then(r=>r.json());
     const tbody = document.getElementById('players-tbody');
-    if (!d.items?.length) { tbody.innerHTML = '<tr><td colspan="6" style="padding:20px;color:var(--muted);text-align:center">No players found</td></tr>'; return; }
+    if (!d.items?.length) { tbody.innerHTML = '<tr><td colspan="5" style="padding:20px;color:var(--muted);text-align:center">No players found</td></tr>'; return; }
     tbody.innerHTML = d.items.map(p => {
-      const hasStats = p.career_avg || p.current_year_avg || Object.keys(p.stats||{}).length > 0;
-      const statBadge = hasStats ? '<span style="color:#4ade80;font-size:11px">✓ stats</span>' : '<span style="color:var(--muted);font-size:11px">name only</span>';
-      return `<tr style="border-bottom:1px solid var(--border)">
+      const hasCards = p.cards?.length > 0;
+      const topCard = hasCards ? [...p.cards].sort((a,b)=>(b.pcMarket||0)-(a.pcMarket||0))[0] : null;
+      const cardBadge = hasCards
+        ? `<span style="color:#4ade80;font-size:11px;cursor:pointer">⭐ ${p.cards.length} cards</span>`
+        : '<span style="color:var(--muted);font-size:11px">—</span>';
+      const topPrice = topCard?.pcMarket ? `<span style="color:#4ade80;font-weight:600">$${topCard.pcMarket.toLocaleString()}</span>` : '—';
+      return `<tr style="border-bottom:1px solid var(--border);cursor:pointer" data-slug="${escHtml(p.slug||'')}" data-name="${escHtml(p.name||'')}" onclick="openChasePanel(this.dataset.slug,this.dataset.name)">
         <td style="padding:8px 12px;font-weight:600">${escHtml(p.name||'—')}</td>
-        <td style="padding:8px 12px;color:var(--muted);font-family:monospace;font-size:12px">${escHtml(p.slug||'')}</td>
-        <td style="padding:8px 12px">${escHtml(p.sport||'—')}</td>
+        <td style="padding:8px 12px;color:var(--muted)">${escHtml(p.sport||'—')}</td>
         <td style="padding:8px 12px;color:var(--muted)">${escHtml(p.position||'—')}</td>
-        <td style="padding:8px 12px;color:var(--muted)">${p.rookie_year||'—'}</td>
-        <td style="padding:8px 12px">${statBadge}</td>
+        <td style="padding:8px 12px">${cardBadge}</td>
+        <td style="padding:8px 12px">${topPrice}</td>
       </tr>`;
     }).join('');
     const totalPages = Math.ceil(d.total / d.limit);
     document.getElementById('players-pager').textContent = `Page ${d.page} of ${totalPages} — ${d.total.toLocaleString()} results`;
     document.getElementById('players-prev').disabled = d.page <= 1;
     document.getElementById('players-next').disabled = d.page >= totalPages;
-  } catch(e) { document.getElementById('players-tbody').innerHTML = `<tr><td colspan="6" style="padding:20px;color:#f87171">${e.message}</td></tr>`; }
+  } catch(e) { document.getElementById('players-tbody').innerHTML = `<tr><td colspan="5" style="padding:20px;color:#f87171">${e.message}</td></tr>`; }
+}
+
+async function openChasePanel(slug, name) {
+  const panel = document.getElementById('chase-panel');
+  const nameEl = document.getElementById('chase-player-name');
+  const listEl = document.getElementById('chase-cards-list');
+  nameEl.textContent = name;
+  listEl.innerHTML = '<div style="color:var(--muted);font-size:13px">Loading…</div>';
+  panel.style.width = '420px';
+  panel.style.overflow = 'auto';
+  try {
+    const d = await fetch(`/api/players/${encodeURIComponent(slug)}/cards`).then(r=>r.json());
+    if (!d.cards?.length) { listEl.innerHTML = '<div style="color:var(--muted);font-size:13px">No chase cards found</div>'; return; }
+    listEl.innerHTML = d.cards.map(c => {
+      const raw   = c.pcUngraded  ? `$${c.pcUngraded.toLocaleString()}`  : '—';
+      const psa10 = c.pcPsa10     ? `$${c.pcPsa10.toLocaleString()}`     : '—';
+      const grad  = c.pcGradedAvg ? `$${c.pcGradedAvg.toLocaleString()}` : '—';
+      const mkt   = c.pcMarket    ? `$${c.pcMarket.toLocaleString()}`    : '—';
+      const pr    = c.printRun    ? `/${c.printRun}` : '';
+      const scpLink = c.pcUrl ? `<a href="${escHtml(c.pcUrl)}" target="_blank" style="color:var(--accent);font-size:11px;text-decoration:none">SCP ↗</a>` : '';
+      return `<div style="border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:10px;background:var(--bg)">
+        <div style="font-weight:600;font-size:13px;margin-bottom:4px">${escHtml(c.cardType||'—')}${pr} ${scpLink}</div>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:8px">${escHtml(c.setName||'—')}</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;font-size:12px">
+          <div><div style="color:var(--muted);font-size:10px;margin-bottom:2px">MKT</div><div style="font-weight:600;color:#fff">${mkt}</div></div>
+          <div><div style="color:var(--muted);font-size:10px;margin-bottom:2px">RAW</div><div style="font-weight:600;color:#4ade80">${raw}</div></div>
+          <div><div style="color:var(--muted);font-size:10px;margin-bottom:2px">PSA 10</div><div style="font-weight:600;color:#60a5fa">${psa10}</div></div>
+          <div><div style="color:var(--muted);font-size:10px;margin-bottom:2px">GRADED</div><div style="font-weight:600;color:#a78bfa">${grad}</div></div>
+        </div>
+      </div>`;
+    }).join('');
+  } catch(e) { listEl.innerHTML = `<div style="color:#f87171;font-size:13px">${e.message}</div>`; }
+}
+
+function closeChasePanel() {
+  const panel = document.getElementById('chase-panel');
+  panel.style.width = '0';
+  panel.style.overflow = 'hidden';
 }
 
 loadDatabases();

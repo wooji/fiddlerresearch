@@ -684,7 +684,17 @@ const server = http.createServer(async (req, res) => {
       return true;
     });
     const total = filtered.length;
-    const items = filtered.slice((page - 1) * limit, page * limit);
+    const items = filtered.slice((page - 1) * limit, page * limit).map(p => {
+      const topCard = p.cards?.length > 0
+        ? [...p.cards].sort((a, b) => (b.pcMarket ?? 0) - (a.pcMarket ?? 0))[0]
+        : null;
+      return {
+        slug: p.slug, name: p.name, sport: p.sport, position: p.position,
+        rookie_year: p.rookie_year,
+        cards: p.cards ?? [],
+        topCard: topCard ? { cardType: topCard.cardType, setName: topCard.setName, pcMarket: topCard.pcMarket } : null,
+      };
+    });
     json(res, { total, page, limit, items });
     return;
   }
