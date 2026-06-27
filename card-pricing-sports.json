@@ -1,9 +1,9 @@
 {
   "_meta": {
     "description": "Individual sports card pricing DB",
-    "source": "ebay-sold-comps",
-    "updated": "2026-06-26",
-    "count": 545
+    "source": "sportscardspro.com (PriceCharting)",
+    "updated": "2026-06-27",
+    "count": 740
   },
   "cards": {
     "2026-topps-chrome-baseball::yordan-alvarez::auto-rc-/99": {
@@ -23,7 +23,11 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T21:58:12.824Z"
+      "enrichedAt": "2026-06-27T00:20:03.355Z",
+      "pcMarket": 1.89,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/yordan-alvarez-91c-50",
+      "pcTitle": "Yordan Alvarez #91C-50",
+      "pcId": "11899778"
     },
     "2026-topps-chrome-baseball::autos-ken-griffey::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -42,7 +46,11 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T21:58:34.019Z"
+      "enrichedAt": "2026-06-27T00:20:09.423Z",
+      "pcMarket": 4,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/ken-griffey-jr-91c-51",
+      "pcTitle": "Ken Griffey Jr. #91C-51",
+      "pcId": "11899779"
     },
     "2026-topps-chrome-baseball::aiva-arquette-ssp::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -61,7 +69,11 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T21:58:51.265Z"
+      "enrichedAt": "2026-06-27T00:20:13.103Z",
+      "pcMarket": 1.97,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-chrome-prospect/aiva-arquette-bcp-40",
+      "pcTitle": "Aiva Arquette #BCP-40",
+      "pcId": "12933417"
     },
     "2026-topps-chrome-baseball::james-wood::auto-rc-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -80,7 +92,11 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T21:59:14.980Z"
+      "enrichedAt": "2026-06-27T00:20:18.929Z",
+      "pcMarket": 1.99,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/james-wood-91c-78",
+      "pcTitle": "James Wood #91C-78",
+      "pcId": "11899831"
     },
     "2026-topps-chrome-baseball::junior-caminero::auto": {
       "setKey": "2026-topps-chrome-baseball",
@@ -99,7 +115,11 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T21:59:36.749Z"
+      "enrichedAt": "2026-06-27T00:20:21.665Z",
+      "pcMarket": 202.5,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/junior-caminero-black-autograph-91c-2",
+      "pcTitle": "Junior Caminero [Black Autograph] #91C-2",
+      "pcId": "11957213"
     },
     "2026-topps-chrome-baseball::seth-hernandez-top::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -1686,7 +1706,8 @@
       "rawTitle": "ERIC HARTMAN 2026 BOWMAN CHROME ORANGE SHIMMER 1ST ROOKIE AUTO /25 Q7313",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-27T00:14:26.208Z"
     },
     "2025-topps-bowman-chrome::seth-hernandez-top::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1704,7 +1725,8 @@
       "rawTitle": "2026 Bowman Chrome Seth Hernandez Orange Mojo Auto /25 Pirates Top Prospect 🔥",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-27T00:14:45.182Z"
     },
     "2025-topps-bowman-chrome::picks-autos-ernie::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1722,7 +1744,8 @@
       "rawTitle": "2017 BOWMAN DRAFT CHROME DRAFT PICKS AUTOS #CDAEC ERNIE CLEMENT 5/25 PSA 10 AUTO",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-27T00:15:04.781Z"
     },
     "2025-topps-bowman-chrome::jesus-made-first::auto-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1733,7 +1756,8 @@
       "price": 777,
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-27T00:15:24.065Z"
     },
     "2025-topps-bowman-chrome::gage-jump::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1751,7 +1775,8 @@
       "rawTitle": "2026 Bowman Sapphire Gage Jump Chrome Auto 1st Orange Refractor #/25 Athletics",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-27T00:15:43.458Z"
     },
     "2025-topps-bowman-chrome::konnor-griffin-ssp::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1769,7 +1794,8 @@
       "rawTitle": "2026 Bowman Chrome Konnor Griffin Image Variation Mojo Auto /25 SSP",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-27T00:16:19.216Z"
     },
     "2025-topps-bowman-chrome::juneiker-caceres::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1787,7 +1813,8 @@
       "rawTitle": "2025 Bowman Chrome 1st Orange Auto /25 Juneiker Caceres Refractor #CPA-JUC",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-27T00:16:40.533Z"
     },
     "2025-topps-bowman-chrome::mike-sirota::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1805,7 +1832,8 @@
       "rawTitle": "Mike Sirota 2024 Bowman Draft Chrome Green Lava Refractor 1st Auto PSA 10 /99 RC",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-27T00:17:01.777Z"
     },
     "2025-topps-bowman-chrome::kevin-mcgonigle::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1823,7 +1851,8 @@
       "rawTitle": "2026 Bowman Chrome Prospect Orange Shimmer Refractor Kevin McGonigle AUTO 20/25",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-27T00:17:23.188Z"
     },
     "2025-topps-bowman-chrome::mike-trout-game::patch-auto-/5": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1841,7 +1870,8 @@
       "rawTitle": "2025 Bowman Chrome Red Refractor Mike Trout GAME USED Patch AUTO 1/5 PSA 8",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "enrichedAt": "2026-06-27T00:17:44.486Z"
     },
     "2024-topps-chrome-basketball::jalen-brunson-mt::numbered-auto-/10": {
       "setKey": "2024-topps-chrome-basketball",
@@ -1859,7 +1889,12 @@
       "rawTitle": "2025-26 Topps Chrome Sapphire Jalen Brunson Black AUTO /10 PSA 10 GEM MT",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "pcMarket": 1.4,
+      "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-stars-of-the-nba/jalen-brunson-sa-10",
+      "pcTitle": "Jalen Brunson #SA-10",
+      "pcId": "10842429",
+      "enrichedAt": "2026-06-27T00:18:13.297Z"
     },
     "2024-topps-chrome-basketball::lebron-james-true::numbered-auto-/25": {
       "setKey": "2024-topps-chrome-basketball",
@@ -1877,7 +1912,12 @@
       "rawTitle": "2025-26 Topps Chrome-LEBRON JAMES #TCA-LBJ-True Orange Refractor Auto-5/25-PSA 9",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "pcMarket": 2.28,
+      "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-nba-hoops/lebron-james-rainbow-84",
+      "pcTitle": "LeBron James [Rainbow] #84",
+      "pcId": "12951682",
+      "enrichedAt": "2026-06-27T00:18:18.181Z"
     },
     "2024-topps-chrome-basketball::victor-wembanyama-sky::numbered-auto-/25": {
       "setKey": "2024-topps-chrome-basketball",
@@ -1895,7 +1935,12 @@
       "rawTitle": "Topps Chrome 2025-26 Victor Wembanyama Sky-Write Auto Orange /25 PSA 10 🔥🏀🔥🔥",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "pcMarket": 5.08,
+      "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-finest/victor-wembanyama-sky-blue-refractor-83",
+      "pcTitle": "Victor Wembanyama [Sky Blue Refractor] #83",
+      "pcId": "10135951",
+      "enrichedAt": "2026-06-27T00:18:22.976Z"
     },
     "2024-topps-chrome-basketball::jalen-brunson::numbered-auto-/25": {
       "setKey": "2024-topps-chrome-basketball",
@@ -1913,7 +1958,12 @@
       "rawTitle": "Jalen Brunson 2025 Topps Chrome Sapphire Orange Auto 10/25 PSA 10",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "pcMarket": 1.5,
+      "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-nba-hoops/jalen-brunson-fanatics-278",
+      "pcTitle": "Jalen Brunson [Fanatics] #278",
+      "pcId": "12956989",
+      "enrichedAt": "2026-06-27T00:18:27.969Z"
     },
     "2024-topps-chrome-basketball::victor-wembanyama::auto-/75": {
       "setKey": "2024-topps-chrome-basketball",
@@ -1931,7 +1981,12 @@
       "rawTitle": "2025-26 Topps Chrome Basketball Victor Wembanyama Purple /75 Auto PSA 9",
       "star": true,
       "source": "ebay-sold-comps",
-      "fetchedAt": "2026-06-26"
+      "fetchedAt": "2026-06-26",
+      "pcMarket": 64.16,
+      "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-nba-hoops/victor-wembanyama-dragon-year-165",
+      "pcTitle": "Victor Wembanyama [Dragon Year] #165",
+      "pcId": "8397347",
+      "enrichedAt": "2026-06-27T00:18:30.633Z"
     },
     "2024-topps-chrome-basketball::dylan-harper-next::numbered-auto-/10": {
       "setKey": "2024-topps-chrome-basketball",
@@ -7675,6 +7730,1956 @@
       "ebayMedian": 237.5,
       "fetchedAt": "2026-06-26",
       "source": "ebay-sold-comps"
+    },
+    "2026-topps-chrome-baseball::yordan-alvarez::auto-rc": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Yordan Alvarez",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 3000,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::autos-ken-griffey::numbered-auto": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Autos Ken Griffey",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 2699,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::aiva-arquette-ssp::numbered-auto": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Aiva Arquette Ssp",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 1499.99,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::james-wood::auto-rc": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "James Wood",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 1299,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::seth-hernandez-top::numbered-auto": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Seth Hernandez Top",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 1000,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::eric-hartman::numbered-auto": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Eric Hartman",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 999,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::picks-autos-ernie::numbered-auto": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Picks Autos Ernie",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 999,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::craig-kimbrel::numbered-auto": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Craig Kimbrel",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 985.88,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::vladimir-guerrero-jr::auto": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Vladimir Guerrero Jr.",
+      "cardType": "Auto /150",
+      "printRun": 150,
+      "sport": "baseball",
+      "ebayMedian": 897.76,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::konnor-griffin-ssp::numbered-auto": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Konnor Griffin Ssp",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 749.99,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::ben-rice::auto-rc": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Ben Rice",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 650,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::mike-sirota::auto-rc": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Mike Sirota",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 626,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::kevin-mcgonigle::numbered-auto": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Kevin McGonigle",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 625,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::tatsuya-imai-redemption::numbered-auto": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Tatsuya Imai Redemption",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 600,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::elly-de-la::auto-rc": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Elly De La",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 600,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::payton-tolle::auto-rc": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Payton Tolle",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 599.99,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::jarlin-susana-ssp::numbered-auto": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Jarlin Susana Ssp",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 599,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::roman-anthony-redemption::auto-rc": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Roman Anthony Redemption",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 575,
+      "source": "set-history-import"
+    },
+    "2026-topps-chrome-baseball::juan-soto::auto": {
+      "setKey": "2026-topps-chrome-baseball",
+      "setName": "2026 Topps Chrome Baseball",
+      "player": "Juan Soto",
+      "cardType": "Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 495.9,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::yordan-alvarez::auto-rc": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Yordan Alvarez",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 3000,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::autos-ken-griffey::numbered-auto": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Autos Ken Griffey",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 2699,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::aiva-arquette-ssp::numbered-auto": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Aiva Arquette Ssp",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 1499.99,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::james-wood::auto-rc": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "James Wood",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 1299,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::seth-hernandez-top::numbered-auto": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Seth Hernandez Top",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 1000,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::eric-hartman::numbered-auto": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Eric Hartman",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 999,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::picks-autos-ernie::numbered-auto": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Picks Autos Ernie",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 999,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::craig-kimbrel::numbered-auto": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Craig Kimbrel",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 985.88,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::vladimir-guerrero-jr::auto": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Vladimir Guerrero Jr.",
+      "cardType": "Auto /150",
+      "printRun": 150,
+      "sport": "baseball",
+      "ebayMedian": 897.76,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::konnor-griffin-ssp::numbered-auto": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Konnor Griffin Ssp",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 749.99,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::ben-rice::auto-rc": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Ben Rice",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 650,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::mike-sirota::auto-rc": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Mike Sirota",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 626,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::kevin-mcgonigle::numbered-auto": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Kevin McGonigle",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 625,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::tatsuya-imai-redemption::numbered-auto": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Tatsuya Imai Redemption",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 600,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::elly-de-la::auto-rc": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Elly De La",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 600,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::payton-tolle::auto-rc": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Payton Tolle",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 599.99,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::jarlin-susana-ssp::numbered-auto": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Jarlin Susana Ssp",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 599,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::roman-anthony-redemption::auto-rc": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Roman Anthony Redemption",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 575,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-baseball::juan-soto::auto": {
+      "setKey": "2025-topps-chrome-baseball",
+      "setName": "2025 Topps Chrome Baseball",
+      "player": "Juan Soto",
+      "cardType": "Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 495.9,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::caitlin-clark::numbered-auto": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Caitlin Clark",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 4888,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::matas-buzelis-signatures::numbered-auto": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Matas Buzelis Signatures",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 4750,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::luka-doncic-contenders::auto-rc": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Luka Doncic Contenders",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 4738.89,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::luka-don-prizmatrix::numbered-auto": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Luka Don Prizmatrix",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 3000,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::spectra-grant-hill::printing-plate": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Spectra Grant Hill",
+      "cardType": "Printing Plate 1/1",
+      "printRun": 1,
+      "sport": "basketball",
+      "ebayMedian": 2500,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::paige-bueckers::numbered-auto": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Paige Bueckers",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 2125,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::picks-caitlin-clark::auto-rc": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Picks Caitlin Clark",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 1600,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::lamelo-ball-signatures::auto": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "LaMelo Ball Signatures",
+      "cardType": "Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 1499.99,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::contenders-jalen-brunson::auto": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Contenders Jalen Brunson",
+      "cardType": "Auto /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 1095,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::spectra-jalen-brunson::auto": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Spectra Jalen Brunson",
+      "cardType": "Auto /49",
+      "printRun": 49,
+      "sport": "basketball",
+      "ebayMedian": 1000,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::luka-doncic-few::numbered-auto": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Luka Doncic Few",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 948,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::wnba-throwback-signatures::auto": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Wnba Throwback Signatures",
+      "cardType": "Auto /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 755,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::spectra-alperen-sengun::patch-auto": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Spectra Alperen Sengun",
+      "cardType": "Patch Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 710,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::lamelo-ball-sensational::parallel": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "LaMelo Ball Sensational",
+      "cardType": "Parallel /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 699,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::wnba-paige-bueckers::auto-rc": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Wnba Paige Bueckers",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 675,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::jayson-tatum-in::numbered-auto": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Jayson Tatum In",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 595,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::ajay-mitchell-signatures::numbered-auto": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Ajay Mitchell Signatures",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 510,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::spectra-jalen-brunson::auto-rc": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Spectra Jalen Brunson",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 500,
+      "source": "set-history-import"
+    },
+    "2025-panini-prizm-basketball::contenders-deni-avdija::auto-rc": {
+      "setKey": "2025-panini-prizm-basketball",
+      "setName": "2025 Panini Prizm Basketball",
+      "player": "Contenders Deni Avdija",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 500,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::caitlin-clark::numbered-auto": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Caitlin Clark",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 4888,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::matas-buzelis-signatures::numbered-auto": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Matas Buzelis Signatures",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 4750,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::luka-don-prizmatrix::numbered-auto": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Luka Don Prizmatrix",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 3000,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::spectra-grant-hill::printing-plate": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Spectra Grant Hill",
+      "cardType": "Printing Plate 1/1",
+      "printRun": 1,
+      "sport": "basketball",
+      "ebayMedian": 2500,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::paige-bueckers::numbered-auto": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Paige Bueckers",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 2125,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::lamelo-ball-signatures::auto": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "LaMelo Ball Signatures",
+      "cardType": "Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 1499.99,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::spectra-jalen-brunson::auto": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Spectra Jalen Brunson",
+      "cardType": "Auto /49",
+      "printRun": 49,
+      "sport": "basketball",
+      "ebayMedian": 1000,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::luka-doncic-few::numbered-auto": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Luka Doncic Few",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 948,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::spectra-alperen-sengun::patch-auto": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Spectra Alperen Sengun",
+      "cardType": "Patch Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 710,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::lamelo-ball-sensational::parallel": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "LaMelo Ball Sensational",
+      "cardType": "Parallel /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 699,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::jayson-tatum-in::numbered-auto": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Jayson Tatum In",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 595,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::ajay-mitchell-signatures::numbered-auto": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Ajay Mitchell Signatures",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 510,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::matas-buzelis-deca::auto-rc": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Matas Buzelis Deca",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 405,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::ausar-thompson-rpa::patch-auto": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Ausar Thompson Rpa",
+      "cardType": "Patch Auto /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 400.96,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::yao-ming::numbered-auto": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Yao Ming",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 399.99,
+      "source": "set-history-import"
+    },
+    "2024-panini-prizm-basketball::fotl-terrence-shannon::numbered-auto": {
+      "setKey": "2024-panini-prizm-basketball",
+      "setName": "2024 Panini Prizm Basketball",
+      "player": "Fotl Terrence Shannon",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 350,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::pete-crow-armstrong::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Pete Crow Armstrong",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "football",
+      "ebayMedian": 12000,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::luis-pena::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Luis Pena",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "football",
+      "ebayMedian": 4999.99,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::lazaro-montes::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Lazaro Montes",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "football",
+      "ebayMedian": 4199.99,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::yordan-alvarez::auto-rc": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Yordan Alvarez",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "football",
+      "ebayMedian": 3000,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::jojo-parker-true::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Jojo Parker True",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "football",
+      "ebayMedian": 2372,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::autos-roki-sasaki::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Autos Roki Sasaki",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "football",
+      "ebayMedian": 2350,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::eli-willits::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Eli Willits",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "football",
+      "ebayMedian": 2035.99,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::paul-skenes::auto-rc": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Paul Skenes",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "football",
+      "ebayMedian": 1576,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::aiva-arquette-ssp::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Aiva Arquette Ssp",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "football",
+      "ebayMedian": 1499.99,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::eric-hartman::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Eric Hartman",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "football",
+      "ebayMedian": 1150,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::seth-hernandez-top::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Seth Hernandez Top",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "football",
+      "ebayMedian": 1000,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::picks-autos-ernie::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Picks Autos Ernie",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "football",
+      "ebayMedian": 999,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::gage-jump::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Gage Jump",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "football",
+      "ebayMedian": 761,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::konnor-griffin-ssp::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Konnor Griffin Ssp",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "football",
+      "ebayMedian": 749.99,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::juneiker-caceres::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Juneiker Caceres",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "football",
+      "ebayMedian": 665,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::mike-sirota::auto-rc": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Mike Sirota",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "football",
+      "ebayMedian": 626,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::kevin-mcgonigle::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Kevin McGonigle",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "football",
+      "ebayMedian": 625,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::mike-trout-game::patch-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Mike Trout Game",
+      "cardType": "Patch Auto /5",
+      "printRun": 5,
+      "sport": "football",
+      "ebayMedian": 610,
+      "source": "set-history-import"
+    },
+    "2025-topps-bowman-chrome::tatsuya-imai-redemption::numbered-auto": {
+      "setKey": "2025-topps-bowman-chrome",
+      "setName": "2025 Bowman Chrome Baseball",
+      "player": "Tatsuya Imai Redemption",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "football",
+      "ebayMedian": 600,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::jalen-brunson-mt::numbered-auto": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Jalen Brunson Mt",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 30000,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::lebron-james-true::numbered-auto": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Lebron James True",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 22100,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::victor-wembanyama-sky::numbered-auto": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Victor Wembanyama Sky",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 15000,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::jalen-brunson::numbered-auto": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Jalen Brunson",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 15000,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::og-anunoby::superfractor": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Og Anunoby",
+      "cardType": "Superfractor 1/1",
+      "printRun": 1,
+      "sport": "basketball",
+      "ebayMedian": 5000,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::stephen-curry::numbered-auto": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Stephen Curry",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 4833,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::alex-sarr::numbered-auto": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Alex Sarr",
+      "cardType": "Numbered Auto /5",
+      "printRun": 5,
+      "sport": "basketball",
+      "ebayMedian": 3999.99,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::dylan-harper-on::auto": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Dylan Harper On",
+      "cardType": "Auto /75",
+      "printRun": 75,
+      "sport": "basketball",
+      "ebayMedian": 3950,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::mark-price-game::logoman": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Mark Price Game",
+      "cardType": "Logoman 1/1",
+      "printRun": 1,
+      "sport": "basketball",
+      "ebayMedian": 3938.88,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::issue-rookies-dylan::auto-rc": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Issue Rookies Dylan",
+      "cardType": "Auto RC /50",
+      "printRun": 50,
+      "sport": "basketball",
+      "ebayMedian": 2300,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::stephen-curry::auto-rc": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Stephen Curry",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 1999.99,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::issue-dylan-harper::auto": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Issue Dylan Harper",
+      "cardType": "Auto /150",
+      "printRun": 150,
+      "sport": "basketball",
+      "ebayMedian": 1676,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::james-harden-au::numbered-auto": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "James Harden Au",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 1650,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::cactus-jack-all::rookie-card": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Cactus Jack All",
+      "cardType": "Rookie Card /50",
+      "printRun": 50,
+      "sport": "basketball",
+      "ebayMedian": 1575,
+      "source": "set-history-import"
+    },
+    "2024-topps-chrome-basketball::tre-johnson-pulsar::parallel": {
+      "setKey": "2024-topps-chrome-basketball",
+      "setName": "2024 Topps Chrome Basketball NBA",
+      "player": "Tre Johnson Pulsar",
+      "cardType": "Parallel /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 1425,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::jalen-brunson-rpa::patch-auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Jalen Brunson Rpa",
+      "cardType": "Patch Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 70000,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::jalen-brunson::patch-auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Jalen Brunson",
+      "cardType": "Patch Auto /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 25000,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::giannis-antetokounmpo::patch-auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Giannis Antetokounmpo",
+      "cardType": "Patch Auto /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 20298,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::og-anunoby::patch-auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Og Anunoby",
+      "cardType": "Patch Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 14999,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::jalen-brunson-signed::auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Jalen Brunson Signed",
+      "cardType": "Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 9999.95,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::stephen-curry-penmanship::numbered-auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Stephen Curry Penmanship",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 8500,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::tyrese-haliburton-dna::auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Tyrese Haliburton Dna",
+      "cardType": "Auto /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 8181,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::tyrese-haliburton::patch-auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Tyrese Haliburton",
+      "cardType": "Patch Auto /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 7999.99,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::jalen-brunson-rpa::auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Jalen Brunson Rpa",
+      "cardType": "Auto /49",
+      "printRun": 49,
+      "sport": "basketball",
+      "ebayMedian": 6499.99,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::luka-doncic-rpa::patch-auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Luka Doncic Rpa",
+      "cardType": "Patch Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 5999.99,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::of-deni-avdija::printing-plate": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Of Deni Avdija",
+      "cardType": "Printing Plate 1/1",
+      "printRun": 1,
+      "sport": "basketball",
+      "ebayMedian": 5555,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::tyler-shough-hats::patch-auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Tyler Shough Hats",
+      "cardType": "Patch Auto /3",
+      "printRun": 3,
+      "sport": "basketball",
+      "ebayMedian": 5000,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::luka-doncic-signed::auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Luka Doncic Signed",
+      "cardType": "Auto /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 4999.99,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::jalen-brunson-prime::auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Jalen Brunson Prime",
+      "cardType": "Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 4999.99,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::paolo-banchero::patch-auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Paolo Banchero",
+      "cardType": "Patch Auto /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 4578,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::og-anunoby-jsy::printing-plate": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Og Anunoby Jsy",
+      "cardType": "Printing Plate 1/1",
+      "printRun": 1,
+      "sport": "basketball",
+      "ebayMedian": 4500,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::tyrese-maxey-clutch::printing-plate": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Tyrese Maxey Clutch",
+      "cardType": "Printing Plate 1/1",
+      "printRun": 1,
+      "sport": "basketball",
+      "ebayMedian": 4427,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::tyrese-haliburton-horizontal::patch-auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Tyrese Haliburton Horizontal",
+      "cardType": "Patch Auto /75",
+      "printRun": 75,
+      "sport": "basketball",
+      "ebayMedian": 4060.1,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::jalen-brunson-horizontal::patch-auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Jalen Brunson Horizontal",
+      "cardType": "Patch Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 4000,
+      "source": "set-history-import"
+    },
+    "2025-panini-national-treasures-basketball::deni-avdija-rpa::patch-auto": {
+      "setKey": "2025-panini-national-treasures-basketball",
+      "setName": "2025 National Treasures Basketball",
+      "player": "Deni Avdija Rpa",
+      "cardType": "Patch Auto /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 3300,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::royalty-caitlin-clark::auto": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Royalty Caitlin Clark",
+      "cardType": "Auto /49",
+      "printRun": 49,
+      "sport": "basketball",
+      "ebayMedian": 11101,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::royalty-wnba-caitlin::auto": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Royalty Wnba Caitlin",
+      "cardType": "Auto /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 9889,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::collection-premium-tim::patch-auto": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Collection Premium Tim",
+      "cardType": "Patch Auto /5",
+      "printRun": 5,
+      "sport": "basketball",
+      "ebayMedian": 8000,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::caitlin-clark::patch-auto": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Caitlin Clark",
+      "cardType": "Patch Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 6188,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::collection-au-premium::auto": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Collection Au Premium",
+      "cardType": "Auto /24",
+      "printRun": 24,
+      "sport": "basketball",
+      "ebayMedian": 4549,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::caitlin-clark-rpa::auto-rc": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Caitlin Clark Rpa",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 4499,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::shai-gilgeous-alexander::patch-auto": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Shai Gilgeous Alexander",
+      "cardType": "Patch Auto /24",
+      "printRun": 24,
+      "sport": "basketball",
+      "ebayMedian": 4251,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::stephen-curry::patch-auto": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Stephen Curry",
+      "cardType": "Patch Auto /30",
+      "printRun": 30,
+      "sport": "basketball",
+      "ebayMedian": 3399,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::royalty-wnba-angel::patch-auto": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Royalty Wnba Angel",
+      "cardType": "Patch Auto /49",
+      "printRun": 49,
+      "sport": "basketball",
+      "ebayMedian": 2500,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::shai-gilgeous-alexander::auto": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Shai Gilgeous Alexander",
+      "cardType": "Auto /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 2499.99,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::sneaker-paolo-banchero::printing-plate": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Sneaker Paolo Banchero",
+      "cardType": "Printing Plate 1/1",
+      "printRun": 1,
+      "sport": "basketball",
+      "ebayMedian": 2225,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::collection-damian-lillard::patch-auto": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Collection Damian Lillard",
+      "cardType": "Patch Auto /99",
+      "printRun": 99,
+      "sport": "basketball",
+      "ebayMedian": 1999.99,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::kevin-porter-jr::patch-auto": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Kevin Porter Jr",
+      "cardType": "Patch Auto /4",
+      "printRun": 4,
+      "sport": "basketball",
+      "ebayMedian": 1988.88,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::collection-anthony-edwards::patch-auto": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Collection Anthony Edwards",
+      "cardType": "Patch Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 1965,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::larry-bird-low::printing-plate": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Larry Bird Low",
+      "cardType": "Printing Plate 1/1",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 1888,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::coll-retro-prem::printing-plate": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Coll Retro Prem",
+      "cardType": "Printing Plate 1/1",
+      "printRun": 1,
+      "sport": "basketball",
+      "ebayMedian": 1749.99,
+      "source": "set-history-import"
+    },
+    "2024-panini-immaculate-basketball::collection-jersey-number::patch-auto": {
+      "setKey": "2024-panini-immaculate-basketball",
+      "setName": "2024 Panini Immaculate Basketball",
+      "player": "Collection Jersey Number",
+      "cardType": "Patch Auto /77",
+      "printRun": 77,
+      "sport": "basketball",
+      "ebayMedian": 1536,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::autos-ink-shohei::numbered-auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Autos Ink Shohei",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 6899,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::bo-jackson-deion::auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Bo Jackson Deion",
+      "cardType": "Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 2250,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::wow-james-wood::printing-plate": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Wow James Wood",
+      "cardType": "Printing Plate 1/1",
+      "printRun": 1,
+      "sport": "baseball",
+      "ebayMedian": 2000,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::sandy-koufax-ink::numbered-auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Sandy Koufax Ink",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 1550,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::prodigious-ken-griffey::auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Prodigious Ken Griffey",
+      "cardType": "Auto /10",
+      "printRun": 10,
+      "sport": "baseball",
+      "ebayMedian": 698,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::colson-montgomery-class::numbered-auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Colson Montgomery Class",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "baseball",
+      "ebayMedian": 649.99,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::will-smith::printing-plate": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Will Smith",
+      "cardType": "Printing Plate 1/1",
+      "printRun": 1,
+      "sport": "baseball",
+      "ebayMedian": 625,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::ken-griffey-jr::patch-auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Ken Griffey Jr",
+      "cardType": "Patch Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 505.88,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::bobby-witt-jr::numbered-auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Bobby Witt Jr",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 499,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::jj-wetherholt-on::auto-rc": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Jj Wetherholt On",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 499,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::eddie-murray-cal::auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Eddie Murray Cal",
+      "cardType": "Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 499,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::shots-paul-skenes::numbered-auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Shots Paul Skenes",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 422.47,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::pete-crow-armstrong::numbered-auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Pete Crow Armstrong",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "baseball",
+      "ebayMedian": 405,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::bobby-witt-jr::auto-rc": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Bobby Witt Jr.",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 400,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::bryce-harper::numbered-auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Bryce Harper",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 300,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::steve-garvey-prodigious::patch-auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Steve Garvey Prodigious",
+      "cardType": "Patch Auto /10",
+      "printRun": 10,
+      "sport": "baseball",
+      "ebayMedian": 299,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::autographs-bo-jackson::numbered-auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Autographs Bo Jackson",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 250,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::miguel-cabrera-au::patch-auto": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Miguel Cabrera Au",
+      "cardType": "Patch Auto /10",
+      "printRun": 10,
+      "sport": "baseball",
+      "ebayMedian": 250,
+      "source": "set-history-import"
+    },
+    "2025-topps-tier-one-baseball::ben-rice-on::auto-rc": {
+      "setKey": "2025-topps-tier-one-baseball",
+      "setName": "2025 Topps Tier One Baseball",
+      "player": "Ben Rice On",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 237.5,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-basketball-ucc::lebron-james-true::numbered-auto": {
+      "setKey": "2025-topps-chrome-basketball-ucc",
+      "setName": "2025 Topps Chrome Basketball UCC",
+      "player": "Lebron James True",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 22100,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-basketball-ucc::lamine-yamal-inception::patch-auto": {
+      "setKey": "2025-topps-chrome-basketball-ucc",
+      "setName": "2025 Topps Chrome Basketball UCC",
+      "player": "Lamine Yamal Inception",
+      "cardType": "Patch Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 17100,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-basketball-ucc::lamine-yamal-ucc::numbered-auto": {
+      "setKey": "2025-topps-chrome-basketball-ucc",
+      "setName": "2025 Topps Chrome Basketball UCC",
+      "player": "Lamine Yamal Ucc",
+      "cardType": "Numbered Auto /5",
+      "printRun": 5,
+      "sport": "basketball",
+      "ebayMedian": 15100,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-basketball-ucc::jalen-brunson::numbered-auto": {
+      "setKey": "2025-topps-chrome-basketball-ucc",
+      "setName": "2025 Topps Chrome Basketball UCC",
+      "player": "Jalen Brunson",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "basketball",
+      "ebayMedian": 15000,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-basketball-ucc::merlin-ucc-cristiano::numbered-auto": {
+      "setKey": "2025-topps-chrome-basketball-ucc",
+      "setName": "2025 Topps Chrome Basketball UCC",
+      "player": "Merlin Ucc Cristiano",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 10500,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-basketball-ucc::victor-wembanyama::auto-rc": {
+      "setKey": "2025-topps-chrome-basketball-ucc",
+      "setName": "2025 Topps Chrome Basketball UCC",
+      "player": "Victor Wembanyama",
+      "cardType": "Auto RC /50",
+      "printRun": 50,
+      "sport": "basketball",
+      "ebayMedian": 6700,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-basketball-ucc::reverence-ucc-erling::patch-auto": {
+      "setKey": "2025-topps-chrome-basketball-ucc",
+      "setName": "2025 Topps Chrome Basketball UCC",
+      "player": "Reverence Ucc Erling",
+      "cardType": "Patch Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 5250,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-basketball-ucc::og-anunoby::superfractor": {
+      "setKey": "2025-topps-chrome-basketball-ucc",
+      "setName": "2025 Topps Chrome Basketball UCC",
+      "player": "Og Anunoby",
+      "cardType": "Superfractor 1/1",
+      "printRun": 1,
+      "sport": "basketball",
+      "ebayMedian": 5000,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-basketball-ucc::stephen-curry::numbered-auto": {
+      "setKey": "2025-topps-chrome-basketball-ucc",
+      "setName": "2025 Topps Chrome Basketball UCC",
+      "player": "Stephen Curry",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 4833,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-basketball-ucc::kon-knueppel-rookies::auto-rc": {
+      "setKey": "2025-topps-chrome-basketball-ucc",
+      "setName": "2025 Topps Chrome Basketball UCC",
+      "player": "Kon Knueppel Rookies",
+      "cardType": "Auto RC /50",
+      "printRun": 50,
+      "sport": "basketball",
+      "ebayMedian": 4549,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-basketball-ucc::jalen-brunson-geometric::auto-rc": {
+      "setKey": "2025-topps-chrome-basketball-ucc",
+      "setName": "2025 Topps Chrome Basketball UCC",
+      "player": "Jalen Brunson Geometric",
+      "cardType": "Auto RC /50",
+      "printRun": 50,
+      "sport": "basketball",
+      "ebayMedian": 4200,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-basketball-ucc::ucc-future-stars::numbered-auto": {
+      "setKey": "2025-topps-chrome-basketball-ucc",
+      "setName": "2025 Topps Chrome Basketball UCC",
+      "player": "Ucc Future Stars",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "basketball",
+      "ebayMedian": 3050,
+      "source": "set-history-import"
+    },
+    "2025-topps-chrome-basketball-ucc::ucc-moore-gray::numbered-auto": {
+      "setKey": "2025-topps-chrome-basketball-ucc",
+      "setName": "2025 Topps Chrome Basketball UCC",
+      "player": "Ucc Moore Gray",
+      "cardType": "Numbered Auto /5",
+      "printRun": 5,
+      "sport": "basketball",
+      "ebayMedian": 1500,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::autos-ink-shohei::numbered-auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Autos Ink Shohei",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 6899,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::bo-jackson-deion::auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Bo Jackson Deion",
+      "cardType": "Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 2250,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::wow-james-wood::printing-plate": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Wow James Wood",
+      "cardType": "Printing Plate 1/1",
+      "printRun": 1,
+      "sport": "baseball",
+      "ebayMedian": 2000,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::sandy-koufax-ink::numbered-auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Sandy Koufax Ink",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 1550,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::prodigious-ken-griffey::auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Prodigious Ken Griffey",
+      "cardType": "Auto /10",
+      "printRun": 10,
+      "sport": "baseball",
+      "ebayMedian": 698,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::colson-montgomery-class::numbered-auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Colson Montgomery Class",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "baseball",
+      "ebayMedian": 649.99,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::will-smith::printing-plate": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Will Smith",
+      "cardType": "Printing Plate 1/1",
+      "printRun": 1,
+      "sport": "baseball",
+      "ebayMedian": 625,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::ken-griffey-jr::patch-auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Ken Griffey Jr",
+      "cardType": "Patch Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 505.88,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::bobby-witt-jr::numbered-auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Bobby Witt Jr",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 499,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::jj-wetherholt-on::auto-rc": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Jj Wetherholt On",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 499,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::eddie-murray-cal::auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Eddie Murray Cal",
+      "cardType": "Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 499,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::shots-paul-skenes::numbered-auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Shots Paul Skenes",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 422.47,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::pete-crow-armstrong::numbered-auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Pete Crow Armstrong",
+      "cardType": "Numbered Auto /10",
+      "printRun": 10,
+      "sport": "baseball",
+      "ebayMedian": 405,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::bobby-witt-jr::auto-rc": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Bobby Witt Jr.",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 400,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::bryce-harper::numbered-auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Bryce Harper",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 300,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::steve-garvey-prodigious::patch-auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Steve Garvey Prodigious",
+      "cardType": "Patch Auto /10",
+      "printRun": 10,
+      "sport": "baseball",
+      "ebayMedian": 299,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::autographs-bo-jackson::numbered-auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Autographs Bo Jackson",
+      "cardType": "Numbered Auto /25",
+      "printRun": 25,
+      "sport": "baseball",
+      "ebayMedian": 250,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::miguel-cabrera-au::patch-auto": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Miguel Cabrera Au",
+      "cardType": "Patch Auto /10",
+      "printRun": 10,
+      "sport": "baseball",
+      "ebayMedian": 250,
+      "source": "set-history-import"
+    },
+    "2026-topps-tier-one-baseball::ben-rice-on::auto-rc": {
+      "setKey": "2026-topps-tier-one-baseball",
+      "setName": "2026 Topps Tier One Baseball",
+      "player": "Ben Rice On",
+      "cardType": "Auto RC /99",
+      "printRun": 99,
+      "sport": "baseball",
+      "ebayMedian": 237.5,
+      "source": "set-history-import"
     }
   }
 }

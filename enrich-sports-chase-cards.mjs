@@ -2,25 +2,31 @@
 /**
  * PLAYERCHASEMATCH ENRICHMENT
  * For each chase card in card-pricing-sports.json:
- *   1. eBay sold median (30d, proxy rotation)
- *   2. PriceCharting market price (Playwright scrape)
- * Writes enriched prices back to card-pricing-sports.json
- * Then re-matches all cards to player-history-sports.json
+ *   1. sportscardspro.com search (PriceCharting sports sub-domain) — ungraded market price
+ *   2. eBay sold search via sportscardspro sale history page
+ * Uses node-fetch + proxy rotation. No Playwright/CDP required.
  *
  * Usage:
- *   node enrich-sports-chase-cards.mjs            — all cards
- *   node enrich-sports-chase-cards.mjs --force    — re-scrape even if priced within 7d
+ *   node enrich-sports-chase-cards.mjs            — all stale cards
+ *   node enrich-sports-chase-cards.mjs --force    — re-scrape all
+ *   node enrich-sports-chase-cards.mjs --test     — first 5 cards only
  */
 
 import { readFileSync, writeFileSync, existsSync, appendFileSync } from 'fs';
-import { chromium } from 'playwright';
+import { createRequire } from 'module';
 
-const CARD_PRICING_PATH = 'card-pricing-sports.json';
-const PLAYERS_DB_PATH   = 'player-history-sports.json';
-const SPORTS_DB_PATH    = 'set-history-sports.json';
-const LOG_PATH          = 'enrich-sports-chase-cards.log';
-const FORCE             = process.argv.includes('--force');
-const STALE_DAYS        = 7;
+import { execFile } from 'child_process';
+import { promisify } from 'util';
+const execFileAsync = promisify(execFile);
+
+const CARD_DB_PATH    = 'card-pricing-sports.json';
+const PLAYERS_DB_PATH = 'player-history-sports.json';
+const SPORTS_DB_PATH  = 'set-history-sports.json';
+const LOG_PATH        = 'enrich-sports-chase-cards.log';
+const FORCE           = process.argv.includes('--force');
+const TEST            = process.argv.includes('--test');
+const STALE_DAYS      = 7;
+const SCP_BASE        = 'https://www.sportscardspro.com';
 
 const log = m => { console.log(m); appendFileSync(LOG_PATH, m + '\n'); };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -30,26 +36,162 @@ function loadProxies() {
   const f = existsSync('proxies-mobilemix.txt') ? 'proxies-mobilemix.txt'
     : existsSync('ISP.txt') ? 'ISP.txt' : null;
   if (!f) return [];
-  const all = readFileSync(f, 'utf8').trim().split('\n').filter(Boolean);
-  const evomi = all.filter(l => l.startsWith('mp.evomi.com'));
-  return evomi.length >= 5 ? evomi : all;
+  return readFileSync(f, 'utf8').trim().split('\n').filter(Boolean);
 }
 function randomProxy(proxies) {
   if (!proxies.length) return null;
-  const line = proxies[Math.floor(Math.random() * proxies.length)];
-  const [host, port, user, pass] = line.split(':');
-  return { server: `http://${host}:${port}`, username: user, password: pass };
+  return proxies[Math.floor(Math.random() * proxies.length)];
 }
 
-// ── Player matching (from rematch-sports-players.mjs) ──────────────────────
+// ── HTTP via curl (bypasses CF TLS fingerprint check) ─────────────────────
+async function httpGet(url, proxies, retries = 4) {
+  const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0';
+
+  async function curlFetch(proxyLine) {
+    const args = [
+      '-sL', url,
+      '-A', UA,
+      '-H', 'Accept: text/html,application/xhtml+xml,*/*;q=0.9',
+      '-H', 'Accept-Language: en-US,en;q=0.9',
+      '--max-time', '20',
+      '--connect-timeout', '10',
+      '--compressed',
+    ];
+    if (proxyLine) {
+      const [host, port, user, pass] = proxyLine.split(':');
+      args.push('--proxy', `http://${host}:${port}`, '--proxy-user', `${user}:${pass}`);
+    }
+    const { stdout } = await execFileAsync('curl', args, { maxBuffer: 10 * 1024 * 1024, timeout: 25000 });
+    return stdout;
+  }
+
+  // Direct first
+  try {
+    const text = await curlFetch(null);
+    if (text && !text.includes('Just a moment') && !text.includes('cf-challenge') && text.length > 500) return text;
+    if (text.includes('Just a moment')) log(`    [CF] direct blocked — trying proxies`);
+  } catch (e) {
+    log(`    [err] direct curl: ${e.message?.slice(0, 80)}`);
+  }
+
+  // Proxy fallback
+  for (let i = 0; i < retries; i++) {
+    const proxy = randomProxy(proxies);
+    try {
+      const text = await curlFetch(proxy);
+      if (!text || text.includes('Just a moment') || text.length < 500) {
+        await sleep(1500 * (i + 1));
+        continue;
+      }
+      return text;
+    } catch (e) {
+      log(`    [err] proxy attempt ${i + 1}: ${e.message?.slice(0, 60)}`);
+      await sleep(1200);
+    }
+  }
+  return null;
+}
+
+// ── SportsCardsPro search → card match ────────────────────────────────────
+function buildQuery(card) {
+  // Clean the player name — strip noise tokens that got prepended/appended
+  const playerClean = cleanName(card.player);
+  // Extract year from setName
+  const yearM = (card.setName ?? '').match(/\b(20\d\d)\b/);
+  const year = yearM ? yearM[1] : '';
+  // Brand: first 2 non-year words from setName
+  const brandWords = (card.setName ?? '').replace(/\b20\d\d\b/, '').trim().split(/\s+/).slice(0, 3).join(' ');
+  // Card type simplified
+  const typeShort = (card.cardType ?? '').replace(/\bnumbered\b/gi, '').replace(/\/\d+/g, '').trim().split(/\s+/).slice(0, 2).join(' ');
+
+  return `${playerClean} ${year} ${brandWords} ${typeShort}`.replace(/\s+/g, ' ').trim();
+}
+
+function parseSearchResults(html, playerName, setName) {
+  const rows = [];
+  const rowRe = /<tr\s[^>]*id="product-(\d+)"[\s\S]*?<\/tr>/g;
+  let m;
+  while ((m = rowRe.exec(html)) !== null) {
+    const row = m[0];
+    const idStr = m[1];
+
+    const titleM = row.match(/<td class="title">\s*<a[^>]+href="([^"]+)"[^>]*>\s*([^<]+)/);
+    if (!titleM) continue;
+    const href = titleM[1].startsWith('http') ? titleM[1] : SCP_BASE + titleM[1];
+    const title = titleM[2].trim();
+
+    const printRunM = row.match(/list-print-run[^>]*>([^<]+)</);
+    const printRun = printRunM ? printRunM[1].trim() : null;
+
+    const priceM = row.match(/class="price numeric used_price">\s*<span[^>]*>([\$0-9,. ]+)</);
+    const price = priceM ? parseFloat(priceM[1].replace(/[^0-9.]/g, '')) : null;
+
+    const consoleM = row.match(/class="console[^"]*">[\s\S]*?<a[^>]+>([^<]+)<\/a>/);
+    const setName = consoleM ? consoleM[1].trim() : null;
+
+    rows.push({ id: idStr, href, title, printRun, price, setName });
+  }
+
+  if (!rows.length) return null;
+
+  // Score rows: player name match + set name match + has price
+  const normP = cleanName(playerName).replace(/[^a-z\s]/g, '');
+  function score(r, setName) {
+    let s = 0;
+    const t = r.title.toLowerCase();
+    const rs = (r.setName ?? '').toLowerCase();
+    const sn = (setName ?? '').toLowerCase();
+
+    // Player name match (most important)
+    const nameParts = normP.split(' ').filter(p => p.length > 2);
+    for (const part of nameParts) if (t.includes(part)) s += 20;
+
+    // Set name overlap
+    const setWords = sn.replace(/\b(baseball|basketball|football|hockey)\b/gi, '').split(/\s+/).filter(w => w.length > 2);
+    for (const w of setWords) if (rs.includes(w)) s += 5;
+
+    // Year match
+    const yearM = sn.match(/\b(20\d\d)\b/);
+    if (yearM && rs.includes(yearM[1])) s += 10;
+
+    if (r.price && r.price > 0) s += 2;
+    return s;
+  }
+  rows.sort((a, b) => score(b, setName) - score(a, setName));
+  // Require at least player first+last name in title
+  const nameParts = normP.split(' ').filter(p => p.length > 2);
+  const best = rows.find(r => nameParts.every(p => r.title.toLowerCase().includes(p))) ?? rows[0];
+  return best;
+}
+
+async function scpSearch(card, proxies) {
+  const q = buildQuery(card);
+  const url = `${SCP_BASE}/search-products?type=prices&q=${encodeURIComponent(q)}`;
+  const html = await httpGet(url, proxies);
+  if (!html) return null;
+
+  const best = parseSearchResults(html, card.player, card.setName);
+  if (!best || !best.price) return null;
+
+  return { pcMarket: best.price, pcUrl: best.href, pcTitle: best.title, pcPrintRun: best.printRun, pcId: best.id };
+}
+
+// ── isStale check ──────────────────────────────────────────────────────────
+function isStale(card) {
+  if (FORCE) return true;
+  if (!card.enrichedAt) return true;
+  const age = (Date.now() - new Date(card.enrichedAt).getTime()) / (1000 * 60 * 60 * 24);
+  return age > STALE_DAYS;
+}
+
+// ── Player matching ────────────────────────────────────────────────────────
 const SUFFIX_NOISE = new Set([
   'signatures','contenders','prizmatrix','spectra','inception','sensational','geometric',
-  'throwback','rookies','wnba','picks','rpa','true','ucc','reverence','redeemed',
-  'stars','future','auto','autograph','patch','refractor','parallel','variation','ssp',
-  'base','insert','numbered','printing','plate','chrome','hobby','retail','draft','bowman',
+  'throwback','rookies','picks','rpa','true','ucc','reverence','redeemed','stars','future',
+  'auto','autograph','patch','refractor','parallel','variation','ssp','base','insert',
+  'numbered','printing','plate','chrome','hobby','retail','draft','bowman',
   'panini','topps','prizm','immaculate','treasures','national',
 ]);
-
 function normName(n) {
   return String(n ?? '').toLowerCase().replace(/[^a-z\s]/g, '').replace(/\s+/g, ' ').trim();
 }
@@ -80,218 +222,89 @@ function matchPlayer(playerName, players) {
   return null;
 }
 
-// ── PriceCharting slug builder ────────────────────────────────────────────
-// Sports card URL: /game/<sport>-cards/<year>-<brand>-<player-slug>
-// e.g. /game/baseball-cards/2026-topps-chrome-shohei-ohtani
-function buildPcSlug(card) {
-  const sport = card.sport ?? (card.setKey?.includes('baseball') ? 'baseball'
-    : card.setKey?.includes('basketball') ? 'basketball'
-    : card.setKey?.includes('football') ? 'football' : 'baseball');
-  const category = `${sport}-cards`;
-
-  // Build card-level slug from player + set + cardType
-  const playerSlug = normName(card.player).replace(/\s+/g, '-');
-  // Extract year + brand from setName
-  const yearM = (card.setName ?? '').match(/\b(20\d\d)\b/);
-  const year = yearM ? yearM[1] : '';
-  const brandSlug = normName(card.setName ?? '').replace(/\s+/g, '-').slice(0, 40);
-  // Try: /game/baseball-cards/2026-topps-chrome-baseball-shohei-ohtani
-  return `https://www.pricecharting.com/game/${category}/${brandSlug}-${playerSlug}`;
-}
-
-// ── PriceCharting scrape (single card) ────────────────────────────────────
-async function pcCardPrice(card, browser, proxies) {
-  const url = buildPcSlug(card);
-  const proxy = randomProxy(proxies);
-  let ctx;
-  try {
-    ctx = await browser.newContext({
-      proxy: proxy ? proxy : undefined,
-      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-    });
-    const page = await ctx.newPage();
-    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 });
-    const content = await page.content();
-    await ctx.close();
-
-    // Extract chart_data (current market price)
-    const chartM = content.match(/chart_data\s*=\s*(\{[\s\S]+?\});\s*\n/);
-    if (chartM) {
-      const data = JSON.parse(chartM[1]);
-      // chart_data.used = graded, chart_data.ungraded = raw market
-      const series = data.ungraded ?? data.used ?? null;
-      if (series?.data?.length) {
-        const latest = series.data[series.data.length - 1];
-        const price = latest[1] / 100; // cents to dollars
-        return { pcMarket: price, pcUrl: url };
-      }
-    }
-
-    // Alternative: look for price in JSON-LD or span
-    const priceM = content.match(/"price"\s*:\s*"?([\d.]+)"?/);
-    if (priceM) return { pcMarket: parseFloat(priceM[1]), pcUrl: url };
-
-    return null;
-  } catch (e) {
-    if (ctx) await ctx.close().catch(() => {});
-    return null;
-  }
-}
-
-// ── eBay sold median ──────────────────────────────────────────────────────
-async function eBaySoldMedian(card, browser, proxies) {
-  const query = `${card.player} ${card.cardType ?? ''} ${card.setName ?? ''} ${card.printRun ? '/' + card.printRun : ''}`.trim().replace(/\s+/g, ' ');
-  const proxy = randomProxy(proxies);
-  let ctx;
-  try {
-    ctx = await browser.newContext({
-      proxy: proxy ? proxy : undefined,
-      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-    });
-    const page = await ctx.newPage();
-    const url = `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(query)}&LH_Complete=1&LH_Sold=1&_sop=13&_ipg=60`;
-    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 25000 });
-    await page.waitForSelector('.s-item, .s-card', { timeout: 8000 }).catch(() => {});
-    await sleep(1000);
-
-    const prices = await page.evaluate(() => {
-      const items = [...document.querySelectorAll('.s-item, li.s-card')];
-      const results = [];
-      for (const item of items) {
-        const titleEl = item.querySelector('[class*="title"], h3, .s-item__title') ?? item.querySelector('a');
-        const title = titleEl?.textContent?.trim() ?? '';
-        if (!title || title === 'Shop on eBay') continue;
-        const priceEl = item.querySelector('[class*="s-item__price"], [class*="price"]');
-        const raw = priceEl?.textContent?.replace(/[^0-9.]/g, '') ?? '';
-        const price = parseFloat(raw);
-        if (price > 0) results.push(price);
-      }
-      return results;
-    });
-    await ctx.close();
-
-    if (!prices.length) return null;
-    prices.sort((a, b) => a - b);
-    const med = prices[Math.floor(prices.length / 2)];
-    return { ebayMedian: med, ebayCount: prices.length, ebayQuery: query };
-  } catch (e) {
-    if (ctx) await ctx.close().catch(() => {});
-    return null;
-  }
-}
-
-// ── isStale check ──────────────────────────────────────────────────────────
-function isStale(card) {
-  if (FORCE) return true;
-  const ts = card.enrichedAt;
-  if (!ts) return true;
-  const age = (Date.now() - new Date(ts).getTime()) / (1000 * 60 * 60 * 24);
-  return age > STALE_DAYS;
-}
-
 // ── Main ──────────────────────────────────────────────────────────────────
 async function main() {
-  log(`\n[enrich-sports-chase-cards] ${new Date().toISOString()}`);
+  log(`\n[enrich-sports-chase-cards] ${new Date().toISOString()}${TEST ? ' [TEST MODE]' : ''}`);
 
   const proxies = loadProxies();
   log(`  proxies: ${proxies.length}`);
 
-  // Load DBs
-  const cardDb    = JSON.parse(readFileSync(CARD_PRICING_PATH, 'utf8'));
+  const cardDb    = JSON.parse(readFileSync(CARD_DB_PATH, 'utf8'));
   const playersDb = JSON.parse(readFileSync(PLAYERS_DB_PATH, 'utf8'));
-  const sportsDb  = JSON.parse(readFileSync(SPORTS_DB_PATH, 'utf8'));
-  const cards     = cardDb.cards ?? {};
-  const players   = playersDb.players ?? {};
-  const sportsSets = sportsDb.sets ?? {};
+  const sportsDb  = existsSync(SPORTS_DB_PATH) ? JSON.parse(readFileSync(SPORTS_DB_PATH, 'utf8')) : { sets: {} };
 
-  // Build index of all chase cards from set-history-sports too (may have more than card-pricing)
-  const allCards = { ...cards };
-  for (const [setKey, setRec] of Object.entries(sportsSets)) {
+  const cards   = cardDb.cards ?? {};
+  const players = playersDb.players ?? {};
+
+  // Merge cards from set-history-sports chaseCards
+  for (const [setKey, setRec] of Object.entries(sportsDb.sets ?? {})) {
     for (const cc of setRec.cards?.chaseCards ?? []) {
-      const key = `${setKey}__${normName(cc.player ?? '').replace(/\s+/g,'-')}__${normName(cc.cardType ?? '').replace(/\s+/g,'-')}`;
-      if (!allCards[key]) {
-        allCards[key] = {
+      const key = `${setKey}::${normName(cc.player ?? '').replace(/\s+/g, '-')}::${normName(cc.cardType ?? '').replace(/\s+/g, '-')}`;
+      if (!cards[key]) {
+        cards[key] = {
           setKey, setName: setRec.name ?? setKey,
           player: cc.player, cardType: cc.cardType,
           printRun: cc.printRun ?? null,
           sport: setKey.includes('baseball') ? 'baseball' : setKey.includes('basketball') ? 'basketball' : 'football',
-          ebayMedian: cc.price ?? null,
-          fetchedAt: cc.fetchedAt ?? null,
-          source: 'ebay-sold-comps',
+          ebayMedian: cc.price ?? null, source: 'set-history-import',
         };
       }
     }
   }
 
-  const toEnrich = Object.entries(allCards).filter(([, c]) => isStale(c));
-  log(`  total cards: ${Object.keys(allCards).length}  to enrich: ${toEnrich.length}`);
+  let toEnrich = Object.entries(cards).filter(([, c]) => isStale(c));
+  if (TEST) toEnrich = toEnrich.slice(0, 5);
 
-  // CDP real browser preferred (user's Chrome on --remote-debugging-port=9222)
-  // Fallback: headed Playwright + proxy (may be blocked by eBay bot detection)
-  let browser, usingCdp = false;
-  try {
-    browser = await chromium.connectOverCDP('http://localhost:9222');
-    usingCdp = true;
-    log('  [CDP] connected to real Chrome');
-  } catch {
-    log('  [CDP] not available — using headed Playwright (may be blocked by eBay)');
-    browser = await chromium.launch({ headless: false });
-  }
+  log(`  total cards: ${Object.keys(cards).length}  to enrich: ${toEnrich.length}`);
 
-  let done = 0, pcHits = 0, ebayHits = 0;
+  let done = 0, pcHits = 0, noData = 0;
 
   for (const [key, card] of toEnrich) {
     log(`  [${done + 1}/${toEnrich.length}] ${card.player} — ${card.cardType} (${card.setName})`);
 
-    // eBay sold
-    const ebay = await eBaySoldMedian(card, browser, proxies);
-    if (ebay) {
-      card.ebayMedian = ebay.ebayMedian;
-      card.ebayCount  = ebay.ebayCount;
-      card.ebayQuery  = ebay.ebayQuery;
-      ebayHits++;
-      log(`    eBay: $${ebay.ebayMedian} (${ebay.ebayCount} sold)`);
-    }
-    await sleep(2000 + Math.random() * 2000);
-
-    // PriceCharting — skip if Cloudflare blocking (headless fails); log attempt
-    const pc = await pcCardPrice(card, browser, proxies);
+    const pc = await scpSearch(card, proxies);
     if (pc) {
-      card.pcMarket = pc.pcMarket;
-      card.pcUrl    = pc.pcUrl;
+      card.pcMarket  = pc.pcMarket;
+      card.pcUrl     = pc.pcUrl;
+      card.pcTitle   = pc.pcTitle;
+      card.pcId      = pc.pcId;
       pcHits++;
-      log(`    PC: $${pc.pcMarket}`);
+      log(`    SCP: $${pc.pcMarket} "${pc.pcTitle}"`);
     } else {
-      log(`    PC: no data`);
+      noData++;
+      log(`    SCP: no data`);
     }
-    await sleep(1500 + Math.random() * 1500);
 
     card.enrichedAt = new Date().toISOString();
-    allCards[key] = card;
+    cards[key] = card;
     done++;
 
-    // Save every 10 cards
-    if (done % 10 === 0) {
-      cardDb.cards = allCards;
-      cardDb._meta = { ...cardDb._meta, updated: new Date().toISOString().slice(0, 10), count: Object.keys(allCards).length };
-      writeFileSync(CARD_PRICING_PATH, JSON.stringify(cardDb, null, 2));
+    await sleep(800 + Math.random() * 700);
+
+    if (done % 20 === 0) {
+      cardDb.cards = cards;
+      cardDb._meta = { ...cardDb._meta, updated: new Date().toISOString().slice(0, 10), count: Object.keys(cards).length };
+      writeFileSync(CARD_DB_PATH, JSON.stringify(cardDb, null, 2));
       log(`  [saved] ${done} done`);
     }
   }
 
-  if (!usingCdp) await browser.close();
-
-  // Final save of card DB
-  cardDb.cards = allCards;
-  cardDb._meta = { description: 'Individual sports card pricing DB', source: 'ebay-sold-comps + pricecharting', updated: new Date().toISOString().slice(0, 10), count: Object.keys(allCards).length };
-  writeFileSync(CARD_PRICING_PATH, JSON.stringify(cardDb, null, 2));
-  log(`\n  cards saved: ${Object.keys(allCards).length}  eBay hits: ${ebayHits}  PC hits: ${pcHits}`);
+  // Final card DB save
+  cardDb.cards = cards;
+  cardDb._meta = {
+    description: 'Individual sports card pricing DB',
+    source: 'sportscardspro.com (PriceCharting)',
+    updated: new Date().toISOString().slice(0, 10),
+    count: Object.keys(cards).length,
+  };
+  writeFileSync(CARD_DB_PATH, JSON.stringify(cardDb, null, 2));
+  log(`\n  cards saved: ${Object.keys(cards).length}  SCP hits: ${pcHits}  no data: ${noData}`);
 
   // ── Player matching ──────────────────────────────────────────────────────
   log('\n── Player matching ──');
   let matched = 0, totalAttempted = 0;
 
-  for (const [key, card] of Object.entries(allCards)) {
+  for (const [, card] of Object.entries(cards)) {
     if (!card.player) continue;
     totalAttempted++;
     const slug = matchPlayer(card.player, players);
@@ -306,15 +319,17 @@ async function main() {
     );
 
     const cardEntry = {
-      setKey:      card.setKey,
-      setName:     card.setName,
-      cardType:    card.cardType,
-      printRun:    card.printRun ?? null,
-      ebayMedian:  card.ebayMedian ?? null,
-      pcMarket:    card.pcMarket ?? null,
-      star:        (card.ebayMedian ?? card.pcMarket ?? 0) > 200,
-      enrichedAt:  card.enrichedAt,
-      source:      'enrich-sports-chase-cards',
+      setKey:     card.setKey,
+      setName:    card.setName,
+      cardType:   card.cardType,
+      printRun:   card.printRun ?? null,
+      ebayMedian: card.ebayMedian ?? null,
+      pcMarket:   card.pcMarket ?? null,
+      pcUrl:      card.pcUrl ?? null,
+      pcTitle:    card.pcTitle ?? null,
+      star:       (card.pcMarket ?? card.ebayMedian ?? 0) > 200,
+      enrichedAt: card.enrichedAt,
+      source:     'enrich-sports-chase-cards',
     };
 
     if (existing) {
