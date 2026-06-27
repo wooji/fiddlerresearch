@@ -23,12 +23,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:39.792Z",
+      "enrichedAt": "2026-06-27T01:27:25.475Z",
       "pcMarket": 1.89,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/yordan-alvarez-91c-50",
       "pcTitle": "Yordan Alvarez #91C-50",
       "pcId": "11899778",
-      "sport": "baseball"
+      "sport": "baseball",
+      "pcUngraded": 1.89,
+      "pcGrade9": null,
+      "pcPsa10": 6.8,
+      "pcGradedAvg": 13.14
     },
     "2026-topps-chrome-baseball::autos-ken-griffey::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -47,12 +51,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:39.568Z",
+      "enrichedAt": "2026-06-27T01:27:25.955Z",
       "pcMarket": 4,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-series-2-1991-chrome-all-star-autograph/ken-griffey-jr-91asc-45",
       "pcTitle": "Ken Griffey Jr. #91ASC-45",
       "pcId": "13321702",
-      "sport": "baseball"
+      "sport": "baseball",
+      "pcUngraded": 4,
+      "pcGrade9": null,
+      "pcPsa10": 9.07,
+      "pcGradedAvg": 17.18
     },
     "2026-topps-chrome-baseball::aiva-arquette-ssp::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -71,12 +79,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:39.843Z",
+      "enrichedAt": "2026-06-27T01:27:25.000Z",
       "pcMarket": 1.97,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-chrome-prospect/aiva-arquette-bcp-40",
       "pcTitle": "Aiva Arquette #BCP-40",
       "pcId": "12933417",
-      "sport": "baseball"
+      "sport": "baseball",
+      "pcUngraded": 1.97,
+      "pcGrade9": null,
+      "pcPsa10": 6.8,
+      "pcGradedAvg": 13.16
     },
     "2026-topps-chrome-baseball::james-wood::auto-rc-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -95,12 +107,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:39.775Z",
+      "enrichedAt": "2026-06-27T01:27:25.046Z",
       "pcMarket": 1.99,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/james-wood-91c-78",
       "pcTitle": "James Wood #91C-78",
       "pcId": "11899831",
-      "sport": "baseball"
+      "sport": "baseball",
+      "pcUngraded": 1.99,
+      "pcGrade9": null,
+      "pcPsa10": 6.56,
+      "pcGradedAvg": 12.71
     },
     "2026-topps-chrome-baseball::junior-caminero::auto": {
       "setKey": "2026-topps-chrome-baseball",
@@ -119,12 +135,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:39.574Z",
+      "enrichedAt": "2026-06-27T01:27:24.875Z",
       "pcMarket": 202.5,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/junior-caminero-black-autograph-91c-2",
       "pcTitle": "Junior Caminero [Black Autograph] #91C-2",
       "pcId": "11957213",
-      "sport": "baseball"
+      "sport": "baseball",
+      "pcUngraded": 202.5,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2026-topps-chrome-baseball::seth-hernandez-top::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -143,12 +163,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:43.761Z",
+      "enrichedAt": "2026-06-27T01:27:27.277Z",
       "sport": "baseball",
       "pcMarket": 103.75,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-prospect-mega-autograph/seth-hernandez-mojo-bma-sh",
       "pcTitle": "Seth Hernandez [Mojo] #BMA-SH",
-      "pcId": "13172959"
+      "pcId": "13172959",
+      "pcUngraded": 103.75,
+      "pcGrade9": null,
+      "pcPsa10": 106.72,
+      "pcGradedAvg": 189.2
     },
     "2026-topps-chrome-baseball::eric-hartman::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -167,12 +191,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:40.371Z",
+      "enrichedAt": "2026-06-27T01:27:27.518Z",
       "sport": "baseball",
       "pcMarket": 1.99,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-chrome-prospect/eric-hartman-bcp-102",
       "pcTitle": "Eric Hartman #BCP-102",
-      "pcId": "12937244"
+      "pcId": "12937244",
+      "pcUngraded": 1.99,
+      "pcGrade9": null,
+      "pcPsa10": 6.97,
+      "pcGradedAvg": 13.46
     },
     "2026-topps-chrome-baseball::picks-autos-ernie::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -191,12 +219,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:43.197Z",
+      "enrichedAt": "2026-06-27T01:27:27.199Z",
       "sport": "baseball",
       "pcMarket": 15.5,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-series-2/ernie-clement-75-years-of-topps-505",
       "pcTitle": "Ernie Clement [75 Years of Topps] #505",
-      "pcId": "13306655"
+      "pcId": "13306655",
+      "pcUngraded": 15.5,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2026-topps-chrome-baseball::craig-kimbrel::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -215,12 +247,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:40.478Z",
+      "enrichedAt": "2026-06-27T01:27:30.938Z",
       "sport": "baseball",
       "pcMarket": 48.49,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2011-topps-chrome/craig-kimbrel-autograph-195",
       "pcTitle": "Craig Kimbrel [Autograph] #195",
-      "pcId": "2118137"
+      "pcId": "2118137",
+      "pcUngraded": 48.49,
+      "pcGrade9": null,
+      "pcPsa10": 79.87,
+      "pcGradedAvg": 92.31
     },
     "2026-topps-chrome-baseball::vladimir-guerrero-jr.::auto-/150": {
       "setKey": "2026-topps-chrome-baseball",
@@ -239,12 +275,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:42.061Z",
+      "enrichedAt": "2026-06-27T01:27:27.750Z",
       "sport": "baseball",
       "pcMarket": 101,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/vladimir-guerrero-black-autograph-91c-9",
       "pcTitle": "Vladimir Guerrero [Black Autograph] #91C-9",
-      "pcId": "11957438"
+      "pcId": "11957438",
+      "pcUngraded": 101,
+      "pcGrade9": null,
+      "pcPsa10": 96.29,
+      "pcGradedAvg": 169.07
     },
     "2026-topps-chrome-baseball::chase-burns-serial::numbered-auto-/5": {
       "setKey": "2026-topps-chrome-baseball",
@@ -256,12 +296,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:49.345Z",
+      "enrichedAt": "2026-06-27T01:27:33.044Z",
       "sport": "baseball",
       "pcMarket": 81.02,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-chrome-black-autograph/chase-burns-refractor-cba-cb",
       "pcTitle": "Chase Burns [Refractor] #CBA-CB",
-      "pcId": "12740385"
+      "pcId": "12740385",
+      "pcUngraded": 81.02,
+      "pcGrade9": null,
+      "pcPsa10": 75.09,
+      "pcGradedAvg": 133.04
     },
     "2026-topps-chrome-baseball::jesus-made-first::auto-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -273,12 +317,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:52.638Z",
+      "enrichedAt": "2026-06-27T01:27:36.644Z",
       "sport": "baseball",
-      "pcMarket": 21,
-      "pcUrl": "https://www.sportscardspro.com/game/soccer-cards-2026-topps-chrome-premier-league/igor-jesus-orange-refractor-151",
-      "pcTitle": "Igor Jesus [Orange Refractor] #151",
-      "pcId": "11845675"
+      "pcMarket": 14.99,
+      "pcUrl": "https://www.sportscardspro.com/game/soccer-cards-2026-topps-chrome-premier-league/igor-jesus-aqua-wave-refractor-151",
+      "pcTitle": "Igor Jesus [Aqua Wave Refractor] #151",
+      "pcId": "11845599",
+      "pcUngraded": 14.99,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2026-topps-chrome-baseball::konnor-griffin-ssp::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -297,12 +345,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:44.718Z",
+      "enrichedAt": "2026-06-27T01:27:36.198Z",
       "sport": "baseball",
       "pcMarket": 5.83,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-chrome-prospect/konnor-griffin-refractor-bcp-92",
       "pcTitle": "Konnor Griffin [Refractor] #BCP-92",
-      "pcId": "12936884"
+      "pcId": "12936884",
+      "pcUngraded": 5.83,
+      "pcGrade9": null,
+      "pcPsa10": 15.95,
+      "pcGradedAvg": 29.24
     },
     "2026-topps-chrome-baseball::roman-anthony-iva::auto-rc-/50": {
       "setKey": "2026-topps-chrome-baseball",
@@ -314,12 +366,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:47.293Z",
+      "enrichedAt": "2026-06-27T01:27:32.437Z",
       "sport": "baseball",
       "pcMarket": 8.18,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-chrome-black/roman-anthony-56",
       "pcTitle": "Roman Anthony #56",
-      "pcId": "12736811"
+      "pcId": "12736811",
+      "pcUngraded": 8.18,
+      "pcGrade9": null,
+      "pcPsa10": 13.91,
+      "pcGradedAvg": 25.64
     },
     "2026-topps-chrome-baseball::ben-rice::auto-rc-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -338,12 +394,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:44.404Z",
+      "enrichedAt": "2026-06-27T01:27:37.209Z",
       "sport": "baseball",
       "pcMarket": 1500,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps/ben-rice-foilfractor-133",
       "pcTitle": "Ben Rice [Foilfractor] #133",
-      "pcId": "11877950"
+      "pcId": "11877950",
+      "pcUngraded": 1500,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2026-topps-chrome-baseball::mike-sirota::auto-rc-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -362,12 +422,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:53.305Z",
+      "enrichedAt": "2026-06-27T01:27:39.718Z",
       "sport": "baseball",
       "pcMarket": 14.99,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-scouts-top-100/mike-sirota-aqua-btp-54",
       "pcTitle": "Mike Sirota [Aqua] #BTP-54",
-      "pcId": "12945123"
+      "pcId": "12945123",
+      "pcUngraded": 14.99,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2026-topps-chrome-baseball::kevin-mcgonigle::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -386,12 +450,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:53.238Z",
+      "enrichedAt": "2026-06-27T01:27:39.414Z",
       "sport": "baseball",
       "pcMarket": 2.32,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-chrome-prospect/kevin-mcgonigle-mojo-refractor-bcp-145",
       "pcTitle": "Kevin McGonigle [Mojo Refractor] #BCP-145",
-      "pcId": "13135357"
+      "pcId": "13135357",
+      "pcUngraded": 2.32,
+      "pcGrade9": null,
+      "pcPsa10": 7.86,
+      "pcGradedAvg": 15.02
     },
     "2026-topps-chrome-baseball::tatsuya-imai-redemption::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -410,12 +478,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:53.250Z",
+      "enrichedAt": "2026-06-27T01:27:45.790Z",
       "sport": "baseball",
       "pcMarket": 213.5,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-series-2-1991-chrome/tatsuya-imai-autograph-91c2-35",
       "pcTitle": "Tatsuya Imai [Autograph] #91C2-35",
-      "pcId": "13321645"
+      "pcId": "13321645",
+      "pcUngraded": 213.5,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2026-topps-chrome-baseball::elly-de-la::auto-rc-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -434,12 +506,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:01.340Z",
+      "enrichedAt": "2026-06-27T01:27:39.429Z",
       "sport": "baseball",
       "pcMarket": 2.05,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/elly-de-la-cruz-91c-89",
       "pcTitle": "Elly De La Cruz #91C-89",
-      "pcId": "11899858"
+      "pcId": "11899858",
+      "pcUngraded": 2.05,
+      "pcGrade9": null,
+      "pcPsa10": 6.91,
+      "pcGradedAvg": 13.33
     },
     "2026-topps-chrome-baseball::payton-tolle::auto-rc-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -458,7 +534,7 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:02:53.381Z",
+      "enrichedAt": "2026-06-27T01:27:45.675Z",
       "sport": "baseball",
       "pcMarket": 5.48,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-chrome-black/payton-tolle-26",
@@ -482,12 +558,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:02.142Z",
+      "enrichedAt": "2026-06-27T01:27:48.389Z",
       "sport": "baseball",
       "pcMarket": 77.94,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-cosmic-chrome-starfractor/yordan-alvarez-orange-sf-21",
       "pcTitle": "Yordan Alvarez [Orange] #SF-21",
-      "pcId": "11382557"
+      "pcId": "11382557",
+      "pcUngraded": 77.94,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2025-topps-chrome-baseball::autos-ken-griffey::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -506,12 +586,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:03.835Z",
+      "enrichedAt": "2026-06-27T01:27:47.501Z",
       "sport": "baseball",
       "pcMarket": 825,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome-platinum-autograph/ken-griffey-jr-pink-cpa-kg",
       "pcTitle": "Ken Griffey Jr. [Pink] #CPA-KG",
-      "pcId": "13254813"
+      "pcId": "13254813",
+      "pcUngraded": 825,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2025-topps-chrome-baseball::aiva-arquette-ssp::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -530,12 +614,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:02.009Z",
+      "enrichedAt": "2026-06-27T01:27:47.595Z",
       "sport": "baseball",
       "pcMarket": 19.99,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-panini-prospect-edition-blue-chips-signature/aiva-arquette-blue-bcs-aa",
       "pcTitle": "Aiva Arquette [Blue] #BCS-AA",
-      "pcId": "12013744"
+      "pcId": "12013744",
+      "pcUngraded": 19.99,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2025-topps-chrome-baseball::james-wood::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -554,12 +642,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:02.100Z",
+      "enrichedAt": "2026-06-27T01:27:47.260Z",
       "sport": "baseball",
       "pcMarket": 1.99,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome/james-wood-132",
       "pcTitle": "James Wood #132",
-      "pcId": "10006199"
+      "pcId": "10006199",
+      "pcUngraded": 1.99,
+      "pcGrade9": 3,
+      "pcPsa10": 3.96,
+      "pcGradedAvg": 15.5
     },
     "2025-topps-chrome-baseball::junior-caminero::auto": {
       "setKey": "2025-topps-chrome-baseball",
@@ -578,12 +670,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:01.962Z",
+      "enrichedAt": "2026-06-27T01:27:47.166Z",
       "sport": "baseball",
       "pcMarket": 82,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome-update-1990-autograph/junior-caminero-90cua-jc",
       "pcTitle": "Junior Caminero #90CUA-JC",
-      "pcId": "11341703"
+      "pcId": "11341703",
+      "pcUngraded": 82,
+      "pcGrade9": null,
+      "pcPsa10": 56,
+      "pcGradedAvg": 136.83
     },
     "2025-topps-chrome-baseball::seth-hernandez-top::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",

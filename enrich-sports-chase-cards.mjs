@@ -157,10 +157,12 @@ function parseSearchResults(html, playerName, setName) {
     if (yearM && rs.includes(yearM[1])) s += 10;
 
     if (r.price && r.price > 0) s += 2;
+
+    // Print run match — big bonus if card.printRun matches row printRun
     return s;
   }
+
   rows.sort((a, b) => score(b, setName) - score(a, setName));
-  // Require at least player first+last name in title
   const nameParts = normP.split(' ').filter(p => p.length > 2);
   const best = rows.find(r => nameParts.every(p => r.title.toLowerCase().includes(p))) ?? rows[0];
   return best;
@@ -176,6 +178,33 @@ async function scpSearch(card, proxies) {
   if (!best || !best.price) return null;
 
   return { pcMarket: best.price, pcUrl: best.href, pcTitle: best.title, pcPrintRun: best.printRun, pcId: best.id };
+}
+
+// ── SCP card detail page — get all grade tiers from stored pcUrl ───────────
+async function scpDetailPrices(pcUrl, proxies) {
+  if (!pcUrl) return null;
+  const html = await httpGet(pcUrl, proxies);
+  if (!html) return null;
+
+  const parse = s => s ? parseFloat(String(s).replace(/[^0-9.]/g, '')) || null : null;
+
+  // Detail page: used_price=Ungraded, complete_price=Grade 9 equiv, new_price=PSA 10, graded_price=graded avg
+  const priceById = id => {
+    const m = html.match(new RegExp(`<td[^>]*id="${id}"[^>]*>[\\s\\S]*?js-price[^>]*>\\s*([^<]+)`));
+    return parse(m?.[1]);
+  };
+  const usedM  = html.match(/<td[^>]*id="used_price"[^>]*>[\s\S]*?js-price[^>]*>\s*([^<]+)/);
+  const cibM   = html.match(/<td[^>]*id="complete_price"[^>]*>[\s\S]*?js-price[^>]*>\s*([^<]+)/);
+  const newM   = html.match(/<td[^>]*id="new_price"[^>]*>[\s\S]*?js-price[^>]*>\s*([^<]+)/);
+  const gradedM = html.match(/<td[^>]*id="graded_price"[^>]*>[\s\S]*?js-price[^>]*>\s*([^<]+)/);
+
+  const ug  = parse(usedM?.[1]);
+  const g9  = parse(cibM?.[1]);
+  const p10 = parse(newM?.[1]);
+  const grad = parse(gradedM?.[1]);
+
+  if (!ug && !g9 && !p10 && !grad) return null;
+  return { pcUngraded: ug, pcGrade9: g9, pcPsa10: p10, pcGradedAvg: grad };
 }
 
 // ── isStale check ──────────────────────────────────────────────────────────
@@ -307,6 +336,7 @@ async function main() {
   // Concurrent enrichment — CONCURRENCY parallel workers
   async function enrichCard([key, card], idx) {
     log(`  [${idx + 1}/${toEnrich.length}] ${card.player} — ${card.cardType} (${card.setName})`);
+    // Search for card on SCP
     const pc = await scpSearch(card, proxies);
     if (pc) {
       card.pcMarket = pc.pcMarket;
@@ -315,6 +345,17 @@ async function main() {
       card.pcId     = pc.pcId;
       pcHits++;
       log(`    ✓ $${pc.pcMarket} "${pc.pcTitle}"`);
+
+      // Fetch detail page for Grade 9 + PSA 10 tiers
+      const detail = await scpDetailPrices(pc.pcUrl, proxies);
+      if (detail) {
+        card.pcUngraded  = detail.pcUngraded;
+        card.pcGrade9    = detail.pcGrade9;
+        card.pcPsa10     = detail.pcPsa10;
+        card.pcGradedAvg = detail.pcGradedAvg;
+        log(`    ✓ grades: raw=$${detail.pcUngraded} G9=$${detail.pcGrade9} PSA10=$${detail.pcPsa10} graded=$${detail.pcGradedAvg}`);
+      }
+      await sleep(300 + Math.random() * 200);
     } else {
       noData++;
       log(`    ✗ no data`);
@@ -373,6 +414,9 @@ async function main() {
       printRun:   card.printRun ?? null,
       ebayMedian: card.ebayMedian ?? null,
       pcMarket:   card.pcMarket ?? null,
+      pcUngraded: card.pcUngraded ?? null,
+      pcGrade9:   card.pcGrade9 ?? null,
+      pcPsa10:    card.pcPsa10 ?? null,
       pcUrl:      card.pcUrl ?? null,
       pcTitle:    card.pcTitle ?? null,
       star:       (card.pcMarket ?? card.ebayMedian ?? 0) > 200,
