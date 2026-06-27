@@ -25,6 +25,7 @@ const SPORTS_DB_PATH  = 'set-history-sports.json';
 const LOG_PATH        = 'enrich-sports-chase-cards.log';
 const FORCE           = process.argv.includes('--force');
 const TEST            = process.argv.includes('--test');
+const MATCH_ONLY      = process.argv.includes('--match-only');
 const STALE_DAYS      = 7;
 const SCP_BASE        = 'https://www.sportscardspro.com';
 
@@ -188,37 +189,69 @@ function isStale(card) {
 const SUFFIX_NOISE = new Set([
   'signatures','contenders','prizmatrix','spectra','inception','sensational','geometric',
   'throwback','rookies','picks','rpa','true','ucc','reverence','redeemed','stars','future',
-  'auto','autograph','patch','refractor','parallel','variation','ssp','base','insert',
-  'numbered','printing','plate','chrome','hobby','retail','draft','bowman',
-  'panini','topps','prizm','immaculate','treasures','national',
+  'auto','autograph','autos','patch','refractor','parallel','variation','ssp','base','insert',
+  'numbered','printing','plate','chrome','hobby','retail','draft','bowman','rookie','rc',
+  'panini','topps','prizm','immaculate','treasures','national','select','mosaic','hoops',
+  'certified','optic','donruss','fleer','upper','deck','score','skybox','stadium','club',
+  'mt','sky','true','on','top','first','next','made','jump','mega','boxes','game',
 ]);
 function normName(n) {
   return String(n ?? '').toLowerCase().replace(/[^a-z\s]/g, '').replace(/\s+/g, ' ').trim();
 }
 function cleanName(name) {
-  const parts = normName(name).split(' ');
+  const parts = normName(name).split(' ').filter(Boolean);
+  // Strip noise from both ends; keep at least 2 tokens
   while (parts.length > 2 && SUFFIX_NOISE.has(parts[parts.length - 1])) parts.pop();
   while (parts.length > 2 && SUFFIX_NOISE.has(parts[0])) parts.shift();
+  // If still starts with noise token (e.g. "autos ernie"), strip one more if 2+ remain
+  if (parts.length >= 2 && SUFFIX_NOISE.has(parts[0])) parts.shift();
+  // Strip trailing noise even down to 2
+  if (parts.length >= 2 && SUFFIX_NOISE.has(parts[parts.length - 1])) parts.pop();
+  // Also strip abbreviated suffixes: "Ssp", "Iva", "Mt", "Top", single chars
+  while (parts.length > 2 && parts[parts.length - 1].length <= 3) parts.pop();
   return parts.join(' ');
 }
-function matchPlayer(playerName, players) {
+// Build name index once, reuse across calls
+let _nameIndex = null;
+function buildNameIndex(players) {
+  if (_nameIndex) return _nameIndex;
+  _nameIndex = new Map();
+  for (const [slug, p] of Object.entries(players)) {
+    if (!p.name) continue;
+    _nameIndex.set(normName(p.name), slug);
+  }
+  return _nameIndex;
+}
+
+function matchPlayer(playerName, players, sport) {
+  const idx = buildNameIndex(players);
   const norm = normName(playerName);
   const cleaned = cleanName(playerName);
-  for (const [slug, p] of Object.entries(players)) {
-    if (p.name && normName(p.name) === norm) return slug;
-  }
-  for (const [slug, p] of Object.entries(players)) {
-    if (p.name && normName(p.name) === cleaned) return slug;
-  }
-  const parts = cleaned.split(' ');
+
+  // Exact name match
+  if (idx.has(norm)) return idx.get(norm);
+  if (idx.has(cleaned)) return idx.get(cleaned);
+
+  // First+last partial match — restrict to same sport prefix if known
+  const parts = cleaned.split(' ').filter(p => p.length > 1);
   if (parts.length < 2) return null;
   const first = parts[0], last = parts[parts.length - 1];
-  if (first.length < 2 || last.length < 2) return null;
+  const sportPrefix = sport ? sport + '_' : null;
+
+  for (const [slug, p] of Object.entries(players)) {
+    if (!p.name) continue;
+    if (sportPrefix && !slug.startsWith(sportPrefix)) continue;
+    const pn = normName(p.name);
+    if (pn.includes(first) && pn.includes(last)) return slug;
+  }
+
+  // Cross-sport fallback (Jr./Jr suffixes, accents)
   for (const [slug, p] of Object.entries(players)) {
     if (!p.name) continue;
     const pn = normName(p.name);
     if (pn.includes(first) && pn.includes(last)) return slug;
   }
+
   return null;
 }
 
@@ -252,7 +285,7 @@ async function main() {
     }
   }
 
-  let toEnrich = Object.entries(cards).filter(([, c]) => isStale(c));
+  let toEnrich = MATCH_ONLY ? [] : Object.entries(cards).filter(([, c]) => isStale(c));
   if (TEST) toEnrich = toEnrich.slice(0, 5);
 
   log(`  total cards: ${Object.keys(cards).length}  to enrich: ${toEnrich.length}`);
@@ -307,7 +340,7 @@ async function main() {
   for (const [, card] of Object.entries(cards)) {
     if (!card.player) continue;
     totalAttempted++;
-    const slug = matchPlayer(card.player, players);
+    const slug = matchPlayer(card.player, players, card.sport);
     if (!slug) continue;
 
     const player = players[slug];
