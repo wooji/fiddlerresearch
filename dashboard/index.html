@@ -834,13 +834,12 @@ async function loadDbPage() {
       <td>${e.dateLogged ?? '—'}</td>
     `;
   } else if (currentDb === 'players') {
-    cols = ['Name','Sport','Position','Chase Cards','Top Card $'];
+    cols = ['Name','Position','Chase Cards','Top Card $'];
     rowFn = e => `
       <td><strong>${e.name ?? '—'}</strong></td>
-      <td>${e.sport ?? '—'}</td>
-      <td>${e.position ?? '—'}</td>
-      <td>${e.cardCount > 0 ? e.cardCount : '—'}</td>
-      <td style="color:#ff64b4">${e.topCard?.pcMarket != null ? '$' + Number(e.topCard.pcMarket).toLocaleString() : '—'}</td>
+      <td style="color:var(--muted);font-size:12px">${e.position ?? '—'}</td>
+      <td style="text-align:center">${e.cardCount > 0 ? `<span style="background:#ff64b422;color:#ff64b4;border-radius:10px;padding:1px 8px;font-size:12px">${e.cardCount}</span>` : '—'}</td>
+      <td style="color:#ff64b4;font-weight:600">${e.topCard?.pcMarket != null ? '$' + Number(e.topCard.pcMarket).toLocaleString() : '—'}</td>
     `;
   } else {
     cols = Object.keys(sample).filter(k => !['products','months','series'].includes(k)).slice(0, 6);
@@ -849,16 +848,35 @@ async function loadDbPage() {
 
   document.getElementById('db-thead').innerHTML = `<tr>${cols.map(c => `<th>${c}</th>`).join('')}</tr>`;
   const isPlayersDb = currentDb === 'players';
-  document.getElementById('db-tbody').innerHTML = entries.length
-    ? entries.map(e => {
+  let tbodyHtml = '';
+  if (!entries.length) {
+    tbodyHtml = `<tr><td colspan="${cols.length}" class="empty">No results</td></tr>`;
+  } else if (isPlayersDb) {
+    // Group by sport with section headers
+    const SPORT_ICONS = { basketball:'🏀', baseball:'⚾', football:'🏈' };
+    const groups = {};
+    entries.forEach(e => { const s = e.sport ?? 'other'; (groups[s] = groups[s] ?? []).push(e); });
+    const ORDER = ['basketball','baseball','football','other'];
+    ORDER.filter(s => groups[s]).forEach(sport => {
+      const icon = SPORT_ICONS[sport] ?? '🏅';
+      const label = sport.charAt(0).toUpperCase() + sport.slice(1);
+      tbodyHtml += `<tr><td colspan="${cols.length}" style="background:var(--border);color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:6px 12px;pointer-events:none">${icon} ${label} (${groups[sport].length})</td></tr>`;
+      groups[sport].forEach(e => {
         const slug = escHtml(e.id ?? '');
-        const name = escHtml(e.set_name ?? e.name ?? e.setName ?? e.id);
-        const clickFn = isPlayersDb && e.cardCount > 0
-          ? `openChasePanel('${slug}','${name}')`
-          : `loadVariants(this.dataset.db,this.dataset.id,this.dataset.name,this.dataset.chase)`;
-        return `<tr data-db="${currentDb}" data-id="${slug}" data-name="${name}" data-chase="${escHtml(e.chaseCard?.name ?? '')}" onclick="${clickFn}" style="cursor:pointer" title="${isPlayersDb ? 'Click to view chase cards' : 'Click to view product variants'}">${rowFn(e)}</tr>`;
-      }).join('')
-    : `<tr><td colspan="${cols.length}" class="empty">No results</td></tr>`;
+        const name = escHtml(e.name ?? e.id);
+        const clickFn = e.cardCount > 0 ? `openChasePanel('${slug}','${name}')` : '';
+        const cursor = e.cardCount > 0 ? 'cursor:pointer' : 'cursor:default;opacity:.6';
+        tbodyHtml += `<tr data-id="${slug}" data-name="${name}" onclick="${clickFn}" style="${cursor}" title="${e.cardCount > 0 ? 'Click to view chase cards' : 'No chase cards yet'}">${rowFn(e)}</tr>`;
+      });
+    });
+  } else {
+    tbodyHtml = entries.map(e => {
+      const slug = escHtml(e.id ?? '');
+      const name = escHtml(e.set_name ?? e.name ?? e.setName ?? e.id);
+      return `<tr data-db="${currentDb}" data-id="${slug}" data-name="${name}" data-chase="${escHtml(e.chaseCard?.name ?? '')}" onclick="loadVariants(this.dataset.db,this.dataset.id,this.dataset.name,this.dataset.chase)" style="cursor:pointer" title="Click to view product variants">${rowFn(e)}</tr>`;
+    }).join('');
+  }
+  document.getElementById('db-tbody').innerHTML = tbodyHtml;
 
   // Pagination
   const totalPages = Math.ceil(total / 50);
@@ -1854,20 +1872,27 @@ async function openChasePanel(slug, name) {
     const d = await fetch(`/api/players/${encodeURIComponent(slug)}/cards`).then(r=>r.json());
     if (!d.cards?.length) { listEl.innerHTML = '<div style="color:var(--muted);font-size:13px">No chase cards found</div>'; return; }
     listEl.innerHTML = d.cards.map(c => {
-      const raw   = c.pcUngraded  ? `$${c.pcUngraded.toLocaleString()}`  : '—';
-      const psa10 = c.pcPsa10     ? `$${c.pcPsa10.toLocaleString()}`     : '—';
-      const grad  = c.pcGradedAvg ? `$${c.pcGradedAvg.toLocaleString()}` : '—';
-      const mkt   = c.pcMarket    ? `$${c.pcMarket.toLocaleString()}`    : '—';
-      const pr    = c.printRun    ? `/${c.printRun}` : '';
+      const raw   = c.pcUngraded  ? `$${Number(c.pcUngraded).toLocaleString()}`  : '—';
+      const psa10 = c.pcPsa10     ? `$${Number(c.pcPsa10).toLocaleString()}`     : '—';
+      const grad  = c.pcGradedAvg ? `$${Number(c.pcGradedAvg).toLocaleString()}` : '—';
+      const mkt   = c.pcMarket    ? `$${Number(c.pcMarket).toLocaleString()}`    : '—';
+      const ebay  = c.ebayMedian  ? `$${Number(c.ebayMedian).toLocaleString()}`  : '—';
+      const pr    = c.printRun    ? ` /${c.printRun}` : '';
+      const dated = (c.enrichedAt ?? c.addedAt ?? '').slice(0,10);
       const scpLink = c.pcUrl ? `<a href="${escHtml(c.pcUrl)}" target="_blank" style="color:var(--accent);font-size:11px;text-decoration:none">SCP ↗</a>` : '';
+      const setLink = c.setKey ? `<a href="#" onclick="event.stopPropagation()" style="color:#a78bfa;font-size:11px;text-decoration:none" title="${escHtml(c.setKey)}">${escHtml(c.setName||c.setKey)}</a>` : `<span>${escHtml(c.setName||'—')}</span>`;
       return `<div style="border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:10px;background:var(--bg)">
-        <div style="font-weight:600;font-size:13px;margin-bottom:4px">${escHtml(c.cardType||'—')}${pr} ${scpLink}</div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:8px">${escHtml(c.setName||'—')}</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;font-size:12px">
-          <div><div style="color:var(--muted);font-size:10px;margin-bottom:2px">MKT</div><div style="font-weight:600;color:#fff">${mkt}</div></div>
-          <div><div style="color:var(--muted);font-size:10px;margin-bottom:2px">RAW</div><div style="font-weight:600;color:#4ade80">${raw}</div></div>
-          <div><div style="color:var(--muted);font-size:10px;margin-bottom:2px">PSA 10</div><div style="font-weight:600;color:#60a5fa">${psa10}</div></div>
-          <div><div style="color:var(--muted);font-size:10px;margin-bottom:2px">GRADED</div><div style="font-weight:600;color:#a78bfa">${grad}</div></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px">
+          <span style="font-weight:700;font-size:13px">${escHtml(c.cardType||'—')}${pr}</span>
+          <span style="display:flex;gap:8px;align-items:center">${scpLink}<span style="color:var(--muted);font-size:10px">${dated}</span></span>
+        </div>
+        <div style="font-size:11px;color:#a78bfa;margin-bottom:8px">${setLink}</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:4px;font-size:11px">
+          <div><div style="color:var(--muted);font-size:9px;margin-bottom:1px;text-transform:uppercase">MKT</div><div style="font-weight:700;color:#fff">${mkt}</div></div>
+          <div><div style="color:var(--muted);font-size:9px;margin-bottom:1px;text-transform:uppercase">eBay</div><div style="font-weight:700;color:#fbbf24">${ebay}</div></div>
+          <div><div style="color:var(--muted);font-size:9px;margin-bottom:1px;text-transform:uppercase">RAW</div><div style="font-weight:700;color:#4ade80">${raw}</div></div>
+          <div><div style="color:var(--muted);font-size:9px;margin-bottom:1px;text-transform:uppercase">PSA 10</div><div style="font-weight:700;color:#60a5fa">${psa10}</div></div>
+          <div><div style="color:var(--muted);font-size:9px;margin-bottom:1px;text-transform:uppercase">GRADED</div><div style="font-weight:700;color:#a78bfa">${grad}</div></div>
         </div>
       </div>`;
     }).join('');

@@ -237,6 +237,7 @@ const server = http.createServer(async (req, res) => {
     const page   = parseInt(url.searchParams.get('page') ?? '1', 10);
     const limit  = parseInt(url.searchParams.get('limit') ?? '50', 10);
     let entries  = getDbEntries(dbKey);
+    const sport  = url.searchParams.get('sport') ?? '';
     if (q) {
       const norm  = s => String(s ?? '').toLowerCase();
       const needle = norm(q);
@@ -245,14 +246,18 @@ const server = http.createServer(async (req, res) => {
         norm(e.id ?? e.setNum ?? '').includes(needle)
       );
     }
+    if (sport) entries = entries.filter(e => (e.sport ?? '') === sport);
     // collect unique years from all entries (before year filter)
     const yearSet = new Set();
     entries.forEach(e => { const y = (e.publishedOn ?? e.releasedOn ?? '').slice(0,4); if (y >= '2000') yearSet.add(y); });
     const years = [...yearSet].sort((a,b) => b.localeCompare(a));
     if (year) entries = entries.filter(e => (e.publishedOn ?? e.releasedOn ?? '').startsWith(year));
+    // collect sports for player DB
+    const sportSet = new Set(entries.map(e => e.sport).filter(Boolean));
+    const sports = [...sportSet].sort();
     const total = entries.length;
     const slice = entries.slice((page - 1) * limit, page * limit);
-    json(res, { total, page, limit, entries: slice, years });
+    json(res, { total, page, limit, entries: slice, years, sports });
     return;
   }
 
