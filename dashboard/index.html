@@ -833,14 +833,31 @@ async function loadDbPage() {
       <td><span class="tag ${/DBLGREEN|GREEN/.test(e.rating) ? 'active' : /RED/.test(e.rating) ? 'retired' : 'ar'}">${e.rating ?? '—'}</span></td>
       <td>${e.dateLogged ?? '—'}</td>
     `;
+  } else if (currentDb === 'players') {
+    cols = ['Name','Sport','Position','Chase Cards','Top Card $'];
+    rowFn = e => `
+      <td><strong>${e.name ?? '—'}</strong></td>
+      <td>${e.sport ?? '—'}</td>
+      <td>${e.position ?? '—'}</td>
+      <td>${e.cardCount > 0 ? e.cardCount : '—'}</td>
+      <td style="color:#ff64b4">${e.topCard?.pcMarket != null ? '$' + Number(e.topCard.pcMarket).toLocaleString() : '—'}</td>
+    `;
   } else {
     cols = Object.keys(sample).filter(k => !['products','months','series'].includes(k)).slice(0, 6);
     rowFn = e => cols.map(c => `<td>${typeof e[c] === 'object' ? '…' : (e[c] ?? '—')}</td>`).join('');
   }
 
   document.getElementById('db-thead').innerHTML = `<tr>${cols.map(c => `<th>${c}</th>`).join('')}</tr>`;
+  const isPlayersDb = currentDb === 'players';
   document.getElementById('db-tbody').innerHTML = entries.length
-    ? entries.map(e => `<tr data-db="${currentDb}" data-id="${escHtml(e.id)}" data-name="${escHtml(e.set_name ?? e.name ?? e.setName ?? e.id)}" data-chase="${escHtml(e.chaseCard?.name ?? '')}" onclick="loadVariants(this.dataset.db,this.dataset.id,this.dataset.name,this.dataset.chase)" style="cursor:pointer" title="Click to view product variants">${rowFn(e)}</tr>`).join('')
+    ? entries.map(e => {
+        const slug = escHtml(e.id ?? '');
+        const name = escHtml(e.set_name ?? e.name ?? e.setName ?? e.id);
+        const clickFn = isPlayersDb && e.cardCount > 0
+          ? `openChasePanel('${slug}','${name}')`
+          : `loadVariants(this.dataset.db,this.dataset.id,this.dataset.name,this.dataset.chase)`;
+        return `<tr data-db="${currentDb}" data-id="${slug}" data-name="${name}" data-chase="${escHtml(e.chaseCard?.name ?? '')}" onclick="${clickFn}" style="cursor:pointer" title="${isPlayersDb ? 'Click to view chase cards' : 'Click to view product variants'}">${rowFn(e)}</tr>`;
+      }).join('')
     : `<tr><td colspan="${cols.length}" class="empty">No results</td></tr>`;
 
   // Pagination

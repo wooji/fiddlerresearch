@@ -55,6 +55,7 @@ const DBS = {
   sorcery:       { file: 'set-history-sorcery.json',        label: 'Sorcery',            icon: '🔮', keyField: 'sets' },
   star_wars:     { file: 'set-history-star-wars.json',      label: 'Star Wars Unlimited',icon: '⭐', keyField: 'sets' },
   hololive:      { file: 'set-history-hololive.json',       label: 'hololive TCG',       icon: '🎤', keyField: 'sets' },
+  players:       { file: 'player-history-sports.json',      label: 'Sports Players',      icon: '🏃', keyField: 'players' },
 };
 
 function readJson(file) {
@@ -78,6 +79,23 @@ function getDbEntries(dbKey) {
   if (!cfg) return [];
   const raw = readJson(cfg.file);
   if (!raw) return [];
+
+  // Player DB: flat list keyed by sport_slug
+  if (cfg.keyField === 'players') {
+    const players = raw.players ?? {};
+    return Object.entries(players)
+      .map(([id, p]) => {
+        const topCard = (p.cards ?? []).sort((a, b) => (b.pcMarket ?? 0) - (a.pcMarket ?? 0))[0] ?? null;
+        return {
+          id, name: p.name ?? id, sport: p.sport, position: p.position,
+          rookie_year: p.rookie_year, cardCount: (p.cards ?? []).length,
+          topCard: topCard ? { cardType: topCard.cardType, setName: topCard.setName, pcMarket: topCard.pcMarket } : null,
+        };
+      })
+      .filter(p => p.name)
+      .sort((a, b) => (b.topCard?.pcMarket ?? 0) - (a.topCard?.pcMarket ?? 0));
+  }
+
   const sets = raw.sets ?? raw.db?.sets ?? raw;
   if (typeof sets !== 'object' || Array.isArray(sets)) return [];
   return Object.entries(sets)
@@ -202,7 +220,7 @@ const server = http.createServer(async (req, res) => {
       result[key] = {
         label: cfg.label, icon: cfg.icon,
         count: entries.length,
-        updated: raw?._meta?.updated ?? raw?.db?._meta?.updated ?? null,
+        updated: raw?._meta?.updated ?? raw?._meta?.lastUpdated?.slice(0,10) ?? raw?.db?._meta?.updated ?? null,
         source:  raw?._meta?.source  ?? raw?.db?._meta?.source  ?? null,
       };
     }
