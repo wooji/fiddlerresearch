@@ -23,11 +23,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:20:03.355Z",
+      "enrichedAt": "2026-06-27T01:02:39.792Z",
       "pcMarket": 1.89,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/yordan-alvarez-91c-50",
       "pcTitle": "Yordan Alvarez #91C-50",
-      "pcId": "11899778"
+      "pcId": "11899778",
+      "sport": "baseball"
     },
     "2026-topps-chrome-baseball::autos-ken-griffey::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -46,11 +47,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:20:09.423Z",
+      "enrichedAt": "2026-06-27T01:02:39.568Z",
       "pcMarket": 4,
-      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/ken-griffey-jr-91c-51",
-      "pcTitle": "Ken Griffey Jr. #91C-51",
-      "pcId": "11899779"
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-series-2-1991-chrome-all-star-autograph/ken-griffey-jr-91asc-45",
+      "pcTitle": "Ken Griffey Jr. #91ASC-45",
+      "pcId": "13321702",
+      "sport": "baseball"
     },
     "2026-topps-chrome-baseball::aiva-arquette-ssp::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -69,11 +71,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:20:13.103Z",
+      "enrichedAt": "2026-06-27T01:02:39.843Z",
       "pcMarket": 1.97,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-chrome-prospect/aiva-arquette-bcp-40",
       "pcTitle": "Aiva Arquette #BCP-40",
-      "pcId": "12933417"
+      "pcId": "12933417",
+      "sport": "baseball"
     },
     "2026-topps-chrome-baseball::james-wood::auto-rc-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -92,11 +95,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:20:18.929Z",
+      "enrichedAt": "2026-06-27T01:02:39.775Z",
       "pcMarket": 1.99,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/james-wood-91c-78",
       "pcTitle": "James Wood #91C-78",
-      "pcId": "11899831"
+      "pcId": "11899831",
+      "sport": "baseball"
     },
     "2026-topps-chrome-baseball::junior-caminero::auto": {
       "setKey": "2026-topps-chrome-baseball",
@@ -115,11 +119,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:20:21.665Z",
+      "enrichedAt": "2026-06-27T01:02:39.574Z",
       "pcMarket": 202.5,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/junior-caminero-black-autograph-91c-2",
       "pcTitle": "Junior Caminero [Black Autograph] #91C-2",
-      "pcId": "11957213"
+      "pcId": "11957213",
+      "sport": "baseball"
     },
     "2026-topps-chrome-baseball::seth-hernandez-top::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -138,7 +143,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T21:59:59.647Z"
+      "enrichedAt": "2026-06-27T01:02:43.761Z",
+      "sport": "baseball",
+      "pcMarket": 103.75,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-prospect-mega-autograph/seth-hernandez-mojo-bma-sh",
+      "pcTitle": "Seth Hernandez [Mojo] #BMA-SH",
+      "pcId": "13172959"
     },
     "2026-topps-chrome-baseball::eric-hartman::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -157,7 +167,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:00:26.255Z"
+      "enrichedAt": "2026-06-27T01:02:40.371Z",
+      "sport": "baseball",
+      "pcMarket": 1.99,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-chrome-prospect/eric-hartman-bcp-102",
+      "pcTitle": "Eric Hartman #BCP-102",
+      "pcId": "12937244"
     },
     "2026-topps-chrome-baseball::picks-autos-ernie::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -176,7 +191,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:01:00.492Z"
+      "enrichedAt": "2026-06-27T01:02:43.197Z",
+      "sport": "baseball",
+      "pcMarket": 15.5,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-series-2/ernie-clement-75-years-of-topps-505",
+      "pcTitle": "Ernie Clement [75 Years of Topps] #505",
+      "pcId": "13306655"
     },
     "2026-topps-chrome-baseball::craig-kimbrel::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -195,7 +215,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:01:21.142Z"
+      "enrichedAt": "2026-06-27T01:02:40.478Z",
+      "sport": "baseball",
+      "pcMarket": 48.49,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2011-topps-chrome/craig-kimbrel-autograph-195",
+      "pcTitle": "Craig Kimbrel [Autograph] #195",
+      "pcId": "2118137"
     },
     "2026-topps-chrome-baseball::vladimir-guerrero-jr.::auto-/150": {
       "setKey": "2026-topps-chrome-baseball",
@@ -214,7 +239,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:01:38.874Z"
+      "enrichedAt": "2026-06-27T01:02:42.061Z",
+      "sport": "baseball",
+      "pcMarket": 101,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/vladimir-guerrero-black-autograph-91c-9",
+      "pcTitle": "Vladimir Guerrero [Black Autograph] #91C-9",
+      "pcId": "11957438"
     },
     "2026-topps-chrome-baseball::chase-burns-serial::numbered-auto-/5": {
       "setKey": "2026-topps-chrome-baseball",
@@ -226,7 +256,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:01:57.780Z"
+      "enrichedAt": "2026-06-27T01:02:49.345Z",
+      "sport": "baseball",
+      "pcMarket": 81.02,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-chrome-black-autograph/chase-burns-refractor-cba-cb",
+      "pcTitle": "Chase Burns [Refractor] #CBA-CB",
+      "pcId": "12740385"
     },
     "2026-topps-chrome-baseball::jesus-made-first::auto-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -238,7 +273,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:02:15.406Z"
+      "enrichedAt": "2026-06-27T01:02:52.638Z",
+      "sport": "baseball",
+      "pcMarket": 21,
+      "pcUrl": "https://www.sportscardspro.com/game/soccer-cards-2026-topps-chrome-premier-league/igor-jesus-orange-refractor-151",
+      "pcTitle": "Igor Jesus [Orange Refractor] #151",
+      "pcId": "11845675"
     },
     "2026-topps-chrome-baseball::konnor-griffin-ssp::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -257,7 +297,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:02:35.100Z"
+      "enrichedAt": "2026-06-27T01:02:44.718Z",
+      "sport": "baseball",
+      "pcMarket": 5.83,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-chrome-prospect/konnor-griffin-refractor-bcp-92",
+      "pcTitle": "Konnor Griffin [Refractor] #BCP-92",
+      "pcId": "12936884"
     },
     "2026-topps-chrome-baseball::roman-anthony-iva::auto-rc-/50": {
       "setKey": "2026-topps-chrome-baseball",
@@ -269,7 +314,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:02:57.508Z"
+      "enrichedAt": "2026-06-27T01:02:47.293Z",
+      "sport": "baseball",
+      "pcMarket": 8.18,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-chrome-black/roman-anthony-56",
+      "pcTitle": "Roman Anthony #56",
+      "pcId": "12736811"
     },
     "2026-topps-chrome-baseball::ben-rice::auto-rc-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -288,7 +338,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:03:18.927Z"
+      "enrichedAt": "2026-06-27T01:02:44.404Z",
+      "sport": "baseball",
+      "pcMarket": 1500,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps/ben-rice-foilfractor-133",
+      "pcTitle": "Ben Rice [Foilfractor] #133",
+      "pcId": "11877950"
     },
     "2026-topps-chrome-baseball::mike-sirota::auto-rc-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -307,7 +362,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:03:52.580Z"
+      "enrichedAt": "2026-06-27T01:02:53.305Z",
+      "sport": "baseball",
+      "pcMarket": 14.99,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-scouts-top-100/mike-sirota-aqua-btp-54",
+      "pcTitle": "Mike Sirota [Aqua] #BTP-54",
+      "pcId": "12945123"
     },
     "2026-topps-chrome-baseball::kevin-mcgonigle::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -326,7 +386,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:04:14.235Z"
+      "enrichedAt": "2026-06-27T01:02:53.238Z",
+      "sport": "baseball",
+      "pcMarket": 2.32,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-chrome-prospect/kevin-mcgonigle-mojo-refractor-bcp-145",
+      "pcTitle": "Kevin McGonigle [Mojo Refractor] #BCP-145",
+      "pcId": "13135357"
     },
     "2026-topps-chrome-baseball::tatsuya-imai-redemption::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -345,7 +410,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:04:36.147Z"
+      "enrichedAt": "2026-06-27T01:02:53.250Z",
+      "sport": "baseball",
+      "pcMarket": 213.5,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-series-2-1991-chrome/tatsuya-imai-autograph-91c2-35",
+      "pcTitle": "Tatsuya Imai [Autograph] #91C2-35",
+      "pcId": "13321645"
     },
     "2026-topps-chrome-baseball::elly-de-la::auto-rc-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -364,7 +434,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:04:57.915Z"
+      "enrichedAt": "2026-06-27T01:03:01.340Z",
+      "sport": "baseball",
+      "pcMarket": 2.05,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991-chrome/elly-de-la-cruz-91c-89",
+      "pcTitle": "Elly De La Cruz #91C-89",
+      "pcId": "11899858"
     },
     "2026-topps-chrome-baseball::payton-tolle::auto-rc-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -383,7 +458,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:05:20.342Z"
+      "enrichedAt": "2026-06-27T01:02:53.381Z",
+      "sport": "baseball",
+      "pcMarket": 5.48,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-chrome-black/payton-tolle-26",
+      "pcTitle": "Payton Tolle #26",
+      "pcId": "12736210"
     },
     "2025-topps-chrome-baseball::yordan-alvarez::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -402,7 +482,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:05:37.146Z"
+      "enrichedAt": "2026-06-27T01:03:02.142Z",
+      "sport": "baseball",
+      "pcMarket": 77.94,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-cosmic-chrome-starfractor/yordan-alvarez-orange-sf-21",
+      "pcTitle": "Yordan Alvarez [Orange] #SF-21",
+      "pcId": "11382557"
     },
     "2025-topps-chrome-baseball::autos-ken-griffey::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -421,7 +506,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:05:57.797Z"
+      "enrichedAt": "2026-06-27T01:03:03.835Z",
+      "sport": "baseball",
+      "pcMarket": 825,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome-platinum-autograph/ken-griffey-jr-pink-cpa-kg",
+      "pcTitle": "Ken Griffey Jr. [Pink] #CPA-KG",
+      "pcId": "13254813"
     },
     "2025-topps-chrome-baseball::aiva-arquette-ssp::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -440,7 +530,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:06:17.240Z"
+      "enrichedAt": "2026-06-27T01:03:02.009Z",
+      "sport": "baseball",
+      "pcMarket": 19.99,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-panini-prospect-edition-blue-chips-signature/aiva-arquette-blue-bcs-aa",
+      "pcTitle": "Aiva Arquette [Blue] #BCS-AA",
+      "pcId": "12013744"
     },
     "2025-topps-chrome-baseball::james-wood::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -459,7 +554,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:06:36.203Z"
+      "enrichedAt": "2026-06-27T01:03:02.100Z",
+      "sport": "baseball",
+      "pcMarket": 1.99,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome/james-wood-132",
+      "pcTitle": "James Wood #132",
+      "pcId": "10006199"
     },
     "2025-topps-chrome-baseball::junior-caminero::auto": {
       "setKey": "2025-topps-chrome-baseball",
@@ -478,7 +578,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:06:52.479Z"
+      "enrichedAt": "2026-06-27T01:03:01.962Z",
+      "sport": "baseball",
+      "pcMarket": 82,
+      "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome-update-1990-autograph/junior-caminero-90cua-jc",
+      "pcTitle": "Junior Caminero #90CUA-JC",
+      "pcId": "11341703"
     },
     "2025-topps-chrome-baseball::seth-hernandez-top::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -497,7 +602,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:07:14.202Z"
+      "enrichedAt": "2026-06-26T22:07:14.202Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::eric-hartman::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -516,7 +622,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:07:35.283Z"
+      "enrichedAt": "2026-06-26T22:07:35.283Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::picks-autos-ernie::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -535,7 +642,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:07:53.978Z"
+      "enrichedAt": "2026-06-26T22:07:53.978Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::craig-kimbrel::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -554,7 +662,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:08:11.387Z"
+      "enrichedAt": "2026-06-26T22:08:11.387Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::vladimir-guerrero-jr.::auto-/150": {
       "setKey": "2025-topps-chrome-baseball",
@@ -573,7 +682,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:08:28.296Z"
+      "enrichedAt": "2026-06-26T22:08:28.296Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::jesus-made-first::auto-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -585,7 +695,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:10:07.127Z"
+      "enrichedAt": "2026-06-26T22:10:07.127Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::konnor-griffin-ssp::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -604,7 +715,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:10:26.926Z"
+      "enrichedAt": "2026-06-26T22:10:26.926Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::ben-rice::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -626,7 +738,8 @@
       "ebayMedian": 350,
       "ebayCount": 60,
       "ebayQuery": "Ben Rice Auto RC /99 2025 Topps Chrome Baseball /99",
-      "enrichedAt": "2026-06-26T22:10:38.844Z"
+      "enrichedAt": "2026-06-26T22:10:38.844Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::mike-sirota::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -645,7 +758,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:11:01.295Z"
+      "enrichedAt": "2026-06-26T22:11:01.295Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::kevin-mcgonigle::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -664,7 +778,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:11:19.126Z"
+      "enrichedAt": "2026-06-26T22:11:19.126Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::tatsuya-imai-redemption::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -683,7 +798,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:11:40.561Z"
+      "enrichedAt": "2026-06-26T22:11:40.561Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::elly-de-la::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -705,7 +821,8 @@
       "ebayMedian": 229.95,
       "ebayCount": 60,
       "ebayQuery": "Elly De La Auto RC /99 2025 Topps Chrome Baseball /99",
-      "enrichedAt": "2026-06-26T22:12:00.809Z"
+      "enrichedAt": "2026-06-26T22:12:00.809Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::payton-tolle::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -727,7 +844,8 @@
       "ebayMedian": 49.99,
       "ebayCount": 60,
       "ebayQuery": "Payton Tolle Auto RC /99 2025 Topps Chrome Baseball /99",
-      "enrichedAt": "2026-06-26T22:12:15.187Z"
+      "enrichedAt": "2026-06-26T22:12:15.187Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::jarlin-susana-ssp::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -746,7 +864,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:12:32.433Z"
+      "enrichedAt": "2026-06-26T22:12:32.433Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::roman-anthony-redemption::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -768,7 +887,8 @@
       "ebayMedian": 269.99,
       "ebayCount": 60,
       "ebayQuery": "Roman Anthony Redemption Auto RC /99 2025 Topps Chrome Baseball /99",
-      "enrichedAt": "2026-06-26T22:12:43.922Z"
+      "enrichedAt": "2026-06-26T22:12:43.922Z",
+      "sport": "baseball"
     },
     "2025-panini-prizm-basketball::caitlin-clark::numbered-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -790,7 +910,8 @@
       "ebayMedian": 13.52,
       "ebayCount": 60,
       "ebayQuery": "Caitlin Clark Numbered Auto /10 2025 Panini Prizm Basketball /10",
-      "enrichedAt": "2026-06-26T22:13:02.681Z"
+      "enrichedAt": "2026-06-26T22:13:02.681Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::matas-buzelis-signatures::numbered-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -809,7 +930,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:13:21.326Z"
+      "enrichedAt": "2026-06-26T22:13:21.326Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::luka-doncic-contenders::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -828,7 +950,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:13:40.258Z"
+      "enrichedAt": "2026-06-26T22:13:40.258Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::luka-don-prizmatrix::numbered-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -847,7 +970,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:14:01.147Z"
+      "enrichedAt": "2026-06-26T22:14:01.147Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::spectra-grant-hill::printing-plate-1/1": {
       "setKey": "2025-panini-prizm-basketball",
@@ -866,7 +990,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:14:21.986Z"
+      "enrichedAt": "2026-06-26T22:14:21.986Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::paige-bueckers::numbered-auto-/25": {
       "setKey": "2025-panini-prizm-basketball",
@@ -885,7 +1010,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:14:42.232Z"
+      "enrichedAt": "2026-06-26T22:14:42.232Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::picks-caitlin-clark::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -907,7 +1033,8 @@
       "ebayMedian": 30,
       "ebayCount": 60,
       "ebayQuery": "Picks Caitlin Clark Auto RC /99 2025 Panini Prizm Basketball /99",
-      "enrichedAt": "2026-06-26T22:14:57.052Z"
+      "enrichedAt": "2026-06-26T22:14:57.052Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::lamelo-ball-signatures::auto-/25": {
       "setKey": "2025-panini-prizm-basketball",
@@ -926,7 +1053,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:15:16.307Z"
+      "enrichedAt": "2026-06-26T22:15:16.307Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::contenders-jalen-brunson::auto-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -945,7 +1073,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:15:33.922Z"
+      "enrichedAt": "2026-06-26T22:15:33.922Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::spectra-jalen-brunson::auto-/49": {
       "setKey": "2025-panini-prizm-basketball",
@@ -964,7 +1093,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:16:09.163Z"
+      "enrichedAt": "2026-06-26T22:16:09.163Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::luka-doncic-few::numbered-auto-/25": {
       "setKey": "2025-panini-prizm-basketball",
@@ -986,7 +1116,8 @@
       "ebayMedian": 100,
       "ebayCount": 60,
       "ebayQuery": "Luka Doncic Few Numbered Auto /25 2025 Panini Prizm Basketball /25",
-      "enrichedAt": "2026-06-26T22:16:22.320Z"
+      "enrichedAt": "2026-06-26T22:16:22.320Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::shai-gilgeous-alexander::auto": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1005,7 +1136,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:16:43.041Z"
+      "enrichedAt": "2026-06-26T22:16:43.041Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::spectra-rpa-jalen::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1017,7 +1149,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:17:04.696Z"
+      "enrichedAt": "2026-06-26T22:17:04.696Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::wnba-throwback-signatures::auto-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1036,7 +1169,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:17:24.374Z"
+      "enrichedAt": "2026-06-26T22:17:24.374Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::spectra-alperen-sengun::patch-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1055,7 +1189,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:17:43.817Z"
+      "enrichedAt": "2026-06-26T22:17:43.817Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::lamelo-ball-sensational::parallel-/25": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1074,7 +1209,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:18:02.336Z"
+      "enrichedAt": "2026-06-26T22:18:02.336Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::wnba-paige-bueckers::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1093,7 +1229,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:18:22.978Z"
+      "enrichedAt": "2026-06-26T22:18:22.978Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::ajay-mitchell-signatures::numbered-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1112,7 +1249,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:18:45.774Z"
+      "enrichedAt": "2026-06-26T22:18:45.774Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::spectra-jalen-brunson::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1134,7 +1272,8 @@
       "ebayMedian": 224.99,
       "ebayCount": 60,
       "ebayQuery": "Spectra Jalen Brunson Auto RC /99 2025 Panini Prizm Basketball /99",
-      "enrichedAt": "2026-06-26T22:19:00.440Z"
+      "enrichedAt": "2026-06-26T22:19:00.440Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::contenders-deni-avdija::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1153,7 +1292,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:19:19.269Z"
+      "enrichedAt": "2026-06-26T22:19:19.269Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::caitlin-clark::numbered-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1172,7 +1312,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:19:40.373Z"
+      "enrichedAt": "2026-06-26T22:19:40.373Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::matas-buzelis-signatures::numbered-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1191,7 +1332,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:20:00.027Z"
+      "enrichedAt": "2026-06-26T22:20:00.027Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::luka-doncic-contenders::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1203,7 +1345,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:20:17.146Z"
+      "enrichedAt": "2026-06-26T22:20:17.146Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::luka-don-prizmatrix::numbered-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1222,7 +1365,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:20:52.380Z"
+      "enrichedAt": "2026-06-26T22:20:52.380Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::spectra-grant-hill::printing-plate-1/1": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1241,7 +1385,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:21:12.898Z"
+      "enrichedAt": "2026-06-26T22:21:12.898Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::paige-bueckers::numbered-auto-/25": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1260,7 +1405,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:21:32.006Z"
+      "enrichedAt": "2026-06-26T22:21:32.006Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::picks-caitlin-clark::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1275,7 +1421,8 @@
       "ebayMedian": 50,
       "ebayCount": 60,
       "ebayQuery": "Picks Caitlin Clark Auto RC /99 2024 Panini Prizm Basketball /99",
-      "enrichedAt": "2026-06-26T22:21:51.724Z"
+      "enrichedAt": "2026-06-26T22:21:51.724Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::lamelo-ball-signatures::auto-/25": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1294,7 +1441,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:22:09.105Z"
+      "enrichedAt": "2026-06-26T22:22:09.105Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::contenders-jalen-brunson::auto-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1306,7 +1454,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:22:33.148Z"
+      "enrichedAt": "2026-06-26T22:22:33.148Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::spectra-jalen-brunson::auto-/49": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1328,7 +1477,8 @@
       "ebayMedian": 135,
       "ebayCount": 60,
       "ebayQuery": "Spectra Jalen Brunson Auto /49 2024 Panini Prizm Basketball /49",
-      "enrichedAt": "2026-06-26T22:22:45.312Z"
+      "enrichedAt": "2026-06-26T22:22:45.312Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::luka-doncic-few::numbered-auto-/25": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1347,7 +1497,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:23:04.153Z"
+      "enrichedAt": "2026-06-26T22:23:04.153Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::shai-gilgeous-alexander::auto": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1366,7 +1517,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:23:22.883Z"
+      "enrichedAt": "2026-06-26T22:23:22.883Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::spectra-rpa-jalen::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1381,7 +1533,8 @@
       "ebayMedian": 40,
       "ebayCount": 60,
       "ebayQuery": "Spectra Rpa Jalen Auto RC /99 2024 Panini Prizm Basketball /99",
-      "enrichedAt": "2026-06-26T22:23:39.889Z"
+      "enrichedAt": "2026-06-26T22:23:39.889Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::wnba-throwback-signatures::auto-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1396,7 +1549,8 @@
       "ebayMedian": 15,
       "ebayCount": 73,
       "ebayQuery": "Wnba Throwback Signatures Auto /99 2024 Panini Prizm Basketball /99",
-      "enrichedAt": "2026-06-26T22:23:52.047Z"
+      "enrichedAt": "2026-06-26T22:23:52.047Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::spectra-alperen-sengun::patch-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1415,7 +1569,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:24:11.090Z"
+      "enrichedAt": "2026-06-26T22:24:11.090Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::lamelo-ball-sensational::parallel-/25": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1434,7 +1589,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:24:34.090Z"
+      "enrichedAt": "2026-06-26T22:24:34.090Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::wnba-paige-bueckers::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1449,7 +1605,8 @@
       "ebayMedian": 19.99,
       "ebayCount": 60,
       "ebayQuery": "Wnba Paige Bueckers Auto RC /99 2024 Panini Prizm Basketball /99",
-      "enrichedAt": "2026-06-26T22:25:05.644Z"
+      "enrichedAt": "2026-06-26T22:25:05.644Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::ajay-mitchell-signatures::numbered-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1471,7 +1628,8 @@
       "ebayMedian": 32,
       "ebayCount": 60,
       "ebayQuery": "Ajay Mitchell Signatures Numbered Auto /10 2024 Panini Prizm Basketball /10",
-      "enrichedAt": "2026-06-26T22:25:31.921Z"
+      "enrichedAt": "2026-06-26T22:25:31.921Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::spectra-jalen-brunson::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1483,7 +1641,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:25:50.847Z"
+      "enrichedAt": "2026-06-26T22:25:50.847Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::contenders-deni-avdija::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1495,7 +1654,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:26:10.090Z"
+      "enrichedAt": "2026-06-26T22:26:10.090Z",
+      "sport": "basketball"
     },
     "2025-topps-bowman-chrome::pete-crow-armstrong::numbered-auto-/10": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1514,7 +1674,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:26:33.678Z"
+      "enrichedAt": "2026-06-26T22:26:33.678Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::luis-pena::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1533,7 +1694,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:26:51.729Z"
+      "enrichedAt": "2026-06-26T22:26:51.729Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::lazaro-montes::numbered-auto-/10": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1552,7 +1714,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:27:17.491Z"
+      "enrichedAt": "2026-06-26T22:27:17.491Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::yordan-alvarez::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1571,7 +1734,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:27:36.363Z"
+      "enrichedAt": "2026-06-26T22:27:36.363Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::jojo-parker-true::numbered-auto-/10": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1590,7 +1754,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:27:56.715Z"
+      "enrichedAt": "2026-06-26T22:27:56.715Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::autos-roki-sasaki::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1612,7 +1777,8 @@
       "ebayMedian": 249,
       "ebayCount": 60,
       "ebayQuery": "Autos Roki Sasaki Numbered Auto /25 2025 Bowman Chrome Baseball /25",
-      "enrichedAt": "2026-06-26T22:28:13.058Z"
+      "enrichedAt": "2026-06-26T22:28:13.058Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::eli-willits::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1631,7 +1797,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:28:33.119Z"
+      "enrichedAt": "2026-06-26T22:28:33.119Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::paul-skenes::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1650,7 +1817,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:28:55.674Z"
+      "enrichedAt": "2026-06-26T22:28:55.674Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::aiva-arquette-ssp::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1669,7 +1837,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:29:15.400Z"
+      "enrichedAt": "2026-06-26T22:29:15.400Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::junior-caminero::auto": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1688,7 +1857,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-26T22:29:34.447Z"
+      "enrichedAt": "2026-06-26T22:29:34.447Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::eric-hartman::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1707,7 +1877,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:14:26.208Z"
+      "enrichedAt": "2026-06-27T00:14:26.208Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::seth-hernandez-top::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1726,7 +1897,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:14:45.182Z"
+      "enrichedAt": "2026-06-27T00:14:45.182Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::picks-autos-ernie::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1745,7 +1917,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:15:04.781Z"
+      "enrichedAt": "2026-06-27T00:15:04.781Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::jesus-made-first::auto-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1757,7 +1930,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:15:24.065Z"
+      "enrichedAt": "2026-06-27T00:15:24.065Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::gage-jump::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1776,7 +1950,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:15:43.458Z"
+      "enrichedAt": "2026-06-27T00:15:43.458Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::konnor-griffin-ssp::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1795,7 +1970,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:16:19.216Z"
+      "enrichedAt": "2026-06-27T00:16:19.216Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::juneiker-caceres::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1814,7 +1990,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:16:40.533Z"
+      "enrichedAt": "2026-06-27T00:16:40.533Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::mike-sirota::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1833,7 +2010,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:17:01.777Z"
+      "enrichedAt": "2026-06-27T00:17:01.777Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::kevin-mcgonigle::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1852,7 +2030,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:17:23.188Z"
+      "enrichedAt": "2026-06-27T00:17:23.188Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::mike-trout-game::patch-auto-/5": {
       "setKey": "2025-topps-bowman-chrome",
@@ -1871,7 +2050,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:17:44.486Z"
+      "enrichedAt": "2026-06-27T00:17:44.486Z",
+      "sport": "baseball"
     },
     "2024-topps-chrome-basketball::jalen-brunson-mt::numbered-auto-/10": {
       "setKey": "2024-topps-chrome-basketball",
@@ -1894,7 +2074,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-stars-of-the-nba/jalen-brunson-sa-10",
       "pcTitle": "Jalen Brunson #SA-10",
       "pcId": "10842429",
-      "enrichedAt": "2026-06-27T00:18:13.297Z"
+      "enrichedAt": "2026-06-27T00:18:13.297Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::lebron-james-true::numbered-auto-/25": {
       "setKey": "2024-topps-chrome-basketball",
@@ -1917,7 +2098,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-nba-hoops/lebron-james-rainbow-84",
       "pcTitle": "LeBron James [Rainbow] #84",
       "pcId": "12951682",
-      "enrichedAt": "2026-06-27T00:18:18.181Z"
+      "enrichedAt": "2026-06-27T00:18:18.181Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::victor-wembanyama-sky::numbered-auto-/25": {
       "setKey": "2024-topps-chrome-basketball",
@@ -1940,7 +2122,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-finest/victor-wembanyama-sky-blue-refractor-83",
       "pcTitle": "Victor Wembanyama [Sky Blue Refractor] #83",
       "pcId": "10135951",
-      "enrichedAt": "2026-06-27T00:18:22.976Z"
+      "enrichedAt": "2026-06-27T00:18:22.976Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::jalen-brunson::numbered-auto-/25": {
       "setKey": "2024-topps-chrome-basketball",
@@ -1963,7 +2146,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-nba-hoops/jalen-brunson-fanatics-278",
       "pcTitle": "Jalen Brunson [Fanatics] #278",
       "pcId": "12956989",
-      "enrichedAt": "2026-06-27T00:18:27.969Z"
+      "enrichedAt": "2026-06-27T00:18:27.969Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::victor-wembanyama::auto-/75": {
       "setKey": "2024-topps-chrome-basketball",
@@ -1986,7 +2170,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-nba-hoops/victor-wembanyama-dragon-year-165",
       "pcTitle": "Victor Wembanyama [Dragon Year] #165",
       "pcId": "8397347",
-      "enrichedAt": "2026-06-27T00:18:30.633Z"
+      "enrichedAt": "2026-06-27T00:18:30.633Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::dylan-harper-next::numbered-auto-/10": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2002,7 +2187,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-mcdonald%e2%80%99s-all-american-event-autograph/dylan-harper-ea-dh",
       "pcTitle": "Dylan Harper #EA-DH",
       "pcId": "8568740",
-      "enrichedAt": "2026-06-27T00:21:17.101Z"
+      "enrichedAt": "2026-06-27T00:21:17.101Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::victor-wembanyama::auto": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2025,7 +2211,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-autograph/victor-wembanyama-orange-geometric-refractor-tca-vw",
       "pcTitle": "Victor Wembanyama [Orange Geometric Refractor] #TCA-VW",
       "pcId": "9644277",
-      "enrichedAt": "2026-06-27T00:21:19.792Z"
+      "enrichedAt": "2026-06-27T00:21:19.792Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::cactus-jack-cooper::numbered-auto-/25": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2037,7 +2224,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:21:25.599Z"
+      "enrichedAt": "2026-06-27T00:21:25.599Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::mega-boxes::rookie-card": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2053,7 +2241,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome/mega-box",
       "pcTitle": "Mega Box",
       "pcId": "9635469",
-      "enrichedAt": "2026-06-27T00:21:29.003Z"
+      "enrichedAt": "2026-06-27T00:21:29.003Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::og-anunoby::superfractor-1/1": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2072,7 +2261,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:21:31.433Z"
+      "enrichedAt": "2026-06-27T00:21:31.433Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::stephen-curry::numbered-auto-/10": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2095,7 +2285,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-1973-autograph/stephen-curry-73ta-sc",
       "pcTitle": "Stephen Curry #73TA-SC",
       "pcId": "9641953",
-      "enrichedAt": "2026-06-27T00:21:34.569Z"
+      "enrichedAt": "2026-06-27T00:21:34.569Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::jalen-brunson-geometric::auto-rc-/50": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2111,7 +2302,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-film-study/jalen-brunson-refractor-fs-14",
       "pcTitle": "Jalen Brunson [Refractor] #FS-14",
       "pcId": "9645528",
-      "enrichedAt": "2026-06-27T00:21:41.566Z"
+      "enrichedAt": "2026-06-27T00:21:41.566Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::alex-sarr::numbered-auto-/5": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2134,7 +2326,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome/alex-sarr-refractor-218",
       "pcTitle": "Alex Sarr [Refractor] #218",
       "pcId": "11482779",
-      "enrichedAt": "2026-06-27T00:21:44.364Z"
+      "enrichedAt": "2026-06-27T00:21:44.364Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::dylan-harper-on::auto-/75": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2157,7 +2350,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-mcdonald%e2%80%99s-all-american-event-autograph/dylan-harper-ea-dh",
       "pcTitle": "Dylan Harper #EA-DH",
       "pcId": "8568740",
-      "enrichedAt": "2026-06-27T00:21:49.761Z"
+      "enrichedAt": "2026-06-27T00:21:49.761Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::mark-price-game::logoman-1/1": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2180,7 +2374,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-1997-topps-chrome/mark-price-refractor-151",
       "pcTitle": "Mark Price [Refractor] #151",
       "pcId": "90198",
-      "enrichedAt": "2026-06-27T00:21:58.422Z"
+      "enrichedAt": "2026-06-27T00:21:58.422Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::dylan-harper::auto-rc-/50": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2196,7 +2391,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-mcdonald%e2%80%99s-all-american-event-autograph/dylan-harper-ea-dh",
       "pcTitle": "Dylan Harper #EA-DH",
       "pcId": "8568740",
-      "enrichedAt": "2026-06-27T00:22:02.955Z"
+      "enrichedAt": "2026-06-27T00:22:02.955Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::ace-bailey-true::numbered-auto-/25": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2212,7 +2408,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-mcdonald%e2%80%99s-all-american-event-autograph/ace-bailey-ea-ab",
       "pcTitle": "Ace Bailey #EA-AB",
       "pcId": "8568732",
-      "enrichedAt": "2026-06-27T00:22:09.119Z"
+      "enrichedAt": "2026-06-27T00:22:09.119Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::victor-wembanyama-geometric::auto": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2228,7 +2425,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-autograph/victor-wembanyama-orange-geometric-refractor-tca-vw",
       "pcTitle": "Victor Wembanyama [Orange Geometric Refractor] #TCA-VW",
       "pcId": "9644277",
-      "enrichedAt": "2026-06-27T00:22:10.191Z"
+      "enrichedAt": "2026-06-27T00:22:10.191Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::next-stop-signatures::auto-/5": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2244,7 +2442,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-next-stop-signature/stephon-castle-nss-sc",
       "pcTitle": "Stephon Castle #NSS-SC",
       "pcId": "9642840",
-      "enrichedAt": "2026-06-27T00:22:17.763Z"
+      "enrichedAt": "2026-06-27T00:22:17.763Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::victor-wembanyama-skywrite::auto": {
       "setKey": "2024-topps-chrome-basketball",
@@ -2267,7 +2466,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome/victor-wembanyama-refractor-193",
       "pcTitle": "Victor Wembanyama [Refractor] #193",
       "pcId": "9641288",
-      "enrichedAt": "2026-06-27T00:22:20.397Z"
+      "enrichedAt": "2026-06-27T00:22:20.397Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::jalen-brunson-rpa::patch-auto-/10": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2286,7 +2486,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:22:26.935Z"
+      "enrichedAt": "2026-06-27T00:22:26.935Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::jalen-brunson::patch-auto-/99": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2305,7 +2506,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:22:28.652Z"
+      "enrichedAt": "2026-06-27T00:22:28.652Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::giannis-antetokounmpo::patch-auto-/99": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2328,7 +2530,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-national-treasures-viewpoint-signature/giannis-antetokounmpo-8",
       "pcTitle": "Giannis Antetokounmpo #8",
       "pcId": "10174501",
-      "enrichedAt": "2026-06-27T00:22:37.627Z"
+      "enrichedAt": "2026-06-27T00:22:37.627Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::og-anunoby::patch-auto-/10": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2351,7 +2554,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps/og-anunoby-holo-foil-15",
       "pcTitle": "OG Anunoby [Holo Foil] #15",
       "pcId": "10820771",
-      "enrichedAt": "2026-06-27T00:22:46.491Z"
+      "enrichedAt": "2026-06-27T00:22:46.491Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::jalen-brunson-signed::auto-/25": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2374,7 +2578,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-signature-class/jalen-brunson-red-58",
       "pcTitle": "Jalen Brunson [Red] #58",
       "pcId": "13123188",
-      "enrichedAt": "2026-06-27T00:22:48.927Z"
+      "enrichedAt": "2026-06-27T00:22:48.927Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::stephen-curry-penmanship::numbered-auto-/10": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2397,7 +2602,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-national-treasures-retro-2007-patch-autograph/stephen-curry-25",
       "pcTitle": "Stephen Curry #25",
       "pcId": "10173585",
-      "enrichedAt": "2026-06-27T00:22:54.733Z"
+      "enrichedAt": "2026-06-27T00:22:54.733Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::tyrese-haliburton-dna::auto-/99": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2420,7 +2626,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2023-panini-national-treasures-viewpoint-signatures/tyrese-haliburton-vs-hal",
       "pcTitle": "Tyrese Haliburton #VS-HAL",
       "pcId": "8238806",
-      "enrichedAt": "2026-06-27T00:23:02.711Z"
+      "enrichedAt": "2026-06-27T00:23:02.711Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::tyrese-haliburton::patch-auto-/99": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2439,7 +2646,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:23:08.185Z"
+      "enrichedAt": "2026-06-27T00:23:08.185Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::jalen-brunson-rpa::auto-/49": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2462,7 +2670,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-signature-class/jalen-brunson-red-58",
       "pcTitle": "Jalen Brunson [Red] #58",
       "pcId": "13123188",
-      "enrichedAt": "2026-06-27T00:23:12.691Z"
+      "enrichedAt": "2026-06-27T00:23:12.691Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::luka-doncic-rpa::patch-auto-/25": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2485,7 +2694,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2018-panini-national-treasures/luka-doncic-logoman-autographs-127",
       "pcTitle": "Luka Doncic [Logoman Autographs] #127",
       "pcId": "1431179",
-      "enrichedAt": "2026-06-27T00:23:20.795Z"
+      "enrichedAt": "2026-06-27T00:23:20.795Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::of-deni-avdija::printing-plate-1/1": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2508,7 +2718,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps/deni-avdija-gold-125",
       "pcTitle": "Deni Avdija [Gold] #125",
       "pcId": "10825674",
-      "enrichedAt": "2026-06-27T00:23:24.327Z"
+      "enrichedAt": "2026-06-27T00:23:24.327Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::tyler-shough-hats::patch-auto-/3": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2531,7 +2742,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/football-cards-2025-panini-national-treasures-collegiate/tyler-shough-red-32",
       "pcTitle": "Tyler Shough [Red] #32",
       "pcId": "11220036",
-      "enrichedAt": "2026-06-27T00:23:26.840Z"
+      "enrichedAt": "2026-06-27T00:23:26.840Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::luka-doncic-signed::auto-/99": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2554,7 +2766,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2018-panini-national-treasures/luka-doncic-logoman-autographs-127",
       "pcTitle": "Luka Doncic [Logoman Autographs] #127",
       "pcId": "1431179",
-      "enrichedAt": "2026-06-27T00:23:29.289Z"
+      "enrichedAt": "2026-06-27T00:23:29.289Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::jalen-brunson-prime::auto-/25": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2573,7 +2786,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:23:35.952Z"
+      "enrichedAt": "2026-06-27T00:23:35.952Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::paolo-banchero::patch-auto-/99": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2596,7 +2810,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-national-treasures-viewpoint-signature/paolo-banchero-13",
       "pcTitle": "Paolo Banchero #13",
       "pcId": "10174555",
-      "enrichedAt": "2026-06-27T00:23:45.635Z"
+      "enrichedAt": "2026-06-27T00:23:45.635Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::og-anunoby-jsy::printing-plate-1/1": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2619,7 +2834,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps/og-anunoby-holo-foil-15",
       "pcTitle": "OG Anunoby [Holo Foil] #15",
       "pcId": "10820771",
-      "enrichedAt": "2026-06-27T00:23:49.205Z"
+      "enrichedAt": "2026-06-27T00:23:49.205Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::tyrese-maxey-clutch::printing-plate-1/1": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2642,7 +2858,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2023-panini-national-treasures-clutch-factor-signature/tyrese-maxey-1",
       "pcTitle": "Tyrese Maxey #1",
       "pcId": "8235674",
-      "enrichedAt": "2026-06-27T00:23:58.668Z"
+      "enrichedAt": "2026-06-27T00:23:58.668Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::tyrese-haliburton-horizontal::patch-auto-/75": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2665,7 +2882,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2020-panini-national-treasures/tyrese-haliburton-patch-horizontal-autograph-103",
       "pcTitle": "Tyrese Haliburton [Patch Horizontal Autograph] #103",
       "pcId": "2533347",
-      "enrichedAt": "2026-06-27T00:24:04.063Z"
+      "enrichedAt": "2026-06-27T00:24:04.063Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::jalen-brunson-horizontal::patch-auto-/25": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2688,7 +2906,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2018-panini-national-treasures/jalen-brunson-patch-autograph-132",
       "pcTitle": "Jalen Brunson [Patch Autograph] #132",
       "pcId": "158253",
-      "enrichedAt": "2026-06-27T00:24:10.966Z"
+      "enrichedAt": "2026-06-27T00:24:10.966Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::deni-avdija-rpa::patch-auto-/99": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -2711,7 +2930,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps/deni-avdija-doorbuster-125",
       "pcTitle": "Deni Avdija [Doorbuster] #125",
       "pcId": "11324684",
-      "enrichedAt": "2026-06-27T00:24:18.203Z"
+      "enrichedAt": "2026-06-27T00:24:18.203Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::doncic-curry-gilgeous::auto": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -2730,7 +2950,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:24:25.189Z"
+      "enrichedAt": "2026-06-27T00:24:25.189Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::royalty-caitlin-clark::auto-/49": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -2753,7 +2974,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-caitlin-clark-collection-college-contenders/caitlin-clark-panini-cc2",
       "pcTitle": "Caitlin Clark [Panini] #CC2",
       "pcId": "7211045",
-      "enrichedAt": "2026-06-27T00:24:27.750Z"
+      "enrichedAt": "2026-06-27T00:24:27.750Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::royalty-wnba-caitlin::auto-/99": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -2776,7 +2998,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-wnba/caitlin-clark-wnba-logo-145",
       "pcTitle": "Caitlin Clark [WNBA Logo] #145",
       "pcId": "8480381",
-      "enrichedAt": "2026-06-27T00:24:33.012Z"
+      "enrichedAt": "2026-06-27T00:24:33.012Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::collection-premium-tim::patch-auto-/5": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -2799,7 +3022,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-immaculate-premium-patch-autograph/tim-duncan-98",
       "pcTitle": "Tim Duncan #98",
       "pcId": "10664343",
-      "enrichedAt": "2026-06-27T00:24:40.123Z"
+      "enrichedAt": "2026-06-27T00:24:40.123Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::caitlin-clark::patch-auto-/25": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -2822,7 +3046,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-caitlin-clark-collection-college-contenders/caitlin-clark-panini-cc2",
       "pcTitle": "Caitlin Clark [Panini] #CC2",
       "pcId": "7211045",
-      "enrichedAt": "2026-06-27T00:24:45.083Z"
+      "enrichedAt": "2026-06-27T00:24:45.083Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::cristiano-ronaldo-shadowbox::numbered-auto-/25": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -2838,7 +3063,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/soccer-cards-2024-panini-immaculate/cristiano-ronaldo-109",
       "pcTitle": "Cristiano Ronaldo #109",
       "pcId": "10587011",
-      "enrichedAt": "2026-06-27T00:24:49.748Z"
+      "enrichedAt": "2026-06-27T00:24:49.748Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::collection-au-premium::auto-/24": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -2861,7 +3087,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2019-panini-immaculate-collection-premium-patch-autographs/ja-morant-jmt",
       "pcTitle": "JA Morant #JMT",
       "pcId": "1952239",
-      "enrichedAt": "2026-06-27T00:24:53.183Z"
+      "enrichedAt": "2026-06-27T00:24:53.183Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::caitlin-clark-rpa::auto-rc-/99": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -2884,7 +3111,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-caitlin-clark-collection-college-contenders/caitlin-clark-panini-cc2",
       "pcTitle": "Caitlin Clark [Panini] #CC2",
       "pcId": "7211045",
-      "enrichedAt": "2026-06-27T00:24:56.341Z"
+      "enrichedAt": "2026-06-27T00:24:56.341Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::shai-gilgeous-alexander::patch-auto-/24": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -2907,7 +3135,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-immaculate-patch-autograph/shai-gilgeous-alexander-1",
       "pcTitle": "Shai Gilgeous-Alexander #1",
       "pcId": "10663637",
-      "enrichedAt": "2026-06-27T00:24:58.927Z"
+      "enrichedAt": "2026-06-27T00:24:58.927Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::stephen-curry::patch-auto-/30": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -2930,7 +3159,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-immaculate-patch-autograph/stephen-curry-6",
       "pcTitle": "Stephen Curry #6",
       "pcId": "10663685",
-      "enrichedAt": "2026-06-27T00:25:00.839Z"
+      "enrichedAt": "2026-06-27T00:25:00.839Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::collection-premium-jalen::auto": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -2953,7 +3183,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-immaculate-premium-patch-autograph/jalen-bridges-85",
       "pcTitle": "Jalen Bridges #85",
       "pcId": "10664248",
-      "enrichedAt": "2026-06-27T00:25:06.972Z"
+      "enrichedAt": "2026-06-27T00:25:06.972Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::jalen-brunson::patch-auto-/3": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -2969,7 +3200,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-immaculate-patch-autograph/jalen-brunson-22",
       "pcTitle": "Jalen Brunson #22",
       "pcId": "10663906",
-      "enrichedAt": "2026-06-27T00:25:08.726Z"
+      "enrichedAt": "2026-06-27T00:25:08.726Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::royalty-wnba-angel::patch-auto-/49": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -2992,7 +3224,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-wnba/angel-reese-wnba-logo-10",
       "pcTitle": "Angel Reese [WNBA Logo] #10",
       "pcId": "8475955",
-      "enrichedAt": "2026-06-27T00:25:14.974Z"
+      "enrichedAt": "2026-06-27T00:25:14.974Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::shai-gilgeous-alexander::auto-/99": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -3015,7 +3248,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-immaculate-signature-moves/shai-gilgeous-alexander-4",
       "pcTitle": "Shai Gilgeous-Alexander #4",
       "pcId": "10663102",
-      "enrichedAt": "2026-06-27T00:25:16.521Z"
+      "enrichedAt": "2026-06-27T00:25:16.521Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::anthony-edwards-remarkable::auto": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -3038,7 +3272,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-immaculate-blockchain/anthony-edwards-1",
       "pcTitle": "Anthony Edwards #1",
       "pcId": "10666251",
-      "enrichedAt": "2026-06-27T00:25:31.604Z"
+      "enrichedAt": "2026-06-27T00:25:31.604Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::sneaker-paolo-banchero::printing-plate-1/1": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -3061,7 +3296,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-immaculate-aura-signature/paolo-banchero-10",
       "pcTitle": "Paolo Banchero #10",
       "pcId": "10662100",
-      "enrichedAt": "2026-06-27T00:25:34.626Z"
+      "enrichedAt": "2026-06-27T00:25:34.626Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::anthony-edwards-ball::numbered-auto-/25": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -3073,7 +3309,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:25:40.113Z"
+      "enrichedAt": "2026-06-27T00:25:40.113Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::collection-damian-lillard::patch-auto-/99": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -3096,7 +3333,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-immaculate-retro-premium-patch-autograph/damian-lillard-1",
       "pcTitle": "Damian Lillard #1",
       "pcId": "10664830",
-      "enrichedAt": "2026-06-27T00:25:44.477Z"
+      "enrichedAt": "2026-06-27T00:25:44.477Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::kevin-porter-jr::patch-auto-/4": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -3119,7 +3357,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-totally-certified-signature/kevin-porter-jr-25",
       "pcTitle": "Kevin Porter Jr. #25",
       "pcId": "8901862",
-      "enrichedAt": "2026-06-27T00:25:53.614Z"
+      "enrichedAt": "2026-06-27T00:25:53.614Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::collection-anthony-edwards::patch-auto-/10": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -3142,7 +3381,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-immaculate-premium-patch-autograph/anthony-edwards-fotl-7",
       "pcTitle": "Anthony Edwards [FOTL] #7",
       "pcId": "10664640",
-      "enrichedAt": "2026-06-27T00:26:01.748Z"
+      "enrichedAt": "2026-06-27T00:26:01.748Z",
+      "sport": "basketball"
     },
     "2025-topps-tier-one-baseball::autos-ink-shohei::numbered-auto-/25": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3165,7 +3405,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one/shohei-ohtani-pink-foil-23",
       "pcTitle": "Shohei Ohtani [Pink Foil] #23",
       "pcId": "10507461",
-      "enrichedAt": "2026-06-27T00:26:06.704Z"
+      "enrichedAt": "2026-06-27T00:26:06.704Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::bo-jackson-deion::auto-/25": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3188,7 +3429,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/football-cards-2025-panini-select-summit-autograph/bo-jackson-brian-jordan-deion-sanders-cracked-ice-sua-dul",
       "pcTitle": "Bo Jackson / Brian Jordan / Deion Sanders [Cracked Ice] #SUA-DUL",
       "pcId": "12079000",
-      "enrichedAt": "2026-06-27T00:26:13.480Z"
+      "enrichedAt": "2026-06-27T00:26:13.480Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::wow-james-wood::printing-plate-1/1": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3211,7 +3453,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-tier-1-autograph/james-wood-t1a-jw",
       "pcTitle": "James Wood #T1A-JW",
       "pcId": "10510162",
-      "enrichedAt": "2026-06-27T00:26:19.864Z"
+      "enrichedAt": "2026-06-27T00:26:19.864Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::sandy-koufax-ink::numbered-auto-/25": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3230,7 +3473,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:26:26.146Z"
+      "enrichedAt": "2026-06-27T00:26:26.146Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::ben-rice::numbered-auto-/10": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3246,7 +3490,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-break-out-autograph/ben-rice-boa-br",
       "pcTitle": "Ben Rice #BOA-BR",
       "pcId": "10508621",
-      "enrichedAt": "2026-06-27T00:26:27.903Z"
+      "enrichedAt": "2026-06-27T00:26:27.903Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::jacob-misiorowski-city::auto-/49": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3262,7 +3507,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-panini-three-and-two-day-one-autograph/jacob-misiorowski-holo-gold-doa-jms",
       "pcTitle": "Jacob Misiorowski [Holo Gold] #DOA-JMS",
       "pcId": "10632979",
-      "enrichedAt": "2026-06-27T00:26:32.183Z"
+      "enrichedAt": "2026-06-27T00:26:32.183Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::prodigious-ken-griffey::auto-/10": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3285,7 +3531,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-tier-1-autograph/ken-griffey-jr-t1a-kg",
       "pcTitle": "Ken Griffey Jr. #T1A-KG",
       "pcId": "10510178",
-      "enrichedAt": "2026-06-27T00:26:35.459Z"
+      "enrichedAt": "2026-06-27T00:26:35.459Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::colson-montgomery-class::numbered-auto-/10": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3308,7 +3555,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-panini-three-and-two-day-one-autograph/colson-montgomery-blue-doa-cmg",
       "pcTitle": "Colson Montgomery [Blue] #DOA-CMG",
       "pcId": "10632862",
-      "enrichedAt": "2026-06-27T00:26:38.988Z"
+      "enrichedAt": "2026-06-27T00:26:38.988Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::will-smith::printing-plate-1/1": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3331,7 +3579,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-autographed-relics-jumbo/will-smith-patch-ajr-ws",
       "pcTitle": "Will Smith [Patch] #AJR-WS",
       "pcId": "10511429",
-      "enrichedAt": "2026-06-27T00:26:45.327Z"
+      "enrichedAt": "2026-06-27T00:26:45.327Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::ken-griffey-jr::patch-auto-/25": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3354,7 +3603,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-tier-1-autograph/ken-griffey-jr-t1a-kg",
       "pcTitle": "Ken Griffey Jr. #T1A-KG",
       "pcId": "10510178",
-      "enrichedAt": "2026-06-27T00:26:50.023Z"
+      "enrichedAt": "2026-06-27T00:26:50.023Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::jj-wetherholt-on::auto-rc-/99": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3377,7 +3627,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-pro-debut/jj-wetherholt-aqua-foil-autograph-pd-94",
       "pcTitle": "JJ Wetherholt [Aqua Foil Autograph] #PD-94",
       "pcId": "11039846",
-      "enrichedAt": "2026-06-27T00:26:52.295Z"
+      "enrichedAt": "2026-06-27T00:26:52.295Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::bobby-witt-jr::numbered-auto-/25": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3400,7 +3651,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-city-connect-signature/bobby-witt-jr-ccs-bw",
       "pcTitle": "Bobby Witt Jr. #CCS-BW",
       "pcId": "10509049",
-      "enrichedAt": "2026-06-27T00:26:54.380Z"
+      "enrichedAt": "2026-06-27T00:26:54.380Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::eddie-murray-cal::auto-/25": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3423,7 +3675,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-definitive-dual-world-series-autograph/cal-ripken-jr-eddie-murray-dwsa-rjm",
       "pcTitle": "Cal Ripken Jr. / Eddie Murray #DWSA-RJM",
       "pcId": "12871218",
-      "enrichedAt": "2026-06-27T00:26:59.303Z"
+      "enrichedAt": "2026-06-27T00:26:59.303Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::shots-paul-skenes::numbered-auto-/25": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3446,7 +3699,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-shots-autograph/paul-skenes-tos-ps",
       "pcTitle": "Paul Skenes #TOS-PS",
       "pcId": "10510038",
-      "enrichedAt": "2026-06-27T00:27:00.652Z"
+      "enrichedAt": "2026-06-27T00:27:00.652Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::pete-crow-armstrong::numbered-auto-/10": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3469,7 +3723,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-base-autograph/pete-crow-armstrong-ba-pc",
       "pcTitle": "Pete Crow-Armstrong #BA-PC",
       "pcId": "10508482",
-      "enrichedAt": "2026-06-27T00:27:03.043Z"
+      "enrichedAt": "2026-06-27T00:27:03.043Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::otto-lopez-ink::printing-plate-1/1": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3485,7 +3740,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps/otto-lopez-printing-plate-172",
       "pcTitle": "Otto Lopez [Printing Plate] #172",
       "pcId": "8586034",
-      "enrichedAt": "2026-06-27T00:27:07.230Z"
+      "enrichedAt": "2026-06-27T00:27:07.230Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::bobby-witt-jr.::auto-rc-/99": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3508,7 +3764,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-city-connect-signature/bobby-witt-jr-ccs-bw",
       "pcTitle": "Bobby Witt Jr. #CCS-BW",
       "pcId": "10509049",
-      "enrichedAt": "2026-06-27T00:27:11.247Z"
+      "enrichedAt": "2026-06-27T00:27:11.247Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::bobby-witt-jr::auto-rc-/99": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3531,7 +3788,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-city-connect-signature/bobby-witt-jr-ccs-bw",
       "pcTitle": "Bobby Witt Jr. #CCS-BW",
       "pcId": "10509049",
-      "enrichedAt": "2026-06-27T00:27:12.790Z"
+      "enrichedAt": "2026-06-27T00:27:12.790Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::ben-rice-break::numbered-auto-/25": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3547,7 +3805,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-break-out-autograph/ben-rice-boa-br",
       "pcTitle": "Ben Rice #BOA-BR",
       "pcId": "10508621",
-      "enrichedAt": "2026-06-27T00:27:14.641Z"
+      "enrichedAt": "2026-06-27T00:27:14.641Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::nick-kurtz-break::auto-/49": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -3563,7 +3822,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-break-out-autograph/nick-kurtz-boa-nkt",
       "pcTitle": "Nick Kurtz #BOA-NKT",
       "pcId": "10508709",
-      "enrichedAt": "2026-06-27T00:27:16.605Z"
+      "enrichedAt": "2026-06-27T00:27:16.605Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-basketball-ucc::lebron-james-true::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3586,7 +3846,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome-sky-write-signature/lebron-james-refractor-sws-lbj",
       "pcTitle": "LeBron James [Refractor] #SWS-LBJ",
       "pcId": "11488998",
-      "enrichedAt": "2026-06-27T00:27:19.823Z"
+      "enrichedAt": "2026-06-27T00:27:19.823Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::lamine-yamal-inception::patch-auto-/10": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3609,7 +3870,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/soccer-cards-2025-topps-chrome-uefa/lamine-yamal-red-refractor-10",
       "pcTitle": "Lamine Yamal [Red Refractor] #10",
       "pcId": "12816500",
-      "enrichedAt": "2026-06-27T00:27:25.463Z"
+      "enrichedAt": "2026-06-27T00:27:25.463Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::lamine-yamal-ucc::numbered-auto-/5": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3632,7 +3894,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/soccer-cards-2025-topps-chrome-uefa/lamine-yamal-red-refractor-10",
       "pcTitle": "Lamine Yamal [Red Refractor] #10",
       "pcId": "12816500",
-      "enrichedAt": "2026-06-27T00:27:28.188Z"
+      "enrichedAt": "2026-06-27T00:27:28.188Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::jalen-brunson::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3655,7 +3918,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome-autograph/jalen-brunson-refractor-gold-tca-jb",
       "pcTitle": "Jalen Brunson [Refractor Gold] #TCA-JB",
       "pcId": "11487974",
-      "enrichedAt": "2026-06-27T00:27:31.993Z"
+      "enrichedAt": "2026-06-27T00:27:31.993Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::victor-wembanyama::auto-/75": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3678,7 +3942,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome-sky-write-signature/victor-wembanyama-sws-vw",
       "pcTitle": "Victor Wembanyama #SWS-VW",
       "pcId": "11488910",
-      "enrichedAt": "2026-06-27T00:27:36.207Z"
+      "enrichedAt": "2026-06-27T00:27:36.207Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::merlin-ucc-cristiano::numbered-auto-/10": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3701,7 +3966,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/soccer-cards-2022-topps-merlin-chrome-uefa-club-competitions-renaissance/cristiano-ronaldo-r-13",
       "pcTitle": "Cristiano Ronaldo #R-13",
       "pcId": "5686039",
-      "enrichedAt": "2026-06-27T00:27:43.797Z"
+      "enrichedAt": "2026-06-27T00:27:43.797Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::victor-wembanyama::auto-rc-/50": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3724,7 +3990,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome/victor-wembanyama-refractor-221",
       "pcTitle": "Victor Wembanyama [Refractor] #221",
       "pcId": "11482649",
-      "enrichedAt": "2026-06-27T00:27:47.673Z"
+      "enrichedAt": "2026-06-27T00:27:47.673Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::reverence-ucc-erling::patch-auto-/10": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3747,7 +4014,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/soccer-cards-2025-topps-chrome-uefa-global-attraction-summer-of-2026-autograph/erling-haaland-orange-ga26-eh",
       "pcTitle": "Erling Haaland [Orange] #GA26-EH",
       "pcId": "12832588",
-      "enrichedAt": "2026-06-27T00:27:51.831Z"
+      "enrichedAt": "2026-06-27T00:27:51.831Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::og-anunoby::superfractor-1/1": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3766,7 +4034,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:27:53.447Z"
+      "enrichedAt": "2026-06-27T00:27:53.447Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::cooper-flagg::auto": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3789,7 +4058,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome-rookie-autograph/cooper-flagg-tcar-cf",
       "pcTitle": "Cooper Flagg #TCAR-CF",
       "pcId": "11488466",
-      "enrichedAt": "2026-06-27T00:27:57.446Z"
+      "enrichedAt": "2026-06-27T00:27:57.446Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::stephen-curry::numbered-auto-/10": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3812,7 +4082,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome-autograph/stephen-curry-refractor-purple-tca-sc",
       "pcTitle": "Stephen Curry [Refractor Purple] #TCA-SC",
       "pcId": "11488327",
-      "enrichedAt": "2026-06-27T00:28:01.940Z"
+      "enrichedAt": "2026-06-27T00:28:01.940Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::kon-knueppel-rookies::auto-rc-/50": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3835,7 +4106,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome/kon-knueppel-refractor-254",
       "pcTitle": "Kon Knueppel [Refractor] #254",
       "pcId": "11484969",
-      "enrichedAt": "2026-06-27T00:28:07.305Z"
+      "enrichedAt": "2026-06-27T00:28:07.305Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::jalen-brunson-geometric::auto-rc-/50": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3858,7 +4130,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome/jalen-brunson-refractor-101",
       "pcTitle": "Jalen Brunson [Refractor] #101",
       "pcId": "11475467",
-      "enrichedAt": "2026-06-27T00:28:12.206Z"
+      "enrichedAt": "2026-06-27T00:28:12.206Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::issue-rookies-cooper::auto": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3881,7 +4154,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome-autograph-issue-rookie/cooper-flagg-tair-cf",
       "pcTitle": "Cooper Flagg #TAIR-CF",
       "pcId": "11489215",
-      "enrichedAt": "2026-06-27T00:28:13.915Z"
+      "enrichedAt": "2026-06-27T00:28:13.915Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::ucc-konstantinos-karetsas::auto-/10": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3897,7 +4171,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/soccer-cards-2025-topps-chrome-uefa/konstantinos-karetsas-radiating-150",
       "pcTitle": "Konstantinos Karetsas [Radiating] #150",
       "pcId": "12827531",
-      "enrichedAt": "2026-06-27T00:28:18.536Z"
+      "enrichedAt": "2026-06-27T00:28:18.536Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::ucc-lamine-yamal::auto-/250": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3920,7 +4195,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/soccer-cards-2025-topps-chrome-uefa/lamine-yamal-red-refractor-10",
       "pcTitle": "Lamine Yamal [Red Refractor] #10",
       "pcId": "12816500",
-      "enrichedAt": "2026-06-27T00:28:20.418Z"
+      "enrichedAt": "2026-06-27T00:28:20.418Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::sky-write-signatures::auto": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3936,7 +4212,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome-sky-write-signature/victor-wembanyama-sws-vw",
       "pcTitle": "Victor Wembanyama #SWS-VW",
       "pcId": "11488910",
-      "enrichedAt": "2026-06-27T00:28:23.988Z"
+      "enrichedAt": "2026-06-27T00:28:23.988Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::redeemed-cooper-flagg::auto": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3952,7 +4229,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome-rookie-autograph/cooper-flagg-tcar-cf",
       "pcTitle": "Cooper Flagg #TCAR-CF",
       "pcId": "11488466",
-      "enrichedAt": "2026-06-27T00:28:25.332Z"
+      "enrichedAt": "2026-06-27T00:28:25.332Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::ucc-future-stars::numbered-auto-/10": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3975,7 +4253,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome-future-stars-autograph/dylan-harper-fs-dh",
       "pcTitle": "Dylan Harper #FS-DH",
       "pcId": "11491219",
-      "enrichedAt": "2026-06-27T00:28:31.876Z"
+      "enrichedAt": "2026-06-27T00:28:31.876Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::ucc-lamine-yamal::auto": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -3998,7 +4277,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/soccer-cards-2025-topps-chrome-uefa/lamine-yamal-red-refractor-10",
       "pcTitle": "Lamine Yamal [Red Refractor] #10",
       "pcId": "12816500",
-      "enrichedAt": "2026-06-27T00:28:33.024Z"
+      "enrichedAt": "2026-06-27T00:28:33.024Z",
+      "sport": "basketball"
     },
     "2026-topps-tier-one-baseball::shohei-ohtani-on::numbered-auto-/10": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4014,7 +4294,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-tier-one/shohei-ohtani-silver-68",
       "pcTitle": "Shohei Ohtani [Silver] #68",
       "pcId": "13502898",
-      "enrichedAt": "2026-06-27T00:28:38.581Z"
+      "enrichedAt": "2026-06-27T00:28:38.581Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::autos-ink-shohei::numbered-auto-/25": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4033,7 +4314,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:28:43.028Z"
+      "enrichedAt": "2026-06-27T00:28:43.028Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::bo-jackson-deion::auto-/25": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4056,7 +4338,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2022-topps-baseball-stars-dual-autographs/bo-jackson-deion-sanders-bsda-js",
       "pcTitle": "Bo Jackson, Deion Sanders #BSDA-JS",
       "pcId": "4021323",
-      "enrichedAt": "2026-06-27T00:28:49.691Z"
+      "enrichedAt": "2026-06-27T00:28:49.691Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::wow-james-wood::printing-plate-1/1": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4075,7 +4358,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:28:55.044Z"
+      "enrichedAt": "2026-06-27T00:28:55.044Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::jacob-misiorowski-xplosion::auto": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4087,7 +4371,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:28:57.314Z"
+      "enrichedAt": "2026-06-27T00:28:57.314Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::sandy-koufax-ink::numbered-auto-/25": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4110,7 +4395,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-series-2-1991-all-stars/sandy-koufax-pink-91as-40",
       "pcTitle": "Sandy Koufax [Pink] #91AS-40",
       "pcId": "13325874",
-      "enrichedAt": "2026-06-27T00:29:05.022Z"
+      "enrichedAt": "2026-06-27T00:29:05.022Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::listingmike-trout-game::patch-auto-/10": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4122,7 +4408,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:29:12.404Z"
+      "enrichedAt": "2026-06-27T00:29:12.404Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::jacob-misiorowski-city::auto-/49": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4134,7 +4421,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:29:14.469Z"
+      "enrichedAt": "2026-06-27T00:29:14.469Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::prodigious-ken-griffey::auto-/10": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4153,7 +4441,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:29:18.713Z"
+      "enrichedAt": "2026-06-27T00:29:18.713Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::colson-montgomery-class::numbered-auto-/10": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4172,7 +4461,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:29:24.018Z"
+      "enrichedAt": "2026-06-27T00:29:24.018Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::will-smith::printing-plate-1/1": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4191,7 +4481,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:29:26.159Z"
+      "enrichedAt": "2026-06-27T00:29:26.159Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::ken-griffey-jr::patch-auto-/25": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4210,7 +4501,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:29:30.678Z"
+      "enrichedAt": "2026-06-27T00:29:30.678Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::jumbo-derek-jeter::auto-rc-/99": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4222,7 +4514,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:29:33.549Z"
+      "enrichedAt": "2026-06-27T00:29:33.549Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::jj-wetherholt-on::auto-rc-/99": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4241,7 +4534,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:29:37.708Z"
+      "enrichedAt": "2026-06-27T00:29:37.708Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::bobby-witt-jr::numbered-auto-/25": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4260,7 +4554,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:29:38.872Z"
+      "enrichedAt": "2026-06-27T00:29:38.872Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::eddie-murray-cal::auto-/25": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4283,7 +4578,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2023-topps-tier-one-dual-autographs/cal-ripken-jr-eddie-murray-da-mr",
       "pcTitle": "Cal Ripken Jr. , Eddie Murray #DA-MR",
       "pcId": "6174626",
-      "enrichedAt": "2026-06-27T00:29:43.055Z"
+      "enrichedAt": "2026-06-27T00:29:43.055Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::jacob-misiorowski-real::auto": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4299,7 +4595,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-1991/jacob-misiorowski-the-real-one-t91-74",
       "pcTitle": "Jacob Misiorowski [The Real One] #T91-74",
       "pcId": "11899199",
-      "enrichedAt": "2026-06-27T00:29:47.785Z"
+      "enrichedAt": "2026-06-27T00:29:47.785Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::shots-paul-skenes::numbered-auto-/25": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4318,7 +4615,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:29:54.472Z"
+      "enrichedAt": "2026-06-27T00:29:54.472Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::pre-order-autos::base": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4330,7 +4628,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:29:57.571Z"
+      "enrichedAt": "2026-06-27T00:29:57.571Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::pete-crow-armstrong::numbered-auto-/10": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -4353,7 +4652,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-tier-one/pete-crow-armstrong-53",
       "pcTitle": "Pete Crow-Armstrong #53",
       "pcId": "13502359",
-      "enrichedAt": "2026-06-27T00:30:05.169Z"
+      "enrichedAt": "2026-06-27T00:30:05.169Z",
+      "sport": "baseball"
     },
     "2026-topps-chrome-baseball::jarlin-susana-ssp::numbered-auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -4376,7 +4676,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-panini-donruss/jarlin-susana-carolina-blue-optic-signature-144",
       "pcTitle": "Jarlin Susana [Carolina Blue Optic Signature] #144",
       "pcId": "13110215",
-      "enrichedAt": "2026-06-27T00:30:12.448Z"
+      "enrichedAt": "2026-06-27T00:30:12.448Z",
+      "sport": "baseball"
     },
     "2026-topps-chrome-baseball::roman-anthony-redemption::auto-rc-/99": {
       "setKey": "2026-topps-chrome-baseball",
@@ -4399,7 +4700,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-chrome-black/roman-anthony-56",
       "pcTitle": "Roman Anthony #56",
       "pcId": "12736811",
-      "enrichedAt": "2026-06-27T00:30:16.683Z"
+      "enrichedAt": "2026-06-27T00:30:16.683Z",
+      "sport": "baseball"
     },
     "2026-topps-chrome-baseball::juan-soto::auto-/25": {
       "setKey": "2026-topps-chrome-baseball",
@@ -4422,7 +4724,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-chrome-black-ivory-autograph/juan-soto-iva-js",
       "pcTitle": "Juan Soto #IVA-JS",
       "pcId": "12741528",
-      "enrichedAt": "2026-06-27T00:30:18.440Z"
+      "enrichedAt": "2026-06-27T00:30:18.440Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::ben-rice::auto-rc-/50": {
       "setKey": "2025-topps-chrome-baseball",
@@ -4438,7 +4741,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome-update/ben-rice-refractor-usc138",
       "pcTitle": "Ben Rice [Refractor] #USC138",
       "pcId": "11336901",
-      "enrichedAt": "2026-06-27T00:30:23.867Z"
+      "enrichedAt": "2026-06-27T00:30:23.867Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::juan-soto::auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -4461,7 +4765,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome-black-ivory-autograph/juan-soto-iva-js",
       "pcTitle": "Juan Soto #IVA-JS",
       "pcId": "9126757",
-      "enrichedAt": "2026-06-27T00:30:30.933Z"
+      "enrichedAt": "2026-06-27T00:30:30.933Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::elly-de-la-cruz::patch-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -4477,7 +4782,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome-update/elly-de-la-cruz-topps-refractor-usc189",
       "pcTitle": "Elly De La Cruz [Topps Refractor] #USC189",
       "pcId": "11338982",
-      "enrichedAt": "2026-06-27T00:30:34.544Z"
+      "enrichedAt": "2026-06-27T00:30:34.544Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::eric-hartman-lava::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -4493,7 +4799,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-chrome-prospect-autograph/eric-hartman-gold-lava-refractor-cpa-eha",
       "pcTitle": "Eric Hartman [Gold Lava Refractor] #CPA-EHA",
       "pcId": "12941311",
-      "enrichedAt": "2026-06-27T00:30:38.936Z"
+      "enrichedAt": "2026-06-27T00:30:38.936Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::joshua-baez::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -4509,7 +4816,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2022-topps-pro-debut-chrome/joshua-baez-aqua-refractor-pdc-40",
       "pcTitle": "Joshua Baez [Aqua Refractor] #PDC-40",
       "pcId": "4164935",
-      "enrichedAt": "2026-06-27T00:30:45.286Z"
+      "enrichedAt": "2026-06-27T00:30:45.286Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::bo-bichette::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -4525,7 +4833,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome/bo-bichette-101",
       "pcTitle": "Bo Bichette #101",
       "pcId": "10004613",
-      "enrichedAt": "2026-06-27T00:30:48.010Z"
+      "enrichedAt": "2026-06-27T00:30:48.010Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::braylon-payne-lava::auto-/199": {
       "setKey": "2025-topps-chrome-baseball",
@@ -4537,7 +4846,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:30:49.947Z"
+      "enrichedAt": "2026-06-27T00:30:49.947Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::kevin-mcgonigle-true::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -4553,7 +4863,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-pro-debut-chrome/kevin-mcgonigle-aqua-refractor-pdc-107",
       "pcTitle": "Kevin McGonigle [Aqua Refractor] #PDC-107",
       "pcId": "11043941",
-      "enrichedAt": "2026-06-27T00:30:54.892Z"
+      "enrichedAt": "2026-06-27T00:30:54.892Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::nick-kurtz-prism::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -4569,7 +4880,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome-update/nick-kurtz-prism-refractor-usc180",
       "pcTitle": "Nick Kurtz [Prism Refractor] #USC180",
       "pcId": "11338379",
-      "enrichedAt": "2026-06-27T00:30:58.519Z"
+      "enrichedAt": "2026-06-27T00:30:58.519Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::joshua-baez::auto-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -4585,7 +4897,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2022-topps-pro-debut-chrome/joshua-baez-aqua-refractor-pdc-40",
       "pcTitle": "Joshua Baez [Aqua Refractor] #PDC-40",
       "pcId": "4164935",
-      "enrichedAt": "2026-06-27T00:31:02.512Z"
+      "enrichedAt": "2026-06-27T00:31:02.512Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::jj-wetherholt::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -4601,7 +4914,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-pro-debut-chrome/jj-wetherholt-refractor-pdc-94",
       "pcTitle": "JJ Wetherholt [Refractor] #PDC-94",
       "pcId": "11043813",
-      "enrichedAt": "2026-06-27T00:31:05.121Z"
+      "enrichedAt": "2026-06-27T00:31:05.121Z",
+      "sport": "baseball"
     },
     "2025-topps-chrome-baseball::samuel-basallo-rma::auto-rc-/50": {
       "setKey": "2025-topps-chrome-baseball",
@@ -4617,7 +4931,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-pro-debut-chrome/samuel-basallo-aqua-refractor-pdc-170",
       "pcTitle": "Samuel Basallo [Aqua Refractor] #PDC-170",
       "pcId": "11045069",
-      "enrichedAt": "2026-06-27T00:31:15.067Z"
+      "enrichedAt": "2026-06-27T00:31:15.067Z",
+      "sport": "baseball"
     },
     "2025-panini-prizm-basketball::jayson-tatum-in::numbered-auto-/25": {
       "setKey": "2025-panini-prizm-basketball",
@@ -4640,7 +4955,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2019-panini-prizm/jayson-tatum-silver-prizm-39",
       "pcTitle": "Jayson Tatum [Silver Prizm] #39",
       "pcId": "95554",
-      "enrichedAt": "2026-06-27T00:31:23.448Z"
+      "enrichedAt": "2026-06-27T00:31:23.448Z",
+      "sport": "basketball"
     },
     "2025-topps-bowman-chrome::payton-tolle::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4656,7 +4972,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-leaf-metal-autograph/payton-tolle-laser-silver-ba-pt1",
       "pcTitle": "Payton Tolle [Laser Silver] #BA-PT1",
       "pcId": "10988961",
-      "enrichedAt": "2026-06-27T00:31:28.284Z"
+      "enrichedAt": "2026-06-27T00:31:28.284Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::roman-anthony-redemption::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4672,7 +4989,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-bowman-chrome-prospects/roman-anthony-mojo-bcp-167",
       "pcTitle": "Roman Anthony [Mojo] #BCP-167",
       "pcId": "10857647",
-      "enrichedAt": "2026-06-27T00:31:35.921Z"
+      "enrichedAt": "2026-06-27T00:31:35.921Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::juan-soto::auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4688,7 +5006,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-bowman-chrome-adios-autograph/juan-soto-aav-js",
       "pcTitle": "Juan Soto #AAV-JS",
       "pcId": "10450236",
-      "enrichedAt": "2026-06-27T00:31:37.664Z"
+      "enrichedAt": "2026-06-27T00:31:37.664Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::leo-de-vries::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4704,7 +5023,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-bowman-chrome-prospects/leo-de-vries-red-bcp-59",
       "pcTitle": "Leo De Vries [Red] #BCP-59",
       "pcId": "9186643",
-      "enrichedAt": "2026-06-27T00:31:40.550Z"
+      "enrichedAt": "2026-06-27T00:31:40.550Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::elly-de-la-cruz::patch-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4720,7 +5040,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-bowman-chrome/elly-de-la-cruz-mega-refractor-89",
       "pcTitle": "Elly De La Cruz [Mega Refractor] #89",
       "pcId": "10855553",
-      "enrichedAt": "2026-06-27T00:31:47.323Z"
+      "enrichedAt": "2026-06-27T00:31:47.323Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::cam-schlittler::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4736,7 +5057,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-bowman-chrome-prospects/cam-schlittler-mojo-bcp-166",
       "pcTitle": "Cam Schlittler [Mojo] #BCP-166",
       "pcId": "10857646",
-      "enrichedAt": "2026-06-27T00:31:52.218Z"
+      "enrichedAt": "2026-06-27T00:31:52.218Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::dual-jesus-made::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4752,7 +5074,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-bowman-chrome-prospects/jesus-made-mojo-bcp-50",
       "pcTitle": "Jesus Made [Mojo] #BCP-50",
       "pcId": "9680851",
-      "enrichedAt": "2026-06-27T00:31:56.611Z"
+      "enrichedAt": "2026-06-27T00:31:56.611Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::eric-hartman-lava::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4768,7 +5091,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-chrome-prospect-autograph/eric-hartman-gold-lava-refractor-cpa-eha",
       "pcTitle": "Eric Hartman [Gold Lava Refractor] #CPA-EHA",
       "pcId": "12941311",
-      "enrichedAt": "2026-06-27T00:31:58.630Z"
+      "enrichedAt": "2026-06-27T00:31:58.630Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::wei-en-lin::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4784,7 +5108,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-chrome-prospect/wei-en-lin-bcp-125",
       "pcTitle": "Wei-En Lin #BCP-125",
       "pcId": "12938371",
-      "enrichedAt": "2026-06-27T00:32:04.621Z"
+      "enrichedAt": "2026-06-27T00:32:04.621Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::joshua-baez::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4800,7 +5125,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2022-bowman-chrome-prospects-sapphire/joshua-baez-aqua-bcp-112",
       "pcTitle": "Joshua Baez [Aqua] #BCP-112",
       "pcId": "3609173",
-      "enrichedAt": "2026-06-27T00:32:07.805Z"
+      "enrichedAt": "2026-06-27T00:32:07.805Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::braylon-payne-lava::auto-/199": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4812,7 +5138,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:32:10.476Z"
+      "enrichedAt": "2026-06-27T00:32:10.476Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::eric-hartman::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4828,7 +5155,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-bowman-chrome-prospect/eric-hartman-reptilian-refractor-bcp-102",
       "pcTitle": "Eric Hartman [Reptilian Refractor] #BCP-102",
       "pcId": "12937252",
-      "enrichedAt": "2026-06-27T00:32:13.968Z"
+      "enrichedAt": "2026-06-27T00:32:13.968Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::kevin-mcgonigle-true::auto-rc-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4844,7 +5172,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-bowman-chrome-prospects/kevin-mcgonigle-mojo-bcp-79",
       "pcTitle": "Kevin McGonigle [Mojo] #BCP-79",
       "pcId": "9680968",
-      "enrichedAt": "2026-06-27T00:32:17.693Z"
+      "enrichedAt": "2026-06-27T00:32:17.693Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::joshua-baez::auto-/99": {
       "setKey": "2025-topps-bowman-chrome",
@@ -4860,7 +5189,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2022-bowman-chrome-prospects-sapphire/joshua-baez-aqua-bcp-112",
       "pcTitle": "Joshua Baez [Aqua] #BCP-112",
       "pcId": "3609173",
-      "enrichedAt": "2026-06-27T00:32:19.782Z"
+      "enrichedAt": "2026-06-27T00:32:19.782Z",
+      "sport": "baseball"
     },
     "2024-topps-chrome-basketball::victor-wembanyama-spurs::auto": {
       "setKey": "2024-topps-chrome-basketball",
@@ -4876,7 +5206,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome/victor-wembanyama-refractor-193",
       "pcTitle": "Victor Wembanyama [Refractor] #193",
       "pcId": "9641288",
-      "enrichedAt": "2026-06-27T00:32:22.465Z"
+      "enrichedAt": "2026-06-27T00:32:22.465Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::shai-gilgeous-alexander::numbered-auto-/25": {
       "setKey": "2024-topps-chrome-basketball",
@@ -4892,7 +5223,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-finest-showstoppers/shai-gilgeous-alexander-s-7",
       "pcTitle": "Shai Gilgeous-Alexander #S-7",
       "pcId": "10145129",
-      "enrichedAt": "2026-06-27T00:32:27.293Z"
+      "enrichedAt": "2026-06-27T00:32:27.293Z",
+      "sport": "basketball"
     },
     "2025-topps-tier-one-baseball::bryce-harper::numbered-auto-/25": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -4915,7 +5247,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-top-shelf-relic/bryce-harper-tsr-bh",
       "pcTitle": "Bryce Harper #TSR-BH",
       "pcId": "10513263",
-      "enrichedAt": "2026-06-27T00:32:35.868Z"
+      "enrichedAt": "2026-06-27T00:32:35.868Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::steve-garvey-prodigious::patch-auto-/10": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -4934,7 +5267,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:32:39.071Z"
+      "enrichedAt": "2026-06-27T00:32:39.071Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::autographs-bo-jackson::numbered-auto-/25": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -4957,7 +5291,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-talent-autograph/bo-jackson-blue-foil-tota-bj",
       "pcTitle": "Bo Jackson [Blue Foil] #TOTA-BJ",
       "pcId": "10509605",
-      "enrichedAt": "2026-06-27T00:32:40.392Z"
+      "enrichedAt": "2026-06-27T00:32:40.392Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::miguel-cabrera-au::patch-auto-/10": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -4980,7 +5315,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-dynasty-autograph-patch/miguel-cabrera-silver-dap-mc5",
       "pcTitle": "Miguel Cabrera [Silver] #DAP-MC5",
       "pcId": "13400479",
-      "enrichedAt": "2026-06-27T00:32:45.406Z"
+      "enrichedAt": "2026-06-27T00:32:45.406Z",
+      "sport": "baseball"
     },
     "2025-topps-tier-one-baseball::ben-rice-on::auto-rc-/99": {
       "setKey": "2025-topps-tier-one-baseball",
@@ -5003,7 +5339,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-tier-one-break-out-autograph/ben-rice-boa-br",
       "pcTitle": "Ben Rice #BOA-BR",
       "pcId": "10508621",
-      "enrichedAt": "2026-06-27T00:32:51.745Z"
+      "enrichedAt": "2026-06-27T00:32:51.745Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::aaron-judge-clear::numbered-auto-/5": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -5015,7 +5352,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:32:59.245Z"
+      "enrichedAt": "2026-06-27T00:32:59.245Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::flagship-real-jacob::auto-/25": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -5031,7 +5369,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps/jacob-wilson-black-foil-flagship-real-one-autograph-314",
       "pcTitle": "Jacob Wilson [Black Foil Flagship Real One Autograph] #314",
       "pcId": "8600532",
-      "enrichedAt": "2026-06-27T00:33:04.873Z"
+      "enrichedAt": "2026-06-27T00:33:04.873Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::fast-free-ship::base": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -5047,7 +5386,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-tier-one/eury-perez-25",
       "pcTitle": "Eury Perez #25",
       "pcId": "13502350",
-      "enrichedAt": "2026-06-27T00:33:09.160Z"
+      "enrichedAt": "2026-06-27T00:33:09.160Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::otto-lopez-ink::printing-plate-1/1": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -5059,7 +5399,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:33:12.840Z"
+      "enrichedAt": "2026-06-27T00:33:12.840Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::elly-de-la::numbered-auto-/10": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -5075,7 +5416,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2026-topps-tier-one-base-autograph/elly-de-la-cruz-tier-2-bca-ed",
       "pcTitle": "Elly De La Cruz [Tier 2] #BCA-ED",
       "pcId": "13505882",
-      "enrichedAt": "2026-06-27T00:33:14.121Z"
+      "enrichedAt": "2026-06-27T00:33:14.121Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::bobby-witt-jr.::auto-rc-/99": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -5094,7 +5436,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:33:17.322Z"
+      "enrichedAt": "2026-06-27T00:33:17.322Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::bobby-witt-jr::auto-rc-/99": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -5113,7 +5456,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:33:18.733Z"
+      "enrichedAt": "2026-06-27T00:33:18.733Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::yu-darvish-on::auto-/225": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -5125,7 +5469,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:33:28.757Z"
+      "enrichedAt": "2026-06-27T00:33:28.757Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::francisco-lindor-read::printing-plate-1/1": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -5137,7 +5482,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:33:36.792Z"
+      "enrichedAt": "2026-06-27T00:33:36.792Z",
+      "sport": "baseball"
     },
     "2025-panini-prizm-basketball::victor-wembanyama-spurs::parallel-/175": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5153,7 +5499,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2023-panini-prizm/victor-wembanyama-silver-136",
       "pcTitle": "Victor Wembanyama [Silver] #136",
       "pcId": "6360482",
-      "enrichedAt": "2026-06-27T00:33:40.959Z"
+      "enrichedAt": "2026-06-27T00:33:40.959Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::jalen-brunson::patch-auto-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5169,7 +5516,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-three-veteran-3-patch-autograph/jalen-brunson-bronze-v3a-jb",
       "pcTitle": "Jalen Brunson [Bronze] #V3A-JB",
       "pcId": "12203410",
-      "enrichedAt": "2026-06-27T00:33:46.713Z"
+      "enrichedAt": "2026-06-27T00:33:46.713Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::lebron-james-manga::parallel": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5185,7 +5533,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2020-panini-prizm/lebron-james-silver-prizm-1",
       "pcTitle": "LeBron James [Silver Prizm] #1",
       "pcId": "1915166",
-      "enrichedAt": "2026-06-27T00:33:51.674Z"
+      "enrichedAt": "2026-06-27T00:33:51.674Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::spectra-kobe-bryant::patch-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5201,7 +5550,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2019-panini-prizm/kobe-bryant-silver-prizm-8",
       "pcTitle": "Kobe Bryant [Silver Prizm] #8",
       "pcId": "95249",
-      "enrichedAt": "2026-06-27T00:33:54.649Z"
+      "enrichedAt": "2026-06-27T00:33:54.649Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::stephen-curry::patch-auto-/5": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5213,7 +5563,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:34:01.669Z"
+      "enrichedAt": "2026-06-27T00:34:01.669Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::lebron-james::patch/relic": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5229,7 +5580,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-flagship-real-one-relic/lebron-james-fro-lbj",
       "pcTitle": "LeBron James #FRO-LBJ",
       "pcId": "10836860",
-      "enrichedAt": "2026-06-27T00:34:10.642Z"
+      "enrichedAt": "2026-06-27T00:34:10.642Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::wnba-premium-bueckers::auto-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5241,7 +5593,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:34:12.122Z"
+      "enrichedAt": "2026-06-27T00:34:12.122Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::monopoly-nebula-victor::parallel": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5257,7 +5610,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-monopoly/victor-wembanyama-nebula-73",
       "pcTitle": "Victor Wembanyama [Nebula] #73",
       "pcId": "9046065",
-      "enrichedAt": "2026-06-27T00:34:19.099Z"
+      "enrichedAt": "2026-06-27T00:34:19.099Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::magic-johnson::patch-auto-/25": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5273,7 +5627,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-panini-signature-series/magic-johnson-gold-93",
       "pcTitle": "Magic Johnson [Gold] #93",
       "pcId": "13120072",
-      "enrichedAt": "2026-06-27T00:34:27.343Z"
+      "enrichedAt": "2026-06-27T00:34:27.343Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::victor-wembanyama-wemby::parallel": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5289,7 +5644,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2023-panini-prizm/victor-wembanyama-silver-136",
       "pcTitle": "Victor Wembanyama [Silver] #136",
       "pcId": "6360482",
-      "enrichedAt": "2026-06-27T00:34:30.946Z"
+      "enrichedAt": "2026-06-27T00:34:30.946Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::victor-wembanyama::parallel": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5305,7 +5661,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2023-panini-prizm/victor-wembanyama-silver-136",
       "pcTitle": "Victor Wembanyama [Silver] #136",
       "pcId": "6360482",
-      "enrichedAt": "2026-06-27T00:34:34.868Z"
+      "enrichedAt": "2026-06-27T00:34:34.868Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::collection-premium-jalen::auto": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5321,7 +5678,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2023-panini-prizm/jalen-suggs-premium-factory-set-74",
       "pcTitle": "Jalen Suggs [Premium Factory Set] #74",
       "pcId": "6356800",
-      "enrichedAt": "2026-06-27T00:34:44.728Z"
+      "enrichedAt": "2026-06-27T00:34:44.728Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::flawless-dirk-nowitzki::patch/relic": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5337,7 +5695,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-flawless-dual-patch/dirk-nowitzki-1",
       "pcTitle": "Dirk Nowitzki #1",
       "pcId": "10677351",
-      "enrichedAt": "2026-06-27T00:34:51.961Z"
+      "enrichedAt": "2026-06-27T00:34:51.961Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::lebron-james-jumbo::patch/relic": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5349,7 +5708,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:34:57.780Z"
+      "enrichedAt": "2026-06-27T00:34:57.780Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::lebron-james::parallel": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5365,7 +5725,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2020-panini-prizm/lebron-james-silver-prizm-1",
       "pcTitle": "LeBron James [Silver Prizm] #1",
       "pcId": "1915166",
-      "enrichedAt": "2026-06-27T00:35:02.970Z"
+      "enrichedAt": "2026-06-27T00:35:02.970Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::spectra-austin-reaves::patch-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5381,7 +5742,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2021-panini-prizm/austin-reaves-silver-prizm-165",
       "pcTitle": "Austin Reaves [Silver Prizm] #165",
       "pcId": "3781912",
-      "enrichedAt": "2026-06-27T00:35:11.706Z"
+      "enrichedAt": "2026-06-27T00:35:11.706Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::luka-doncic-mavericks::printing-plate-1/1": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5397,7 +5759,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2018-panini-prizm/luka-doncic-silver-prizm-280",
       "pcTitle": "Luka Doncic [Silver Prizm] #280",
       "pcId": "114818",
-      "enrichedAt": "2026-06-27T00:35:19.748Z"
+      "enrichedAt": "2026-06-27T00:35:19.748Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::sliver-victor-wembanyama::parallel": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5413,7 +5776,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-nba-hoops/victor-wembanyama-fanatics-289",
       "pcTitle": "Victor Wembanyama [Fanatics] #289",
       "pcId": "12957542",
-      "enrichedAt": "2026-06-27T00:35:24.619Z"
+      "enrichedAt": "2026-06-27T00:35:24.619Z",
+      "sport": "basketball"
     },
     "2025-panini-prizm-basketball::jalen-brunson::parallel": {
       "setKey": "2025-panini-prizm-basketball",
@@ -5429,7 +5793,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2018-panini-prizm/jalen-brunson-silver-prizm-250",
       "pcTitle": "Jalen Brunson [Silver Prizm] #250",
       "pcId": "114448",
-      "enrichedAt": "2026-06-27T00:35:32.548Z"
+      "enrichedAt": "2026-06-27T00:35:32.548Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::jayson-tatum-in::numbered-auto-/25": {
       "setKey": "2024-panini-prizm-basketball",
@@ -5452,7 +5817,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-fast-break-autograph/jayson-tatum-fb-tat",
       "pcTitle": "Jayson Tatum #FB-TAT",
       "pcId": "8552421",
-      "enrichedAt": "2026-06-27T00:35:34.640Z"
+      "enrichedAt": "2026-06-27T00:35:34.640Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::fb-bru-jalen::auto": {
       "setKey": "2024-panini-prizm-basketball",
@@ -5475,7 +5841,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2023-panini-select-x-factor-memorabilia-signature/jalen-brunson-xfs-bru",
       "pcTitle": "Jalen Brunson #XFS-BRU",
       "pcId": "6711222",
-      "enrichedAt": "2026-06-27T00:35:44.075Z"
+      "enrichedAt": "2026-06-27T00:35:44.075Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::og-anunoby-sensational::auto": {
       "setKey": "2024-panini-prizm-basketball",
@@ -5498,7 +5865,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-black-prolific-signature/og-anunoby-33",
       "pcTitle": "OG Anunoby #33",
       "pcId": "10706246",
-      "enrichedAt": "2026-06-27T00:35:48.880Z"
+      "enrichedAt": "2026-06-27T00:35:48.880Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::matas-buzelis-deca::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -5521,7 +5889,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm/matas-buzelis-silver-252",
       "pcTitle": "Matas Buzelis [Silver] #252",
       "pcId": "8548367",
-      "enrichedAt": "2026-06-27T00:35:56.524Z"
+      "enrichedAt": "2026-06-27T00:35:56.524Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::ausar-thompson-rpa::patch-auto-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -5544,7 +5913,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-black/ausar-thompson-silver-autograph-90",
       "pcTitle": "Ausar Thompson [Silver Autograph] #90",
       "pcId": "10705217",
-      "enrichedAt": "2026-06-27T00:36:04.229Z"
+      "enrichedAt": "2026-06-27T00:36:04.229Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::yao-ming::numbered-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -5567,7 +5937,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-black-dual-autograph/hakeem-olajuwon-yao-ming-20",
       "pcTitle": "Hakeem Olajuwon / Yao Ming #20",
       "pcId": "10705856",
-      "enrichedAt": "2026-06-27T00:36:08.191Z"
+      "enrichedAt": "2026-06-27T00:36:08.191Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::cade-cunningham-pistons::auto": {
       "setKey": "2024-panini-prizm-basketball",
@@ -5590,7 +5961,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-black/cade-cunningham-silver-autograph-8",
       "pcTitle": "Cade Cunningham [Silver Autograph] #8",
       "pcId": "10704623",
-      "enrichedAt": "2026-06-27T00:36:16.892Z"
+      "enrichedAt": "2026-06-27T00:36:16.892Z",
+      "sport": "basketball"
     },
     "2024-panini-prizm-basketball::fotl-terrence-shannon::numbered-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -5613,7 +5985,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-rookie-signature/terrence-shannon-jr-blue-shimmer-fotl-rsi-tsj",
       "pcTitle": "Terrence Shannon Jr. [Blue Shimmer FOTL] #RSI-TSJ",
       "pcId": "8553979",
-      "enrichedAt": "2026-06-27T00:36:18.547Z"
+      "enrichedAt": "2026-06-27T00:36:18.547Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::cooper-flagg-mavericks::parallel-/10": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5629,7 +6002,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-mcdonald%e2%80%99s-all-american/cooper-flagg-78",
       "pcTitle": "Cooper Flagg #78",
       "pcId": "8567197",
-      "enrichedAt": "2026-06-27T00:36:22.710Z"
+      "enrichedAt": "2026-06-27T00:36:22.710Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::stephen-curry-grail::rookie-card": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5645,7 +6019,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome/stephen-curry-187",
       "pcTitle": "Stephen Curry #187",
       "pcId": "9641112",
-      "enrichedAt": "2026-06-27T00:36:28.780Z"
+      "enrichedAt": "2026-06-27T00:36:28.780Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::victor-wembanyama-anime::short-print": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5661,7 +6036,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome/victor-wembanyama-refractor-193",
       "pcTitle": "Victor Wembanyama [Refractor] #193",
       "pcId": "9641288",
-      "enrichedAt": "2026-06-27T00:36:33.350Z"
+      "enrichedAt": "2026-06-27T00:36:33.350Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::stephen-curry-crystalized::base": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5677,7 +6053,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome/stephen-curry-187",
       "pcTitle": "Stephen Curry #187",
       "pcId": "9641112",
-      "enrichedAt": "2026-06-27T00:36:42.921Z"
+      "enrichedAt": "2026-06-27T00:36:42.921Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::ultraviolet-all-stars::base": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5693,7 +6070,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2024-topps-chrome-ultraviolet-all-stars/shohei-ohtani-uv-9",
       "pcTitle": "Shohei Ohtani #UV-9",
       "pcId": "6883062",
-      "enrichedAt": "2026-06-27T00:36:48.479Z"
+      "enrichedAt": "2026-06-27T00:36:48.479Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::kobe-bryant::rookie-card": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5709,7 +6087,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-1996-topps-chrome/kobe-bryant-138",
       "pcTitle": "Kobe Bryant #138",
       "pcId": "86303",
-      "enrichedAt": "2026-06-27T00:36:53.930Z"
+      "enrichedAt": "2026-06-27T00:36:53.930Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::victor-wembanyama::rookie-card": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5725,7 +6104,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome/victor-wembanyama-refractor-193",
       "pcTitle": "Victor Wembanyama [Refractor] #193",
       "pcId": "9641288",
-      "enrichedAt": "2026-06-27T00:36:58.206Z"
+      "enrichedAt": "2026-06-27T00:36:58.206Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::cactus-jack-all::rookie-card-/50": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5748,7 +6128,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome-cactus-jack-x-nba-all-star-game/lamelo-ball-39",
       "pcTitle": "LaMelo Ball #39",
       "pcId": "12180777",
-      "enrichedAt": "2026-06-27T00:37:02.515Z"
+      "enrichedAt": "2026-06-27T00:37:02.515Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::cactus-jack-cooper::rookie-card-/50": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5760,7 +6141,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:37:04.654Z"
+      "enrichedAt": "2026-06-27T00:37:04.654Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::champions-michael-jordan::parallel": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5776,7 +6158,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-1990-hoops-action/michael-jordan-1991-nba-champions-543",
       "pcTitle": "michael Jordan [1991 NBA Champions] #543",
       "pcId": "4658111",
-      "enrichedAt": "2026-06-27T00:37:08.933Z"
+      "enrichedAt": "2026-06-27T00:37:08.933Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::ray-allen::auto": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5792,7 +6175,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-1973-autograph/ray-allen-73ta-ra",
       "pcTitle": "Ray Allen #73TA-RA",
       "pcId": "9641847",
-      "enrichedAt": "2026-06-27T00:37:11.170Z"
+      "enrichedAt": "2026-06-27T00:37:11.170Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::lebron-chalk-toss::base": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5808,7 +6192,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome/lebron-james-22",
       "pcTitle": "LeBron James #22",
       "pcId": "9636117",
-      "enrichedAt": "2026-06-27T00:37:19.215Z"
+      "enrichedAt": "2026-06-27T00:37:19.215Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::chicago-champions::parallel": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5824,7 +6209,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2024-topps-chrome-sapphire/chicago-cubs-165",
       "pcTitle": "Chicago Cubs #165",
       "pcId": "7630265",
-      "enrichedAt": "2026-06-27T00:37:26.688Z"
+      "enrichedAt": "2026-06-27T00:37:26.688Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::tre-johnson-pulsar::parallel-/10": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5847,7 +6233,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-draft-picks-rated-prospect/tre-johnson-blue-pulsar-15",
       "pcTitle": "Tre Johnson [Blue Pulsar] #15",
       "pcId": "8270350",
-      "enrichedAt": "2026-06-27T00:37:31.347Z"
+      "enrichedAt": "2026-06-27T00:37:31.347Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::dylan-harper::parallel": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5863,7 +6250,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-mcdonald%e2%80%99s-all-american-autograph-refractor/dylan-harper-gold-sms-dyl",
       "pcTitle": "Dylan Harper [Gold] #SMS-DYL",
       "pcId": "8567707",
-      "enrichedAt": "2026-06-27T00:37:33.954Z"
+      "enrichedAt": "2026-06-27T00:37:33.954Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::dylan-harper-sa::parallel": {
       "setKey": "2024-topps-chrome-basketball",
@@ -5879,7 +6267,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-mcdonald%e2%80%99s-all-american-autograph-refractor/dylan-harper-gold-sms-dyl",
       "pcTitle": "Dylan Harper [Gold] #SMS-DYL",
       "pcId": "8567707",
-      "enrichedAt": "2026-06-27T00:37:36.594Z"
+      "enrichedAt": "2026-06-27T00:37:36.594Z",
+      "sport": "basketball"
     },
     "2025-panini-national-treasures-basketball::giannis-antetokounmpo::auto-rc-/99": {
       "setKey": "2025-panini-national-treasures-basketball",
@@ -5895,7 +6284,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-national-treasures-viewpoint-signature/giannis-antetokounmpo-8",
       "pcTitle": "Giannis Antetokounmpo #8",
       "pcId": "10174501",
-      "enrichedAt": "2026-06-27T00:37:41.019Z"
+      "enrichedAt": "2026-06-27T00:37:41.019Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::larry-bird-low::printing-plate-1/1": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -5918,7 +6308,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2006-topps/larry-bird-3-pt-shootout-low-angle-33",
       "pcTitle": "Larry Bird [3 PT Shootout Low Angle] #33",
       "pcId": "140808",
-      "enrichedAt": "2026-06-27T00:37:48.553Z"
+      "enrichedAt": "2026-06-27T00:37:48.553Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::coll-retro-prem::printing-plate-1/1": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -5941,7 +6332,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/hockey-cards-2024-o-pee-chee/dylan-cozens-retro-printing-plate-347",
       "pcTitle": "Dylan Cozens [Retro Printing Plate] #347",
       "pcId": "8491347",
-      "enrichedAt": "2026-06-27T00:37:52.097Z"
+      "enrichedAt": "2026-06-27T00:37:52.097Z",
+      "sport": "basketball"
     },
     "2024-panini-immaculate-basketball::collection-jersey-number::patch-auto-/77": {
       "setKey": "2024-panini-immaculate-basketball",
@@ -5964,7 +6356,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2021-panini-immaculate-collection/aaron-wiggins-patch-autograph-jersey-number-131",
       "pcTitle": "Aaron Wiggins [Patch Autograph Jersey Number] #131",
       "pcId": "4660728",
-      "enrichedAt": "2026-06-27T00:37:55.769Z"
+      "enrichedAt": "2026-06-27T00:37:55.769Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::victor-wembanyama::auto": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -5980,7 +6373,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome-sky-write-signature/victor-wembanyama-sws-vw",
       "pcTitle": "Victor Wembanyama #SWS-VW",
       "pcId": "11488910",
-      "enrichedAt": "2026-06-27T00:37:56.893Z"
+      "enrichedAt": "2026-06-27T00:37:56.893Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::lamine-yamal-ucc::auto": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -6003,7 +6397,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/soccer-cards-2025-topps-chrome-uefa/lamine-yamal-red-refractor-10",
       "pcTitle": "Lamine Yamal [Red Refractor] #10",
       "pcId": "12816500",
-      "enrichedAt": "2026-06-27T00:37:58.080Z"
+      "enrichedAt": "2026-06-27T00:37:58.080Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::cooper-flagg-mavericks::auto": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -6026,7 +6421,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome/cooper-flagg-refractor-251",
       "pcTitle": "Cooper Flagg [Refractor] #251",
       "pcId": "11484454",
-      "enrichedAt": "2026-06-27T00:38:05.331Z"
+      "enrichedAt": "2026-06-27T00:38:05.331Z",
+      "sport": "basketball"
     },
     "2026-topps-tier-one-baseball::bryce-harper::numbered-auto-/25": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -6045,7 +6441,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:38:07.134Z"
+      "enrichedAt": "2026-06-27T00:38:07.134Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::steve-garvey-prodigious::patch-auto-/10": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -6068,7 +6465,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2024-topps-tier-one-autographed-relic/steve-garvey-triple-patch-t1ar-sg",
       "pcTitle": "Steve Garvey [Triple Patch] #T1AR-SG",
       "pcId": "7127132",
-      "enrichedAt": "2026-06-27T00:38:11.550Z"
+      "enrichedAt": "2026-06-27T00:38:11.550Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::autographs-bo-jackson::numbered-auto-/25": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -6087,7 +6485,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:38:17.986Z"
+      "enrichedAt": "2026-06-27T00:38:17.986Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::miguel-cabrera-au::patch-auto-/10": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -6106,7 +6505,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:38:23.014Z"
+      "enrichedAt": "2026-06-27T00:38:23.014Z",
+      "sport": "baseball"
     },
     "2026-topps-tier-one-baseball::ben-rice-on::auto-rc-/99": {
       "setKey": "2026-topps-tier-one-baseball",
@@ -6125,7 +6525,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:38:28.246Z"
+      "enrichedAt": "2026-06-27T00:38:28.246Z",
+      "sport": "baseball"
     },
     "2025-topps-bowman-chrome::tatsuya-imai-redemption::numbered-auto-/25": {
       "setKey": "2025-topps-bowman-chrome",
@@ -6148,7 +6549,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome-npb/tatsuya-imai-50",
       "pcTitle": "Tatsuya Imai #50",
       "pcId": "12128568",
-      "enrichedAt": "2026-06-27T00:38:32.520Z"
+      "enrichedAt": "2026-06-27T00:38:32.520Z",
+      "sport": "baseball"
     },
     "2024-topps-chrome-basketball::victor-wembanyama-sky::auto": {
       "setKey": "2024-topps-chrome-basketball",
@@ -6171,7 +6573,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-sky-light-signature/victor-wembanyama-black-refractor-sls-vw",
       "pcTitle": "Victor Wembanyama [Black Refractor] #SLS-VW",
       "pcId": "9643299",
-      "enrichedAt": "2026-06-27T00:38:34.398Z"
+      "enrichedAt": "2026-06-27T00:38:34.398Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::issue-rookies-dylan::auto-rc-/50": {
       "setKey": "2024-topps-chrome-basketball",
@@ -6194,7 +6597,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2024-topps-stadium-club/dylan-cease-first-day-issue-47",
       "pcTitle": "Dylan Cease [First Day Issue] #47",
       "pcId": "7801687",
-      "enrichedAt": "2026-06-27T00:38:40.856Z"
+      "enrichedAt": "2026-06-27T00:38:40.856Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::stephen-curry::auto-rc-/99": {
       "setKey": "2024-topps-chrome-basketball",
@@ -6217,7 +6621,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome/stephen-curry-187",
       "pcTitle": "Stephen Curry #187",
       "pcId": "9641112",
-      "enrichedAt": "2026-06-27T00:38:45.620Z"
+      "enrichedAt": "2026-06-27T00:38:45.620Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::cooper-flagg-mavericks::auto": {
       "setKey": "2024-topps-chrome-basketball",
@@ -6240,7 +6645,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome-mcdonald%e2%80%99s-all-american/cooper-flagg-78",
       "pcTitle": "Cooper Flagg #78",
       "pcId": "8567197",
-      "enrichedAt": "2026-06-27T00:38:51.239Z"
+      "enrichedAt": "2026-06-27T00:38:51.239Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::issue-dylan-harper::auto-/150": {
       "setKey": "2024-topps-chrome-basketball",
@@ -6263,7 +6669,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-chrome/dylan-harper-1st-day-issue-252",
       "pcTitle": "Dylan Harper [1st Day Issue] #252",
       "pcId": "11484529",
-      "enrichedAt": "2026-06-27T00:38:55.325Z"
+      "enrichedAt": "2026-06-27T00:38:55.325Z",
+      "sport": "basketball"
     },
     "2024-topps-chrome-basketball::james-harden-au::numbered-auto-/10": {
       "setKey": "2024-topps-chrome-basketball",
@@ -6286,7 +6693,8 @@
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-topps-chrome/james-harden-198",
       "pcTitle": "James Harden #198",
       "pcId": "9641340",
-      "enrichedAt": "2026-06-27T00:39:00.593Z"
+      "enrichedAt": "2026-06-27T00:39:00.593Z",
+      "sport": "basketball"
     },
     "2025-topps-chrome-basketball-ucc::ucc-moore-gray::numbered-auto-/5": {
       "setKey": "2025-topps-chrome-basketball-ucc",
@@ -6305,7 +6713,8 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T00:39:07.518Z"
+      "enrichedAt": "2026-06-27T00:39:07.518Z",
+      "sport": "basketball"
     },
     "2026-topps-chrome-baseball__yordan-alvarez__auto-rc": {
       "setKey": "2026-topps-chrome-baseball",

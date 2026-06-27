@@ -26,6 +26,7 @@ const LOG_PATH        = 'enrich-sports-chase-cards.log';
 const FORCE           = process.argv.includes('--force');
 const TEST            = process.argv.includes('--test');
 const MATCH_ONLY      = process.argv.includes('--match-only');
+const CONCURRENCY     = 5;
 const STALE_DAYS      = 7;
 const SCP_BASE        = 'https://www.sportscardspro.com';
 
@@ -269,6 +270,17 @@ async function main() {
   const cards   = cardDb.cards ?? {};
   const players = playersDb.players ?? {};
 
+  // Fix null sport tags on existing cards
+  for (const [key, card] of Object.entries(cards)) {
+    if (!card.sport) {
+      const sk = card.setKey ?? key;
+      card.sport = sk.includes('basketball') ? 'basketball'
+        : sk.includes('football') ? 'football'
+        : sk.includes('hockey') ? 'hockey'
+        : 'baseball';
+    }
+  }
+
   // Merge cards from set-history-sports chaseCards
   for (const [setKey, setRec] of Object.entries(sportsDb.sets ?? {})) {
     for (const cc of setRec.cards?.chaseCards ?? []) {
@@ -278,7 +290,7 @@ async function main() {
           setKey, setName: setRec.name ?? setKey,
           player: cc.player, cardType: cc.cardType,
           printRun: cc.printRun ?? null,
-          sport: setKey.includes('baseball') ? 'baseball' : setKey.includes('basketball') ? 'basketball' : 'football',
+          sport: setKey.includes('basketball') ? 'basketball' : setKey.includes('football') ? 'football' : setKey.includes('hockey') ? 'hockey' : 'baseball',
           ebayMedian: cc.price ?? null, source: 'set-history-import',
         };
       }
@@ -292,34 +304,37 @@ async function main() {
 
   let done = 0, pcHits = 0, noData = 0;
 
-  for (const [key, card] of toEnrich) {
-    log(`  [${done + 1}/${toEnrich.length}] ${card.player} — ${card.cardType} (${card.setName})`);
-
+  // Concurrent enrichment — CONCURRENCY parallel workers
+  async function enrichCard([key, card], idx) {
+    log(`  [${idx + 1}/${toEnrich.length}] ${card.player} — ${card.cardType} (${card.setName})`);
     const pc = await scpSearch(card, proxies);
     if (pc) {
-      card.pcMarket  = pc.pcMarket;
-      card.pcUrl     = pc.pcUrl;
-      card.pcTitle   = pc.pcTitle;
-      card.pcId      = pc.pcId;
+      card.pcMarket = pc.pcMarket;
+      card.pcUrl    = pc.pcUrl;
+      card.pcTitle  = pc.pcTitle;
+      card.pcId     = pc.pcId;
       pcHits++;
-      log(`    SCP: $${pc.pcMarket} "${pc.pcTitle}"`);
+      log(`    ✓ $${pc.pcMarket} "${pc.pcTitle}"`);
     } else {
       noData++;
-      log(`    SCP: no data`);
+      log(`    ✗ no data`);
     }
-
     card.enrichedAt = new Date().toISOString();
     cards[key] = card;
     done++;
-
-    await sleep(800 + Math.random() * 700);
-
-    if (done % 20 === 0) {
+    if (done % 25 === 0) {
       cardDb.cards = cards;
       cardDb._meta = { ...cardDb._meta, updated: new Date().toISOString().slice(0, 10), count: Object.keys(cards).length };
       writeFileSync(CARD_DB_PATH, JSON.stringify(cardDb, null, 2));
-      log(`  [saved] ${done} done`);
+      log(`  [checkpoint] ${done}/${toEnrich.length} done (${pcHits} hits)`);
     }
+  }
+
+  // Run in batches of CONCURRENCY
+  for (let i = 0; i < toEnrich.length; i += CONCURRENCY) {
+    const batch = toEnrich.slice(i, i + CONCURRENCY);
+    await Promise.all(batch.map((item, j) => enrichCard(item, i + j)));
+    await sleep(300 + Math.random() * 200); // brief pause between batches
   }
 
   // Final card DB save
