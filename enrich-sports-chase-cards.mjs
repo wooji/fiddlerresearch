@@ -141,7 +141,7 @@ function parseSearchResults(html, playerName, setName, card) {
   const normP = cleanName(playerName).replace(/[^a-z\s]/g, '');
   function score(r, setName, card) {
     let s = 0;
-    const t = r.title.toLowerCase();
+    const t = r.title.toLowerCase().replace(/[^a-z\s]/g, ''); // strip hyphens so "gilgeousalexander" matches
     const rs = (r.setName ?? '').toLowerCase();
     const sn = (setName ?? '').toLowerCase();
     const ct = (card?.cardType ?? '').toLowerCase();
@@ -183,7 +183,12 @@ function parseSearchResults(html, playerName, setName, card) {
 
   rows.sort((a, b) => score(b, setName, card) - score(a, setName, card));
   const nameParts = normP.split(' ').filter(p => p.length > 2);
-  const best = rows.find(r => nameParts.every(p => r.title.toLowerCase().includes(p))) ?? rows[0];
+  // Prefer rows that match name AND have a price; fall back to any named match, then top-scored
+  const nameMatch = r => nameParts.every(p => r.title.toLowerCase().replace(/[^a-z\s]/g, '').includes(p));
+  const best = rows.find(r => nameMatch(r) && r.price > 0)
+    ?? rows.find(r => nameMatch(r))
+    ?? rows.find(r => r.price > 0)
+    ?? rows[0];
   return best;
 }
 
