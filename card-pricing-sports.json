@@ -698,12 +698,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:06.647Z",
+      "enrichedAt": "2026-06-27T01:27:55.368Z",
       "sport": "baseball",
       "pcMarket": 14.89,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-bowman-draft-chrome/seth-hernandez-refractor-bdc-25",
       "pcTitle": "Seth Hernandez [Refractor] #BDC-25",
-      "pcId": "11638611"
+      "pcId": "11638611",
+      "pcUngraded": 14.89,
+      "pcGrade9": null,
+      "pcPsa10": 22.44,
+      "pcGradedAvg": 54
     },
     "2025-topps-chrome-baseball::eric-hartman::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -722,7 +726,7 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:04.766Z",
+      "enrichedAt": "2026-06-27T01:27:49.784Z",
       "sport": "baseball"
     },
     "2025-topps-chrome-baseball::picks-autos-ernie::numbered-auto-/25": {
@@ -742,7 +746,7 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:05.692Z",
+      "enrichedAt": "2026-06-27T01:27:55.153Z",
       "sport": "baseball",
       "pcMarket": 66,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-diamond-icons-chrome-autograph/bernie-williams-acc-wil",
@@ -766,7 +770,7 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:04.527Z",
+      "enrichedAt": "2026-06-27T01:27:55.167Z",
       "sport": "baseball",
       "pcMarket": 48.49,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2011-topps-chrome/craig-kimbrel-autograph-195",
@@ -790,7 +794,7 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:08.231Z",
+      "enrichedAt": "2026-06-27T01:27:56.339Z",
       "sport": "baseball",
       "pcMarket": 86,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-1990-chrome-autograph/vladimir-guerrero-90ca-vgu",
@@ -807,12 +811,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:09.338Z",
+      "enrichedAt": "2026-06-27T01:27:58.076Z",
       "sport": "baseball",
       "pcMarket": 18.5,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-pro-debut-chrome/jesus-made-autograph-pdc-39",
       "pcTitle": "Jesus Made [Autograph] #PDC-39",
-      "pcId": "11040746"
+      "pcId": "11040746",
+      "pcUngraded": 18.5,
+      "pcGrade9": null,
+      "pcPsa10": 18.41,
+      "pcGradedAvg": 33.11
     },
     "2025-topps-chrome-baseball::konnor-griffin-ssp::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -831,12 +839,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:08.877Z",
+      "enrichedAt": "2026-06-27T01:27:58.029Z",
       "sport": "baseball",
       "pcMarket": 415,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-pro-debut-chrome/konnor-griffin-green-refractor-autograph-pdc-32",
       "pcTitle": "Konnor Griffin [Green Refractor Autograph] #PDC-32",
-      "pcId": "11040939"
+      "pcId": "11040939",
+      "pcUngraded": 415,
+      "pcGrade9": null,
+      "pcPsa10": 375.26,
+      "pcGradedAvg": 525
     },
     "2025-topps-chrome-baseball::ben-rice::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -858,12 +870,16 @@
       "ebayMedian": 350,
       "ebayCount": 60,
       "ebayQuery": "Ben Rice Auto RC /99 2025 Topps Chrome Baseball /99",
-      "enrichedAt": "2026-06-27T01:03:08.995Z",
+      "enrichedAt": "2026-06-27T01:27:57.862Z",
       "sport": "baseball",
       "pcMarket": 7.36,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome-update/ben-rice-refractor-usc138",
       "pcTitle": "Ben Rice [Refractor] #USC138",
-      "pcId": "11336901"
+      "pcId": "11336901",
+      "pcUngraded": 7.36,
+      "pcGrade9": null,
+      "pcPsa10": 28.99,
+      "pcGradedAvg": 32
     },
     "2025-topps-chrome-baseball::mike-sirota::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -882,12 +898,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:08.986Z",
+      "enrichedAt": "2026-06-27T01:27:58.045Z",
       "sport": "baseball",
       "pcMarket": 8.26,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-bowman-draft-chrome/mike-sirota-aqua-reptilian-refractor-bdc-11",
       "pcTitle": "Mike Sirota [Aqua Reptilian Refractor] #BDC-11",
-      "pcId": "11638025"
+      "pcId": "11638025",
+      "pcUngraded": 8.26,
+      "pcGrade9": null,
+      "pcPsa10": 12.43,
+      "pcGradedAvg": 22.89
     },
     "2025-topps-chrome-baseball::kevin-mcgonigle::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -906,12 +926,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:09.038Z",
+      "enrichedAt": "2026-06-27T01:27:57.677Z",
       "sport": "baseball",
       "pcMarket": 735.43,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-pro-debut-chrome/kevin-mcgonigle-black-refractor-autograph-pdc-107",
       "pcTitle": "Kevin McGonigle [Black Refractor Autograph] #PDC-107",
-      "pcId": "11040896"
+      "pcId": "11040896",
+      "pcUngraded": 735.43,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2025-topps-chrome-baseball::tatsuya-imai-redemption::numbered-auto-/25": {
       "setKey": "2025-topps-chrome-baseball",
@@ -930,7 +954,7 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:10.301Z",
+      "enrichedAt": "2026-06-27T01:28:04.855Z",
       "sport": "baseball",
       "pcMarket": 9.29,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome-npb/tatsuya-imai-50",
@@ -957,12 +981,16 @@
       "ebayMedian": 229.95,
       "ebayCount": 60,
       "ebayQuery": "Elly De La Auto RC /99 2025 Topps Chrome Baseball /99",
-      "enrichedAt": "2026-06-27T01:03:13.006Z",
+      "enrichedAt": "2026-06-27T01:28:08.257Z",
       "sport": "baseball",
       "pcMarket": 2.91,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-chrome-update/elly-de-la-cruz-topps-refractor-usc189",
       "pcTitle": "Elly De La Cruz [Topps Refractor] #USC189",
-      "pcId": "11338982"
+      "pcId": "11338982",
+      "pcUngraded": 2.91,
+      "pcGrade9": null,
+      "pcPsa10": 7.6,
+      "pcGradedAvg": 14.49
     },
     "2025-topps-chrome-baseball::payton-tolle::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -984,7 +1012,7 @@
       "ebayMedian": 49.99,
       "ebayCount": 60,
       "ebayQuery": "Payton Tolle Auto RC /99 2025 Topps Chrome Baseball /99",
-      "enrichedAt": "2026-06-27T01:03:10.035Z",
+      "enrichedAt": "2026-06-27T01:28:04.682Z",
       "sport": "baseball",
       "pcMarket": 123.5,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-now/payton-tolle-black-foil-626",
@@ -1008,12 +1036,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:10.155Z",
+      "enrichedAt": "2026-06-27T01:28:05.213Z",
       "sport": "baseball",
       "pcMarket": 62.5,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-panini-donruss/jarlin-susana-gold-optic-signature-140",
       "pcTitle": "Jarlin Susana [Gold Optic Signature] #140",
-      "pcId": "9696200"
+      "pcId": "9696200",
+      "pcUngraded": 62.5,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2025-topps-chrome-baseball::roman-anthony-redemption::auto-rc-/99": {
       "setKey": "2025-topps-chrome-baseball",
@@ -1035,12 +1067,16 @@
       "ebayMedian": 269.99,
       "ebayCount": 60,
       "ebayQuery": "Roman Anthony Redemption Auto RC /99 2025 Topps Chrome Baseball /99",
-      "enrichedAt": "2026-06-27T01:03:10.011Z",
+      "enrichedAt": "2026-06-27T01:28:03.789Z",
       "sport": "baseball",
       "pcMarket": 31,
       "pcUrl": "https://www.sportscardspro.com/game/baseball-cards-2025-topps-pro-debut-chrome/roman-anthony-blue-refractor-pdc-12",
       "pcTitle": "Roman Anthony [Blue Refractor] #PDC-12",
-      "pcId": "11042142"
+      "pcId": "11042142",
+      "pcUngraded": 31,
+      "pcGrade9": null,
+      "pcPsa10": 32.67,
+      "pcGradedAvg": 57.6
     },
     "2025-panini-prizm-basketball::caitlin-clark::numbered-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1062,12 +1098,16 @@
       "ebayMedian": 13.52,
       "ebayCount": 60,
       "ebayQuery": "Caitlin Clark Numbered Auto /10 2025 Panini Prizm Basketball /10",
-      "enrichedAt": "2026-06-27T01:03:13.555Z",
+      "enrichedAt": "2026-06-27T01:28:09.729Z",
       "sport": "basketball",
       "pcMarket": 763.5,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-panini-prizm-wnba-throwback-signature/caitlin-clark-4",
       "pcTitle": "Caitlin Clark #4",
-      "pcId": "12423558"
+      "pcId": "12423558",
+      "pcUngraded": 763.5,
+      "pcGrade9": null,
+      "pcPsa10": 688.73,
+      "pcGradedAvg": 1275
     },
     "2025-panini-prizm-basketball::matas-buzelis-signatures::numbered-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1086,12 +1126,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:13.745Z",
+      "enrichedAt": "2026-06-27T01:28:09.933Z",
       "sport": "basketball",
       "pcMarket": 34,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-panini-donruss/matas-buzelis-red-autograph-117",
       "pcTitle": "Matas Buzelis [Red Autograph] #117",
-      "pcId": "13211717"
+      "pcId": "13211717",
+      "pcUngraded": 34,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2025-panini-prizm-basketball::luka-doncic-contenders::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1110,12 +1154,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:13.654Z",
+      "enrichedAt": "2026-06-27T01:28:09.980Z",
       "sport": "basketball",
       "pcMarket": 3.25,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2022-panini-prizm/luka-doncic-silver-196",
       "pcTitle": "Luka Doncic [Silver] #196",
-      "pcId": "5036139"
+      "pcId": "5036139",
+      "pcUngraded": 3.25,
+      "pcGrade9": null,
+      "pcPsa10": 8.5,
+      "pcGradedAvg": 15.03
     },
     "2025-panini-prizm-basketball::luka-don-prizmatrix::numbered-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1134,12 +1182,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:13.623Z",
+      "enrichedAt": "2026-06-27T01:28:09.841Z",
       "sport": "basketball",
       "pcMarket": 3.99,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-bowman-chrome/luka-donc%cc%8cic-mojo-bcv-123",
       "pcTitle": "Luka Dončic [Mojo] #BCV-123",
-      "pcId": "12622540"
+      "pcId": "12622540",
+      "pcUngraded": 3.99,
+      "pcGrade9": null,
+      "pcPsa10": 8.92,
+      "pcGradedAvg": 16.88
     },
     "2025-panini-prizm-basketball::spectra-grant-hill::printing-plate-1/1": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1158,7 +1210,7 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:13.842Z",
+      "enrichedAt": "2026-06-27T01:28:09.120Z",
       "sport": "basketball"
     },
     "2025-panini-prizm-basketball::paige-bueckers::numbered-auto-/25": {
@@ -1178,7 +1230,7 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:15.132Z",
+      "enrichedAt": "2026-06-27T01:28:15.636Z",
       "sport": "basketball",
       "pcMarket": 617,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-panini-prizm-wnba-throwback-signature/paige-bueckers-5",
@@ -1205,12 +1257,16 @@
       "ebayMedian": 30,
       "ebayCount": 60,
       "ebayQuery": "Picks Caitlin Clark Auto RC /99 2025 Panini Prizm Basketball /99",
-      "enrichedAt": "2026-06-27T01:03:16.609Z",
+      "enrichedAt": "2026-06-27T01:28:14.767Z",
       "sport": "basketball",
       "pcMarket": 11.75,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-panini-prizm-wnba/caitlin-clark-ice-22",
       "pcTitle": "Caitlin Clark [Ice] #22",
-      "pcId": "11741704"
+      "pcId": "11741704",
+      "pcUngraded": 11.75,
+      "pcGrade9": null,
+      "pcPsa10": 17.75,
+      "pcGradedAvg": 38
     },
     "2025-panini-prizm-basketball::lamelo-ball-signatures::auto-/25": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1229,12 +1285,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:18.670Z",
+      "enrichedAt": "2026-06-27T01:28:13.789Z",
       "sport": "basketball",
       "pcMarket": 22.25,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2020-panini-prizm/lamelo-ball-silver-prizm-278",
       "pcTitle": "LaMelo Ball [Silver Prizm] #278",
-      "pcId": "1915442"
+      "pcId": "1915442",
+      "pcUngraded": 22.25,
+      "pcGrade9": 20.4,
+      "pcPsa10": 29.02,
+      "pcGradedAvg": 32.75
     },
     "2025-panini-prizm-basketball::contenders-jalen-brunson::auto-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1253,12 +1313,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:15.613Z",
+      "enrichedAt": "2026-06-27T01:28:12.416Z",
       "sport": "basketball",
       "pcMarket": 159.03,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2018-panini-prizm/jalen-brunson-silver-prizm-250",
       "pcTitle": "Jalen Brunson [Silver Prizm] #250",
-      "pcId": "114448"
+      "pcId": "114448",
+      "pcUngraded": 159.03,
+      "pcGrade9": 45.99,
+      "pcPsa10": 80,
+      "pcGradedAvg": 232.66
     },
     "2025-panini-prizm-basketball::spectra-jalen-brunson::auto-/49": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1277,7 +1341,7 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:17.802Z",
+      "enrichedAt": "2026-06-27T01:28:18.119Z",
       "sport": "basketball",
       "pcMarket": 159.03,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2018-panini-prizm/jalen-brunson-silver-prizm-250",
@@ -1304,12 +1368,16 @@
       "ebayMedian": 100,
       "ebayCount": 60,
       "ebayQuery": "Luka Doncic Few Numbered Auto /25 2025 Panini Prizm Basketball /25",
-      "enrichedAt": "2026-06-27T01:03:27.859Z",
+      "enrichedAt": "2026-06-27T01:28:19.912Z",
       "sport": "basketball",
       "pcMarket": 3.25,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2022-panini-prizm/luka-doncic-silver-196",
       "pcTitle": "Luka Doncic [Silver] #196",
-      "pcId": "5036139"
+      "pcId": "5036139",
+      "pcUngraded": 3.25,
+      "pcGrade9": null,
+      "pcPsa10": 8.5,
+      "pcGradedAvg": 15.03
     },
     "2025-panini-prizm-basketball::shai-gilgeous-alexander::auto": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1328,8 +1396,12 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:25.648Z",
-      "sport": "basketball"
+      "enrichedAt": "2026-06-27T01:28:24.923Z",
+      "sport": "basketball",
+      "pcMarket": 1.5,
+      "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-topps-signature-class/shai-gilgeous-alexander-54",
+      "pcTitle": "Shai Gilgeous-Alexander #54",
+      "pcId": "13123104"
     },
     "2025-panini-prizm-basketball::spectra-rpa-jalen::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1341,12 +1413,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:24.051Z",
+      "enrichedAt": "2026-06-27T01:28:19.771Z",
       "sport": "basketball",
       "pcMarket": 38.74,
       "pcUrl": "https://www.sportscardspro.com/game/football-cards-2025-panini-prizm/jalen-milroe-autograph-silver-317",
       "pcTitle": "Jalen Milroe [Autograph Silver] #317",
-      "pcId": "11624948"
+      "pcId": "11624948",
+      "pcUngraded": 38.74,
+      "pcGrade9": null,
+      "pcPsa10": 42.87,
+      "pcGradedAvg": 55
     },
     "2025-panini-prizm-basketball::wnba-throwback-signatures::auto-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1365,8 +1441,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:24.433Z",
-      "sport": "basketball"
+      "enrichedAt": "2026-06-27T01:28:30.834Z",
+      "sport": "basketball",
+      "pcMarket": 3.75,
+      "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-panini-prizm-wnba-signature/ajsa-sivka-sg-ajs",
+      "pcTitle": "Ajsa Sivka #SG-AJS",
+      "pcId": "12422409",
+      "pcUngraded": 3.75,
+      "pcGrade9": null,
+      "pcPsa10": 9.19,
+      "pcGradedAvg": 17.24
     },
     "2025-panini-prizm-basketball::spectra-alperen-sengun::patch-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1385,12 +1469,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:20.214Z",
+      "enrichedAt": "2026-06-27T01:28:20.512Z",
       "sport": "basketball",
       "pcMarket": 66.44,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2021-panini-prizm-rookie-signatures/alperen-sengun-rs-alp",
       "pcTitle": "Alperen Sengun #RS-ALP",
-      "pcId": "4526775"
+      "pcId": "4526775",
+      "pcUngraded": 66.44,
+      "pcGrade9": null,
+      "pcPsa10": 51,
+      "pcGradedAvg": 84.55
     },
     "2025-panini-prizm-basketball::lamelo-ball-sensational::parallel-/25": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1409,12 +1497,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:28.682Z",
+      "enrichedAt": "2026-06-27T01:28:32.160Z",
       "sport": "basketball",
       "pcMarket": 22.25,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2020-panini-prizm/lamelo-ball-silver-prizm-278",
       "pcTitle": "LaMelo Ball [Silver Prizm] #278",
-      "pcId": "1915442"
+      "pcId": "1915442",
+      "pcUngraded": 22.25,
+      "pcGrade9": 20.4,
+      "pcPsa10": 29.02,
+      "pcGradedAvg": 32.75
     },
     "2025-panini-prizm-basketball::wnba-paige-bueckers::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1433,12 +1525,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:28.440Z",
+      "enrichedAt": "2026-06-27T01:28:32.364Z",
       "sport": "basketball",
       "pcMarket": 140,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2025-panini-prizm-wnba/paige-bueckers-wnba-logo-prizm-147",
       "pcTitle": "Paige Bueckers [WNBA Logo Prizm] #147",
-      "pcId": "12036183"
+      "pcId": "12036183",
+      "pcUngraded": 140,
+      "pcGrade9": null,
+      "pcPsa10": 143.75,
+      "pcGradedAvg": 158
     },
     "2025-panini-prizm-basketball::ajay-mitchell-signatures::numbered-auto-/10": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1457,12 +1553,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:28.447Z",
+      "enrichedAt": "2026-06-27T01:28:32.458Z",
       "sport": "basketball",
       "pcMarket": 13.5,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm/ajay-mitchell-silver-226",
       "pcTitle": "Ajay Mitchell [Silver] #226",
-      "pcId": "8557141"
+      "pcId": "8557141",
+      "pcUngraded": 13.5,
+      "pcGrade9": 5.75,
+      "pcPsa10": 7.47,
+      "pcGradedAvg": 42.74
     },
     "2025-panini-prizm-basketball::spectra-jalen-brunson::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1484,12 +1584,16 @@
       "ebayMedian": 224.99,
       "ebayCount": 60,
       "ebayQuery": "Spectra Jalen Brunson Auto RC /99 2025 Panini Prizm Basketball /99",
-      "enrichedAt": "2026-06-27T01:03:28.605Z",
+      "enrichedAt": "2026-06-27T01:28:32.536Z",
       "sport": "basketball",
       "pcMarket": 159.03,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2018-panini-prizm/jalen-brunson-silver-prizm-250",
       "pcTitle": "Jalen Brunson [Silver Prizm] #250",
-      "pcId": "114448"
+      "pcId": "114448",
+      "pcUngraded": 159.03,
+      "pcGrade9": 45.99,
+      "pcPsa10": 80,
+      "pcGradedAvg": 232.66
     },
     "2025-panini-prizm-basketball::contenders-deni-avdija::auto-rc-/99": {
       "setKey": "2025-panini-prizm-basketball",
@@ -1508,12 +1612,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:28.500Z",
+      "enrichedAt": "2026-06-27T01:28:32.848Z",
       "sport": "basketball",
       "pcMarket": 1.66,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2020-panini-prizm-draft-picks/deni-avdija-silver-prizm-86",
       "pcTitle": "Deni Avdija [Silver Prizm] #86",
-      "pcId": "358451"
+      "pcId": "358451",
+      "pcUngraded": 1.66,
+      "pcGrade9": null,
+      "pcPsa10": 3.75,
+      "pcGradedAvg": 9.99
     },
     "2024-panini-prizm-basketball::caitlin-clark::numbered-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1532,12 +1640,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:29.477Z",
+      "enrichedAt": "2026-06-27T01:28:38.745Z",
       "sport": "basketball",
       "pcMarket": 4735.49,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-wnba-throwback-signature/caitlin-clark-mojo-tb-cc",
       "pcTitle": "Caitlin Clark [Mojo] #TB-CC",
-      "pcId": "8481225"
+      "pcId": "8481225",
+      "pcUngraded": 4735.49,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2024-panini-prizm-basketball::matas-buzelis-signatures::numbered-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1556,12 +1668,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:29.526Z",
+      "enrichedAt": "2026-06-27T01:28:38.120Z",
       "sport": "basketball",
       "pcMarket": 1700,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-rookie-signature/matas-buzelis-gold-rsi-mbb",
       "pcTitle": "Matas Buzelis [Gold] #RSI-MBB",
-      "pcId": "8553833"
+      "pcId": "8553833",
+      "pcUngraded": 1700,
+      "pcGrade9": null,
+      "pcPsa10": 1600,
+      "pcGradedAvg": 1760
     },
     "2024-panini-prizm-basketball::luka-doncic-contenders::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1573,7 +1689,7 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:32.150Z",
+      "enrichedAt": "2026-06-27T01:28:41.880Z",
       "sport": "basketball",
       "pcMarket": 1.25,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-global-reach/luka-doncic-silver-8",
@@ -1597,12 +1713,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:29.849Z",
+      "enrichedAt": "2026-06-27T01:28:41.493Z",
       "sport": "basketball",
       "pcMarket": 2.43,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm/luka-doncic-silver-89",
       "pcTitle": "Luka Doncic [Silver] #89",
-      "pcId": "8537658"
+      "pcId": "8537658",
+      "pcUngraded": 2.43,
+      "pcGrade9": null,
+      "pcPsa10": 13.05,
+      "pcGradedAvg": 18.03
     },
     "2024-panini-prizm-basketball::spectra-grant-hill::printing-plate-1/1": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1621,12 +1741,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:29.482Z",
+      "enrichedAt": "2026-06-27T01:28:42.362Z",
       "sport": "basketball",
       "pcMarket": 4.42,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-black/grant-hill-basketball-logo-287",
       "pcTitle": "Grant Hill [Basketball Logo] #287",
-      "pcId": "10704148"
+      "pcId": "10704148",
+      "pcUngraded": 4.42,
+      "pcGrade9": null,
+      "pcPsa10": 8.96,
+      "pcGradedAvg": 16.78
     },
     "2024-panini-prizm-basketball::paige-bueckers::numbered-auto-/25": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1645,8 +1769,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:39.001Z",
-      "sport": "basketball"
+      "enrichedAt": "2026-06-27T01:28:48.468Z",
+      "sport": "basketball",
+      "pcMarket": 464,
+      "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-draft-picks-legacy-signature/paige-bueckers-mojo-24",
+      "pcTitle": "Paige Bueckers [Mojo] #24",
+      "pcId": "8792146",
+      "pcUngraded": 464,
+      "pcGrade9": null,
+      "pcPsa10": 405.04,
+      "pcGradedAvg": 675
     },
     "2024-panini-prizm-basketball::picks-caitlin-clark::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1661,8 +1793,16 @@
       "ebayMedian": 50,
       "ebayCount": 60,
       "ebayQuery": "Picks Caitlin Clark Auto RC /99 2024 Panini Prizm Basketball /99",
-      "enrichedAt": "2026-06-27T01:03:39.030Z",
-      "sport": "basketball"
+      "enrichedAt": "2026-06-27T01:28:46.636Z",
+      "sport": "basketball",
+      "pcMarket": 297.5,
+      "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-wnba/caitlin-clark-silver-22",
+      "pcTitle": "Caitlin Clark [Silver] #22",
+      "pcId": "8476346",
+      "pcUngraded": 297.5,
+      "pcGrade9": 156,
+      "pcPsa10": 194.68,
+      "pcGradedAvg": 388.16
     },
     "2024-panini-prizm-basketball::lamelo-ball-signatures::auto-/25": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1681,12 +1821,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:36.019Z",
+      "enrichedAt": "2026-06-27T01:28:49.485Z",
       "sport": "basketball",
       "pcMarket": 187.5,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-black-dual-autograph/lamelo-ball-lonzo-ball-2",
       "pcTitle": "LaMelo Ball / Lonzo Ball #2",
-      "pcId": "10705792"
+      "pcId": "10705792",
+      "pcUngraded": 187.5,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2024-panini-prizm-basketball::contenders-jalen-brunson::auto-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1698,7 +1842,7 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:34.875Z",
+      "enrichedAt": "2026-06-27T01:28:50.999Z",
       "sport": "basketball",
       "pcMarket": 188.44,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-black-prolific-signature/jalen-brunson-mojo-16",
@@ -1725,12 +1869,16 @@
       "ebayMedian": 135,
       "ebayCount": 60,
       "ebayQuery": "Spectra Jalen Brunson Auto /49 2024 Panini Prizm Basketball /49",
-      "enrichedAt": "2026-06-27T01:03:39.475Z",
+      "enrichedAt": "2026-06-27T01:28:48.929Z",
       "sport": "basketball",
       "pcMarket": 188.44,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-black-prolific-signature/jalen-brunson-mojo-16",
       "pcTitle": "Jalen Brunson [Mojo] #16",
-      "pcId": "10706293"
+      "pcId": "10706293",
+      "pcUngraded": 188.44,
+      "pcGrade9": null,
+      "pcPsa10": 172.12,
+      "pcGradedAvg": 296.2
     },
     "2024-panini-prizm-basketball::luka-doncic-few::numbered-auto-/25": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1749,12 +1897,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:42.758Z",
+      "enrichedAt": "2026-06-27T01:28:52.338Z",
       "sport": "basketball",
       "pcMarket": 607.67,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-prizmatrix-signature/luka-doncic-pmx-lkd",
       "pcTitle": "Luka Doncic #PMX-LKD",
-      "pcId": "8553242"
+      "pcId": "8553242",
+      "pcUngraded": 607.67,
+      "pcGrade9": null,
+      "pcPsa10": 681,
+      "pcGradedAvg": 887.52
     },
     "2024-panini-prizm-basketball::shai-gilgeous-alexander::auto": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1773,12 +1925,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:40.539Z",
+      "enrichedAt": "2026-06-27T01:28:52.585Z",
       "sport": "basketball",
       "pcMarket": 654.89,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-prizmatrix-signature/shai-gilgeous-alexander-blue-shimmer-fotl-pmx-sga",
       "pcTitle": "Shai Gilgeous-Alexander [Blue Shimmer FOTL] #PMX-SGA",
-      "pcId": "8553206"
+      "pcId": "8553206",
+      "pcUngraded": 654.89,
+      "pcGrade9": null,
+      "pcPsa10": 572.15,
+      "pcGradedAvg": 954.99
     },
     "2024-panini-prizm-basketball::spectra-rpa-jalen::auto-rc-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1793,12 +1949,16 @@
       "ebayMedian": 40,
       "ebayCount": 60,
       "ebayQuery": "Spectra Rpa Jalen Auto RC /99 2024 Panini Prizm Basketball /99",
-      "enrichedAt": "2026-06-27T01:03:41.557Z",
+      "enrichedAt": "2026-06-27T01:28:53.282Z",
       "sport": "basketball",
       "pcMarket": 15,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-black/jalen-duren-silver-autograph-190",
       "pcTitle": "Jalen Duren [Silver Autograph] #190",
-      "pcId": "10705139"
+      "pcId": "10705139",
+      "pcUngraded": 15,
+      "pcGrade9": null,
+      "pcPsa10": 18.32,
+      "pcGradedAvg": 32.81
     },
     "2024-panini-prizm-basketball::wnba-throwback-signatures::auto-/99": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1813,12 +1973,16 @@
       "ebayMedian": 15,
       "ebayCount": 73,
       "ebayQuery": "Wnba Throwback Signatures Auto /99 2024 Panini Prizm Basketball /99",
-      "enrichedAt": "2026-06-27T01:03:46.076Z",
+      "enrichedAt": "2026-06-27T01:28:52.663Z",
       "sport": "basketball",
       "pcMarket": 4735.49,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-wnba-throwback-signature/caitlin-clark-mojo-tb-cc",
       "pcTitle": "Caitlin Clark [Mojo] #TB-CC",
-      "pcId": "8481225"
+      "pcId": "8481225",
+      "pcUngraded": 4735.49,
+      "pcGrade9": null,
+      "pcPsa10": null,
+      "pcGradedAvg": null
     },
     "2024-panini-prizm-basketball::spectra-alperen-sengun::patch-auto-/10": {
       "setKey": "2024-panini-prizm-basketball",
@@ -1837,12 +2001,16 @@
       "star": true,
       "source": "ebay-sold-comps",
       "fetchedAt": "2026-06-26",
-      "enrichedAt": "2026-06-27T01:03:40.434Z",
+      "enrichedAt": "2026-06-27T01:28:54.957Z",
       "sport": "basketball",
       "pcMarket": 1.23,
       "pcUrl": "https://www.sportscardspro.com/game/basketball-cards-2024-panini-prizm-global-reach/alperen-sengun-1",
       "pcTitle": "Alperen Sengun #1",
-      "pcId": "8561118"
+      "pcId": "8561118",
+      "pcUngraded": 1.23,
+      "pcGrade9": null,
+      "pcPsa10": 6.07,
+      "pcGradedAvg": 11.78
     },
     "2024-panini-prizm-basketball::lamelo-ball-sensational::parallel-/25": {
       "setKey": "2024-panini-prizm-basketball",
