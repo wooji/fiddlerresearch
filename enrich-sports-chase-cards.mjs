@@ -53,8 +53,9 @@ async function httpGet(url, proxies, retries = 4) {
     const args = [
       '-sL', url,
       '-A', UA,
-      '-H', 'Accept: text/html,application/xhtml+xml,*/*;q=0.9',
-      '-H', 'Accept-Language: en-US,en;q=0.9',
+      '-H', 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+      '-H', 'Accept-Language: en-US,en;q=0.5',
+      '-H', 'Accept-Encoding: gzip, deflate, br',
       '--max-time', '20',
       '--connect-timeout', '10',
       '--compressed',
@@ -109,7 +110,7 @@ function buildQuery(card) {
   return `${playerClean} ${year} ${brandWords} ${typeShort}`.replace(/\s+/g, ' ').trim();
 }
 
-function parseSearchResults(html, playerName, setName) {
+function parseSearchResults(html, playerName, setName, card) {
   const rows = [];
   const rowRe = /<tr\s[^>]*id="product-(\d+)"[\s\S]*?<\/tr>/g;
   let m;
@@ -136,13 +137,14 @@ function parseSearchResults(html, playerName, setName) {
 
   if (!rows.length) return null;
 
-  // Score rows: player name match + set name match + has price
+  // Score rows: player name match + set name match + card type + print run
   const normP = cleanName(playerName).replace(/[^a-z\s]/g, '');
-  function score(r, setName) {
+  function score(r, setName, card) {
     let s = 0;
     const t = r.title.toLowerCase();
     const rs = (r.setName ?? '').toLowerCase();
     const sn = (setName ?? '').toLowerCase();
+    const ct = (card?.cardType ?? '').toLowerCase();
 
     // Player name match (most important)
     const nameParts = normP.split(' ').filter(p => p.length > 2);
@@ -158,11 +160,28 @@ function parseSearchResults(html, playerName, setName) {
 
     if (r.price && r.price > 0) s += 2;
 
-    // Print run match — big bonus if card.printRun matches row printRun
+    // Card type keyword matching — critical for autos/patches vs base inserts
+    const TYPE_KEYS = ['auto', 'autograph', 'patch', 'rpa', 'printing plate', 'superfractor', 'logoman'];
+    for (const tk of TYPE_KEYS) {
+      if (ct.includes(tk) && t.includes(tk)) s += 25;
+      else if (ct.includes(tk) && !t.includes(tk)) s -= 20; // penalty: card is auto, title has no auto
+    }
+    // Bonus if both are plain base/insert (no special type keys)
+    const ctIsBasic = !TYPE_KEYS.some(tk => ct.includes(tk));
+    const tIsBasic = !TYPE_KEYS.some(tk => t.includes(tk));
+    if (ctIsBasic && tIsBasic) s += 5;
+
+    // Print run match bonus
+    if (card?.printRun && r.printRun) {
+      const rpr = parseInt(r.printRun.replace(/[^0-9]/g, ''), 10);
+      if (!isNaN(rpr) && rpr === card.printRun) s += 30;
+      else if (!isNaN(rpr) && Math.abs(rpr - card.printRun) <= 5) s += 10;
+    }
+
     return s;
   }
 
-  rows.sort((a, b) => score(b, setName) - score(a, setName));
+  rows.sort((a, b) => score(b, setName, card) - score(a, setName, card));
   const nameParts = normP.split(' ').filter(p => p.length > 2);
   const best = rows.find(r => nameParts.every(p => r.title.toLowerCase().includes(p))) ?? rows[0];
   return best;
@@ -174,7 +193,7 @@ async function scpSearch(card, proxies) {
   const html = await httpGet(url, proxies);
   if (!html) return null;
 
-  const best = parseSearchResults(html, card.player, card.setName);
+  const best = parseSearchResults(html, card.player, card.setName, card);
   if (!best || !best.price) return null;
 
   return { pcMarket: best.price, pcUrl: best.href, pcTitle: best.title, pcPrintRun: best.printRun, pcId: best.id };
@@ -407,12 +426,18 @@ async function main() {
       normName(c.cardType) === normName(card.cardType)
     );
 
+    // ebayMedian: use pcUngraded (PC derives this from eBay completed sales) or pcMarket fallback
+    const ebayMedianFinal = card.ebayMedian
+      ?? (card.pcUngraded != null && card.pcUngraded > 0 ? card.pcUngraded : null)
+      ?? (card.pcMarket != null && card.pcMarket > 5 ? card.pcMarket : null)
+      ?? null;
+
     const cardEntry = {
       setKey:     card.setKey,
       setName:    card.setName,
       cardType:   card.cardType,
       printRun:   card.printRun ?? null,
-      ebayMedian: card.ebayMedian ?? null,
+      ebayMedian: ebayMedianFinal,
       pcMarket:   card.pcMarket ?? null,
       pcUngraded: card.pcUngraded ?? null,
       pcGrade9:   card.pcGrade9 ?? null,
@@ -420,7 +445,7 @@ async function main() {
       pcGradedAvg: card.pcGradedAvg ?? null,
       pcUrl:       card.pcUrl ?? null,
       pcTitle:    card.pcTitle ?? null,
-      star:       (card.pcMarket ?? card.ebayMedian ?? 0) > 200,
+      star:       (ebayMedianFinal ?? card.pcMarket ?? 0) > 200,
       enrichedAt: card.enrichedAt,
       source:     'enrich-sports-chase-cards',
     };
