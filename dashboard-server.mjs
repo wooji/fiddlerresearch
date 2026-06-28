@@ -802,6 +802,53 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // GET /api/sports?sport=&q= — sports sets from set-history-sports.json
+  if (req.method === 'GET' && pathname === '/api/sports') {
+    const sportFilter = url.searchParams.get('sport') ?? '';
+    const q = (url.searchParams.get('q') ?? '').toLowerCase();
+    try {
+      const db = JSON.parse(fs.readFileSync(path.join(ROOT, 'set-history-sports.json'), 'utf8'));
+      const cardDb = JSON.parse(fs.readFileSync(path.join(ROOT, 'card-pricing-sports.json'), 'utf8'));
+      const allCards = Array.isArray(cardDb.cards) ? cardDb.cards : Object.values(cardDb.cards ?? {});
+      const cardsBySet = {};
+      for (const c of allCards) {
+        const sk = c.setKey ?? '';
+        if (!cardsBySet[sk]) cardsBySet[sk] = [];
+        cardsBySet[sk].push(c);
+      }
+      let sets = Object.entries(db.sets ?? {}).map(([key, v]) => {
+        const prod = v.products?.[Object.keys(v.products ?? {})[0]] ?? {};
+        return {
+          key, name: v.name ?? key, sport: v.sport ?? 'other',
+          retail: v.retail ?? prod.retail ?? null,
+          market: v.market ?? prod.current ?? null,
+          ath: v.ath ?? prod.ath ?? null,
+          rating: v.rating ?? null,
+          dateLogged: v.dateLogged ?? null,
+          chaseCards: (cardsBySet[key] ?? []).length,
+        };
+      });
+      if (sportFilter) sets = sets.filter(s => s.sport === sportFilter);
+      if (q) sets = sets.filter(s => (s.name ?? '').toLowerCase().includes(q) || s.key.includes(q));
+      sets.sort((a, b) => (b.dateLogged ?? '').localeCompare(a.dateLogged ?? ''));
+      json(res, { total: sets.length, sets });
+    } catch(e) { json(res, { error: e.message }, 500); }
+    return;
+  }
+
+  // GET /api/sports/:setKey/chase — chase cards for a specific sports set
+  const sportsChaseMatch = pathname.match(/^\/api\/sports\/([^/]+)\/chase$/);
+  if (req.method === 'GET' && sportsChaseMatch) {
+    const setKey = decodeURIComponent(sportsChaseMatch[1]);
+    try {
+      const cardDb = JSON.parse(fs.readFileSync(path.join(ROOT, 'card-pricing-sports.json'), 'utf8'));
+      const allCards = Array.isArray(cardDb.cards) ? cardDb.cards : Object.values(cardDb.cards ?? {});
+      const cards = allCards.filter(c => c.setKey === setKey).sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
+      json(res, { setKey, cards });
+    } catch(e) { json(res, { error: e.message }, 500); }
+    return;
+  }
+
   cors(res);
   res.writeHead(404);
   res.end('Not found');

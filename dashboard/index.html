@@ -241,6 +241,7 @@
   <button data-tab="history">History</button>
   <button data-tab="feed">Feed</button>
   <button data-tab="players">Players</button>
+  <button data-tab="sports">Sports Sets</button>
   <button data-tab="docs">Docs</button>
   <span id="code-status" title="Live code status — green = running process serves latest source"
         style="margin-left:auto;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;background:#333;color:#bbb">code: …</span>
@@ -316,6 +317,59 @@
       <span id="players-pager" style="font-size:12px;color:var(--muted)"></span>
       <button id="players-next" onclick="loadPlayers(playersPage+1)" style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:6px 14px;color:var(--text);cursor:pointer;font-size:13px">Next →</button>
       <span style="font-size:12px;color:var(--muted);margin-left:auto">⭐ = cards with chase data</span>
+    </div>
+  </div>
+</div>
+
+<!-- SPORTS SETS TAB -->
+<div id="tab-sports" class="panel">
+  <div style="padding:20px;height:calc(100vh - 52px);display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
+      <div style="font-size:18px;font-weight:700">Sports Card Sets</div>
+      <div id="sports-stats" style="font-size:12px;color:var(--muted)">loading…</div>
+    </div>
+    <div style="display:flex;gap:8px;flex-shrink:0">
+      <select id="sports-filter" style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-size:13px" onchange="loadSports()">
+        <option value="">All Sports</option>
+        <option value="baseball">⚾ Baseball</option>
+        <option value="basketball">🏀 Basketball</option>
+        <option value="football">🏈 Football</option>
+        <option value="hockey">🏒 Hockey</option>
+        <option value="other">Other</option>
+      </select>
+      <input id="sports-q" placeholder="Search set name…" style="flex:1;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-size:13px" oninput="loadSports()">
+    </div>
+    <div style="flex:1;overflow:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead>
+          <tr style="background:var(--surface);position:sticky;top:0;z-index:1">
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Set</th>
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Sport</th>
+            <th style="padding:8px 12px;text-align:right;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Retail</th>
+            <th style="padding:8px 12px;text-align:right;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Market</th>
+            <th style="padding:8px 12px;text-align:right;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">ATH</th>
+            <th style="padding:8px 12px;text-align:right;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">ROI</th>
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Rating</th>
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Logged</th>
+          </tr>
+        </thead>
+        <tbody id="sports-tbody"></tbody>
+      </table>
+    </div>
+    <!-- Chase cards for this set -->
+    <div id="sports-chase-section" style="display:none;flex-shrink:0;max-height:220px;overflow-y:auto;border-top:1px solid var(--border);padding-top:12px">
+      <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px">Chase Cards — <span id="sports-chase-set-name"></span></div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="background:var(--surface)">
+            <th style="padding:6px 10px;text-align:left;color:var(--muted);font-weight:600">Player</th>
+            <th style="padding:6px 10px;text-align:left;color:var(--muted);font-weight:600">Card</th>
+            <th style="padding:6px 10px;text-align:right;color:var(--muted);font-weight:600">Price</th>
+            <th style="padding:6px 10px;text-align:right;color:var(--muted);font-weight:600">Print Run</th>
+          </tr>
+        </thead>
+        <tbody id="sports-chase-tbody"></tbody>
+      </table>
     </div>
   </div>
 </div>
@@ -563,6 +617,7 @@ document.querySelectorAll('nav button[data-tab]').forEach(btn => {
     if (btn.dataset.tab === 'feed') loadFeed(true);
     if (btn.dataset.tab === 'docs') loadDocs();
     if (btn.dataset.tab === 'players') { loadPlayerStats(); loadPlayers(1); }
+    if (btn.dataset.tab === 'sports') { loadSports(); }
   });
 });
 
@@ -2003,6 +2058,72 @@ loadWebhooks();
 loadPipeline();
 loadHistory();
 loadResearchLog();
+
+// ── Sports Sets Tab ───────────────────────────────────────────────────────────
+async function loadSports() {
+  const sport = document.getElementById('sports-filter')?.value ?? '';
+  const q     = (document.getElementById('sports-q')?.value ?? '').toLowerCase();
+  const tbody = document.getElementById('sports-tbody');
+  const stats = document.getElementById('sports-stats');
+  if (!tbody) return;
+  tbody.innerHTML = '<tr><td colspan="8" style="padding:20px;color:var(--muted);text-align:center">Loading…</td></tr>';
+  try {
+    const params = new URLSearchParams();
+    if (sport) params.set('sport', sport);
+    if (q)     params.set('q', q);
+    const d = await fetch('/api/sports?' + params).then(r => r.json());
+    if (stats) stats.textContent = `${d.total ?? 0} sets`;
+    if (!d.sets?.length) {
+      tbody.innerHTML = '<tr><td colspan="8" style="padding:20px;color:var(--muted);text-align:center">No sets found</td></tr>';
+      return;
+    }
+    const sportEmoji = { baseball:'⚾', basketball:'🏀', football:'🏈', hockey:'🏒', soccer:'⚽', other:'🃏' };
+    tbody.innerHTML = d.sets.map(s => {
+      const retail = s.retail ? `$${s.retail}` : '—';
+      const market = s.market ? `$${s.market.toFixed(0)}` : '—';
+      const ath    = s.ath    ? `$${s.ath.toFixed(0)}`    : '—';
+      const roi    = (s.market && s.retail) ? `${((s.market/s.retail-1)*100).toFixed(0)}%` : '—';
+      const ratingColor = { DBLGREEN:'#4ade80', GREEN:'#86efac', ORANGE:'#fb923c', RED:'#f87171' }[s.rating] ?? 'var(--muted)';
+      const emoji = sportEmoji[s.sport] ?? '🃏';
+      const chaseBtn = s.chaseCards > 0 ? `<span onclick="loadSportsChase('${s.key}','${(s.name??s.key).replace(/'/g,'')}')" style="cursor:pointer;color:var(--accent);font-size:11px;margin-left:6px">⭐${s.chaseCards}</span>` : '';
+      return `<tr style="border-bottom:1px solid var(--border);cursor:pointer" onmouseenter="this.style.background='rgba(255,255,255,.03)'" onmouseleave="this.style.background=''">
+        <td style="padding:8px 12px;font-weight:500">${s.name ?? s.key}${chaseBtn}</td>
+        <td style="padding:8px 12px;color:var(--muted)">${emoji} ${s.sport ?? '—'}</td>
+        <td style="padding:8px 12px;text-align:right">${retail}</td>
+        <td style="padding:8px 12px;text-align:right;font-weight:600">${market}</td>
+        <td style="padding:8px 12px;text-align:right;color:#60a5fa">${ath}</td>
+        <td style="padding:8px 12px;text-align:right">${roi}</td>
+        <td style="padding:8px 12px;color:${ratingColor};font-weight:600">${s.rating ?? '—'}</td>
+        <td style="padding:8px 12px;color:var(--muted);font-size:11px">${s.dateLogged ?? '—'}</td>
+      </tr>`;
+    }).join('');
+  } catch(e) {
+    tbody.innerHTML = `<tr><td colspan="8" style="padding:20px;color:#f87171">${e.message}</td></tr>`;
+  }
+}
+
+async function loadSportsChase(setKey, setName) {
+  const section = document.getElementById('sports-chase-section');
+  const nameEl  = document.getElementById('sports-chase-set-name');
+  const tbody   = document.getElementById('sports-chase-tbody');
+  if (!section) return;
+  section.style.display = 'block';
+  nameEl.textContent = setName;
+  tbody.innerHTML = '<tr><td colspan="4" style="padding:10px;color:var(--muted)">Loading…</td></tr>';
+  try {
+    const d = await fetch(`/api/sports/${encodeURIComponent(setKey)}/chase`).then(r => r.json());
+    if (!d.cards?.length) {
+      tbody.innerHTML = '<tr><td colspan="4" style="padding:10px;color:var(--muted)">No chase cards linked</td></tr>';
+      return;
+    }
+    tbody.innerHTML = d.cards.map(c => `<tr style="border-bottom:1px solid var(--border)">
+      <td style="padding:6px 10px;font-weight:500">${c.player ?? '—'}</td>
+      <td style="padding:6px 10px;color:var(--muted)">${c.cardType ?? '—'}</td>
+      <td style="padding:6px 10px;text-align:right;font-weight:700;color:#4ade80">$${c.price?.toLocaleString() ?? '—'}</td>
+      <td style="padding:6px 10px;text-align:right;color:var(--muted)">${c.printRun ? `/${c.printRun}` : '—'}</td>
+    </tr>`).join('');
+  } catch(e) { tbody.innerHTML = `<tr><td colspan="4" style="color:#f87171;padding:10px">${e.message}</td></tr>`; }
+}
 </script>
 </body>
 </html>
