@@ -563,22 +563,37 @@ ebayQuery:   "Assassin's Creed Black Flag Resynced Collector's Edition PS5",
     category:    'noncard',
     set:         'LEGO Ideas',
     retail:      149.99,
-    retailNote:  'MSRP $149.99 · LEGO Ideas · released Aug 6, 2024 · 1,497 pcs',
+    retailVerified: true,
+    retailNote:  'MSRP $149.99 · LEGO Ideas · released Aug 6, 2024 · 1,497 pcs · retires Jul 31, 2026',
     releaseUrl:  'https://www.lego.com/en-us/product/jaws-21350',
     tcgId:       null, supplyScore: 16, liveMarket: null,
-    ebayQuery:   'LEGO Ideas Jaws 21350',
-    images:      [], risk: 'High', ebayFee: 0.13, forceRating: 'GREEN', forceRisk: '🔴 High',
-    retail2:     98, dealNote: 'Walmart+',
-    contents:    'LEGO Ideas Jaws diorama: Orca boat (59cm), 3 minifigs (Brody/Hooper/Quint), shark | 1,497 pcs | strong-IP licensed film set, single print run, retires on EOL',
+    ebayQuery:   'LEGO Ideas Jaws 21350 sealed',
+    images:      [], risk: 'Medium', ebayFee: 0.13, forceRating: 'GREEN', forceRisk: '🟡 Medium',
+    contents:    'LEGO Ideas Jaws diorama: Orca boat (59cm), 3 minifigs (Brody/Hooper/Quint), shark | 1,497 pcs | strong-IP licensed film (Universal/Amblin) | Matt Hooper minifig EXCLUSIVE | single print run, EOL Jul 31 2026',
     releaseDate: 'Released Aug 6, 2024',
-    eolDate:     '~July 31, 2026 (BrickFanatics exact date)',
-    sellThrough: { flip: { range: '$98 in → $145-174 sealed (+48-78%)', units: 'WM+ deal flip' }, hold: { range: 'hold past EOL Jul 2026', units: 'sealed-new' }, invest: { range: '~$179-187 (+5% CAGR post-retire)', units: 'on top of deal' } },
-    bulkBuy:  'buy WM+ $98, flip/hold',
+    eolDate:     'Jul 31, 2026 (BrickFanatics exact — 33 days out)',
+    sellThrough: {
+      flip:    { range: 'SKIP flip now — market $133-142 vs retail $149.99 = negative margin', units: 'n/a' },
+      hold:    { range: 'buy $120-150 sealed-new → target $300-477 post-EOL 1-3yr', units: 'sealed-new' },
+      invest:  { range: '$300-477 (2-3× retail, comp: Old Fishing Store 21332 → 3.18×)', units: 'sealed-new' },
+    },
+    bulkBuy:  'accumulate sealed-new at/below retail before Jul 31',
+    evidence: [
+      { source: 'BrickEconomy JSON-LD (brickeconomy.com/set/21350-1)', date: '2026-06-28', point: 'MSRP $149.99, retires mid/late 2026, current sealed-new $120.99-$157.49, 43 offers, description confirms exclusive Matt Hooper minifig' },
+      { source: 'set-history-lego.json DB + BrickFanatics', date: '2026-06-28', point: 'retireExact 2026-07-31, status active-retiring, CAGR 5%, ATH $580, current secondary $133, Old Fishing Store (same $149.99 retail) retired → $477 / 3.18× comp' },
+      { source: 'Pipeline live market', date: '2026-06-28', point: 'eBay median $149.99 (48 active), StockX $126 (ask $145/bid $107), Amazon $149.99 in stock, weighted market $141.99 — confirms at/below retail pre-EOL, no flip margin today' },
+    ],
+    scenarios: [
+      { label: 'Bear', prob: 20, text: 'LEGO extends production or does Jaws Ideas refresh. Market stays $120-150 through 2027. Exit below retail.' },
+      { label: 'Base', prob: 60, text: 'EOL Jul 31 sticks. Post-retirement Ideas appreciation kicks in 6-12mo out. Exits $270-350 sealed (1.8-2.3×) by mid-2027. Old Fishing Store / Apollo Saturn V comp range.' },
+      { label: 'Bull', prob: 20, text: 'Strong licensed-IP demand (Jaws = cultural icon) + exclusivity of 3 minifigs drives 3× appreciation like Old Fishing Store ($477). Exit $400-500 sealed by 2028.' },
+    ],
     writeup: {
-      market:      '• **Thesis — BUY: Walmart+ $98 = the edge.** Tonight\'s WM+ special is $98, 35% under $149.99 MSRP and below the BrickEconomy NEW-SEALED floor ($145-174). At $98 cost, sealed-new resale = ~+48-78% NOW (not a wait-for-EOL hold). Set RETIRES ~July 31, 2026 → +5% CAGR stacks on top (~$179-187). The deep discount on a near-retirement set is exactly the LEGO alpha.\n• **Liquidity:** Solid AFOL bid; Ideas + licensed film IP = liquid sealed. Exclusive Matt Hooper minifig is the demand anchor.\n• **Risk:** Quantity caps on the WM+ deal; sealed-box condition (mint only); the $145+ floor is BrickEconomy new-sealed — eBay blended median ($120, used-dragged) is NOT the resale comp.',
-      product:     '• LEGO Ideas (fan-voted) — appreciates post-retirement; Jaws forecast modest (~5% CAGR) but positive.\n• 1,497 pcs, Orca display + 3 minifigs; Matt Hooper minifig EXCLUSIVE = the demand anchor.\n• Mechanic = single print run → retires ~Jul 2026 → supply caps → sealed appreciates.\n• Comp on BrickEconomy NEW-SEALED ($145-174), not the used-blended eBay median.',
-      priceComp: '', supplyDemand: '',
-      recs:        '• 🟢 BUY the Walmart+ $98 special — 35% off MSRP, below the $145+ sealed-new floor = ~+48-78% on resale alone.\n• Flip sealed-new ($145-174) now, OR hold past ~Jul 31 2026 EOL for +5% CAGR on top (~$179-187).\n• Buy to the WM+ quantity cap; mint sealed box only.\n• Resale comp = BrickEconomy new-sealed, NOT the $120 used-dragged eBay median.',
+      market:      '• **Thesis — HOLD BUY:** EOL is Jul 31, 2026 — 33 days out. Window to accumulate at/near retail is closing. Best comp: Old Fishing Store (21332, same $149.99 retail, retired) → $477 sealed today (3.18×/16.4% CAGR). Jaws has STRONGER licensed IP (Universal/Amblin iconic film vs. generic fishing store) and exclusive minifigs — should track Old Fishing Store or better post-EOL.\n• **Liquidity:** AFOL + licensed-film collector dual demand. Exclusive Matt Hooper minifig = sealed anchor. Secondary market already starting to tighten ($120-157 range per BrickEconomy, 43 active offers down from typical pre-EOL flood).\n• **Risk:** Production extends past Jul 31 (LEGO has done this before). Current market $133-142 = below retail → no flip today; hold play only. Amazon $149.99 in-stock means still purchasable at retail for 33 more days.',
+      product:     '• LEGO Ideas 21350 (fan-voted film set) | 1,497 pcs | Orca boat display (59cm) + Brody, Hooper, Quint minifigs | Great White shark fig\n• Matt Hooper minifig EXCLUSIVE to this set — collector demand anchor; no other LEGO Jaws set exists\n• Licensed IP: Universal/Amblin Jaws (1975, 50th anniversary 2025) = strong cultural-nostalgia pull from AFOL adults 35-60 demographic\n• Single print run — no rereleases once EOL; supply hard-caps at existing inventory',
+      priceComp:   '• MSRP: $149.99 (Amazon/LEGO in stock)\n• Current sealed-new (BrickEconomy): $120.99-$157.49 (at/below retail pre-EOL)\n• Market weighted: ~$142 (eBay $150, StockX $126)\n• Comp 1 — Old Fishing Store 21332 ($149.99 retail): retired → $477 NOW (3.18×/16.4% CAGR) — EXACT retail match\n• Comp 2 — Voltron 21303 ($179.99): retired → $500 (2.78×/16.9% CAGR) — licensed IP, similar profile\n• Comp 3 — Apollo Saturn V 21309 ($119.99): retired → $280 (2.3×/27.4% CAGR) — NASA licensed\n• DB ATH (Jaws): $580 — 3.87× retail (spike/moment of scarcity)',
+      supplyDemand:'• Supply: EOL Jul 31 ends production; Amazon still at retail = supply available for 33 more days then hard-caps. BrickEconomy shows 43 active offers — still liquid for accumulation, not yet scarce.\n• Demand: Two buyer pools: (1) AFOL set collectors (Ideas fan-voted, licensed IP), (2) Jaws film fans/nostalgia buyers. 50th anniversary of Jaws (1975) = 2025 cultural moment boosted awareness. Exclusive Hooper minifig adds completionist demand.\n• Post-EOL mechanics: sealed supply shrinks as sets get built/opened; new-sealed premium grows 6-18mo post-retirement. Ideas theme consistently shows 15-30% appreciation 12mo after EOL for licensed sets.',
+      recs:        '• 🟢 GREEN — hold buy, accumulate sealed-new at/below $149.99 retail before Jul 31, 2026.\n• Entry NOW (33 days left): buy at retail $149.99 on Amazon or secondary $120-135 if available.\n• Exit: 12-24mo post-EOL (mid-2027 to mid-2028); target $300-477 based on Old Fishing Store / Voltron comps.\n• Do NOT flip immediately — current market $133-142 is below cost basis.\n• Mint sealed only; store climate-controlled; don\'t open.',
     },
   },
   'lego-ideas-stem-21355': {
@@ -2348,7 +2363,11 @@ function generateAdvancedSections(prod, signals, market, feedIntel, docsCtx) {
   // ── Scenarios (separate from Product Analysis) ────────────────────────────────
   let scenarios = null;
   if (prod.scenarios) {
-    scenarios = prod.scenarios;
+    if (Array.isArray(prod.scenarios)) {
+      scenarios = prod.scenarios.map(s => `**${s.label} (${s.prob}%):** ${s.text}`).join('\n');
+    } else {
+      scenarios = prod.scenarios;
+    }
   } else if (retail && market) {
     const mult  = market / retail;
     const bear  = retail;
