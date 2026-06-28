@@ -12,6 +12,7 @@ const TODAY = new Date().toISOString().split('T')[0];
 // categoryId -> { name, db }  (DB lives LOCAL only, never committed)
 const CATS = {
   3:  { name: 'Pokemon',              db: 'set-history.json' },
+  85: { name: 'Pokemon Japan',        db: 'set-history-pokemon-jp.json' },
   1:  { name: 'Magic',                db: 'set-history-mtg.json' },
   68: { name: 'One Piece',            db: 'set-history-one-piece.json' },
   71: { name: 'Lorcana',              db: 'set-history-lorcana.json' },

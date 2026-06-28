@@ -1646,6 +1646,52 @@ try {
   }
 } catch (e) { /* chase DB best-effort */ }
 
+// ── JP Leading Indicator (Pokemon only) ──────────────────────────────────────
+// Japanese sets release 3-6mo before English counterparts.
+// JP secondary market = forward signal for EN sealed demand.
+// Rule: JP >2× retail = strong IP signal → EN sealed likely to run; JP at/below retail = weak IP → EN likely soft.
+let jpLeadSignal = null;
+if (isPokemon) {
+  try {
+    const _jpDb = existsSync(join(ROOT, 'set-history-pokemon-jp.json'))
+      ? JSON.parse(readFileSync(join(ROOT, 'set-history-pokemon-jp.json'), 'utf8'))
+      : null;
+    if (_jpDb) {
+      const _jpSets = _jpDb.sets ?? {};
+      const _norm = s => String(s ?? '').toLowerCase().replace(/[^a-z0-9]/g, '');
+      const _want = _norm(prod.set ?? prod.setName ?? prod.label);
+      const _code = _norm(prod.setCode ?? prod.code ?? '');
+      // Match by set code (SV8a → look for SV8a in JP) or name fragment
+      let _jpHit = null;
+      for (const [k, v] of Object.entries(_jpSets)) {
+        const nm = _norm(v.name ?? k);
+        const cd = _norm(v.code ?? v.setCode ?? k);
+        if ((_code && (cd.includes(_code) || _code.includes(cd))) ||
+            (_want.length > 4 && (nm.includes(_want) || _want.includes(nm)))) {
+          _jpHit = v; break;
+        }
+      }
+      if (_jpHit) {
+        const _jpSealed = _jpHit.cards?.sealed ?? [];
+        const _jpBox = _jpSealed.find(p => /booster.*box|box/i.test(p.name ?? ''));
+        const _jpMarket = _jpBox?.market ?? _jpHit.market ?? null;
+        const _jpRetail = _jpBox?.retail ?? _jpHit.retail ?? null;
+        const _jpMult = (_jpMarket && _jpRetail) ? _jpMarket / _jpRetail : null;
+        const _jpChase = (_jpHit.cards?.fullCardList ?? [])
+          .filter(c => c.market > 0).sort((a, b) => b.market - a.market).slice(0, 3)
+          .map(c => `${c.name} ¥${(c.market * 150).toFixed(0)}`).join(' · ');
+        jpLeadSignal = {
+          setName: _jpHit.name ?? Object.keys(_jpSets).find(k => _jpSets[k] === _jpHit),
+          market: _jpMarket, retail: _jpRetail, mult: _jpMult,
+          topChase: _jpChase || null,
+          signal: !_jpMult ? 'no data' : _jpMult >= 2 ? 'STRONG 🟢' : _jpMult >= 1.3 ? 'MODERATE 🟡' : 'WEAK 🔴',
+        };
+        console.log(`  [jp-lead] ${jpLeadSignal.setName}: ${jpLeadSignal.signal} (${_jpMult?.toFixed(2) ?? '?'}× retail)`);
+      }
+    }
+  } catch (e) { /* JP signal best-effort */ }
+}
+
 const priceSources = [
   ebayMedian && _ebayCredible && { label: 'eBay median',      price: ebayMedian, weight: 40 },
   Number.isFinite(hwAvg) && hwAvg > 0 && (!ebayMedian || hwAvg >= ebayMedian * 0.5) && { label: 'DX prior-yr avg', price: hwAvg, weight: 30 },
@@ -2596,6 +2642,19 @@ function generateWriteup(prod, signals, market, roi, t30Market, t30Roi, computed
   // 5) Retail-on-shelves ONLY when actually sitting at retail price (Journey Together case)
   if (retailInStock) {
     mkt.push(`• Still on shelves at retail — supply suppressing secondary; premium won't form until shelves clear`);
+  }
+
+  // 6) JP leading indicator (Pokemon only — JP sets release 3-6mo before EN, secondary = forward demand signal)
+  if (jpLeadSignal && jpLeadSignal.setName) {
+    const _jpMkt = jpLeadSignal.market ? `JP secondary $${jpLeadSignal.market.toFixed(0)}` : 'JP secondary n/a';
+    const _jpRet = jpLeadSignal.retail && jpLeadSignal.mult ? ` (${jpLeadSignal.mult.toFixed(1)}× JP retail)` : '';
+    const _jpChase = jpLeadSignal.topChase ? ` Chase: ${jpLeadSignal.topChase}.` : '';
+    const _jpAdvice = jpLeadSignal.signal === 'STRONG 🟢'
+      ? 'JP outperforming retail 3-6mo before EN release → strong EN sealed demand expected.'
+      : jpLeadSignal.signal === 'MODERATE 🟡'
+      ? 'JP holding modest premium → EN demand likely neutral-to-positive.'
+      : 'JP at/below retail → EN demand likely soft; watch for supply overhang.';
+    mkt.push(`• **JP Precursor [${jpLeadSignal.setName}]:** ${_jpMkt}${_jpRet}. ${jpLeadSignal.signal}.${_jpChase} ${_jpAdvice}`);
   }
 
   let market_ = mkt.filter(Boolean).join('\n') || prod.writeup?.market || '• Insufficient signal data — re-run pipeline';
