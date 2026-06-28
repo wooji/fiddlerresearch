@@ -1204,18 +1204,23 @@ ebayQuery:   "Assassin's Creed Black Flag Resynced Collector's Edition PS5",
     label:      'MTG Final Fantasy Collector Booster Box',
     category:   'mtg',
     set:        'Final Fantasy',
+    _dbKey:     'final-fantasy',
     retail:     455.88,
     retailVerified: true,
-    tcgId:      null,
-    images:     [],
-    imageUrl:   'https://product-images.tcgplayer.com/fit-in/437x437/639464.jpg',
+    tcgId:      618893,
+    images:     [618893],
     upc:        'WOCD3844',
     releaseUrl: 'https://magic.wizards.com/en/products/final-fantasy',
-    ebayQuery:  'MTG Final Fantasy Collector Booster Box sealed Magic',
+    ebayQuery:  'MTG Final Fantasy Collector Booster Display Box sealed',
     contents:   '12 Collector Booster packs | Universes Beyond: Final Fantasy | Extended Art, Borderless, Serialized cards | FINAL FANTASY VI, VII, X, XIV, XVI characters',
     ebayFee:    0.13,
     forceRating: 'DBLGREEN',
     forceRisk:   '🟢 Low',
+    evidence: [
+      { source: 'StockX live (2026-06-28)', date: '2026-06-28', point: 'FF CBB ask $1,349 / bid $1,000 / last $1,175 — confirmed box-level pricing, 2.58× retail' },
+      { source: 'Walmart 3P live (2026-06-28)', date: '2026-06-28', point: 'Walmart 3P listing $1,234.95 in stock — scalper floor holding 12+ months post-release' },
+      { source: 'WPN / MSRP verified', date: '2026-06-28', point: 'MSRP $37.99/pack × 12 = $455.88 per WPN item WOCD3844. No reprint announced per WPN intel.' },
+    ],
     writeup: {
       market:       '• **Thesis — IP demand at 2.6× retail with 176 Discord mentions and $94k/mo eBay volume:** Final Fantasy CBB commands $1,175-1,235 sealed across eBay/StockX/Walmart vs $455 MSRP — driven by the broadest IP fanbase in gaming (FFVII/X/XIV mainstream crossover). Collector boxes run 82 sold/mo with 40 IG posts, sustained velocity 12+ months post-release.\n• **Liquidity:** $94,300/mo eBay dollar volume (heavy buy), 82 sold in 30d, 3d to exit $10k position — institutional-grade floor for sealed TCG.\n• **Risk:** MTG print-run uncertainty (WotC has reprinted UB sets), but LOTR/Marvel precedents show UB flagships hold for 18+ months before any reprint discussion. FF print allocation was limited per WPN intel.',
       product:      '• 12 Collector Booster packs | WPN item WOCD3844 | MSRP $37.99/pack × 12 = $455.88\n• **Box contents:** Extended Art, Borderless, Showcase (Pixel Art + Frame Break), Serialized cards | Characters: Sephiroth, Cloud, Tifa, Aerith, Terra, Lightning, Tidus, Y\'shtola across FFVI/VII/X/XIV/XVI\n• **Chase singles:** Vivi Ornitier $54.59 | Sephiroth (DFC) $42.66 | Cloud $29.41 | Y\'shtola $21.26 | Lightning $17.60\n• At $455 retail: expected pull rate to chase cards = strong EV case for crackers; sealed retains $1,150+ floor for holders',
@@ -1569,7 +1574,10 @@ const tcgMarket   = tcg?.market ?? null;
 // or when the quote blows past the eBay sold floor (stale/aspirational ask).
 const sxRaw       = signals?.stockx ?? null;
 const sxSpreadBad = sxRaw?.lowestAsk && sxRaw?.highestBid && (sxRaw.lowestAsk - sxRaw.highestBid) / sxRaw.highestBid > 0.5;
-const sxTooHigh   = ebayMedian && sxRaw?.price && sxRaw.price > ebayMedian * 1.5;
+// sxTooHigh: only apply when eBay median is credible (>= 60% of retail = plausible box match).
+// If eBay median < 60% of retail, eBay likely matched packs/wrong-SKU — don't let it cap StockX.
+const _ebayCredible = !ebayMedian || !effectiveRetail || ebayMedian >= effectiveRetail * 0.7;
+const sxTooHigh   = _ebayCredible && ebayMedian && sxRaw?.price && sxRaw.price > ebayMedian * 1.5;
 const sxPrice     = (sxRaw?.price && !sxSpreadBad && !sxTooHigh) ? sxRaw.price : null;
 
 // PriceCharting source — read the already-indexed sealed-price history from the category
@@ -1588,12 +1596,21 @@ try {
     const want = norm(prod.set ?? prod.setName ?? prod.label);
     const code = norm(prod.setCode ?? prod.code) || codeOf(prod.set ?? prod.label ?? prod.setName);
     let hit = null;
-    for (const v of Object.values(sets)) {
+    // Direct _dbKey lookup first — avoids fuzzy-match false positives (e.g. "art-series-final-fantasy" before "final-fantasy").
+    if (prod._dbKey && sets[prod._dbKey]) { hit = sets[prod._dbKey]; }
+    if (!hit) for (const v of Object.values(sets)) {
       const nm = norm(v.name), cd = norm(v.code ?? v.setCode) || codeOf(v.code ?? v.name);
       if ((want && nm && (nm === want || (nm.length > 4 && want.includes(nm)) || (want.length > 4 && nm.includes(want)))) || (code && cd && cd === code)) { hit = v; break; }
     }
-    const p = hit?.products && (hit.products['booster-box'] ?? Object.values(hit.products)[0]);
-    if (p?.current) { pcDbPrice = p.current; console.log(`  [pricecharting] ${hit.name} booster-box $${pcDbPrice} (indexed DB)`); }
+    // Prefer the collector/premium product key, then booster-box, then first product.
+    // p.current = PriceCharting-style; p.market = TCGCSV-style — try both.
+    const _prodKeys = Object.keys(hit?.products ?? {});
+    const _prefKey  = _prodKeys.find(k => /collector.*booster.*display|collector.*box/i.test(k))
+                   ?? _prodKeys.find(k => /booster.?box|booster.?display/i.test(k))
+                   ?? _prodKeys[0];
+    const p = hit?.products && (hit.products[_prefKey]);
+    const _pcVal = p?.current ?? p?.market ?? null;
+    if (_pcVal) { pcDbPrice = _pcVal; console.log(`  [pricecharting] ${hit.name} [${_prefKey}] $${pcDbPrice} (indexed DB)`); }
   }
 } catch (e) { /* DB lookup best-effort */ }
 
@@ -1630,14 +1647,14 @@ try {
 } catch (e) { /* chase DB best-effort */ }
 
 const priceSources = [
-  ebayMedian && { label: 'eBay median',      price: ebayMedian, weight: 40 },
+  ebayMedian && _ebayCredible && { label: 'eBay median',      price: ebayMedian, weight: 40 },
   Number.isFinite(hwAvg) && hwAvg > 0 && (!ebayMedian || hwAvg >= ebayMedian * 0.5) && { label: 'DX prior-yr avg', price: hwAvg, weight: 30 },
   Number.isFinite(hwAsk) && hwAsk > 0 && (!ebayMedian || hwAsk <= ebayMedian * 2) && { label: 'DX lowest ask', price: hwAsk, weight: 15 },
-  azSec      && (!ebayMedian || (azSec >= ebayMedian * 0.5 && azSec <= ebayMedian * 2)) && { label: 'Amazon 3P',        price: azSec,      weight:  7 },
-  wmSec      && (!ebayMedian || (wmSec >= ebayMedian * 0.5 && wmSec <= ebayMedian * 2)) && { label: 'Walmart 3P',       price: wmSec,      weight:  8 },
-  tcgMarket && (!ebayMedian || tcgMarket <= ebayMedian * 2) && { label: 'TCGPlayer', price: tcgMarket, weight: 35 },
+  azSec      && (_ebayCredible ? (azSec >= ebayMedian * 0.5 && azSec <= ebayMedian * 2) : true) && { label: 'Amazon 3P',        price: azSec,      weight:  7 },
+  wmSec      && (_ebayCredible ? (wmSec >= ebayMedian * 0.5 && wmSec <= ebayMedian * 2) : true) && { label: 'Walmart 3P',       price: wmSec,      weight:  8 },
+  tcgMarket && (_ebayCredible ? tcgMarket <= ebayMedian * 2 : true) && (!effectiveRetail || tcgMarket >= effectiveRetail * 0.5) && { label: 'TCGPlayer', price: tcgMarket, weight: 35 },
   sxPrice    && { label: 'StockX',           price: sxPrice,    weight: 20 },
-  pcDbPrice  && (!ebayMedian || (pcDbPrice >= ebayMedian * 0.5 && pcDbPrice <= ebayMedian * 2)) && { label: 'PriceCharting',    price: pcDbPrice,  weight: 30 },
+  pcDbPrice  && (_ebayCredible ? (pcDbPrice >= ebayMedian * 0.5 && pcDbPrice <= ebayMedian * 2) : true) && { label: 'PriceCharting',    price: pcDbPrice,  weight: 30 },
 ].filter(Boolean);
 
 let market, marketNote;
@@ -2963,8 +2980,8 @@ const liveWriteup = signals ? generateWriteup(prod, signals, market, roi, t30Mar
 const writeup = liveWriteup ?? prod.writeup;
 
 // TL:DR: "🟢 FULL SEND | S Tier | $6.99 | $14.25"
-// setTier: Pokemon uses writeup.setTier; non-Pokemon uses _tierLabel computed above
-const setTier = writeup?.setTier ?? _tierLabel ?? null;
+// setTier: _tierLabel (forceRating-derived) always wins; writeup.setTier only used for Pokemon set scoring.
+const setTier = _tierLabel ?? writeup?.setTier ?? null;
 const tldrRetail = prod.retail2 ? `${fmt$(prod.retail2)} (${prod.dealNote ?? 'sale'})` : prod.retail ? fmt$(prod.retail) : detectedRetail ? fmt$(detectedRetail) : '`N/A`';
 const tldrMarket = market ? fmt$(market) : (prod.presaleMarket ?? '`N/A`');
 const tldr = `### TL:DR\n> **${sendLabel}${setTier ? ` | ${setTier} Tier` : ''}** | ${tldrRetail} | ${tldrMarket}`;
