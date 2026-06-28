@@ -63,6 +63,47 @@ function readDocsContext(category) {
 const _dynamicPath = join(ROOT, 'dynamic-products.json');
 const _dynamic = existsSync(_dynamicPath) ? JSON.parse(readFileSync(_dynamicPath, 'utf8')) : {};
 const PRODUCTS = { ..._dynamic, ...{
+  '30th-etb': {
+    label:      'Pokémon TCG 30th Celebration Elite Trainer Box',
+    category:   'pokemon',
+    set:        '30th Celebration',
+    retail:     59.99,
+    retailNote: 'Target / Walmart (estimated, unannounced)',
+    releaseDate: '2026-09-16',
+    releaseUrl: 'https://www.tcgplayer.com/search/pokemon/me-30th-celebration?productLineName=pokemon&setName=me-30th-celebration',
+    preRelease:  true,
+    forceRating: 'DBLGREEN',
+    forceRisk:   '🟢🟢 Very Low — 30th anniversary = single largest Pokemon TCG milestone; globally synced release; presale pack already $165 market',
+    tcgId:       null,
+    ebayQuery:   'Pokemon 30th Celebration Elite Trainer Box',
+    contents:    '9 booster packs + accessories | ALL-FOIL set (every card holofoil) | 128-card set | 30 Pikachu artist variants | New Futuristic Rare rarity | First global simultaneous worldwide release',
+    pcExclusive: { label: 'PC Exclusive ETB', tcgId: null, note: 'Pokemon Center exclusive — primary bot/flip target; 25th anniversary PC ETB now $535-550 sealed' },
+    sellThrough: {
+      flip:   { range: '$130 – $175', units: '~200 – 400+ units' },
+      hold:   { range: '$250 – $400', units: '~75 – 150 units (12-24mo)' },
+      invest: { range: '$400+',       units: '~25 – 50 units (3+ yr, follows Celebrations trajectory)' },
+    },
+    bulkBuy:   '250+ units',
+    risk:      '🟢🟢 Very Low',
+    ebayFee:   0.13,
+    evidence: [
+      { source: 'TCGPlayer TCGCSV (verified)', date: '2026-06-28', point: '30th Celebration Pack (booster) presale market $165 — only 2 listings, shows extreme scarcity of supply pre-launch. ETB not yet listed on TCGPlayer.' },
+      { source: 'YouTube: CrepChiefNotify (bot tutorial video, 2025)', date: '2025-12-01', point: 'PC ETB + standard ETB confirmed expected for 30th Anniversary — modeled on 25th Anniversary Celebrations. PC ETB primary bot target. "Biggest two: PC ETB + UPC." Community already building infrastructure 9+ months before launch.' },
+      { source: 'eBay active listings (presale)', date: '2026-06-28', point: '39 active eBay presale ETB listings, median $442.95. Forward-product presale asking price — directionally bullish; confirms scalper appetite. 25th Anniversary Celebrations ETB ($79.99 retail) current sealed market $350-435.' },
+    ],
+    scenarios: [
+      { label: 'Bear', prob: 10, text: 'Limited stock floods market at launch; secondary settles $90-110 (just above retail). Only if TPCi massively overprints relative to demand — unlikely given presale pack already at $165.' },
+      { label: 'Base', prob: 55, text: '$140-180 at launch, holds $150 floor 6mo. 25th anniversary Celebrations ETB ($80 MSRP) hit $200+ in first year. 30th has higher IP weight + all-foil premium.' },
+      { label: 'Bull', prob: 35, text: 'Global launch hysteria + rare all-foil format + 30th anniversary = $200-300 at release, $400+ in 24mo. Celebrations PC ETB ($80) now $535; this has higher demand ceiling.' },
+    ],
+    writeup: {
+      market:      '• **Thesis — DBLGREEN: 30th anniversary is the single biggest Pokemon TCG milestone.** First-ever globally synced release (worldwide Sep 16) creates synchronized global demand spike — no regional delay arbitrage. The 30th Celebration set is ALL FOIL (every card holo) with a new Futuristic Rare rarity featuring YOSHIROTTEN Mewtwo/Mew art — a premium format Pokemon has never released before. Current presale data: 30th Celebration Pack selling at $165 market on TCGPlayer (presale, 2 listings). Standard ETBs not yet listed = early accumulation window.\n• **Comp: Celebrations 25th Anniversary ETB** ($79.99 MSRP) — hit $200-250 within months, now trades $350-435 sealed. But 30th has HIGHER IP weight (30th >> 25th as cultural milestone), unique all-foil format, and the globally synced release creates zero-delay arbitrage globally. Floor is the Celebrations trajectory at minimum.\n• **Liquidity:** PC ETB is the primary flip target (Pitch Black PC ETB at $520, PF PC ETB at $338). Standard ETB secondary liquidity very high — 25th anniversary Celebrations had 1000s of eBay sold/year for 5 years. Resell window is long.',
+      product:     '• First-ever globally synced Pokemon TCG expansion (Sep 16, 2026 worldwide simultaneously — unprecedented)\n• ALL foil cards: every card in the set has holo treatment — premium collector format, not a standard ETB\n• 30 unique Pikachu card variants, each illustrated by a different artist — 30 mini chase targets per set\n• New "Futuristic Rare" rarity featuring YOSHIROTTEN art (Mewtwo, Mew) — premium Japanese artist collaboration\n• Dual day/night cycle card artwork across the set — unique visual theme\n• Standard ETB: 9 packs + accessories, $59.99 retail (unannounced but consistent with ME series pattern)\n• PC ETB: Pokémon Center exclusive, expected $80+ MSRP, very limited allocation — primary bot/flip target',
+      priceComp:   '• Celebrations 25th ETB: $79.99 → $200 (3mo) → $350-435 now (5yr). 30th has higher milestone weight + unique format\n• Pitch Black PC ETB: $520 (most recent ME set PC ETB market). 30th PC ETB should command premium vs standard ME sets\n• Phantasmal Flames ETB: $160 market (2 months post-release). 30th > PF on IP weight + format uniqueness\n• Ascended Heroes ETB: $177 market (most recent). 30th is a harder set = higher floor expected\n• 30th Celebration Pack (booster): $165 market presale = comp for the all-foil pack EV, not ETB',
+      supplyDemand:'• Supply: Globally synced launch = TPCi distributing to ALL markets simultaneously — no JP/EU supply arriving before EN. Retailer allocation expected heavy but demand will outstrip Target/Walmart supply on launch day. PC ETB = extremely limited (Pokémon Center only).\n• Demand: 30th anniversary is a once-in-a-career collector event. Mainstream media coverage expected. TCG veteran collectors + casual buyers + scalpers all competing simultaneously. Community botter tutorials already live 3 months before launch.\n• Historical read: Celebrations 25th had lines at Target launch day, sold out within hours, secondary 2.5× retail in week 1.',
+      recs:        '• **Short term (launch day):** PC ETB is the primary target — bot or queue early. Standard ETB: max every account at retail. Flip standard at $140-175 within first 2 weeks for immediate cash.\n• **Long term (12-36mo hold):** Hold standard ETBs for Celebrations-style appreciation trajectory ($250-400+). PC ETBs are 3-5× retail ceiling minimum. Every unit held = compounding scarcity.\n• **Strategy:** Allocate 70% flip (fund more buys), 30% long hold. This is the Celebrations of the decade.',
+    },
+  },
   'ah-etb': {
     label:      'Ascended Heroes Elite Trainer Box',
     category:   'pokemon',
