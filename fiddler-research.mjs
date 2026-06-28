@@ -1926,7 +1926,11 @@ if (!prod.forceRisk && (computedRating === 'DBLGREEN' || computedRating === 'GRE
 
 // TL;DR send label — tier shown inline: "🟢 FULL SEND | S Tier | $6.99 | $14.25"
 // ROI tier (S/A/B/C/PASS) is the handbook tier — show it; fall back to set-quality tier.
-const _tierLabel = ratingResult?.tier ?? _catTier ?? null;
+// When forceRating is set, derive tier from it so tier and send label are consistent.
+const FORCE_RATING_TIER = { DBLGREEN: 'S+', GREEN: 'A', PURPLE: 'A', ORANGE: 'C', YELLOW: 'C', RED: 'No Send' };
+// forceRating drives tier — if we're overriding the rating, the tier must match the send label.
+// DB-computed tier (_catTier) is secondary; ROI-only tier is last fallback.
+const _tierLabel = (prod.forceRating ? FORCE_RATING_TIER[prod.forceRating] : null) ?? _catTier ?? ratingResult?.tier ?? null;
 const SEND_LABELS = {
   DBLGREEN: '🟢🟢 MEGA SEND',
   GREEN:    '🟢 FULL SEND',
