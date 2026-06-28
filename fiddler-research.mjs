@@ -601,7 +601,7 @@ ebayQuery:   "Assassin's Creed Black Flag Resynced Collector's Edition PS5",
   },
   'lego-zelda-deku-tree-77092': {
     label:       'LEGO The Legend of Zelda Great Deku Tree 2-in-1 (77092)',
-    category:    'noncard',
+    category:    'lego',
     set:         'LEGO The Legend of Zelda',
     retail:      299.99,
     retailVerified: true,
@@ -640,7 +640,7 @@ ebayQuery:   "Assassin's Creed Black Flag Resynced Collector's Edition PS5",
 
   'lego-ideas-jaws-21350': {
     label:       'LEGO Ideas Jaws (21350) — Orca Boat + Brody/Hooper/Quint',
-    category:    'noncard',
+    category:    'lego',
     set:         'LEGO Ideas',
     retail:      149.99,
     retailVerified: true,
