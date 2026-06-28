@@ -3129,6 +3129,41 @@ if (process.env.DASHBOARD_MODE === '1') {
     process.exit(1);
   }
   console.log(`SENT ${r.status} — ${prod.label}`);
+  // HARD RULE: auto-append every sent research to its category DB immediately after webhook posts.
+  // Do not wait for dashboard Confirm Save button — CLI sends must also persist.
+  try {
+    const _dbAppendNow = (() => {
+      const DB_BY_CAT_AUTO = { pokemon:'set-history.json', mtg:'set-history-mtg.json', lorcana:'set-history-lorcana.json', sports:'set-history-sports.json', topps:'set-history-sports.json', disney_cards:'set-history-disney-cards.json', other_tcg:'set-history-other-tcg.json', one_piece:'set-history-one-piece.json', 'one-piece':'set-history-one-piece.json', weiss:'set-history-weiss.json', union_arena:'set-history-union-arena.json', gundam:'set-history-gundam.json', yugioh:'set-history-yugioh.json', cardfight:'set-history-cardfight.json', dragon_ball:'set-history-dragon-ball.json', fab:'set-history-fab.json', digimon:'set-history-digimon.json', sorcery:'set-history-sorcery.json', star_wars:'set-history-star-wars.json', hololive:'set-history-hololive.json', lego:'set-history-lego.json', noncard:'set-history-noncard.json', veefriends:'set-history-veefriends.json', mattel:'set-history-mattel.json' };
+      const _cat = (prod.category ?? 'noncard').toLowerCase();
+      const _dbf = DB_BY_CAT_AUTO[_cat] ?? 'set-history-noncard.json';
+      const _dbPath = join(ROOT, _dbf);
+      const _db = existsSync(_dbPath) ? JSON.parse(readFileSync(_dbPath, 'utf8')) : { _meta: {}, sets: {} };
+      if (!_db.sets) _db.sets = {};
+      const _prev = _db.sets[productKey];
+      const _hist = Array.isArray(_prev?.history) ? _prev.history : (_prev ? [{ market: _prev.market ?? null, rating: _prev.rating ?? null, dateLogged: _prev.dateLogged ?? null }] : []);
+      const _rec = {
+        name: prod.label, category: _cat,
+        retail: prod.retail ?? null, retailVerified: !!prod.retailVerified,
+        market: market ? +market.toFixed(2) : null,
+        soldMedian: signals?.ebay?.soldMedian30 ?? signals?.ebay?.median ?? null,
+        sold30: signals?.ebay?.sold30 ?? null, sold90: signals?.ebay?.sold90 ?? null,
+        rating: computedRating, tier: ratingResult?.tier ?? null,
+        roi: roi ?? null, netProfit: netProfit != null ? +netProfit.toFixed(2) : null,
+        releaseDate: prod.releaseDate ?? null,
+        dateLogged: new Date().toISOString().slice(0, 10),
+        writeup: liveWriteup ? {
+          market: liveWriteup.market ?? '', product: liveWriteup.product ?? '',
+          priceComp: liveWriteup.closestComps ?? prod.writeup?.priceComp ?? '',
+          supplyDemand: prod.writeup?.supplyDemand ?? '', recs: prod.writeup?.recs ?? '',
+        } : null,
+      };
+      _db.sets[productKey] = { ..._prev, ..._rec, key: productKey, history: [..._hist, { market: _rec.market, rating: _rec.rating, soldMedian: _rec.soldMedian, dateLogged: _rec.dateLogged }].slice(-24) };
+      _db._meta = { ...(_db._meta ?? {}), updated: _rec.dateLogged };
+      writeFileSync(_dbPath, JSON.stringify(_db, null, 2) + '\n');
+      return _dbf;
+    })();
+    console.log(`  [db] appended → ${_dbAppendNow} [${productKey}]`);
+  } catch (e) { console.warn('  [db] auto-append failed:', e.message); }
 }
 if (market) console.log(`  TCGPlayer market: $${market} | low: $${low} | high: $${high}`);
 if (netProfit) console.log(`  Net profit: $${netProfit.toFixed(2)}/unit | ${roi}% ROI`);
