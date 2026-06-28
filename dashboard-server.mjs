@@ -627,8 +627,9 @@ const server = http.createServer(async (req, res) => {
   const metaMatch = pathname.match(/^\/api\/channel-meta\/(\d+)$/);
   if (req.method === 'GET' && metaMatch) {
     const env = loadEnv();
-    const token = env.DISCORD_USER_TOKEN;
-    if (!token) { json(res, { error: 'DISCORD_USER_TOKEN not set' }, 500); return; }
+    const _bt = env.DISCORD_BOT_TOKEN;
+    const token = _bt ? `Bot ${_bt}` : null;
+    if (!token) { json(res, { error: 'DISCORD_BOT_TOKEN not set' }, 500); return; }
     try {
       const r = await fetch(`https://discord.com/api/v9/channels/${metaMatch[1]}`, {
         headers: { Authorization: token, 'User-Agent': 'Mozilla/5.0' },
@@ -647,8 +648,9 @@ const server = http.createServer(async (req, res) => {
     const limit  = Math.min(parseInt(url.searchParams.get('limit') ?? '50', 10), 100);
     const before = url.searchParams.get('before') ?? '';
     const env = loadEnv();
-    const token = env.DISCORD_USER_TOKEN;
-    if (!token) { json(res, { error: 'DISCORD_USER_TOKEN not set in .env' }, 500); return; }
+    const _bt = env.DISCORD_BOT_TOKEN;
+    const token = _bt ? `Bot ${_bt}` : null;
+    if (!token) { json(res, { error: 'DISCORD_BOT_TOKEN not set in .env' }, 500); return; }
     const qs = `limit=${limit}${before ? `&before=${before}` : ''}`;
     try {
       const r = await fetch(`https://discord.com/api/v9/channels/${channelId}/messages?${qs}`, {

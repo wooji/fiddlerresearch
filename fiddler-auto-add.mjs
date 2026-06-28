@@ -213,7 +213,8 @@ async function youtubeBreakIntel(productName) {
 
 // ── Discord intel ──────────────────────────────────────────────────────────
 async function discordIntel(query) {
-  const token = ENV.DISCORD_USER_TOKEN;
+  const _bt = ENV.DISCORD_BOT_TOKEN;
+  const token = _bt ? `Bot ${_bt}` : null;
   if (!token) return '';
   const channels = ['722968137687105596', '1348649989781585991', '1247959380704366753'];
   const kw = query.toLowerCase().split(' ').filter(w => w.length > 3).slice(0, 4);

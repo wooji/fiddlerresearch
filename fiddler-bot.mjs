@@ -23,12 +23,13 @@ const env     = Object.fromEntries(
   })
 );
 
-const TOKEN      = env.DISCORD_USER_TOKEN;
+const _bt        = env.DISCORD_BOT_TOKEN;
+const TOKEN      = _bt ? `Bot ${_bt}` : null;
 const CHANNEL_ID = '1516298588261585097';
 const POLL_MS    = 5000;
 const STATE_FILE = join(ROOT, '.bot-state.json');
 
-if (!TOKEN) { console.error('DISCORD_USER_TOKEN missing'); process.exit(1); }
+if (!TOKEN) { console.error('DISCORD_BOT_TOKEN missing'); process.exit(1); }
 
 // ── State (last seen message ID) ───────────────────────────────────────────────
 let lastId = existsSync(STATE_FILE)
