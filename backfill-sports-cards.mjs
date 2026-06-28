@@ -117,6 +117,75 @@ const PLAYER_SETS = [
   { name: '2022 Panini Contenders Football', sport: 'football', year: 2022, brand: 'panini', tier: 'contenders' },
   { name: '2023 Panini Contenders Football', sport: 'football', year: 2023, brand: 'panini', tier: 'contenders' },
   { name: '2024 Panini Contenders Football', sport: 'football', year: 2024, brand: 'panini', tier: 'contenders' },
+  // Donruss (flagship base)
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Donruss Football`, sport: 'football', year: y, brand: 'panini', tier: 'donruss' }))),
+  // Score (budget)
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Score Football`, sport: 'football', year: y, brand: 'panini', tier: 'score' }))),
+  // Prestige
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Prestige Football`, sport: 'football', year: y, brand: 'panini', tier: 'prestige' }))),
+  // Absolute
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Absolute Football`, sport: 'football', year: y, brand: 'panini', tier: 'absolute' }))),
+  // Certified
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Certified Football`, sport: 'football', year: y, brand: 'panini', tier: 'certified' }))),
+  // Spectra
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Spectra Football`, sport: 'football', year: y, brand: 'panini', tier: 'spectra' }))),
+  // Flawless
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Flawless Football`, sport: 'football', year: y, brand: 'panini', tier: 'flawless' }))),
+  // Gold Standard
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Gold Standard Football`, sport: 'football', year: y, brand: 'panini', tier: 'gold-standard' }))),
+  // Five Star
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Five Star Football`, sport: 'football', year: y, brand: 'panini', tier: 'five-star' }))),
+  // Origins
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Origins Football`, sport: 'football', year: y, brand: 'panini', tier: 'origins' }))),
+  // Obsidian (2019+)
+  ...([2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Obsidian Football`, sport: 'football', year: y, brand: 'panini', tier: 'obsidian' }))),
+  // Phoenix
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Phoenix Football`, sport: 'football', year: y, brand: 'panini', tier: 'phoenix' }))),
+  // Revolution
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Revolution Football`, sport: 'football', year: y, brand: 'panini', tier: 'revolution' }))),
+  // Illusions
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Illusions Football`, sport: 'football', year: y, brand: 'panini', tier: 'illusions' }))),
+  // Luminance (2018+)
+  ...([2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Luminance Football`, sport: 'football', year: y, brand: 'panini', tier: 'luminance' }))),
+  // Playbook
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Playbook Football`, sport: 'football', year: y, brand: 'panini', tier: 'playbook' }))),
+  // Rookies & Stars
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Rookies and Stars Football`, sport: 'football', year: y, brand: 'panini', tier: 'rookies-stars' }))),
+  // Playoff
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Playoff Football`, sport: 'football', year: y, brand: 'panini', tier: 'playoff' }))),
+  // Encased
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Encased Football`, sport: 'football', year: y, brand: 'panini', tier: 'encased' }))),
+  // Chronicles (2019+ multi-brand)
+  ...([2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Chronicles Football`, sport: 'football', year: y, brand: 'panini', tier: 'chronicles' }))),
+  // Black (2019+)
+  ...([2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Black Football`, sport: 'football', year: y, brand: 'panini', tier: 'black' }))),
+  // Flux (2018+)
+  ...([2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Flux Football`, sport: 'football', year: y, brand: 'panini', tier: 'flux' }))),
+  // Status (2018+)
+  ...([2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Status Football`, sport: 'football', year: y, brand: 'panini', tier: 'status' }))),
+  // Unparalleled
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Unparalleled Football`, sport: 'football', year: y, brand: 'panini', tier: 'unparalleled' }))),
+  // Elements (2017+)
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Elements Football`, sport: 'football', year: y, brand: 'panini', tier: 'elements' }))),
+  // Gridiron Kings
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Gridiron Kings Football`, sport: 'football', year: y, brand: 'panini', tier: 'gridiron-kings' }))),
+  // Zenith
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Zenith Football`, sport: 'football', year: y, brand: 'panini', tier: 'zenith' }))),
+  // Cornerstones
+  ...([2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Cornerstones Football`, sport: 'football', year: y, brand: 'panini', tier: 'cornerstones' }))),
+  // Titanium / Titan (2022+)
+  ...([2022,2023,2024].map(y=>({ name: `${y} Panini Titanium Football`, sport: 'football', year: y, brand: 'panini', tier: 'titanium' }))),
+  // Wild Card (2022+, new brand)
+  ...([2022,2023,2024].map(y=>({ name: `${y} Wild Card Football`, sport: 'football', year: y, brand: 'wildcard', tier: 'wild-card' }))),
+  // Leaf Draft / Metal Draft (pre-draft college)
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Leaf Draft Football`, sport: 'football', year: y, brand: 'leaf', tier: 'leaf-draft' }))),
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Leaf Metal Draft Football`, sport: 'football', year: y, brand: 'leaf', tier: 'leaf-metal' }))),
+  // SAGE Hit (pre-draft)
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} SAGE Hit Football`, sport: 'football', year: y, brand: 'sage', tier: 'sage-hit' }))),
+  // Contenders Draft Picks (college)
+  ...([2017,2018,2019,2020,2021,2022,2023,2024].map(y=>({ name: `${y} Panini Contenders Draft Picks Football`, sport: 'football', year: y, brand: 'panini', tier: 'contenders-draft' }))),
+  // Bowman University (2021+)
+  ...([2021,2022,2023,2024].map(y=>({ name: `${y} Bowman University Football`, sport: 'football', year: y, brand: 'bowman', tier: 'bowman-university' }))),
 ];
 
 // Card type classification patterns (order matters — most specific first)
