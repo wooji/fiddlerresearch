@@ -6134,6 +6134,26 @@
       "setName": "2025 Panini Select Basketball",
       "chaseCount": 20,
       "at": "2026-06-29"
+    },
+    {
+      "setName": "2025 Panini Contenders Basketball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
+    },
+    {
+      "setName": "2025 Panini Hoops Basketball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
+    },
+    {
+      "setName": "2025 Panini Gold Standard Basketball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
+    },
+    {
+      "setName": "2025 Panini Spectra Basketball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
     }
   ],
   "lastRun": "2026-06-29T09:53:52.124Z"
