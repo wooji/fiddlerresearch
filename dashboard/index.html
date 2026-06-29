@@ -1027,6 +1027,14 @@ function closeVariants() {
 }
 
 function dbSearch(q) { currentSearch = q; currentPage = 1; loadDbPage(); }
+function toggleSportGroup(sport) {
+  if (!window._sportsCollapsed) window._sportsCollapsed = {};
+  window._sportsCollapsed[sport] = !window._sportsCollapsed[sport];
+  const collapsed = window._sportsCollapsed[sport];
+  document.querySelectorAll(`tr[data-sport-row="${sport}"]`).forEach(r => r.style.display = collapsed ? 'none' : '');
+  const hdr = document.querySelector(`tr.sport-group-header[data-sport="${sport}"] td span`);
+  if (hdr) hdr.textContent = collapsed ? '▶' : '▼';
+}
 
 async function loadDbPage() {
   const pageLimit = currentDb === 'sports' ? 2000 : 50;
@@ -1155,7 +1163,8 @@ async function loadDbPage() {
       });
     });
   } else if (isSports) {
-    // Group sports sets by sport (football/basketball/baseball)
+    // Group sports sets by sport (football/basketball/baseball) with collapsible sections
+    if (!window._sportsCollapsed) window._sportsCollapsed = {};
     const SPORT_ICONS = { basketball:'🏀', baseball:'⚾', football:'🏈' };
     const groups = {};
     entries.forEach(e => { const s = e.sport ?? 'other'; (groups[s] = groups[s] ?? []).push(e); });
@@ -1163,11 +1172,13 @@ async function loadDbPage() {
     ORDER.filter(s => groups[s]).forEach(sport => {
       const icon = SPORT_ICONS[sport] ?? '🏅';
       const label = sport.charAt(0).toUpperCase() + sport.slice(1);
-      tbodyHtml += `<tr><td colspan="${cols.length}" style="background:var(--border);color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:6px 12px;pointer-events:none">${icon} ${label} (${groups[sport].length})</td></tr>`;
+      const collapsed = !!window._sportsCollapsed[sport];
+      const arrow = collapsed ? '▶' : '▼';
+      tbodyHtml += `<tr class="sport-group-header" data-sport="${sport}" onclick="toggleSportGroup('${sport}')" style="background:var(--border);cursor:pointer;user-select:none"><td colspan="${cols.length}" style="color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:6px 12px">${icon} ${label} (${groups[sport].length}) <span style="float:right;font-size:14px">${arrow}</span></td></tr>`;
       groups[sport].forEach(e => {
         const slug = escHtml(e.id ?? '');
         const name = escHtml(e.name ?? e.id);
-        tbodyHtml += `<tr data-db="sports" data-id="${slug}" data-name="${name}" onclick="loadVariants('sports',this.dataset.id,this.dataset.name,'')" style="cursor:pointer" title="Click to view chase cards">${rowFn(e)}</tr>`;
+        tbodyHtml += `<tr data-sport-row="${sport}" data-db="sports" data-id="${slug}" data-name="${name}" onclick="loadVariants('sports',this.dataset.id,this.dataset.name,'')" style="cursor:pointer;${collapsed?'display:none':''}" title="Click to view chase cards">${rowFn(e)}</tr>`;
       });
     });
   } else {
