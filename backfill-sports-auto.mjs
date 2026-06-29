@@ -40,6 +40,7 @@ function randomProxy(proxies) {
 }
 
 // Read DB, return all sets missing chase data in year range
+// Excludes sets that have cards.fetchedAt (attempted, even if empty)
 function getMissingSets() {
   const raw  = loadDb();
   const sets = raw.sets ?? raw;
@@ -47,6 +48,7 @@ function getMissingSets() {
     .filter(([,v]) => {
       const y = v.year ?? 0;
       if (y < MIN_YR || y > MAX_YR) return false;
+      if (v.cards?.fetchedAt) return false; // already attempted
       return !v.chaseCard && !(v.cards?.chaseCards?.length);
     })
     .map(([k,v]) => ({ key:k, name: v.name ?? k, year: v.year, sport: v.sport }))
@@ -94,54 +96,91 @@ function parsePrice(txt) {
   return m ? parseFloat(m[1]) : null;
 }
 
-async function scrapeSet(setInfo, proxies) {
-  const query = setInfo.name + ' rookie auto';
-  log(`  → eBay scrape: "${query}"`);
-  const proxy = randomProxy(proxies);
-  const browser = await chromium.launch({
-    headless: true,
-    proxy: proxy ? { server: proxy.server, username: proxy.username, password: proxy.password } : undefined,
+async function scrapeEbay(page, query) {
+  const url = `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(query)}&LH_Sold=1&LH_Complete=1&_ipg=120&_sop=13&_udlo=20`;
+  await page.goto(url, { waitUntil:'domcontentloaded', timeout:25000 });
+  await page.waitForTimeout(1500);
+  return page.evaluate(() => {
+    const head = document.querySelector('.srp-controls__count-heading')?.textContent ?? '';
+    const m = head.match(/([\d,]+)\s+results?/i);
+    const N = m ? parseInt(m[1].replace(/,/g,''),10) : null;
+    let items = Array.from(document.querySelectorAll('.srp-results .s-card, ul.srp-results li.s-item'));
+    if (!items.length) items = Array.from(document.querySelectorAll('.s-card, li.s-item, li.s-card'));
+    if (N && N > 0 && N < items.length) items = items.slice(0,N);
+    return items.map(el => {
+      let title = el.querySelector('h3,.s-item__title,[class*="s-card__title"]')?.textContent?.trim() ?? '';
+      title = title.replace(/Opens in a new window[^.]*.?/gi,'').trim();
+      const priceTxt = el.querySelector('[class*="s-card__price"],.s-item__price,[class*="price"]')?.textContent ?? '';
+      return {title, priceTxt};
+    }).filter(r => r.title && !r.title.toLowerCase().includes('shop on ebay') && !r.title.startsWith('ADVERTISEMENT'));
   });
+}
+
+// Shared browser + page — created once, reused across all sets
+let _browser = null, _page = null, _pageUses = 0;
+const PAGE_RECYCLE = 50; // recycle page every N sets to avoid memory bloat
+
+async function getPage(proxies) {
+  if (!_browser) {
+    const proxy = randomProxy(proxies);
+    _browser = await chromium.launch({
+      headless: true,
+      proxy: proxy ? { server:proxy.server, username:proxy.username, password:proxy.password } : undefined,
+    });
+    const ctx = await _browser.newContext({ userAgent:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36' });
+    _page = await ctx.newPage();
+    log(`  [browser launched]`);
+  }
+  _pageUses++;
+  if (_pageUses % PAGE_RECYCLE === 0) {
+    // Recycle: close old browser, open fresh one with new proxy
+    try { await _browser.close(); } catch {}
+    _browser = null; _page = null;
+    return getPage(proxies);
+  }
+  return _page;
+}
+
+async function scrapeSet(setInfo, proxies) {
+  const queries = [
+    setInfo.name + ' rookie patch auto',
+    setInfo.name + ' rookie auto',
+  ];
+  log(`  → eBay: "${queries[0]}"`);
   let cards = [];
   try {
-    const ctx = await browser.newContext({ userAgent:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36' });
-    const page = await ctx.newPage();
-    const url = `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(query)}&_sacat=0&LH_Sold=1&LH_Complete=1&_sop=12&_ipg=60`;
-    await page.goto(url, { timeout: 30000, waitUntil:'domcontentloaded' });
-    await page.waitForSelector('.s-item,.s-card', { timeout:8000 }).catch(()=>{});
-
-    const items = await page.evaluate(() => {
-      const els = [...document.querySelectorAll('.s-item,.s-card')];
-      return els.slice(0, 60).map(el => {
-        const titleEl = el.querySelector('[class*="title"],h3,.s-item__title') ?? el.querySelector('a');
-        const priceEl = el.querySelector('[class*="s-card__price"],[class*="price"],.s-item__price');
-        return {
-          title: titleEl?.textContent?.trim() ?? '',
-          price: priceEl?.textContent?.trim() ?? '',
-        };
-      }).filter(i => i.title && i.price && !i.title.includes('Shop on eBay'));
-    });
-
+    const page = await getPage(proxies);
+    const seenTitles = new Set();
+    const listings   = [];
+    for (const q of queries) {
+      try {
+        const rows = await scrapeEbay(page, q);
+        for (const row of rows) {
+          if (seenTitles.has(row.title)) continue;
+          seenTitles.add(row.title);
+          const price = parseFloat((row.priceTxt.match(/\$([\d,]+\.?\d*)/)?.[1]??'').replace(/,/g,''));
+          if (!price || price < 15) continue;
+          listings.push({ title:row.title, price });
+        }
+      } catch(e) { log(`  [ebay] ${e.message?.slice(0,60)}`); }
+    }
     const seen = new Set();
-    for (const item of items) {
-      const price = parsePrice(item.price);
-      if (!price || price < 5 || price > 500000) continue;
+    for (const item of listings) {
       const player = parsePlayer(item.title);
       if (!player || player.length < 4) continue;
       const cardType = parseCardType(item.title);
-      const printRun = parsePrintRun(item.title);
-      const graded   = parseGrade(item.title);
       const key = `${player}::${cardType}`;
       if (seen.has(key)) continue;
       seen.add(key);
-      cards.push({ player, cardType, printRun, graded, price, rawTitle: item.title, source:'ebay-sold-comps', fetchedAt: new Date().toISOString().slice(0,10) });
+      cards.push({ player, cardType, printRun:parsePrintRun(item.title), graded:parseGrade(item.title), price:item.price, rawTitle:item.title, source:'ebay-sold-comps', fetchedAt:new Date().toISOString().slice(0,10) });
     }
     cards.sort((a,b) => b.price - a.price);
-    cards = cards.slice(0, 20);
+    cards = cards.slice(0,20);
   } catch(e) {
     log(`  ✗ scrape error: ${e.message}`);
-  } finally {
-    await browser.close();
+    // reset browser on error
+    try { await _browser?.close(); } catch {}
+    _browser = null; _page = null;
   }
   return cards;
 }
@@ -231,4 +270,6 @@ async function main() {
   }
 }
 
-main().catch(e => { log('FATAL:', e.message); process.exit(1); });
+main()
+  .then(() => { try { _browser?.close(); } catch {} })
+  .catch(e => { log('FATAL:', e.message); try { _browser?.close(); } catch {}; process.exit(1); });
