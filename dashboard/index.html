@@ -942,7 +942,7 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
             const normCard = s => s.toLowerCase().replace(/\s*-\s*\d+\/\d+\s*$/, '').replace(/[^a-z0-9]/g,'');
             for (const m of (jp.cardMatches ?? [])) {
               const key = normCard(m.enName ?? m.jpName ?? '');
-              if (key) jpByNum[key] = m;
+              if (key && (!jpByNum[key] || (m.jpMarket ?? 0) > (jpByNum[key].jpMarket ?? 0))) jpByNum[key] = m;
             }
           } else {
             if (jpLabel) jpLabel.textContent = '🇯🇵 No JP set mapped';
