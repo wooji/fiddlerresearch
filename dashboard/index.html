@@ -894,15 +894,20 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
         if (thead) thead.innerHTML = cards.length ? '<tr><th>Player</th><th>Card Type</th><th style="text-align:right">Print Run</th><th>Graded</th><th style="text-align:right">Price</th></tr>' : '';
         if (cardsSec) cardsSec.style.display = '';
         const fmt = v => v != null ? '$' + Number(v).toLocaleString() : '—';
-        ctbody.innerHTML = cards.length
-          ? cards.map(c => `<tr style="border-bottom:1px solid var(--border)">
-              <td style="padding:4px 8px"><strong>${escHtml(c.player ?? '—')}</strong></td>
+        const sorted = [...cards].sort((a,b)=>(b.price??0)-(a.price??0));
+        ctbody.innerHTML = sorted.length
+          ? sorted.map((c,i) => {
+              const isTop3 = i < 3;
+              const rowBg = i === 0 ? 'rgba(250,204,21,.07)' : i < 3 ? 'rgba(250,204,21,.03)' : '';
+              const star = isTop3 ? `<span style="color:#facc15;margin-right:4px">${i===0?'⭐':'✦'}</span>` : '';
+              return `<tr style="border-bottom:1px solid var(--border);${rowBg?'background:'+rowBg:''}">
+              <td style="padding:4px 8px"><strong>${star}${escHtml(c.player ?? '—')}</strong></td>
               <td style="padding:4px 8px;color:var(--muted);font-size:12px">${escHtml(c.cardType ?? '—')}</td>
               <td style="padding:4px 8px;text-align:right;font-size:12px">${c.printRun ? '/' + c.printRun : '—'}</td>
               <td style="padding:4px 8px;color:var(--muted);font-size:11px">${escHtml(c.graded ?? '—')}</td>
-              <td style="padding:4px 8px;text-align:right;color:#4ade80;font-weight:600">${fmt(c.price)}</td>
-            </tr>`).join('')
-          : '<tr><td colspan="5" class="empty">No chase cards tracked for this set</td></tr>';
+              <td style="padding:4px 8px;text-align:right;color:${isTop3?'#facc15':'#4ade80'};font-weight:600">${fmt(c.price)}</td>
+            </tr>`;}).join('')
+          : '<tr><td colspan="5" class="empty">No chase cards tracked for this set — backfill in progress</td></tr>';
       } catch(e) {
         if (ctbody) ctbody.innerHTML = `<tr><td colspan="5" class="empty" style="color:var(--red)">Error: ${escHtml(e.message)}</td></tr>`;
       }
