@@ -110,6 +110,91 @@ const JP_TO_EN = {
   'ninjaspinner':           'sv09-journey-together',
   'nihilzero':              'sv09-journey-together',
   'megastart':              'sv09-journey-together',
+
+  // SWSH era (S-series JP)
+  // S1 (Sword/Shield base)
+  's1w':                    'swsh01-sword-shield-base-set',
+  's1h':                    'swsh01-sword-shield-base-set',
+  'sword':                  'swsh01-sword-shield-base-set',
+  'shield':                 'swsh01-sword-shield-base-set',
+  // S1a (VMAX Rising → Rebel Clash era)
+  's1a':                    'swsh02-rebel-clash',
+  'vmaxrising':             'swsh02-rebel-clash',
+  // S2 (Rebellion Crash → Rebel Clash)
+  's2':                     'swsh02-rebel-clash',
+  'rebellioncrash':         'swsh02-rebel-clash',
+  // S2a (Explosive Walker → Darkness Ablaze)
+  's2a':                    'swsh03-darkness-ablaze',
+  'explosivewalker':        'swsh03-darkness-ablaze',
+  // S3 (Infinity Zone → Darkness Ablaze)
+  's3':                     'swsh03-darkness-ablaze',
+  'infinityzone':           'swsh03-darkness-ablaze',
+  // S3a (Legendary Heartbeat → Vivid Voltage)
+  's3a':                    'swsh04-vivid-voltage',
+  'legendaryheartbeat':     'swsh04-vivid-voltage',
+  // S4 (Amazing Volt Tackle → Vivid Voltage)
+  's4':                     'swsh04-vivid-voltage',
+  'amazingvolttackle':      'swsh04-vivid-voltage',
+  // S4a (Shiny Star V → no exact EN; closest = Shining Fates)
+  's4a':                    'swsh045-shining-fates',
+  'shinystarv':             'swsh045-shining-fates',
+  // S5 (Single Strike/Rapid Strike Masters → Battle Styles)
+  's5i':                    'swsh05-battle-styles',
+  's5r':                    'swsh05-battle-styles',
+  'singlestrikemaster':     'swsh05-battle-styles',
+  'rapidstrikemaster':      'swsh05-battle-styles',
+  // S5a (Peerless Fighters → Chilling Reign)
+  's5a':                    'swsh06-chilling-reign',
+  'peerlessfighters':       'swsh06-chilling-reign',
+  // S6 (Silver Lance/Jet-Black Spirit → Chilling Reign)
+  's6h':                    'swsh06-chilling-reign',
+  's6k':                    'swsh06-chilling-reign',
+  'silverlance':            'swsh06-chilling-reign',
+  'jetblackspirit':         'swsh06-chilling-reign',
+  // S6a (Eevee Heroes → Evolving Skies)
+  's6a':                    'swsh07-evolving-skies',
+  'eeveheroes':             'swsh07-evolving-skies',
+  'eeveeheroes':            'swsh07-evolving-skies',
+  // S7 (Blue Sky Stream/Skyscraping Perfection → Evolving Skies)
+  's7r':                    'swsh07-evolving-skies',
+  's7d':                    'swsh07-evolving-skies',
+  'blueskystream':          'swsh07-evolving-skies',
+  'skyscrapingperfection':  'swsh07-evolving-skies',
+  // S8 (Fusion Arts → Fusion Strike)
+  's8':                     'swsh08-fusion-strike',
+  'fusionarts':             'swsh08-fusion-strike',
+  // S8b (VMAX Climax → Crown Zenith Galarian Gallery)
+  's8b':                    'swsh-crown-zenith-galarian-gallery',
+  'vmaxclimax':             'swsh-crown-zenith-galarian-gallery',
+  // S9 (Star Birth → Brilliant Stars)
+  's9':                     'swsh09-brilliant-stars',
+  'starbirth':              'swsh09-brilliant-stars',
+  // S9a (Battle Region → Astral Radiance)
+  's9a':                    'swsh10-astral-radiance',
+  'battleregion':           'swsh10-astral-radiance',
+  // S10 (Time Gazer/Space Juggler → Astral Radiance)
+  's10d':                   'swsh10-astral-radiance',
+  's10p':                   'swsh10-astral-radiance',
+  'timegazer':              'swsh10-astral-radiance',
+  'spacejuggler':           'swsh10-astral-radiance',
+  // S10a (Dark Phantasma → Lost Origin)
+  's10a':                   'swsh11-lost-origin',
+  'darkphantasma':          'swsh11-lost-origin',
+  // S10b (Pokemon GO → Astral Radiance approximate)
+  's10b':                   'swsh10-astral-radiance',
+  'pokemongo':              'swsh10-astral-radiance',
+  // S11 (Lost Abyss → Lost Origin)
+  's11':                    'swsh11-lost-origin',
+  'lostabyss':              'swsh11-lost-origin',
+  // S11a (Incandescent Arcana → Silver Tempest)
+  's11a':                   'swsh12-silver-tempest',
+  'incandescentarcana':     'swsh12-silver-tempest',
+  // S12 (Paradigm Trigger → Silver Tempest)
+  's12':                    'swsh12-silver-tempest',
+  'paradigmtrigger':        'swsh12-silver-tempest',
+  // S12a (VSTAR Universe → Crown Zenith)
+  's12a':                   'swsh-crown-zenith',
+  'vstaruniverse':          'swsh-crown-zenith',
 };
 
 function findEnSet(jpKey, jpName) {

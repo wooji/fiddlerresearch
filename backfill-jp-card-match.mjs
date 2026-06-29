@@ -59,11 +59,18 @@ for (const [jpKey, jpSet] of mapped) {
     if (!enByName[nm] || (c.market ?? 0) > (enByName[nm].market ?? 0)) enByName[nm] = c;
   }
 
+  // JP dedup: pick highest-market card per normalized name (strips rarity dupes e.g. $0.70 UR vs $326 SAR same pokemon)
+  const jpByName = {};
+  for (const c of jpCards) {
+    const nm = normName(c.name);
+    if (!nm) continue;
+    if (!jpByName[nm] || (c.market ?? 0) > (jpByName[nm].market ?? 0)) jpByName[nm] = c;
+  }
+
   const matches = [];
   let matchCount = 0;
 
-  for (const jpCard of jpCards) {
-    const jpNm = normName(jpCard.name);
+  for (const [jpNm, jpCard] of Object.entries(jpByName)) {
     const enCard = enByName[jpNm] ?? null;
     if (!enCard) continue;
 
@@ -72,15 +79,14 @@ for (const [jpKey, jpSet] of mapped) {
       ? Math.round((enCard.market / jpCard.market) * 100) / 100
       : null;
 
-    // Annotate JP card record inline
     jpCard.enCard = {
       name:    enCard.name,
       number:  enCard.number,
       market:  enCard.market ?? null,
-      premium, // EN/JP ratio; >1 = EN trades above JP
+      premium,
     };
 
-    if (jpCard.market > 5 || (enCard.market ?? 0) > 5) {
+    if ((jpCard.market ?? 0) > 5 || (enCard.market ?? 0) > 5) {
       matches.push({
         jpName:   jpCard.name,
         jpNum:    jpCard.number,
@@ -96,13 +102,13 @@ for (const [jpKey, jpSet] of mapped) {
   }
 
   // Sort matches by JP market desc
-  matches.sort((a, b) => b.jpMarket - a.jpMarket);
+  matches.sort((a, b) => (b.jpMarket ?? 0) - (a.jpMarket ?? 0));
   jpSet.cardMatches = matches;
 
   totalSets++;
   totalMatched += matchCount;
 
-  const pct = Math.round(matchCount / jpCards.length * 100);
+  const pct = Math.round(matchCount / Object.keys(jpByName).length * 100);
   console.log(`  [${jpKey}] → ${enKey} | ${matchCount}/${jpCards.length} cards matched (${pct}%)`);
   if (matches.length) {
     console.log(`    top: ${matches[0].jpName} JP$${matches[0].jpMarket} → EN$${matches[0].enMarket ?? '?'} (${matches[0].premium ?? '?'}×)`);
