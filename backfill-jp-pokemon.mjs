@@ -100,16 +100,28 @@ const JP_TO_EN = {
   // SV10 (Glory of Team Rocket → Destined Rivals)
   'gloryofteamrocket':      'sv10-destined-rivals',
   'sv10':                   'sv10-destined-rivals',
-  // SV11 (Black Bolt/White Flare → future EN set)
-  'blackbolt':              'sv-black-bolt',
-  'whiteflare':             'sv-white-flare',
-  'sv11b':                  'sv-black-bolt',
-  'sv11w':                  'sv-white-flare',
-  // Mega-era (M-prefix sets → Journey Together EN)
-  'abysseye':               'sv09-journey-together',
-  'ninjaspinner':           'sv09-journey-together',
-  'nihilzero':              'sv09-journey-together',
-  'megastart':              'sv09-journey-together',
+  // SV11 physical TCG: no EN release yet — intentionally unmapped
+  // DO NOT map sv11b/sv11w here; sv-black-bolt/sv-white-flare are Pocket sets, not physical TCG
+
+  // Pokemon TCG Pocket JP→EN — use name-based frags ONLY (no short key prefixes — they false-match SM4/SM5 era)
+  // m1l (Mega Brave) + m1s (Mega Symphonia) = Genetic Apex JP → me01-mega-evolution EN
+  'megabrave':              'me01-mega-evolution',
+  'megasymphonia':          'me01-mega-evolution',
+  // m2 (Inferno-X) → me02-phantasmal-flames EN (same top card: Mega Charizard X ex)
+  'infernox':               'me02-phantasmal-flames',
+  // m2a (High Class Pack / Mega Dream Ex) → me-ascended-heroes EN (same top: Mega Gengar ex, large compilation)
+  'megadreamex':            'me-ascended-heroes',
+  'highdreamex':            'me-ascended-heroes',
+  // m3 (Nihil Zero) → me03-perfect-order EN (118 vs 123 cards)
+  'nihilzero':              'me03-perfect-order',
+  // m4 (Ninja Spinner) → me04-chaos-rising EN (same top: Mega Greninja ex, 120 vs 122 cards)
+  'ninjaspinner':           'me04-chaos-rising',
+  // m5 (Abyss Eye) → sv-black-bolt EN "Pitch Black" (user confirmed: アビスアイ = Pitch Black)
+  'abysseye':               'sv-black-bolt',
+  // mbg/mbd (Mega Starter Sets) → me-mega-evolution-promo EN
+  'megagengarex':           'me-mega-evolution-promo',
+  'megadiancie':            'me-mega-evolution-promo',
+  // Mega-era starters → removed incorrect sv09 mappings (m3/m4/m5 Pocket sets now correctly mapped above)
 
   // SWSH era (S-series JP)
   // S1 (Sword/Shield base)
