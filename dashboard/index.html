@@ -923,7 +923,7 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
       // Build EN card map by number for JP merge
       const enCards = cd.cards ?? [];
       // JP data fetch (Pokemon only) — runs in parallel with render
-      let jpByNum = {}; // card number → {jpMarket, jpName, premium}
+      let jpByNum = {}; // normalized EN card name → cardMatch record
       const jpLabel = document.getElementById('jp-comp-label');
       const jpSignal = document.getElementById('jp-comp-signal');
       if (dbKey === 'pokemon') {
@@ -938,10 +938,11 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
             if (jpSignal) jpSignal.innerHTML = jpSets.map(s =>
               `${sigIcon(s.leadSignal)} <strong>${s.leadSignal}</strong> · JP sealed ${s.sealedMarket ? '$'+s.sealedMarket.toFixed(0)+' ('+s.sealedMultiple?.toFixed(1)+'×)' : 'n/a'}`
             ).join(' &nbsp;|&nbsp; ');
-            // Index card matches by JP card number (strip leading zeros)
+            // Index by normalized EN card name (numbers differ across JP/EN sets)
+            const normCard = s => s.toLowerCase().replace(/\s*-\s*\d+\/\d+\s*$/, '').replace(/[^a-z0-9]/g,'');
             for (const m of (jp.cardMatches ?? [])) {
-              const num = (m.jpNum ?? '').replace(/^0+/, '');
-              jpByNum[num] = m;
+              const key = normCard(m.enName ?? m.jpName ?? '');
+              if (key) jpByNum[key] = m;
             }
           } else {
             if (jpLabel) jpLabel.textContent = '🇯🇵 No JP set mapped';
@@ -956,8 +957,8 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
       ctbody.innerHTML = enCards.length
         ? enCards.map(c => {
             const isChase = chaseName && c.name === chaseName;
-            const num = (c.number ?? '').split('/')[0].replace(/^0+/, '');
-            const jp = showJP ? (jpByNum[num] ?? null) : null;
+            const normCard = s => s.toLowerCase().replace(/\s*-\s*\d+\/\d+\s*$/, '').replace(/[^a-z0-9]/g,'');
+            const jp = showJP ? (jpByNum[normCard(c.name ?? '')] ?? null) : null;
             const prem = jp?.premium ?? null;
             const premStr = prem != null ? prem.toFixed(2) + '×' : '';
             const premColor = !prem ? 'var(--muted)' : prem >= 1.5 ? '#4ade80' : prem >= 0.5 ? '#f4c430' : '#f87171';
