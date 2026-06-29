@@ -891,8 +891,8 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
         const cards = cd.cards ?? [];
         if (ctitle) ctitle.textContent = `Chase Cards (${cards.length})`;
         const thead = document.getElementById('cards-thead');
-        if (thead) thead.innerHTML = '<tr><th>Player</th><th>Card Type</th><th style="text-align:right">Print Run</th><th>Graded</th><th style="text-align:right">Price</th></tr>';
-        if (cardsSec) cardsSec.style.display = cards.length ? '' : 'none';
+        if (thead) thead.innerHTML = cards.length ? '<tr><th>Player</th><th>Card Type</th><th style="text-align:right">Print Run</th><th>Graded</th><th style="text-align:right">Price</th></tr>' : '';
+        if (cardsSec) cardsSec.style.display = '';
         const fmt = v => v != null ? '$' + Number(v).toLocaleString() : '—';
         ctbody.innerHTML = cards.length
           ? cards.map(c => `<tr style="border-bottom:1px solid var(--border)">
