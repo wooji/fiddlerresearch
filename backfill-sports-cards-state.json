@@ -634,7 +634,1022 @@
       "setName": "2018 Panini Score Football",
       "chaseCount": 20,
       "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Score Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Score Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Score Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Score Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Score Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Prestige Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Prestige Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Prestige Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Prestige Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Prestige Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Prestige Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Prestige Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Absolute Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Absolute Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Absolute Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Absolute Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Absolute Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Absolute Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Absolute Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Absolute Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Certified Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Certified Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Certified Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Certified Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Certified Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Certified Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Certified Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Certified Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Spectra Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Spectra Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Spectra Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Spectra Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Spectra Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Spectra Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Spectra Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Flawless Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Flawless Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Flawless Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Flawless Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Flawless Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Flawless Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Flawless Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Flawless Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Gold Standard Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Gold Standard Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Gold Standard Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Gold Standard Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Gold Standard Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Gold Standard Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Gold Standard Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Five Star Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Five Star Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Five Star Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Five Star Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Five Star Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Five Star Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Five Star Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Five Star Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Origins Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Origins Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Origins Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Origins Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Origins Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Origins Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Origins Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Origins Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Obsidian Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Obsidian Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Obsidian Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Obsidian Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Obsidian Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Obsidian Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Phoenix Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Phoenix Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Phoenix Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Phoenix Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Phoenix Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Phoenix Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Revolution Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Revolution Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Revolution Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Revolution Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Revolution Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Revolution Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Revolution Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Revolution Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Illusions Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Illusions Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Illusions Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Illusions Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Illusions Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Illusions Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Illusions Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Luminance Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Luminance Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Luminance Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Luminance Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Luminance Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Luminance Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Luminance Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Playbook Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Playbook Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Playbook Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Playbook Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Playbook Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Playbook Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Rookies and Stars Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Rookies and Stars Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Rookies and Stars Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Rookies and Stars Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Rookies and Stars Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Rookies and Stars Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Rookies and Stars Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Rookies and Stars Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Playoff Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Playoff Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Playoff Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Playoff Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Playoff Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Playoff Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Playoff Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Playoff Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Encased Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Encased Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Encased Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Encased Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Encased Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Encased Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Encased Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Encased Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Chronicles Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Chronicles Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Chronicles Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Chronicles Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Chronicles Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Black Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Black Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Black Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Black Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Black Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Black Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Flux Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Flux Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Flux Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Flux Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Flux Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Flux Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Status Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Status Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Status Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Status Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Status Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Status Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Unparalleled Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Unparalleled Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Unparalleled Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Unparalleled Football",
+      "chaseCount": 13,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Unparalleled Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Unparalleled Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Unparalleled Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Unparalleled Football",
+      "chaseCount": 13,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Elements Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Elements Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Elements Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Elements Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Elements Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Elements Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Elements Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Gridiron Kings Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Gridiron Kings Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Gridiron Kings Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Gridiron Kings Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Gridiron Kings Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Gridiron Kings Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Gridiron Kings Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Zenith Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Zenith Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Zenith Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Zenith Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Zenith Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Zenith Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Zenith Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Zenith Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Cornerstones Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Cornerstones Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Cornerstones Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Cornerstones Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Cornerstones Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Cornerstones Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Cornerstones Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Titanium Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Titanium Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Titanium Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Wild Card Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Wild Card Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2017 Panini Contenders Draft Picks Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2018 Panini Contenders Draft Picks Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2019 Panini Contenders Draft Picks Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2020 Panini Contenders Draft Picks Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2021 Panini Contenders Draft Picks Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2022 Panini Contenders Draft Picks Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2023 Panini Contenders Draft Picks Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
+    },
+    {
+      "setName": "2024 Panini Contenders Draft Picks Football",
+      "chaseCount": 20,
+      "at": "2026-06-28"
     }
   ],
-  "lastRun": "2026-06-26T17:55:37.640Z"
+  "lastRun": "2026-06-28T23:59:15.401Z"
 }
