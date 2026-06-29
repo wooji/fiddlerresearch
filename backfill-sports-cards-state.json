@@ -2434,6 +2434,36 @@
       "setName": "2017 Topps Series 2 Baseball",
       "chaseCount": 20,
       "at": "2026-06-29"
+    },
+    {
+      "setName": "2017 Bowman Chrome Baseball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
+    },
+    {
+      "setName": "2017 Bowman Draft Baseball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
+    },
+    {
+      "setName": "2017 Topps Tier One Baseball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
+    },
+    {
+      "setName": "2017 Topps Heritage Baseball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
+    },
+    {
+      "setName": "2017 Topps Stadium Club Baseball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
+    },
+    {
+      "setName": "2017 Topps Finest Baseball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
     }
   ],
   "lastRun": "2026-06-29T02:07:38.354Z"
