@@ -256,9 +256,19 @@ const server = http.createServer(async (req, res) => {
     // collect sports for player DB
     const sportSet = new Set(entries.map(e => e.sport).filter(Boolean));
     const sports = [...sportSet].sort();
+    // Sports: sort by sport then year desc so groups stay contiguous across pages
+    if (dbKey === 'sports') {
+      const sportOrder = { football: 0, basketball: 1, baseball: 2 };
+      entries = entries.sort((a, b) => {
+        const so = (sportOrder[a.sport] ?? 9) - (sportOrder[b.sport] ?? 9);
+        if (so !== 0) return so;
+        return (b.year ?? 0) - (a.year ?? 0);
+      });
+    }
     const total = entries.length;
-    const slice = entries.slice((page - 1) * limit, page * limit);
-    json(res, { total, page, limit, entries: slice, years, sports });
+    const effectiveLimit = dbKey === 'sports' ? (limit > 50 ? limit : Math.min(entries.length, 2000)) : limit;
+    const slice = entries.slice((page - 1) * effectiveLimit, page * effectiveLimit);
+    json(res, { total, page, limit: effectiveLimit, entries: slice, years, sports });
     return;
   }
 

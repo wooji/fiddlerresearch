@@ -1029,7 +1029,8 @@ function closeVariants() {
 function dbSearch(q) { currentSearch = q; currentPage = 1; loadDbPage(); }
 
 async function loadDbPage() {
-  let url = `${API}/api/db/${currentDb}?q=${encodeURIComponent(currentSearch)}&page=${currentPage}&limit=50`;
+  const pageLimit = currentDb === 'sports' ? 2000 : 50;
+  let url = `${API}/api/db/${currentDb}?q=${encodeURIComponent(currentSearch)}&page=${currentPage}&limit=${pageLimit}`;
   if (currentYear) url += `&year=${currentYear}`;
   const res = await fetch(url);
   const { total, entries, years } = await res.json();
