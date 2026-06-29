@@ -547,7 +547,7 @@
             </div>
             <div style="flex:1;overflow-y:auto;padding:0 16px 12px">
               <table style="font-size:12px;width:100%;border-collapse:collapse">
-                <thead style="position:sticky;top:0;background:var(--bg);z-index:1">
+                <thead id="cards-thead" style="position:sticky;top:0;background:var(--bg);z-index:1">
                   <tr>
                     <th style="text-align:left;padding:4px 8px;width:5%">#</th>
                     <th style="text-align:left;padding:4px 8px;width:35%">Card</th>
@@ -902,6 +902,44 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
     `).join('');
   } catch (e) {
     tbody.innerHTML = `<tr><td colspan="8" class="empty" style="color:var(--red)">Error: ${escHtml(e.message)}</td></tr>`;
+  }
+
+  // ── Sports: chase cards from card-pricing-sports.json ──────────────────
+  if (dbKey === 'sports') {
+    const ctbody = document.getElementById('cards-tbody');
+    const ctitle = document.getElementById('cards-title');
+    const cardsSec = document.getElementById('cards-section');
+    const jpLabel = document.getElementById('jp-comp-label');
+    const jpSignal = document.getElementById('jp-comp-signal');
+    if (jpLabel) jpLabel.textContent = '';
+    if (jpSignal) jpSignal.innerHTML = '';
+    if (ctbody) {
+      ctbody.innerHTML = '<tr><td colspan="5" class="empty"><span class="spinner"></span> Loading chase cards…</td></tr>';
+      try {
+        const cr = await fetch(`${API}/api/sports/${encodeURIComponent(setId)}/chase`);
+        if (!cr.ok) throw new Error(`HTTP ${cr.status}`);
+        const cd = await cr.json();
+        const cards = cd.cards ?? [];
+        if (ctitle) ctitle.textContent = `Chase Cards (${cards.length})`;
+        // Override thead for sports columns
+        const thead = document.getElementById('cards-thead');
+        if (thead) thead.innerHTML = '<tr><th>Player</th><th>Card Type</th><th style="text-align:right">Print Run</th><th>Graded</th><th style="text-align:right">Price</th></tr>';
+        if (cardsSec) cardsSec.style.display = cards.length ? '' : 'none';
+        const fmt = v => v != null ? '$' + Number(v).toLocaleString() : '—';
+        ctbody.innerHTML = cards.length
+          ? cards.map(c => `<tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:4px 8px"><strong>${escHtml(c.player ?? '—')}</strong></td>
+              <td style="padding:4px 8px;color:var(--muted);font-size:12px">${escHtml(c.cardType ?? '—')}</td>
+              <td style="padding:4px 8px;text-align:right;font-size:12px">${c.printRun ? '/' + c.printRun : '—'}</td>
+              <td style="padding:4px 8px;color:var(--muted);font-size:11px">${escHtml(c.graded ?? '—')}</td>
+              <td style="padding:4px 8px;text-align:right;color:#4ade80;font-weight:600">${fmt(c.price)}</td>
+            </tr>`).join('')
+          : '<tr><td colspan="5" class="empty">No chase cards tracked for this set</td></tr>';
+      } catch(e) {
+        if (ctbody) ctbody.innerHTML = `<tr><td colspan="5" class="empty" style="color:var(--red)">Error: ${escHtml(e.message)}</td></tr>`;
+      }
+    }
+    return;
   }
 
   // individual cards (fullCardList)
