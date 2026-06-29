@@ -33,32 +33,83 @@ for (const [k, v] of Object.entries(enSets)) {
 
 // JP→EN set name mappings (known translations)
 const JP_TO_EN = {
-  'wildforce': 'twilight-masquerade',          // SV6
-  'maskofchange': 'twilight-masquerade',
-  'nightwanderer': 'shrouded-fable',            // SV6a
-  'stellarmiraclechampionfest': 'stellar-crown', // SV7
-  'paradoxrift': 'paradox-rift',
-  'obsidianflames': 'obsidian-flames',
-  'palefire': 'obsidian-flames',
-  'explosionseedfield': 'paldean-fates',
-  'paldeanfates': 'paldean-fates',
-  'temporalforces': 'temporal-forces',
-  'cyberforge': 'temporal-forces',
-  'cyberfield': 'paldea-evolved',
-  'tripletbeat': 'paldea-evolved',
-  'scarletex': 'scarlet-violet',
-  'violetex': 'scarlet-violet',
-  'crimsondestruction': '151',
-  'pokemoncardgame151': '151',
-  'shiningtreasureex': 'pokemon-card-151',
-  'hereaftersurge': 'surging-sparks',
-  'ragingrifts': 'surging-sparks',
-  'surgingsparks': 'surging-sparks',
-  'terraspectacle': 'prismatic-evolutions',
-  'prismaticevolutions': 'prismatic-evolutions',
-  'megastart': 'journey-together',
-  'abysseye': 'journey-together',
-  'ninjaspinner': 'journey-together',
+  // SV1
+  'scarletex':              'sv1s-scarlet-ex',
+  'violetex':               'sv1v-violet-ex',
+  'sv1s':                   'sv1s-scarlet-ex',
+  'sv1v':                   'sv1v-violet-ex',
+  // SV1a (Triplet Beat → Paldea Evolved)
+  'tripletbeat':            'sv02-paldea-evolved',
+  'sv1a':                   'sv02-paldea-evolved',
+  // SV2 (Snow Hazard/Clay Burst → Paldea Evolved)
+  'snowhazard':             'sv02-paldea-evolved',
+  'clayburst':              'sv02-paldea-evolved',
+  'sv2p':                   'sv02-paldea-evolved',
+  'sv2d':                   'sv02-paldea-evolved',
+  // SV2a (151)
+  'pokemoncardgame151':     'sv-pokemon-card-151',
+  'sv2a':                   'sv-pokemon-card-151',
+  // SV3 (Ruler of Black Flame → Obsidian Flames)
+  'ruleroftheblackflame':   'sv03-obsidian-flames',
+  'sv3':                    'sv03-obsidian-flames',
+  // SV3a (Raging Surf → Paradox Rift)
+  'ragingsurf':             'sv04-paradox-rift',
+  'sv3a':                   'sv04-paradox-rift',
+  // SV4 (Ancient Roar/Future Flash → Paradox Rift)
+  'ancientroar':            'sv04-paradox-rift',
+  'futureflash':            'sv04-paradox-rift',
+  'sv4k':                   'sv04-paradox-rift',
+  'sv4m':                   'sv04-paradox-rift',
+  // SV4a (Shiny Treasure ex → Paldean Fates)
+  'shinytreasureex':        'sv-paldean-fates',
+  'sv4a':                   'sv-paldean-fates',
+  // SV5 (Wild Force/Cyber Judge → Temporal Forces)
+  'wildforce':              'sv05-temporal-forces',
+  'cyberjudge':             'sv05-temporal-forces',
+  'sv5k':                   'sv05-temporal-forces',
+  'sv5m':                   'sv05-temporal-forces',
+  // SV5a (Crimson Haze → Twilight Masquerade)
+  'crimsonhaze':            'sv06-twilight-masquerade',
+  'sv5a':                   'sv06-twilight-masquerade',
+  // SV6 (Transformation Mask → Twilight Masquerade)
+  'transformationmask':     'sv06-twilight-masquerade',
+  'maskofchange':           'sv06-twilight-masquerade',
+  'sv6':                    'sv06-twilight-masquerade',
+  // SV6a (Night Wanderer → Shrouded Fable)
+  'nightwanderer':          'sv-shrouded-fable',
+  'sv6a':                   'sv-shrouded-fable',
+  // SV7 (Stellar Miracle → Stellar Crown)
+  'stellarmiracle':         'sv07-stellar-crown',
+  'sv7':                    'sv07-stellar-crown',
+  // SV7a (Paradise Dragona → Stellar Crown)
+  'paradisedragona':        'sv07-stellar-crown',
+  'sv7a':                   'sv07-stellar-crown',
+  // SV8 (Super Electric Breaker → Surging Sparks)
+  'superelectricbreaker':   'sv08-surging-sparks',
+  'sv8':                    'sv08-surging-sparks',
+  // SV8a (Terastal Fest ex → Prismatic Evolutions)
+  'terastalfesteex':        'sv-prismatic-evolutions',
+  'terastalfestex':         'sv-prismatic-evolutions',
+  'sv8a':                   'sv-prismatic-evolutions',
+  // SV9 (Battle Partners → Journey Together)
+  'battlepartners':         'sv09-journey-together',
+  'sv9':                    'sv09-journey-together',
+  // SV9a (Heat Wave Arena → Journey Together)
+  'heatwavearena':          'sv09-journey-together',
+  'sv9a':                   'sv09-journey-together',
+  // SV10 (Glory of Team Rocket → Destined Rivals)
+  'gloryofteamrocket':      'sv10-destined-rivals',
+  'sv10':                   'sv10-destined-rivals',
+  // SV11 (Black Bolt/White Flare → future EN set)
+  'blackbolt':              'sv-black-bolt',
+  'whiteflare':             'sv-white-flare',
+  'sv11b':                  'sv-black-bolt',
+  'sv11w':                  'sv-white-flare',
+  // Mega-era (M-prefix sets → Journey Together EN)
+  'abysseye':               'sv09-journey-together',
+  'ninjaspinner':           'sv09-journey-together',
+  'nihilzero':              'sv09-journey-together',
+  'megastart':              'sv09-journey-together',
 };
 
 function findEnSet(jpKey, jpName) {
