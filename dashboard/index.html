@@ -242,6 +242,7 @@
   <button data-tab="feed">Feed</button>
   <button data-tab="players">Players</button>
   <button data-tab="sports">Sports Sets</button>
+  <button data-tab="pokemon-jp">🇯🇵 Pokemon JP</button>
   <button data-tab="docs">Docs</button>
   <span id="code-status" title="Live code status — green = running process serves latest source"
         style="margin-left:auto;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;background:#333;color:#bbb">code: …</span>
@@ -369,6 +370,60 @@
           </tr>
         </thead>
         <tbody id="sports-chase-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- POKEMON JP TAB -->
+<div id="tab-pokemon-jp" class="panel">
+  <div style="padding:20px;height:calc(100vh - 52px);display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
+      <div style="font-size:18px;font-weight:700">🇯🇵 Pokemon Japan — Leading Indicator DB</div>
+      <div id="jp-stats" style="font-size:12px;color:var(--muted)">loading…</div>
+    </div>
+    <div style="font-size:12px;color:var(--muted);flex-shrink:0">JP sets release 3–6mo before EN. STRONG JP secondary = forward demand signal for EN sealed.</div>
+    <div style="display:flex;gap:8px;flex-shrink:0">
+      <select id="jp-signal-filter" style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-size:13px" onchange="loadJP()">
+        <option value="">All Signals</option>
+        <option value="STRONG">🟢 STRONG (2×+ retail)</option>
+        <option value="MODERATE">🟡 MODERATE (1.3–2×)</option>
+        <option value="WEAK">🔴 WEAK (&lt;1.3×)</option>
+        <option value="no-data">— No Data</option>
+      </select>
+      <input id="jp-q" placeholder="Search set name or EN set…" style="flex:1;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:8px 12px;color:var(--text);font-size:13px" oninput="loadJP()">
+    </div>
+    <div style="flex:1;overflow:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead>
+          <tr style="background:var(--surface);position:sticky;top:0;z-index:1">
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">JP Set</th>
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Release</th>
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Signal</th>
+            <th style="padding:8px 12px;text-align:right;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">JP Sealed $</th>
+            <th style="padding:8px 12px;text-align:right;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Multiple</th>
+            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">→ EN Set</th>
+            <th style="padding:8px 12px;text-align:right;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Chase $</th>
+            <th style="padding:8px 12px;text-align:right;border-bottom:1px solid var(--border);color:var(--muted);font-weight:600">Cards</th>
+          </tr>
+        </thead>
+        <tbody id="jp-tbody"></tbody>
+      </table>
+    </div>
+    <!-- JP card matches section -->
+    <div id="jp-cards-section" style="display:none;flex-shrink:0;max-height:260px;overflow-y:auto;border-top:1px solid var(--border);padding-top:12px">
+      <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px">JP→EN Card Comps — <span id="jp-cards-set-name"></span></div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="background:var(--surface)">
+            <th style="padding:6px 10px;text-align:left;color:var(--muted);font-weight:600">JP Card</th>
+            <th style="padding:6px 10px;text-align:right;color:var(--muted);font-weight:600">JP $</th>
+            <th style="padding:6px 10px;text-align:left;color:var(--muted);font-weight:600">EN Card</th>
+            <th style="padding:6px 10px;text-align:right;color:var(--muted);font-weight:600">EN $</th>
+            <th style="padding:6px 10px;text-align:right;color:var(--muted);font-weight:600">EN/JP</th>
+          </tr>
+        </thead>
+        <tbody id="jp-cards-tbody"></tbody>
       </table>
     </div>
   </div>
@@ -618,8 +673,57 @@ document.querySelectorAll('nav button[data-tab]').forEach(btn => {
     if (btn.dataset.tab === 'docs') loadDocs();
     if (btn.dataset.tab === 'players') { loadPlayerStats(); loadPlayers(1); }
     if (btn.dataset.tab === 'sports') { loadSports(); }
+    if (btn.dataset.tab === 'pokemon-jp') { loadJP(); }
   });
 });
+
+// ── POKEMON JP ─────────────────────────────────────────────────────────────
+function loadJP() {
+  const signal = document.getElementById('jp-signal-filter')?.value ?? '';
+  const q = document.getElementById('jp-q')?.value ?? '';
+  fetch(`/api/pokemon-jp?signal=${encodeURIComponent(signal)}&q=${encodeURIComponent(q)}`)
+    .then(r => r.json()).then(data => {
+      const sets = data.sets ?? [];
+      document.getElementById('jp-stats').textContent = `${sets.length} sets`;
+      const sigIcon = s => s === 'STRONG' ? '🟢' : s === 'MODERATE' ? '🟡' : s === 'WEAK' ? '🔴' : '—';
+      const tbody = document.getElementById('jp-tbody');
+      tbody.innerHTML = sets.map(s => `
+        <tr style="border-bottom:1px solid var(--border);cursor:pointer" onclick="loadJPCards('${s.key}','${(s.name||s.key).replace(/'/g,'')}')" title="Click to see JP→EN card comps">
+          <td style="padding:8px 12px;font-weight:500">${s.name || s.key}</td>
+          <td style="padding:8px 12px;color:var(--muted)">${s.publishedOn ?? '—'}</td>
+          <td style="padding:8px 12px">${sigIcon(s.leadSignal)} ${s.leadSignal}</td>
+          <td style="padding:8px 12px;text-align:right">${s.sealedMarket ? '$'+s.sealedMarket.toFixed(0) : '—'}</td>
+          <td style="padding:8px 12px;text-align:right">${s.sealedMultiple ? s.sealedMultiple.toFixed(1)+'×' : '—'}</td>
+          <td style="padding:8px 12px;color:var(--muted);font-size:11px">${s.enSetKey ? '→ '+s.enSetKey : '—'}</td>
+          <td style="padding:8px 12px;text-align:right;color:#f4c430">${s.avgChasePrice ? '$'+s.avgChasePrice.toFixed(0) : '—'}</td>
+          <td style="padding:8px 12px;text-align:right">${s.cardMatchCount > 0 ? s.cardMatchCount+'🔗' : s.chaseTotal || '—'}</td>
+        </tr>`).join('');
+    }).catch(e => { document.getElementById('jp-stats').textContent = 'error: '+e.message; });
+}
+
+function loadJPCards(setKey, setName) {
+  document.getElementById('jp-cards-section').style.display = 'block';
+  document.getElementById('jp-cards-set-name').textContent = setName;
+  fetch(`/api/pokemon-jp/${encodeURIComponent(setKey)}/cards`)
+    .then(r => r.json()).then(data => {
+      const matches = data.cardMatches ?? [];
+      const tbody = document.getElementById('jp-cards-tbody');
+      if (!matches.length) {
+        tbody.innerHTML = '<tr><td colspan="5" style="padding:12px;color:var(--muted);text-align:center">No card-level matches (EN set may not have card data yet)</td></tr>';
+        return;
+      }
+      tbody.innerHTML = matches.slice(0, 50).map(c => {
+        const prem = c.premium ? (c.premium > 1.5 ? '🟢' : c.premium > 0.5 ? '🟡' : '🔴') + c.premium.toFixed(2) : '—';
+        return `<tr style="border-bottom:1px solid var(--border)">
+          <td style="padding:5px 10px">${c.jpName}</td>
+          <td style="padding:5px 10px;text-align:right;color:#f4c430">${c.jpMarket ? '$'+c.jpMarket.toFixed(2) : '—'}</td>
+          <td style="padding:5px 10px;color:var(--muted)">${c.enName ?? '—'}</td>
+          <td style="padding:5px 10px;text-align:right">${c.enMarket ? '$'+c.enMarket.toFixed(2) : '—'}</td>
+          <td style="padding:5px 10px;text-align:right">${prem}</td>
+        </tr>`;
+      }).join('');
+    });
+}
 
 // ── DOCS ───────────────────────────────────────────────────────────────────
 let _docsCache = null;

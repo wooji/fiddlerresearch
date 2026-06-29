@@ -34,6 +34,7 @@ function versionInfo() {
 
 const DBS = {
   pokemon:   { file: 'set-history.json',           label: 'Pokemon TCG',  icon: '🃏', keyField: 'sets' },
+  pokemon_jp:{ file: 'set-history-pokemon-jp.json', label: 'Pokemon JP',   icon: '🇯🇵', keyField: 'sets' },
   mtg:       { file: 'set-history-mtg.json',        label: 'MTG',          icon: '🧙', keyField: 'sets' },
   lorcana:   { file: 'set-history-lorcana.json',    label: 'Lorcana',      icon: '🌸', keyField: 'sets' },
   sports:    { file: 'set-history-sports.json',     label: 'Sports Cards', icon: '🏀', keyField: 'sets' },
@@ -845,6 +846,54 @@ const server = http.createServer(async (req, res) => {
       const allCards = Array.isArray(cardDb.cards) ? cardDb.cards : Object.values(cardDb.cards ?? {});
       const cards = allCards.filter(c => c.setKey === setKey).sort((a, b) => (b.price ?? 0) - (a.price ?? 0));
       json(res, { setKey, cards });
+    } catch(e) { json(res, { error: e.message }, 500); }
+    return;
+  }
+
+  // GET /api/pokemon-jp?q= — JP Pokemon sets with lead signal + EN mapping
+  if (req.method === 'GET' && pathname === '/api/pokemon-jp') {
+    const q = (url.searchParams.get('q') ?? '').toLowerCase();
+    const signal = url.searchParams.get('signal') ?? '';
+    try {
+      const db = JSON.parse(fs.readFileSync(path.join(ROOT, 'set-history-pokemon-jp.json'), 'utf8'));
+      const sets = db.sets ?? db;
+      let rows = Object.entries(sets)
+        .filter(([, v]) => v.chaseCards?.length || v.sealedMarket)
+        .map(([k, v]) => ({
+          key: k,
+          name: v.name ?? v.set_name ?? k,
+          publishedOn: v.publishedOn?.slice(0, 10) ?? null,
+          sealedMarket: v.sealedMarket ?? null,
+          sealedMultiple: v.sealedMultiple ?? null,
+          leadSignal: v.leadSignal ?? 'no-data',
+          enSetKey: v.enSetKey ?? null,
+          enSetName: v.enSetName ?? null,
+          chaseTotal: v.chaseTotal ?? 0,
+          avgChasePrice: v.avgChasePrice ?? null,
+          topChase: v.chaseCards?.slice(0, 3).map(c => ({ name: c.name, market: c.market })) ?? [],
+          cardMatchCount: v.cardMatches?.length ?? 0,
+        }))
+        .sort((a, b) => (b.publishedOn ?? '').localeCompare(a.publishedOn ?? ''));
+      if (q) rows = rows.filter(r => r.name.toLowerCase().includes(q) || (r.enSetName ?? '').toLowerCase().includes(q));
+      if (signal) rows = rows.filter(r => r.leadSignal === signal);
+      json(res, { total: rows.length, sets: rows });
+    } catch(e) { json(res, { error: e.message }, 500); }
+    return;
+  }
+
+  // GET /api/pokemon-jp/:setKey/cards — JP→EN card-level matches for a set
+  const jpCardMatch = pathname.match(/^\/api\/pokemon-jp\/([^/]+)\/cards$/);
+  if (req.method === 'GET' && jpCardMatch) {
+    const setKey = decodeURIComponent(jpCardMatch[1]);
+    try {
+      const db = JSON.parse(fs.readFileSync(path.join(ROOT, 'set-history-pokemon-jp.json'), 'utf8'));
+      const set = (db.sets ?? db)[setKey];
+      if (!set) { json(res, { error: 'set not found' }, 404); return; }
+      json(res, {
+        setKey, name: set.name, enSetKey: set.enSetKey, enSetName: set.enSetName,
+        cardMatches: set.cardMatches ?? [],
+        chaseCards: set.chaseCards ?? [],
+      });
     } catch(e) { json(res, { error: e.message }, 500); }
     return;
   }
