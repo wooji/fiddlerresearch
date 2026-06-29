@@ -99,6 +99,22 @@ function getDbEntries(dbKey) {
 
   const sets = raw.sets ?? raw.db?.sets ?? raw;
   if (typeof sets !== 'object' || Array.isArray(sets)) return [];
+
+  // Build card-pricing top-card index for sports fallback
+  let cpTopBySet = null;
+  if (dbKey === 'sports') {
+    try {
+      const cp = readJson(path.join(ROOT, 'card-pricing-sports.json'));
+      const cards = cp?.cards ?? {};
+      const bySet = {};
+      for (const c of Object.values(cards)) {
+        const sk = c.setKey; if (!sk) continue;
+        if (!bySet[sk] || (c.price ?? 0) > (bySet[sk].price ?? 0)) bySet[sk] = c;
+      }
+      cpTopBySet = bySet;
+    } catch {}
+  }
+
   return Object.entries(sets)
     .map(([id, entry]) => {
       const fc = entry.cards?.fullCardList ?? [];
@@ -109,6 +125,8 @@ function getDbEntries(dbKey) {
         chase = cc[0]; // already sorted by price desc
       } else if (fc.length) {
         chase = fc.reduce((a, b) => ((b.market ?? 0) > (a.market ?? 0) ? b : a), fc[0]);
+      } else if (cpTopBySet?.[id]) {
+        chase = cpTopBySet[id]; // fallback: card-pricing-sports.json top card
       }
       return { id, ...entry, chaseCard: chase ? { name: chase.player ?? chase.name, market: chase.price ?? chase.market, rarity: chase.cardType ?? chase.rarity } : null };
     })
