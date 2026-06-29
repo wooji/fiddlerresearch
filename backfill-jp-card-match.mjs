@@ -50,24 +50,21 @@ for (const [jpKey, jpSet] of mapped) {
     continue;
   }
 
-  // Build EN index: by number AND by name
-  const enByNum  = {};
+  // Build EN index: by normalized name → pick highest market variant (multiple rarities same name)
+  // NOTE: cross-set JP→EN card numbers never align — name-only matching required.
   const enByName = {};
   for (const c of enCards) {
-    const num = normNum(c.number);
-    if (num) enByNum[num] = c;
     const nm = normName(c.name);
-    if (nm) enByName[nm] = c;
+    if (!nm) continue;
+    if (!enByName[nm] || (c.market ?? 0) > (enByName[nm].market ?? 0)) enByName[nm] = c;
   }
 
   const matches = [];
   let matchCount = 0;
 
   for (const jpCard of jpCards) {
-    const jpNum  = normNum(jpCard.number);
-    const jpNm   = normName(jpCard.name);
-
-    const enCard = enByNum[jpNum] ?? enByName[jpNm] ?? null;
+    const jpNm = normName(jpCard.name);
+    const enCard = enByName[jpNm] ?? null;
     if (!enCard) continue;
 
     matchCount++;

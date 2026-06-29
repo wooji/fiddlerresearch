@@ -549,13 +549,13 @@
               <table style="font-size:12px;width:100%;border-collapse:collapse">
                 <thead style="position:sticky;top:0;background:var(--bg);z-index:1">
                   <tr>
-                    <th style="text-align:left;padding:4px 8px">#</th>
-                    <th style="text-align:left;padding:4px 8px">Card</th>
-                    <th style="text-align:right;padding:4px 8px">EN $</th>
-                    <th style="text-align:left;padding:4px 8px">Rarity</th>
-                    <th style="text-align:right;padding:4px 8px;border-left:2px solid #f4c43044;color:#f4c430">🇯🇵 JP $</th>
-                    <th style="text-align:right;padding:4px 8px;color:#f4c430">EN/JP</th>
-                    <th style="text-align:left;padding:4px 8px;color:var(--muted)">JP Card</th>
+                    <th style="text-align:left;padding:4px 8px;width:5%">#</th>
+                    <th style="text-align:left;padding:4px 8px;width:35%">Card</th>
+                    <th style="text-align:right;padding:4px 8px;width:8%">EN $</th>
+                    <th style="text-align:left;padding:4px 8px;width:12%">Rarity</th>
+                    <th style="text-align:right;padding:4px 8px;width:12%;border-left:2px solid #f4c43044;color:#f4c430">🇯🇵 JP $</th>
+                    <th style="text-align:right;padding:4px 8px;width:8%;color:#f4c430">EN/JP</th>
+                    <th style="text-align:left;padding:4px 8px;width:20%;color:var(--muted)">JP Card</th>
                   </tr>
                 </thead>
                 <tbody id="cards-tbody"></tbody>
@@ -864,7 +864,7 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
 
   // expand right panel
   panel.style.display = 'flex';
-  document.getElementById('db-split').style.gridTemplateColumns = '380px 1fr';
+  document.getElementById('db-split').style.gridTemplateColumns = '40% 60%';
 
   title.textContent = setName;
   tbody.innerHTML = '<tr><td colspan="8" class="empty" style="padding:40px"><span class="spinner"></span> Loading…</td></tr>';
