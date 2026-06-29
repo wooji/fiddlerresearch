@@ -6154,6 +6154,21 @@
       "setName": "2025 Panini Spectra Basketball",
       "chaseCount": 20,
       "at": "2026-06-29"
+    },
+    {
+      "setName": "2025 Panini Origins Basketball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
+    },
+    {
+      "setName": "2025 Panini Revolution Basketball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
+    },
+    {
+      "setName": "2025 Panini Illusions Basketball",
+      "chaseCount": 13,
+      "at": "2026-06-29"
     }
   ],
   "lastRun": "2026-06-29T09:53:52.124Z"
