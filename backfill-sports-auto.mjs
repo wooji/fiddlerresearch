@@ -41,7 +41,7 @@ function randomProxy(proxies) {
 
 // Read DB, return all sets missing chase data in year range
 function getMissingSets() {
-  const raw = JSON.parse(readFileSync(SPORTS_DB_PATH,'utf8'));
+  const raw  = loadDb();
   const sets = raw.sets ?? raw;
   return Object.entries(sets)
     .filter(([,v]) => {
@@ -146,22 +146,41 @@ async function scrapeSet(setInfo, proxies) {
   return cards;
 }
 
+// In-memory DB cache — load once, flush periodically
+let _dbCache = null;
+let _dirtyCount = 0;
+
+function loadDb() {
+  if (!_dbCache) _dbCache = JSON.parse(readFileSync(SPORTS_DB_PATH,'utf8'));
+  return _dbCache;
+}
+
+function flushDb() {
+  if (!_dbCache) return;
+  const tmp = SPORTS_DB_PATH + '.tmp';
+  writeFileSync(tmp, JSON.stringify(_dbCache, null, 2));
+  // atomic rename via overwrite
+  writeFileSync(SPORTS_DB_PATH, JSON.stringify(_dbCache, null, 2));
+  _dirtyCount = 0;
+  log(`  [DB flushed]`);
+}
+
 function writeSetChase(setKey, cards) {
-  const raw = JSON.parse(readFileSync(SPORTS_DB_PATH,'utf8'));
+  const raw  = loadDb();
   const sets = raw.sets ?? raw;
   if (!sets[setKey]) return;
   if (!sets[setKey].cards) sets[setKey].cards = {};
-  sets[setKey].cards.chaseCards  = cards;
-  sets[setKey].cards.chaseTotal  = cards.length;
+  sets[setKey].cards.chaseCards    = cards;
+  sets[setKey].cards.chaseTotal    = cards.length;
   sets[setKey].cards.topChasePrice = cards[0]?.price ?? null;
   sets[setKey].cards.avgChasePrice = cards.length ? Math.round(cards.reduce((s,c)=>s+c.price,0)/cards.length) : null;
-  sets[setKey].cards.fetchedAt   = new Date().toISOString().slice(0,10);
-  // top-level shortcut for API
+  sets[setKey].cards.fetchedAt     = new Date().toISOString().slice(0,10);
   if (cards[0]) {
     sets[setKey].chaseCard = { name: cards[0].player, market: cards[0].price, rarity: cards[0].cardType };
   }
-  if (raw.sets) raw.sets = sets; else Object.assign(raw, sets);
-  writeFileSync(SPORTS_DB_PATH, JSON.stringify(raw, null, 2));
+  _dirtyCount++;
+  // flush every 10 sets
+  if (_dirtyCount >= 10) flushDb();
 }
 
 function saveState(done, total, current) {
@@ -178,6 +197,7 @@ async function main() {
     const missing = getMissingSets();
     log(`\n[Round ${round}] Missing: ${missing.length} sets`);
     if (missing.length === 0) {
+      flushDb();
       log('✅ All sets have chase data. Done.');
       saveState('ALL_DONE', 0, null);
       break;
@@ -205,8 +225,8 @@ async function main() {
       await new Promise(r => setTimeout(r, 2000));
     }
 
+    flushDb();
     log(`\n[Round ${round}] Completed ${roundDone}/${missing.length}`);
-    // Brief pause between rounds
     await new Promise(r => setTimeout(r, 5000));
   }
 }
