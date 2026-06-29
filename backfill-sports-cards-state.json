@@ -6169,6 +6169,26 @@
       "setName": "2025 Panini Illusions Basketball",
       "chaseCount": 13,
       "at": "2026-06-29"
+    },
+    {
+      "setName": "2025 Panini Phoenix Basketball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
+    },
+    {
+      "setName": "2025 Panini Encased Basketball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
+    },
+    {
+      "setName": "2025 Panini Playbook Basketball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
+    },
+    {
+      "setName": "2025 Panini Cornerstones Basketball",
+      "chaseCount": 20,
+      "at": "2026-06-29"
     }
   ],
   "lastRun": "2026-06-29T09:53:52.124Z"

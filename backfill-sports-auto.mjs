@@ -218,8 +218,11 @@ async function scrapeSet(setInfo, proxies) {
   return cards.slice(0,20);
 }
 
+const CARD_PRICING_PATH = 'card-pricing-sports.json';
+
 // ── DB (in-memory cache) ──────────────────────────────────────────────────────
 let _db = null, _dirty = 0;
+let _cp = null, _cpDirty = 0;
 
 function loadDb() {
   if (!_db) _db = JSON.parse(readFileSync(SPORTS_DB_PATH,'utf8'));
@@ -231,7 +234,22 @@ function flushDb() {
   _dirty = 0;
   log('[db] flushed');
 }
-function writeSetChase(key, cards) {
+function loadCp() {
+  if (!_cp) {
+    _cp = existsSync(CARD_PRICING_PATH) ? JSON.parse(readFileSync(CARD_PRICING_PATH,'utf8')) : { _meta:{}, cards:{} };
+    if (!_cp.cards) _cp.cards = {};
+  }
+  return _cp;
+}
+function flushCp() {
+  if (!_cp || _cpDirty === 0) return;
+  _cp._meta.updated = new Date().toISOString().slice(0,10);
+  _cp._meta.count = Object.keys(_cp.cards).length;
+  writeFileSync(CARD_PRICING_PATH, JSON.stringify(_cp, null, 2));
+  _cpDirty = 0;
+  log('[cp] flushed');
+}
+function writeSetChase(key, cards, setInfo) {
   const sets = loadDb().sets ?? loadDb();
   if (!sets[key]) return;
   if (!sets[key].cards) sets[key].cards = {};
@@ -241,7 +259,15 @@ function writeSetChase(key, cards) {
   sets[key].cards.fetchedAt     = new Date().toISOString().slice(0,10);
   if (cards[0]) sets[key].chaseCard = {name:cards[0].player, market:cards[0].price, rarity:cards[0].cardType};
   _dirty++;
-  if (_dirty >= 10) flushDb();
+  if (_dirty >= 10) { flushDb(); flushCp(); }
+
+  // also write to card-pricing-sports.json for dashboard drilldown
+  const cp = loadCp().cards;
+  for (const c of cards) {
+    const cpKey = `${key}::${c.player?.toLowerCase().replace(/\s+/g,'-')}::${c.cardType?.toLowerCase().replace(/\s+/g,'-')}`;
+    cp[cpKey] = { setKey: key, setName: setInfo?.name ?? key, ...c };
+    _cpDirty++;
+  }
 }
 function getMissingSets() {
   const sets = loadDb().sets ?? loadDb();
@@ -285,7 +311,7 @@ async function main() {
       }
 
       const cards = await scrapeSet(setInfo, proxies);
-      writeSetChase(setInfo.key, cards);
+      writeSetChase(setInfo.key, cards, setInfo);
 
       if (cards.length > 0) {
         log(`  ✓ ${cards.length} cards | top: ${cards[0].player} $${cards[0].price}`);
@@ -299,7 +325,7 @@ async function main() {
       await new Promise(r => setTimeout(r, 1500));
     }
 
-    flushDb();
+    flushDb(); flushCp();
     log(`[Round ${round}] saved ${roundSaved}/${missing.length}`);
     await new Promise(r => setTimeout(r, 3000));
   }
