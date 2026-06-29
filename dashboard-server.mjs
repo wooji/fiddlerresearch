@@ -898,6 +898,31 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // GET /api/pokemon-jp/by-en/:enSetKey — reverse lookup: EN key → all JP sets mapped to it + card comps
+  const jpByEnMatch = pathname.match(/^\/api\/pokemon-jp\/by-en\/(.+)$/);
+  if (req.method === 'GET' && jpByEnMatch) {
+    const enKey = decodeURIComponent(jpByEnMatch[1]);
+    try {
+      const db = JSON.parse(fs.readFileSync(path.join(ROOT, 'set-history-pokemon-jp.json'), 'utf8'));
+      const sets = db.sets ?? db;
+      const matched = Object.entries(sets)
+        .filter(([, v]) => v.enSetKey === enKey)
+        .map(([k, v]) => ({
+          jpKey: k,
+          jpName: v.name ?? v.set_name ?? k,
+          publishedOn: v.publishedOn?.slice(0, 10) ?? null,
+          sealedMarket: v.sealedMarket ?? null,
+          sealedMultiple: v.sealedMultiple ?? null,
+          leadSignal: v.leadSignal ?? 'no-data',
+          chaseCards: v.chaseCards ?? [],
+          cardMatches: v.cardMatches ?? [],
+        }))
+        .sort((a, b) => (b.publishedOn ?? '').localeCompare(a.publishedOn ?? ''));
+      json(res, { enSetKey: enKey, jpSets: matched });
+    } catch(e) { json(res, { error: e.message }, 500); }
+    return;
+  }
+
   cors(res);
   res.writeHead(404);
   res.end('Not found');

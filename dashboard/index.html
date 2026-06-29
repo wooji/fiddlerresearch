@@ -538,16 +538,37 @@
               </table>
             </div>
           </div>
-          <!-- cards window -->
-          <div id="cards-section" style="flex:1 1 0;overflow-y:auto;padding:12px 20px">
-            <div style="font-size:11px;font-weight:700;color:#ff64b4;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px" id="cards-title">Individual Cards</div>
-            <div class="table-wrap" style="overflow-x:auto">
-              <table style="font-size:12px;width:100%;white-space:nowrap">
-                <thead>
-                  <tr><th>Card</th><th>Market</th><th>Rarity</th><th>#</th><th>History</th></tr>
-                </thead>
-                <tbody id="cards-tbody"></tbody>
-              </table>
+          <!-- cards window: EN left + JP right split -->
+          <div id="cards-section" style="flex:1 1 0;overflow:hidden;display:flex;flex-direction:column;padding:0">
+            <div style="display:grid;grid-template-columns:1fr 1fr;height:100%;overflow:hidden">
+              <!-- EN cards (left) -->
+              <div style="display:flex;flex-direction:column;overflow:hidden;border-right:1px solid var(--border)">
+                <div style="font-size:11px;font-weight:700;color:#ff64b4;text-transform:uppercase;letter-spacing:.5px;padding:10px 16px 6px;flex-shrink:0" id="cards-title">Individual Cards</div>
+                <div style="flex:1;overflow-y:auto;padding:0 16px 12px">
+                  <table style="font-size:12px;width:100%;white-space:nowrap">
+                    <thead style="position:sticky;top:0;background:var(--bg);z-index:1">
+                      <tr><th>Card</th><th>EN $</th><th>Rarity</th><th>#</th><th>History</th></tr>
+                    </thead>
+                    <tbody id="cards-tbody"></tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- JP cards (right) -->
+              <div id="jp-comp-section" style="display:flex;flex-direction:column;overflow:hidden;background:rgba(255,200,50,.03)">
+                <div style="font-size:11px;font-weight:700;color:#f4c430;text-transform:uppercase;letter-spacing:.5px;padding:10px 16px 6px;flex-shrink:0;display:flex;align-items:center;gap:8px">
+                  <span>🇯🇵 JP Leading Indicator</span>
+                  <span id="jp-comp-label" style="font-weight:400;color:var(--muted);font-size:10px"></span>
+                </div>
+                <div id="jp-comp-signal" style="padding:0 16px 6px;font-size:11px;flex-shrink:0"></div>
+                <div style="flex:1;overflow-y:auto;padding:0 16px 12px">
+                  <table style="font-size:12px;width:100%;white-space:nowrap">
+                    <thead style="position:sticky;top:0;background:var(--bg);z-index:1">
+                      <tr><th>Card</th><th>JP $</th><th>EN $</th><th>EN/JP</th></tr>
+                    </thead>
+                    <tbody id="jp-comp-tbody"><tr><td colspan="4" style="color:var(--muted);padding:20px;text-align:center;font-size:11px">Select an EN set to see JP leading indicator</td></tr></tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -923,6 +944,52 @@ async function loadVariants(dbKey, setId, setName, chaseName) {
     } catch (e) {
       ctbody.innerHTML = `<tr><td colspan="5" class="empty" style="color:var(--red)">Error: ${escHtml(e.message)}</td></tr>`;
     }
+  }
+
+  // JP leading indicator (Pokemon only)
+  const jpTbody = document.getElementById('jp-comp-tbody');
+  const jpLabel = document.getElementById('jp-comp-label');
+  const jpSignal = document.getElementById('jp-comp-signal');
+  if (dbKey === 'pokemon' && jpTbody) {
+    jpTbody.innerHTML = '<tr><td colspan="4" style="color:var(--muted);padding:20px;text-align:center"><span class="spinner"></span> Loading JP data…</td></tr>';
+    try {
+      const jr = await fetch(`${API}/api/pokemon-jp/by-en/${encodeURIComponent(setId)}`);
+      const jd = await jr.json();
+      const jpSets = jd.jpSets ?? [];
+      if (!jpSets.length) {
+        if (jpLabel) jpLabel.textContent = 'No JP counterpart mapped';
+        jpTbody.innerHTML = '<tr><td colspan="4" style="color:var(--muted);padding:20px;text-align:center;font-size:11px">No JP set mapped to this EN set yet</td></tr>';
+      } else {
+        // Use first (most recent) JP set's cardMatches
+        const jp = jpSets[0];
+        const sigIcon = s => s === 'STRONG' ? '🟢' : s === 'MODERATE' ? '🟡' : s === 'WEAK' ? '🔴' : '—';
+        if (jpLabel) jpLabel.textContent = jp.jpName + (jp.publishedOn ? ' · ' + jp.publishedOn : '');
+        if (jpSignal) jpSignal.innerHTML = jpSets.map(s =>
+          `<span style="margin-right:12px">${sigIcon(s.leadSignal)} <strong>${s.leadSignal}</strong> · JP sealed ${s.sealedMarket ? '$'+s.sealedMarket.toFixed(0)+' ('+s.sealedMultiple?.toFixed(1)+'×)' : 'n/a'} · <em>${s.jpName}</em></span>`
+        ).join('<br>');
+        const matches = jp.cardMatches ?? [];
+        if (!matches.length) {
+          jpTbody.innerHTML = '<tr><td colspan="4" style="color:var(--muted);padding:20px;text-align:center;font-size:11px">Card-level matches not yet computed — re-run backfill-jp-card-match.mjs</td></tr>';
+        } else {
+          jpTbody.innerHTML = matches.slice(0, 100).map(c => {
+            const prem = c.premium;
+            const premStr = prem != null ? prem.toFixed(2) + '×' : '—';
+            const premColor = !prem ? 'var(--muted)' : prem >= 1.5 ? '#4ade80' : prem >= 0.5 ? '#f4c430' : '#f87171';
+            const buySignal = prem != null && prem < 0.15 ? ' 🔔' : '';
+            return `<tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:4px 8px">${escHtml(c.jpName)}</td>
+              <td style="padding:4px 8px;text-align:right;color:#f4c430">${c.jpMarket != null ? '$'+c.jpMarket.toFixed(2) : '—'}</td>
+              <td style="padding:4px 8px;text-align:right">${c.enMarket != null ? '$'+c.enMarket.toFixed(2) : '—'}</td>
+              <td style="padding:4px 8px;text-align:right;color:${premColor};font-weight:600">${premStr}${buySignal}</td>
+            </tr>`;
+          }).join('');
+        }
+      }
+    } catch(e) {
+      if (jpTbody) jpTbody.innerHTML = `<tr><td colspan="4" style="color:var(--red);padding:12px">${escHtml(e.message)}</td></tr>`;
+    }
+  } else if (jpTbody) {
+    jpTbody.innerHTML = '<tr><td colspan="4" style="color:var(--muted);padding:20px;text-align:center;font-size:11px">JP data only available for Pokemon TCG</td></tr>';
   }
 }
 
