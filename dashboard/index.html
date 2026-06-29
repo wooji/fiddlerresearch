@@ -1107,6 +1107,16 @@ async function loadDbPage() {
       <td><span class="tag ${/DBLGREEN|GREEN/.test(e.rating) ? 'active' : /RED/.test(e.rating) ? 'retired' : 'ar'}">${e.rating ?? '—'}</span></td>
       <td>${e.dateLogged ?? '—'}</td>
     `;
+  } else if (currentDb === 'sports') {
+    cols = ['Set','Brand','Tier','Year','Chase Card','Top Price'];
+    rowFn = e => `
+      <td><strong>${e.name ?? '—'}</strong></td>
+      <td style="color:var(--muted);font-size:12px">${e.brand ?? '—'}</td>
+      <td style="font-size:12px">${e.tier ?? '—'}</td>
+      <td style="font-size:12px">${e.year ?? '—'}</td>
+      <td style="color:#ff64b4;font-size:12px">${e.chaseCard?.name ?? e.cards?.chaseCards?.[0]?.player ?? '—'}</td>
+      <td style="color:#4ade80;font-weight:600">${e.chaseCard?.market != null ? '$' + Number(e.chaseCard.market).toLocaleString() : (e.cards?.chaseCards?.[0]?.price != null ? '$' + Number(e.cards.chaseCards[0].price).toLocaleString() : '—')}</td>
+    `;
   } else if (currentDb === 'players') {
     cols = ['Name','Position','Chase Cards','Top Card $'];
     rowFn = e => `
@@ -1141,6 +1151,22 @@ async function loadDbPage() {
         const cursor = e.cardCount > 0 ? 'cursor:pointer' : 'cursor:default;opacity:.6';
         const handler = e.cardCount > 0 ? `onclick="openChasePanel(this.dataset.slug,this.dataset.name)"` : '';
         tbodyHtml += `<tr data-slug="${escHtml(slug)}" data-name="${escHtml(name)}" ${handler} style="${cursor}" title="${e.cardCount > 0 ? 'Click to view chase cards' : 'No chase cards yet'}">${rowFn(e)}</tr>`;
+      });
+    });
+  } else if (isSports) {
+    // Group sports sets by sport (football/basketball/baseball)
+    const SPORT_ICONS = { basketball:'🏀', baseball:'⚾', football:'🏈' };
+    const groups = {};
+    entries.forEach(e => { const s = e.sport ?? 'other'; (groups[s] = groups[s] ?? []).push(e); });
+    const ORDER = ['football','basketball','baseball','other'];
+    ORDER.filter(s => groups[s]).forEach(sport => {
+      const icon = SPORT_ICONS[sport] ?? '🏅';
+      const label = sport.charAt(0).toUpperCase() + sport.slice(1);
+      tbodyHtml += `<tr><td colspan="${cols.length}" style="background:var(--border);color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:6px 12px;pointer-events:none">${icon} ${label} (${groups[sport].length})</td></tr>`;
+      groups[sport].forEach(e => {
+        const slug = escHtml(e.id ?? '');
+        const name = escHtml(e.name ?? e.id);
+        tbodyHtml += `<tr data-db="sports" data-id="${slug}" data-name="${name}" onclick="loadVariants('sports',this.dataset.id,this.dataset.name,'')" style="cursor:pointer" title="Click to view chase cards">${rowFn(e)}</tr>`;
       });
     });
   } else {
