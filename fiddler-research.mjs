@@ -281,7 +281,7 @@ const PRODUCTS = { ..._dynamic, ...{
     ebayQuery:  'Prismatic Evolutions Super Premium Collection',
     images:    [],
     contents:  '11-16 boosters + Eevee plush (~$35-50 resale alone) + promo cards + full ETB accessories',
-    stockNote: "Sam's Club dropping ~6,000 units on 7/21 — 2 per account",
+    stockNote: "Sam\'s Club dropping ~6,000 units on 7/21 — 2 per account",
     sellThrough: {
       flip:   { range: 'market-derived', units: '~20 – 50 units' },
       hold:   { range: 'market-derived', units: '~10 – 20 units' },
@@ -293,8 +293,8 @@ const PRODUCTS = { ..._dynamic, ...{
       market:      "• Social intel shows heavy account prep ahead of 7/21 — demand confirmed active\n• Eevee plush drives crossover buyers (non-TCG toy collectors entering market)\n• Prior SPC drops (Celebrations, Crown Zenith) held market 60+ days post-drop",
       product:     "• 11-16 boosters + Eevee plush ($35-50 resale standalone) + promo cards + full ETB accessories\n• Plush effectively lowers cost basis on boosters to under $45\n• Two distinct buyer segments: sealed collectors and plush resellers",
       priceComp:   "• $80 retail vs $130-155 market — tighter multiple than ETB but floor is defensible\n• Plush standalone value props up sealed floor even if pack market softens\n• Comp: Crown Zenith SPC held $130+ for 90 days before gradual decline",
-      supplyDemand:"• Sam's Club 6,000 units sounds large but 2-per-account cap disperses fast\n• Membership requirement caps buyer pool to Sam's members only\n• Account farming confirmed active — drop will clear faster than unit count suggests",
-      recs:        "• **Short term:** Max accounts on 7/21, flip $130–145 within first 2 weeks\n• **Long term:** Hold plush-sealed bundles to $155-170 as Sam's stock fully clears\n• Prep Sam's accounts NOW — add to List before drop day",
+      supplyDemand:"• Sam\'s Club 6,000 units sounds large but 2-per-account cap disperses fast\n• Membership requirement caps buyer pool to Sam\'s members only\n• Account farming confirmed active — drop will clear faster than unit count suggests",
+      recs:        "• **Short term:** Max accounts on 7/21, flip $130–145 within first 2 weeks\n• **Long term:** Hold plush-sealed bundles to $155-170 as Sam\'s stock fully clears\n• Prep Sam\'s accounts NOW — add to List before drop day",
     },
   },
   'cr-bb': {
@@ -582,31 +582,39 @@ const PRODUCTS = { ..._dynamic, ...{
     sellThrough: { flip: { range: 'SL foils day0 only (+200-400%)', units: '72h window' }, hold: { range: 'SKIP sealed', units: 'fades' }, invest: { range: 'SKIP', units: 'N/A' } },
     bulkBuy:  'skip sealed', ebayFee: 0.13,
     writeup: {
-      market:      '• **Thesis — fade risk, no pre-spike:** Collector boxes sit AT MSRP ($450-500) in preorder — no scarcity premium (vs Final Fantasy $900+ at same stage). Marvel hype historically bleeds: SL Marvel ’24 crashed 30-70% in week 1; Spider-Man set $977 peak → $339 (-65%). 75%-legendary rate breaks Standard = Commander/collector demand only.\n• **Liquidity:** Deep for SL foil singles day0 (rainbow-foil chase), thin/declining for sealed CB box. No spec premium expected.\n• **Risk:** Marvel fatigue (10+ yrs product, 4 UB + 3 in-universe sets), format bloat caps playability demand. Sealed = depreciating asset.',
-      product:     '• **Day0:** CB box at/near MSRP $450-500 (no pre-spike — bearish). SL Spinner Rack foils spike +200-400%.\n• **1-4wk:** SL foils dump 30-70% (every Marvel SL bleeds post-window). CB box drifts down.\n• **Onward:** CB box → ~$340-370 by 9mo (Spider-Man trajectory). High variance only if a chase legendary (Iron Man/Black Panther Cmdr) spikes.\n• **Comp:** SL Marvel ’24 $39.99→peak $211→settled ~1.5-2× over 18mo. Spider-Man set -65% in 9mo.',
+      market:      '• **Thesis — fade risk, no pre-spike:** Collector boxes sit AT MSRP ($450-500) in preorder — no scarcity premium (vs Final Fantasy $900+ at same stage). Marvel hype historically bleeds: SL Marvel \'24 crashed 30-70% in week 1; Spider-Man set $977 peak → $339 (-65%). 75%-legendary rate breaks Standard = Commander/collector demand only.\n• **Liquidity:** Deep for SL foil singles day0 (rainbow-foil chase), thin/declining for sealed CB box. No spec premium expected.\n• **Risk:** Marvel fatigue (10+ yrs product, 4 UB + 3 in-universe sets), format bloat caps playability demand. Sealed = depreciating asset.',
+      product:     '• **Day0:** CB box at/near MSRP $450-500 (no pre-spike — bearish). SL Spinner Rack foils spike +200-400%.\n• **1-4wk:** SL foils dump 30-70% (every Marvel SL bleeds post-window). CB box drifts down.\n• **Onward:** CB box → ~$340-370 by 9mo (Spider-Man trajectory). High variance only if a chase legendary (Iron Man/Black Panther Cmdr) spikes.\n• **Comp:** SL Marvel \'24 $39.99→peak $211→settled ~1.5-2× over 18mo. Spider-Man set -65% in 9mo.',
       priceComp: '', supplyDemand: '',
       recs:        '• 🟠 SKIP sealed CB box spec — Spider-Man comp = -65%, no pre-spike, Marvel fatigue.\n• Only play: crack SL Spinner Rack foils day0, flip within 72h BEFORE the 30-70% bleed.\n• Watch for chase-legendary Commander spike as the lone upside catalyst.',
     },
   },
   'mtg-festival-in-a-box-2026': {
-    label:       'MTG Festival in a Box 2026 — MagicCon Amsterdam + Atlanta',
+    label:       'MTG Festival in a Box: Amsterdam 2026',
     category:    'mtg',
     set:         'Magic: The Gathering / MagicCon',
-    retail:      225,
-    retailNote:  'MSRP ~$200-250 · Amsterdam Jun 29 / Atlanta Oct 26, 2026 · event-capped supply',
-    releaseUrl:  'https://magic.wizards.com/en/events',
+    retail:      199.99,
+    retailVerified: true,
+    retailNote:  'MSRP $199.99 (verified: magic.wizards.com) · MagicSecretLair.com · 2 per customer limit · Jul 13, 2026',
+    releaseUrl:  'https://magic.wizards.com/en/news/announcements/festival-in-a-box-amsterdam-2026-takes-the-scenic-route',
+    _dbKey:      'Festival in a Box Amsterdam 2026',
     tcgId:       null, supplyScore: 22, liveMarket: null,
-    ebayQuery:   'MTG Festival in a Box MagicCon',
-    images:      [], forceRating: 'GREEN', risk: 'Medium', ebayFee: 0.13,
-    contents:    'Buy-to-attend-remotely event box: convention-exclusive foil promos, playmat, drop tokens | hard supply cap (attendance-driven print) | promo reveal not yet announced (Amsterdam overdue)',
-    releaseDate: 'Amsterdam Jun 29, 2026 · Atlanta Oct 26, 2026',
-    sellThrough: { flip: { range: '+40-100% (wk3-4 peak)', units: 'event-capped' }, hold: { range: '+20-60% (6-12mo)', units: 'hard cap' }, invest: { range: '+20-60%', units: 'promo-gated' } },
-    bulkBuy:  'event-limited', ebayFee: 0.13,
+    ebayQuery:   'MTG Festival in a Box Amsterdam 2026',
+    images:      [], ebayFee: 0.13, forceRating: 'ORANGE', preRelease: true,
+    contents:    'Mystery Booster 2 display (24 packs, ~200 set symbols, white-border/playtest/Future Sight-frame cards) | Wild in Bloom Secret Lair drop: Nissa Resurgent Animist + Ramunap Excavator + Six + Tireless Provisioner + Titania Protector of Argoth (all foil) | Exclusive foils: Llanowar Elves + Utopia Sprawl + Atraxa Praetors Voice | Bicycle Elemental Playtest Card | 2/customer cap · MagicSecretLair.com',
+    releaseDate: 'July 13, 2026 · MagicSecretLair.com · 2/customer hard cap',
+    sellThrough: {
+      flip:    { range: '$320 – $450 (wk1-4 peak)', units: 'hard-capped supply' },
+      hold:    { range: '$280 – $400 (6-12mo)',      units: 'structural scarcity' },
+      invest:  { range: 'SKIP',                      units: 'N/A' },
+    },
+    bulkBuy:  '2/customer cap — max allocation per account; multi-account if possible',
+    risk:     '🟡 Medium',
     writeup: {
-      market:      '• **Thesis — best risk/reward of the slate:** Event-capped supply (buy-to-attend-only) + exclusive foil promos = structural scarcity. Comp boxes hold +20-60% long-term, peak +75-100% at 4wk. Promo card carries 50-75% of box value.\n• **Liquidity:** Sells out fast (recent boxes <4h). Deep secondary; chase promo (Sliver/Commander staple in exclusive frame) sets the floor.\n• **Risk:** Value gates entirely on the promo reveal — NOT yet announced (Amsterdam overdue). Weak/non-staple promo = underperforms; base cards reprinted later (only the art frame stays exclusive).',
-      product:     '• **Day0:** ~+40% premium ($280-340 on $200-250 MSRP).\n• **1-4wk:** peaks +75-100% ($350-450).\n• **Onward (6-12mo):** normalizes +20-60% ($300-400). Holds — hard supply cap.\n• **Comp:** Chicago ’25 $200→$402 · LV ’25 $250→$361 · Atlanta ’25 $200→$350+. Sliver Legion foil promo ($190) carried Atlanta.',
-      priceComp: '', supplyDemand: '',
-      recs:        '• 🟢 FULL SEND on promo reveal — buy day0, supply is hard-capped.\n• Sliver / Commander-staple promo in exclusive frame = max buy; vanilla promo = pass.\n• Peak exit = week 3-4 (+75-100%); long hold still nets +20-60%.\n• Amsterdam promo overdue — watch for the announcement to confirm conviction.',
+      market:      '• **Thesis — Atraxa + Mystery Booster 2 carry this:** Wild in Bloom SL drop has real Commander staples — Atraxa Praetors\' Voice ($15-20 regular, exclusive foil art premium) + Titania ($8-12) + Nissa Resurgent Animist ($20+ Commander/Legacy demand). Mystery Booster 2 display (24 packs, $8-12/pack market) adds ~$200 floor independent of SL singles. Total singles floor conservatively $80-120 from SL alone + $190-280 from MB2 display = $270-400 combined.\n• **Liquidity:** 2/customer cap = hard supply ceiling. Prior FiaB boxes (Chicago $200→$402, LV $250→$361, Atlanta $200→$350+) all held premium 6-12mo. MB2 display adds a liquid separate resale path.\n• **Risk:** Atraxa is heavily reprinted (Commander Anthology, Double Masters, etc.) — foil exclusive art mitigates but doesn\'t eliminate reprint risk. MB2 packs are $8-12 but dependent on draft demand. No serialized ultra-chase.',
+      product:     '• Mystery Booster 2 display (24 packs) — each pack pulls from ~200 set symbols: white-border card + playtest card + Future Sight-frame card (foil possible). Market $8-12/pack → $192-288 display value alone.\n• Wild in Bloom Secret Lair: Atraxa Praetors\' Voice (exclusive botanical foil art) + Titania Protector of Argoth + Nissa Resurgent Animist + Ramunap Excavator + Tireless Provisioner\n• Exclusive foils: Llanowar Elves + Utopia Sprawl + Atraxa Praetors\' Voice (3 bonus cards)\n• 2/customer cap on MagicSecretLair.com — no bulk allocation possible\n• Release Jul 13, 2026 — MagicCon Amsterdam concurrent event (attendance-tied hype)',
+      priceComp:   '• MSRP $199.99 | 2/customer cap\n• MB2 display market: $192-288 (24 packs × $8-12)\n• Wild in Bloom SL singles floor: Atraxa foil $25-40 + Titania $10-18 + Nissa $22-35 + Ramunap $6-10 + Tireless $5-8 = ~$68-111\n• Bonus foils: Llanowar Elves + Utopia Sprawl + Atraxa = est $15-30 added\n• Combined floor: ~$275-429 vs $199.99 retail = 38-115% ROI before fees\n• Comp: Chicago FiaB $200→$402 (day30) · LV FiaB $250→$361 · Atlanta FiaB $200→$350+',
+      supplyDemand:'• Hard 2/customer cap = structural scarcity enforced at checkout\n• MagicCon Amsterdam timing (Jul 17) creates concurrent IRL demand + FOMO spike\n• Atraxa is top-5 most-played Commander card — exclusive botanical foil art = distinct product\n• MB2 display adds a completely separate resale demand pool (drafters + speculators)\n• No restock commitment; WotC limited-print policy confirmed Feb 2026',
+      recs:        '• **Buy:** Max allocation (2 units per account) at $199.99. ROI floor ~38% from MB2 alone; SL singles add upside.\n• **Flip timing:** Day 7-21 peak ($320-420); secondary compresses after MagicCon hype cycle fades\n• **Hold:** 6-12mo if Atraxa/Nissa foil prices hold; comp boxes never went below MSRP post-sellout\n• **Crack thesis:** Only crack if Atraxa exclusive foil trades >$60 OR MB2 packs individually exceed $14; otherwise hold sealed for premium\n• **Don\'t sleep:** 2/customer hard cap + July 13 drop = sells out fast (prior boxes <4h)',
     },
   },
   'mtg-hobbit-set': {
@@ -627,7 +635,7 @@ const PRODUCTS = { ..._dynamic, ...{
       market:      '• **Thesis — strongest set hold:** Tolkien IP is the proven MTG moonshot — LOTR Tales CBB ~$150-era → $1400 (10-13×). Preorders ALREADY exhausted (CB/Bundle/Draft Night OOS) = single-print-run scarcity. Smaug Gleaming Gold (~500 copies) is the chase, but NOT serialized-One-Ring tier.\n• **Liquidity:** Highest-allocation previews of the slate (20+ at MagicCon LV) = WotC priority; strong FOMO, sold-out preorders. Deep sealed bid expected.\n• **Risk:** No serialized mega-chase = caps the 10× repeat. 2026 supply bloat (7 sets) fragments budget; Marvel (Jun 26) drains preorder capital 6wk prior.',
       product:     '• **Day0:** scarcity premium — CB box ~$144 trades up immediately on sold-out preorders.\n• **1-4wk:** holds/climbs on FOMO (no restock commitment).\n• **Onward (12mo):** base case 3-6× ($430-860 CBB); 10× only with a serialized/cultural catalyst (unlikely).\n• **Comp:** LOTR Tales CBB → $1400 (10-13× / 3yr). Prior SL x LOTR reprint drop = $0.38-0.92 (reprints DIE; full sets w/ unique cards appreciate).',
       priceComp: '', supplyDemand: '',
-      recs:        '• 🟢 FULL SEND — buy sealed CB box before/at release; preorders already gone.\n• Tolkien IP = proven floor; hold 12mo+ for 3-6×.\n• Crack only if Smaug/Bilbo singles outrun sealed; otherwise hold sealed on scarcity.\n• Don’t expect LOTR’s 10× without a serialized chase — size for 3-6×.',
+      recs:        '• 🟢 FULL SEND — buy sealed CB box before/at release; preorders already gone.\n• Tolkien IP = proven floor; hold 12mo+ for 3-6×.\n• Crack only if Smaug/Bilbo singles outrun sealed; otherwise hold sealed on scarcity.\n• Don\'t expect LOTR\'s 10× without a serialized chase — size for 3-6×.',
     },
   },
   'mtg-reality-fracture-set': {
@@ -646,7 +654,7 @@ const PRODUCTS = { ..._dynamic, ...{
     bulkBuy:  'skip until mythic list', ebayFee: 0.13,
     writeup: {
       market:      '• **Thesis — original-IP fade, no anchor:** Non-licensed story-driven SLs average 15-25% BELOW MSRP by 30-60d unless a $30+ staple reprint anchors them. Mythic list undisclosed = unknown anchor. Strixhaven bundle $82→$54 echoes vanilla decay.\n• **Liquidity:** Tepid. ~2 IG reels, ~0 r/mtgfinance threads — original art draws no crossover fanbase. No pre-order velocity.\n• **Risk:** Bundle value diluted by depreciating boosters + low-value lands; net card value must clear ~$70-75 to hold floor, unproven w/ 2-of-10 randomized mythics. Print volume unknown — 50k+ units collapses floor.',
-      product:     '• **Day0:** bundle ~MSRP $89.99, thin premium.\n• **1-4wk:** -10-20% as supply lands (~$70-80 floor).\n• **Onward:** flat/decline unless print run tight + chase reprint surfaces.\n• **Comp:** Back to School ’26 original SLs $2.60-13.60 value (worst-ever); original-art SLs floor 15-25% under MSRP w/o a staple anchor.',
+      product:     '• **Day0:** bundle ~MSRP $89.99, thin premium.\n• **1-4wk:** -10-20% as supply lands (~$70-80 floor).\n• **Onward:** flat/decline unless print run tight + chase reprint surfaces.\n• **Comp:** Back to School \'26 original SLs $2.60-13.60 value (worst-ever); original-art SLs floor 15-25% under MSRP w/o a staple anchor.',
       priceComp: '', supplyDemand: '',
       recs:        '• 🔴 NO SEND until the 10 Echoverse mythics are revealed.\n• Buy ONLY if a $30+ eternal-format staple reprint is in the list; else skip.\n• No flip window — original-IP bundles bleed post-delivery (Oct 23 ship floods supply).',
     },
@@ -656,24 +664,24 @@ const PRODUCTS = { ..._dynamic, ...{
     category:    'mtg',
     set:         'Magic: The Gathering / Secret Lair',
     retail:      199.99,
-    retailNote:  'MSRP ~$199.99 (vs ’25 Encyclopedia) · listed Nov 9, 2026 — UNCONFIRMED on official roadmap',
+    retailNote:  'MSRP ~$199.99 (vs \'25 Encyclopedia) · listed Nov 9, 2026 — UNCONFIRMED on official roadmap',
     releaseUrl:  'https://magicsecretlair.com',
     tcgId:       null, supplyScore: 18, liveMarket: null,
     ebayQuery:   'MTG Secret Lair Countdown Kit',
     images:      [], forceRating: 'ORANGE', risk: 'Medium', ebayFee: 0.13,
-    contents:    'Premium SL kit (comp: ’25 Encyclopedia of Magic, 26 A-Z reprints, $199.99, sold out in days) | eternal-format staples (Sol Ring etc.) | flash-sale, MagicSecretLair.com only | NOTE: not yet confirmed on WotC 2026 calendar (Nov 2026 = Star Trek set)',
+    contents:    'Premium SL kit (comp: \'25 Encyclopedia of Magic, 26 A-Z reprints, $199.99, sold out in days) | eternal-format staples (Sol Ring etc.) | flash-sale, MagicSecretLair.com only | NOTE: not yet confirmed on WotC 2026 calendar (Nov 2026 = Star Trek set)',
     releaseDate: 'Listed Nov 9, 2026 (unconfirmed)',
     sellThrough: { flip: { range: 'flash-sellout ~MSRP', units: 'days' }, hold: { range: 'modest premium', units: 'staple-gated' }, invest: { range: '+40-90% (1-2yr)', units: 'if eternal staples' } },
     bulkBuy:  'slow hold', ebayFee: 0.13,
     writeup: {
-      market:      '• **Thesis — slow appreciation, contents-gated:** Premium sealed SL kits hold/appreciate: 30th-Anniv Kit ’22 $149.99 → $284 (+90%, +3-5%/yr). Limited flash-sale supply. BUT awareness LOW and product UNCONFIRMED on the 2026 roadmap (Nov = Star Trek).\n• **Liquidity:** Flash-sellout creates scarce secondary, but muted demand vs licensed drops; eternal-staple weighting determines floor.\n• **Risk:** If budget-filler weighted like ’25 Encyclopedia (Sol Ring + commons), hype stays depressed. MagicSecretLair-only model frustrates buyers. Existence unverified.',
-      product:     '• **Day0:** flash-sale sellout likely; entry ~MSRP.\n• **1-4wk:** modest premium if eternal-staple weighted.\n• **Onward:** +40-90% multi-year IF limited + eternal staples; muted if budget filler.\n• **Comp:** 30th-Anniv Kit ’22 → $284 (+90%). ’25 Encyclopedia sold out days, awareness low.',
+      market:      '• **Thesis — slow appreciation, contents-gated:** Premium sealed SL kits hold/appreciate: 30th-Anniv Kit \'22 $149.99 → $284 (+90%, +3-5%/yr). Limited flash-sale supply. BUT awareness LOW and product UNCONFIRMED on the 2026 roadmap (Nov = Star Trek).\n• **Liquidity:** Flash-sellout creates scarce secondary, but muted demand vs licensed drops; eternal-staple weighting determines floor.\n• **Risk:** If budget-filler weighted like \'25 Encyclopedia (Sol Ring + commons), hype stays depressed. MagicSecretLair-only model frustrates buyers. Existence unverified.',
+      product:     '• **Day0:** flash-sale sellout likely; entry ~MSRP.\n• **1-4wk:** modest premium if eternal-staple weighted.\n• **Onward:** +40-90% multi-year IF limited + eternal staples; muted if budget filler.\n• **Comp:** 30th-Anniv Kit \'22 → $284 (+90%). \'25 Encyclopedia sold out days, awareness low.',
       priceComp: '', supplyDemand: '',
       recs:        '• 🟠 LIGHT SEND — slow 1-2yr appreciation play, NOT a flip.\n• VERIFY existence on official WotC 2026 calendar before committing (Nov 2026 listed = Star Trek).\n• Buy only if card list skews eternal-format staples; pass if budget-common heavy.',
     },
   },
   'ac-black-flag-resynced-ce-ps5': {
-    label:       "Assassin's Creed Black Flag Resynced Collector's Edition — PlayStation 5",
+    label:       "Assassin\'s Creed Black Flag Resynced Collector\'s Edition — PlayStation 5",
     category:    'noncard',
     set:         'Ubisoft Collector / Video Game CE',
     retail:      199.99,
@@ -684,14 +692,14 @@ const PRODUCTS = { ..._dynamic, ...{
     liveMarket:  null,
     asin:        'B0GY5RPBFS',
     walmartItemId: 20107267128, // verified: Walmart item 20107267128 = AC Black Flag Resynced CE (URL slug is stale SEO text, not product identity)
-ebayQuery:   "Assassin's Creed Black Flag Resynced Collector's Edition PS5",
+ebayQuery:   "Assassin\'s Creed Black Flag Resynced Collector\'s Edition PS5",
     images:      [],
     risk:        'Medium',
     ebayFee:     0.13,
     releaseDate: 'July 9, 2026',
     forceRating: 'GREEN',
     forceRisk:   '🟡 Medium',
-    contents:    "PS5 game disc | SteelBook | Edward Kenway figurine | Edward Kenway ring | collector's pin | poster | Master Assassin Character Pack (DLC) | Master Assassin Naval Pack (DLC) | Blackbeard's Crimson Pack (DLC pre-order bonus)",
+    contents:    "PS5 game disc | SteelBook | Edward Kenway figurine | Edward Kenway ring | collector\'s pin | poster | Master Assassin Character Pack (DLC) | Master Assassin Naval Pack (DLC) | Blackbeard\'s Crimson Pack (DLC pre-order bonus)",
     sellThrough: {
       flip:    { range: '$199.99 in → $300-330 flip = ~$61-88 net after fees', units: '1-2 units' },
       hold:    { range: 'SKIP — Ubisoft CEs restock post-launch, no long-term floor', units: 'N/A' },
@@ -1284,9 +1292,9 @@ ebayQuery:   "Assassin's Creed Black Flag Resynced Collector's Edition PS5",
   'ah-heavy': {
     label:      'Ascended Heroes Heavy Hitters Collection',
     category:   'pokemon',
-    set:        "Mega Evolution (Sam's Club Exclusive)",
+    set:        "Mega Evolution (Sam\'s Club Exclusive)",
     retail:     54.98,
-    retailNote: "Sam's Club · Item #13590524234",
+    retailNote: "Sam\'s Club · Item #13590524234",
     retailVerified: true,
     releaseUrl: 'https://www.samsclub.com/p/13590524234',
     rating:     'DBLGREEN',
@@ -1296,9 +1304,9 @@ ebayQuery:   "Assassin's Creed Black Flag Resynced Collector's Edition PS5",
     tcgId:      null,
     images:     [668496],
     ebayQuery:  'Ascended Heroes Heavy Hitters Collection',
-    // bulkBuy intentionally omitted — DBLGREEN default (250+) applies; Sam's 2/member limit noted in stockNote
+    // bulkBuy intentionally omitted — DBLGREEN default (250+) applies; Sam\'s 2/member limit noted in stockNote
     contents:  '~14 Ascended Heroes booster packs + oversized promo foil + promo cards + coin | 14 packs × $16.48 TCGPlayer pack market = ~$230 pack value',
-    stockNote: "Drops ~7/21/26 — TN Sam's getting 10 pallets | Stores: 2-3 pallets each",
+    stockNote: "Drops ~7/21/26 — TN Sam\'s getting 10 pallets | Stores: 2-3 pallets each",
     sellThrough: {
       flip:   { range: '$100 – $135', units: '~8 – 15 units' },
       hold:   { range: '$120 – $150', units: '~5 – 10 units' },
@@ -1307,11 +1315,11 @@ ebayQuery:   "Assassin's Creed Black Flag Resynced Collector's Edition PS5",
     risk:      '🟢 Low',
     ebayFee:   0.13,
     writeup: {
-      market:      "• Sam's exclusive removes Target/Walmart supply competition entirely\n• AH IP demand is the strongest Pokemon market signal of the current era\n• Prior Heavy Hitters exclusives (Brilliant Stars, Lost Origin) held $80-120 for 60-90 days — AH has higher ceiling",
+      market:      "• Sam\'s exclusive removes Target/Walmart supply competition entirely\n• AH IP demand is the strongest Pokemon market signal of the current era\n• Prior Heavy Hitters exclusives (Brilliant Stars, Lost Origin) held $80-120 for 60-90 days — AH has higher ceiling",
       product:     "• ~14 AH packs + oversized promo foil + promo cards + coin\n• Cost-per-pack ~$3.93 vs $16.48 TCGPlayer pack market — buyers rip for pack value alone\n• Sealed bundle AND individual pack breakout are both profitable exits",
       priceComp:   "• $55 retail vs $100-135 sealed market = 80-145% margin\n• 14 packs × $16.48 pack market = ~$230 pack value at $55 buy-in\n• Sealed premium is the easy play; pack breakout is the backup if sealed market softens",
-      supplyDemand:"• Sam's membership requirement caps buyer pool naturally\n• TN Sam's 10 pallets = regional signal — in-store before online is the move if local\n• 2-per-member limit; maximize all Sam's accounts before drop",
-      recs:        "• **Short term:** Drop day 7/21 — in-store pickup priority, flip sealed $110-130 within 2 weeks\n• **Long term:** Hold select units sealed to $140-175 as AH pack market sustains\n• Prep Sam's accounts NOW — add item #13590524234 to List today",
+      supplyDemand:"• Sam\'s membership requirement caps buyer pool naturally\n• TN Sam\'s 10 pallets = regional signal — in-store before online is the move if local\n• 2-per-member limit; maximize all Sam\'s accounts before drop",
+      recs:        "• **Short term:** Drop day 7/21 — in-store pickup priority, flip sealed $110-130 within 2 weeks\n• **Long term:** Hold select units sealed to $140-175 as AH pack market sustains\n• Prep Sam\'s accounts NOW — add item #13590524234 to List today",
     },
   },
 
@@ -1418,7 +1426,7 @@ const prod = { ...PRODUCTS[productKey] };
 
 // ── AUTO-DETECT category + build DB if category empty (NEW RULE) ──────────────
 // Any product with no category: detect from label/key, set category, save to dynamic-products.json.
-// If it's a TCG product, also run tcgProductSearch to get the product ID (saved for future runs).
+// If it\'s a TCG product, also run tcgProductSearch to get the product ID (saved for future runs).
 if (!prod.category) {
   const _lbl = `${prod.label ?? ''} ${productKey}`.toLowerCase();
   if (/one.piece|op-?\d{2}/i.test(_lbl)) {
@@ -1575,7 +1583,7 @@ if (!prod.retail && signals?.stockx?.msrp) {
   prod.retailVerified = true;
   prod.retailSource = `StockX MSRP — ${signals.stockx.urlKey ? `stockx.com/${signals.stockx.urlKey}` : 'stockx.com'}`;
   console.log(`  [retail-auto] StockX MSRP → $${prod.retail} (verified)`);
-  // Persist to dynamic-products.json so future runs don't re-probe
+  // Persist to dynamic-products.json so future runs don\'t re-probe
   if (existsSync(_dynamicPath)) {
     try {
       const _dp = JSON.parse(readFileSync(_dynamicPath, 'utf8'));
@@ -1636,7 +1644,7 @@ const _tgRaw  = signals?.target?.price  ?? null;
 const _azInS  = signals?.amazon?.inStock  ?? false;
 const _wmInS  = signals?.walmart?.inStock ?? false;
 const _tgInS  = signals?.target?.inStock  ?? false;
-// Detected retail: must be < ebayMedian * 0.8 (otherwise it's a secondary listing) AND > $1
+// Detected retail: must be < ebayMedian * 0.8 (otherwise it\'s a secondary listing) AND > $1
 const _ebayFloor = ebayMedian ?? Infinity;
 const detectedRetail = prod.retail
   ?? (_tgInS && _tgRaw  && _tgRaw  > 1 && _tgRaw  < _ebayFloor * 0.8 ? _tgRaw  : null)
@@ -1653,7 +1661,7 @@ const effectiveRetail = detectedRetail ?? prod.retail ?? null;
 let priorComp = null;
 const _curSold   = (signals?.ebay?.sold30 ?? 0) + (signals?.ebay?.sold90 ?? 0);
 const _isTCGcat  = ['pokemon','one_piece','other_tcg','mtg','lorcana'].includes((prod.category ?? '').toLowerCase());
-// Future-dated release: its OWN comps don't exist yet — eBay matches are prior versions.
+// Future-dated release: its OWN comps don\'t exist yet — eBay matches are prior versions.
 const _releaseFuture = (() => { const d = Date.parse(prod.releaseDate ?? ''); return Number.isFinite(d) && d > Date.now(); })();
 if (_isTCGcat && (!ebayMedian || _curSold < 3 || (prod.preRelease && _releaseFuture))) {
   const baseQ = (prod.siblingQuery ?? (prod.ebayQuery || prod.label || ''))
@@ -1690,7 +1698,7 @@ const tcgMarket   = tcg?.market ?? null;
 const sxRaw       = signals?.stockx ?? null;
 const sxSpreadBad = sxRaw?.lowestAsk && sxRaw?.highestBid && (sxRaw.lowestAsk - sxRaw.highestBid) / sxRaw.highestBid > 0.5;
 // sxTooHigh: only apply when eBay median is credible (>= 60% of retail = plausible box match).
-// If eBay median < 60% of retail, eBay likely matched packs/wrong-SKU — don't let it cap StockX.
+// If eBay median < 60% of retail, eBay likely matched packs/wrong-SKU — don\'t let it cap StockX.
 const _ebayCredible = !ebayMedian || !effectiveRetail || ebayMedian >= effectiveRetail * 0.7;
 const sxTooHigh   = _ebayCredible && ebayMedian && sxRaw?.price && sxRaw.price > ebayMedian * 1.5;
 const sxPrice     = (sxRaw?.price && !sxSpreadBad && !sxTooHigh) ? sxRaw.price : null;
@@ -1731,7 +1739,7 @@ try {
 
 // ── Chase cards from local tcgcsv DB ─────────────────────────────────────────
 // For any TCG category (pokemon/mtg/one_piece/lorcana/other_tcg), pull top 5 cards
-// by market price from the set's fullCardList in the local set-history DB.
+// by market price from the set\'s fullCardList in the local set-history DB.
 // Used in market analysis to surface the actual chase singles driving sealed demand.
 let dbChaseCards = [];
 try {
@@ -1835,7 +1843,7 @@ if (priceSources.length) {
 // Exception: if eBay sold data exists with real volume (sold30>5 OR sold90>10), product is
 // live on secondary — treat it as released regardless of the preRelease flag.
 const _ebayHasRealSales = (signals?.ebay?.sold30 > 5) || (signals?.ebay?.sold90 > 10) || (signals?.ebay?.count > 10);
-// A FUTURE-dated release can't have its OWN sold comps — eBay matches are prior versions/
+// A FUTURE-dated release can\'t have its OWN sold comps — eBay matches are prior versions/
 // pre-order asks, NOT this SKU. Never let those flip a confirmed-future pre-order to "released".
 // (_releaseFuture computed above near the prior-version comp block.)
 if (prod.preRelease && (_releaseFuture || !_ebayHasRealSales)) {
@@ -1843,7 +1851,7 @@ if (prod.preRelease && (_releaseFuture || !_ebayHasRealSales)) {
   marketNote = _releaseFuture ? 'pre-release — ships ' + prod.releaseDate + ', comp = prior versions' : 'pre-release — no verified sold comps';
 }
 // Pre-release with a prior-version comp: use that median as the PROJECTED market so the
-// tier/ROI compute off the appreciation template (clearly labeled — not this SKU's own sales).
+// tier/ROI compute off the appreciation template (clearly labeled — not this SKU\'s own sales).
 // Live prior-comp scrape is flaky, so fall back to a stored prod.projectedMarket anchor.
 if (!market && priorComp?.median) {
   market = priorComp.median;
@@ -1985,7 +1993,7 @@ const _hasNum = s => /\d/.test(s ?? '');
 const _band   = (a, b) => `$${Math.round(a).toLocaleString()} – $${Math.round(b).toLocaleString()}`;
 function _tier(t, lo, hi, useEbayBand) {
   if (!t || /^skip$/i.test(t.range ?? '') || _hasNum(t.range)) return t;   // leave SKIP + authored numbers
-  if (!market) return t;                                                    // no market → can't compute
+  if (!market) return t;                                                    // no market → can\'t compute
   const range = (useEbayBand && low && high) ? _band(low, high) : _band(market * lo, market * hi);
   return { ...t, range };
 }
@@ -2025,7 +2033,7 @@ const t14Ball      = t14Roi >= 25 ? '🟢' : t14Roi >= 10 ? '🟡' : '🔴';
 const t30Ball      = t30Roi >= 25 ? '🟢' : t30Roi >= 10 ? '🟡' : '🔴';
 
 // ── Compute rating dynamically (needs t30Roi + t30Market) ──────────────────────
-// Use scoring ROI (uses prod.retail even unverified) so rating isn't degraded by the display gate.
+// Use scoring ROI (uses prod.retail even unverified) so rating isn\'t degraded by the display gate.
 // t30 scoring uses _scoringCostBasis equivalent: pick best of t30Roi (scoring) or _scoringRoi.
 const _t30ScoringNet = (t30Market && _scoringCostBasis) ? (t30Market * (1 - ebayFee) - _scoringCostBasis) : null;
 const _t30ScoringRoi = (_t30ScoringNet != null && _scoringCostBasis) ? Math.round((_t30ScoringNet / _scoringCostBasis) * 100) : null;
@@ -2045,14 +2053,14 @@ riskDisplay = _riskSuffix ? `${riskLabelEarly} · ${_riskSuffix}` : riskLabelEar
 
 // ── Tier-adjusted send rating ─────────────────────────────────────────────────
 // Set tier (S+/S/A/B/C/D) from category DB overrides send rating when they conflict.
-// S+/S  → floor at GREEN  (proven set — can't be ORANGE/RED unless forced)
+// S+/S  → floor at GREEN  (proven set — can\'t be ORANGE/RED unless forced)
 // A     → floor at ORANGE
-// D     → cap  at ORANGE  (weak history — can't be DBLGREEN/GREEN)
+// D     → cap  at ORANGE  (weak history — can\'t be DBLGREEN/GREEN)
 // forceRating always wins over tier adjustment.
 const _catScore  = prod.category !== 'pokemon' ? categorySetScore(prod) : null;
 const _catTier   = _catScore ? categoryTierOf(_catScore.score) : null;
 
-// Pre-compute Pokemon set tier outside IIFE so it's available for _tierLabel
+// Pre-compute Pokemon set tier outside IIFE so it\'s available for _tierLabel
 // Uses computeSetScore (with live signals) to match what setComparison displays.
 // Must run AFTER signals are gathered (deepResearch complete).
 let _pokeTierOuter = null;
@@ -2180,7 +2188,7 @@ fields.push({ name: '📈 Current Profitability',     value: prod.profitNow  ?? 
 fields.push({ name: '📊 Long Term Profit (T+30)',   value: prod.profitLong ?? (_t30NetDisp != null ? `${_t30BallDisp} ${fmt$(_t30NetDisp)}/unit | ${fmt$(t30Market || market)} Est Sale` : (t30Market ? `${fmt$(t30Market)} Est Sale` : '`In price discovery`')),  inline: true });
 
 
-// Dynamic supply-risk line — varies by THIS product's reprint risk + hold horizon, not a
+// Dynamic supply-risk line — varies by THIS product\'s reprint risk + hold horizon, not a
 // static sentence. The MPG-2028 capacity catalyst only matters to a genuine long hold.
 const PRINT_RISK = (() => {
   const rr = ratingResult?.reprintRisk;
@@ -2366,7 +2374,7 @@ function receptionTier(s, ipStrength = 50) {
 
   // ── IP-strength blend ────────────────────────────────────────────────────────
   // Thin/quiet chatter under-reads strong-anchor sets. When chatter is NOT strongly
-  // negative, floor the tier by the set's IP strength so an S/S+ anchor (Charizard,
+  // negative, floor the tier by the set\'s IP strength so an S/S+ anchor (Charizard,
   // Eeveelutions) is never labelled "filler" just because a maturing set is quiet.
   const stronglyNegative = neg >= 3 && neg > hype;
   const ipFloor = ipStrength >= 85 ? 'hot' : ipStrength >= 70 ? 'warm' : ipStrength >= 55 ? 'neutral' : null;
@@ -2438,7 +2446,7 @@ function setComparison(prod, signals, liveMultiple) {
   if (!me) return null;
   const sc = computeSetScore(me, signals, liveMultiple);
   const myTier = tierOf(sc.score);
-  // Compare only within same category/scale; skip vintage + skip sets whose name appears in current set's name (same-series)
+  // Compare only within same category/scale; skip vintage + skip sets whose name appears in current set\'s name (same-series)
   const others = Object.entries(SET_SCORES)
     .filter(_validEntries)
     .filter(([k]) => k !== setKey && !(prod.set?.includes(k)) && !(prod.label?.includes(k)))
@@ -2591,7 +2599,7 @@ function generateAdvancedSections(prod, signals, market, feedIntel, docsCtx) {
       if (matchingCheckouts.length > 0) {
         lines.push(`• **Live Checkout Activity:** **${matchingCheckouts.length} confirmed checkouts** via 🤖checkout-feed in past 24h — active bot/manual copping confirms real demand`);
       }
-      // No match → DROP. Never inject an unrelated product's checkout velocity as a demand driver.
+      // No match → DROP. Never inject an unrelated product\'s checkout velocity as a demand driver.
     }
     if (lines.length) demandDrivers = lines.join('\n');
   }
@@ -2732,14 +2740,14 @@ function generateWriteup(prod, signals, market, roi, t30Market, t30Roi, computed
 
   // Retail availability line
   const retailLine = retailInStock
-    ? `Still on shelves — retail supply compressing secondary; premium won't form until shelves clear`
+    ? `Still on shelves — retail supply compressing secondary; premium won\'t form until shelves clear`
     : `OOS at retail — secondary is the only source. Allocations fully absorbed`;
 
   // Secondary price momentum line
-  // isEstablished: product has a release date that's clearly in the past (not upcoming, not a discord timestamp)
+  // isEstablished: product has a release date that\'s clearly in the past (not upcoming, not a discord timestamp)
   const isEstablished = !isUpcoming && prod.releaseDate && !prod.releaseDate.includes('<t:');
   const momentumLine = priceTrendLabel === 'rising'  ? `Secondary moving up — floor is in, buyers paying more. Buy window is narrowing`
-    : priceTrendLabel === 'falling' ? `Secondary drifting down — confirm floor before adding units. Don't catch a falling knife`
+    : priceTrendLabel === 'falling' ? `Secondary drifting down — confirm floor before adding units. Don\'t catch a falling knife`
     : priceTrendLabel === 'stable'  ? `Secondary is stable — floor established at ${fmt$(ebayMedian ?? market ?? 0)}. Upside comes as remaining supply absorbs`
     : isUpcoming ? `Pre-release pricing forming — wait for Day 1 secondary to find the real floor, not pre-order speculation`
     : isEstablished ? `Secondary mature — product has been on market long enough for price discovery to be complete; current ${fmt$(market ?? 0)} reflects real demand floor`
@@ -2753,14 +2761,14 @@ function generateWriteup(prod, signals, market, roi, t30Market, t30Roi, computed
   // ── Market Analysis ────────────────────────────────────────────────────────────
   // Structure: Reception · Lifecycle · Volume · Secondary (ONE aggregated line) · Print Run
   const mkt = [];
-  // Set's anchor IP + strength — blends into reception so strong-IP sets aren't mislabelled in quiet windows
+  // Set\'s anchor IP + strength — blends into reception so strong-IP sets aren\'t mislabelled in quiet windows
   const scoreRec  = SET_SCORES[Object.keys(SET_SCORES).filter(k => prod.set?.includes(k) || prod.label?.includes(k)).sort((a,b)=>b.length-a.length)[0] ?? ''];
   const ipStr     = ipStrengthFor(scoreRec ?? {});
   const reception = receptionTier(s, ipStr);
   const lifecycle = setLifecycle(prod);
 
   // 1) Overall Pokemon TCG market + how THIS named set fits — generated PER-RUN from
-  //    this product's live signals (no static macro string). Volume → sentiment → trend.
+  //    this product\'s live signals (no static macro string). Volume → sentiment → trend.
   const fit = reception.tier === 'negative' ? 'lagging the market' : reception.tier === 'hot' ? 'riding the wave' : 'tracking in line';
   const _pulseSent = (s.reddit?.sentiment ?? 0) * 1.5 + (s.x?.sentiment ?? 0) + (s.discord?.sentiment ?? 0) * 1.5 + (s.instagram?.sentiment ?? 0) + (s.facebook?.sentiment ?? 0);
   const _pulseVol  = s.ebay?.sold30 ?? s.ebay?.sold90 ?? null;
@@ -2795,7 +2803,7 @@ function generateWriteup(prod, signals, market, roi, t30Market, t30Roi, computed
 
   // 5) Retail-on-shelves ONLY when actually sitting at retail price (Journey Together case)
   if (retailInStock) {
-    mkt.push(`• Still on shelves at retail — supply suppressing secondary; premium won't form until shelves clear`);
+    mkt.push(`• Still on shelves at retail — supply suppressing secondary; premium won\'t form until shelves clear`);
   }
 
   // 6) JP leading indicator (Pokemon only — JP sets release 3-6mo before EN, secondary = forward demand signal)
@@ -2875,7 +2883,7 @@ function generateWriteup(prod, signals, market, roi, t30Market, t30Roi, computed
     // or scraped contents — never a category-hardcoded prose template. If absent, the stub stays
     // factual (config + scenarios) and flags that contents research is required.
     if (!productWriteup) {
-      prd.push(`• **Contents/why: RESEARCH REQUIRED** — populate writeup.product with THIS SKU's actual contents (chase cards, what's inside) + why buy/not. No generic template.`);
+      prd.push(`• **Contents/why: RESEARCH REQUIRED** — populate writeup.product with THIS SKU\'s actual contents (chase cards, what\'s inside) + why buy/not. No generic template.`);
     }
 
     if (signals?.youtube?.titles?.length) {
@@ -2919,7 +2927,7 @@ function generateWriteup(prod, signals, market, roi, t30Market, t30Roi, computed
       const catLc  = (prod.category ?? '').toLowerCase();
       const lblLc  = (prod.label ?? '').toLowerCase();
       // Projection mode: an unreleased SKU has NO own comps — every eBay number here is a
-      // PRIOR-VERSION match, never this product's. Must be labeled as such, never as its own.
+      // PRIOR-VERSION match, never this product\'s. Must be labeled as such, never as its own.
       const _isProjection = prod.preRelease && (() => { const d = Date.parse(prod.releaseDate ?? ''); return Number.isFinite(d) && d > Date.now(); })();
 
       // Resolve retail: prefer authored, fallback to in-stock retail signals
@@ -2958,7 +2966,7 @@ function generateWriteup(prod, signals, market, roi, t30Market, t30Roi, computed
       let mechanic   = '';
       let holdRisk   = '';
       let ceilingNote = '';
-      // Live anchors — never bake MSRP/multiples into prose; pull from this product's data.
+      // Live anchors — never bake MSRP/multiples into prose; pull from this product\'s data.
       const msrpC = r$ ? `${r$} MSRP` : 'MSRP pending verification';
       const multC = (mult && m$) ? `currently ${m$} (${mult}× retail)` : (m$ ? `currently ${m$}` : 'no secondary print yet');
 
@@ -2969,11 +2977,11 @@ function generateWriteup(prod, signals, market, roi, t30Market, t30Roi, computed
           ceilingNote = ``;
         } else if (isBoosterBox) {
           mechanic    = `Lorcana booster box (${msrpC}); ${multC}. Ravensburger reprints each chapter — primary play is flip within 30-60 days of release, not a hold.`;
-          holdRisk    = `Reprint mechanic is structural — every prior chapter reprinted within ~6 months. Hold thesis only with a confirmed print cap; compare against this set's prior-chapter post-reprint floor in the DB.`;
+          holdRisk    = `Reprint mechanic is structural — every prior chapter reprinted within ~6 months. Hold thesis only with a confirmed print cap; compare against this set\'s prior-chapter post-reprint floor in the DB.`;
           ceilingNote = ``;
         } else if (isTrove || isGiftSet || isStarter) {
           const kind = isTrove ? 'Illumineer\'s Trove' : isGiftSet ? 'Gift Set/Box' : 'Collection Starter Set';
-          mechanic    = `Lorcana ${kind} (${msrpC}); ${multC}. Confirm THIS product's exclusive contents — troves/gift sets often carry chase cards or accessories NOT in a display box or blister; value tracks those exclusives, not generic box odds.`;
+          mechanic    = `Lorcana ${kind} (${msrpC}); ${multC}. Confirm THIS product\'s exclusive contents — troves/gift sets often carry chase cards or accessories NOT in a display box or blister; value tracks those exclusives, not generic box odds.`;
           holdRisk    = `Ravensburger reprints chapters within ~6 months; only product-exclusive cards (verify the contents list) hold a premium past reprint. No exclusive = no hold.`;
         } else {
           mechanic    = `Lorcana sealed (${msrpC}); ${multC}. Ravensburger prints to demand — no scarcity unless confirmed OOP. Identify the exact product (box/pack/gift/trove) — contents differ.`;
@@ -2998,7 +3006,7 @@ function generateWriteup(prod, signals, market, roi, t30Market, t30Roi, computed
         const isGiftBundle= /gift bundle|bundle/i.test(lblLc);
         const isPlayBox   = /play box|play booster/i.test(lblLc);
         // MTG value drivers: serialization (drives hype), playability/design, set reception.
-        const likeHook = `Analyze the SET — what people actually like (serialization, playable cards, design); a set with no serialization can still run if it's playable (e.g. Edge of Eternities CBB $500-600).`;
+        const likeHook = `Analyze the SET — what people actually like (serialization, playable cards, design); a set with no serialization can still run if it\'s playable (e.g. Edge of Eternities CBB $500-600).`;
         if (isSL) {
           mechanic    = `Magic Secret Lair (${msrpC}) — LIMITED PRINT RUN since Feb 2026 (no longer print-on-demand); ${multC}. Crossover/licensed IP = strongest hold; original art = weakest (often below MSRP).`;
           holdRisk    = `IP-driven: non-licensed SLs often sit below MSRP; licensed/crossover can run multiples. Confirm which before sizing.`;
@@ -3052,7 +3060,7 @@ function generateWriteup(prod, signals, market, roi, t30Market, t30Roi, computed
         const projMult = (projMed && retailPrice) ? `${(projMed / retailPrice).toFixed(1)}× ${r$} MSRP` : '';
         const srcStr = pc ? `prior line "${pc.query}" — median $${pc.median} across ${pc.count} sold ($${pc.low}–$${pc.high})`
                           : (prod.projectedNote ?? `prior volumes of this line`);
-        autoMkt.push(`• **Thesis — PRE-ORDER, ships ${prod.releaseDate}; NO vol.7 comps exist yet:** ${mechanic} Pricing below is a PROJECTION off ${srcStr} — NOT this SKU's own sales. On that comp, prior vols run ~$${Math.round(projMed)} (${projMult}). Treat as the template until vol.7's own Day-1 sales land.`);
+        autoMkt.push(`• **Thesis — PRE-ORDER, ships ${prod.releaseDate}; NO vol.7 comps exist yet:** ${mechanic} Pricing below is a PROJECTION off ${srcStr} — NOT this SKU\'s own sales. On that comp, prior vols run ~$${Math.round(projMed)} (${projMult}). Treat as the template until vol.7\'s own Day-1 sales land.`);
       } else if (m$ && r$) {
         const trendClause = priceTrendLabel === 'rising'
           ? 'Floor is in — price rising; buy window narrowing.'
@@ -3068,7 +3076,7 @@ function generateWriteup(prod, signals, market, roi, t30Market, t30Roi, computed
       } else if (prod._priorComp) {
         const pc = prod._priorComp;
         const pcMult = retailPrice ? ` (${(pc.median / retailPrice).toFixed(1)}× a ${r$} MSRP)` : '';
-        autoMkt.push(`• **Thesis — prior-version comp (no current sold data):** ${mechanic} This release has no sold comps yet, so pricing reads off the prior line "${pc.query}": median **$${pc.median}**${pcMult} across ${pc.count} sold ($${pc.low}–$${pc.high}). Treat as the appreciation template until this SKU's own Day-1 sales land.`);
+        autoMkt.push(`• **Thesis — prior-version comp (no current sold data):** ${mechanic} This release has no sold comps yet, so pricing reads off the prior line "${pc.query}": median **$${pc.median}**${pcMult} across ${pc.count} sold ($${pc.low}–$${pc.high}). Treat as the appreciation template until this SKU\'s own Day-1 sales land.`);
       } else {
         autoMkt.push(`• **Thesis:** ${mechanic} No current sold data and no prior-version line found — re-run after Day 1 sales, or set a siblingQuery to anchor the comp.`);
       }
