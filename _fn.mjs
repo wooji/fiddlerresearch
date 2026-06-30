@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-const TOKEN=(readFileSync('.env','utf8').match(/DISCORD_USER_TOKEN=(.*)/)||[])[1].trim().replace(/['"\r]/g,'');
+const TOKEN=((readFileSync('.env','utf8').match(/DISCORD_USER_TOKEN=(.*)/)||[])[1]||'').trim().replace(/['"\r]/g,'');
 const MSG='1518634811059736596'; const G='1501306268827123712'; const H={headers:{Authorization:TOKEN}};
 const chs = await (await fetch(`https://discord.com/api/v10/guilds/${G}/channels`,H)).json();
 console.log('NOWARE channels:', chs.map(c=>`${c.name}(${c.type})`).join(', '));

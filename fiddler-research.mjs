@@ -3276,7 +3276,7 @@ if (process.env.DASHBOARD_MODE === '1') {
   if (CHANNEL_ID) {
     r = await fetch(`https://discord.com/api/v9/channels/${CHANNEL_ID}/messages`, {
       method:  'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': env.DISCORD_BOT_TOKEN ? `Bot ${env.DISCORD_BOT_TOKEN}` : env.DISCORD_USER_TOKEN },
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bot ${env.DISCORD_BOT_TOKEN}` },
       body:    JSON.stringify({ embeds }),
     });
   } else {
