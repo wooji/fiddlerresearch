@@ -9,6 +9,9 @@ Market research agent for Christopher (Jester) — resellable goods: Pokemon TCG
 - Webhook URL: in `hook-reader/.env` → `EXTERNAL_WEBHOOK_URL`
 - Discord user token: `hook-reader/.env` → `DISCORD_USER_TOKEN`
 
+## Lessons
+- @.claude/lessons.md — jester-specific mistake log. Read before any research/pipeline/embed work. Append on every mistake.
+
 ## Start of Every Session
 0. Read `fiddler-analysis-handbook.txt` (repo) — AUTHORITATIVE guidelines. Obey every section, map each to its embed title (product ranges, research strategy, S/A/B/C/PASS+PURPLE tiering, per-category Market+Sentiment). Memory mirror: `memory/fiddler_analysis_handbook.md`.
 1. Read `memory/session_state.md`

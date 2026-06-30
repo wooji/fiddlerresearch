@@ -2366,20 +2366,28 @@ function staticSetScore(setRec) {
 
 // ── Set vs comparable sets (data-derived score comparison) ────────────────────
 function setComparison(prod, signals, liveMultiple) {
-  const setKey = Object.keys(SET_SCORES).filter(k => prod.set?.includes(k) || prod.label?.includes(k)).sort((a,b)=>b.length-a.length)[0];
+  // Skip vintage entries; prefer _dbKey for direct lookup
+  const _validEntries = ([k, v]) => v?.scale !== 'vintage';
+  const setKey = prod._dbKey && SET_SCORES[prod._dbKey]
+    ? prod._dbKey
+    : Object.entries(SET_SCORES).filter(_validEntries).map(([k]) => k)
+        .filter(k => prod.set?.includes(k) || prod.label?.includes(k))
+        .sort((a,b)=>b.length-a.length)[0];
   const me = SET_SCORES[setKey];
   if (!me) return null;
   const sc = computeSetScore(me, signals, liveMultiple);
   const myTier = tierOf(sc.score);
+  // Compare only within same category/scale; skip vintage + skip sets whose name appears in current set's name (same-series)
   const others = Object.entries(SET_SCORES)
-    .filter(([k]) => k !== setKey)
+    .filter(_validEntries)
+    .filter(([k]) => k !== setKey && !(prod.set?.includes(k)) && !(prod.label?.includes(k)))
     .map(([k, v]) => { const s = staticSetScore(v); return { k, ...v, score: s, tier: tierOf(s) }; });
   const stronger = others.filter(o => o.score > sc.score).sort((a,b)=>a.score-b.score)[0];
   const weaker   = others.filter(o => o.score < sc.score).sort((a,b)=>b.score-a.score)[0];
   const lbl = o => `${o.k} (${o.tier} Tier, ${o.score}/100)`;
   const lines = [
     `• **Set Score ${sc.score}/100 → ${myTier} Tier**`,
-    `• ${me.note}`,
+    ...(me.note ? [`• ${me.note}`] : []),
   ];
   if (stronger) lines.push(`• Weaker than ${lbl(stronger)} — ${(stronger.note ?? '').split('.')[0]}`);
   if (weaker)   lines.push(`• Stronger than ${lbl(weaker)}`);
@@ -3154,7 +3162,9 @@ if (writeup) {
 // Records the live sold median + running-max multiple per set, so the comparison
 // DB self-populates with REAL eBay-sold data over time instead of estimates.
 try {
-  const persistKey = Object.keys(SET_SCORES).filter(k => prod.set?.includes(k) || prod.label?.includes(k)).sort((a,b)=>b.length-a.length)[0];
+  const persistKey = prod._dbKey && SET_SCORES[prod._dbKey]
+    ? prod._dbKey
+    : Object.keys(SET_SCORES).filter(k => SET_SCORES[k]?.scale !== 'vintage' && (prod.set?.includes(k) || prod.label?.includes(k))).sort((a,b)=>b.length-a.length)[0];
   const soldMed = signals?.ebay?.soldMedian30 ?? signals?.ebay?.median ?? null;
   if (persistKey && market && prod.retail && _setScoresRaw.sets?.[persistKey]) {
     const liveMult = +(market / prod.retail).toFixed(2);
