@@ -63,6 +63,87 @@ function readDocsContext(category) {
 const _dynamicPath = join(ROOT, 'dynamic-products.json');
 const _dynamic = existsSync(_dynamicPath) ? JSON.parse(readFileSync(_dynamicPath, 'utf8')) : {};
 const PRODUCTS = { ..._dynamic, ...{
+  'pitch-black-pc-etb': {
+    label:      'Pokémon TCG: ME05 Pitch Black Pokémon Center Elite Trainer Box',
+    category:   'pokemon',
+    set:        'Pitch Black',
+    retail:     59.99,
+    retailNote: 'Pokemon Center (exclusive)',
+    releaseDate: '2026-07-17',
+    releaseUrl: 'https://www.tcgplayer.com/product/692949',
+    preRelease:  true,
+    forceRating: 'DBLGREEN',
+    forceRisk:   '🟢 Low — Sold out at launch, eBay presales ~$200 vs $60 retail. Limited Pokemon Center allocation, no restock expected.',
+    tcgId:       692949,
+    ebayQuery:   'Pokemon Pitch Black Pokemon Center Elite Trainer Box sealed',
+    contents:    '11 booster packs + Zarude stamped promo card (PC exclusive) + accessories | Limited Pokemon Center allocation',
+    sellThrough: {
+      flip:   { range: '$170 – $230', units: '~50 – 100 units (launch window; presale already $200)' },
+      hold:   { range: '$300 – $450', units: '~25 – 50 units (3-6mo; ME04 PC ETB $999)' },
+      invest: { range: '$450+',       units: '~10 – 25 units (12mo+, if ME series appreciation holds)' },
+    },
+    bulkBuy:   '50+ units',
+    risk:      '🟢 Low',
+    ebayFee:   0.13,
+    evidence: [
+      { source: 'YouTube: Ross (PC ETB sold out video)', date: '2026-06-30', point: 'PC ETB sold out at Pokemon Center launch. eBay presales $135-200 (US) vs $60 retail. "Largely unavailable" post-launch. No restock expected.' },
+      { source: 'TCGCSV (verified)', date: '2026-06-30', point: 'PC ETB TCGPlayer market $520 (ask-side, pre-release). TCGId 692949 confirmed.' },
+      { source: 'Sibling comps', date: '2026-06-30', point: 'ME04 PC ETB: $999 | ME: AH PC ETB: $490 | ME03 PC ETB: $133. Pitch Black PC ETB base case $300-450.' },
+    ],
+    scenarios: [
+      { label: 'Bear', prob: 15, text: 'Darkrai IP underperforms; PC ETB demand stays near eBay presale levels. Settles $140-180 (ME03 PC ETB trajectory: $133).' },
+      { label: 'Base', prob: 55, text: 'Strong flip window: presale $200 → launch settles $220-280. Hold to $350-450 in 3mo. ME: AH PC ETB ($490) is the base case comp.' },
+      { label: 'Bull', prob: 30, text: 'Akira Agawa Mega Darkrai card goes viral post-release → retroactive demand surge. PC ETB $600-900+ in 6mo. ME04 PC ETB ($999) is achievable if set resonates.' },
+    ],
+    writeup: {
+      market:      '• **Thesis — DBLGREEN: Pokemon Center exclusive, sold out at launch, 3× retail on presale.** PC ETBs at launch: sold out within hours per YouTube (Ross). eBay presales: $165-200 vs $60 retail = immediate 2.7-3.3× flip. TCGPlayer market $520 (ask-heavy, pre-release). No Pokemon Center restock expected (consistent with ME series pattern).\n• **Comp: ME04 PC ETB $999 | ME: AH PC ETB $490 | ME03 PC ETB $133.** Pitch Black PC ETB sits between ME03 (weak, no chase) and ME04 (Charizard). Akira Agawa Mega Darkrai SIR anchors demand above ME03 floor. Base target: $350-450 by October.\n• **Liquidity:** PC ETBs sell through immediately — both because of the stamped Zarude promo and because they cannot be restocked. Buy window = retail only (closed). Any allocation you have is at 3× retail minimum.',
+      product:     '• **Contents:** 11 packs (2 more than regular) + Zarude stamped promo (PC-exclusive logo stamp) + accessories\n• **Packaging:** Different from regular ETB (slightly different box art per YouTube)\n• **What makes it special:** Pokemon Center stamp on promo = collector premium; strictly limited allocation; no restock path\n• **Promo card:** Zarude (regular ETB has unstamped Zarude; PC version has PC-logo stamped version)\n• **Set context:** ME05 Pitch Black — Mega Darkrai focused, Akira Agawa SIR, Morpeko SIR, Hyperspace Luminose theme from Pokemon Legends ZA DLC',
+      priceComp:   '• ME04: Chaos Rising PC ETB: $999 (current market) — had Charizard\n• ME: Ascended Heroes PC ETB: $490 (current market)\n• ME03: Perfect Order PC ETB: $133 (weak, no top chase)\n• Pitch Black PC ETB presale: $165-200 eBay (US) | $520 TCGPlayer asks\n• Base case exit: $300-450 by 3 months post-release (October 2026)',
+      supplyDemand:'• **Supply:** Sold out at Pokemon Center, no restock expected. Fixed supply — every unit is permanently scarce. Secondary market is the only source post-launch.\n• **Demand:** PC ETB demand proven by immediate sellout. Stamped promo appeals to sealed collectors and promo completionists. ME series has consistent PC ETB demand ($133-999 across 4 sets).',
+      recs:        '• **If you have retail allocation:** DBLGREEN hold for 3-6mo ($350-450 target). Flip presale is profitable but you sacrifice the $300+ upside.\n• **If buying secondary:** eBay presale ~$200 = still profitable at base case ($350-450). Don\'t overpay above $250 for flip; hold thesis only above $250.\n• **Priority:** PC ETB > regular ETB on any given unit budget. PC ETB fixed supply; regular ETB may reprint within ME series reprint windows.',
+    },
+  },
+  'pitch-black-etb': {
+    label:      'Pokémon TCG: ME05 Pitch Black Elite Trainer Box',
+    category:   'pokemon',
+    set:        'Pitch Black',
+    retail:     59.99,
+    retailNote: 'Target / Walmart',
+    releaseDate: '2026-07-17',
+    releaseUrl: 'https://www.tcgplayer.com/product/692947',
+    preRelease:  true,
+    forceRating: 'GREEN',
+    forceRisk:   '🟡 Medium — Darkrai IP polarizes community; but PC ETB sold out fast + Akira Agawa SIR = legitimate chase anchor',
+    tcgId:       692947,
+    ebayQuery:   'Pokemon Pitch Black Elite Trainer Box sealed',
+    contents:    '9 booster packs + accessories | Zarude promo | Dark/gothic theme tied to Pokemon Legends ZA Mega Dimension DLC',
+    pcExclusive: { label: 'PC Exclusive ETB', tcgId: 692949, note: 'Zarude stamped promo, 2 extra packs. Sold out at launch, eBay presales ~$200 vs $60 retail. TCGPlayer market $520 (ask-side). DBLGREEN target.' },
+    sellThrough: {
+      flip:   { range: '$130 – $180', units: '~100 – 200 units (launch window)' },
+      hold:   { range: '$180 – $250', units: '~50 – 100 units (3-6mo)' },
+      invest: { range: '$250+',       units: '~25 – 50 units (12mo+, if Akira Agawa SIR drives chase demand)' },
+    },
+    bulkBuy:   '100+ units',
+    risk:      '🟡 Medium',
+    ebayFee:   0.13,
+    evidence: [
+      { source: 'TCGCSV (verified)', date: '2026-06-30', point: 'Regular ETB TCGPlayer market $159.95 (presale), PC ETB $520. 23 sealed products in set. Releases 2026-07-17.' },
+      { source: 'YouTube: Ross (PC ETB sold out video)', date: '2026-06-30', point: 'PC Pitch Black ETBs sold out at Pokemon Center launch. eBay presales ~$200 vs $60 retail = 3.3× before release. Tight allocation confirmed. Creator: "not cheap, far from retail."' },
+      { source: 'YouTube: Phil (investment guide)', date: '2026-06-30', point: 'Mega Darkrai SIR by Akira Agawa (drew Crown Zenith gold VSTARs) = primary chase. Morpeko SIR unique gothic graffiti art. Creator: "Lost Origin vibes — started cold, ran hard." Tight allocation per separate allocation video.' },
+    ],
+    scenarios: [
+      { label: 'Bear', prob: 20, text: 'Darkrai IP underperforms — community stays cold. Allocation eases post-launch. ETB settles $90-110 (ME03: Perfect Order trajectory at $71).' },
+      { label: 'Base', prob: 55, text: 'Akira Agawa Mega Darkrai SIR drives chase demand post-release. ETB $160-220 at launch, holds $180 floor 3mo (between ME03 $71 and ME04 $355). PC ETB $250-350.' },
+      { label: 'Bull', prob: 25, text: 'Lost Origin pattern: cold launch → Akira Agawa card goes viral → retroactive demand. ETB $250-300, PC ETB $400-500 within 6mo. ME04 Chaos Rising comp ($355 ETB) if Darkrai resonates post-play.' },
+    ],
+    writeup: {
+      market:      '• **Thesis — GREEN: Legitimate chase anchor + PC ETB sold out = controlled risk.** Mega Darkrai SIR by Akira Agawa (Crown Zenith gold VSTAR artist) is the primary demand driver. Community initially cool on Darkrai IP, but Akira Agawa cards consistently command $50-200+ premiums and have a dedicated collector base. PC ETB already sold out at launch — eBay presales $200 vs $60 retail (3.3× pre-release). Regular ETB presale market $159.95 (TCGCSV).\n• **Comp: ME04 Chaos Rising ETB $355 / ME03 Perfect Order ETB $71.** Pitch Black lacks ME04\'s Charizard but has a stronger IP anchor than ME03. "Lost Origin vibes" (Phil, YouTube) — that set started cold, Gengar/Giratina art drove late demand. Morpeko SIR (gothic graffiti) may be the sleeper hit.\n• **Liquidity:** PC ETB sells through immediately (3× pre-release demand confirmed). Regular ETB has strong eBay velocity within ME series context. Tight allocation = compressed supply window.',
+      product:     '• **Set:** ME05 Pitch Black — 5th expansion of Mega Evolution era, tied to Pokemon Legends ZA Mega Dimension DLC (Hyperspace Luminose area)\n• **ETB:** 9 packs + Zarude promo card + accessories | PC ETB: 11 packs + Zarude stamped promo + different packaging\n• **Theme:** Dark/gothic — Darkrai, Gengar Line (premium checklane), Luxray Line. Black booster box design (consistent across ME era, limits display appeal).\n• **Chase cards:** (1) Mega Darkrai SIR (Akira Agawa — biggest pull) (2) Mega Darkrai Hyper Rare (3) Morpeko SIR — unique dark/graffiti art, underrated (4) Mega Zeraora SIR (5) Mega Chandelure SIR (6) Gwin SIR (trainer)\n• **Risk flag:** Darkrai is polarizing — "Who likes Darkrai?" community reaction. Black box design doesn\'t photograph well for display collectors.',
+      priceComp:   '• ME04: Chaos Rising (released 5/22): regular ETB $355 | PC ETB $999 — best comp but had Charizard\n• ME03: Perfect Order (released 3/27): regular ETB $71 | PC ETB $133 — weak, no top chase\n• ME: Ascended Heroes (released 1/30): regular ETB $174 | PC ETB $490 — midpoint comp\n• Pitch Black presale: regular ETB $159 (TCGCSV), PC ETB $200 (eBay) / $520 (TCGPlayer asks)\n• Base case range: regular ETB $180-220 post-launch; PC ETB $250-350',
+      supplyDemand:'• **Supply:** Allocation reported as "shocking" (tight per YouTube video title). PC ETB sold out at Pokemon Center within hours of listing. Standard ETB: normal retailer allocation expected but ME era sets show consistent sell-through at Target/Walmart.\n• **Demand:** PC ETB pre-order demand confirms scalper/flipper interest despite lukewarm Darkrai sentiment. Akira Agawa fan base drives single-card demand → forces box cracking → absorbs sealed supply. ME series has maintained consistent sealed demand through ME01-ME04.',
+      recs:        '• **Short term (launch):** PC ETB = primary target (sold out, $200 presale = already profitable if you have allocation). Regular ETB: buy retail, flip $130-175 in first 2 weeks.\n• **Medium term (3-6mo):** Hold 20-30% of regular ETBs for $180-220 if Akira Agawa card validates. PC ETB hold to $300-400.\n• **Risk management:** This is GREEN not DBLGREEN. If Darkrai sentiment stays cold at release, exit regular ETBs quickly (first 2 weeks). Don\'t over-allocate vs ME04.',
+    },
+  },
   '30th-etb': {
     label:      'Pokémon TCG 30th Celebration Elite Trainer Box',
     category:   'pokemon',
@@ -1650,6 +1731,7 @@ try {
 // Japanese sets release 3-6mo before English counterparts.
 // JP secondary market = forward signal for EN sealed demand.
 // Rule: JP >2× retail = strong IP signal → EN sealed likely to run; JP at/below retail = weak IP → EN likely soft.
+const isPokemon = prod.set?.toLowerCase().includes('mega evolution') || prod.set?.toLowerCase().includes('sv') || prod.set?.toLowerCase().includes('pokemon') || prod.label?.toLowerCase().includes('pokémon') || prod.label?.toLowerCase().includes('pokemon') || prod.category === 'pokemon';
 let jpLeadSignal = null;
 if (isPokemon) {
   try {
@@ -2045,7 +2127,7 @@ const PRINT_RISK = (() => {
     ? '⚠️ *Hold thesis: fixed print supports the floor near-term, but Millennium Print Group\'s 1.27M sqft NC plant scales domestic capacity ~late 2028 — trim 12+ month holds before that supply lands.*'
     : '';
 })();
-const isPokemon = prod.set?.toLowerCase().includes('mega evolution') || prod.set?.toLowerCase().includes('sv') || prod.set?.toLowerCase().includes('pokemon') || prod.label?.toLowerCase().includes('pokémon') || prod.label?.toLowerCase().includes('pokemon');
+// isPokemon declared earlier (before JP Leading Indicator block)
 
 // ── Generate writeup from live signals (overrides static writeup when data available) ─
 // ── Per-set intel: IP tier, trajectory, sentiment context ─────────────────────
