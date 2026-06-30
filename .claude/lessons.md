@@ -2,6 +2,10 @@
 
 Standing rule: append `[YYYY-MM-DD] mistake -> cause -> rule` on every mistake. Read before similar work.
 
+- [2026-06-30] FORCRATING MISUSE — WRONG RATING POISONS WRITEUP: pinned `forceRating:'ORANGE'` on dr-etb (S-tier, 177% ROI) because old pipeline had bad data → sent LIGHT SEND on a MEGA SEND product. Rule: `forceRating` is ONLY valid when retail+market are verified but pipeline has a specific data-gap (e.g. dollarVolume=0 from scrape miss). Never use to override a correct engine output. If pipeline data is unreliable and you can't fix the source, output "Lookup Error" — never pin a random rating.
+
+- [2026-06-30] EBAY SOLD DATA MISSING → LIQUIDITY FLOOR FIRES: `sold30/sold90 n/a` → `dollarVolume=0` → liquidity floor at line 1181 caps GREEN/DBLGREEN → YELLOW → tier-floor lifts to GREEN only. Product had real massive volume (49 active listings, 160+ unit bid wall) but scraper returned no sold counts. Fix: when retail+market both verified and product is 6mo+ released with known volume, add `forceRating:'DBLGREEN'` + `retailVerified:true` as pipeline-gap override (not a judgment call).
+
 - [2026-06-28] WRONG-SKU EBAY POISONS BLEND: eBay matching individual packs ($275) instead of box ($1,175) anchored all band guards — excluded StockX, Walmart, DB price. Fix: `_ebayCredible = ebayMedian >= effectiveRetail * 0.7`; when not credible, skip all band guards + exclude eBay from priceSources. RULE: if eBay median < 70% of retail on a sealed TCG box, treat as wrong-SKU; trust DB/StockX/Walmart over eBay.
 
 - [2026-06-28] PCDBPRICE USES .current NOT .market: TCGCSV DBs store price as `p.market`; PriceCharting DBs use `p.current`. The pcDbPrice lookup only checked `p.current` → always null for TCGCSV-sourced MTG/OP/Lorcana DBs. Fix: `_pcVal = p?.current ?? p?.market`. Also add collector-booster-display preference in product key selection over generic booster-box.
