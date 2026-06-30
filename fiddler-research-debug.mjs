@@ -2029,19 +2029,11 @@ if (prod.category === 'pokemon') {
     const _sk2 = prod._dbKey && _sets2[prod._dbKey] ? prod._dbKey
       : Object.keys(_sets2).filter(k => _sets2[k]?.scale !== 'vintage' && (prod.set?.includes(k) || prod.label?.includes(k))).sort((a,b)=>b.length-a.length)[0];
     if (_sk2) {
-      const _me2 = _sets2[_sk2];
-      // inline ipStrengthFor to avoid IP_STRENGTH const (not yet initialized)
-      const _ip2 = _me2.ipStrength ?? 50;
       const _liveMult2 = market && prod.retail ? market / prod.retail : null;
-      const _peak2 = Math.max(_me2.observedPeakMultiple ?? 0, _liveMult2 ?? 0);
-      const _pp2 = Math.min(_peak2, 4) / 4 * 100;
-      // liveDemandScore also uses IP_STRENGTH const — use simple eBay-sold proxy instead
-      const _sold2 = signals?.ebay?.sold30 ?? signals?.ebay?.sold90 ?? signals?.ebay?.activeCount ?? 0;
-      const _live2 = Math.min(_sold2 * 2.5, 100);
-      const _score2 = Math.round(_ip2 * 0.5 + _live2 * 0.3 + _pp2 * 0.2);
-      _pokeTierOuter = tierOf(_score2);
+      const _sc2 = computeSetScore(_sets2[_sk2], signals, _liveMult2);
+      _pokeTierOuter = tierOf(_sc2.score); console.error("DEBUG pokeTierOuter:", _sc2, _pokeTierOuter);
     }
-  } catch (e) { console.warn('  [pokeTierOuter] error:', e.message); }
+  } catch { /* best-effort */ }
 }
 
 const computedRating = (() => {
