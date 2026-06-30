@@ -2029,7 +2029,10 @@ const computedRating = (() => {
       const _ssRaw = JSON.parse(readFileSync(join(ROOT, 'set-scores.json'), 'utf8'));
       const _sets = _ssRaw.sets ?? {};
       // longest match = most specific key (prevents 'Evolutions' shadowing 'Prismatic Evolutions')
-      const _sk = Object.keys(_sets).filter(k => prod.set?.includes(k) || prod.label?.includes(k)).sort((a,b)=>b.length-a.length)[0];
+      // skip vintage/non-pokemon entries (e.g. vintage "Pitch Black" ≠ ME05 Pitch Black)
+      const _sk = (prod._dbKey && _sets[prod._dbKey] ? [prod._dbKey] :
+        Object.keys(_sets).filter(k => _sets[k].scale !== 'vintage' && (prod.set?.includes(k) || prod.label?.includes(k)))
+      ).sort((a,b)=>b.length-a.length)[0];
       if (_sk) {
         const _me = _sets[_sk];
         const _ip = _me.ipStrength ?? 50;
