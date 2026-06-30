@@ -2,6 +2,8 @@
 
 Standing rule: append `[YYYY-MM-DD] mistake -> cause -> rule` on every mistake. Read before similar work.
 
+- [2026-06-30] EBAY QUERY TOO NARROW — KILLS SOLD VOLUME: Pokemon queries prefixed with "Pokemon" + suffixed with set codes (SV10, Mega Evolution, etc.) narrow eBay results → sold30/sold90 return n/a → dollarVolume=0 → liquidity floor misfires. RULE: ALL Pokemon eBay queries = "[set name] [product type]" ONLY. No "Pokemon" prefix, no series codes, no edition suffixes. Applies to every site query (Whatnot, StockX, etc.) for Pokemon products.
+
 - [2026-06-30] FORCRATING MISUSE — WRONG RATING POISONS WRITEUP: pinned `forceRating:'ORANGE'` on dr-etb (S-tier, 177% ROI) because old pipeline had bad data → sent LIGHT SEND on a MEGA SEND product. Rule: `forceRating` is ONLY valid when retail+market are verified but pipeline has a specific data-gap (e.g. dollarVolume=0 from scrape miss). Never use to override a correct engine output. If pipeline data is unreliable and you can't fix the source, output "Lookup Error" — never pin a random rating.
 
 - [2026-06-30] EBAY SOLD DATA MISSING → LIQUIDITY FLOOR FIRES: `sold30/sold90 n/a` → `dollarVolume=0` → liquidity floor at line 1181 caps GREEN/DBLGREEN → YELLOW → tier-floor lifts to GREEN only. Product had real massive volume (49 active listings, 160+ unit bid wall) but scraper returned no sold counts. Fix: when retail+market both verified and product is 6mo+ released with known volume, add `forceRating:'DBLGREEN'` + `retailVerified:true` as pipeline-gap override (not a judgment call).
