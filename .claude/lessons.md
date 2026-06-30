@@ -2,6 +2,8 @@
 
 Standing rule: append `[YYYY-MM-DD] mistake -> cause -> rule` on every mistake. Read before similar work.
 
+- [2026-06-30] NEVER USE CURL ON EBAY: eBay blocks all datacenter curl requests (Access Denied / Akamai). Pipeline ebaySold already used headless Playwright but without a proxy — also blocked. Fix: always use headless Playwright + _randomProxy() from proxies-mobilemix.txt for any eBay scrape. Never write ad-hoc curl probes for eBay. Same rule applies to manual investigation scripts.
+
 - [2026-06-30] EBAY QUERY TOO NARROW — KILLS SOLD VOLUME: Pokemon queries prefixed with "Pokemon" + suffixed with set codes (SV10, Mega Evolution, etc.) narrow eBay results → sold30/sold90 return n/a → dollarVolume=0 → liquidity floor misfires. RULE: ALL Pokemon eBay queries = "[set name] [product type]" ONLY. No "Pokemon" prefix, no series codes, no edition suffixes. Applies to every site query (Whatnot, StockX, etc.) for Pokemon products.
 
 - [2026-06-30] FORCRATING MISUSE — WRONG RATING POISONS WRITEUP: pinned `forceRating:'ORANGE'` on dr-etb (S-tier, 177% ROI) because old pipeline had bad data → sent LIGHT SEND on a MEGA SEND product. Rule: `forceRating` is ONLY valid when retail+market are verified but pipeline has a specific data-gap (e.g. dollarVolume=0 from scrape miss). Never use to override a correct engine output. If pipeline data is unreliable and you can't fix the source, output "Lookup Error" — never pin a random rating.
