@@ -2,6 +2,8 @@
 
 Standing rule: append `[YYYY-MM-DD] mistake -> cause -> rule` on every mistake. Read before similar work.
 
+- [2026-07-01] POKEMON TIER HARD RULE: TL;DR tier = Set Analysis tier ONLY. Never re-derive from ratingResult/forceRating/FORCE_RATING_TIER map. Set Analysis block already computes correct tier from set-scores.json (ipStrength×0.5 + liveDemand×0.3 + pricePerf×0.2). Use `_pokeTierOuter` directly as `_tierLabel`. Re-deriving independently causes repeated tier mismatches between Set Analysis and TL;DR.
+
 - [2026-07-01] SECRET LAIR NEVER REPRINT (HARD RULE): WotC confirmed Feb 2026 — Secret Lair products are LIMITED PRINT RUN, no longer print-on-demand. NEVER assign reprint risk to any Secret Lair product. Exit window = hold valid for licensed/crossover IP; invest row must NOT say "not advised — reprint risk". `reprintRisk` already returns `'none'` for `isSL` in deep-research.mjs. Exit window + invest row in fiddler-research.mjs updated to reflect no-reprint policy.
 
 - [2026-06-30] HARD RULE — USER-PROVIDED LINKS: if user passes ANY URL in a research request, fetch the full page via https.get() (or Playwright if needed) and read it completely BEFORE writing any product config or running pipeline. Never skip or skim a provided URL. Retail, contents, release date, limits — all live on that page.
