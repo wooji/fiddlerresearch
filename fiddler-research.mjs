@@ -377,9 +377,9 @@ const PRODUCTS = { ..._dynamic, ...{
     contents:    '12 packs × 6 cards = 72 cards/box | 8 boxes/case | Artist Autos (Adi Granov, Frank Miller, Kevin Eastman, Artgerm) | Sketch Cards 1/1 (124 artists) | Marvel LogoFractor /61 | Clawed Chrome die-cut Wolverine parallels | Storm\'s Lightning Refractor (hobby exclusive) | Marvel Reflections insert (hobby exclusive)',
     releaseDate: '<t:1782925200:F> (<t:1782925200:R>) | FCFS retail',
     sellThrough: {
-      flip:   { range: '$460 – $540', units: '~50 – 100 boxes' },
-      hold:   { range: '$520 – $600', units: '~25 – 50 boxes' },
-      invest: { range: '$550 – $650', units: '~15 – 25 boxes' },
+      flip:   { range: '$400 – $480', units: '~50 – 100 boxes' },
+      hold:   { range: '$440 – $520', units: '~25 – 50 boxes' },
+      invest: { range: '$480 – $580', units: '~15 – 25 boxes' },
     },
     bulkBuy:  '~50 – 100 boxes',
     risk:     '🟢 Low-Medium',
@@ -389,7 +389,7 @@ const PRODUCTS = { ..._dynamic, ...{
       product:     '• 12 packs × 6 cards = 72 cards/box; 8 boxes/case\n• 200-card base set — Marvel comic history heroes + villains; Clawed Chrome Wolverine die-cut marks on full base set = unique visual hook vs prior year\n• Hobby exclusives: Marvel Reflections insert + Storm\'s Lightning Refractor parallel — not in Mega or Blaster\n• Artist Autos (35 subjects): Adi Granov, Frank Miller, Kevin Eastman, Artgerm = blue-chip comic illustration names; on-card would lift ceiling significantly\n• Sketch Cards: 124 different artists, all 1/1 — widest sketch variety in Topps Chrome history; jackpot lottery layer\n• Logan/Clawed Chrome /10 black + /5 red die-cut; LogoFractor /61; SuperFractor 1/1',
       priceComp:   '• MSRP $299.99 (release day); presale from $289.99\n• 2025 Chrome Marvel hobby: ~$560 eBay (57+ sold), retail was also $299.99 → 87% secondary premium; direct comp\n• eBay presale floor: $479.99 (3 solds, pre-release) = 60% above retail before drop\n• Mega Box ($69.99 retail) + Value Blaster ($39.99) available at retail — no cross-format pricing overlap with hobby\n• Closest non-year comp: 2025 Topps Chrome Disney hobby (different IP but same Chrome premium format)',
       supplyDemand:'• Fixed print run — Topps hobby = no second press\n• 8 boxes/case with hobby-exclusive parallels locks supply ceiling; no Mega/Blaster substitution for Reflections or Storm\'s Lightning\n• Marvel IP breadth (Wolverine, Spider-Man, Captain America, Doctor Doom) = widest possible pull of sub-collector groups\n• Auto demand driver: Frank Miller (Dark Knight Returns legend) + Artgerm (high IG/social following) autos are grading magnets; single-card tail lifts the box EV',
-      recs:        '• **Cost basis: ~$324** ($299.99 + ~8% tax) | eBay 13% fee\n• **Short term:** Target $480-540 flip = ~$94-146/box net after fees — flip within 30 days while launch hype peaks; 2025 comp supports floor\n• **Long term:** Hold 6-12mo; 2025 comp settled ~$560; if 2026 follows similar curve, $540-600+ is achievable — supply contraction + auto reveal = catalysts\n• Bulk: 50-100 units; 2025 volume showed real absorption at $560, not just 1-2 flips\n• Blaster/Mega = flip or skip; sealed premium compresses fast on mass-retail formats',
+      recs:        '• **Cost basis: ~$324** ($299.99 + ~8% tax) | eBay 13% fee\n• **Short term:** Target $400-480 flip = ~$24-93/box net after fees — conservative anchor: StockX bid $300 + premium; flip within 30 days\n• **Long term:** 2025 Chrome Marvel comp settled ~$560 (57 confirmed solds); 2026 trajectory = 2025 comp × 0.80-0.85 conservative discount → $448-476 floor, $493 mid; hold 6-12mo for supply contraction + auto reveal catalyst\n• Bulk: 50-100 units; size to confirmed liquidity (3 presale solds = thin — weight StockX bid not eBay ask)\n• Blaster/Mega = flip or skip; sealed premium compresses fast on mass-retail formats',
     },
   },
   'chrome-disney-2026': {
