@@ -2,6 +2,8 @@
 
 Standing rule: append `[YYYY-MM-DD] mistake -> cause -> rule` on every mistake. Read before similar work.
 
+- [2026-06-30] HARD RULE — USER-PROVIDED LINKS: if user passes ANY URL in a research request, fetch the full page via https.get() (or Playwright if needed) and read it completely BEFORE writing any product config or running pipeline. Never skip or skim a provided URL. Retail, contents, release date, limits — all live on that page.
+
 - [2026-06-30] RETAIL NULL ON CASIO: set retail:null + retailNote "unconfirmed" because Casio.com appeared WAF-blocked via Playwright — but direct HTTPS node request returned 200 + full HTML with JSON-LD schema containing `price:"270.0"`. Rule: before declaring a retail "unconfirmed", try direct node https.get() — Playwright WAF block ≠ all methods blocked. JSON-LD schema (`priceCurrency/price/priceValidUntil`) is always the fastest retail extraction path.
 
 - [2026-06-30] NEVER USE CURL ON EBAY: eBay blocks all datacenter curl requests (Access Denied / Akamai). Pipeline ebaySold already used headless Playwright but without a proxy — also blocked. Fix: always use headless Playwright + _randomProxy() from proxies-mobilemix.txt for any eBay scrape. Never write ad-hoc curl probes for eBay. Same rule applies to manual investigation scripts.
