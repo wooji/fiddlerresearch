@@ -2205,7 +2205,9 @@ if (st?.flip) {
       `**Flip (<1 mo):** \`${st.flip.range}\` | ${stPct.flip}`,
       `**Hold (3 mo):**  \`${st.hold.range}\` | ${stPct.hold}`,
       /^skip$/i.test(st.invest.range)
-        ? `**Invest (1 yr):** \`not advised\` — reprint/print-cycle risk; flip or 3-mo hold only`
+        ? (/secret lair/i.test((prod.label ?? '') + (prod.set ?? ''))
+            ? `**Invest (1 yr):** \`hold valid\` — NO REPRINT (WotC Feb 2026 limited-print policy); licensed IP appreciates`
+            : `**Invest (1 yr):** \`not advised\` — reprint/print-cycle risk; flip or 3-mo hold only`)
         : `**Invest (1 yr):** \`${st.invest.range}\` | ${stPct.invest}`,
       _2yrRow ?? `**2yr Base Case:** \`no comp data\``,
     ].join('\n'),
@@ -2593,7 +2595,10 @@ function generateAdvancedSections(prod, signals, market, feedIntel, docsCtx) {
     } else if (isLorcana) {
       exitWindow = `**Now–30 days:** flip window only. Ravensburger reprints every chapter within 6 months — secondary premium fades on restock. No hold thesis; sell before reprint announcement.`;
     } else if (isMTG) {
-      exitWindow = `**Now–72h (SL foils):** Secret Lair foil premium peaks at drop, bleeds 30-70% within days. CB boxes: **Week 1** = best exit unless set has Commander staples driving sustained demand. **6-12 months:** only S-tier crossover IP sustains appreciation.`;
+      const _isSLExit = /secret lair/i.test(lblLc);
+      exitWindow = _isSLExit
+        ? `**Secret Lair — NO REPRINT (WotC confirmed Feb 2026, limited print run policy permanent).** Flip window: Day 0–7 for fast cash; Hold 6-12mo for IP appreciation — prior SLs never restocked. Licensed/crossover IP = strongest hold; original art SLs = weakest (often below MSRP 6mo+).`
+        : `**CB boxes: Week 1** = best exit unless set has Commander staples driving sustained demand. **6-12 months:** only S-tier crossover IP sustains appreciation. MTG play boosters = flip only (high print volume).`;
     } else if (isTopps) {
       exitWindow = `**Day 1–Week 2:** Hobby box release-week premium is the flip window. Post-National (late July) = premium fades as supply fills in. RC class revealed through breaks = primary price catalyst; exit if weak rookie class emerges.`;
     } else if (isLEGO) {
