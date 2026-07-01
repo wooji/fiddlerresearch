@@ -2161,40 +2161,86 @@ const sendLabel = SEND_LABELS[computedRating] ?? '🟠 LIGHT SEND';
 
 // Sell-through with computed percentages
 // ── 2yr base case projection ──────────────────────────────────────────────────
-// Pokemon: use set-history.csv Mult_now for SV-era ETBs (HistFrom 2023-09 to 2024-12) applied to retail.
-// Other cats: tier-aware or category multipliers applied to current market.
-// Confidence ~35-45%; labelled as base case projection only.
+// Pokemon: set-history.csv comps filtered to SAME product type (HierRank) + SAME tier (set-scores.json).
+// Tier-matched: S+ vs S+, S vs S, A vs A etc. Product-matched: ETB vs ETB, SPC vs SPC, Box vs Box.
+// Confidence ~35-45%; base case only.
 let _2yrRow = null;
 try {
   const _cat    = (prod.category ?? '').toLowerCase();
   const _retail = prod.retail ?? null;
   const _market = market ?? pcDbPrice ?? null;
   const _tier   = _pokeTierOuter ?? ratingResult?.tier ?? null; // S+/S/A/B/C
+  const _lbl    = (prod.label ?? '').toLowerCase();
 
-  if (_cat === 'pokemon' && _retail && existsSync(join(ROOT, 'set-history.csv'))) {
-    // Read CSV: Set,Product,OrigMSRP,MarketNow,ATH,Mult_now,Mult_ATH,HistFrom,...
+  if (_cat === 'pokemon' && _retail && existsSync(join(ROOT, 'set-history.csv')) && existsSync(join(ROOT, 'set-scores.json'))) {
+    // Load set-scores for tier lookup
+    const _ss   = JSON.parse(readFileSync(join(ROOT, 'set-scores.json'), 'utf8'));
+    const _ssMap = _ss.sets ?? {};
+    const _norm  = s => String(s).toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    // Detect current product type from label → CSV HierRank
+    const _isSPC = /super premium|ultra premium|special collection|spc\b|upc\b/i.test(_lbl);
+    const _isETB = !_isSPC && /elite trainer|etb\b/i.test(_lbl);
+    const _isBox = !_isSPC && !_isETB && /booster box|booster display/i.test(_lbl);
+    const _isBun = !_isSPC && !_isETB && !_isBox && /bundle|blister/i.test(_lbl);
+    // Map to CSV HierRank: 1=Box, 2=ETB, 3=Bundle, 4=Blister/other; SPC = treat as rank 2 (ETB-tier specialty)
+    const _rank  = _isSPC ? 'spc' : _isETB ? '2' : _isBox ? '1' : _isBun ? '3' : '2';
+
+    // Regex to match CSV Product column by rank
+    const _prodRx = _rank === 'spc'  ? /super premium|ultra premium|special collection|spc/i
+                  : _rank === '1'    ? /\bbox\b|\bdisplay\b/i
+                  : _rank === '2'    ? /\betb\b|elite trainer/i
+                  : _rank === '3'    ? /bundle/i
+                  : /etb|elite trainer/i;
+
+    // Read CSV: Set,Product,OrigMSRP,MarketNow,ATH,Mult_now,Mult_ATH,HistFrom,HierRank,HierHolds
     const _csvRows = readFileSync(join(ROOT, 'set-history.csv'), 'utf8').trim().split('\n').slice(1)
-      .map(l => { const p = l.split(','); return { set: p[0], prod: p[1], msrp: parseFloat(p[2]), mktNow: parseFloat(p[3]), multNow: parseFloat(p[5]), histFrom: (p[7]||'').trim() }; });
-    // Filter: ETB rows, SV-era tracked (HistFrom 2023-08 through 2024-12) — these are 1.5-2.5yr old sets
-    // Cap multNow <= 15 to exclude vintage/BW/XY era sets that happen to have HistFrom in 2023-24 but are decade-old sets
-    const _svEra = _csvRows.filter(r => /etb/i.test(r.prod) && r.multNow > 0 && r.multNow <= 15 && Number.isFinite(r.multNow) && r.histFrom >= '2023-08' && r.histFrom <= '2024-12');
-    if (_svEra.length >= 3) {
-      const _mults = _svEra.map(r => r.multNow).sort((a,b)=>a-b);
-      const _med   = _mults[Math.floor(_mults.length / 2)];
-      const _proj    = Math.round(_retail * _med);
-      const _compName = _svEra[Math.floor(_svEra.length/2)]?.set ?? '';
-      _2yrRow = `**2yr Base Case:** \`$${_proj.toLocaleString()}\` (${_med.toFixed(1)}× retail · comp: ${_compName} · ~35% confidence)`;
+      .map(l => { const p = l.split(','); return { set: p[0]?.trim(), prod: p[1]?.trim(), msrp: parseFloat(p[2]), multNow: parseFloat(p[5]), histFrom: (p[7]||'').trim(), hierRank: (p[8]||'').trim() }; });
+
+    // Filter: matching product type, SV-era tracked (HistFrom >= 2023-08), no extreme vintage outliers
+    const _typeMatch = _csvRows.filter(r =>
+      _prodRx.test(r.prod) &&
+      r.multNow > 0 && r.multNow <= 12 &&
+      Number.isFinite(r.multNow) &&
+      r.histFrom >= '2023-08' && r.histFrom <= '2024-12'
+    );
+
+    // Filter to SAME tier via set-scores.json lookup
+    const _tierMatch = _typeMatch.filter(r => {
+      const _key = Object.keys(_ssMap).find(k => _norm(k) === _norm(r.set));
+      const _entry = _key ? _ssMap[_key] : null;
+      if (!_entry || _entry.scale === 'vintage') return false;
+      // Use static score to compute tier; require tier match
+      const _sc = _entry.ipStrength != null
+        ? Math.round((_entry.ipStrength * 0.5) + ((_entry.liveDemand ?? 50) * 0.3) + ((_entry.pricePerf ?? 50) * 0.2))
+        : null;
+      const _compTier = _sc != null ? (_sc >= 91 ? 'S+' : _sc >= 81 ? 'S' : _sc >= 71 ? 'A' : _sc >= 61 ? 'B' : 'C') : (_entry.tier ?? null);
+      return _compTier === _tier;
+    });
+
+    // Use tier-matched pool if ≥2 comps, else fall back to type-only pool
+    const _pool = _tierMatch.length >= 2 ? _tierMatch : _typeMatch;
+    if (_pool.length >= 2) {
+      // Sort pool by multNow so median index and comp name align
+      const _sorted = [..._pool].sort((a,b) => a.multNow - b.multNow);
+      // Use average for small pools (≤3), median for larger — avoids outlier skew with 2 comps
+      const _central = _sorted.length <= 3
+        ? _sorted.reduce((s,r) => s + r.multNow, 0) / _sorted.length
+        : _sorted[Math.floor(_sorted.length / 2)].multNow;
+      const _midIdx  = Math.floor(_sorted.length / 2);
+      const _proj    = Math.round(_retail * _central);
+      const _compName = _sorted[_midIdx]?.set ?? '';
+      const _src      = _tierMatch.length >= 2 ? `${_tier}-tier` : 'type (no tier match)';
+      _2yrRow = `**2yr Base Case:** \`$${_proj.toLocaleString()}\` (${_central.toFixed(1)}× retail · ${_src} comp: ${_compName} · ~35% confidence)`;
     }
   }
 
   // Fallback: tier-aware multipliers applied to current market
   if (!_2yrRow && _market) {
-    // Base mult from category; tier bump for S/S+
-    const _catBase = { pokemon:1.6, mtg:1.3, one_piece:1.4, 'one-piece':1.4, lorcana:0.8, lego:1.5, noncard:1.2, sports:1.2, topps:1.1 };
-    const _tierBump = (_tier === 'S+' || _tier === 'S') ? 1.25 : (_tier === 'A') ? 1.0 : 0.85;
-    const _m = (_catBase[_cat] ?? 1.2) * _tierBump;
-    const _proj = Math.round(_market * _m);
-    _2yrRow = `**2yr Base Case:** \`$${_proj.toLocaleString()}\` (${_cat} ${_tier ?? ''} tier · ~35% confidence)`;
+    const _catBase  = { pokemon:1.6, mtg:1.3, one_piece:1.4, 'one-piece':1.4, lorcana:0.8, lego:1.5, noncard:1.2, sports:1.2, topps:1.1 };
+    const _tierBump = (_tier === 'S+') ? 1.5 : (_tier === 'S') ? 1.25 : (_tier === 'A') ? 1.0 : 0.8;
+    const _proj = Math.round(_market * (_catBase[_cat] ?? 1.2) * _tierBump);
+    _2yrRow = `**2yr Base Case:** \`$${_proj.toLocaleString()}\` (${_cat} ${_tier ?? ''} tier avg · ~35% confidence)`;
   }
 } catch (_e) { /* best-effort */ }
 
