@@ -2245,16 +2245,60 @@ try {
 } catch (_e) { /* best-effort */ }
 
 if (st?.flip) {
+  // Compute invest row with condition-gated logic
+  const _pRange = s => {
+    const ns = String(s ?? '').match(/[\d,]+/g)?.map(v => parseInt(v.replace(/,/g,''))) ?? [];
+    return ns.length >= 2 ? [Math.min(...ns), Math.max(...ns)] : ns.length === 1 ? [ns[0], ns[0]] : [null, null];
+  };
+  const _isSLInvest   = /secret lair/i.test((prod.label ?? '') + (prod.set ?? ''));
+  const _skipInvest   = /^(skip|n\/a)$/i.test(st?.invest?.range ?? '');
+  const _derivedInvest= /^market-derived$/i.test(st?.invest?.range ?? '');
+  const _authoredInvest = !_skipInvest && !_derivedInvest && st?.invest?.range;
+
+  let _investRow;
+  if (_isSLInvest) {
+    _investRow = `**Invest (1 yr):** \`hold valid\` — NO REPRINT (WotC Feb 2026 limited-print policy); licensed IP appreciates`;
+  } else if (_authoredInvest) {
+    _investRow = `**Invest (1 yr):** \`${st.invest.range}\` | ${stPct.invest}`;
+  } else {
+    const [_fLo, _fHi] = _pRange(st?.flip?.range);
+    const [_hLo, _hHi] = _pRange(st?.hold?.range);
+    const _cur = market ?? 0;
+    const _cat = (prod.category ?? '').toLowerCase();
+    const _tier = _tierLabel ?? 'B';
+    const _catM  = { pokemon:1.35, mtg:1.25, 'one-piece':1.3, one_piece:1.3, lorcana:0.9, lego:1.4, sports:1.2, topps:1.1 };
+    const _tBump = _tier === 'S+' ? 1.4 : _tier === 'S' ? 1.2 : _tier === 'A' ? 1.0 : 0.85;
+    const _base  = _catM[_cat] ?? 1.15;
+    const _1yrLo = Math.round(_cur * _base * _tBump * 0.85);
+    const _1yrHi = Math.round(_cur * _base * _tBump * 1.15);
+
+    // Condition 1: flip range > hold range → dip expected → sell now, rebuy cheaper
+    const _dipExpected = _fLo != null && _hHi != null && _fLo > _hHi;
+    // Condition 2: 1yr projection not above 3mo high → no meaningful appreciation
+    const _noApprec = _hHi != null && _1yrHi <= _hHi;
+    // Condition 3: MTG reprint risk (non-SL)
+    const _reprintRisk = _cat === 'mtg' && !_isSLInvest;
+
+    if (_dipExpected) {
+      const _rebuyStr = _hLo && _hHi ? `$${_hLo.toLocaleString()}–$${_hHi.toLocaleString()}` : 'post-dip floor';
+      const _sellStr  = _fLo && _fHi ? `$${_fLo.toLocaleString()}–$${_fHi.toLocaleString()}` : 'current market';
+      _investRow = `**Invest (1 yr):** \`sell now (${_sellStr}), rebuy at ${_rebuyStr}\` — 3mo dip projected; re-enter at ${_rebuyStr}, 12mo target \`$${_1yrLo.toLocaleString()}–$${_1yrHi.toLocaleString()}\``;
+    } else if (_reprintRisk) {
+      _investRow = `**Invest (1 yr):** \`not advised\` — MTG reprint risk; exit within 3mo`;
+    } else if (_noApprec) {
+      _investRow = `**Invest (1 yr):** \`not advised\` — 1yr projection ($${_1yrLo.toLocaleString()}–$${_1yrHi.toLocaleString()}) does not exceed 3mo hold; flip or hold only`;
+    } else {
+      const _pct = Math.round((_1yrLo / Math.max(_cur, 1) - 1) * 100);
+      _investRow = `**Invest (1 yr):** \`$${_1yrLo.toLocaleString()}–$${_1yrHi.toLocaleString()}\` — ${_cat} ${_tier}-tier avg (~${_pct}%+ from current)`;
+    }
+  }
+
   fields.push({
     name: '🎯 Target Sell-Through',
     value: [
       `**Flip (<1 mo):** \`${st.flip.range}\` | ${stPct.flip}`,
       `**Hold (3 mo):**  \`${st.hold.range}\` | ${stPct.hold}`,
-      /^skip$/i.test(st.invest.range)
-        ? (/secret lair/i.test((prod.label ?? '') + (prod.set ?? ''))
-            ? `**Invest (1 yr):** \`hold valid\` — NO REPRINT (WotC Feb 2026 limited-print policy); licensed IP appreciates`
-            : `**Invest (1 yr):** \`not advised\` — reprint/print-cycle risk; flip or 3-mo hold only`)
-        : `**Invest (1 yr):** \`${st.invest.range}\` | ${stPct.invest}`,
+      _investRow,
       _2yrRow ?? `**2yr Base Case:** \`no comp data\``,
     ].join('\n'),
     inline: false,
