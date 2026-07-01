@@ -375,7 +375,7 @@ const PRODUCTS = { ..._dynamic, ...{
       { source: 'checklistinsider.com + WebSearch', date: '2026-07-01', point: 'Hobby exclusives: Marvel Reflections insert + Storm\'s Lightning Refractor; Marvel LogoFractor /61; Clawed Chrome Wolverine die-cuts /10 black /5 red; Sketch Cards 1/1 from 124 artists; 35-subject artist auto checklist; Mega $69.99, Blaster $39.99 retail' },
     ],
     contents:    '12 packs × 6 cards = 72 cards/box | 8 boxes/case | Artist Autos (Adi Granov, Frank Miller, Kevin Eastman, Artgerm) | Sketch Cards 1/1 (124 artists) | Marvel LogoFractor /61 | Clawed Chrome die-cut Wolverine parallels | Storm\'s Lightning Refractor (hobby exclusive) | Marvel Reflections insert (hobby exclusive)',
-    releaseDate: '<t:1782864000:F> (<t:1782864000:R>) | FCFS retail',
+    releaseDate: '<t:1782914400:F> (<t:1782914400:R>) | FCFS retail',
     sellThrough: {
       flip:   { range: '$460 – $540', units: '~50 – 100 boxes' },
       hold:   { range: '$520 – $600', units: '~25 – 50 boxes' },
