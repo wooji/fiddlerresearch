@@ -276,7 +276,7 @@ const PRODUCTS = { ..._dynamic, ...{
     retailNote: 'PCK / BestBuy',
     retailVerified: true,
     releaseUrl: 'https://www.pokemon.com/us/pokemon-tcg/pokemon-cards/sv-series/sv8a/',
-    rating:     'DBLGREEN',
+    forceRating: 'DBLGREEN', preRelease: true,
     tcgId:      null,
     ebayQuery:  'Prismatic Evolutions Super Premium Collection',
     images:    [],
