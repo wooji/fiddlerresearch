@@ -2205,7 +2205,8 @@ try {
 
     // Read CSV: Set,Product,OrigMSRP,MarketNow,ATH,Mult_now,Mult_ATH,HistFrom,HierRank,HierHolds
     const _csvRows = readFileSync(join(ROOT, 'set-history.csv'), 'utf8').trim().split('\n').slice(1)
-      .map(l => { const p = l.split(','); return { set: p[0]?.trim(), prod: p[1]?.trim(), msrp: parseFloat(p[2]), multNow: parseFloat(p[5]), histFrom: (p[7]||'').trim(), hierRank: (p[8]||'').trim() }; });
+      .map(l => { const p = l.split(','); return { set: p[0]?.trim(), prod: p[1]?.trim(), msrp: parseFloat(p[2]), multNow: parseFloat(p[5]), histFrom: (p[7]||'').trim(), hierRank: (p[8]||'').trim(), region: (p[10]||'EN').trim() }; })
+      .filter(r => r.region === 'EN'); // EN-only comps; JP/KR/CN tagged separately, excluded from 2yr pool
 
     // Filter: matching product type, SV-era tracked (HistFrom >= 2023-08), no extreme vintage outliers
     // SPC/UPC: use 2021-2023 products (2yr+ mature); regular products: 2023-08 to 2024-12
