@@ -4,6 +4,12 @@ Standing rule: append `[YYYY-MM-DD] mistake -> cause -> rule` on every mistake. 
 
 - [2026-07-01] POKEMON TIER HARD RULE: TL;DR tier = Set Analysis tier ONLY. Never re-derive from ratingResult/forceRating/FORCE_RATING_TIER map. Set Analysis block already computes correct tier from set-scores.json (ipStrength×0.5 + liveDemand×0.3 + pricePerf×0.2). Use `_pokeTierOuter` directly as `_tierLabel`. Re-deriving independently causes repeated tier mismatches between Set Analysis and TL;DR.
 
+- [2026-07-01] `_pokeTierOuter` PRE-COMPUTE MUST USE ipStrengthIndex LOOKUP: pre-compute block used `_me2.ipStrength ?? 50` but set entries don't have `ipStrength` field — it's in `ipStrengthIndex[anchor_char]`. Fallback to 50 → PE score 44 instead of 95 → S showed as A. Fix: inline `ipStrengthIndex` lookup from `_ssRaw2.ipStrengthIndex`. Also: prioritize liveMultiple over activeCount in liveDemand proxy (activeCount ×1.5 gave 69 vs liveMultiple ×0.93 gave 90 for PE).
+
+- [2026-07-01] report-sets.mjs FIELD NAMES WRONG: original script used `.current`/`.ath`/`.firstMonth` on product objects. Actual set-history.json product fields: `.market` (current price), priceHistory array (ATH = max), `.fetchedAt` (date). Also product keys are prefixed (`pitch-black-booster-box` not `booster-box`) — must `find(k => k.endsWith('-' + type))`. Always probe JSON structure before writing field access.
+
+- [2026-07-01] set-history.csv REGION COLUMN ADDED: comp pool now EN-only; JP/KR/CN tagged but excluded. HierRank remapped: 1=SPC/UPC, 2=Display Box, 3=ETB, 4=Collection Box, 5=Bundle, 6=Pack. SPC rows not in set-history.json — must re-append manually after CSV regeneration via report-sets.mjs.
+
 - [2026-07-01] SECRET LAIR NEVER REPRINT (HARD RULE): WotC confirmed Feb 2026 — Secret Lair products are LIMITED PRINT RUN, no longer print-on-demand. NEVER assign reprint risk to any Secret Lair product. Exit window = hold valid for licensed/crossover IP; invest row must NOT say "not advised — reprint risk". `reprintRisk` already returns `'none'` for `isSL` in deep-research.mjs. Exit window + invest row in fiddler-research.mjs updated to reflect no-reprint policy.
 
 - [2026-06-30] HARD RULE — USER-PROVIDED LINKS: if user passes ANY URL in a research request, fetch the full page via https.get() (or Playwright if needed) and read it completely BEFORE writing any product config or running pipeline. Never skip or skim a provided URL. Retail, contents, release date, limits — all live on that page.
