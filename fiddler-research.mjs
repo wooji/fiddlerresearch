@@ -2160,6 +2160,44 @@ const SEND_LABELS = {
 const sendLabel = SEND_LABELS[computedRating] ?? '🟠 LIGHT SEND';
 
 // Sell-through with computed percentages
+// ── 2yr base case projection ──────────────────────────────────────────────────
+// Pokemon: use set-history.csv Mult_now for SV-era ETBs (HistFrom 2023-09 to 2024-12) applied to retail.
+// Other cats: tier-aware or category multipliers applied to current market.
+// Confidence ~35-45%; labelled as base case projection only.
+let _2yrRow = null;
+try {
+  const _cat    = (prod.category ?? '').toLowerCase();
+  const _retail = prod.retail ?? null;
+  const _market = market ?? pcDbPrice ?? null;
+  const _tier   = _pokeTierOuter ?? ratingResult?.tier ?? null; // S+/S/A/B/C
+
+  if (_cat === 'pokemon' && _retail && existsSync(join(ROOT, 'set-history.csv'))) {
+    // Read CSV: Set,Product,OrigMSRP,MarketNow,ATH,Mult_now,Mult_ATH,HistFrom,...
+    const _csvRows = readFileSync(join(ROOT, 'set-history.csv'), 'utf8').trim().split('\n').slice(1)
+      .map(l => { const p = l.split(','); return { set: p[0], prod: p[1], msrp: parseFloat(p[2]), mktNow: parseFloat(p[3]), multNow: parseFloat(p[5]), histFrom: (p[7]||'').trim() }; });
+    // Filter: ETB rows, SV-era tracked (HistFrom 2023-08 through 2024-12) — these are 1.5-2.5yr old sets
+    // Cap multNow <= 15 to exclude vintage/BW/XY era sets that happen to have HistFrom in 2023-24 but are decade-old sets
+    const _svEra = _csvRows.filter(r => /etb/i.test(r.prod) && r.multNow > 0 && r.multNow <= 15 && Number.isFinite(r.multNow) && r.histFrom >= '2023-08' && r.histFrom <= '2024-12');
+    if (_svEra.length >= 3) {
+      const _mults = _svEra.map(r => r.multNow).sort((a,b)=>a-b);
+      const _med   = _mults[Math.floor(_mults.length / 2)];
+      const _proj    = Math.round(_retail * _med);
+      const _compName = _svEra[Math.floor(_svEra.length/2)]?.set ?? '';
+      _2yrRow = `**2yr Base Case:** \`$${_proj.toLocaleString()}\` (${_med.toFixed(1)}× retail · comp: ${_compName} · ~35% confidence)`;
+    }
+  }
+
+  // Fallback: tier-aware multipliers applied to current market
+  if (!_2yrRow && _market) {
+    // Base mult from category; tier bump for S/S+
+    const _catBase = { pokemon:1.6, mtg:1.3, one_piece:1.4, 'one-piece':1.4, lorcana:0.8, lego:1.5, noncard:1.2, sports:1.2, topps:1.1 };
+    const _tierBump = (_tier === 'S+' || _tier === 'S') ? 1.25 : (_tier === 'A') ? 1.0 : 0.85;
+    const _m = (_catBase[_cat] ?? 1.2) * _tierBump;
+    const _proj = Math.round(_market * _m);
+    _2yrRow = `**2yr Base Case:** \`$${_proj.toLocaleString()}\` (${_cat} ${_tier ?? ''} tier · ~35% confidence)`;
+  }
+} catch (_e) { /* best-effort */ }
+
 if (st?.flip) {
   fields.push({
     name: '🎯 Target Sell-Through',
@@ -2169,6 +2207,7 @@ if (st?.flip) {
       /^skip$/i.test(st.invest.range)
         ? `**Invest (1 yr):** \`not advised\` — reprint/print-cycle risk; flip or 3-mo hold only`
         : `**Invest (1 yr):** \`${st.invest.range}\` | ${stPct.invest}`,
+      _2yrRow ?? `**2yr Base Case:** \`no comp data\``,
     ].join('\n'),
     inline: false,
   });
