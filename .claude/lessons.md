@@ -2,6 +2,12 @@
 
 Standing rule: append `[YYYY-MM-DD] mistake -> cause -> rule` on every mistake. Read before similar work.
 
+- [2026-07-01] TOPPS UNIX TIMESTAMP HARD RULE: always calculate release timestamps from 2026-01-01 = 1767225600, NOT 2025-01-01 = 1735689600. Off-by-one year error: 1751328000 = July 1 2025, 1782864000 = July 1 2026. Rule: verify year anchor before computing offset days. Pull actual release date from page JS if possible via CDP.
+
+- [2026-07-01] PRE-SEND SNAPSHOT HARD RULE: NEVER post webhook without (1) DASHBOARD_MODE=1 dry-run, (2) reading the FULL embed payload output in the terminal, (3) verifying every field (rating, market, retail, timestamp, bulkBuy) matches expectations, (4) fixing any discrepancy, THEN sending once. Sending to verify = forbidden.
+
+- [2026-07-01] NO SEND / RED = bulkBuy 0 HARD RULE: if rating resolves to RED or NO SEND, bulkBuy field must be 0 (not a unit estimate). Never show a non-zero bulk buy recommendation on a no-send product.
+
 - [2026-07-01] POKEMON TIER HARD RULE: TL;DR tier = Set Analysis tier ONLY. Never re-derive from ratingResult/forceRating/FORCE_RATING_TIER map. Set Analysis block already computes correct tier from set-scores.json (ipStrength×0.5 + liveDemand×0.3 + pricePerf×0.2). Use `_pokeTierOuter` directly as `_tierLabel`. Re-deriving independently causes repeated tier mismatches between Set Analysis and TL;DR.
 
 - [2026-07-01] `_pokeTierOuter` PRE-COMPUTE MUST USE ipStrengthIndex LOOKUP: pre-compute block used `_me2.ipStrength ?? 50` but set entries don't have `ipStrength` field — it's in `ipStrengthIndex[anchor_char]`. Fallback to 50 → PE score 44 instead of 95 → S showed as A. Fix: inline `ipStrengthIndex` lookup from `_ssRaw2.ipStrengthIndex`. Also: prioritize liveMultiple over activeCount in liveDemand proxy (activeCount ×1.5 gave 69 vs liveMultiple ×0.93 gave 90 for PE).
