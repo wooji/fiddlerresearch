@@ -2,7 +2,7 @@
 
 Standing rule: append `[YYYY-MM-DD] mistake -> cause -> rule` on every mistake. Read before similar work.
 
-- [2026-07-01] TOPPS UNIX TIMESTAMP HARD RULE: always calculate release timestamps from 2026-01-01 = 1767225600, NOT 2025-01-01 = 1735689600. Off-by-one year error: 1751328000 = July 1 2025, 1782864000 = July 1 2026. Rule: verify year anchor before computing offset days. Pull actual release date from page JS if possible via CDP.
+- [2026-07-01] RELEASE TIMESTAMP HARD RULE — NEVER CALCULATE OR GUESS: timestamps must be READ from the source — page JS via CDP, retailer product JSON, or verified date string from the listing. Calculating from offsets is the most dangerous failure mode (wrong year → wrong Discord embed). Topps pages require CDP real browser (localhost:9222); fallback = WebFetch a retailer page (DA Card World, GameStop, Beckett) that lists the date, then convert the verified string. "I calculated July 1 2026 as offset from 2025-01-01" = wrong year. Zero tolerance — if date can't be read from source, ask user before posting.
 
 - [2026-07-01] PRE-SEND SNAPSHOT HARD RULE: NEVER post webhook without (1) DASHBOARD_MODE=1 dry-run, (2) reading the FULL embed payload output in the terminal, (3) verifying every field (rating, market, retail, timestamp, bulkBuy) matches expectations, (4) fixing any discrepancy, THEN sending once. Sending to verify = forbidden.
 
