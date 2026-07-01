@@ -2198,11 +2198,15 @@ try {
       .map(l => { const p = l.split(','); return { set: p[0]?.trim(), prod: p[1]?.trim(), msrp: parseFloat(p[2]), multNow: parseFloat(p[5]), histFrom: (p[7]||'').trim(), hierRank: (p[8]||'').trim() }; });
 
     // Filter: matching product type, SV-era tracked (HistFrom >= 2023-08), no extreme vintage outliers
+    // SPC/UPC: use 2021-2023 products (2yr+ mature); regular products: 2023-08 to 2024-12
+    const _histMin = _rank === 'spc' ? '2021-01' : '2023-08';
+    const _histMax = _rank === 'spc' ? '2023-12' : '2024-12';
+    const _multCap = _rank === 'spc' ? 15 : 12;
     const _typeMatch = _csvRows.filter(r =>
       _prodRx.test(r.prod) &&
-      r.multNow > 0 && r.multNow <= 12 &&
+      r.multNow > 0 && r.multNow <= _multCap &&
       Number.isFinite(r.multNow) &&
-      r.histFrom >= '2023-08' && r.histFrom <= '2024-12'
+      r.histFrom >= _histMin && r.histFrom <= _histMax
     );
 
     // Filter to SAME tier via set-scores.json lookup

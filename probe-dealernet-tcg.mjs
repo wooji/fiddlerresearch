@@ -2,8 +2,8 @@ import { chromium } from 'playwright';
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage();
 
-const USER = 'GA-GAMING';
-const PASS = 'Veryberry1!';
+const USER = process.env.DEALERNET_USER ?? '';
+const PASS = process.env.DEALERNET_PASS ?? '';
 
 // WooCommerce login
 console.log('=== DEALERNET LOGIN ===');
