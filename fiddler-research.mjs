@@ -2073,14 +2073,22 @@ if (prod.category === 'pokemon') {
       : Object.keys(_sets2).filter(k => _sets2[k]?.scale !== 'vintage' && (prod.set?.includes(k) || prod.label?.includes(k))).sort((a,b)=>b.length-a.length)[0];
     if (_sk2) {
       const _me2 = _sets2[_sk2];
-      // inline ipStrengthFor to avoid IP_STRENGTH const (not yet initialized)
-      const _ip2 = _me2.ipStrength ?? 50;
+      // inline ipStrengthFor — IP_STRENGTH const not yet initialized here
+      const _ipIdx2 = _ssRaw2.ipStrengthIndex ?? {};
+      const _anchor2 = (_me2.anchor ?? '').toLowerCase();
+      const _ipHits2 = Object.entries(_ipIdx2).filter(([k]) => _anchor2.includes(k.toLowerCase())).map(([,v]) => v);
+      const _ip2 = _ipHits2.length ? Math.max(..._ipHits2) : (_me2.ipStrength ?? 50);
       const _liveMult2 = market && prod.retail ? market / prod.retail : null;
       const _peak2 = Math.max(_me2.observedPeakMultiple ?? 0, _liveMult2 ?? 0);
       const _pp2 = Math.min(_peak2, 4) / 4 * 100;
-      // liveDemandScore also uses IP_STRENGTH const — use simple eBay-sold proxy instead
-      const _sold2 = signals?.ebay?.sold30 ?? signals?.ebay?.sold90 ?? signals?.ebay?.activeCount ?? 0;
-      const _live2 = Math.min(_sold2 * 2.5, 100);
+      // liveDemandScore: use eBay sold if available; fall back to liveMultiple as demand proxy
+      const _sold2 = signals?.ebay?.sold30 ?? signals?.ebay?.sold90 ?? 0;
+      const _active2 = signals?.ebay?.activeCount ?? 0;
+      // liveMultiple is more reliable than activeCount for demand signal
+      const _live2 = _sold2 > 0 ? Math.min(_sold2 * 2.5, 100)
+        : _liveMult2 != null ? Math.min((_liveMult2 - 1) / 3 * 100, 90)
+        : _active2 > 0 ? Math.min(_active2 * 1.5, 80)
+        : 40; // mid default when no signals
       const _score2 = Math.round(_ip2 * 0.5 + _live2 * 0.3 + _pp2 * 0.2);
       _pokeTierOuter = tierOf(_score2);
     }
