@@ -2189,17 +2189,19 @@ try {
     // Detect current product type from label → CSV HierRank
     const _isSPC = /super premium|ultra premium|special collection|spc\b|upc\b/i.test(_lbl);
     const _isETB = !_isSPC && /elite trainer|etb\b/i.test(_lbl);
-    const _isBox = !_isSPC && !_isETB && /booster box|booster display/i.test(_lbl);
-    const _isBun = !_isSPC && !_isETB && !_isBox && /bundle|blister/i.test(_lbl);
-    // Map to CSV HierRank: 1=Box, 2=ETB, 3=Bundle, 4=Blister/other; SPC = treat as rank 2 (ETB-tier specialty)
-    const _rank  = _isSPC ? 'spc' : _isETB ? '2' : _isBox ? '1' : _isBun ? '3' : '2';
+    const _isBox = !_isSPC && !_isETB && /booster box|booster display|display booster/i.test(_lbl);
+    const _isCol = !_isSPC && !_isETB && !_isBox && /collection box|collection set/i.test(_lbl);
+    const _isBun = !_isSPC && !_isETB && !_isBox && !_isCol && /bundle|blister/i.test(_lbl);
+    // HierRank: 1=SPC/UPC, 2=Booster Display, 3=ETB, 4=Collection Box, 5=Bundle, 6=Pack
+    const _rank  = _isSPC ? '1' : _isBox ? '2' : _isETB ? '3' : _isCol ? '4' : _isBun ? '5' : '3';
 
-    // Regex to match CSV Product column by rank
-    const _prodRx = _rank === 'spc'  ? /super premium|ultra premium|special collection|spc/i
-                  : _rank === '1'    ? /\bbox\b|\bdisplay\b/i
-                  : _rank === '2'    ? /\betb\b|elite trainer/i
-                  : _rank === '3'    ? /bundle/i
-                  : /etb|elite trainer/i;
+    // Regex to match CSV Product name as secondary guard
+    const _prodRx = _rank === '1' ? /super premium|ultra premium|spc|upc/i
+                  : _rank === '2' ? /\bbox\b|\bdisplay\b/i
+                  : _rank === '3' ? /\betb\b|elite trainer/i
+                  : _rank === '4' ? /collection box|collection set/i
+                  : _rank === '5' ? /bundle/i
+                  : /\betb\b|elite trainer/i;
 
     // Read CSV: Set,Product,OrigMSRP,MarketNow,ATH,Mult_now,Mult_ATH,HistFrom,HierRank,HierHolds
     const _csvRows = readFileSync(join(ROOT, 'set-history.csv'), 'utf8').trim().split('\n').slice(1)
@@ -2207,11 +2209,11 @@ try {
 
     // Filter: matching product type, SV-era tracked (HistFrom >= 2023-08), no extreme vintage outliers
     // SPC/UPC: use 2021-2023 products (2yr+ mature); regular products: 2023-08 to 2024-12
-    const _histMin = _rank === 'spc' ? '2021-01' : '2023-08';
-    const _histMax = _rank === 'spc' ? '2023-12' : '2024-12';
-    const _multCap = _rank === 'spc' ? 15 : 12;
+    const _histMin = _rank === '1' ? '2021-01' : '2023-08';
+    const _histMax = _rank === '1' ? '2023-12' : '2024-12';
+    const _multCap = _rank === '1' ? 15 : 12;
     const _typeMatch = _csvRows.filter(r =>
-      _prodRx.test(r.prod) &&
+      (r.hierRank === _rank || _prodRx.test(r.prod)) &&
       r.multNow > 0 && r.multNow <= _multCap &&
       Number.isFinite(r.multNow) &&
       r.histFrom >= _histMin && r.histFrom <= _histMax
