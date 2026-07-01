@@ -2,6 +2,12 @@
 
 Standing rule: append `[YYYY-MM-DD] mistake -> cause -> rule` on every mistake. Read before similar work.
 
+- [2026-07-01] WRONG SKU LORCANA SINGLE PACK: used $89.99 for Wilds of Unknown single booster pack (was Illumineer's Trove price) -> never assume pack price from box/trove entry -> ALWAYS verify via TCGCSV catId 71 groupId {tcgId} ProductsAndPrices.csv, match by productId containing "Booster Pack" (not "Box", not "Trove", not "Case"). Single pack productId 678167 = $9.85 market.
+
+- [2026-07-01] CHROME DEBUG SHORTCUT: flags ended up in "Start In" box not Target field -> shortcut error "path not valid" -> RULE: Chrome debug args go in Target field as `"chrome.exe" --flags`, Start In = `"C:\Program Files\Google\Chrome\Application"`. Use PowerShell `WScript.Shell CreateShortcut` to set `.Arguments` separately from `.TargetPath`. Also: `C:\Temp\chrome-debug` must exist before launching.
+
+- [2026-07-01] MONTHLY RECAP @here SPAM: sent @here on every embed (8×) instead of last only -> cause: `content: '@here'` on all send() calls -> RULE: `content` = empty string on all embeds except last; last embed only gets `'@here'`.
+
 - [2026-07-01] TOPPS RELEASE CALENDAR HARD RULE: ALL Topps release dates must be read from https://www.topps.com/release-calendar via CDP real browser. Page JS contains `dropDate` field per product with exact ISO timestamp (e.g. `"url":"/pages/topps-chrome-marvel","dropDate":"2026-07-01T17:00:00.000Z"`). Convert verified ISO string to Unix. Never use product page date alone — calendar is authoritative. USE `topps-calendar.mjs` module (skill: `.claude/skills/topps-calendar/SKILL.md`) — `import { lookupToppsProduct } from './topps-calendar.mjs'` or `node topps-calendar.mjs <slug>`. Module auto-launches Chrome if CDP dead, waits 9s for JS hydration, returns `{ discordTs, unixTs, retail, retailNote }`. If retail unavailable and release > today → retail null + retailNote 'TBA'.
 
 - [2026-07-01] RELEASE TIMESTAMP HARD RULE — NEVER CALCULATE OR GUESS: timestamps must be READ from the source — page JS via CDP, retailer product JSON, or verified date string from the listing. Calculating from offsets is the most dangerous failure mode (wrong year → wrong Discord embed). Topps pages require CDP real browser (localhost:9222); fallback = WebFetch a retailer page (DA Card World, GameStop, Beckett) that lists the date, then convert the verified string. "I calculated July 1 2026 as offset from 2025-01-01" = wrong year. Zero tolerance — if date can't be read from source, ask user before posting.
