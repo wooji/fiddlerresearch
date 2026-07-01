@@ -2656,11 +2656,14 @@ function generateAdvancedSections(prod, signals, market, feedIntel, docsCtx) {
         const scored  = Object.entries(db.sets)
           .filter(([k]) => k !== thisKey)
           .map(([k, set]) => {
-            const box     = set.products?.['booster-box'];
-            if (!box?.ath || !set.retail) return null;
-            const athM    = +(box.ath / set.retail).toFixed(1);
-            const curM    = box.current ? +(box.current / set.retail).toFixed(1) : null;
-            return { key: k, name: NAMES[k] ?? k, athM, curM, ath: box.ath, cur: box.current, retail: set.retail };
+            const boxKey  = Object.keys(set.products ?? {}).find(pk => pk.endsWith('-booster-box'));
+            const box     = boxKey ? set.products[boxKey] : null;
+            const retail  = set.retail ?? box?.msrp ?? null;
+            if (!box?.market || !retail) return null;
+            const ath     = box.priceHistory?.length ? Math.max(...box.priceHistory.map(h=>h.price)) : box.market;
+            const athM    = +(ath / retail).toFixed(1);
+            const curM    = +(box.market / retail).toFixed(1);
+            return { key: k, name: NAMES[k] ?? k, athM, curM, ath, cur: box.market, retail };
           })
           .filter(Boolean)
           .sort((a, b) => {
