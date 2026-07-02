@@ -23,6 +23,7 @@ Market research agent for Christopher (Jester) — resellable goods: Pokemon TCG
 Every research request MUST run the full pipeline: `node fiddler-research.mjs <product-key>`
 
 **Pricing (all sources, weighted avg):**
+- Local DB first (indexed set-history-<category>.json — 30% weight): match prod.set/label against existing DB records before any live scrape; reuse if found
 - eBay sold comps (median, 40% weight)
 - DealernetX prior-year trades avg (30%) + lowest ask (15%) — NEVER mention DX in embed
 - TCGPlayer market price (35%)
