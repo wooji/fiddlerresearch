@@ -40,4 +40,6 @@ Every research request MUST run the full pipeline: `node fiddler-research.mjs <p
 
 **If product not in `fiddler-research.mjs` products map:** ADD it first, then run the pipeline. Never write ad-hoc probe scripts.
 
+**NEVER spawn an Agent/subagent to gather pipeline data (eBay, pricing, sentiment, comps, etc.) — forever.** `lib/*.mjs` already has every scraper needed (ebaySold, ebayListings, walmartStock, targetRetail, stockxMarket, etc.) — grep `lib/*.mjs` first, call the function directly via `node -e` or inside the pipeline. Spawning an agent to rebuild a scraper is always wrong here; the pipeline IS the skillset.
+
 **Memory:** Read `memory/fiddler_pricing_methodology.md` + `memory/sentiment_methodology.md` before any pricing/sentiment work. Update `memory/session_state.md` at end of every session.
