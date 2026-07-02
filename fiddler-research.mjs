@@ -409,7 +409,6 @@ const PRODUCTS = { ..._dynamic, ...{
     preRelease:  true,
     supplyScore: 30,
     ebayQuery:   '2025-26 Topps Chrome Updates Basketball Hobby Box',
-    dxQuery:     'Topps Chrome Updates Basketball',
     images:      [],
     releaseDate: 'July 7, 2026 (exact time TBD — read from Topps release calendar at drop)',
     contents:    '20 packs × 4 cards = 80 cards/box | 1 auto per box | Hobby Jumbo: 12 packs × 11 cards, 3+ autos | Breakers Delight: 1 pack × 10 cards, 2+ autos',
@@ -927,7 +926,6 @@ ebayQuery:   "Assassin\'s Creed Black Flag Resynced Collector\'s Edition PS5",
     tcgId:       null, supplyScore: 36, liveMarket: null,
     ebayQuery:   'LEGO Ideas Evolution STEM 21355',
     images:      [], risk: 'Medium', ebayFee: 0.13, forceRating: 'ORANGE',
-    dxQuery:     'LEGO 21355',
     contents:    'LEGO Ideas The Evolution of STEM | 879 pcs | 3 exclusive minifigs: George Washington Carver, Marie Sklodowska-Curie, Sir Isaac Newton | active-retiring, projected EOL mid-2027 | no licensed IP (fan-voted STEM design)',
     releaseDate: 'Released Mar 1, 2025',
     eolDate:     'mid-2027 (BrickEconomy projection)',
@@ -1612,13 +1610,6 @@ if (process.env.USER_NOTES) {
   prod._userNotes = notes;
 }
 
-// DealernetX One Piece query: DX titles read "<set name> Booster" (NO "Box") — appending
-// "Box" returns 0. Use just the set name so DX matches; region/SKU filtering happens downstream.
-if (!prod.dxQuery && (prod.category === 'one_piece' || prod.category === 'one-piece')) {
-  const sn = prod.set ?? prod.setName ?? prod.label;
-  if (sn) prod.dxQuery = String(sn).replace(/\b(booster|box|english|sealed)\b/gi, '').trim();
-}
-
 console.log(`Fetching live data for: ${prod.label}...`);
 console.log(`  [internalDb] products map loaded — retail $${prod.retail ?? 'unknown'}`);
 
@@ -1635,7 +1626,7 @@ const [tcgRaw, pcPriceRaw, checklistRaw, signalsRaw, feedRaw] = await Promise.al
   prod.tcgId ? tcgPrice(prod.tcgId) : Promise.resolve(prod.liveMarket ?? null),
   prod.pcExclusive?.tcgId ? tcgPrice(prod.pcExclusive.tcgId) : Promise.resolve(null),
   prod.checklistUrl ? checklistSignal(prod.checklistUrl, prod.boxConfig).then(c => { if (c) console.log(`Checklist: ${c.tiers.length} tiers | autos: ${c.autoSubjects} | est boxes: ${c.estimatedBoxes}`); return c; }) : Promise.resolve(null),
-  DEEP ? deepResearch(prod.ebayQuery, prod.categoryId ?? 1561, { walmartItemId: prod.walmartItemId, dxQuery: prod.dxQuery, upc: prod.upc, retailFloor: prod.retail, redditQuery: prod.redditQuery, redditSubreddit: prod.redditSubreddit, queryVariants: buildQueryVariants(prod) }) : Promise.resolve(null),
+  DEEP ? deepResearch(prod.ebayQuery, prod.categoryId ?? 1561, { walmartItemId: prod.walmartItemId, upc: prod.upc, retailFloor: prod.retail, redditQuery: prod.redditQuery, redditSubreddit: prod.redditSubreddit, queryVariants: buildQueryVariants(prod) }) : Promise.resolve(null),
   DEEP ? feedIntelSignal(50).then(f => { if (f) console.log(`  [feed] ${f.totalCheckouts} checkouts | hot: ${f.hotProducts.slice(0,3).join(', ')}`); return f; }).catch(() => null) : Promise.resolve(null),
 ]);
 
@@ -1691,7 +1682,6 @@ if (signals) {
     ebay:      signals.ebay      ? `median $${signals.ebay.median} (sold30 ${signals.ebay.sold30 ?? 'n/a'} / sold90 ${signals.ebay.sold90 ?? 'n/a'} / active ${signals.ebay.activeCount ?? 'n/a'})` : 'N/A',
     walmart:   signals.walmart   ? `$${signals.walmart.price ?? 'N/A'} (${signals.walmart.inStock ? 'in stock' : 'OOS'})` : 'N/A',
     amazon:    signals.amazon    ? `$${signals.amazon.price ?? 'N/A'} (${signals.amazon.inStock ? 'in stock' : 'OOS'})` : 'N/A',
-    wholesale: signals.historicalWholesale?.length ? `${signals.historicalWholesale.length} results (prior year)` : 'N/A',
     stockx:    signals.stockx    ? `$${signals.stockx.price} (ask $${signals.stockx.lowestAsk ?? 'n/a'} / bid $${signals.stockx.highestBid ?? 'n/a'})${signals.stockx.msrp ? ` MSRP $${signals.stockx.msrp}` : ''}` : 'N/A (no key)',
   });
 }
@@ -1802,11 +1792,6 @@ if (_isTCGcat && (!ebayMedian || _curSold < 3 || (prod.preRelease && _releaseFut
 }
 prod._priorComp = priorComp;
 
-// Use best-matching wholesale result (skip variants >2× retail to avoid PC Exclusive polluting standard ETB avg)
-const hwBest      = signals?.historicalWholesale?.find(p => p.market?.avgTrade && p.market.avgTrade < (effectiveRetail ?? 999) * 5) ?? signals?.historicalWholesale?.[0];
-const hwTrades    = (hwBest?.market?.trades ?? []).map(t => t.price).filter(p => p > 0);
-const hwAvg       = hwTrades.length ? hwTrades.reduce((s, p) => s + p, 0) / hwTrades.length : null;
-const hwAsk       = (Number.isFinite(hwBest?.market?.lowestAsk) && hwBest.market.lowestAsk > 0 && effectiveRetail && hwBest.market.lowestAsk > effectiveRetail) ? hwBest.market.lowestAsk : null;
 // 3P sanity ceiling — a price far above the eBay sold floor (or > retail×3 when no eBay)
 // is a wrong-product match, not a real secondary listing. Reject it.
 const secCeiling  = ebayMedian ? ebayMedian * 1.5 : (effectiveRetail ?? 0) * 3;
@@ -1938,8 +1923,6 @@ if (isPokemon) {
 
 const priceSources = [
   ebayMedian && _ebayCredible && { label: 'eBay median',      price: ebayMedian, weight: 40 },
-  Number.isFinite(hwAvg) && hwAvg > 0 && (!ebayMedian || hwAvg >= ebayMedian * 0.5) && { label: 'DX prior-yr avg', price: hwAvg, weight: 30 },
-  Number.isFinite(hwAsk) && hwAsk > 0 && (!ebayMedian || hwAsk <= ebayMedian * 2) && { label: 'DX lowest ask', price: hwAsk, weight: 15 },
   azSec      && (_ebayCredible ? (azSec >= ebayMedian * 0.5 && azSec <= ebayMedian * 2) : true) && { label: 'Amazon 3P',        price: azSec,      weight:  7 },
   wmSec      && (_ebayCredible ? (wmSec >= ebayMedian * 0.5 && wmSec <= ebayMedian * 2) : true) && { label: 'Walmart 3P',       price: wmSec,      weight:  8 },
   tcgMarket && (_ebayCredible ? tcgMarket <= ebayMedian * 2 : true) && (!effectiveRetail || tcgMarket >= effectiveRetail * 0.5) && { label: 'TCGPlayer', price: tcgMarket, weight: 35 },
@@ -2137,12 +2120,10 @@ const sentimentSum = signals ? (
   (signals.whatnot?.sentiment   ?? 0) * 1.5
 ) : 0;
 const ebayTrend    = (signals?.ebay?.median && market) ? (signals.ebay.median - market) / market : 0;
-// DealernetX prior-year avg trade vs current market = historical demand trend (reuse hwAvg from market computation)
-const hwTrend      = (hwAvg && market) ? Math.max(-0.05, Math.min(0.05, (hwAvg - market) / market * 0.5)) : 0;
 // Amazon/Walmart in-stock suppresses T+30 ceiling
 const supplyDrag   = (signals?.amazon?.inStock || signals?.walmart?.inStock) ? -0.03 : 0;
-const momentum14   = Math.max(-0.10, Math.min(0.15, (sentimentSum * 0.008) + ebayTrend + hwTrend + supplyDrag));
-const momentum30   = Math.max(-0.15, Math.min(0.25, (sentimentSum * 0.012) + ebayTrend * 1.5 + hwTrend + supplyDrag));
+const momentum14   = Math.max(-0.10, Math.min(0.15, (sentimentSum * 0.008) + ebayTrend + supplyDrag));
+const momentum30   = Math.max(-0.15, Math.min(0.25, (sentimentSum * 0.012) + ebayTrend * 1.5 + supplyDrag));
 const t14Market    = market ? Math.round(market * (1 + momentum14) * 100) / 100 : null;
 const t30Market    = market ? Math.round(market * (1 + momentum30) * 100) / 100 : null;
 const t14Net       = (t14Market && costBasis != null) ? (t14Market * (1 - ebayFee) - costBasis) : null;
@@ -2672,13 +2653,11 @@ function ebaySold30(s) {
 }
 function volumeTier(s) {
   const { n, win } = ebaySold30(s);                                            // eBay sold velocity (primary)
-  const dxTrades = (s.historicalWholesale ?? []).reduce((a, p) => a + (p.market?.tradeCount ?? 0), 0); // DX wholesale trades
   const wn       = s.whatnot?.count ?? 0;                                       // Whatnot live-auction listings
   const social   = (s.discord?.mentions ?? 0) + (s.reddit?.mentions ?? 0);      // community mention velocity
   const tag = win === '30d' ? 'eBay solds (30d)' : win === '90d' ? 'eBay solds (90d)' : 'eBay active';
-  // Composite score: eBay sold velocity dominates; DX trades + Whatnot add cross-platform
-  // confirmation. DX count feeds the score but is NEVER printed (must stay out of embed).
-  const composite = n + dxTrades * 1.5 + wn * 0.5;
+  // Composite score: eBay sold velocity dominates; Whatnot adds cross-platform confirmation.
+  const composite = n + wn * 0.5;
   const platforms = `${n} ${tag}, ${wn} Whatnot, ${social} mentions`;
   if (composite >= 25) return `Heavy sales volume — ${platforms}; high cross-platform liquidity, price reliable and well-supported`;
   if (composite >= 10) return `Moderate sales volume — ${platforms}; steady turnover, price holding but not explosive`;
@@ -3007,8 +2986,6 @@ function generateWriteup(prod, signals, market, roi, t30Market, t30Roi, computed
     (s.amazon?.inStock  && s.amazon?.price  && _er > 0 && s.amazon.price  >= _er * 0.8 && s.amazon.price  <= _er * 1.05);
   const walmartPrice   = s.walmart?.price ?? null;
   const amazonPrice    = s.amazon?.price ?? null;
-  const hwAvgSignal    = signals?.historicalWholesale?.find(p => p.market?.avgTrade && p.market.avgTrade < (prod.retail ?? 999) * 5)?.market?.avgTrade ?? null;
-  const wholesaleFloor = hwAvgSignal ? `wholesale avg $${hwAvgSignal.toFixed(0)}` : null;
 
   // Retail availability line
   const retailLine = retailInStock
@@ -3376,7 +3353,6 @@ function generateWriteup(prod, signals, market, roi, t30Market, t30Roi, computed
 
       // ── Risk ─────────────────────────────────────────────────────────────────────
       const riskExtra = [];
-      if (wholesaleFloor) riskExtra.push(`wholesale avg $${wholesaleFloor} sets a dealer floor`);
       if (mult && +mult < 1.2) riskExtra.push(`${mult}× multiple is thin — fees will eat margin on anything under 1.2×`);
       if (sentVal < 0 && mentions > 3) riskExtra.push(`negative community sentiment (${mentions} mentions)`);
       autoMkt.push(`• **Risk:** ${holdRisk}${riskExtra.length ? ' ' + riskExtra.join('; ') + '.' : ''}`);
@@ -3715,7 +3691,6 @@ const pipelineResult = {
     stockx:    { ...(signals?.stockx ? { status:'ok', data:`$${signals.stockx.price} (ask $${signals.stockx.lowestAsk ?? 'n/a'} / bid $${signals.stockx.highestBid ?? 'n/a'})` } : { status:'na', data:'N/A' }), url: `https://stockx.com/search?s=${_q}` },
     tcgplayer: { ...(tcg?.market ? { status:'ok', data:`market $${tcg.market} | low $${tcg.low ?? 'n/a'} | high $${tcg.high ?? 'n/a'}` } : { status:'na', data:'N/A' }), url: tcgUrl ?? `https://www.tcgplayer.com/search/all/product?q=${_q}` },
     pricecharting: { ...(pcDbPrice ? { status:'ok', data:`booster-box $${pcDbPrice} (indexed DB)` } : { status:'na', data:'N/A' }), url: 'https://www.pricecharting.com/' },
-    dealernetx:{ ...(signals?.historicalWholesale?.length ? { status:'ok', data:`${signals.historicalWholesale.length} results (prior year avg)` } : { status:'na', data:'N/A' }) },
     internalDb:{ status:'ok', data:`products map loaded — retail $${prod.retail}` },
     market:    { ...(market ? { status:'ok', data:`weighted avg $${market} from: ${priceSources.map(s => `${s.label} $${s.price} (w${s.weight})`).join(', ')}` } : { status:'err', data:'No market price computed — all sources N/A' }) },
   },

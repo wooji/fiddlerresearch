@@ -2,6 +2,8 @@
 
 Standing rule: append `[YYYY-MM-DD] mistake -> cause -> rule` on every mistake. Read before similar work.
 
+- [2026-07-02] DEALERNETX REMOVED FROM PIPELINE (user request, creds already deleted): stripped hwAvg/hwAsk/hwTrend/hwBest/hwTrades/dxTrades/wholesaleFloor/dxQuery/dxProductType from fiddler-research.mjs + lib/deep-research.mjs, removed wholesaleListings/wholesaleSearch/wholesaleByBoxType/DX_BOXTYPES import, removed dealernetx dashboard status + CLAUDE.md pricing-weight line. DX was already stubbed null since 2026-07-01 (account flagged) — this is full removal, not just disable. If DX is ever reinstated, it needs fresh creds in .env (DEALERNET_USER/DEALERNET_PASS) + re-adding to lib/deep-research.mjs track() array + fiddler-research.mjs priceSources.
+
 - [2026-07-02] SPAWNED AGENT TO REBUILD EBAY PLAYWRIGHT SCRAPER: launched general-purpose agent to write fresh eBay scrape for Wallhack mousepad research -> never checked lib/deep-research.mjs first -> ebaySold()/ebayListings() (proxy-rotated, price-banded, already imported in fiddler-research.mjs line 9) already exist and did the job in one node -e call. RULE: before spawning any agent or writing any scraper, grep lib/*.mjs for an existing function first — pipeline helpers are the skillset, not a template to rebuild each time.
 
 - [2026-07-01] WRONG SKU LORCANA SINGLE PACK: used $89.99 for Wilds of Unknown single booster pack (was Illumineer's Trove price) -> never assume pack price from box/trove entry -> ALWAYS verify via TCGCSV catId 71 groupId {tcgId} ProductsAndPrices.csv, match by productId containing "Booster Pack" (not "Box", not "Trove", not "Case"). Single pack productId 678167 = $9.85 market.
