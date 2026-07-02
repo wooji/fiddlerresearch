@@ -63,6 +63,47 @@ function readDocsContext(category) {
 const _dynamicPath = join(ROOT, 'dynamic-products.json');
 const _dynamic = existsSync(_dynamicPath) ? JSON.parse(readFileSync(_dynamicPath, 'utf8')) : {};
 const PRODUCTS = { ..._dynamic, ...{
+  'wallhack-ascension-sora': {
+    label:       'WALLHACK SP-005 Ascension Sora Limited Edition Glass Mousepad',
+    category:    'noncard',
+    set:         'Wallhack / Sora Trilogy (3 of 3)',
+    retail:      129.00,
+    retailNote:  'wallhack.com direct (verified)',
+    releaseUrl:  'https://wallhack.com/pages/ascension-sora',
+    releaseDate: '2026-08-07',
+    preRelease:  true,
+    tcgId:       null,
+    supplyScore: 28,
+    liveMarket:  null,
+    ebayQuery:   'Wallhack Sora mousepad',
+    images:      [],
+    contents:    'SP-005 model, 2.5mm tempered glass, CNC-tapered edges, concave silicone base grid | art by SOLANI | final pad in the Sora trilogy (Original Sora 2023, Frenzy Sora 2024, Drift Sora 2025, Carnage Sora Mar 2026, Ascension Sora Aug 2026) | single drop, no restock | early access via Peak Ascension climbing event (Jun 30–Jul 6 2026)',
+    sellThrough: {
+      flip:   { range: '$210 – $350', units: 'launch window, thin volume' },
+      hold:   { range: '$350 – $500', units: '3-6mo, if trilogy-finale premium holds' },
+      invest: { range: '$500+',       units: '12mo+, only if SOLANI/Wallhack collector base grows' },
+    },
+    bulkBuy:   'secondary only — single drop, no restock',
+    risk:      'High',
+    ebayFee:   0.13,
+    evidence: [
+      { source: 'wallhack.com (verified)', date: '2026-07-02', point: 'Retail $129.00, drops 8.07.2026, sold-out/notify-me page live pre-drop. FAQ: "Ascension Sora is a single drop. Once it sells out, that\'s it." No restock.' },
+      { source: 'eBay active listings (scraped)', date: '2026-07-02', point: 'Carnage Sora (prior trilogy drop, same $129 retail, Mar 2026): 24 active listings, median ask $480.27, range $210-620.41 — 3.7x retail. Sora mousepad (all gens) broader query: 50 listings, median $313.50, range $100-925.' },
+      { source: 'wallhack.com/pages/museum (verified)', date: '2026-07-02', point: 'Sora trilogy run sizes: Original Sora 1,000 units (Jan 2023), Frenzy Sora 2,000 (May 2024), Drift Sora 5,000 (Feb 2025), Carnage Sora 1,800 (Mar 2026). Ascension Sora run size not yet disclosed.' },
+    ],
+    scenarios: [
+      { label: 'Bear', prob: 25, text: 'Niche brand, thin collector base outside core audience. Settles near $180-220 (just above retail) as trilogy-finale novelty fades.' },
+      { label: 'Base', prob: 50, text: 'Trilogy-finale premium + SOLANI art draws same demand as Carnage Sora. Settles $300-450, tracking Carnage Sora\'s current $480 median ask.' },
+      { label: 'Bull', prob: 25, text: 'Peak Ascension early-access event drives cross-promotion; "final in trilogy" collector urgency pushes above Drift Sora\'s broader-market highs ($500-925).' },
+    ],
+    writeup: {
+      market:      '• **Thesis — speculative single-drop collectible, not a fundamentals play.** Ascension Sora is the 3rd and final pad in Wallhack\'s Sora trilogy (Original 2023 → Frenzy 2024 → Drift 2025 → Carnage Mar 2026 → Ascension Aug 2026), art by SOLANI. Retail $129, single drop, explicit no-restock policy (wallhack.com FAQ). Demand precedent is real: Carnage Sora (same $129 retail, Mar 2026, 1,800-unit run) currently asks median $480 on eBay (24 active listings, $210-620 range) — 3.7x retail with genuine secondary depth.\n• **Liquidity:** Niche gaming-peripheral collectible, not a mainstream card/toy category — volume is real but shallow vs TCG/sports. Broader "Sora mousepad" query (all generations) shows $100-925 range, 50 listings — wide dispersion typical of thin markets.\n• **Risk:** High — single-artist, single-brand collectible with no historical multi-cycle price data (first trilogy just completing). No numbered-run count disclosed yet for Ascension specifically. Trilogy-finale narrative could pull buyers who already own Carnage, capping incremental demand.',
+      product:     '• **Model:** SP-005 — Wallhack\'s flagship glass pad, 2.5mm tempered glass, CNC-tapered edges, concave silicone base grid, universal sensor compatibility\n• **Art:** SOLANI — final illustration in the Sora character arc\n• **Access:** Early access reserved for Peak Ascension climbing-event participants (Jun 30–Jul 6 2026) before general 8.07.2026 drop\n• **Scarcity mechanic:** Explicit single-drop, no-restock — same policy as prior trilogy entries (Original 1,000u, Frenzy 2,000u, Drift 5,000u, Carnage 1,800u)',
+      priceComp:   '• Carnage Sora (Mar 2026, same $129 retail, 1,800u): eBay active median $480.27, range $210-620.41 (24 listings)\n• Sora line broad comp (all gens): median $313.50, range $100-925 (50 listings)\n• Base SP-005 (non-LE, always in stock): $129 retail — LE premium is the entire spread above this floor',
+      supplyDemand:'• **Supply:** Fixed single drop, run size undisclosed for Ascension (Carnage was 1,800; Drift was 5,000 — wide historical variance). No restock mechanism ever, per brand policy.\n• **Demand:** Trilogy-completion collectors + SOLANI art fans + Wallhack peripheral enthusiasts. Carnage Sora\'s current 3.7x retail ask confirms real secondary appetite for this exact price point/brand.',
+      recs:        '• **At retail ($129):** Buy for flip — Carnage Sora precedent supports $250-350 within weeks of sellout.\n• **Secondary, pre-sellout:** Avoid overpaying above $200 until Ascension\'s actual run size is confirmed — Drift Sora\'s 5,000-unit run suppressed its ceiling vs Carnage\'s tighter 1,800.\n• **Hold thesis:** Speculative only — no multi-year comp data exists yet for this line. Treat as high-risk/high-upside, size small.',
+    },
+  },
   'pitch-black-pc-etb': {
     label:      'Pokémon TCG: ME05 Pitch Black Pokémon Center Elite Trainer Box',
     category:   'pokemon',

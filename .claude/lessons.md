@@ -2,6 +2,8 @@
 
 Standing rule: append `[YYYY-MM-DD] mistake -> cause -> rule` on every mistake. Read before similar work.
 
+- [2026-07-02] SPAWNED AGENT TO REBUILD EBAY PLAYWRIGHT SCRAPER: launched general-purpose agent to write fresh eBay scrape for Wallhack mousepad research -> never checked lib/deep-research.mjs first -> ebaySold()/ebayListings() (proxy-rotated, price-banded, already imported in fiddler-research.mjs line 9) already exist and did the job in one node -e call. RULE: before spawning any agent or writing any scraper, grep lib/*.mjs for an existing function first — pipeline helpers are the skillset, not a template to rebuild each time.
+
 - [2026-07-01] WRONG SKU LORCANA SINGLE PACK: used $89.99 for Wilds of Unknown single booster pack (was Illumineer's Trove price) -> never assume pack price from box/trove entry -> ALWAYS verify via TCGCSV catId 71 groupId {tcgId} ProductsAndPrices.csv, match by productId containing "Booster Pack" (not "Box", not "Trove", not "Case"). Single pack productId 678167 = $9.85 market.
 
 - [2026-07-01] CHROME DEBUG SHORTCUT: flags ended up in "Start In" box not Target field -> shortcut error "path not valid" -> RULE: Chrome debug args go in Target field as `"chrome.exe" --flags`, Start In = `"C:\Program Files\Google\Chrome\Application"`. Use PowerShell `WScript.Shell CreateShortcut` to set `.Arguments` separately from `.TargetPath`. Also: `C:\Temp\chrome-debug` must exist before launching.
